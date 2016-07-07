@@ -1,0 +1,21 @@
+﻿[
+  {
+    "Title": "Introduction",
+    "Source": "texts/01_intro.md",
+    "Target": "Introduction.html"
+  },
+  {
+    "Title": "MarkDown Cheatsheet",
+    "Source": "texts/99_mdss.md",
+    "Target": "Markdown-Cheatsheet.html"
+  },
+  {
+    "Title": "CodeSnippets",
+    "Source": "texts/99_mdss.md",
+    "Target": "Markdown-Cheatsheet.html#code"
+  },
+  {
+    "Title": "API Spec",
+    "Target": "http://saferpay.github.io/jsonapi/"
+  }
+]
