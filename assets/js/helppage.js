@@ -54,6 +54,6 @@ $("a[href*=#]").click(function (e) {
 });
 
 $(function () {
-    $(".lang-sequence").unwrap("pre").removeClass("lang-sequence").css('background', 'none').sequenceDiagram({ theme: 'simple' });
+    $(".lang-sequence, .language-sequence]").unwrap("pre").removeClass("lang-sequence").removeClass("language-sequence").css('background', 'none').sequenceDiagram({ theme: 'simple' });
     $('.prettyprint, code[class^=lang-], code[class^=language-]').each(function (i, block) { hljs.highlightBlock(block); });
 });
