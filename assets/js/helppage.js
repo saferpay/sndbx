@@ -1,21 +1,4 @@
-function expandContainers(elem, recursive) {
-    elem.find('a.type-details').each(function () {
-        var $this = $(this);
-        if (!$this.hasClass("out")) {
-            var cTr = $this.closest('tr');
-            var tId = $this.attr('href');
-            var table = $("<table class=\"table\"></table>");
-            var nTr = $("<tr class=\"details\"><td colspan=2></td></tr>");
-            cTr.after(nTr);
-            table.appendTo(nTr.children("td"));
-            var copy = $(tId + " tr").clone();
-            copy.appendTo(table);
-            if (recursive) {
-                expandContainers(copy);
-            }
-        }
-    });
-}
+'use strict';
 
 $(document).on('scroll', function () {
     if ($(window).scrollTop() > 100) {
@@ -25,26 +8,9 @@ $(document).on('scroll', function () {
     }
 });
 
-$(document).keydown(function (e) {
-    if (e.keyCode === 70 && (e.ctrlKey || e.metaKey)) {
-        // ctrl+f to support browser search on container contents
-        expandContainers($("body"), true);
-    }
-});
-
-$("#content").on('click', 'a.type-details', function (e) {
-    e.preventDefault();
-    if ($(this).hasClass("out")) {
-        $(this).closest('tr').nextAll('tr.details').remove();
-    } else {
-        expandContainers($(this).parent());
-    }
-    $(this).toggleClass("in out");
-});
-
-$("a[href*=#]").click(function (e) {
+$('a[href*=#]').click(function () {
     var id = $(this).attr('href') + '';
-    if ($(this).data('toggle') === "tab") {
+    if ($(this).data('toggle') === 'tab') {
         $(this).tab('show');
     } else {
         $('html, body').animate({
@@ -54,6 +20,18 @@ $("a[href*=#]").click(function (e) {
 });
 
 $(function () {
-    $(".lang-sequence, .language-sequence").unwrap("pre").removeClass("lang-sequence").removeClass("language-sequence").css('background', 'none').sequenceDiagram({ theme: 'simple' });
-    $('.prettyprint, code[class^=lang-], code[class^=language-]').each(function (i, block) { hljs.highlightBlock(block); });
+    $('.lang-sequence, .language-sequence')
+        .unwrap('pre').removeClass('language-sequence').removeClass('lang-sequence').css('background', 'none').sequenceDiagram({ theme: 'simple' });
+    $('.prettyprint, code[class^=lang-], code[class^=language-]')
+        .each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+    $('section > h1 > a, section > h2 > a')
+        .each(function () {
+            var $a = $(this);
+            if (!$a.hasClass('anchor-link')) {
+                $a.addClass('anchor-link').attr('href', '#' + $a.attr('name')).append('<span class="glyphicon glyphicon-link"></span>');
+            }
+            $a.parent().append($a);
+        });
 });
