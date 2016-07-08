@@ -442,3 +442,18 @@ This line is separated from the one above by two newlines, so it will be a *sepa
 This line is also begins a separate paragraph, but...
 This line is only separated by a single newline, so it's a separate line in the *same paragraph*.
 
+
+
+
+
+## <a name="sequence"></a>Sequence Diagrams
+
+Not part of the Markdown Spec, but we also support [Sequence diagrams](https://github.com/bramp/js-sequence-diagrams) 
+
+```sequence
+Title: Here is a title
+A->B: Normal line
+B-->C: Dashed line
+C->>D: Open arrow
+D-->>A: Dashed open arrow
+```
