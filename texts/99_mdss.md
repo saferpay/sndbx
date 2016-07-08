@@ -16,6 +16,7 @@ This is intended as a quick reference and showcase. For more complete info, see 
 1. [Horizontal Rule](#hr)
 1. [Line Breaks](#lines)
 1. [Youtube videos](#videos)
+1. [Sequence Diagrams](#sequence)
 
 
 --->>>
