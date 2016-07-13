@@ -10,6 +10,41 @@
     "Target": "General.html"
   },
   {
+    "Title": "1-Einführung",
+    "Source": "texts/02_general.md#start",
+    "Target": "General.html"
+  },
+  {
+    "Title": "2-Voraussetzungen",
+    "Source": "texts/02_general.md#requirement",
+    "Target": "General.html"
+  },
+  {
+    "Title": "3-Datensicherheit und PCI DSS",
+    "Source": "texts/02_general.md#pci",
+    "Target": "General.html"
+  },
+  {
+    "Title": "4-3D Secure",
+    "Source": "texts/02_general.md#3ds",
+    "Target": "General.html"
+  },
+  {
+    "Title": "5-Dynamic Currency Conversion",
+    "Source": "texts/02_general.md#dcc",
+    "Target": "General.html"
+  },
+  {
+    "Title": "6-Unterstützte Zahlungsmittel",
+    "Source": "texts/02_general.md#paymentmethods",
+    "Target": "General.html"
+  },
+  {
+    "Title": "7-Lizenzen",
+    "Source": "texts/02_general.md#licenses",
+    "Target": "General.html"
+  },
+  {
     "Title": "MarkDown Cheatsheet",
     "Source": "texts/99_mdss.md",
     "Target": "Markdown-Cheatsheet.html"
