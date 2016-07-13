@@ -10,7 +10,7 @@
 1. [Links](#links)
 1. [Images](#images)
 
-##<a name"start"></a> Einführung
+## <a name"start"></a> Einführung
 
 Die Saferpay JSON API (JavaScript Object Notation Application Programming Interface), in der Folge auch JA genannt, ist eine moderne schlanke Schnittstelle, die unabhängig von Programmiersprachen ist. 
 Die JA unterstützt alle Saferpay Methoden und ist für alle Shop-Systeme, Callcenter-Lösungen, Warenwirtschafts-, ERP-, CRM-Systeme sowie alle anderen Einsatzgebiete geeignet, in denen Online-Zahlungen verarbeitet werden müssen.
