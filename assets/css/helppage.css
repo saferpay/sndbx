@@ -171,6 +171,10 @@ a[target='_blank'] {
 	padding-right: 13px;
 }
 
+section img {
+    max-width: 100%;
+}
+
 @media print {
 	a.type-details:after {
 		content:" (" attr(href) ") ";
