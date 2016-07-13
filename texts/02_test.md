@@ -4,7 +4,7 @@
 
 ## <a name='TOC'></a>Inhaltsverzeichnis
 
-1. [Start](#start)
+1. [Einführung](#start)
 1. [Emphasis](#emphasis)
 1. [Lists](#lists)
 1. [Links](#links)
