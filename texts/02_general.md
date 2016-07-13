@@ -9,6 +9,7 @@
 1. [05 Dynamic Currency Conversion](#dcc)
 1. [06 Unterstützte Zahlungsmittel](#paymentmethods)
 1. [07 Lizenzen](#licenses)
+1. [08 Transaktionsablauf](#transaction-flow)
 
 ## <a name="start"></a> 01 Einführung
 
@@ -309,3 +310,8 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
   </tbody>
 </table>
 ¹Nur Verfügbar in Verbindung mit Saferpay Secure Card Data (Im Business-Paket enthalten)
+
+## <a name="transaction-flow"></a> 08 Transaktionsablauf
+
+Die Saferpay JSON-API ist so aufgebaut, dass der generelle Transaktionsablauf immer gleich ist. Beachten sie hierbei allerdings dass es durchaus kleinere Unterschiede gibt. Dieser Flowchart ist zum generellen Verständnis!
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Zahlungsablauf.png "Saferpay general transaction-flow")
