@@ -1,11 +1,11 @@
 ﻿[
   {
-    "Title": "Introduction",
+    "Title": "01 Einleitung",
     "Source": "texts/01_intro.md",
     "Target": "Introduction.html"
   },
   {
-    "Title": "Test",
+    "Title": "02 Allgemeines",
     "Source": "texts/02_general.md",
     "Target": "General.html"
   },
