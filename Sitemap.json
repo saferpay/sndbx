@@ -45,6 +45,11 @@
     "Target": "General.html#licenses"
   },
   {
+    "Title": "8-Transaktionsablauf",
+    "Source": "texts/02_general.md",
+    "Target": "General.html#transaction-flow"
+  }
+  {
     "Title": "MarkDown Cheatsheet",
     "Source": "texts/99_mdss.md",
     "Target": "Markdown-Cheatsheet.html"
