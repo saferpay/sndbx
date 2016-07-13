@@ -8,6 +8,7 @@
 1. [04 3D Secure](#3ds)
 1. [05 Dynamic Currency Conversion](#dcc)
 1. [06 Unterstützte Zahlungsmittel](#paymentmethods)
+1. [07 Lizenzen](#licenses)
 
 ## <a name="start"></a> 01 Einführung
 
@@ -164,6 +165,75 @@ Eine gesonderte Implementierung auf Seiten des Händlers ist für DCC nicht notw
     <tr>
       <td>BillPay Lastschrift</td>
       <td>Nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+  </tbody>
+</table>
+
+## <a name="licenses"></a> 07 Lizenzen
+
+Saferpay unterscheidet im Generellen zwischen zwei Lizenzen:
++ Saferpay eCommerce
++ Saferpay Business
+
+Es ist von äßerster Wichtigkeit bereits vor der Integration zu klären, ob eine eCommerce-oder Business-Lizenz genutzt werden soll.
+Im Wesentlichen stellt Business eine Erweiterung zur normalen eCommerce Lizenz dar, welche allerdings mit zusätzlichen Kosten verbunden ist.
+Bei vertraglichen Fragen, auch zu Kosten, wenden sie sich bitte an Ihren Sales Partner.
+
+Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden Funktionen zu geben, konultieren sie bitte folgende Featurematrix:
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Interface</th>
+      <th>eCommerce</th>
+      <th>Business</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>PaymentPage Interface</b></td>
+      <td>verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Initialize Payment Page</td>
+      <td>verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Assert Payment Page</td>
+      <td>verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td><b>Transaction Interface</b></td>
+      <td><b>eingeschränkt</b></td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Transaction Initialize</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Transaction Authorize</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Transaction QueryPaymentMeans</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Transaction AdjustAmount</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Transaction Authorize Direct</td>
+      <td>nicht verfügbar</td>
       <td>verfügbar</td>
     </tr>
   </tbody>
