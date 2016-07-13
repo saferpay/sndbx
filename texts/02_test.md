@@ -60,7 +60,7 @@ Das Saferpay Merchant Plug-In, abgekürzt MPI, unterstützt die notwendigen Inte
 Dynamic Currency Conversion, abgekürzt DCC, steht nur für SIX Akzeptanzverträge mit DCC-Erweiterung zur Verfügung. Das für die Zahlungsanfragen zugrunde liegende Terminal erhält hierbei eine Basiswährung in der alle Transaktionen abgerechnet werden. Internationalen Kunden wird mittels DCC der Kaufbetrag in der Basiswährung und zum besten Wechselkurs in ihrer Landeswährung angezeigt. Der Kunde kann selbst entscheiden, in welcher Währung er bezahlen möchte.
 Eine gesonderte Implementierung auf Seiten des Händlers ist für DCC nicht notwendig. Saferpay behandelt diesen Schritt während des Redirect automatisch. 
 
-## <a name="paymentmethods"></a> 05 Unterstützte Zahlungsmittel
+## <a name="paymentmethods"></a> 06 Unterstützte Zahlungsmittel
 
 <table class="table table-striped">
   <thead>
