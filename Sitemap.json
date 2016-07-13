@@ -6,8 +6,8 @@
   },
   {
     "Title": "Test",
-    "Source": "texts/02_test.md",
-    "Target": "Test.html"
+    "Source": "texts/02_general.md",
+    "Target": "General.html"
   },
   {
     "Title": "MarkDown Cheatsheet",
