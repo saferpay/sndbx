@@ -3,7 +3,7 @@
 ## <a name='TOC'></a> Inhaltsverzeichnis
 
 1. [01 Einführung](#start)
-1. [02 Voraussetzung](#requirement)
+1. [02 Voraussetzungen](#requirement)
 1. [03 Datensicherheit und PCI DSS](#pci)
 1. [04 3D Secure](#3ds)
 1. [05 Dynamic Currency Conversion](#dcc)
@@ -17,7 +17,7 @@ Die JA unterstützt alle Saferpay Methoden und ist für alle Shop-Systeme, Callc
 Dieser Integrationsguide dient als Hilfestellung für Programmierer und Integratoren. Er soll gängige Abläufe beschreiben und Gängige Fragen beantworten.
 Dieses Dokument beschäftigt sich mit den Grundlagen der Saferpay JSON-API.
 
-## <a name="requirement"></a> 02 Voraussetzung
+## <a name="requirement"></a> 02 Voraussetzungen
 
 Die Nutzung der JA setzt Folgendes voraus:
 
@@ -192,9 +192,9 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
   </thead>
   <tbody>
     <tr>
-      <td><b>PaymentPage Interface</b></td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <th><b>PaymentPage Interface</b></th>
+      <th>verfügbar</th>
+      <th>verfügbar</th>
     </tr>
     <tr>
       <td>Initialize Payment Page</td>
@@ -207,9 +207,9 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
       <td>verfügbar</td>
     </tr>
     <tr>
-      <td><b>Transaction Interface</b></td>
-      <td><b>eingeschränkt</b></td>
-      <td>verfügbar</td>
+      <th><b>Transaction Interface</b></th>
+      <th><b>eingeschränkt</b></th>
+      <th>verfügbar</th>
     </tr>
     <tr>
       <td>Transaction Initialize</td>
@@ -236,5 +236,76 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
       <td>nicht verfügbar</td>
       <td>verfügbar</td>
     </tr>
+    <tr>
+      <td>Transaction Authorize Referenced</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Transaction Capture</td>
+      <td>verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Transaction Cancel</td>
+      <td>verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Transaction Refund</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Transaction Refund Direct</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Transaction Redirect Payment</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Transaction AAssert Redirect Payment</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <th><b>Secure Alias Store¹</b></th>
+      <th>nicht verfügbar</th>
+      <th>verfügbar</th>
+    </tr>
+    <tr>
+      <td>Alias Insert</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Alias Assert Insert</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Alias Insert Direct</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <td>Alias Delete</td>
+      <td>nicht verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
+      <th><b>Batch</b></th>
+      <th>verfügbar</th>
+      <th>verfügbar</th>
+    </tr>
+    <tr>
+      <td>Close</td>
+      <td>verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
   </tbody>
 </table>
+¹Nur Verfügbar in Verbindung mit Saferpay Secure Card Data (Im Business-Paket enthalten)
