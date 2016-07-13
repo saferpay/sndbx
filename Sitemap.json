@@ -11,38 +11,38 @@
   },
   {
     "Title": "1-Einführung",
-    "Source": "texts/02_general.md#start",
-    "Target": "General.html"
+    "Source": "texts/02_general.md",
+    "Target": "General.html#start"
   },
   {
     "Title": "2-Voraussetzungen",
-    "Source": "texts/02_general.md#requirement",
-    "Target": "General.html"
+    "Source": "texts/02_general.md",
+    "Target": "General.html#requirement"
   },
   {
     "Title": "3-Datensicherheit und PCI DSS",
-    "Source": "texts/02_general.md#pci",
-    "Target": "General.html"
+    "Source": "texts/02_general.md",
+    "Target": "General.html#pci"
   },
   {
     "Title": "4-3D Secure",
-    "Source": "texts/02_general.md#3ds",
-    "Target": "General.html"
+    "Source": "texts/02_general.md",
+    "Target": "General.html#3ds"
   },
   {
     "Title": "5-Dynamic Currency Conversion",
-    "Source": "texts/02_general.md#dcc",
-    "Target": "General.html"
+    "Source": "texts/02_general.md",
+    "Target": "General.html#dcc"
   },
   {
     "Title": "6-Unterstützte Zahlungsmittel",
-    "Source": "texts/02_general.md#paymentmethods",
-    "Target": "General.html"
+    "Source": "texts/02_general.md",
+    "Target": "General.html#paymentmethods"
   },
   {
     "Title": "7-Lizenzen",
-    "Source": "texts/02_general.md#licenses",
-    "Target": "General.html"
+    "Source": "texts/02_general.md",
+    "Target": "General.html#licenses"
   },
   {
     "Title": "MarkDown Cheatsheet",
