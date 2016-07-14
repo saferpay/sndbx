@@ -318,7 +318,7 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
 
 --->>>
  
-> 1. Durch Transaction Initialize oder PaymentPage Initialize
+> 1. Durch Transaction Initialize, Transaction RedirectPayment, oder PaymentPage Initialize
 >
 > 2. Sowohl die PaymentPage, als auch das Transaction Interface bieten die iFrame Integration an!
 >
