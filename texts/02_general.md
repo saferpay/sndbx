@@ -346,7 +346,7 @@ Diese ist bei der PaymentPage bereits geschehen.
 ```
 Je nach Ausgang der Transaktion steht es Ihnen nun frei die Transaktion zu finalisieren (Capture), oder zu stornieren (Cancel).
 
-Besonderes Augenmerk ist auf die Haftungsumkehr (Liabilityshift) durch 3D Secure zu richten. Diese sollte nach M�glichkeit immer vorhanden sein.
+Besonderes Augenmerk ist auf die Haftungsumkehr (Liabilityshift) durch 3D Secure zu richten. Diese sollte nach Möglichkeit immer vorhanden sein.
 
 Des Weiteren braucht eine fehlgeschlagene Transaktion nicht storniert zu werden.
 ```
