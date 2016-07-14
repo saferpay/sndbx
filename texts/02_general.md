@@ -318,7 +318,7 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
 
 --->>>
  
-> 1. Durch Transaction Initialize, Transaction RedirectPayment, oder PaymentPage Initialize
+> 1. Durch [Transaction Initialize](///saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize), [Transaction RedirectPayment](///saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment), oder [PaymentPage Initialize](///saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize)
 >
 > 2. Sowohl die PaymentPage, als auch das Transaction Interface bieten die iFrame Integration an!
 >
@@ -328,12 +328,12 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> **TIPP**: Sie können die URLs per GET mit eigenen Parametern ausstatten.
 >
-> 4. Durch Transaction Authorize oder PaymentPage Assert.
+> 4. Durch [Transaction Authorize](///saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize) oder [PaymentPage Assert](///saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert).
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> **HINWEIS**: Bei Authorize geschieht erst hier die Autorisation!
 >    Diese ist bei der PaymentPage bereits geschehen.
 >
-> 5. Je nach Ausgang der Transaktion steht es Ihnen nun frei die Transaktion zu finalisieren (Capture), oder zu stornieren (Cancel).
+> 5. Je nach Ausgang der Transaktion steht es Ihnen nun frei die Transaktion zu finalisieren ([Capture](///saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture)), oder zu stornieren ([Cancel](///saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel)).
 >
 > Besonderes Augenmerk ist auf die Haftungsumkehr (Liabilityshift) durch 3D Secure zu richten. Diese sollte nach Möglichkeit immer vorhanden sein.
 >
