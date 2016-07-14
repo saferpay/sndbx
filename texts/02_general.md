@@ -314,4 +314,40 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
 ## <a name="transaction-flow"></a> 08 Transaktionsablauf
 
 Die Saferpay JSON-API ist so aufgebaut, dass der generelle Transaktionsablauf immer gleich ist. Beachten sie hierbei allerdings dass es durchaus kleinere Unterschiede gibt. Dieser Flowchart ist zum generellen Verständnis!
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Zahlungsablauf.png "Saferpay general transaction-flow")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Zahlungsablauf_sml.png "Saferpay general transaction-flow")
+
+--->>>
+```
+Durch Transaction Initialize oder PaymentPage Initialize
+```
+<<<---
+--->>>
+```
+Sowohl die PaymentPage, als auch das Transaction Interface bieten die iFrame Integration an!
+Fügen sie die RedirectUrl hierzu einfach in einen HTML-iFrame ein.
+```
+<<<---
+--->>>
+```
+Der Rücksprung erfolgt an die ReturnUrls.
+
+TIPP: Sie können die URLs per GET mit eigenen Parametern ausstatten.
+```
+<<<---
+--->>>
+```
+Durch Transaction Authorize oder PaymentPage Assert.
+
+HINWEIS: Bei Authorize geschieht erst hier die Autorisation!
+Diese ist bei der PaymentPage bereits geschehen.
+```
+<<<---
+--->>>
+```
+Je nach Ausgang der Transaktion steht es Ihnen nun frei die Transaktion zu finalisieren (Capture), oder zu stornieren (Cancel).
+
+Besonderes Augenmerk ist auf die Haftungsumkehr (Liabilityshift) durch 3D Secure zu richten. Diese sollte nach M�glichkeit immer vorhanden sein.
+
+Des Weiteren braucht eine fehlgeschlagene Transaktion nicht storniert zu werden.
+```
+<<<---
