@@ -318,37 +318,14 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
 
 --->>>
 ```
-Durch Transaction Initialize oder PaymentPage Initialize
-```
-<<<---
---->>>
-```
-Sowohl die PaymentPage, als auch das Transaction Interface bieten die iFrame Integration an!
-Fügen sie die RedirectUrl hierzu einfach in einen HTML-iFrame ein.
-```
-<<<---
---->>>
-```
-Der Rücksprung erfolgt an die ReturnUrls.
 
-TIPP: Sie können die URLs per GET mit eigenen Parametern ausstatten.
+## <a name='TOC'></a>Table of Contents
+
+1. [Table of Contents](#TOC)
+1. [Headers](#headers)
+...
+
 ```
 <<<---
---->>>
-```
-Durch Transaction Authorize oder PaymentPage Assert.
 
-HINWEIS: Bei Authorize geschieht erst hier die Autorisation!
-Diese ist bei der PaymentPage bereits geschehen.
-```
-<<<---
---->>>
-```
-Je nach Ausgang der Transaktion steht es Ihnen nun frei die Transaktion zu finalisieren (Capture), oder zu stornieren (Cancel).
-
-Besonderes Augenmerk ist auf die Haftungsumkehr (Liabilityshift) durch 3D Secure zu richten. Diese sollte nach Möglichkeit immer vorhanden sein.
-
-Des Weiteren braucht eine fehlgeschlagene Transaktion nicht storniert zu werden.
-```
-<<<---
 Die Saferpay JSON-API ist so aufgebaut, dass der generelle Transaktionsablauf immer gleich ist. Beachten sie hierbei allerdings dass es durchaus kleinere Unterschiede gibt. Dieser Flowchart ist zum generellen Verständnis!
