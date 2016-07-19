@@ -26,10 +26,12 @@ Zur Zeit stehen folgende Zahlungsmittelsimulatoren zur Verfügung:
 + Shopping Bonus Card
 + VISA
 + Masterpass Wallet-Simulator
-+ Saferpay Testcard - HINWEIS: Nur auf Nachfrage. Kontaktieren sie hierfür bitte das [Saferpay Integration Team](contact.html).
++ Saferpay Testcard (Nur auf Nachfrage. Kontaktieren sie hierfür bitte das [Saferpay Integration Team](contact.html))
 
 ### Welche Währungen sind auf dem Testsystem verfügbar?
 
-Standardmäßig sind auf den Testaccounts EUR und CHF aufgeschaltet. Auf Nachfrage können noch folgende Währungen aktiviert werden:
+Standardmäßig sind auf den Testaccounts `EUR` und `CHF` aufgeschaltet. Auf Nachfrage können noch folgende Währungen aktiviert werden:
+```
 AUD, CAD, CZK, DKK, GBP, HUF, JPY, LVL, NOK, PLN, RON, RUB, RUR, SEK, USD
-Kontaktieren sie hierfür bitte das Saferpay Integration Team (Siehe „Kontakt“).
+```
+Kontaktieren sie hierfür bitte das [Saferpay Integration Team](contact.html).
