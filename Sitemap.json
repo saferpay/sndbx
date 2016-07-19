@@ -65,6 +65,11 @@
     "Target": "General.html#cancel-refund"
   },
   {
+    "Title": "12-Saferpay Testsystem",
+    "Source": "texts/02_general.md",
+    "Target": "General.html#test"
+  },
+  {
     "Title": "MarkDown Cheatsheet",
     "Source": "texts/99_mdss.md",
     "Target": "Markdown-Cheatsheet.html"
