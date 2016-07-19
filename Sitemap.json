@@ -55,6 +55,16 @@
     "Target": "General.html#pm-functions"
   },
   {
+    "Title": "10-Capture (Verbuchung) und der Tagesabschluss",
+    "Source": "texts/02_general.md",
+    "Target": "General.html#capture-batch"
+  },
+  {
+    "Title": "11-Wann Storno (Cancel) und wann Gutschrift?",
+    "Source": "texts/02_general.md",
+    "Target": "General.html#cancel-refund"
+  },
+  {
     "Title": "MarkDown Cheatsheet",
     "Source": "texts/99_mdss.md",
     "Target": "Markdown-Cheatsheet.html"
