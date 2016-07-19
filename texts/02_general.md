@@ -1,15 +1,5 @@
 # 02 - Allgemeines
-
-## <a name='TOC'></a> Inhaltsverzeichnis
-
-1. [01 Einführung](#start)
-1. [02 Voraussetzungen](#requirement)
-1. [03 Datensicherheit und PCI DSS](#pci)
-1. [04 3D Secure](#3ds)
-1. [05 Dynamic Currency Conversion](#dcc)
-1. [06 Unterstützte Zahlungsmittel](#paymentmethods)
-1. [07 Lizenzen](#licenses)
-1. [08 Transaktionsablauf](#transaction-flow)
+Dieser Abschnitt behandelt allgemein gültige Informationen zur Saferpay ePayment Lösung.
 
 ## <a name="start"></a> 01 Einführung
 
