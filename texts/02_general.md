@@ -487,3 +487,208 @@ Die folgenden Tabellen sollen Ihnen dabei helfen eine Übersicht darüber zu bek
     </tr>
   </tbody>
 </table>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Zahlungsmittel</th>
+      <th>Wiederkehrende Zahlungen</th>
+      <th>DCC verfügbar</th>
+      <th>3D Secure verfügbar</th>
+      <th>Mail Phone Order verfügbar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MasterCard</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>VISA, VPay, Lasercard</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>American Express</td>
+      <td>JA</td>
+      <td>NEIN</td>
+      <td>JA</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>Diners Club</td>
+      <td>JA</td>
+      <td>NEIN</td>
+      <td>JA</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>JCB</td>
+      <td>JA</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>Bonus Card</td>
+      <td>JA</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>PostFinance Card</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>PostFinance eFinance</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>Maestro Int.</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>MyOne</td>
+      <td>JA</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>SEPA Lastschrift</td>
+      <td>JA</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>BillPay Lastschrift</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>BillPay Rechnung</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>PayPal</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>GiroPay</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>iDeal</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>Homebanking (AT)</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>ePrzelewy</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+  </tbody>
+</table>
+
+## <a name="capture-batch"></a> 10 Capture (Verbuchung) und der Tagesabschluss
+
+Diese beiden Funktionen gehören wohl zu den weniger beachteten, aber äußerst wichtigen Saferpay-Funktionen. Beide stehen im direkten Zusammenhang und werden sie nicht ausgelöst, so wird es keine Auszahlung an das Händlerkonto geben.
+
+### Der Capture
+
+[Der Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) ist dafür gedacht eine Zahlung zu finalisieren.
+Solange eine Transaktion nicht durch den Capture gelaufen ist, wird der Betrag für sie reserviert, aber nicht ausgezahlt.
+API seitig erhalten sie über den parameter „Status“ Auskunft (Beachten sie dass dies nur ein Ausschnitt der Daten ist):
+
+```
+"Transaction": {
+  "Type": "PURCHASE",
+  "Status": "AUTHORIZED",
+  "Id": "MUOGAWA9pKr6rAv5dUKIbAjrCGYA",
+  "Date": "2015-09-18T09:19:27.078Z",
+  "Amount": {
+    "Value": "100",
+    "CurrencyCode": "CHF"
+  },
+  "AcquirerName": "AcquirerName",
+  "AcquirerReference": "Reference"
+}
+```
+Analog hierzu erhalten solche Transaktion im Saferpay Backoffice den Status “Reservation“.
+Ist eine Transaktion bereits durch den Capture gelaufen, so verändert sich auch der Status:
+```
+"Transaction": {
+  "Type": "PURCHASE",
+  "Status": "CAPTURED",
+  "Id": "MUOGAWA9pKr6rAv5dUKIbAjrCGYA",
+  "Date": "2015-09-18T09:19:27.078Z",
+  "Amount": {
+    "Value": "100",
+    "CurrencyCode": "CHF"
+  },
+  "AcquirerName": "AcquirerName",
+  "AcquirerReference": "Reference"
+}
+```
+Dies ist z.B. bei Zahlungsmitteln so, die keinen Capture brauchen bzw. können. [Siehe hier](https://saferpay.github.io/sndbx/General.html#pm-functions).
+
+WICHTIG: Eine Reservation wird nicht ewig für sie vorgehalten. Ist eine bestimmte Zeit verstrichen, wird der für sie autorisierte und reservierte Betrag wieder freigegebenund sie können das Geld nicht mehr einfordern.
+Besonders PayPal behält es sich vor die Auszahlung zu verweigern. Aus diesem Grund empfehlen wir den Capture sofort durchzuführen. Sollte das nicht möglich sein, so muss er innerhalb von 48 Stunden geschehen. Entweder per API, oder manuell im Saferpay Backoffice.
+
+### Der Tagesabschluss
+Der Tagesabschluss folgt dem Capture einmal täglich, automatisiert um 22 Uhr MEST.
+Hierbei werden alle Transaktionen, welche durch den Capture gelaufen sind, beim Zahlungsverarbeiter eingereicht, um das Geld vom Kunden- auf das Händlerkonto zu übertragen.
+
+Dieser Schritt lässt sich, falls gewünscht, über die Saferpay API auch selber auslösen. Der hierzu notwendige Request heisst [Batch Close](https://saferpay.github.io/jsonapi/#Payment_v1_Batch_Close).
+
+Bevor sie jedoch die API nutzen können, müssen sie den automatischen Tagesabschluss zunächst im Backoffice unter Administration > Terminals für das betreffende Terminal deaktivieren. Der Abschluss sollte nur einmal täglich durchgeführt werden.
+
+### Sonderfälle
+
++ #### PayPal und Postfinance
+  Bei diesen Anbietern wird mit dem Capture auch gleich ein mini-Tagesabschluss ausgelöst. Wenn sie also den Capture auslösen, wird sofort der Geldfluss eingeleitet.
+  Bei PayPal wird dies getan aus dem oben genannten grund, dass sich PayPal vorbehält die Auszahlung zu verweigern. Aus diesem Grunde fordern wir das Geld für sie sofort ein.
+  Bei Postfinance ist dies schlicht im von Postfinance genutzten Protokoll begründet.
+
++ #### Onlinebanking 
+  Zahlungsanbieter, wie GiroPay, oder iDeal gehören zu den Onlinebanking Anbietern. Diese lösen mit der Autorisation sofort den Geldfluss aus. Sobald die Transaktion also erfolgreich war, ist die Transaktion zu 100% abgeschlossen.
+
+## <a name="cancel-refund"></a> 11 Wann Storno (Cancel) und wann Gutschrift?
