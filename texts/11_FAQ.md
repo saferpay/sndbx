@@ -17,15 +17,25 @@
 **A:** Zur Zeit stehen folgende Zahlungsmittelsimulatoren zur Verfügung:
 
 +SEPA Lastschrift (nur EUR)
+
 +PayPal
+
 +American Express
+
 +Diners Club
+
 +JCB
+
 +MasterCard
+
 +myOne
+
 +Shopping Bonus Card
+
 +VISA
+
 +Masterpass Wallet-Simulator
+
 +Saferpay Testcard - HINWEIS: Nur auf Nachfrage. Kontaktieren sie hierfür bitte das Saferpay Integration Team (Siehe „Kontakt“).
 
 **Q:** Welche Währungen sind auf dem Testsystem verfügbar?
