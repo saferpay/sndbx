@@ -472,7 +472,7 @@ Die folgenden Tabellen sollen Ihnen dabei helfen eine Übersicht darüber zu bek
       <td>NEIN</td>
     </tr>
     <tr>
-      <td>>Homebanking(AT)</td>
+      <td>Homebanking (AT)</td>
       <td>NEIN</td>
       <td>NEIN</td>
       <td>NEIN</td>
