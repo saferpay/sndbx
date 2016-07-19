@@ -71,12 +71,12 @@
   },
   {
     "Title": "11 FAQ",
-    "Source": "texts/01_FAQ.md",
+    "Source": "texts/11_FAQ.md",
     "Target": "faq.html"
   },
   {
     "Title": "12 Kontakt",
-    "Source": "texts/01_contact.md",
+    "Source": "texts/12_contact.md",
     "Target": "contact.html"
   },
   {
