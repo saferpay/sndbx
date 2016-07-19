@@ -26,7 +26,7 @@ Zur Zeit stehen folgende Zahlungsmittelsimulatoren zur Verfügung:
 + Shopping Bonus Card
 + VISA
 + Masterpass Wallet-Simulator
-+ Saferpay Testcard - HINWEIS: Nur auf Nachfrage. Kontaktieren sie hierfür bitte das Saferpay Integration Team (Siehe „Kontakt“).
++ Saferpay Testcard - HINWEIS: Nur auf Nachfrage. Kontaktieren sie hierfür bitte das [Saferpay Integration Team](contact.html).
 
 ### Welche Währungen sind auf dem Testsystem verfügbar?
 
