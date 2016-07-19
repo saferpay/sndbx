@@ -75,6 +75,11 @@
     "Target": "faq.html"
   },
   {
+    "Title": "12 Kontakt",
+    "Source": "texts/01_contact.md",
+    "Target": "contact.html"
+  },
+  {
     "Title": "MarkDown Cheatsheet",
     "Source": "texts/99_mdss.md",
     "Target": "Markdown-Cheatsheet.html"
