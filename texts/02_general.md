@@ -669,13 +669,12 @@ Dieser Schritt lässt sich, falls gewünscht, über die Saferpay API auch selber
 Bevor sie jedoch die API nutzen können, müssen sie den automatischen Tagesabschluss zunächst im Backoffice unter Administration > Terminals für das betreffende Terminal deaktivieren. Der Abschluss sollte nur einmal täglich durchgeführt werden.
 
 ### Sonderfälle
-
-+ #### PayPal und Postfinance
+#### PayPal und Postfinance
   Bei diesen Anbietern wird mit dem Capture auch gleich ein mini-Tagesabschluss ausgelöst. Wenn sie also den Capture auslösen, wird sofort der Geldfluss eingeleitet.
   Bei PayPal wird dies getan aus dem oben genannten grund, dass sich PayPal vorbehält die Auszahlung zu verweigern. Aus diesem Grunde fordern wir das Geld für sie sofort ein.
   Bei Postfinance ist dies schlicht im von Postfinance genutzten Protokoll begründet.
 
-+ #### Onlinebanking 
+#### Onlinebanking 
   Zahlungsanbieter, wie GiroPay, oder iDeal gehören zu den Onlinebanking Anbietern. Diese lösen mit der Autorisation sofort den Geldfluss aus. Sobald die Transaktion also erfolgreich war, ist die Transaktion zu 100% abgeschlossen.
 
 ## <a name="cancel-refund"></a> 11 Wann Storno (Cancel) und wann Gutschrift?
