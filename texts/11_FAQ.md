@@ -14,7 +14,8 @@
 
 **Q:** Welche Zahlungsmittel kann ich testen?
 
-**A:** zur Zeit stehen folgende Zahlungsmittelsimulatoren zur Verfügung:
+**A:** Zur Zeit stehen folgende Zahlungsmittelsimulatoren zur Verfügung:
+
 +SEPA Lastschrift (nur EUR)
 +PayPal
 +American Express
