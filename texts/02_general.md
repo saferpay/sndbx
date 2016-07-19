@@ -486,9 +486,6 @@ Die folgenden Tabellen sollen Ihnen dabei helfen eine Übersicht darüber zu bek
       <td>NEIN</td>
     </tr>
   </tbody>
-</table>
-
-<table class="table table-striped">
   <thead>
     <tr>
       <th>Zahlungsmittel</th>
