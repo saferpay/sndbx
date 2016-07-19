@@ -342,3 +342,148 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
 <<<---
 
 Die Saferpay JSON-API ist so aufgebaut, dass der generelle Transaktionsablauf immer gleich ist. Beachten sie hierbei allerdings dass es durchaus kleinere Unterschiede gibt. Dieser Flowchart ist zum generellen Verständnis!
+
+## <a name="pm-functions"></a> 09 Zahlungsmittelfunktionen
+
+Saferpay unterstützt viele Zahlungsmittel, darunter auch 3rd-Party Anbieter, wie zum Beispiel PayPal. Diese müssen aber nicht zwingend sämtliche Saferpayfunktionen unterstützen.
+Die folgenden Tabellen sollen Ihnen dabei helfen eine Übersicht darüber zu bekommen, welche Funktionen mit welchen Zahlungsmitteln verfügbar sind:
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Zahlungsmittel</th>
+      <th>Capture notwendig</th>
+      <th>Tagesabschluss notwendig</th>
+      <th>Secure Alias Store verfügbar</th>
+      <th>Gutschriften durchführbar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MasterCard</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>VISA, VPay, Lasercard</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>American Express</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>Diners Club</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>JCB</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>Bonus Card</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>PostFinance Card</td>
+      <td>JA</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>PostFinance eFinance</td>
+      <td>JA</td>
+      <td>NEIN</td>
+      <td>JA</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>Maestro Int.</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>MyOne</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>SEPA Lastschrift</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>BillPay Lastschrift</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>BillPay Rechnung</td>
+      <td>JA</td>
+      <td>JA</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>PayPal</td>
+      <td>JA</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>JA</td>
+    </tr>
+    <tr>
+      <td>GiroPay</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>iDeal</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>>Homebanking(AT)</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+    <tr>
+      <td>ePrzelewy</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+      <td>NEIN</td>
+    </tr>
+  </tbody>
+</table>
