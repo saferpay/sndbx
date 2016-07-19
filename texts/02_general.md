@@ -689,3 +689,22 @@ Bevor sie jedoch die API nutzen können, müssen sie den automatischen Tagesabsc
   Zahlungsanbieter, wie GiroPay, oder iDeal gehören zu den Onlinebanking Anbietern. Diese lösen mit der Autorisation sofort den Geldfluss aus. Sobald die Transaktion also erfolgreich war, ist die Transaktion zu 100% abgeschlossen.
 
 ## <a name="cancel-refund"></a> 11 Wann Storno (Cancel) und wann Gutschrift?
+
+Dass Kunden Ihre Bestellungen stornieren, oder waren zurückgeben wollen ist nicht selten. Natürlich ist es als Händler wichtig die im Hintergrund stehende Transaktion entweder zu stornieren, oder eine Gutschrift zu machen.
+Auf Zahlungsmittelebene kann es jedoch zu komplikationen kommen, wenn man nicht genau weiss, was wann genau zu tun ist. Auch gibt es Zahlungsmittel, die hier schlichtweg keinerlei Funktionalität bieten.
+Dieses Kapitel soll Ihnen dabei helfen eine Übersicht über dieses Thema zu bekommen. Dabei helfen soll auch die im Kapitel 5.2 stehende Matrix.
+
+Generell gilt: Solange Zahlungen nicht durch den Tagesabschluss eingereicht wurden, steht immer ein Storno (Cancel) zur Verfügung. Danach muss eine Gutschrift durchgeführt werden, falls verfügbar.
+
+WICHTIG: Beachten sie die [hier](https://saferpay.github.io/sndbx/General.html#pm-functions) genannten Sonderfälle! Besonders beim Onlinebanking stehen weder Stornos, noch Gutschriften zur Verfügung.
+
+## <a name="test"></a> 12 Saferpay Testsystem
+
+Für die Integrationsphase und um Saferpay testen zu können, bieten wir Ihnen unsere Externe Test Umgebung (ETU) an.
+Hier können Sie abgegrenzt von der Produktion, Saferpay mit Simulatoren für alle gängigen Zahlungsmittel auf ihrem eigenen Testkonto testen.
+
+Das Testsystem finden sie [hier](https://test.saferpay.com )
+
+Die ETU bietet seit der Einführung neue Simulatoren an, welche in der Autorisationsantwort VISA, MasterCard und viele andere Karten Simulieren können.
+Dafür wurden spezielle Kartennummern eingeführt, welche [hier finden](https://www.six-payment-services.com/de/site/saferpay-support/testaccount/Saferpay_Testdaten.html)
+
