@@ -50,6 +50,11 @@
     "Target": "General.html#transaction-flow"
   },
   {
+    "Title": "9-Zahlungsmittelfunktionen",
+    "Source": "texts/02_general.md",
+    "Target": "General.html#pm-functions"
+  },
+  {
     "Title": "MarkDown Cheatsheet",
     "Source": "texts/99_mdss.md",
     "Target": "Markdown-Cheatsheet.html"
