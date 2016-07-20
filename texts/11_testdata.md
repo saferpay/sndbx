@@ -28,5 +28,12 @@ In order to simulate specific cases, please choose from the tables below.
         Liability shift: YES (ECI=1, Authenticated=true)
       </td>
     </tr>
+    <tr>
+      <td>9010101052000002</td>
+      <td>
+        Card <b>not enrolled</b>. Bank grants liability shift. <br />
+        Liability shift: YES (ECI=2, Authenticated=false)
+      </td>
+    </tr>
   </tbody>
 </table>
