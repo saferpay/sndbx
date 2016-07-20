@@ -23,7 +23,7 @@ In order to simulate specific cases, please choose from the tables below.
     <tr>
       <td>9010100052000004</td>
       <td>
-        Card ** "enrolled" **. This card is subjected to the full 3D Secure authentication process. <br />
+        Card **enrolled**. This card is subjected to the full 3D Secure authentication process. <br />
         Liability shift: YES (ECI=1, Authenticated=true)
       </td>
     </tr>
