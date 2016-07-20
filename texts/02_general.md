@@ -89,6 +89,11 @@ Eine gesonderte Implementierung auf Seiten des Händlers ist für DCC nicht notw
       <td>verfügbar</td>
     </tr>
     <tr>
+      <td>Bancontact</td>
+      <td>verfügbar</td>
+      <td>verfügbar</td>
+    </tr>
+    <tr>
       <td>Diners Club</td>
       <td>verfügbar</td>
       <td>verfügbar</td>
