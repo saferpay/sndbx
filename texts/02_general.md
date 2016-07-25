@@ -304,8 +304,11 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
     </tr>
   </tbody>
 </table>
+
 --->>>
-¹Nur Verfügbar in Verbindung mit Saferpay Secure Card Data (Im Business-Paket enthalten)
+
+¹ Nur Verfügbar in Verbindung mit Saferpay Secure Card Data (Im Business-Paket enthalten)
+
 <<<---
 
 ## <a name="transaction-flow"></a> 08 Transaktionsablauf
@@ -344,27 +347,6 @@ Die Saferpay JSON-API ist so aufgebaut, dass der generelle Transaktionsablauf im
 
 Saferpay unterstützt viele Zahlungsmittel, darunter auch 3rd-Party Anbieter, wie zum Beispiel PayPal. Diese müssen aber nicht zwingend sämtliche Saferpayfunktionen unterstützen.
 Die folgenden Tabellen sollen Ihnen dabei helfen eine Übersicht darüber zu bekommen, welche Funktionen mit welchen Zahlungsmitteln verfügbar sind:
-
---->>>
-<dl class="dl-horizontal">
-  <dt>Capture</dt>
-  <dd>Capture notwendig</dd>
-  <dt>Batch</dt>
-  <dd>Tagesabschluss notwendig</dd>
-  <dt>SCD</dt>
-  <dd>Secure Alias Store verfügbar</dd>
-  <dt>Refund</dt>
-  <dd>Gutschriften durchführbar</dd>
-  <dt>Recurring</dt>
-  <dd>Wiederkehrende Zahlungen</dd>
-  <dt>DCC</dt>
-  <dd>DCC verfügbar</dd>
-  <dt>3-D Secure</dt>
-  <dd>3-D Secure verfügbar</dd>
-  <dt>MOTO</dt>
-  <dd>Mail Phone Order verfügbar</dd>
-</dl>
-<<<---
 
 <table class="table table-striped">
   <thead>
@@ -582,6 +564,29 @@ Die folgenden Tabellen sollen Ihnen dabei helfen eine Übersicht darüber zu bek
   </tbody>
 </table>
 
+--->>>
+
+<dl class="dl-horizontal">
+  <dt>Capture</dt>
+  <dd>Capture notwendig</dd>
+  <dt>Batch</dt>
+  <dd>Tagesabschluss notwendig</dd>
+  <dt>SCD</dt>
+  <dd>Secure Alias Store verfügbar</dd>
+  <dt>Refund</dt>
+  <dd>Gutschriften durchführbar</dd>
+  <dt>Recurring</dt>
+  <dd>Wiederkehrende Zahlungen</dd>
+  <dt>DCC</dt>
+  <dd>DCC verfügbar</dd>
+  <dt>3-D Secure</dt>
+  <dd>3-D Secure verfügbar</dd>
+  <dt>MOTO</dt>
+  <dd>Mail Phone Order verfügbar</dd>
+</dl>
+
+<<<---
+
 ## <a name="capture-batch"></a> 10 Capture (Verbuchung) und der Tagesabschluss
 
 Diese beiden Funktionen gehören wohl zu den weniger beachteten, aber äußerst wichtigen Saferpay-Funktionen. Beide stehen im direkten Zusammenhang und werden sie nicht ausgelöst, so wird es keine Auszahlung an das Händlerkonto geben.
@@ -593,6 +598,7 @@ Solange eine Transaktion nicht durch den Capture gelaufen ist, wird der Betrag f
 API seitig erhalten sie über den parameter „Status“ Auskunft (Beachten sie dass dies nur ein Ausschnitt der Daten ist):
 
 --->>>
+
 ```javascript
 "Transaction": {
   "Type": "PURCHASE",
@@ -607,6 +613,7 @@ API seitig erhalten sie über den parameter „Status“ Auskunft (Beachten sie 
   "AcquirerReference": "Reference"
 }
 ```
+
 <<<---
 
 Analog hierzu erhalten solche Transaktion im Saferpay Backoffice den Status “Reservation“.
