@@ -58,8 +58,8 @@ Eine gesonderte Implementierung auf Seiten des Händlers ist für DCC nicht notw
   <thead>
     <tr>
       <th>Zahlungsmittel</th>
-      <th>Transaction Interface</th>
-      <th>Payment Page</th>
+      <th class="text-center">Transaction Interface</th>
+      <th class="text-center">Payment Page</th>
     </tr>
   </thead>
   <tbody>
@@ -184,15 +184,15 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
   <thead>
     <tr>
       <th>Interface</th>
-      <th>eCommerce</th>
-      <th>Business</th>
+      <th class="text-center">eCommerce</th>
+      <th class="text-center">Business</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th><b>PaymentPage Interface</b></th>
-      <th><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
-      <th><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
+      <th class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
+      <th class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
     </tr>
     <tr>
       <td>Initialize Payment Page</td>
@@ -206,8 +206,8 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
     </tr>
     <tr>
       <th><b>Transaction Interface</b></th>
-      <th><b>eingeschränkt</b></th>
-      <th><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
+      <th class="text-center"><span class="glyphicon glyphicon-ok" style="color: #f0ad4e"></span></th>
+      <th class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
     </tr>
     <tr>
       <td>Transaction Initialize</td>
@@ -265,14 +265,14 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
-      <td>Transaction AAssert Redirect Payment</td>
+      <td>Transaction Assert Redirect Payment</td>
       <td></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <th><b>Secure Alias Store¹</b></th>
       <th></th>
-      <th><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
+      <th class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
     </tr>
     <tr>
       <td>Alias Insert</td>
@@ -296,8 +296,8 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
     </tr>
     <tr>
       <th><b>Batch</b></th>
-      <th><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
-      <th><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
+      <th class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
+      <th class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
     </tr>
     <tr>
       <td>Close</td>
