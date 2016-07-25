@@ -356,14 +356,14 @@ Die folgenden Tabellen sollen Ihnen dabei helfen eine Übersicht darüber zu bek
   <thead>
     <tr>
       <th>Zahlungsmittel</th>
-      <th>Capture</th>
-      <th>Batch</th>
-      <th>SCD</th>
-      <th>Refund</th>
-      <th>Recurring</th>
-      <th>DCC</th>
-      <th>3-D Secure</th>
-      <th>MOTO</th>
+      <th class="text-center">Capture</th>
+      <th class="text-center">Batch</th>
+      <th class="text-center">SCD</th>
+      <th class="text-center">Refund</th>
+      <th class="text-center">Recurring</th>
+      <th class="text-center">DCC</th>
+      <th class="text-center">3-D Secure</th>
+      <th class="text-center">MOTO</th>
     </tr>
   </thead>
   <tbody>
