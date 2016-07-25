@@ -714,7 +714,7 @@ Dafür wurden spezielle Kartennummern eingeführt, welche [hier finden](https://
 --->>>
  
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **WICHTIG**: Bei der benutzung des Testsystems müssen sie darauf achten, dass alle Anfragen an **https://test.saferpay.com/api/...** statt **https://www.saferpay.com/api/...** gesendet werden. Wenn sie live gehen, müssen die URLs wieder geändert werden. Ferner können sie die Testdaten nicht auf dem Livesystem verwenden und umgekehrt. Bitte beachten sie das beim Umstieg von der Testumgebung auf den Produktionsbetrieb.
+>    <i class="glyphicon glyphicon-hand-right"></i> **WICHTIG**: Bei der benutzung des Testsystems müssen sie darauf achten, dass alle Anfragen an **https://test.saferpay.com/api/...** statt **https://www.saferpay.com/api/...** gesendet werden. Wenn sie live gehen, müssen die URLs wieder geändert werden. Ferner können sie die Testdaten nicht auf dem Livesystem verwenden und umgekehrt. Bitte beachten sie das bei der Umstellung von der Testumgebung auf den Produktionsbetrieb.
 >
 
 <<<---
