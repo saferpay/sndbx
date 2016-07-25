@@ -65,103 +65,103 @@ Eine gesonderte Implementierung auf Seiten des Händlers ist für DCC nicht notw
   <tbody>
     <tr>
       <td>Visa</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>V PAY</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>MasterCard</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Maestro International</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>American Express</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Bancontact</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Diners Club</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>JCB</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Bonus Card</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Postfinance E-Finance</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>PostFinance Card</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>MyOne</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>SEPA Lastschrift (Nur DE!)</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>PayPal</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>ePrzelewy</td>
-      <td>Nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Homebanking AT (eps)</td>
-      <td>Nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>GiroPay</td>
-      <td>Nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>iDeal</td>
-      <td>Nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>BillPay Kauf auf Rechnung</td>
-      <td>Nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>BillPay Lastschrift</td>
-      <td>Nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
   </tbody>
 </table>
@@ -189,122 +189,124 @@ Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden
   <tbody>
     <tr>
       <th><b>PaymentPage Interface</b></th>
-      <th>verfügbar</th>
-      <th>verfügbar</th>
+      <th><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
+      <th><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
     </tr>
     <tr>
       <td>Initialize Payment Page</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Assert Payment Page</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <th><b>Transaction Interface</b></th>
       <th><b>eingeschränkt</b></th>
-      <th>verfügbar</th>
+      <th><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
     </tr>
     <tr>
       <td>Transaction Initialize</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Transaction Authorize</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Transaction QueryPaymentMeans</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Transaction AdjustAmount</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Transaction Authorize Direct</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Transaction Authorize Referenced</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Transaction Capture</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Transaction Cancel</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Transaction Refund</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Transaction Refund Direct</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Transaction Redirect Payment</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Transaction AAssert Redirect Payment</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <th><b>Secure Alias Store¹</b></th>
-      <th>nicht verfügbar</th>
-      <th>verfügbar</th>
+      <th></th>
+      <th><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
     </tr>
     <tr>
       <td>Alias Insert</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Alias Assert Insert</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Alias Insert Direct</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Alias Delete</td>
-      <td>nicht verfügbar</td>
-      <td>verfügbar</td>
+      <td></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <th><b>Batch</b></th>
-      <th>verfügbar</th>
-      <th>verfügbar</th>
+      <th><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
+      <th><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
     </tr>
     <tr>
       <td>Close</td>
-      <td>verfügbar</td>
-      <td>verfügbar</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
   </tbody>
 </table>
+--->>>
 ¹Nur Verfügbar in Verbindung mit Saferpay Secure Card Data (Im Business-Paket enthalten)
+<<<---
 
 ## <a name="transaction-flow"></a> 08 Transaktionsablauf
 
@@ -343,279 +345,239 @@ Die Saferpay JSON-API ist so aufgebaut, dass der generelle Transaktionsablauf im
 Saferpay unterstützt viele Zahlungsmittel, darunter auch 3rd-Party Anbieter, wie zum Beispiel PayPal. Diese müssen aber nicht zwingend sämtliche Saferpayfunktionen unterstützen.
 Die folgenden Tabellen sollen Ihnen dabei helfen eine Übersicht darüber zu bekommen, welche Funktionen mit welchen Zahlungsmitteln verfügbar sind:
 
+--->>>
+<dl class="dl-horizontal">
+  <dt>Capture</dt>
+  <dd>Capture notwendig</dd>
+  <dt>Batch</dt>
+  <dd>Tagesabschluss notwendig</dd>
+  <dt>SCD</dt>
+  <dd>Secure Alias Store verfügbar</dd>
+  <dt>Refund</dt>
+  <dd>Gutschriften durchführbar</dd>
+  <dt>Recurring</dt>
+  <dd>Wiederkehrende Zahlungen</dd>
+  <dt>DCC</dt>
+  <dd>DCC verfügbar</dd>
+  <dt>3-D Secure</dt>
+  <dd>3-D Secure verfügbar</dd>
+  <dt>MOTO</dt>
+  <dd>Mail Phone Order verfügbar</dd>
+</dl>
+<<<---
+
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Zahlungsmittel</th>
-      <th>Capture notwendig</th>
-      <th>Tagesabschluss notwendig</th>
-      <th>Secure Alias Store verfügbar</th>
-      <th>Gutschriften durchführbar</th>
+      <th>Capture</th>
+      <th>Batch</th>
+      <th>SCD</th>
+      <th>Refund</th>
+      <th>Recurring</th>
+      <th>DCC</th>
+      <th>3-D Secure</th>
+      <th>MOTO</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>MasterCard</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>VISA, VPay, Lasercard</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>American Express</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
     </tr>
     <tr>
       <td>Diners Club</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
     </tr>
     <tr>
       <td>JCB</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>Bonus Card</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>PostFinance Card</td>
-      <td>JA</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>JA</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>PostFinance eFinance</td>
-      <td>JA</td>
-      <td>NEIN</td>
-      <td>JA</td>
-      <td>JA</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>Maestro Int.</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>MyOne</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>SEPA Lastschrift</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>NEIN</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>BillPay Lastschrift</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>BillPay Rechnung</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>PayPal</td>
-      <td>JA</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>JA</td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>GiroPay</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>iDeal</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>Homebanking (AT)</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>ePrzelewy</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-  </tbody>
-  <thead>
-    <tr>
-      <th>Zahlungsmittel</th>
-      <th>Wiederkehrende Zahlungen</th>
-      <th>DCC verfügbar</th>
-      <th>3D Secure verfügbar</th>
-      <th>Mail Phone Order verfügbar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>MasterCard</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-    </tr>
-    <tr>
-      <td>VISA, VPay, Lasercard</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-      <td>JA</td>
-    </tr>
-    <tr>
-      <td>American Express</td>
-      <td>JA</td>
-      <td>NEIN</td>
-      <td>JA</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>Diners Club</td>
-      <td>JA</td>
-      <td>NEIN</td>
-      <td>JA</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>JCB</td>
-      <td>JA</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>Bonus Card</td>
-      <td>JA</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>PostFinance Card</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>PostFinance eFinance</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>Maestro Int.</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>MyOne</td>
-      <td>JA</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>SEPA Lastschrift</td>
-      <td>JA</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>BillPay Lastschrift</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>BillPay Rechnung</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>PayPal</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>GiroPay</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>iDeal</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>Homebanking (AT)</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-    </tr>
-    <tr>
-      <td>ePrzelewy</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
-      <td>NEIN</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -631,7 +593,7 @@ Solange eine Transaktion nicht durch den Capture gelaufen ist, wird der Betrag f
 API seitig erhalten sie über den parameter „Status“ Auskunft (Beachten sie dass dies nur ein Ausschnitt der Daten ist):
 
 --->>>
-```
+```javascript
 "Transaction": {
   "Type": "PURCHASE",
   "Status": "AUTHORIZED",
@@ -651,7 +613,7 @@ Analog hierzu erhalten solche Transaktion im Saferpay Backoffice den Status “R
 Ist eine Transaktion bereits durch den Capture gelaufen, so verändert sich auch der Status:
 
 --->>>
-```
+```javascript
 "Transaction": {
   "Type": "PURCHASE",
   "Status": "CAPTURED",
