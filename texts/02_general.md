@@ -178,6 +178,8 @@ Bei vertraglichen Fragen, auch zu Kosten, wenden sie sich bitte an Ihren Sales P
 
 Um Ihnen dennoch einen generellen Überblick, über die zur Verfügung stehenden Funktionen zu geben, konultieren sie bitte folgende Featurematrix:
 
+<p></p>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -348,6 +350,7 @@ Die Saferpay JSON-API ist so aufgebaut, dass der generelle Transaktionsablauf im
 Saferpay unterstützt viele Zahlungsmittel, darunter auch 3rd-Party Anbieter, wie zum Beispiel PayPal. Diese müssen aber nicht zwingend sämtliche Saferpayfunktionen unterstützen.
 Die folgenden Tabellen sollen Ihnen dabei helfen eine Übersicht darüber zu bekommen, welche Funktionen mit welchen Zahlungsmitteln verfügbar sind:
 
+<p></p>
 
 <table class="table table-striped">
   <thead>
@@ -600,7 +603,7 @@ API seitig erhalten sie über den parameter „Status“ Auskunft (Beachten sie 
 
 --->>>
 
-```javascript
+```json
 "Transaction": {
   "Type": "PURCHASE",
   "Status": "AUTHORIZED",
@@ -621,7 +624,7 @@ Analog hierzu erhalten solche Transaktion im Saferpay Backoffice den Status “R
 Ist eine Transaktion bereits durch den Capture gelaufen, so verändert sich auch der Status:
 
 --->>>
-```javascript
+```json
 "Transaction": {
   "Type": "PURCHASE",
   "Status": "CAPTURED",
