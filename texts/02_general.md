@@ -630,6 +630,7 @@ Diese beiden Funktionen gehören wohl zu den weniger beachteten, aber äußerst 
 Solange eine Transaktion nicht durch den Capture gelaufen ist, wird der Betrag für sie reserviert, aber nicht ausgezahlt.
 API seitig erhalten sie über den parameter „Status“ Auskunft (Beachten sie dass dies nur ein Ausschnitt der Daten ist):
 
+--->>>
 ```
 "Transaction": {
   "Type": "PURCHASE",
@@ -644,8 +645,12 @@ API seitig erhalten sie über den parameter „Status“ Auskunft (Beachten sie 
   "AcquirerReference": "Reference"
 }
 ```
+<<<---
+
 Analog hierzu erhalten solche Transaktion im Saferpay Backoffice den Status “Reservation“.
 Ist eine Transaktion bereits durch den Capture gelaufen, so verändert sich auch der Status:
+
+--->>>
 ```
 "Transaction": {
   "Type": "PURCHASE",
@@ -660,6 +665,8 @@ Ist eine Transaktion bereits durch den Capture gelaufen, so verändert sich auch
   "AcquirerReference": "Reference"
 }
 ```
+<<<---
+
 Dies ist z.B. bei Zahlungsmitteln so, die keinen Capture brauchen bzw. können. [Siehe hier](https://saferpay.github.io/sndbx/General.html#pm-functions).
 
 WICHTIG: Eine Reservation wird nicht ewig für sie vorgehalten. Ist eine bestimmte Zeit verstrichen, wird der für sie autorisierte und reservierte Betrag wieder freigegebenund sie können das Geld nicht mehr einfordern.
