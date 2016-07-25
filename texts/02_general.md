@@ -655,12 +655,12 @@ Bevor sie jedoch die API nutzen können, müssen sie den automatischen Tagesabsc
 
 ### Sonderfälle
 #### PayPal und Postfinance
-  Bei diesen Anbietern wird mit dem Capture auch gleich ein mini-Tagesabschluss ausgelöst. Wenn sie also den Capture auslösen, wird sofort der Geldfluss eingeleitet.
-  Bei PayPal wird dies getan aus dem oben genannten grund, dass sich PayPal vorbehält die Auszahlung zu verweigern. Aus diesem Grunde fordern wir das Geld für sie sofort ein.
-  Bei Postfinance ist dies schlicht im von Postfinance genutzten Protokoll begründet.
+Bei diesen Anbietern wird mit dem Capture auch gleich ein mini-Tagesabschluss ausgelöst. Wenn sie also den Capture auslösen, wird sofort der Geldfluss eingeleitet.
+Bei PayPal wird dies getan aus dem oben genannten grund, dass sich PayPal vorbehält die Auszahlung zu verweigern. Aus diesem Grunde fordern wir das Geld für sie sofort ein.
+Bei Postfinance ist dies schlicht im von Postfinance genutzten Protokoll begründet.
 
 #### Onlinebanking 
-  Zahlungsanbieter, wie GiroPay, oder iDeal gehören zu den Onlinebanking Anbietern. Diese lösen mit der Autorisation sofort den Geldfluss aus. Sobald die Transaktion also erfolgreich war, ist die Transaktion zu 100% abgeschlossen.
+Zahlungsanbieter, wie GiroPay, oder iDeal gehören zu den Onlinebanking Anbietern. Diese lösen mit der Autorisation sofort den Geldfluss aus. Sobald die Transaktion also erfolgreich war, ist die Transaktion zu 100% abgeschlossen.
 
 ## <a name="cancel-refund"></a> 11 Wann Storno (Cancel) und wann Gutschrift?
 
@@ -681,7 +681,6 @@ Das Testsystem finden sie [hier](https://test.saferpay.com )
 
 Die ETU bietet seit der Einführung neue Simulatoren an, welche in der Autorisationsantwort VISA, MasterCard und viele andere Karten Simulieren können.
 Dafür wurden spezielle Kartennummern eingeführt, welche [hier finden](https://www.six-payment-services.com/de/site/saferpay-support/testaccount/Saferpay_Testdaten.html)
-
 
 
 --->>>
