@@ -1,22 +1,27 @@
 # 13 - Kontakt
+
 ## Saferpay Integration Team
+
 Haben Sie Fragen zu dieser Dokumentation oder Probleme bei der Saferpay Integration oder benötigen Unterstützung? Dann wenden Sie sich gern an das Integration Team:
 
 ### Saferpay Schweiz					
-SIX Payment Services AG
-Hardturmstrasse 201
-8021 Zürich
-+41 848 66 44 44
-[www.six-payment-services.com/saferpay](www.six-payment-services.com/saferpay)
-[integration.saferpay@six-payment-services.com](integration.saferpay@six-payment-services.com)
+
+SIX Payment Services AG<br/>
+Hardturmstrasse 201<br/>
+8021 Zürich<br/>
++41 848 66 44 44<br/>
+[www.six-payment-services.com/saferpay](https://www.six-payment-services.com/saferpay)<br/>
+[integration.saferpay@six-payment-services.com](mailto:integration.saferpay@six-payment-services.com)
+
 
 ### Saferpay Europa
-SIX Payment Services (Germany) GmbH
-Langenhorner Chaussee 92-94
-22415 Hamburg
-+49 40 325 967- 280
-[www.six-payment-services.com/saferpay](www.six-payment-services.com/saferpay)
-[integration.saferpay@six-payment-services.com](integration.saferpay@six-payment-services.com)
+
+SIX Payment Services (Germany) GmbH<br/>
+Langenhorner Chaussee 92-94<br/>
+22415 Hamburg<br/>
++49 40 325 967- 280<br/>
+[www.six-payment-services.com/saferpay](https://www.six-payment-services.com/saferpay)<br/>
+[integration.saferpay@six-payment-services.com](mailto:integration.saferpay@six-payment-services.com)
 
 
 ## Saferpay Support Team
