@@ -5,8 +5,7 @@ Dieser Abschnitt behandelt allgemein gültige Informationen zur Saferpay ePaymen
 
 Die Saferpay JSON API (**J**ava**S**cript **O**bject **N**otation **A**pplication **P**rogramming **I**nterface), in der Folge auch JA genannt, ist eine moderne schlanke Schnittstelle, die unabhängig von Programmiersprachen ist. 
 Die JA unterstützt alle Saferpay Methoden und ist für alle Shop-Systeme, Callcenter-Lösungen, Warenwirtschafts-, ERP-, CRM-Systeme sowie alle anderen Einsatzgebiete geeignet, in denen Online-Zahlungen verarbeitet werden müssen.
-Dieser Integrationsguide dient als Hilfestellung für Programmierer und Integratoren. Er soll gängige Abläufe beschreiben und Gängige Fragen beantworten.
-Dieses Dokument beschäftigt sich mit den Grundlagen der Saferpay JSON-API.
+Dieser Integrationsguide beschäftigt sich mit den Grundlagen der Saferpay JSON-API und dient als Hilfestellung für Programmierer und Integratoren. Er soll gängige Abläufe beschreiben und Gängige Fragen beantworten.
 
 ## <a name="requirement"></a> 02 Voraussetzungen
 
