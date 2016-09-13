@@ -4,7 +4,7 @@ script: |
     cd "$TRAVIS_BUILD_DIR"
     rm -rf _gh_pages || exit 0
     mkdir _gh_pages
-    mono libs/GitDocumentationGenerator.exe _gh_pages 
+    mono libs/GitHubPagesGenerator.exe 
     cd _gh_pages
     mkdir assets
     cp -r ../assets/* assets
