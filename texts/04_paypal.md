@@ -1,6 +1,6 @@
 # 01 - Integration PayPal
 
-## <a name="start"></a> 01 Einführung
+## <a name="ppal-start"></a> 01 Einführung
 
 Sie können über die Saferpay JSON-API ebenfalls PayPal anbinden.
 Saferpay bettet dabei die Paypal-API ein, so dass sie nur die JSON-API integrieren müssen.
@@ -8,7 +8,7 @@ Saferpay bettet dabei die Paypal-API ein, so dass sie nur die JSON-API integrier
 Da es sich bei Paypal jedoch um einen 3rd-Party Anbieter handelt, gibt es ein paar Dinge zu beachten.
 Dieses Kapitel soll Ihnen hierbei helfen.
 
-## <a name="requirement"></a> 02 Voraussetzungen
+## <a name="ppal-requirement"></a> 02 Voraussetzungen
 
 Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 
