@@ -26,14 +26,17 @@ Damit PayPal-Zahlungen über Saferpay abgewickelt werden können, müssen zunäc
 1. Begeben Sie sich im Händlerkonto zu **Mein Konto** und klicken Sie auf **Mein Profil**. Anschließend wählen Sie auf der linken Seite **Verkäufer/Händler**, um rechts die Die Einstellungsmöglichkeiten für **Online verkaufen** anzuzeigen. Dort wählen Sie **Aktualisieren** in der Zeile **API-Zugriff**:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-1.png "API Zugriff 1")
 
-2. Es erscheint der Dialog **Einrichten von API-Genehmigungen und –Berechtigungen**. Klicken Sie auf **API-Genehmigung** erteilen: ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-2.png "API Zugriff 2")
+2. Es erscheint der Dialog **Einrichten von API-Genehmigungen und –Berechtigungen**. Klicken Sie auf **API-Genehmigung** erteilen:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-2.png "API Zugriff 2")
 
-3. Der Dialog **Neue Genehmigungen für Drittanbieter hinzufügen** erscheint: ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-3.png "API Zugriff 3")
+3. Der Dialog **Neue Genehmigungen für Drittanbieter hinzufügen** erscheint:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-3.png "API Zugriff 3")
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Tragen Sie **be-sfp_api1.six-group.com** in das Feld **Benutzername für Genehmigungen für Drittanbieter** ein. Klick Sie dann auf **Nachschlagen**.
 >
 
-4. Eine Auswahlliste *Verfügbare Genehmigungen* wird angezeigt: ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-4-1.png "API Zugriff 4")
+4. Eine Auswahlliste *Verfügbare Genehmigungen* wird angezeigt:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-4-1.png "API Zugriff 4")
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Aktivieren Sie folgende Checkboxen und klicken Sie im Anschluss auf **Hinzufügen**:
 >    * Verwenden der Express-Kaufabwicklung für Ihre Zahlungsvorgänge.
