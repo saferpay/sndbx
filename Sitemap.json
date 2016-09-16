@@ -7,12 +7,12 @@
   {
     "Title": "1-Einführung",
     "Source": "texts/01_intro.md",
-    "Target": "Intro.html#start"
+    "Target": "Intro.html#intro-start"
   },
   {
     "Title": "2-Voraussetzungen",
     "Source": "texts/01_intro.md",
-    "Target": "Intro.html#requirement"
+    "Target": "Intro.html#intro-requirement"
   },
   {
     "Title": "3-Datensicherheit und PCI DSS",
@@ -67,7 +67,7 @@
   {
     "Title": "1-Einführung",
     "Source": "texts/03_creditcards.md",
-    "Target": "Cards.html#start"
+    "Target": "Cards.html#cc-start"
   },
   {
     "Title": "04 Integration Pay Pal",
@@ -77,12 +77,12 @@
   {
     "Title": "1-Einführung",
     "Source": "texts/04_paypal.md",
-    "Target": "PayPal.html#start"
+    "Target": "PayPal.html#ppal-start"
   },
   {
     "Title": "2-Voraussetzungen",
     "Source": "texts/04_paypal.md",
-    "Target": "PayPal.html#requirement"
+    "Target": "PayPal.html#ppal-requirement"
   },
   {
     "Title": "3-API Genehmigung für Saferpay",
