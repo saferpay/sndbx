@@ -60,6 +60,31 @@
     "Target": "General.html#cancel-refund"
   },
   {
+    "Title": "03 Integration Kreditkarten",
+    "Source": "texts/03_creditcards.md",
+    "Target": "Cards.html"
+  },
+  {
+    "Title": "04 Integration Pay Pal",
+    "Source": "texts/04_paypal.md",
+    "Target": "PayPal.html"
+  },
+  {
+    "Title": "1-Einführung",
+    "Source": "texts/04_paypal.md",
+    "Target": "PayPal.html#start"
+  },
+  {
+    "Title": "2-Voraussetzungen",
+    "Source": "texts/04_paypal.md",
+    "Target": "PayPal.html#requirement"
+  },
+  {
+    "Title": "3-API Genehmigung für Saferpay",
+    "Source": "texts/04_paypal.md",
+    "Target": "PayPal.html#api-access"
+  },
+  {
     "Title": "11 Test Data",
     "Source": "texts/11_testdata.md",
     "Target": "testdata.html"
