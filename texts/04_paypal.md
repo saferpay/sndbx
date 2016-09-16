@@ -73,6 +73,7 @@ erfüllt sein:
 Damit der PayPal Verkäuferschutz wirksam ist, wenn Ihre Kunden mit PayPal über Saferpay bezahlen, müssen die Adressdaten zwingend an Saferpay übergeben werden.
 
 Die [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) unterstützt zum einen die Übergabe der Adressparameter im Container Payer mit der Lieferadresse, oder Sie benutzen das [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) eigene Adressformular.
+
 --->>>
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Aufruf mit Adressübergabe:
@@ -157,7 +158,10 @@ Die [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPa
   "Payer": {
     "IpAddress": "111.111.111.111"
   },
-  "DeliveryAddressForm": ["CITY","COUNTRY","EMAIL","FIRSTNAME","LASTNAME","PHONE","SALUTATION","STATE","STREET","ZIP"],
+  "DeliveryAddressForm": {
+    "Display": true,
+    "MandatoryFields": ["CITY","COUNTRY","EMAIL","FIRSTNAME","LASTNAME","PHONE","SALUTATION","STATE","STREET","ZIP"],
+  },
   "ReturnUrls": {
     "Success": "https://merchanthost/success", 
     "Fail": "https://merchanthost/fail", 
@@ -170,7 +174,9 @@ Die [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPa
 }
 ```
 <<<---
+
 Bei [Redirect Payment](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment) muss die Adresse mit Initialize und durch den entsprechenden Container übergeben werden.
+
 --->>>
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Aufruf mit Adressübergabe:
@@ -226,6 +232,7 @@ Bei [Redirect Payment](https://saferpay.github.io/jsonapi/#Payment_v1_Transactio
 }
 ```
 <<<---
+
 Für Kanada und die USA ist die Angabe der Provinz oder des Bundesstaats mit dem Parameter **CountrySubdivisionCode** erforderlich. Die zu übergebende Abkürzung entspricht jeweils dem zweistelligen Code der Provinz oder des Bundesstaats gemäß ISO 3166-2.
 
 Sobald diese Attribute mit übergeben werden gilt der Verkäuferschutz. PayPal prüft die
