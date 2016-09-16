@@ -95,6 +95,16 @@
     "Target": "PayPal.html#merchant-protection"
   },
   {
+    "Title": "05 BillPay",
+    "Source": "texts/05_billpay.md",
+    "Target": "BillPay.html"
+  },
+  {
+    "Title": "1-Einführung",
+    "Source": "texts/05_billpay.md",
+    "Target": "BillPay.html#bp-start"
+  },
+  {
     "Title": "11 Test Data",
     "Source": "texts/11_testdata.md",
     "Target": "testdata.html"
