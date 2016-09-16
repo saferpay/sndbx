@@ -1,4 +1,4 @@
-# 01 - Integration PayPal
+# 01 - PayPal
 
 ## <a name="ppal-start"></a> 01 Einführung
 
