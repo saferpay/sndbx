@@ -46,3 +46,38 @@ Damit PayPal-Zahlungen über Saferpay abgewickelt werden können, müssen zunäc
 >    * Einholen der Autorisierung und Initiieren von PayPal-Zahlungen per Händlerabbuchung.
 >    * Akzeptieren oder Ablehnen offener Transaktionen.
 >    * Veranlassen einer Rückzahlung für eine beliebige zuvor getätigte Transaktion.
+
+## <a name="merchant-protection"></a> 04 Verkäuferschutz
+
+Der PayPal Verkäuferschutz soll Sie vor einem Zahlungsausfall schützen, wenn Ihr Kunde mit PayPal
+bei Ihnen die Waren oder Dienstleistungen bezahlt. Hin und wieder kommt es vor, dass eine
+erwartete Zahlung nicht eintrifft, weil der Kontostand des Käufers nicht ausreicht oder die Lieferung
+bemängelt wird. Ihre Käufer können sämtliche Zahlungen widerrufen – beispielsweise wenn ein Kreditkartenbetrug vorliegt.
+
+Der Verkäuferschutz tritt in folgenden Fällen ein:
+* Ihr Käufer widerruft eine Lastschrift oder Kreditkartenzahlung
+* Das Konto des Käufers ist nicht ausreichend gedeckt
+* Ihr Käufer hat sich zu Unrecht beschwert und Käuferschutz beantragt
+* Kreditkartenbetrug
+
+Wird eine Kreditkartenzahlung oder Lastschrift widerrufen (Rückbuchung), geht die Summe
+automatisch zurück an die Bank oder an das Karteninstitut. PayPal bucht in diesem Fall den
+gutgeschriebenen Betrag wieder von Ihrem PayPal-Konto ab. Tritt anschließend der Verkäuferschutz in Kraft, erstattet PayPal Ihnen den Betrag nach Abschluss des Falles.
+
+Damit Sie vom PayPal Verkäuferschutz profitieren können, müssen die folgenden Bedingungen
+erfüllt sein:
+* Die Ware wird versichert und mit Beleg versandt
+* Der Artikel wird möglichst innerhalb von sieben Tagen versandt
+* Die Ware wird an die in den Transaktionsdetails und im PayPal-Konto hinterlegte Adresse des Käufers versandt
+
+Damit der PayPal Verkäuferschutz wirksam ist, wenn Ihre Kunden mit PayPal über Saferpay bezahlen, müssen die Adressdaten zwingend an Saferpay übergeben werden.
+
+Die [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) unterstützt zum einen die Übergabe der Adressparameter im Container Payer mit der Lieferadresse, oder Sie benutzen das [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) eigene Adressformular.
+
+Bei [Redirect Payment](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment) muss die Adresse mit Initialize und durch den entsprechenden Container übergeben werden.
+
+Für Kanada und die USA ist die Angabe der Provinz oder des Bundesstaats mit dem Parameter **CountrySubdivisionCode** erforderlich. Die zu übergebende Abkürzung entspricht jeweils dem zweistelligen Code der Provinz oder des Bundesstaats gemäß ISO 3166-2.
+
+Sobald diese Attribute mit übergeben werden gilt der Verkäuferschutz. PayPal prüft die
+übergebenen Adressdaten mit den, vom Käufer hinterlegten Daten und lehnt die Zahlung ab, wenn
+die hinterlegte Adresse nicht mit der übergebenen Adresse übereinstimmt.
