@@ -1,4 +1,6 @@
 # 03 - Zahlungen mit Kreditkarten
 
-Auf der folgenden Seite werden die Zahlungen per Kreditkarte behandelt.
+## <a name="start"></a> 01 Einführung
+
+In diesem Kapitel wird die Bezahlung mit Kreditkarten behandelt
 
