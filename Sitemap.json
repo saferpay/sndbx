@@ -90,6 +90,11 @@
     "Target": "PayPal.html#api-access"
   },
   {
+    "Title": "4-Verkäuferschutz",
+    "Source": "texts/04_paypal.md",
+    "Target": "PayPal.html#merchant-protection"
+  },
+  {
     "Title": "11 Test Data",
     "Source": "texts/11_testdata.md",
     "Target": "testdata.html"
