@@ -2,72 +2,52 @@
   {
     "Title": "01 Einleitung",
     "Source": "texts/01_intro.md",
-    "Target": "Introduction.html"
-  },
-  {
-    "Title": "02 Allgemeines",
-    "Source": "texts/02_general.md",
-    "Target": "General.html"
+    "Target": "Intro.html"
   },
   {
     "Title": "1-Einführung",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#start"
+    "Source": "texts/01_intro.md",
+    "Target": "Intro.html#start"
   },
   {
     "Title": "2-Voraussetzungen",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#requirement"
+    "Source": "texts/01_intro.md",
+    "Target": "Intro.html#requirement"
   },
   {
     "Title": "3-Datensicherheit und PCI DSS",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#pci"
+    "Source": "texts/01_intro.md",
+    "Target": "Intro.html#pci"
   },
   {
     "Title": "4-3D Secure",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#3ds"
+    "Source": "texts/01_intro.md",
+    "Target": "Intro.html#3ds"
   },
   {
     "Title": "5-Dynamic Currency Conversion",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#dcc"
+    "Source": "texts/01_intro.md",
+    "Target": "Intro.html#dcc"
   },
   {
     "Title": "6-Unterstützte Zahlungsmittel",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#paymentmethods"
+    "Source": "texts/01_intro.md",
+    "Target": "Intro.html#paymentmethods"
   },
   {
     "Title": "7-Lizenzen",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#licenses"
+    "Source": "texts/01_intro.md",
+    "Target": "Intro.html#licenses"
   },
   {
-    "Title": "8-Transaktionsablauf",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#transaction-flow"
+    "Title": "8-Zahlungsmittelfunktionen",
+    "Source": "texts/01_intro.md",
+    "Target": "Intro.html#pm-functions"
   },
   {
-    "Title": "9-Zahlungsmittelfunktionen",
+    "Title": "VISA",
     "Source": "texts/02_general.md",
-    "Target": "General.html#pm-functions"
-  },
-  {
-    "Title": "10-Capture (Verbuchung) und der Tagesabschluss",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#capture-batch"
-  },
-  {
-    "Title": "11-Wann Storno (Cancel) und wann Gutschrift?",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#cancel-refund"
-  },
-  {
-    "Title": "12-Saferpay Testsystem",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#test"
+    "Target": "testdata.html#visa"
   },
   {
     "Title": "11 Test Data",
