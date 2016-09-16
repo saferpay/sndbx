@@ -23,5 +23,5 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 
 Damit PayPal-Zahlungen über Saferpay abgewickelt werden können, müssen zunächst ein paar Einstellungen im PayPal-Händlerkonto vorgenommen werden. Loggen Sie sich hierfür mit Ihren Zugangsdaten auf www.paypal.com ein.
 
-1. Begeben Sie sich im Händlerkonto zu Mein Konto und klicken Sie auf Mein Profil. Anschließend wählen Sie auf der linken Seite Verkäufer/Händler, um rechts die Die Einstellungsmöglichkeiten für Online verkaufen anzuzeigen. Dort wählen Sie Aktualisieren in der Zeile API-Zugriff:
+1. Begeben Sie sich im Händlerkonto zu **Mein Konto** und klicken Sie auf **Mein Profil**. Anschließend wählen Sie auf der linken Seite **Verkäufer/Händler**, um rechts die Die Einstellungsmöglichkeiten für **Online verkaufen** anzuzeigen. Dort wählen Sie **Aktualisieren** in der Zeile **API-Zugriff**:
 [alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-1.png "API Zugriff 1")
