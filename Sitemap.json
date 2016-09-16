@@ -45,6 +45,21 @@
     "Target": "Intro.html#pm-functions"
   },
   {
+    "Title": "02 Einleitung",
+    "Source": "texts/02_general.md",
+    "Target": "General.html"
+  },
+  {
+    "Title": "1-Capture (Verbuchung) und der Tagesabschluss",
+    "Source": "texts/02_general.md",
+    "Target": "Intro.html#capture-batch"
+  },
+  {
+    "Title": "2-Wann Storno (Cancel) und wann Gutschrift?",
+    "Source": "texts/02_general.md",
+    "Target": "Intro.html#cancel-refund"
+  },
+  {
     "Title": "VISA",
     "Source": "texts/02_general.md",
     "Target": "testdata.html#visa"
