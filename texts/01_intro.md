@@ -1,5 +1,6 @@
-# 02 - Allgemeines
-Dieser Abschnitt behandelt allgemein gültige Informationen zur Saferpay ePayment Lösung.
+# 01 - Einleitung
+
+!!!!TO DO!!!!
 
 ## <a name="start"></a> 01 Einführung
 
