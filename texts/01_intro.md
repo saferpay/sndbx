@@ -312,39 +312,8 @@ Die folgende Tabelle zeigt, welche Funtionen in den Lizenzmodellen enthalten sin
 
 <<<---
 
-## <a name="transaction-flow"></a> 08 Transaktionsablauf
 
-
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Zahlungsablauf_sml.png "Saferpay general transaction-flow")
-
---->>>
- 
-> 1. Durch [Transaction Initialize](///saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize), [Transaction RedirectPayment](///saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment), oder [PaymentPage Initialize](///saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize)
->
-> 2. Sowohl die PaymentPage, als auch das Transaction Interface bieten die iFrame Integration an!
->
->    Fügen sie die RedirectUrl hierzu einfach in einen HTML-iFrame ein.
->
-> 3. Der Rücksprung erfolgt an die ReturnUrls.
->
->    <i class="glyphicon glyphicon-hand-right"></i> **TIPP**: Sie können die URLs per GET mit eigenen Parametern ausstatten.
->
-> 4. Durch [Transaction Authorize](///saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize) oder [PaymentPage Assert](///saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert).
->
->    <i class="glyphicon glyphicon-hand-right"></i> **HINWEIS**: Bei Authorize geschieht erst hier die Autorisation!
->    Diese ist bei der PaymentPage bereits geschehen.
->
-> 5. Je nach Ausgang der Transaktion steht es Ihnen nun frei die Transaktion zu finalisieren ([Capture](///saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture)), oder zu stornieren ([Cancel](///saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel)).
->
-> Besonderes Augenmerk ist auf die Haftungsumkehr (Liabilityshift) durch 3D Secure zu richten. Diese sollte nach Möglichkeit immer vorhanden sein.
->
-> Des Weiteren braucht eine fehlgeschlagene Transaktion nicht storniert zu werden.
- 
-<<<---
-
-Die Saferpay JSON-API ist so aufgebaut, dass der generelle Transaktionsablauf immer gleich ist. Beachten sie hierbei allerdings dass es durchaus kleinere Unterschiede gibt. Dieser Flowchart ist zum generellen Verständnis!
-
-## <a name="pm-functions"></a> 09 Zahlungsmittelfunktionen
+## <a name="pm-functions"></a> 08 Zahlungsmittelfunktionen
 
 Saferpay unterstützt viele Zahlungsmittel, darunter auch 3rd-Party Anbieter, wie zum Beispiel PayPal. Diese müssen aber nicht zwingend sämtliche Saferpayfunktionen unterstützen.
 Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funktionen die einzelnen Zahlungsmittel unterstützen:
@@ -598,105 +567,5 @@ Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funkt
   <dt>MOTO</dt>
   <dd>Mail Phone Order verfügbar</dd>
 </dl>
-
-<<<---
-
-## <a name="capture-batch"></a> 10 Capture (Verbuchung) und der Tagesabschluss
-
-Diese beiden Funktionen gehören wohl zu den weniger beachteten, aber äußerst wichtigen Saferpay-Funktionen. Beide stehen im direkten Zusammenhang und werden sie nicht ausgelöst, so wird es keine Auszahlung an das Händlerkonto geben.
-
-### Der Capture
-
-[Der Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) ist dafür gedacht eine Zahlung zu finalisieren.
-Solange eine Transaktion nicht durch den Capture gelaufen ist, wird der Betrag für sie reserviert, aber nicht ausgezahlt.
-API seitig erhalten sie über den parameter „Status“ Auskunft (Beachten sie dass dies nur ein Ausschnitt der Daten ist):
-
---->>>
-
-```json
-"Transaction": {
-  "Type": "PURCHASE",
-  "Status": "AUTHORIZED",
-  "Id": "MUOGAWA9pKr6rAv5dUKIbAjrCGYA",
-  "Date": "2015-09-18T09:19:27.078Z",
-  "Amount": {
-    "Value": "100",
-    "CurrencyCode": "CHF"
-  },
-  "AcquirerName": "AcquirerName",
-  "AcquirerReference": "Reference"
-}
-```
-
-<<<---
-
-Analog hierzu erhalten solche Transaktion im Saferpay Backoffice den Status “Reservation“.
-Ist eine Transaktion bereits durch den Capture gelaufen, so verändert sich auch der Status:
-
---->>>
-```json
-"Transaction": {
-  "Type": "PURCHASE",
-  "Status": "CAPTURED",
-  "Id": "MUOGAWA9pKr6rAv5dUKIbAjrCGYA",
-  "Date": "2015-09-18T09:19:27.078Z",
-  "Amount": {
-    "Value": "100",
-    "CurrencyCode": "CHF"
-  },
-  "AcquirerName": "AcquirerName",
-  "AcquirerReference": "Reference"
-}
-```
-<<<---
-
-Dies ist z.B. bei Zahlungsmitteln so, die keinen Capture brauchen bzw. können. [Siehe hier](https://saferpay.github.io/sndbx/General.html#pm-functions).
-
-WICHTIG: Eine Reservation wird nicht ewig für sie vorgehalten. Ist eine bestimmte Zeit verstrichen, wird der für sie autorisierte und reservierte Betrag wieder freigegebenund sie können das Geld nicht mehr einfordern.
-Besonders PayPal behält es sich vor die Auszahlung zu verweigern. Aus diesem Grund empfehlen wir den Capture sofort durchzuführen. Sollte das nicht möglich sein, so muss er innerhalb von 48 Stunden geschehen. Entweder per API, oder manuell im Saferpay Backoffice.
-
-### Der Tagesabschluss
-Der Tagesabschluss folgt dem Capture einmal täglich, automatisiert um 22 Uhr MEST.
-Hierbei werden alle Transaktionen, welche durch den Capture gelaufen sind, beim Zahlungsverarbeiter eingereicht, um das Geld vom Kunden- auf das Händlerkonto zu übertragen.
-
-Dieser Schritt lässt sich, falls gewünscht, über die Saferpay API auch selber auslösen. Der hierzu notwendige Request heisst [Batch Close](https://saferpay.github.io/jsonapi/#Payment_v1_Batch_Close).
-
-Bevor sie jedoch die API nutzen können, müssen sie den automatischen Tagesabschluss zunächst im Backoffice unter Administration > Terminals für das betreffende Terminal deaktivieren. Der Abschluss sollte nur einmal täglich durchgeführt werden.
-
-### Sonderfälle
-#### PayPal und Postfinance
-Bei diesen Anbietern wird mit dem Capture auch gleich ein mini-Tagesabschluss ausgelöst. Wenn sie also den Capture auslösen, wird sofort der Geldfluss eingeleitet.
-Bei PayPal wird dies getan aus dem oben genannten grund, dass sich PayPal vorbehält die Auszahlung zu verweigern. Aus diesem Grunde fordern wir das Geld für sie sofort ein.
-Bei Postfinance ist dies schlicht im von Postfinance genutzten Protokoll begründet.
-
-#### Onlinebanking 
-Zahlungsanbieter, wie GiroPay, oder iDeal gehören zu den Onlinebanking Anbietern. Diese lösen mit der Autorisation sofort den Geldfluss aus. Sobald die Transaktion also erfolgreich war, ist die Transaktion zu 100% abgeschlossen.
-
-## <a name="cancel-refund"></a> 11 Wann Storno (Cancel) und wann Gutschrift?
-
-Dass Kunden Ihre Bestellungen stornieren, oder waren zurückgeben wollen ist nicht selten. Natürlich ist es als Händler wichtig die im Hintergrund stehende Transaktion entweder zu stornieren, oder eine Gutschrift zu machen.
-Auf Zahlungsmittelebene kann es jedoch zu komplikationen kommen, wenn man nicht genau weiss, was wann genau zu tun ist. Auch gibt es Zahlungsmittel, die hier schlichtweg keinerlei Funktionalität bieten.
-Dieses Kapitel soll Ihnen dabei helfen eine Übersicht über dieses Thema zu bekommen. Dabei helfen soll auch die im Kapitel 5.2 stehende Matrix.
-
-Generell gilt: Solange Zahlungen nicht durch den Tagesabschluss eingereicht wurden, steht immer ein Storno (Cancel) zur Verfügung. Danach muss eine Gutschrift durchgeführt werden, falls verfügbar.
-
-WICHTIG: Beachten sie die [hier](https://saferpay.github.io/sndbx/General.html#pm-functions) genannten Sonderfälle! Besonders beim Onlinebanking stehen weder Stornos, noch Gutschriften zur Verfügung.
-
-## <a name="test"></a> 12 Saferpay Testsystem
-
-Für die Integrationsphase und um Saferpay testen zu können, bieten wir Ihnen unsere Externe Test Umgebung (ETU) an.
-Hier können Sie abgegrenzt von der Produktion, Saferpay mit Simulatoren für alle gängigen Zahlungsmittel auf ihrem eigenen Testkonto testen.
-
-Das Testsystem finden sie [hier](https://test.saferpay.com )
-
-Die ETU bietet seit der Einführung neue Simulatoren an, welche in der Autorisationsantwort VISA, MasterCard und viele andere Karten Simulieren können.
-Dafür wurden spezielle Kartennummern eingeführt, welche [hier finden](https://www.six-payment-services.com/de/site/saferpay-support/testaccount/Saferpay_Testdaten.html)
-
-
---->>>
- 
->
->    <i class="glyphicon glyphicon-hand-right"></i> **WICHTIG**: Bei der benutzung des Testsystems müssen sie darauf achten, dass alle Anfragen an **https://test.saferpay.com/api/...** statt **https://www.saferpay.com/api/...** gesendet werden. Wenn sie live gehen, müssen die URLs wieder geändert werden. Ferner können sie die Testdaten nicht auf dem Livesystem verwenden und umgekehrt. Bitte beachten sie das bei der Umstellung von der Testumgebung auf den Produktionsbetrieb.
->
 
 <<<---
