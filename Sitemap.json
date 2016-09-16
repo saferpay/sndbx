@@ -65,6 +65,11 @@
     "Target": "Cards.html"
   },
   {
+    "Title": "1-Einführung",
+    "Source": "texts/03_creditcards.md",
+    "Target": "Cards.html#start"
+  },
+  {
     "Title": "04 Integration Pay Pal",
     "Source": "texts/04_paypal.md",
     "Target": "PayPal.html"
