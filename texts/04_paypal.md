@@ -73,9 +73,159 @@ erfüllt sein:
 Damit der PayPal Verkäuferschutz wirksam ist, wenn Ihre Kunden mit PayPal über Saferpay bezahlen, müssen die Adressdaten zwingend an Saferpay übergeben werden.
 
 Die [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) unterstützt zum einen die Übergabe der Adressparameter im Container Payer mit der Lieferadresse, oder Sie benutzen das [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) eigene Adressformular.
-
+--->>>
+>
+>    <i class="glyphicon glyphicon-hand-right"></i> Aufruf mit Adressübergabe:
+>
+```json
+{
+  "RequestHeader": {
+    "SpecVersion": "1.3", 
+    "CustomerId": "123123", 
+    "RequestId": "33e8af17-35c1-4165-a343-c1c86a320f3b", 
+    "RetryIndicator": 0, 
+    "ClientInfo": {
+        "ShopInfo": "My Shop", 
+        "ApplicationInfo": "ApplicationInfo", 
+        "OsInfo": "Windows Server 2013"
+    }
+  }, 
+  "TerminalId": "12345678", 
+  "Payment": {
+    "Amount": {
+      "Value": "100", 
+      "CurrencyCode": "EUR"
+    }, 
+    "OrderId": "OrderId", 
+    "Description": "Description", 
+    "PayerNote": "Payernote", 
+  }, 
+  "PaymentMethods": ["PAYPAL"], 
+  "Payer": {
+    "IpAddress": "111.111.111.111",
+    "DeliveryAddress": {
+      "FirstName": "Hans",
+      "LastName": "Muster",
+      "DateOfBirth": "1969-07-21",
+      "Street": "Strasse 1",
+      "Zip": "12345",
+      "City": "Musterstadt",
+      "CountryCode": "DE",
+      "Phone": "+49 40 1234 5678",
+      "Email": "Muster@muster.com",
+      "Gender": "MALE",
+    }
+  }, 
+  "ReturnUrls": {
+    "Success": "https://merchanthost/success", 
+    "Fail": "https://merchanthost/fail", 
+    "Abort": "https://merchanthost/abort"
+  }, 
+  "Notification": {
+    "MerchantEmail": "merchant@saferpay.com", 
+    "NotifyUrl": "https://merchanthost/notify"
+  }
+}
+```
+>
+>    <i class="glyphicon glyphicon-hand-right"></i> Aufruf für Nutzung des Formulars:
+>
+```json
+{
+  "RequestHeader": {
+    "SpecVersion": "1.3", 
+    "CustomerId": "123123", 
+    "RequestId": "33e8af17-35c1-4165-a343-c1c86a320f3b", 
+    "RetryIndicator": 0, 
+    "ClientInfo": {
+      "ShopInfo": "My Shop", 
+      "ApplicationInfo": "ApplicationInfo", 
+      "OsInfo": "Windows Server 2013"
+    }
+  }, 
+  "TerminalId": "12345678", 
+  "Payment": {
+    "Amount": {
+      "Value": "100", 
+      "CurrencyCode": "EUR"
+    }, 
+    "OrderId": "OrderId", 
+    "Description": "Description", 
+    "PayerNote": "Payernote", 
+  }, 
+  "PaymentMethods": ["PAYPAL"], 
+  "Payer": {
+    "IpAddress": "111.111.111.111"
+  },
+  "DeliveryAddressForm": ["CITY","COUNTRY","EMAIL","FIRSTNAME","LASTNAME","PHONE","SALUTATION","STATE","STREET","ZIP"],
+  "ReturnUrls": {
+    "Success": "https://merchanthost/success", 
+    "Fail": "https://merchanthost/fail", 
+    "Abort": "https://merchanthost/abort"
+  }, 
+  "Notification": {
+    "MerchantEmail": "merchant@saferpay.com", 
+    "NotifyUrl": "https://merchanthost/notify"
+  }
+}
+```
+<<<---
 Bei [Redirect Payment](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment) muss die Adresse mit Initialize und durch den entsprechenden Container übergeben werden.
-
+--->>>
+>
+>    <i class="glyphicon glyphicon-hand-right"></i> Aufruf mit Adressübergabe:
+>
+```json
+{
+  "RequestHeader": {
+    "SpecVersion": "1.3", 
+    "CustomerId": "123123", 
+    "RequestId": "33e8af17-35c1-4165-a343-c1c86a320f3b", 
+    "RetryIndicator": 0, 
+    "ClientInfo": {
+        "ShopInfo": "My Shop", 
+        "ApplicationInfo": "ApplicationInfo", 
+        "OsInfo": "Windows Server 2013"
+    }
+  }, 
+  "TerminalId": "12345678", 
+  "Payment": {
+    "Amount": {
+      "Value": "100", 
+      "CurrencyCode": "EUR"
+    }, 
+    "OrderId": "OrderId", 
+    "Description": "Description", 
+    "PayerNote": "Payernote", 
+  }, 
+  "ServiceProvider": "PAYPAL", 
+  "Payer": {
+    "IpAddress": "111.111.111.111",
+    "DeliveryAddress": {
+      "FirstName": "Hans",
+      "LastName": "Muster",
+      "DateOfBirth": "1969-07-21",
+      "Street": "Strasse 1",
+      "Zip": "12345",
+      "City": "Musterstadt",
+      "CountryCode": "DE",
+      "Phone": "+49 40 1234 5678",
+      "Email": "Muster@muster.com",
+      "Gender": "MALE",
+    }
+  }, 
+  "ReturnUrls": {
+    "Success": "https://merchanthost/success", 
+    "Fail": "https://merchanthost/fail", 
+    "Abort": "https://merchanthost/abort"
+  }, 
+  "Notification": {
+    "MerchantEmail": "merchant@saferpay.com", 
+    "NotifyUrl": "https://merchanthost/notify"
+  }
+}
+```
+<<<---
 Für Kanada und die USA ist die Angabe der Provinz oder des Bundesstaats mit dem Parameter **CountrySubdivisionCode** erforderlich. Die zu übergebende Abkürzung entspricht jeweils dem zweistelligen Code der Provinz oder des Bundesstaats gemäß ISO 3166-2.
 
 Sobald diese Attribute mit übergeben werden gilt der Verkäuferschutz. PayPal prüft die
