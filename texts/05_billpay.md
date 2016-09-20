@@ -151,7 +151,7 @@ Mit dem [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_Pay
 
 --->>>
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Beispiel Payment Page Assert:
+>    <i class="glyphicon glyphicon-hand-right"></i> Beispiel Payment Page Assert Response:
 >
 ```json
 {
