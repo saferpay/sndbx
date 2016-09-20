@@ -238,3 +238,10 @@ Für Kanada und die USA ist die Angabe der Provinz oder des Bundesstaats mit dem
 Sobald diese Attribute mit übergeben werden gilt der Verkäuferschutz. PayPal prüft die
 übergebenen Adressdaten mit den, vom Käufer hinterlegten Daten und lehnt die Zahlung ab, wenn
 die hinterlegte Adresse nicht mit der übergebenen Adresse übereinstimmt.
+
+## <a name="partial-capture"></a> 05 Partial Capture
+
+Partial Captures, auch Teilverbuchungen genannt, sind eine Sonderfunktion von PayPal.
+Diese Funktion erlaubt es Transaktionen in Teilen zu finalisieren, wenn der Kontoinhaber z.B. nur zu einem Teil belastet werden soll.
+Dafür müssen Zusätzliche Parameter beim [Transaction Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) im Container **Partial** übergeben werden.
+
