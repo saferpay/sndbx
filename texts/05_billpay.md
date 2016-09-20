@@ -174,7 +174,7 @@ Mit dem PaymentPage Assert erhält der Händler dann alle nötigen Informationen
         "BIC": "TESTBIC0003",
         "BankName": "BillPay Test Bank"
       },
-      "ReasonForTransfer": "BPOrder_ID_is_mandatory/544"      
+      "ReasonForTransfer": "BPOrder_ID_is_mandatory/544",      
       "DueDate": "2015-10-15T10:01:42.527+02:00"
     }
   },
