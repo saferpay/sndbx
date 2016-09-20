@@ -145,7 +145,7 @@ Die Payment Page kann alternativ ein Adressformular anzeigen, in dem der Kunde s
 ```
 <<<---
 
-Mit dem PaymentPage Assert erhält der Händler dann alle nötigen Informationen zurück, wie z.B. die Überweisungsdaten bei Kauf auf Rechnung, die dem Käufer übergeben werden müssen.
+Mit dem [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert) erhält der Händler dann alle nötigen Informationen zurück, wie z.B. die Überweisungsdaten bei Kauf auf Rechnung, die dem Käufer übergeben werden müssen.
 
 --->>>
 >
