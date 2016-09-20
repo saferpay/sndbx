@@ -2,47 +2,47 @@
   {
     "Title": "01 Einleitung",
     "Source": "texts/01_intro.md",
-    "Target": "Index.html"
+    "Target": "index.html"
   },
   {
     "Title": "1-Einführung",
     "Source": "texts/01_intro.md",
-    "Target": "Index.html#intro-start"
+    "Target": "index.html#intro-start"
   },
   {
     "Title": "2-Voraussetzungen",
     "Source": "texts/01_intro.md",
-    "Target": "Index.html#intro-requirement"
+    "Target": "index.html#intro-requirement"
   },
   {
     "Title": "3-Datensicherheit und PCI DSS",
     "Source": "texts/01_intro.md",
-    "Target": "Index.html#pci"
+    "Target": "index.html#pci"
   },
   {
     "Title": "4-3D Secure",
     "Source": "texts/01_intro.md",
-    "Target": "Index.html#3ds"
+    "Target": "index.html#3ds"
   },
   {
     "Title": "5-Dynamic Currency Conversion",
     "Source": "texts/01_intro.md",
-    "Target": "Index.html#dcc"
+    "Target": "index.html#dcc"
   },
   {
     "Title": "6-Unterstützte Zahlungsmittel",
     "Source": "texts/01_intro.md",
-    "Target": "Index.html#paymentmethods"
+    "Target": "index.html#paymentmethods"
   },
   {
     "Title": "7-Lizenzen",
     "Source": "texts/01_intro.md",
-    "Target": "Index.html#licenses"
+    "Target": "index.html#licenses"
   },
   {
     "Title": "8-Zahlungsmittelfunktionen",
     "Source": "texts/01_intro.md",
-    "Target": "Index.html#pm-functions"
+    "Target": "index.html#pm-functions"
   },
   {
     "Title": "02 Allgemeines",
