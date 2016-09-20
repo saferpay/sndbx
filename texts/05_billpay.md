@@ -13,7 +13,7 @@ Dieses Kapitel soll Ihnen hierbei helfen.
 * Eine entsprechende Lizenz und somit das Vorhandensein einer gültigen Kennung mit Benutzername und Passwort für das Saferpay System.
 * Mindestens ein aktives Saferpay Terminal, über das die Zahlungen durchgeführt werden können ist vorhanden und die dazugehörige Saferpay TERMINALID liegt vor.
 * Ein gültiger Akzeptanzvertrag für Billpay liegt vor.
-* 
+
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Für die BillPay-Aktivierung auf dem Saferpay Terminal teilen Sie bitte **service.saferpay@six-payment-services.com** die BillPay Zugangsdaten und die gewünschten Währungen mit.
 >
