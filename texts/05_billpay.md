@@ -149,7 +149,7 @@ Mit dem PaymentPage Assert erhält der Händler dann alle nötigen Informationen
 
 --->>>
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Beispiel Assert:
+>    <i class="glyphicon glyphicon-hand-right"></i> Beispiel Payment Page Assert:
 >
 ```json
 {
@@ -183,6 +183,67 @@ Mit dem PaymentPage Assert erhält der Händler dann alle nötigen Informationen
       "PaymentMethod": "INVOICE",
       "Name": "Billpay Kauf auf Rechnung Abnahme"
     }
+  }
+}
+```
+<<<---
+
+Wie auch bei anderen Zahlungsmitteln, müssen auch BillPay Transaktionen verbucht werden.
+Hier haben sie final die Möglichkeit die Fälligkeit der Zahlung hinauszuzögern.
+Beachten sie, dass die Fälligkeit der Zahlung mit BillPay abgesprochen werden muss.
+So auch, ob dieses Datum hinausgezögert werden kann.
+Für die Verbuchung benutzen sie den [Transaction Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture).
+
+>
+>    <i class="glyphicon glyphicon-hand-right"></i> Siehe hierfür den Container **"Billpay"**
+>
+
+--->>>
+>
+>    <i class="glyphicon glyphicon-hand-right"></i> Beispiel Capture Request:
+>
+```json
+{
+  "RequestHeader": {
+    "SpecVersion": "1.3",
+    "CustomerId": "[your customer id]",
+    "RequestId": "[unique request id]",
+    "RetryIndicator": 0
+  },
+  "TransactionReference": {
+    "TransactionId": "723n4MAjMdhjSAhAKEUdA8jtl9jb"
+  },
+  "Billpay": {
+    "DelayInDays": 5
+  }
+}
+```
+<<<---
+
+Einige der wichtigen Informationen liefert Saferpay darüber hinaus auch nochmals mit dem [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) zurück,
+wie z.B. die Rechnungsdaten.
+
+--->>>
+>
+>    <i class="glyphicon glyphicon-hand-right"></i> Beispiel Capture Response:
+>
+```json
+{
+  "ResponseHeader": {
+    "SpecVersion": "1.3",
+    "RequestId": "[your request id]"
+  },
+  "TransactionId": "723n4MAjMdhjSAhAKEUdA8jtl9jb",
+  "Date": "2015-01-30T12:45:22.258+01:00"
+  "Invoice": {
+    "Payee": {
+      "IBAN": "DE2501200000TEST000000000003", 
+      "HolderName": "Billpay GmbH",
+      "BIC": "TESTBIC0003",
+      "BankName": "BillPay Test Bank"
+    },
+    "ReasonForTransfer": "BPOrder_ID_is_mandatory/544",      
+    "DueDate": "2015-10-15T10:01:42.527+02:00"
   }
 }
 ```
