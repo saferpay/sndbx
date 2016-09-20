@@ -234,7 +234,7 @@ wie z.B. die Rechnungsdaten.
     "RequestId": "[your request id]"
   },
   "TransactionId": "723n4MAjMdhjSAhAKEUdA8jtl9jb",
-  "Date": "2015-01-30T12:45:22.258+01:00"
+  "Date": "2015-01-30T12:45:22.258+01:00",
   "Invoice": {
     "Payee": {
       "IBAN": "DE2501200000TEST000000000003", 
