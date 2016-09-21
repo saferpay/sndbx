@@ -13,12 +13,13 @@ Dieses Kapitel soll Ihnen hierbei helfen.
 * Eine entsprechende Lizenz und somit das Vorhandensein einer gültigen Kennung mit Benutzername und Passwort für das Saferpay System.
 * Mindestens ein aktives Saferpay Terminal, über das die Zahlungen durchgeführt werden können ist vorhanden und die dazugehörige Saferpay TERMINALID liegt vor.
 * Ein gültiger Akzeptanzvertrag für Billpay liegt vor.
+* Die Adresse des Käufers liegt vor und wird an BillPay weitergereicht (siehe hierfür auch Kapitel 3).
 
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Für die BillPay-Aktivierung auf dem Saferpay Terminal teilen Sie bitte **service.saferpay@six-payment-services.com** die BillPay Zugangsdaten und die gewünschten Währungen mit.
 >
 
-## <a name="bp-approval"></a> 03 BillPay Abnahme
+## <a name="bp-approval-api"></a> 03 BillPay Abnahme per API
 
 Bevor sie Transaktionen über BillPay abwickeln können, wird jeder Kunde von BillPay auf einen so genannten **"Abnahme Verarbeiter"** aufgeschaltet. BillPay erwartet, dass jeder Händler vor dem Livegang eine Transaktion über diesen Verarbeiter tätigt. Als Nachweis verlangt BillPay eine komplette Rechnung vom Händlersystem. Nach einer Prüfung wird der Kunde freigeschaltet und die Live-Kontodaten herausgegeben. Dieser Vorgang muss für **jeweils** für **"Kauf auf Rechnung"** und **"Kauf auf Lastschrift"** durchgeführt werden.
 
@@ -252,3 +253,14 @@ wie z.B. die Rechnungsdaten.
 }
 ```
 <<<---
+
+## <a name="bp-approval-bo"></a> 04 BillPay Abnahme über das Saferpay Backoffice
+
+Da es mitunter nicht in jedem Shop möglich ist die Abnahme durchzuführen, ohne den Live-Betrieb zu stören, bietet das Saferpay Backoffice die Möglichkeit einen Zahlungs-URL für eine Billpay-Testzahlung über die Payment Page zu erstellen.
+Hiermit kann der Abnahmetest durchgeführt werden.
+>
+>    <i class="glyphicon glyphicon-hand-right"></i> ACHTUNG! Da der Aufruf nicht durch den Shop durchgeführt wird, wird dieser über den Kauf nicht in Kenntnis gesetzt. Es ist somit vonnöten, dass die von BillPay geforderte Rechnung manuell erstellt wird. Die dafür nötigen Daten finden sie im Saferpay Backoffice unter **Transaktionen > Journal**. Hier finden sie eine Auflistung aller Transaktionen, die sie dann im Detail einsehen können.
+>
+
+1. Wählen Sie in Ihrem Saferpay Saferpay Backoffice in der Rubrik "Webshop" den Menüpunkt "Neue Angebote":
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BP_1_nav.jpg "Backoffice Webshop")
