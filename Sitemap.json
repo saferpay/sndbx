@@ -2,47 +2,49 @@
   {
     "Title": "01 Einleitung",
     "Source": "texts/01_intro.md",
-    "Target": "index.html"
-  },
-  {
-    "Title": "1-Einführung",
-    "Source": "texts/01_intro.md",
-    "Target": "index.html#intro-start"
-  },
-  {
-    "Title": "2-Voraussetzungen",
-    "Source": "texts/01_intro.md",
-    "Target": "index.html#intro-requirement"
-  },
-  {
-    "Title": "3-Datensicherheit und PCI DSS",
-    "Source": "texts/01_intro.md",
-    "Target": "index.html#pci"
-  },
-  {
-    "Title": "4-3D Secure",
-    "Source": "texts/01_intro.md",
-    "Target": "index.html#3ds"
-  },
-  {
-    "Title": "5-Dynamic Currency Conversion",
-    "Source": "texts/01_intro.md",
-    "Target": "index.html#dcc"
-  },
-  {
-    "Title": "6-Unterstützte Zahlungsmittel",
-    "Source": "texts/01_intro.md",
-    "Target": "index.html#paymentmethods"
-  },
-  {
-    "Title": "7-Lizenzen",
-    "Source": "texts/01_intro.md",
-    "Target": "index.html#licenses"
-  },
-  {
-    "Title": "8-Zahlungsmittelfunktionen",
-    "Source": "texts/01_intro.md",
-    "Target": "index.html#pm-functions"
+    "Target": "index.html",
+    "Subsites": [
+      {
+        "Title": "1-Einführung",
+        "Source": "texts/01_intro.md",
+        "Target": "index.html#intro-start"
+      },
+      {
+        "Title": "2-Voraussetzungen",
+        "Source": "texts/01_intro.md",
+        "Target": "index.html#intro-requirement"
+      },
+      {
+        "Title": "3-Datensicherheit und PCI DSS",
+        "Source": "texts/01_intro.md",
+        "Target": "index.html#pci"
+      },
+      {
+        "Title": "4-3D Secure",
+        "Source": "texts/01_intro.md",
+        "Target": "index.html#3ds"
+      },
+      {
+        "Title": "5-Dynamic Currency Conversion",
+        "Source": "texts/01_intro.md",
+        "Target": "index.html#dcc"
+      },
+      {
+        "Title": "6-Unterstützte Zahlungsmittel",
+        "Source": "texts/01_intro.md",
+        "Target": "index.html#paymentmethods"
+      },
+      {
+        "Title": "7-Lizenzen",
+        "Source": "texts/01_intro.md",
+        "Target": "index.html#licenses"
+      },
+      {
+        "Title": "8-Zahlungsmittelfunktionen",
+        "Source": "texts/01_intro.md",
+        "Target": "index.html#pm-functions"
+      }
+    ]
   },
   {
     "Title": "02 Allgemeines",
