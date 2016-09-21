@@ -267,7 +267,6 @@ Hiermit kann der Abnahmetest durchgeführt werden.
 
 2. Es erscheint der Dialog "Neues Angebot hinzufügen". Tragen sie dort Ihre Daten ein und klicken sie auf *"Weiter"*.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BP_2_order.jpg "Backoffice Angebot 1")
-
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> ACHTUNG: Achten Sie darauf, dass die Checkbox für den Billpay Abnahme-Test gesetzt ist! 
 >
@@ -277,7 +276,6 @@ Hiermit kann der Abnahmetest durchgeführt werden.
 
 4. Es erscheint das gespeicherte Angebot mit dem Testzahlungs-URL, den Sie für die Billpay-Abnahme.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BP_4_order3.jpg "Backoffice Angebot URL")
-
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> ACHTUNG: Der Erzeugte Test-URL enthält eine zufällige, von Saferpay vergebene ORDERID. Außerdem muss die Adresse bei Nutzung des Test-URL manuell in der Payment Page eingegeben werden. 
 >
