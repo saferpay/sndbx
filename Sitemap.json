@@ -50,66 +50,89 @@
     "Title": "02 Allgemeines",
     "Source": "texts/02_general.md",
     "Target": "General.html"
-  },
-  {
-    "Title": "1-Capture (Verbuchung) und der Tagesabschluss",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#capture-batch"
-  },
-  {
-    "Title": "2-Wann Storno (Cancel) und wann Gutschrift?",
-    "Source": "texts/02_general.md",
-    "Target": "General.html#cancel-refund"
+    "Subsites": [
+      {
+        "Title": "1-Capture (Verbuchung) und der Tagesabschluss",
+        "Source": "texts/02_general.md",
+        "Target": "General.html#capture-batch"
+      },
+      {
+        "Title": "2-Wann Storno (Cancel) und wann Gutschrift?",
+        "Source": "texts/02_general.md",
+        "Target": "General.html#cancel-refund"
+      }
+    ]
   },
   {
     "Title": "03 Integration Kreditkarten",
     "Source": "texts/03_creditcards.md",
     "Target": "Cards.html"
-  },
-  {
-    "Title": "1-Einführung",
-    "Source": "texts/03_creditcards.md",
-    "Target": "Cards.html#cc-start"
+    "Subsites": [
+      {
+        "Title": "1-Einführung",
+        "Source": "texts/03_creditcards.md",
+        "Target": "Cards.html#cc-start"
+      } 
+    ]
   },
   {
     "Title": "04 Pay Pal",
     "Source": "texts/04_paypal.md",
     "Target": "PayPal.html"
-  },
-  {
-    "Title": "1-Einführung",
-    "Source": "texts/04_paypal.md",
-    "Target": "PayPal.html#ppal-start"
-  },
-  {
-    "Title": "2-Voraussetzungen",
-    "Source": "texts/04_paypal.md",
-    "Target": "PayPal.html#ppal-requirement"
-  },
-  {
-    "Title": "3-API Genehmigung für Saferpay",
-    "Source": "texts/04_paypal.md",
-    "Target": "PayPal.html#api-access"
-  },
-  {
-    "Title": "4-Verkäuferschutz",
-    "Source": "texts/04_paypal.md",
-    "Target": "PayPal.html#merchant-protection"
-  },
-  {
-    "Title": "5-Partial Capture",
-    "Source": "texts/04_paypal.md",
-    "Target": "PayPal.html#partial-capture"
+    "Subsites": [
+      {
+        "Title": "1-Einführung",
+        "Source": "texts/04_paypal.md",
+        "Target": "PayPal.html#ppal-start"
+      },
+      {
+        "Title": "2-Voraussetzungen",
+        "Source": "texts/04_paypal.md",
+        "Target": "PayPal.html#ppal-requirement"
+      },
+      {
+        "Title": "3-API Genehmigung für Saferpay",
+        "Source": "texts/04_paypal.md",
+        "Target": "PayPal.html#api-access"
+      },
+      {
+        "Title": "4-Verkäuferschutz",
+        "Source": "texts/04_paypal.md",
+        "Target": "PayPal.html#merchant-protection"
+      },
+      {
+        "Title": "5-Partial Capture",
+        "Source": "texts/04_paypal.md",
+        "Target": "PayPal.html#partial-capture"
+      }
+    ]
   },
   {
     "Title": "05 BillPay",
     "Source": "texts/05_billpay.md",
     "Target": "BillPay.html"
-  },
-  {
-    "Title": "1-Einführung",
-    "Source": "texts/05_billpay.md",
-    "Target": "BillPay.html#bp-start"
+    "Subsites": [
+      {
+        "Title": "1-Einführung",
+        "Source": "texts/05_billpay.md",
+        "Target": "BillPay.html#bp-start"
+      },
+      {
+        "Title": "2-Voraussetzungen",
+        "Source": "texts/05_billpay.md",
+        "Target": "BillPay.html#bp-requirement"
+      },
+      {
+        "Title": "3-BillPay Abnahme per API",
+        "Source": "texts/05_billpay.md",
+        "Target": "BillPay.html#bp-approval-api"
+      },
+      {
+        "Title": "4-BillPay Abnahme über das Saferpay Backoffice",
+        "Source": "texts/05_billpay.md",
+        "Target": "BillPay.html#bp-approval-bo"
+      }
+    ]
   },
   {
     "Title": "11 Test Data",
