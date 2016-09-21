@@ -273,7 +273,6 @@ Hiermit kann der Abnahmetest durchgeführt werden.
 >
 
 3. Tragen sie, falls nötig, die Rücksprungadressen für Ihren Webshop ein und wählen Sie abschließend "Angebot speichern".
-
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BP_3_order2.jpg "Backoffice Angebot 2")
 
 4. Es erscheint das gespeicherte Angebot mit dem Testzahlungs-URL, den Sie für die Billpay-Abnahme.
@@ -284,5 +283,4 @@ Hiermit kann der Abnahmetest durchgeführt werden.
 >
 
 5. Nach Aufruf des Links erscheint die Saferpay Payment Page mit dem oder den Billpay-Testzahlungsmitteln zur Auswahl:
-
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BP_5_PP.jpg "Saferpay Payment Page")
