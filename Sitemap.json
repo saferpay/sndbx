@@ -49,7 +49,7 @@
   {
     "Title": "02 Allgemeines",
     "Source": "texts/02_general.md",
-    "Target": "General.html"
+    "Target": "General.html",
     "Subsites": [
       {
         "Title": "1-Capture (Verbuchung) und der Tagesabschluss",
@@ -66,7 +66,7 @@
   {
     "Title": "03 Integration Kreditkarten",
     "Source": "texts/03_creditcards.md",
-    "Target": "Cards.html"
+    "Target": "Cards.html",
     "Subsites": [
       {
         "Title": "1-Einführung",
@@ -78,7 +78,7 @@
   {
     "Title": "04 Pay Pal",
     "Source": "texts/04_paypal.md",
-    "Target": "PayPal.html"
+    "Target": "PayPal.html",
     "Subsites": [
       {
         "Title": "1-Einführung",
@@ -110,7 +110,7 @@
   {
     "Title": "05 BillPay",
     "Source": "texts/05_billpay.md",
-    "Target": "BillPay.html"
+    "Target": "BillPay.html",
     "Subsites": [
       {
         "Title": "1-Einführung",
