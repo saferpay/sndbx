@@ -263,7 +263,7 @@ Hiermit kann der Abnahmetest durchgeführt werden.
 >
 
 1. Wählen Sie in Ihrem Saferpay Saferpay Backoffice in der Rubrik "Webshop" den Menüpunkt "Neue Angebote":
-2. 
+ 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BP_1_nav.jpg "Backoffice Webshop")
 
 2. Es erscheint der Dialog "Neues Angebot hinzufügen". Tragen sie dort Ihre Daten ein und klicken sie auf *"Weiter"*.
