@@ -1,17 +1,17 @@
-﻿[
+[
   {
     "Title": "Einleitung",
     "Source": "texts/01_intro.md",
     "Target": "index.html",
     "Subsites": [
-      { "Title": "Einführung", "Target": "index.html#intro-start" },
-      { "Title": "Voraussetzungen", "Target": "index.html#intro-requirement" },
-      { "Title": "Datensicherheit und PCI DSS", "Target": "index.html#pci" },
-      { "Title": "3D Secure", "Target": "index.html#3ds" },
-      { "Title": "Dynamic Currency Conversion", "Target": "index.html#dcc" },
-      { "Title": "Unterstützte Zahlungsmittel", "Target": "index.html#paymentmethods" },
-      { "Title": "Lizenzen", "Target": "index.html#licenses" },
-      { "Title": "Zahlungsmittelfunktionen", "Target": "index.html#pm-functions" }
+      { "Source": "texts/01_intro.md", "Title": "Einführung", "Target": "index.html#intro-start" },
+      { "Source": "texts/01_intro.md", "Title": "Voraussetzungen", "Target": "index.html#intro-requirement" },
+      { "Source": "texts/01_intro.md", "Title": "Datensicherheit und PCI DSS", "Target": "index.html#pci" },
+      { "Source": "texts/01_intro.md", "Title": "3D Secure", "Target": "index.html#3ds" },
+      { "Source": "texts/01_intro.md", "Title": "Dynamic Currency Conversion", "Target": "index.html#dcc" },
+      { "Source": "texts/01_intro.md", "Title": "Unterstützte Zahlungsmittel", "Target": "index.html#paymentmethods" },
+      { "Source": "texts/01_intro.md", "Title": "Lizenzen", "Target": "index.html#licenses" },
+      { "Source": "texts/01_intro.md", "Title": "Zahlungsmittelfunktionen", "Target": "index.html#pm-functions" }
     ]
   },
   {
@@ -19,8 +19,8 @@
     "Source": "texts/02_general.md",
     "Target": "General.html",
     "Subsites": [
-      { "Title": "Capture (Verbuchung) und der Tagesabschluss", "Target": "General.html#capture-batch" },
-      { "Title": "Wann Storno (Cancel) und wann Gutschrift?", "Target": "General.html#cancel-refund" }
+      { "Source": "texts/02_general.md", "Title": "Capture (Verbuchung) und der Tagesabschluss", "Target": "General.html#capture-batch" },
+      { "Source": "texts/02_general.md", "Title": "Wann Storno (Cancel) und wann Gutschrift?", "Target": "General.html#cancel-refund" }
     ]
   },
   {
@@ -28,7 +28,7 @@
     "Source": "texts/03_creditcards.md",
     "Target": "Cards.html",
     "Subsites": [
-      { "Title": "Einführung", "Target": "Cards.html#cc-start" } 
+      { "Source": "texts/03_creditcards.md", "Title": "Einführung", "Target": "Cards.html#cc-start" } 
     ]
   },
   {
@@ -36,11 +36,11 @@
     "Source": "texts/04_paypal.md",
     "Target": "PayPal.html",
     "Subsites": [
-      { "Title": "Einführung", "Target": "PayPal.html#ppal-start" },
-      { "Title": "Voraussetzungen", "Target": "PayPal.html#ppal-requirement" },
-      { "Title": "API Genehmigung für Saferpay", "Target": "PayPal.html#api-access" },
-      { "Title": "Verkäuferschutz", "Target": "PayPal.html#merchant-protection" },
-      { "Title": "Partial Capture", "Target": "PayPal.html#partial-capture" }
+      { "Source": "texts/04_paypal.md", "Title": "Einführung", "Target": "PayPal.html#ppal-start" },
+      { "Source": "texts/04_paypal.md", "Title": "Voraussetzungen", "Target": "PayPal.html#ppal-requirement" },
+      { "Source": "texts/04_paypal.md", "Title": "API Genehmigung für Saferpay", "Target": "PayPal.html#api-access" },
+      { "Source": "texts/04_paypal.md", "Title": "Verkäuferschutz", "Target": "PayPal.html#merchant-protection" },
+      { "Source": "texts/04_paypal.md", "Title": "Partial Capture", "Target": "PayPal.html#partial-capture" }
     ]
   },
   {
@@ -48,10 +48,10 @@
     "Source": "texts/05_billpay.md",
     "Target": "BillPay.html",
     "Subsites": [
-      { "Title": "Einführung", "Target": "BillPay.html#bp-start" },
-      { "Title": "Voraussetzungen", "Target": "BillPay.html#bp-requirement" },
-      { "Title": "Abnahme per API", "Target": "BillPay.html#bp-approval-api" },
-      { "Title": "Abnahme über das Saferpay Backoffice", "Target": "BillPay.html#bp-approval-bo" }
+      { "Source": "texts/05_billpay.md", "Title": "Einführung", "Target": "BillPay.html#bp-start" },
+      { "Source": "texts/05_billpay.md", "Title": "Voraussetzungen", "Target": "BillPay.html#bp-requirement" },
+      { "Source": "texts/05_billpay.md", "Title": "Abnahme per API", "Target": "BillPay.html#bp-approval-api" },
+      { "Source": "texts/05_billpay.md", "Title": "BillPay Abnahme über das Saferpay Backoffice", "Target": "BillPay.html#bp-approval-bo" }
     ]
   },
   {
