@@ -51,7 +51,7 @@
       { "Source": "texts/05_billpay.md", "Title": "Einführung", "Target": "BillPay.html#bp-start" },
       { "Source": "texts/05_billpay.md", "Title": "Voraussetzungen", "Target": "BillPay.html#bp-requirement" },
       { "Source": "texts/05_billpay.md", "Title": "Abnahme per API", "Target": "BillPay.html#bp-approval-api" },
-      { "Source": "texts/05_billpay.md", "Title": "BillPay Abnahme über das Saferpay Backoffice", "Target": "BillPay.html#bp-approval-bo" }
+      { "Source": "texts/05_billpay.md", "Title": "Abnahme über das Saferpay Backoffice", "Target": "BillPay.html#bp-approval-bo" }
     ]
   },
   {
