@@ -30,7 +30,7 @@ Bei Nutzung der Saferpay Payment Page erfasst der Karteninhaber seine Kreditkart
 
 Das Risiko eines Missbrauchs der Kreditkartendaten wird durch die Nutzung von Saferpay Secure Card Data oder der Saferpay Payment Page deutlich reduziert und der Aufwand der PCI DSS Zertifizierung verringert sich für den Händler deutlich.
 
-Fragen zu PCI DSS kann Ihnen Ihr Verarbeiter oder ein darauf spezialisiertes Unternehmen beantworten [Siehe hier](https://www.pcisecuritystandards.org).
+Fragen zu PCI DSS kann Ihnen Ihr Verarbeiter oder ein [darauf spezialisiertes Unternehmen](https://www.pcisecuritystandards.org) beantworten.
 
 ## <a name="3ds"></a> 04 3D Secure
 
@@ -54,7 +54,7 @@ Eine gesonderte Implementierung auf Seiten des Händlers ist für DCC nicht notw
 
 ## <a name="paymentmethods"></a> 06 Unterstützte Zahlungsmittel
 
-<table class="table table-striped">
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Zahlungsmittel</th>
@@ -178,9 +178,8 @@ Bei vertraglichen Fragen, auch zu Kosten, wenden sie sich bitte an Ihren Sales P
 
 Die folgende Tabelle zeigt, welche Funtionen in den Lizenzmodellen enthalten sind:
 
-<p></p>
 
-<table class="table table-striped">
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Interface</th>
@@ -307,10 +306,6 @@ Die folgende Tabelle zeigt, welche Funtionen in den Lizenzmodellen enthalten sin
   </tbody>
 </table>
 
---->>>
-
-
-<<<---
 
 
 ## <a name="pm-functions"></a> 08 Zahlungsmittelfunktionen
@@ -320,7 +315,7 @@ Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funkt
 
 <p></p>
 
-<table class="table table-striped">
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Zahlungsmittel</th>
