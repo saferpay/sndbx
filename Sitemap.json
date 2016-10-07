@@ -24,11 +24,12 @@
     ]
   },
   {
-    "Title": "Integration Kreditkarten",
-    "Source": "texts/03_creditcards.md",
-    "Target": "Cards.html",
+    "Title": "Integration",
+    "Source": "texts/03_integration.md",
+    "Target": "Integration.html",
     "Subsites": [
-      { "Source": "texts/03_creditcards.md", "Title": "Einführung", "Target": "Cards.html#cc-start" } 
+      { "Source": "texts/03_integration.md", "Title": "Einführung", "Target": "Integration.html#int-start" },
+      { "Source": "texts/03_integration.md", "Title": "Payment Page", "Target": "Integration.html#int-pp" }
     ]
   },
   {
