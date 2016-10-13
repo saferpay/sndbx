@@ -108,16 +108,16 @@ h1{
 >    <i class="glyphicon glyphicon-hand-right"></i> **Tipp**: Die meisten modernen Browser (Chrome, Firefox) bringen von Haus aus Tools mit, um die Gestaltung per CSS zu vereinfachen. Sie können z.B. das CSS live im Browser einsehen und editieren.
 >
 
-⋅⋅* Klicken sie dazu mit der rechten maustaste auf das Element, welches sie editieren wollen (Beispiel Chrome):
+  * Klicken sie dazu mit der rechten maustaste auf das Element, welches sie editieren wollen (Beispiel Chrome):
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/CSSinspect1.png "CSS-Inspect 1")
 
-⋅⋅* Es öffnet sich ein Menü, wo sie den HTML-Code, die CSS-Klassen und die daran hängenden Attribute einsehen können:
+  * Es öffnet sich ein Menü, wo sie den HTML-Code, die CSS-Klassen und die daran hängenden Attribute einsehen können:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/CSSinspect2.png "CSS-Inspect 2")
 
-⋅⋅* Als Beispiel wird hier die Textfarbe angepasst (Es lassen sich auch Attribute hinzufügen und entfernen, sofern vom Browser unterstützt):
+  * Als Beispiel wird hier die Textfarbe angepasst (Es lassen sich auch Attribute hinzufügen und entfernen, sofern vom Browser unterstützt):
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/CSSinspect3.png "CSS-Inspect 3")
 
-⋅⋅* Der Browser zeigt die Änderung sofort an, sie müssen den Code nur noch in Ihr CSS-File überführen:
+  * Der Browser zeigt die Änderung sofort an, sie müssen den Code nur noch in Ihr CSS-File überführen:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/CSSinspect4.png "CSS-Inspect 4")
 
 
