@@ -56,6 +56,18 @@
     ]
   },
   {
+    "Title": "IFrame Integration und CSS",
+    "Source": "texts/08_css_iframe.md",
+    "Target": "CssiFrame.html",
+    "Subsites": [
+      { "Source": "texts/08_css_iframe.md", "Title": "Einführung", "Target": "CssiFrame.html#css-start" },
+      { "Source": "texts/08_css_iframe.md", "Title": "iFrame Integration", "Target": "CssiFrame.html#css-iframe" },
+      { "Source": "texts/08_css_iframe.md", "Title": "iFrame Größe", "Target": "CssiFrame.html#css-iframe_size" },
+      { "Source": "texts/08_css_iframe.md", "Title": "Verwendung von CSS", "Target": "CssiFrame.html#css-css" },
+      { "Source": "texts/08_css_iframe.md", "Title": "Abschließende Hinweise", "Target": "CssiFrame.html#css-info" }
+    ]
+  },
+  {
     "Title": "Test Data",
     "Source": "texts/11_testdata.md",
     "Target": "testdata.html"
