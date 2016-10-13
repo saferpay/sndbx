@@ -22,19 +22,23 @@ Da die Payment Page ein Responsive Design bietet, passt sich diese automatisch d
 Hier zwei Beispiele:
 
 + Fullsize:
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iFramefull.PNG "PaymentPage Fullsize")
 
 + Smallsize:
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iFramesml.PNG "PaymentPage Smallsize")
 
 ### Transaction Initialize
 
 Hier öffnet sich das Saferpay Card Entry Form zur Erfassung der Kartendaten:
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/transactioniframe.PNG "Card Entry Form")
 
 ### Alias Insert
 
 Hier öffnet sich das Card Registration Form:
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/scdiframe.PNG "Card Registration Form")
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Bei der Registrierung ist die Erfassung aus PCI-Gründen nicht vorgesehen. Der CVC darf selbst von Saferpay nur für 20 Minuten zwischengespeichert werden. Eine dauerhafte Speicherung ist nicht erlaubt.
