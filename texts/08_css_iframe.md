@@ -48,6 +48,7 @@ Hier öffnet sich das Card Registration Form:
 
 Die Größe des iFrame wird dem Händler über eine HTML5-POST Message mitgeteilt, welche sich per Java Script auswerten lässt.
 Auf diese Weise kann sich der iFrame dynamisch an den Inhalt anpassen lassen.
+
 --->>>
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Die Post-Message liegt im JSON-Format vor:
@@ -68,7 +69,6 @@ $(window).bind("message", function (e) {
 	$("#iframe").css("height", e.originalEvent.data.height + "px");
 });
 ```
-
 <<<---
 
 >
