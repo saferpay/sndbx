@@ -41,7 +41,7 @@ Hier öffnet sich das Card Registration Form:
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/scdiframe.PNG "Card Registration Form")
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Bei der Registrierung ist die Erfassung aus PCI-Gründen nicht vorgesehen. Der CVC darf selbst von Saferpay nur für 20 Minuten zwischengespeichert werden. Eine dauerhafte Speicherung ist nicht erlaubt.
+>    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Bei der Registrierung ist die Erfassung des CVC aus PCI-Gründen nicht vorgesehen. Der CVC darf selbst von Saferpay nur für 20 Minuten zwischengespeichert werden. Eine dauerhafte Speicherung ist nicht erlaubt.
 >
 
 ## <a name="css-iframe_size"></a> 03 iFrame Größe
