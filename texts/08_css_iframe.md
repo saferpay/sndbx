@@ -167,5 +167,4 @@ Grundsätzlich werden alle CSS-Selektoren  für CSS1, CSS2 und CSS3 unterstützt
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> **ACHTUNG**: Hierbei wird die Return-Seite neu geladen!
 >
-
 <<<---
