@@ -55,6 +55,15 @@
     ]
   },
   {
+    "Title": "PostFinance",
+    "Source": "texts/postfinance.md",
+    "Target": "PostFinance.html",
+    "Subsites": [
+      { "Source": "texts/postfinance.md", "Title": "Voraussetzungen", "Target": "PostFinance#pf-requirement" },
+      { "Source": "texts/postfinance.md", "Title": "Speicherung im Secure Card Data - Store", "Target": "PostFinance#pf-alias" }
+    ]
+  },
+  {
     "Title": "FAQ",
     "Source": "texts/12_FAQ.md",
     "Target": "faq.html"
