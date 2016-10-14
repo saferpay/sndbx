@@ -1,6 +1,4 @@
-# 04 - PayPal
-
-## <a name="ppal-start"></a> 01 Einführung
+# PayPal
 
 Sie können über die Saferpay JSON-API ebenfalls PayPal anbinden.
 Saferpay bettet dabei die Paypal-API ein, so dass sie nur die JSON-API integrieren müssen.
@@ -8,7 +6,7 @@ Saferpay bettet dabei die Paypal-API ein, so dass sie nur die JSON-API integrier
 Da es sich bei Paypal jedoch um einen 3rd-Party Anbieter handelt, gibt es ein paar Dinge zu beachten.
 Dieses Kapitel soll Ihnen hierbei helfen.
 
-## <a name="ppal-requirement"></a> 02 Voraussetzungen
+## <a name="ppal-requirement"></a> Voraussetzungen
 
 Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 
@@ -19,7 +17,7 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 >    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Für die PayPal-Aktivierung auf dem Saferpay Terminal teilen Sie bitte **service.saferpay@six-payment-services.com** Ihre PayPal Händlerkonto-ID und die gewünschten Währungen mit.
 >
 
-## <a name="api-access"></a> 03 API Genehmigung für Saferpay
+## <a name="api-access"></a> API Genehmigung für Saferpay
 
 Damit PayPal-Zahlungen über Saferpay abgewickelt werden können, müssen zunächst ein paar Einstellungen im PayPal-Händlerkonto vorgenommen werden. Loggen Sie sich hierfür mit Ihren Zugangsdaten auf www.paypal.com ein.
 
@@ -47,7 +45,7 @@ Damit PayPal-Zahlungen über Saferpay abgewickelt werden können, müssen zunäc
 >    * Akzeptieren oder Ablehnen offener Transaktionen.
 >    * Veranlassen einer Rückzahlung für eine beliebige zuvor getätigte Transaktion.
 
-## <a name="merchant-protection"></a> 04 Verkäuferschutz
+## <a name="merchant-protection"></a> Verkäuferschutz
 
 Der PayPal Verkäuferschutz soll Sie vor einem Zahlungsausfall schützen, wenn Ihr Kunde mit PayPal
 bei Ihnen die Waren oder Dienstleistungen bezahlt. Hin und wieder kommt es vor, dass eine
@@ -239,7 +237,7 @@ Sobald diese Attribute mit übergeben werden gilt der Verkäuferschutz. PayPal p
 übergebenen Adressdaten mit den, vom Käufer hinterlegten Daten und lehnt die Zahlung ab, wenn
 die hinterlegte Adresse nicht mit der übergebenen Adresse übereinstimmt.
 
-## <a name="partial-capture"></a> 05 Partial Capture
+## <a name="partial-capture"></a> Partial Capture
 
 Partial Captures, auch Teilverbuchungen genannt, sind eine Sonderfunktion von PayPal.
 Diese Funktion erlaubt es Transaktionen in Teilen zu finalisieren, wenn der Kontoinhaber z.B. nur zu einem Teil belastet werden soll.
