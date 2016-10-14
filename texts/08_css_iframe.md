@@ -136,7 +136,12 @@ Grundsätzlich werden alle CSS-Selektoren  für CSS1, CSS2 und CSS3 unterstützt
 
 + Es empfiehlt sich während des Ladens des Iframe eine Fortschrittsanzeige einzublenden.
 
-+ Es wird empfohlen beim Rücksprung in den Shop auf die Success-, Abort- oder Fail-Seite aus dem Iframe auszubrechen.
++ Sie sind aus PCI-Gründen **NICHT** erlaubt per Java Script in den iFrame einzudringen.
+
++ Da innerhalb des iFrames Weiterleitungen zu Seiten von Drittanbietern geschehen, können wir nicht garantieren, dass diese nicht von selber einen Ausbruch aus diesem vornehmen. Es gibt derweil Anbieter, die die Integration im iFrame nicht zulassen, darunter fallen:
+  + PayPal
+
++ Es wird generell empfohlen beim Rücksprung in den Shop auf die Success-, Abort- oder Fail-Seite aus dem Iframe auszubrechen.
 
 --->>>
 >
