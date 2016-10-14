@@ -1,6 +1,4 @@
-# 07 - Integration Transaction Interface
-
-## <a name="trx-start"></a> 01 Einführung
+# Integration Transaction Interface
 
 Das Transaction Interface ist als Erweiterung zur PaymentPage zu verstehen, kann allerdings auch alleine genutzt werden.
 Es bietet erweiterte Funktionen und Möglichkeiten zur Verarbeitung von Transaktionen an, sollten die Möglichkeiten PaymentPage nicht ausreichen.
