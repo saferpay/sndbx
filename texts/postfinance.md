@@ -1,6 +1,6 @@
-# 05 - Postfinance
+# Postfinance
 
-## <a name="pc-start"></a> 01 Einführung
+## <a name="pc-start"></a> Einführung
 
 Sie können über die Saferpay JSON-API ebenfalls Postfinance anbinden.
 Saferpay bettet dabei die Postfinance-API ein, so dass sie nur die JSON-API integrieren müssen.
@@ -8,13 +8,13 @@ Saferpay bettet dabei die Postfinance-API ein, so dass sie nur die JSON-API inte
 Da es sich bei Postfinance jedoch um einen 3rd-Party Anbieter handelt, gibt es ein paar Dinge zu beachten.
 Dieses Kapitel soll Ihnen hierbei helfen.
 
-## <a name="pc-requirement"></a> 02 Voraussetzungen
+## <a name="pc-requirement"></a> Voraussetzungen
 
 Die Akzeptanz von Postfinance Karten setzt Folgendes voraus:
 * Eine entsprechende Lizenz und somit das Vorhandensein einer gültigen Kennung mit Benutzername und Passwort für das Saferpay System.
 * Ein gültiger Vertrag mit der Post
 
-## <a name="pc-alias"></a> 03 Speicherung im Secure Card Data - Store
+## <a name="pc-alias"></a> Speicherung im Secure Card Data - Store
 
 Saferpay bietet die Möglichkeit an, Postfinance Karten im Saferpay Secure Card Data - Store (SCD) zu speichern.
 Zu beachten ist hierbei, dass zum Einen folgende, zusätzliche, Voraussetzungen gegeben sein müssen:
