@@ -1,14 +1,10 @@
-# 01 - Einleitung
-
-!!!!TO DO!!!!
-
-## <a name="intro-start"></a> 01 Einführung
+# Einleitung
 
 Die Saferpay JSON API (**J**ava**S**cript **O**bject **N**otation **A**pplication **P**rogramming **I**nterface), in der Folge auch JA genannt, ist eine moderne schlanke Schnittstelle, die unabhängig von Programmiersprachen ist. 
 Die JA unterstützt alle Saferpay Methoden und ist für alle Shop-Systeme, Callcenter-Lösungen, Warenwirtschafts-, ERP-, CRM-Systeme sowie alle anderen Einsatzgebiete geeignet, in denen Online-Zahlungen verarbeitet werden müssen.
 Dieser Integrationsguide beschäftigt sich mit den Grundlagen der Saferpay JSON-API und dient als Hilfestellung für Programmierer und Integratoren. Er soll gängige Abläufe beschreiben und Gängige Fragen beantworten.
 
-## <a name="intro-requirement"></a> 02 Voraussetzungen
+## <a name="intro-requirement"></a> Voraussetzungen
 
 Die Nutzung der JA setzt Folgendes voraus:
 
@@ -18,7 +14,7 @@ Die Nutzung der JA setzt Folgendes voraus:
 * Saferpay Terminalnummer sowie die Saferpay Kundennummer liegen vor.
 * Ein gültiger Akzeptanzvertrag für Kreditkarten oder ein anderes Zahlungsmittel liegt vor.
 
-## <a name="pci"></a>  03 Datensicherheit und PCI DSS
+## <a name="pci"></a>  Datensicherheit und PCI DSS
 
 Die Kreditkartenorganisationen haben das Sicherheitsprogramm PCI DSS (Payment Card Industry Data Security Standard) ins Leben gerufen, um Betrug mit Kreditkarten und deren Missbrauch vorzubeugen.
 
@@ -32,7 +28,7 @@ Das Risiko eines Missbrauchs der Kreditkartendaten wird durch die Nutzung von Sa
 
 Fragen zu PCI DSS kann Ihnen Ihr Verarbeiter oder ein [darauf spezialisiertes Unternehmen](https://www.pcisecuritystandards.org) beantworten.
 
-## <a name="3ds"></a> 04 3D Secure
+## <a name="3ds"></a> 3D Secure
 
 3-D Secure, abgekürzt 3DS, wird von Visa (Verified by Visa), MasterCard (MasterCard SecureCode), American Express (SafeKey) und Diners Club (ProtectBuy) unterstützt. Händler, die das 3-D Secure Verfahren anbieten profitieren von der erhöhten Sicherheit bei der Kreditkartenakzeptanz und weniger Zahlungsausfällen durch die Haftungsumkehr („Liability Shift“). Es ist dabei nicht von Bedeutung, ob die Karteninhaber (KI) an dem Verfahren teilnehmen oder nicht.
 
@@ -47,12 +43,12 @@ Das Saferpay Merchant Plug-In, abgekürzt MPI, unterstützt die notwendigen Inte
 5. Saferpay prüft das Resultat und stellt sicher, dass keine Manipulation vorliegt. Die Zahlung kann fortgeführt werden, wenn die Authentifizierung erfolgreich verlaufen ist.
 6. Saferpay bindet die MPI-Daten an den von der JSON API verwendeten Token und fragt diese bei der Autorisierung der Karte automatisch ab.
 
-## <a name="dcc"></a> 05 Dynamic Currency Conversion
+## <a name="dcc"></a> Dynamic Currency Conversion
 
 Dynamic Currency Conversion, abgekürzt DCC, steht nur für SIX Akzeptanzverträge mit DCC-Erweiterung zur Verfügung. Das für die Zahlungsanfragen zugrunde liegende Terminal erhält hierbei eine Basiswährung, in der alle Transaktionen abgerechnet werden. Internationalen Kunden wird mittels DCC der Kaufbetrag in der Basiswährung und zum aktuellen Wechselkurs in ihrer Landeswährung angezeigt. Der Kunde kann selbst entscheiden, in welcher Währung die Zahlung stattfinden soll.
 Eine gesonderte Implementierung auf Seiten des Händlers ist für DCC nicht notwendig. Saferpay behandelt diesen Schritt während des Redirect automatisch. 
 
-## <a name="paymentmethods"></a> 06 Unterstützte Zahlungsmittel
+## <a name="paymentmethods"></a> Unterstützte Zahlungsmittel
 
 <table class="table table-striped table-hover">
   <thead>
@@ -166,7 +162,7 @@ Eine gesonderte Implementierung auf Seiten des Händlers ist für DCC nicht notw
   </tbody>
 </table>
 
-## <a name="licenses"></a> 07 Lizenzen
+## <a name="licenses"></a> Lizenzen
 
 Für den Einsatz im E-Commerce unterscheidet Saferpay zwischen zwei Lizenzen:
 + Saferpay eCommerce
@@ -308,7 +304,7 @@ Die folgende Tabelle zeigt, welche Funtionen in den Lizenzmodellen enthalten sin
 
 
 
-## <a name="pm-functions"></a> 08 Zahlungsmittelfunktionen
+## <a name="pm-functions"></a> Zahlungsmittelfunktionen
 
 Saferpay unterstützt viele Zahlungsmittel, darunter auch 3rd-Party Anbieter, wie zum Beispiel PayPal. Diese müssen aber nicht zwingend sämtliche Saferpayfunktionen unterstützen.
 Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funktionen die einzelnen Zahlungsmittel unterstützen:
@@ -564,3 +560,85 @@ Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funkt
 </dl>
 
 <<<---
+
+
+## <a name="capture-batch"></a> Capture (Verbuchung) und der Tagesabschluss
+
+Diese beiden Funktionen gehören wohl zu den weniger beachteten, aber äußerst wichtigen Saferpay-Funktionen. Beide stehen im direkten Zusammenhang und werden sie nicht ausgelöst, so wird es keine Auszahlung an das Händlerkonto geben.
+
+### Der Capture
+
+[Der Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) ist dafür gedacht eine Zahlung zu finalisieren.
+Solange eine Transaktion nicht durch den Capture gelaufen ist, wird der Betrag für sie reserviert, aber nicht ausgezahlt.
+API seitig erhalten sie über den parameter „Status“ Auskunft (Beachten sie dass dies nur ein Ausschnitt der Daten ist):
+
+--->>>
+
+```json
+"Transaction": {
+  "Type": "PURCHASE",
+  "Status": "AUTHORIZED",
+  "Id": "MUOGAWA9pKr6rAv5dUKIbAjrCGYA",
+  "Date": "2015-09-18T09:19:27.078Z",
+  "Amount": {
+    "Value": "100",
+    "CurrencyCode": "CHF"
+  },
+  "AcquirerName": "AcquirerName",
+  "AcquirerReference": "Reference"
+}
+```
+
+<<<---
+
+Analog hierzu erhalten solche Transaktion im Saferpay Backoffice den Status “Reservation“.
+Ist eine Transaktion bereits durch den Capture gelaufen, so verändert sich auch der Status:
+
+--->>>
+```json
+"Transaction": {
+  "Type": "PURCHASE",
+  "Status": "CAPTURED",
+  "Id": "MUOGAWA9pKr6rAv5dUKIbAjrCGYA",
+  "Date": "2015-09-18T09:19:27.078Z",
+  "Amount": {
+    "Value": "100",
+    "CurrencyCode": "CHF"
+  },
+  "AcquirerName": "AcquirerName",
+  "AcquirerReference": "Reference"
+}
+```
+<<<---
+
+Dies ist z.B. bei Zahlungsmitteln so, die keinen Capture brauchen bzw. können. [Siehe hier](https://saferpay.github.io/sndbx/General.html#pm-functions).
+
+WICHTIG: Eine Reservation wird nicht ewig für sie vorgehalten. Ist eine bestimmte Zeit verstrichen, wird der für sie autorisierte und reservierte Betrag wieder freigegebenund sie können das Geld nicht mehr einfordern.
+Besonders PayPal behält es sich vor die Auszahlung zu verweigern. Aus diesem Grund empfehlen wir den Capture sofort durchzuführen. Sollte das nicht möglich sein, so muss er innerhalb von 48 Stunden geschehen. Entweder per API, oder manuell im Saferpay Backoffice.
+
+### Der Tagesabschluss
+Der Tagesabschluss folgt dem Capture einmal täglich, automatisiert um 22 Uhr MEST.
+Hierbei werden alle Transaktionen, welche durch den Capture gelaufen sind, beim Zahlungsverarbeiter eingereicht, um das Geld vom Kunden- auf das Händlerkonto zu übertragen.
+
+Dieser Schritt lässt sich, falls gewünscht, über die Saferpay API auch selber auslösen. Der hierzu notwendige Request heisst [Batch Close](https://saferpay.github.io/jsonapi/#Payment_v1_Batch_Close).
+
+Bevor sie jedoch die API nutzen können, müssen sie den automatischen Tagesabschluss zunächst im Backoffice unter Administration > Terminals für das betreffende Terminal deaktivieren. Der Abschluss sollte nur einmal täglich durchgeführt werden.
+
+### Sonderfälle
+#### PayPal und Postfinance
+Bei diesen Anbietern wird mit dem Capture auch gleich ein mini-Tagesabschluss ausgelöst. Wenn sie also den Capture auslösen, wird sofort der Geldfluss eingeleitet.
+Bei PayPal wird dies getan aus dem oben genannten grund, dass sich PayPal vorbehält die Auszahlung zu verweigern. Aus diesem Grunde fordern wir das Geld für sie sofort ein.
+Bei Postfinance ist dies schlicht im von Postfinance genutzten Protokoll begründet.
+
+#### Onlinebanking 
+Zahlungsanbieter, wie GiroPay, oder iDeal gehören zu den Onlinebanking Anbietern. Diese lösen mit der Autorisation sofort den Geldfluss aus. Sobald die Transaktion also erfolgreich war, ist die Transaktion zu 100% abgeschlossen.
+
+## <a name="cancel-refund"></a> Wann Storno (Cancel) und wann Gutschrift?
+
+Dass Kunden Ihre Bestellungen stornieren, oder waren zurückgeben wollen ist nicht selten. Natürlich ist es als Händler wichtig die im Hintergrund stehende Transaktion entweder zu stornieren, oder eine Gutschrift zu machen.
+Auf Zahlungsmittelebene kann es jedoch zu komplikationen kommen, wenn man nicht genau weiss, was wann genau zu tun ist. Auch gibt es Zahlungsmittel, die hier schlichtweg keinerlei Funktionalität bieten.
+Dieses Kapitel soll Ihnen dabei helfen eine Übersicht über dieses Thema zu bekommen. Dabei helfen soll auch die im Kapitel 5.2 stehende Matrix.
+
+Generell gilt: Solange Zahlungen nicht durch den Tagesabschluss eingereicht wurden, steht immer ein Storno (Cancel) zur Verfügung. Danach muss eine Gutschrift durchgeführt werden, falls verfügbar.
+
+WICHTIG: Beachten sie die [hier](https://saferpay.github.io/sndbx/General.html#pm-functions) genannten Sonderfälle! Besonders beim Onlinebanking stehen weder Stornos, noch Gutschriften zur Verfügung.
