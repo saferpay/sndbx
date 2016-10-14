@@ -1,19 +1,19 @@
 [
   {
     "Title": "Einleitung",
-    "Source": "texts/01_intro.md",
+    "Source": "texts/intro.md",
     "Target": "index.html",
     "Subsites": [
-      { "Source": "texts/01_intro.md", "Title": "Einführung", "Target": "index.html#intro-start" },
-      { "Source": "texts/01_intro.md", "Title": "Voraussetzungen", "Target": "index.html#intro-requirement" },
-      { "Source": "texts/01_intro.md", "Title": "Datensicherheit und PCI DSS", "Target": "index.html#pci" },
-      { "Source": "texts/01_intro.md", "Title": "3D Secure", "Target": "index.html#3ds" },
-      { "Source": "texts/01_intro.md", "Title": "Dynamic Currency Conversion", "Target": "index.html#dcc" },
-      { "Source": "texts/01_intro.md", "Title": "Unterstützte Zahlungsmittel", "Target": "index.html#paymentmethods" },
-      { "Source": "texts/01_intro.md", "Title": "Lizenzen", "Target": "index.html#licenses" },
-      { "Source": "texts/01_intro.md", "Title": "Zahlungsmittelfunktionen", "Target": "index.html#pm-functions" },
-      { "Source": "texts/01_intro.md", "Title": "Capture (Verbuchung) und der Tagesabschluss", "Target": "index.html#capture-batch" },
-      { "Source": "texts/01_intro.md", "Title": "Wann Storno (Cancel) und wann Gutschrift?", "Target": "index.html#cancel-refund" }
+      { "Source": "texts/intro.md", "Title": "Einführung", "Target": "index.html#intro-start" },
+      { "Source": "texts/intro.md", "Title": "Voraussetzungen", "Target": "index.html#intro-requirement" },
+      { "Source": "texts/intro.md", "Title": "Datensicherheit und PCI DSS", "Target": "index.html#pci" },
+      { "Source": "texts/intro.md", "Title": "3D Secure", "Target": "index.html#3ds" },
+      { "Source": "texts/intro.md", "Title": "Dynamic Currency Conversion", "Target": "index.html#dcc" },
+      { "Source": "texts/intro.md", "Title": "Unterstützte Zahlungsmittel", "Target": "index.html#paymentmethods" },
+      { "Source": "texts/intro.md", "Title": "Lizenzen", "Target": "index.html#licenses" },
+      { "Source": "texts/intro.md", "Title": "Zahlungsmittelfunktionen", "Target": "index.html#pm-functions" },
+      { "Source": "texts/intro.md", "Title": "Capture (Verbuchung) und der Tagesabschluss", "Target": "index.html#capture-batch" },
+      { "Source": "texts/intro.md", "Title": "Wann Storno (Cancel) und wann Gutschrift?", "Target": "index.html#cancel-refund" }
     ]
   },
   {
