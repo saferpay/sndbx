@@ -34,25 +34,24 @@
   },
   {
     "Title": "BillPay",
-    "Source": "texts/05_billpay.md",
+    "Source": "texts/billpay.md",
     "Target": "BillPay.html",
     "Subsites": [
-      { "Source": "texts/05_billpay.md", "Title": "Einführung", "Target": "BillPay.html#bp-start" },
-      { "Source": "texts/05_billpay.md", "Title": "Voraussetzungen", "Target": "BillPay.html#bp-requirement" },
-      { "Source": "texts/05_billpay.md", "Title": "Abnahme per API", "Target": "BillPay.html#bp-approval-api" },
-      { "Source": "texts/05_billpay.md", "Title": "Abnahme über das Saferpay Backoffice", "Target": "BillPay.html#bp-approval-bo" }
+      { "Source": "texts/billpay.md", "Title": "Voraussetzungen", "Target": "BillPay.html#bp-requirement" },
+      { "Source": "texts/billpay.md", "Title": "Abnahme per API", "Target": "BillPay.html#bp-approval-api" },
+      { "Source": "texts/billpay.md", "Title": "Abnahme über das Saferpay Backoffice", "Target": "BillPay.html#bp-approval-bo" }
     ]
   },
   {
     "Title": "IFrame Integration und CSS",
-    "Source": "texts/08_css_iframe.md",
+    "Source": "texts/css_iframe.md",
     "Target": "CssiFrame.html",
     "Subsites": [
-      { "Source": "texts/08_css_iframe.md", "Title": "Einführung", "Target": "CssiFrame.html#css-start" },
-      { "Source": "texts/08_css_iframe.md", "Title": "iFrame Integration", "Target": "CssiFrame.html#css-iframe" },
-      { "Source": "texts/08_css_iframe.md", "Title": "iFrame Größe", "Target": "CssiFrame.html#css-iframe_size" },
-      { "Source": "texts/08_css_iframe.md", "Title": "Verwendung von CSS", "Target": "CssiFrame.html#css-css" },
-      { "Source": "texts/08_css_iframe.md", "Title": "Abschließende Hinweise", "Target": "CssiFrame.html#css-info" }
+      { "Source": "texts/css_iframe.md", "Title": "Einführung", "Target": "CssiFrame.html#css-start" },
+      { "Source": "texts/css_iframe.md", "Title": "iFrame Integration", "Target": "CssiFrame.html#css-iframe" },
+      { "Source": "texts/css_iframe.md", "Title": "iFrame Größe", "Target": "CssiFrame.html#css-iframe_size" },
+      { "Source": "texts/css_iframe.md", "Title": "Verwendung von CSS", "Target": "CssiFrame.html#css-css" },
+      { "Source": "texts/css_iframe.md", "Title": "Abschließende Hinweise", "Target": "CssiFrame.html#css-info" }
     ]
   },
   {
