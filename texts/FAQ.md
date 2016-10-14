@@ -1,4 +1,4 @@
-# 12 - F.A.Q
+# F.A.Q
 
 ## Kann ich meinen Testaccount auch auf dem Livesystem verwenden?
 
