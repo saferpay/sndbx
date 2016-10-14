@@ -1,4 +1,4 @@
-# 13 - Kontakt
+# Kontakt
 
 ## Saferpay Integration Team
 
