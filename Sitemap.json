@@ -11,16 +11,9 @@
       { "Source": "texts/01_intro.md", "Title": "Dynamic Currency Conversion", "Target": "index.html#dcc" },
       { "Source": "texts/01_intro.md", "Title": "Unterstützte Zahlungsmittel", "Target": "index.html#paymentmethods" },
       { "Source": "texts/01_intro.md", "Title": "Lizenzen", "Target": "index.html#licenses" },
-      { "Source": "texts/01_intro.md", "Title": "Zahlungsmittelfunktionen", "Target": "index.html#pm-functions" }
-    ]
-  },
-  {
-    "Title": "Allgemeines",
-    "Source": "texts/02_general.md",
-    "Target": "General.html",
-    "Subsites": [
-      { "Source": "texts/02_general.md", "Title": "Capture (Verbuchung) und der Tagesabschluss", "Target": "General.html#capture-batch" },
-      { "Source": "texts/02_general.md", "Title": "Wann Storno (Cancel) und wann Gutschrift?", "Target": "General.html#cancel-refund" }
+      { "Source": "texts/01_intro.md", "Title": "Zahlungsmittelfunktionen", "Target": "index.html#pm-functions" },
+      { "Source": "texts/01_intro.md", "Title": "Capture (Verbuchung) und der Tagesabschluss", "Target": "index.html#capture-batch" },
+      { "Source": "texts/01_intro.md", "Title": "Wann Storno (Cancel) und wann Gutschrift?", "Target": "index.html#cancel-refund" }
     ]
   },
   {
