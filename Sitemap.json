@@ -2,24 +2,24 @@
   {
     "Title": "Einleitung",
     "Source": "texts/intro.md",
-    "Target": "index.html",
+    "Target": "Index.html",
     "Subsites": [
-      { "Source": "texts/intro.md", "Title": "Einführung", "Target": "index.html#intro-start" },
-      { "Source": "texts/intro.md", "Title": "Voraussetzungen", "Target": "index.html#intro-requirement" },
-      { "Source": "texts/intro.md", "Title": "Datensicherheit und PCI DSS", "Target": "index.html#pci" },
-      { "Source": "texts/intro.md", "Title": "3D Secure", "Target": "index.html#3ds" },
-      { "Source": "texts/intro.md", "Title": "Dynamic Currency Conversion", "Target": "index.html#dcc" },
-      { "Source": "texts/intro.md", "Title": "Unterstützte Zahlungsmittel", "Target": "index.html#paymentmethods" },
-      { "Source": "texts/intro.md", "Title": "Lizenzen", "Target": "index.html#licenses" },
-      { "Source": "texts/intro.md", "Title": "Zahlungsmittelfunktionen", "Target": "index.html#pm-functions" },
-      { "Source": "texts/intro.md", "Title": "Capture (Verbuchung) und der Tagesabschluss", "Target": "index.html#capture-batch" },
-      { "Source": "texts/intro.md", "Title": "Wann Storno (Cancel) und wann Gutschrift?", "Target": "index.html#cancel-refund" }
+      { "Source": "texts/intro.md", "Title": "Einführung", "Target": "Index.html#intro-start" },
+      { "Source": "texts/intro.md", "Title": "Voraussetzungen", "Target": "Index.html#intro-requirement" },
+      { "Source": "texts/intro.md", "Title": "Datensicherheit und PCI DSS", "Target": "Index.html#pci" },
+      { "Source": "texts/intro.md", "Title": "3D Secure", "Target": "Index.html#3ds" },
+      { "Source": "texts/intro.md", "Title": "Dynamic Currency Conversion", "Target": "Index.html#dcc" },
+      { "Source": "texts/intro.md", "Title": "Unterstützte Zahlungsmittel", "Target": "Index.html#paymentmethods" },
+      { "Source": "texts/intro.md", "Title": "Lizenzen", "Target": "Index.html#licenses" },
+      { "Source": "texts/intro.md", "Title": "Zahlungsmittelfunktionen", "Target": "Index.html#pm-functions" },
+      { "Source": "texts/intro.md", "Title": "Capture (Verbuchung) und der Tagesabschluss", "Target": "Index.html#capture-batch" },
+      { "Source": "texts/intro.md", "Title": "Wann Storno (Cancel) und wann Gutschrift?", "Target": "Index.html#cancel-refund" }
     ]
   },
   {
     "Title": "PaymentPage",
     "Source": "texts/PaymentPage.md",
-    "Target": "Integration.html",
+    "Target": "Integration.html"
   },
   {
     "Title": "PayPal",
@@ -54,16 +54,6 @@
       { "Source": "texts/08_css_iframe.md", "Title": "Verwendung von CSS", "Target": "CssiFrame.html#css-css" },
       { "Source": "texts/08_css_iframe.md", "Title": "Abschließende Hinweise", "Target": "CssiFrame.html#css-info" }
     ]
-  },
-  {
-    "Title": "Test Data",
-    "Source": "texts/11_testdata.md",
-    "Target": "testdata.html"
-  },
-  {
-    "Title": "VISA",
-    "Source": "texts/11_testdata.md",
-    "Target": "testdata.html#visa"
   },
   {
     "Title": "FAQ",
