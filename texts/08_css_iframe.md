@@ -1,11 +1,10 @@
-# 08 - IFrame Integration und CSS
+# IFrame Integration und CSS
 
-## <a name="css-start"></a> 01 Einführung
 
 Sowohl die Saferpay PaymentPage, das Transaction Interface, sowie der Secure Alias-Store, bieten Möglichkeiten an per HTML-iFrame integriert und per CSS gestaltet zu werden.
 Das folgende Kapitel geht darauf ein, wie dieses Feature genutzt werden kann und was dabei beachtet werden muss.
 
-## <a name="css-iframe"></a> 02 iFrame Integration
+## <a name="css-iframe"></a> iFrame Integration
 
 Die iFrame Integration ist denkbar einfach und steht bei folgenden Requests zur Verfügung:
 
@@ -44,7 +43,7 @@ Hier öffnet sich das Card Registration Form:
 >    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Bei der Registrierung ist die Erfassung des CVC aus PCI-Gründen nicht vorgesehen. Der CVC darf selbst von Saferpay nur für 20 Minuten zwischengespeichert werden. Eine dauerhafte Speicherung ist nicht erlaubt.
 >
 
-## <a name="css-iframe_size"></a> 03 iFrame Größe
+## <a name="css-iframe_size"></a> iFrame Größe
 
 Die Größe des iFrame wird dem Händler über eine HTML5-POST Message mitgeteilt, welche sich per Java Script auswerten lässt.
 Auf diese Weise kann sich der iFrame dynamisch an den Inhalt anpassen lassen.
@@ -75,7 +74,7 @@ $(window).bind("message", function (e) {
 >    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Nicht jede Seite meldet Ihre Größe an das Händlersystem zurück! Da Saferpay jedoch im Zahlungsverlauf auf die Seiten von Drittanbietern weiterleiten muss, empfehlen wir eine **Mindestgröße von 450x450 Pixeln!**
 >
 
-## <a name="css-css"></a> 04 Verwendung von CSS
+## <a name="css-css"></a> Verwendung von CSS
 Die Verwendung von CSS steht bei folgenden Requests zur Verfügung:
 
 + [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize)
@@ -130,7 +129,7 @@ h1{
 
 Grundsätzlich werden alle CSS-Selektoren  für CSS1, CSS2 und CSS3 unterstützt.
 
-## <a name="css-info"></a> 05 Abschließende Hinweise
+## <a name="css-info"></a> Abschließende Hinweise
 
 + Das Stylesheet, auf das mit dem Parameter CSSURL verwiesen wird, muss auf einem Webserver abgelegt werden, der HTTPS unterstützt. Innerhalb des Stylesheets muss darauf geachtet werden, dass Grafiken über „HTTPS://“ geladen werden. Ansonsten wird im Browser eine Warnung angezeigt. Zum Beispiel: „[…] this page includes other resources which are not secure. […].
 
