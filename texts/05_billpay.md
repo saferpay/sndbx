@@ -1,6 +1,4 @@
-# 05 - BillPay
-
-## <a name="bp-start"></a> 01 Einführung
+# BillPay
 
 Sie können über die Saferpay JSON-API ebenfalls BillPay anbinden.
 Saferpay bettet dabei die BillPay-API ein, so dass sie nur die JSON-API integrieren müssen.
@@ -8,7 +6,7 @@ Saferpay bettet dabei die BillPay-API ein, so dass sie nur die JSON-API integrie
 Da es sich bei BillPay jedoch um einen 3rd-Party Anbieter handelt, gibt es ein paar Dinge zu beachten.
 Dieses Kapitel soll Ihnen hierbei helfen.
 
-## <a name="bp-requirement"></a> 02 Voraussetzungen
+## <a name="bp-requirement"></a> Voraussetzungen
 
 * Eine entsprechende Lizenz und somit das Vorhandensein einer gültigen Kennung mit Benutzername und Passwort für das Saferpay System.
 * Mindestens ein aktives Saferpay Terminal, über das die Zahlungen durchgeführt werden können ist vorhanden und die dazugehörige Saferpay TERMINALID liegt vor.
@@ -19,7 +17,7 @@ Dieses Kapitel soll Ihnen hierbei helfen.
 >    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Für die BillPay-Aktivierung auf dem Saferpay Terminal teilen Sie bitte **service.saferpay@six-payment-services.com** die BillPay Zugangsdaten und die gewünschten Währungen mit.
 >
 
-## <a name="bp-approval-api"></a> 03 BillPay Abnahme per API
+## <a name="bp-approval-api"></a> BillPay Abnahme per API
 
 Bevor sie Transaktionen über BillPay abwickeln können, wird jeder Kunde von BillPay auf einen so genannten **"Abnahme Verarbeiter"** aufgeschaltet. BillPay erwartet, dass jeder Händler vor dem Livegang eine Transaktion über diesen Verarbeiter tätigt. Als Nachweis verlangt BillPay eine komplette Rechnung vom Händlersystem. Nach einer Prüfung wird der Kunde freigeschaltet und die Live-Kontodaten herausgegeben. Dieser Vorgang muss für **jeweils** für **"Kauf auf Rechnung"** und **"Kauf auf Lastschrift"** durchgeführt werden.
 
@@ -254,7 +252,7 @@ wie z.B. die Rechnungsdaten.
 ```
 <<<---
 
-## <a name="bp-approval-bo"></a> 04 BillPay Abnahme über das Saferpay Backoffice
+## <a name="bp-approval-bo"></a> BillPay Abnahme über das Saferpay Backoffice
 
 Da es mitunter nicht in jedem Shop möglich ist die Abnahme durchzuführen, ohne den Live-Betrieb zu stören, bietet das Saferpay Backoffice die Möglichkeit einen Zahlungs-URL für eine Billpay-Testzahlung über die Payment Page zu erstellen.
 Hiermit kann der Abnahmetest durchgeführt werden.
