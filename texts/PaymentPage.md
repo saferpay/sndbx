@@ -1,13 +1,4 @@
-# 03 - Integration
-
-## <a name="int-start"></a> 01 Einführung
-
-In diesem Kapitel wird auf generelle Zahlungsabläufe eingegangen, um zu verdeutlichen, wie die einzelnen Interfaces genutzt werden.
->
->    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Beachten sie bitte, dass die JSON-API vielseitig eingesetzt werden und somit viele Prozessabläufe abdecken kann. Aus diesem Grund werden im Folgenden nur standard Abläufe behandelt. Sollten sie besondere Ansprüche und zu diesen Fragen haben, dann kontaktieren sie bitte das **[Saferpay Integrationsteam](https://saferpay.github.io/sndbx/contact.html)**.
->
-
-## <a name="int-pp"></a> 02 PaymentPage
+# PaymentPage
 
 Die [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) steht jedem Händler zur Verfügung und bietet das volle Portfolio an Zahlungsmitteln an.
 Einmal integriert, können Zahlungsmittel auch nachträglich noch aktiviert werden und stehen dann ohne größere Anpassungen zur Verfügung.
