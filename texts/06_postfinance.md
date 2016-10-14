@@ -31,15 +31,9 @@ Zu beachten ist hierbei, dass zum Einen folgende, zusätzliche, Voraussetzungen 
 Anders, als bei Kreditkarten, verlangt die Post, dass der Karteninhaber der Registrierung auf Ihrer Seite zustimmt.
 
 1. Bestätigungsdialog bei der Post:
-
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PFSCD1.png "Bestätigung")
-
 2. Nach einem Klick auf **Weiter** wird der Karteninhaber aufgefordert seine Kartennummer einzugeben:
-
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PFSCD2.png "Eingabe")
-
-3. Aanschließend muss der Karteninhaber die Registrierung mit einer TAN bestätigen, die er mit seinem Kartenleser erzeugt:
-
+3. Anschließend muss der Karteninhaber die Registrierung mit einer TAN bestätigen, die er mit seinem Kartenleser erzeugt:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PFSCD3.png "Bestätigung")
-
 4. Nach Abschluss wird der Kunde zurück in den Shop geleitet und das Ergebnis der Registrierung kann ganz normal per [Alias AssertInsert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert) abgefragt werden.
