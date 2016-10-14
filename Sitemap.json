@@ -23,14 +23,13 @@
   },
   {
     "Title": "PayPal",
-    "Source": "texts/04_paypal.md",
+    "Source": "texts/paypal.md",
     "Target": "PayPal.html",
     "Subsites": [
-      { "Source": "texts/04_paypal.md", "Title": "Einführung", "Target": "PayPal.html#ppal-start" },
-      { "Source": "texts/04_paypal.md", "Title": "Voraussetzungen", "Target": "PayPal.html#ppal-requirement" },
-      { "Source": "texts/04_paypal.md", "Title": "API Genehmigung für Saferpay", "Target": "PayPal.html#api-access" },
-      { "Source": "texts/04_paypal.md", "Title": "Verkäuferschutz", "Target": "PayPal.html#merchant-protection" },
-      { "Source": "texts/04_paypal.md", "Title": "Partial Capture", "Target": "PayPal.html#partial-capture" }
+      { "Source": "texts/paypal.md", "Title": "Voraussetzungen", "Target": "PayPal.html#ppal-requirement" },
+      { "Source": "texts/paypal.md", "Title": "API Genehmigung für Saferpay", "Target": "PayPal.html#api-access" },
+      { "Source": "texts/paypal.md", "Title": "Verkäuferschutz", "Target": "PayPal.html#merchant-protection" },
+      { "Source": "texts/paypal.md", "Title": "Partial Capture", "Target": "PayPal.html#partial-capture" }
     ]
   },
   {
