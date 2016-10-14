@@ -65,12 +65,12 @@
   },
   {
     "Title": "FAQ",
-    "Source": "texts/12_FAQ.md",
+    "Source": "texts/FAQ.md",
     "Target": "faq.html"
   },
   {
     "Title": "Kontakt",
-    "Source": "texts/13_contact.md",
+    "Source": "texts/contact.md",
     "Target": "contact.html"
   },
   {
