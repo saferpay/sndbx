@@ -26,4 +26,17 @@ Zu beachten ist hierbei, dass zum Einen folgende, zusätzliche, Voraussetzungen 
 >    <i class="glyphicon glyphicon-hand-right"></i> **HINWEIS**: Beachten sie, dass die Registrierung von Postfinance-Karten nur über [Alias Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert) möglich ist!
 >
 
-Darüber hinaus verlangt die Post, dass alle Kunden zunächst über die Seite der Post geleitet werden, um der Registrierung der Karte zuzustimmen.
+### Registrierungsdialog
+
+Anders, als bei Kreditkarten, verlangt die Post, dass der Karteninhaber der Registrierung auf Ihrer Seite zustimmt.
+
+1. Bestätigungsdialog bei der Post:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PFSCD1.png "Bestätigung")
+
+2. Nach einem Klick auf **Weiter** wird der Karteninhaber aufgefordert seine Kartennummer einzugeben:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PFSCD2.png "Eingabe")
+
+3. Aanschließend muss der Karteninhaber die Registrierung mit einer TAN bestätigen, die er mit seinem Kartenlöeser erzeugt:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PFSCD3.png "Bestätigung")
+
+4. Nach Abschluss wird der Kunde zurück in den Shop geleitet und das Ergebnis der Registrierung kann ganz normal per [Alias AssertInsert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert) abgefragt werden.
