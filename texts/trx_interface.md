@@ -8,7 +8,14 @@ Im folgenden Kapitel werden auf einige dieser Möglichkeiten eingegangen.
 >
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **ACHTUNG**: Das Transaction Interface steht **ausschließlich** (Ausgenommen [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) und [Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel) zur Verfügung. Sollten sie keinen Business-Vertrag haben, so wird die API im Livebetrieb einen Fehler werfen. Beachten sie auch, dass die Testaccounts auf dem Testsystem zur Evaluierung Business aktiviert haben.
+>    <i class="glyphicon glyphicon-hand-right"></i> **ACHTUNG**: Das Transaction Interface steht **ausschließlich** (Ausgenommen [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) und [Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel)) Händlern mit einem Business-Vertrag zur Verfügung. Sollten sie keinen Business-Vertrag haben, so werden die erweiterten Funktionen Ihnen im Livebetrieb nicht zur Verfügung stehen. Beachten sie auch, dass die Testaccounts auf dem Testsystem zur Evaluierung Business aktiviert haben. Dort stehen diese Funktionen zum testen zur Verfügung.
 >
 
 ## <a name="trx-kk"></a> Kreditkarten
+
+## <a name="trx-rp"></a> Redirect Payments
+
+## <a name="trx-recurring"></a> Recurring Payments
+
+## <a name="trx-end"></a> Abschließende Worte
+
