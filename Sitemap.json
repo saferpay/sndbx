@@ -24,7 +24,10 @@
   {
     "Title": "Transaction Interface",
     "Source": "texts/trx_interface.md",
-    "Target": "Integration_trx.html"
+    "Target": "Integration_trx.html",
+    "Subsites": [
+      { "Source": "texts/trx_interface.md", "Title": "Kreditkarten", "Target": "Integration_trx.html#trx-kk" }
+    ]
   },
   {
     "Title": "PayPal",
