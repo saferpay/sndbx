@@ -23,6 +23,7 @@ Hier ein paar Hinweise und Tipps zu den Möglichkeiten, die Ihnen nun zur Verfü
 
 + **ReturnUrls**: Saferpay liefert aus Sicherheitsgründen keinerlei Daten mit den ReturnUrls an den Shop zurück. Die Identifikation der Zahlung bzw. des zurückkehrenden Kunden, obliegt somit dem Händler. Wir empfehlen hierzu die verwendung von eigenen Parametern, welche sie per http-GET an die ReturnUrls hängen können. Werden diese aufgerufen, so liefert Saferpay auch die angehängten Parameter wieder zurück und ermöglich so eine einfache Identifikation des Kunden.
 + **Secure Card Data**: Mit dem Initialize Request können sie auch im Saferpay Secure Card Data Store gespeicherte Karten in Form eines Alias übergeben, wenn sie dem Kunden die Eingabe seiner Kartendaten ersparen wollen. Beachten sie hierfür den Container **PaymentMeans > Alias**.
+
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> **Hinweis**: Da der CVC aus PCI-Gründen von uns und Ihnen nicht gespeichert werden darf, müssen sie diesen dennoch extra erfassen und später mit der Autorisierung (Siehe Schritt 4) übergeben.
 >
