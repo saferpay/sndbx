@@ -19,7 +19,12 @@
   {
     "Title": "PaymentPage",
     "Source": "texts/PaymentPage.md",
-    "Target": "Integration.html"
+    "Target": "Integration_PP.html"
+  },
+  {
+    "Title": "Transaction Interface",
+    "Source": "texts/trx_interface.md",
+    "Target": "Integration_trx.html"
   },
   {
     "Title": "PayPal",
