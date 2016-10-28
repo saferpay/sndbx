@@ -77,6 +77,14 @@ Sind diese Schritte abgeschlossen, so ist der Transaktionsablauf beendet.
 
 ## <a name="trx-rp"></a> Redirect Payments
 
+Mit Redirect Payments haben sie die Möglichkeit durch die Saferpay JSON API andere 3rd Party Anbieter direkt an Ihr Shopsystem anzubinden. Sie müssen somit lediglich die Saferpay JSON-API in Ihr System integrieren.
+
+Zurzeit werden folgende Anbieter unterstützt:
+
++ Paypal
++ Postfinamce eFinance
++ Postfinance Card
+
 ## <a name="trx-sepa"></a> SEPA Lastschrift
 
 ## <a name="trx-recurring"></a> Recurring Payments
