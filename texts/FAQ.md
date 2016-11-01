@@ -38,4 +38,4 @@ Kontaktieren sie hierfür bitte das [Saferpay Integration Team](contact.html).
 
 ## Ich habe bereits ein fertiges Webshop-System. Bieten sie hierfür fertige Plug-Ins an?
 
-Fertige Plug-Ins und Extensions für gängige Shopsysteme werden über unseren Partner [Customweb angeboten](https://www.sellxed.com/shop/en/eur/extensions/module/payment-service-provider/saferpay.html)
+Fertige Plug-Ins und Extensions für gängige Shopsysteme werden über unseren Partner [Customweb angeboten](https://www.sellxed.com/shop/en/eur/extensions/module/payment-service-provider/saferpay.html). Dort bekommen sie 1 Jahr lang Support und gegebenenfalls einen Installationsservice.
