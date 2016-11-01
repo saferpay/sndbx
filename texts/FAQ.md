@@ -35,3 +35,7 @@ Standardmäßig sind auf den Testaccounts `EUR` und `CHF` aufgeschaltet. Auf Nac
 AUD, CAD, CZK, DKK, GBP, HUF, JPY, LVL, NOK, PLN, RON, RUB, RUR, SEK, USD
 ```
 Kontaktieren sie hierfür bitte das [Saferpay Integration Team](contact.html).
+
+## Ich habe bereits ein fertiges Webshop-System. Bieten sie hierfür fertige Plug-Ins an?
+
+Fertige Plug-Ins und Extensions für gängige Shopsysteme werden über unseren Partner [Customweb angeboten](https://www.sellxed.com/shop/en/eur/extensions/module/payment-service-provider/saferpay.html)
