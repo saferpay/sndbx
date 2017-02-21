@@ -1,59 +1,57 @@
-# Einleitung
+# Introduction
 
-Die Saferpay JSON API (**J**ava**S**cript **O**bject **N**otation **A**pplication **P**rogramming **I**nterface), in der Folge auch JA genannt, ist eine moderne schlanke Schnittstelle, die unabhängig von Programmiersprachen ist. 
-Die JA unterstützt alle Saferpay Methoden und ist für alle Shop-Systeme, Callcenter-Lösungen, Warenwirtschafts-, ERP-, CRM-Systeme sowie alle anderen Einsatzgebiete geeignet, in denen Online-Zahlungen verarbeitet werden müssen.
-Dieser Integrationsguide beschäftigt sich mit den Grundlagen der Saferpay JSON-API und dient als Hilfestellung für Programmierer und Integratoren. Er soll gängige Abläufe beschreiben und Gängige Fragen beantworten.
+The Saferpay JSON API (**J**ava**S**cript **O**bject **N**otation **A**pplication **P**rogramming **I**nterface), hereinafter also referred to as JA, is a modern streamlined interface that is independent of programming languages. The JA supports all Saferpay methods and is suitable for all shop systems, call centre solutions, merchandise management, ERP and CRM systems and other applications in which online payments are processed. This Integration Guide focuses on the basics of the Saferpay JSON API and serves as a guide for programmers, developers and integrators.
 
-## <a name="intro-requirement"></a> Voraussetzungen
+## <a name="intro-requirement"></a> Requirements
 
-Die Nutzung der JA setzt Folgendes voraus:
+Use of the JA requires the following:
 
-* Eine entsprechende Lizenz für das Saferpay Modul.
-* Das Vorhandensein einer gültigen Kennung mit Benutzername und Passwort für das Saferpay Backoffice.
-* Mindestens ein aktives Saferpay Terminal, über das die Zahlungen durchgeführt werden können ist vorhanden und die dazugehörige 
-* Saferpay Terminalnummer sowie die Saferpay Kundennummer liegen vor.
-* Ein gültiger Akzeptanzvertrag für Kreditkarten oder ein anderes Zahlungsmittel liegt vor.
+*	A corresponding licence for the Saferpay module.
+*	The existence of a valid identification with a username and password for the Saferpay Backoffice.
+*	Availability of at least one active Saferpay terminal via which payment can be carried out and the associated
+*	Availability of Saferpay terminal number (TerminalId parameter) and Saferpay customer number (CustomerId parameter).
+*	Availability of valid acceptance agreement for credit cards or other payment methods.
 
-## <a name="pci"></a>  Datensicherheit und PCI DSS
+## <a name="pci"></a>  Data Security and PCI DSS
 
-Die Kreditkartenorganisationen haben das Sicherheitsprogramm PCI DSS (Payment Card Industry Data Security Standard) ins Leben gerufen, um Betrug mit Kreditkarten und deren Missbrauch vorzubeugen.
+The credit card organisations have launched the safety program PCI DSS (Payment Card Industry Data Security Standard) to prevent misuse and fraudulent use of credit cards.
 
-Bitte beachten Sie bei der Gestaltung des Zahlungsprozesses und dem Einsatz von Saferpay die PCI DSS Richtlinien. 
+Please pay attention to the PCI DSS guidelines when setting up payment processes and deploying Saferpay.
 
-Bei Nutzung des Saferpay Hosted Register Form zusammen mit dem optionalen Dienst Saferpay Secure Card Data, abgekürzt SCD, können Sie die Zahlungsprozesse so sicher gestalten, dass keine Kreditkartennummern auf Ihren (Web)Servern verarbeitet, weitergeleitet oder gespeichert werden. 
+When using the Saferpay Hosted Register Form together with the optional Saferpay Secure Card Data (SCD), you can set up and handle the payment process safely. No credit card numbers are processed, transferred or stored on your (web) servers.
 
-Bei Nutzung der Saferpay Payment Page erfasst der Karteninhaber seine Kreditkartennummer und das Verfalldatum nicht innerhalb der E-Commerce-Applikation des Händlers, sondern innerhalb der Saferpay Payment Page. Da die E-Commerce-Applikation und Saferpay auf physisch getrennten Plattformen betrieben werden, besteht keine Gefahr, dass die Kreditkartendaten in der Datenbank des Händlersystems gespeichert werden können. 
+To use the Saferpay Payment Page, card holders enter their credit card number and expiry date not within the merchant’s e-commerce application, but rather within the Saferpay Payment Page. As the e-commerce application and Saferpay operate on physically separate platforms, there is no risk that the credit card information could be stored in the database of the merchant’s system.
 
-Das Risiko eines Missbrauchs der Kreditkartendaten wird durch die Nutzung von Saferpay Secure Card Data oder der Saferpay Payment Page deutlich reduziert und der Aufwand der PCI DSS Zertifizierung verringert sich für den Händler deutlich.
+The risk of misuse of credit card details is significantly reduced via the use of Saferpay Secure Card Data or the Saferpay Payment Page and the expenditure required for PCI DSS merchant certification is reduced significantly.
 
-Fragen zu PCI DSS kann Ihnen Ihr Verarbeiter oder ein [darauf spezialisiertes Unternehmen](https://www.pcisecuritystandards.org) beantworten.
+If you have questions about PCI DSS, your processor or a specialised company will provide answers. More information can be found on the [PCI Security Standards Council website](https://www.pcisecuritystandards.org/).
 
-## <a name="3ds"></a> 3D Secure
+## <a name="3ds"></a> 3-D Secure
 
-3-D Secure, abgekürzt 3DS, wird von Visa (Verified by Visa), MasterCard (MasterCard SecureCode), American Express (SafeKey) und Diners Club (ProtectBuy) unterstützt. Händler, die das 3-D Secure Verfahren anbieten profitieren von der erhöhten Sicherheit bei der Kreditkartenakzeptanz und weniger Zahlungsausfällen durch die Haftungsumkehr („Liability Shift“). Es ist dabei nicht von Bedeutung, ob die Karteninhaber (KI) an dem Verfahren teilnehmen oder nicht.
+3-D Secure – 3DS for short – is supported by Visa (Verified by Visa), MasterCard (MasterCard SecureCode), American Express (SafeKey), Diners Club (ProtectBuy) and others. Via liability shift, merchants that offer the 3-D Secure process benefit from fewer payment defaults and from increased security with respect to credit card acceptance. It does not matter whether the card holder (CH) participates in this process or not.
 
-Das 3-D Secure Verfahren kann ausschließlich für Zahlungen im Internet eingesetzt werden. Der KI muss, sofern er an dem Verfahren teilnimmt, sich während der Zahlung gegenüber seiner kartenausgebenden Bank (Issuer) ausweisen.
-Zahlungen, die der Händler mit 3-D Secure abwickelt, sind speziell zu kennzeichnen. Nur wenn die entsprechenden Merkmale mit der Autorisierung an die Kreditkartengesellschaft gesendet werden, gilt die Haftungsumkehr.
-Das Saferpay Merchant Plug-In, abgekürzt MPI, unterstützt die notwendigen Interaktionen und den sicheren Datenaustausch zwischen den beteiligten Systemen. Die JSON API wickelt diesen Schritt automatisiert über das Transaction Interface (Initialize) und über die Payment Page ab, sodass kein zusätzlicher Integrationsaufwand anfällt. Die Authentifizierung des KI erfolgt über ein Webformular, das der Issuer oder ein von ihm beauftragter Dienstleister bereitstellt. Für eine 3-D Secure Authentifizierung benötigt der KI daher zwingend einen Internet Browser.
+The 3-D Secure procedure can only be used for payments on the Internet. If participating in the process, CHs must identify themselves to their card-issuing banks (issuer) while making payments. Payments that merchants conclude via 3-D Secure are to be specially flagged. Only when the corresponding criteria have been sent with the authorisation to the credit card company does the liability shift apply. This step is done automatically via the Transaction Interface and the Payment Page, meaning that no additional integration costs arise. The authentication of the CH proceeds via a web form provided by the issuer or by the service provider contracted by the issuer. The 3-D Secure authentication of the CH is done via an Internet browser.
 
-1. Der Händler sendet die Kreditkartendaten zusammen mit den relevanten Zahlungsdaten an Saferpay.
-2. Saferpay prüft, ob der KI an dem 3-D Secure Verfahren teilnimmt oder nicht. Nimmt er teil, muss er sich gegenüber seiner Bank authentifizieren. Falls nicht, kann die Zahlung ohne Authentifizierung durchgeführt werden.
-3. Über den Internet Browser des KI wird die 3-D Secure Anfrage an die kartenausgebende Bank weitergeleitet. Der KI muss sich dort mit einem Passwort, Zertifikat oder einer anderen Methode ausweisen.
-4. Das Ergebnis dieser Überprüfung (Authentifizierung) wird über den Internet Browser des Kunden zurück an Saferpay gesendet. 
-5. Saferpay prüft das Resultat und stellt sicher, dass keine Manipulation vorliegt. Die Zahlung kann fortgeführt werden, wenn die Authentifizierung erfolgreich verlaufen ist.
-6. Saferpay bindet die MPI-Daten an den von der JSON API verwendeten Token und fragt diese bei der Autorisierung der Karte automatisch ab.
+A transaction with the 3-D Secure process proceeds as follows:
+
+1.	The merchant sends the credit card details together with the relevant payment data to Saferpay.
+2.	Saferpay checks whether the CH uses the 3DS process or not. If yes, she or he will be required to authenticate her or himself to her or his bank. If not, the payment can be carried out without authentication.
+3.	The 3DS request will be forwarded to the card-issuing bank via the CH’s Internet browser. The CH must provide proof of identity by using a password, mTAN or another method.
+4.	The result of this authentication is sent back to Saferpay via the CO’s Internet browser.
+5.	Saferpay checks the result and ensures that no manipulation has occurred. The payment can be continued if the authentication concludes successfully.
+6.	Saferpay links the 3DS data to the token used by the JSON API and asks for this automatically when authorising the card.
+7.	When receiving the authorisation answer, the merchant also receives information about the output of the 3-D Secure process.
 
 ## <a name="dcc"></a> Dynamic Currency Conversion
 
-Dynamic Currency Conversion, abgekürzt DCC, steht nur für SIX Akzeptanzverträge mit DCC-Erweiterung zur Verfügung. Das für die Zahlungsanfragen zugrunde liegende Terminal erhält hierbei eine Basiswährung, in der alle Transaktionen abgerechnet werden. Internationalen Kunden wird mittels DCC der Kaufbetrag in der Basiswährung und zum aktuellen Wechselkurs in ihrer Landeswährung angezeigt. Der Kunde kann selbst entscheiden, in welcher Währung die Zahlung stattfinden soll.
-Eine gesonderte Implementierung auf Seiten des Händlers ist für DCC nicht notwendig. Saferpay behandelt diesen Schritt während des Redirect automatisch. 
+Dynamic Currency Conversion (DCC) is a dynamic currency converter that allows international customers to pay the purchase price in the local currency or their home currency. DCC is available for SIX acceptance contracts with DCC expansion. For this, the terminal used for making the payment request receives a base currency in which all transactions are settled. Via DCC, international customers are shown the purchase price in the base currency and the current exchange rate in their national currency. The customer can then decide the currency in which the payment is to be made. Separate implementation by the merchant is not necessary for DCC. Saferpay automatically handles this step during the redirect. 
 
-## <a name="paymentmethods"></a> Unterstützte Zahlungsmittel
+## <a name="paymentmethods"></a> Supported Payment Methods
 
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>Zahlungsmittel</th>
+      <th>Payment method</th>
       <th class="text-center">Transaction Interface</th>
       <th class="text-center">Payment Page</th>
     </tr>
@@ -120,7 +118,7 @@ Eine gesonderte Implementierung auf Seiten des Händlers ist für DCC nicht notw
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
-      <td>SEPA Lastschrift (Nur DE!)</td>
+      <td>SEPA Direct Debit</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
@@ -135,45 +133,53 @@ Eine gesonderte Implementierung auf Seiten des Händlers ist für DCC nicht notw
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
-      <td>Homebanking AT (eps)</td>
+      <td>eps</td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
-      <td>GiroPay</td>
+      <td>giropay</td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
-      <td>iDeal</td>
+      <td>iDEAL</td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
-      <td>BillPay Kauf auf Rechnung</td>
+      <td>BillPay Purchase on Receipt</td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
-      <td>BillPay Lastschrift</td>
+      <td>BillPay Direct Debit</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+        <tr>
+      <td>SOFORT</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>paydirekt</td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
   </tbody>
 </table>
 
-## <a name="licenses"></a> Lizenzen
+## <a name="licenses"></a> Licences
 
-Für den Einsatz im E-Commerce unterscheidet Saferpay zwischen zwei Lizenzen:
-+ Saferpay eCommerce
-+ Saferpay Business
+For use in e-commerce, Saferpay distinguishes between two licences:
 
-Es ist von äußerster Wichtigkeit bereits vor der Integration zu klären, ob eine eCommerce- oder Business-Lizenz genutzt werden soll.
-Im Wesentlichen stellt Saferpa Business eine Erweiterung zur Saferpay eCommerce-Lizenz dar, die mit zusätzlichen Kosten verbunden ist.
-Bei vertraglichen Fragen, auch zu Kosten, wenden sie sich bitte an Ihren Sales Partner.
+* Saferpay eCommerce
+* Saferpay Business
 
-Die folgende Tabelle zeigt, welche Funtionen in den Lizenzmodellen enthalten sind:
+It is extremely important to clarify before the implementation of Saferpay whether an eCommerce licence or a business license is to be used, as they provide different functions. The Saferpay Business licence is an extension of the eCommerce licence. If you have any queries, please contact your relevant contractually appointed person.
 
+The following table shows an overview of which functions are included in the two licence models:
 
 <table class="table table-striped table-hover">
   <thead>
@@ -304,10 +310,9 @@ Die folgende Tabelle zeigt, welche Funtionen in den Lizenzmodellen enthalten sin
 
 
 
-## <a name="pm-functions"></a> Zahlungsmittelfunktionen
+## <a name="pm-functions"></a> Payment Method Features
 
-Saferpay unterstützt viele Zahlungsmittel, darunter auch 3rd-Party Anbieter, wie zum Beispiel PayPal. Diese müssen aber nicht zwingend sämtliche Saferpayfunktionen unterstützen.
-Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funktionen die einzelnen Zahlungsmittel unterstützen:
+Saferpay supports a variety of payment methods, including 3rd party providers such as PayPal. These 3rd party providers are not obligated to support all Saferpay functions. The following table provides an overview of the features supported by the individual payment methods:
 
 <p></p>
 
@@ -321,7 +326,7 @@ Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funkt
       <th class="text-center">Refund</th>
       <th class="text-center">Recurring</th>
       <th class="text-center">DCC</th>
-      <th class="text-center">3-D Secure</th>
+      <th class="text-center">3DS</th>
       <th class="text-center">MOTO</th>
     </tr>
   </thead>
@@ -337,8 +342,19 @@ Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funkt
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
-        <tr>
-      <td>BillPay Lastschrift</td>
+    <tr>
+      <td>Bancontact</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+    </tr>   
+    <tr>
+      <td>BillPay Direct Debit</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
@@ -349,7 +365,7 @@ Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funkt
       <td> </td>
     </tr>
     <tr>
-      <td>BillPay Rechnung</td>
+      <td>BillPay Purchase on Receipt</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
@@ -372,6 +388,17 @@ Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funkt
     </tr>
     <tr>
       <td>Diners Club</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+        <tr>
+      <td>Discover</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -448,7 +475,7 @@ Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funkt
       <td> </td>
     </tr>    
     <tr>
-      <td>MasterCard</td>
+      <td>Mastercard</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -468,6 +495,17 @@ Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funkt
       <td> </td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>paydirekt</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>PayPal</td>
@@ -503,7 +541,7 @@ Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funkt
       <td> </td>
     </tr>
     <tr>
-      <td>SEPA Lastschrift</td>
+      <td>SEPA Direct Debit</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -512,6 +550,17 @@ Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funkt
       <td> </td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>SOFORT</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>VISA</td>
@@ -542,35 +591,33 @@ Die folgende Tabelle soll dabei helfen eine Übersicht zu bekommen, welche Funkt
 
 <dl class="dl-horizontal">
   <dt>Capture</dt>
-  <dd>Capture notwendig</dd>
+  <dd>Capture required</dd>
   <dt>Batch</dt>
-  <dd>Tagesabschluss notwendig</dd>
+  <dd>Daily closing required</dd>
   <dt>SCD</dt>
-  <dd>Secure Alias Store verfügbar</dd>
+  <dd>Secure Alias Store available</dd>
   <dt>Refund</dt>
-  <dd>Gutschriften durchführbar</dd>
+  <dd>Credits payments can be made</dd>
   <dt>Recurring</dt>
-  <dd>Wiederkehrende Zahlungen</dd>
+  <dd>Recurring payments</dd>
   <dt>DCC</dt>
-  <dd>DCC verfügbar</dd>
+  <dd>DCC available</dd>
   <dt>3-D Secure</dt>
-  <dd>3-D Secure verfügbar</dd>
+  <dd>3-D Secure available</dd>
   <dt>MOTO</dt>
-  <dd>Mail Phone Order verfügbar</dd>
+  <dd>Mail Phone Order available</dd>
 </dl>
 
 <<<---
 
 
-## <a name="capture-batch"></a> Capture (Verbuchung) und der Tagesabschluss
+## <a name="capture-batch"></a> Capture and Daily Closing
 
-Diese beiden Funktionen gehören wohl zu den weniger beachteten, aber äußerst wichtigen Saferpay-Funktionen. Beide stehen im direkten Zusammenhang und werden sie nicht ausgelöst, so wird es keine Auszahlung an das Händlerkonto geben.
+These two features are extremely important Saferpay features. Depending on the means of payment, the two can be directly associated with each other and they must be carried out for cash flow to the merchant’s account.
 
-### Der Capture
+### Capture
 
-[Der Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) ist dafür gedacht eine Zahlung zu finalisieren.
-Solange eine Transaktion nicht durch den Capture gelaufen ist, wird der Betrag für sie reserviert, aber nicht ausgezahlt.
-API seitig erhalten sie über den parameter „Status“ Auskunft (Beachten sie dass dies nur ein Ausschnitt der Daten ist):
+[Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) serves to book and thus to conclude a payment. As long as a transaction has not passed through the capture, the amount is merely reserved (“authorised”) and has not yet been paid. On the API side, you receive information about the transaction via the “Status” parameter (note that this is only a part of the data):
 
 --->>>
 
@@ -591,8 +638,7 @@ API seitig erhalten sie über den parameter „Status“ Auskunft (Beachten sie 
 
 <<<---
 
-Analog hierzu erhalten solche Transaktion im Saferpay Backoffice den Status “Reservation“.
-Ist eine Transaktion bereits durch den Capture gelaufen, so verändert sich auch der Status:
+Transactions which have not yet been booked are visible in Saferpay Backoffice as “Reservation.” If a transaction has already passed through the capture, the status is changed to “CAPTURED”:
 
 --->>>
 ```json
@@ -611,34 +657,28 @@ Ist eine Transaktion bereits durch den Capture gelaufen, so verändert sich auch
 ```
 <<<---
 
-Dies ist z.B. bei Zahlungsmitteln so, die keinen Capture brauchen bzw. können. [Siehe hier](https://saferpay.github.io/sndbx/General.html#pm-functions).
+Not all payment methods need a separate capture to trigger the cash flow. You can find an overview of which payment methods should be booked [under Payment Option Functions](https://saferpay.github.io/sndbx/index.html#pm-functions).
 
-WICHTIG: Eine Reservation wird nicht ewig für sie vorgehalten. Ist eine bestimmte Zeit verstrichen, wird der für sie autorisierte und reservierte Betrag wieder freigegebenund sie können das Geld nicht mehr einfordern.
-Besonders PayPal behält es sich vor die Auszahlung zu verweigern. Aus diesem Grund empfehlen wir den Capture sofort durchzuführen. Sollte das nicht möglich sein, so muss er innerhalb von 48 Stunden geschehen. Entweder per API, oder manuell im Saferpay Backoffice.
+IMPORTANT: A reservation is made in the payment option processor for a limited time only. If this is exceeded, the authorised amount is released and becomes available to the CH again. This may have the result that the amount can no longer be claimed. If possible, we recommend always triggering the booking immediately after authorisation. Either by direct API call, or manually via Saferpay Backoffice. If this is not possible, the update must nonetheless be done as soon as possible. With PayPal, this must be within 48 hours. Otherwise, it may be that the payment will be refused. For other payment methods, later booking is sometimes possible. When necessary, please speak to your processor about guaranteed reservation times.
 
-### Der Tagesabschluss
-Der Tagesabschluss folgt dem Capture einmal täglich, automatisiert um 22 Uhr MEST.
-Hierbei werden alle Transaktionen, welche durch den Capture gelaufen sind, beim Zahlungsverarbeiter eingereicht, um das Geld vom Kunden- auf das Händlerkonto zu übertragen.
 
-Dieser Schritt lässt sich, falls gewünscht, über die Saferpay API auch selber auslösen. Der hierzu notwendige Request heisst [Batch Close](https://saferpay.github.io/jsonapi/#Payment_v1_Batch_Close).
+### Daily Closing
+The daily closing follows the capture once daily, automatically at 22h CEST. For this, all transactions that have passed through the capture are filed with the payment method processor in order to initiate the cash flow.
 
-Bevor sie jedoch die API nutzen können, müssen sie den automatischen Tagesabschluss zunächst im Backoffice unter Administration > Terminals für das betreffende Terminal deaktivieren. Der Abschluss sollte nur einmal täglich durchgeführt werden.
+If desired, this step can also be triggered via the Saferpay API. The request necessary for this is called [Batch Close](http://saferpay.github.io/jsonapi/index.html#ChapterBatch).
 
-### Sonderfälle
-#### PayPal und Postfinance
-Bei diesen Anbietern wird mit dem Capture auch gleich ein mini-Tagesabschluss ausgelöst. Wenn sie also den Capture auslösen, wird sofort der Geldfluss eingeleitet.
-Bei PayPal wird dies getan aus dem oben genannten grund, dass sich PayPal vorbehält die Auszahlung zu verweigern. Aus diesem Grunde fordern wir das Geld für sie sofort ein.
-Bei Postfinance ist dies schlicht im von Postfinance genutzten Protokoll begründet.
+Before you can use the API, you first have to disable daily closing in the Saferpay Backoffice via Administration -> Disable terminals for the affected terminal. Closing should and must be carried out only once a day.
 
-#### Onlinebanking 
-Zahlungsanbieter, wie GiroPay, oder iDeal gehören zu den Onlinebanking Anbietern. Diese lösen mit der Autorisation sofort den Geldfluss aus. Sobald die Transaktion also erfolgreich war, ist die Transaktion zu 100% abgeschlossen.
+### Special Cases
 
-## <a name="cancel-refund"></a> Wann Storno (Cancel) und wann Gutschrift?
+#### PayPal and Schweizer Postcard
+With these payment methods, daily closing is triggered alongside the capture automatically for each transaction and the cash flow is initiated immediately. With PayPal, this happens because the right is reserved to refuse the payment. For this reason, we demand the money for you immediately. For Schweizer Postcard, this is established in the protocol used by PostFinance.
 
-Dass Kunden Ihre Bestellungen stornieren, oder waren zurückgeben wollen ist nicht selten. Natürlich ist es als Händler wichtig die im Hintergrund stehende Transaktion entweder zu stornieren, oder eine Gutschrift zu machen.
-Auf Zahlungsmittelebene kann es jedoch zu komplikationen kommen, wenn man nicht genau weiss, was wann genau zu tun ist. Auch gibt es Zahlungsmittel, die hier schlichtweg keinerlei Funktionalität bieten.
-Dieses Kapitel soll Ihnen dabei helfen eine Übersicht über dieses Thema zu bekommen. Dabei helfen soll auch die im Kapitel 5.2 stehende Matrix.
+#### Online Banking 
+giropay, iDEAL, SOFORT, Bancontact, eprzelewy und eps are online payment methods that trigger a transfer and thus the cash flow via the purchaser’s online banking services. A successful transaction is always 100% complete.
 
-Generell gilt: Solange Zahlungen nicht durch den Tagesabschluss eingereicht wurden, steht immer ein Storno (Cancel) zur Verfügung. Danach muss eine Gutschrift durchgeführt werden, falls verfügbar.
+## <a name="cancel-refund"></a> When Can Cancellations or Credit Payments Occur?
 
-WICHTIG: Beachten sie die [hier](https://saferpay.github.io/sndbx/General.html#pm-functions) genannten Sonderfälle! Besonders beim Onlinebanking stehen weder Stornos, noch Gutschriften zur Verfügung.
+It’s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation want to either cancel or to make a credit payment for the transaction in question. It should be noted here that there are means of payment that do not offer this functionality. [An overview can be found in the Payment Method Features chapter](https://saferpay.github.io/sndbx/index.html#pm-functions).
+
+If this is permitted by the payment method, payments that have not been submitted via daily closing may be cancelled. If daily closing has already been triggered, a credit note will have to be issued.
