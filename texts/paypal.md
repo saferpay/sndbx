@@ -21,7 +21,7 @@ So that PayPal payments can be handled via Saferpay, a few initial settings must
 
 2. Click on the profile icon ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_icon.png "Profile") on the top right side of the page. From the **Business Profile** menu, select Account Settings.
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_business_profile.png "Select Account settings")
+[alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_business_profile.png "Select Account settings")
 
 3. From the left menu, click **My selling tools**.
 
