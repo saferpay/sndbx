@@ -19,11 +19,11 @@ So that PayPal payments can be handled via Saferpay, a few initial settings must
 
 1. Log in to your PayPal business account at [www.paypal.com](http://www.paypal.com/).
 
-2.	Click on the profile icon (![Profile](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_icon.png")) on the top right side of the page. From the **Business Profile** menu, select Account Settings.
-![Select Account settings](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_business_profile.png")
+2.	Click on the profile icon (![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_icon.png "Profile")) on the top right side of the page. From the **Business Profile** menu, select Account Settings.
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_business_profile.png "Select Account settings")
 
 3.	From the left menu, click **My selling tools**.
-![My selling tools](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_my_selling_tools.png "API Zugriff 1")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_my_selling_tools.png "My selling tools")
 
 2. Es erscheint der Dialog **Einrichten von API-Genehmigungen und –Berechtigungen**. Klicken Sie auf **API-Genehmigung** erteilen:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-2.png "API Zugriff 2")
