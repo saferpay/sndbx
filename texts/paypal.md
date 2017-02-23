@@ -36,22 +36,22 @@ So that PayPal payments can be handled via Saferpay, a few initial settings must
 6. The dialogue **Add New Third Party Permissions**  appears:
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_add_3rd_party_permission.png "3rd Party permission")
->
->    <i class="glyphicon glyphicon-hand-right"></i> Enter **be-sfp_api1.six-group.com** into **Third Party Permission Username** box. Click on **Lookup**.
->
+
+<i class="glyphicon glyphicon-hand-right"></i> Enter **be-sfp_api1.six-group.com** into **Third Party Permission Username** box. Click on **Lookup**.
+
 7. A list entitled *Available Permissions* will be shown:
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_available_permission.png "Available permissions")
->
->    <i class="glyphicon glyphicon-hand-right"></i> Tick the following checkboxes and then click on **Add**:
->    * Use Express Checkout to process payments.
->    * Issue a refund for a specific transaction.
->    * Authorize and capture your PayPal transactions.
->    * Obtain information about a single transaction.
->    * Search your transactions for items that match specific criteria and display the results
->    * Obtain authorization for pre-approved payments and initiate pre-approved transactions.
->    * Accept or deny a pending transaction.
->    * Issue a refund for any prior transaction.
+
+<i class="glyphicon glyphicon-hand-right"></i> Tick the following checkboxes and then click on **Add**:
+* Use Express Checkout to process payments.
+* Issue a refund for a specific transaction.
+* Authorize and capture your PayPal transactions.
+* Obtain information about a single transaction.
+* Search your transactions for items that match specific criteria and display the results
+* Obtain authorization for pre-approved payments and initiate pre-approved transactions.
+* Accept or deny a pending transaction.
+* Issue a refund for any prior transaction.
 
 ## <a name="merchant-protection"></a> Seller Protection
 
