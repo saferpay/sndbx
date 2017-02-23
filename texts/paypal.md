@@ -10,7 +10,7 @@ The handling of PayPal payments with Saferpay requires:
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 * A valid PayPal merchant account.
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **Attention**: for PayPal activation on the Saferpay terminal, please inform **service.saferpay@six-payment-services.com** of your PayPal merchant account ID and the desired currency. .
+>    <i class="glyphicon glyphicon-hand-right"></i> **Attention**: for PayPal activation on the Saferpay terminal, please inform **service.saferpay@six-payment-services.com** of your PayPal merchant account ID and the desired currency.
 >
 
 ## <a name="api-access"></a> Grant API Approval for Saferpay
@@ -19,10 +19,11 @@ So that PayPal payments can be handled via Saferpay, a few initial settings must
 
 1. Log in to your PayPal business account at [www.paypal.com](http://www.paypal.com/).
 
-2.	Click on the profile icon (![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-1.png "API Zugriff 1")) on the top right side of the page. From the **Business Profile** menu, select Account Settings.
+2.	Click on the profile icon (![Profile](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_icon.png")) on the top right side of the page. From the **Business Profile** menu, select Account Settings.
+![Select Account settings](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_business_profile.png")
 
-1. Begeben Sie sich im Händlerkonto zu **Mein Konto** und klicken Sie auf **Mein Profil**. Anschließend wählen Sie auf der linken Seite **Verkäufer/Händler**, um rechts die Die Einstellungsmöglichkeiten für **Online verkaufen** anzuzeigen. Dort wählen Sie **Aktualisieren** in der Zeile **API-Zugriff**:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-1.png "API Zugriff 1")
+3.	From the left menu, click **My selling tools**.
+![My selling tools](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_my_selling_tools.png "API Zugriff 1")
 
 2. Es erscheint der Dialog **Einrichten von API-Genehmigungen und –Berechtigungen**. Klicken Sie auf **API-Genehmigung** erteilen:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-2.png "API Zugriff 2")
