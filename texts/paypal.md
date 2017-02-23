@@ -33,7 +33,7 @@ So that PayPal payments can be handled via Saferpay, a few initial settings must
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_grant_api_permission.png "API Access")
 
-6. The dialogue **Add New Third Party Permissions**  appears:
+6. The dialogue **Add New Third Party Permissions** appears:
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_add_3rd_party_permission.png "3rd Party permission")
 
