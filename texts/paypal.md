@@ -1,25 +1,25 @@
 # PayPal
 
-Sie können über die Saferpay JSON-API ebenfalls PayPal anbinden.
-Saferpay bettet dabei die Paypal-API ein, so dass sie nur die JSON-API integrieren müssen.
+Via the Saferpay JSON API, PayPal payments can be handled without too much expenditure of effort. This chapter describes what needs to be observed in this regard.
 
-Da es sich bei Paypal jedoch um einen 3rd-Party Anbieter handelt, gibt es ein paar Dinge zu beachten.
-Dieses Kapitel soll Ihnen hierbei helfen.
+## <a name="ppal-requirement"></a> Requirements
 
-## <a name="ppal-requirement"></a> Voraussetzungen
+The handling of PayPal payments with Saferpay requires:
 
-Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
-
-* Eine entsprechende Saferpay eCommerce-Lizenz und somit das Vorhandensein einer gültigen Kennung mit Benutzername und Passwort für das Saferpay System.
-* Mindestens ein aktives Saferpay Terminal, über das die Zahlungen durchgeführt werden können ist vorhanden und die dazugehörige Saferpay TERMINALID liegt vor.
-* Ein gültiges PayPal Händlerkonto.
+* The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
+* Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
+* A valid PayPal merchant account.
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Für die PayPal-Aktivierung auf dem Saferpay Terminal teilen Sie bitte **service.saferpay@six-payment-services.com** Ihre PayPal Händlerkonto-ID und die gewünschten Währungen mit.
+>    <i class="glyphicon glyphicon-hand-right"></i> **Attention**: for PayPal activation on the Saferpay terminal, please inform **service.saferpay@six-payment-services.com** of your PayPal merchant account ID and the desired currency. .
 >
 
-## <a name="api-access"></a> API Genehmigung für Saferpay
+## <a name="api-access"></a> Grant API Approval for Saferpay
 
-Damit PayPal-Zahlungen über Saferpay abgewickelt werden können, müssen zunächst ein paar Einstellungen im PayPal-Händlerkonto vorgenommen werden. Loggen Sie sich hierfür mit Ihren Zugangsdaten auf www.paypal.com ein.
+So that PayPal payments can be handled via Saferpay, a few initial settings must be changed in the PayPal merchant account.
+
+1. Log in to your PayPal business account at [www.paypal.com](http://www.paypal.com/).
+
+2.	Click on the profile icon (![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-1.png "API Zugriff 1")) on the top right side of the page. From the **Business Profile** menu, select Account Settings.
 
 1. Begeben Sie sich im Händlerkonto zu **Mein Konto** und klicken Sie auf **Mein Profil**. Anschließend wählen Sie auf der linken Seite **Verkäufer/Händler**, um rechts die Die Einstellungsmöglichkeiten für **Online verkaufen** anzuzeigen. Dort wählen Sie **Aktualisieren** in der Zeile **API-Zugriff**:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-1.png "API Zugriff 1")
