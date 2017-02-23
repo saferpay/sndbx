@@ -19,14 +19,19 @@ So that PayPal payments can be handled via Saferpay, a few initial settings must
 
 1. Log in to your PayPal business account at [www.paypal.com](http://www.paypal.com/).
 
-2.	Click on the profile icon (![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_icon.png "Profile")) on the top right side of the page. From the **Business Profile** menu, select Account Settings.
+2.	Click on the profile icon ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_icon.png "Profile") on the top right side of the page. From the **Business Profile** menu, select Account Settings.
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_business_profile.png "Select Account settings")
 
 3.	From the left menu, click **My selling tools**.
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_my_selling_tools.png "My selling tools")
 
-2. Es erscheint der Dialog **Einrichten von API-Genehmigungen und –Berechtigungen**. Klicken Sie auf **API-Genehmigung** erteilen:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-2.png "API Zugriff 2")
+4.	In the **Selling online** section, click the Update link for the **API access** item.
+
+5. The **API Access** dialogue appears. Click on **Grant API permission** under the bullet point **Pre-built payment solution**.  
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_grant_api_permission.png "API Access")
 
 3. Der Dialog **Neue Genehmigungen für Drittanbieter hinzufügen** erscheint:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PayPal-API-3.png "API Zugriff 3")
