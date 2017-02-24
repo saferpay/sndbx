@@ -1,41 +1,37 @@
 # F.A.Q
 
-## Kann ich meinen Testaccount auch auf dem Livesystem verwenden?
+## Can I use my test account on the live system?
 
-Nein! Die Test- und Livesysteme sind vollständig voneinander abgetrennt.  Daten werden zwischen diesen den aus PCI-Vorschrift nicht ausgetauscht.
+No, the test and live systems are completely separate from each other. No data exchange takes place.
 
-## Kann ich auf dem Testaccount richtige Karten nutzen?
+## Can I use real card details in the test environment?
 
-Nein! Eine Nutzung von realen Karten ist nicht möglich. Diese erzeugen immer einen Fehlschlag.
+No, the use of real card details is not possible and will generate an error.
 
-## Welche Funktionen stehen auf dem Testsystem zur Verfügung?
+## Which functions are available in the test system?
 
-Das Testsystem bietet generell alle Funktionen an. Auf den Accounts ist –zur Evaluierung- generell Saferpay Business aufgeschaltet. Es ist deshalb sehr wichtig, dass sie vorab festlegen, ob sie im Livebetrieb später ebenfalls die Businessfunktion nutzen, oder nicht. Dementsprechend sollten sie dann testen.
+On the test system, all Saferpay functions are available. Saferpay Business is usually switched off for test accounts. For this reason, it is important that you decide in advance whether or not you will also be using the business features in live operations later on.
 
-## Welche Zahlungsmittel kann ich testen?
+## Which payment methods can I test?
 
-Zur Zeit stehen folgende Zahlungsmittelsimulatoren zur Verfügung:
+Currently, the following payment methods are available:
 
-+ SEPA Lastschrift (nur EUR)
-+ PayPal
-+ American Express
-+ Diners Club
-+ JCB
-+ MasterCard
-+ myOne
-+ Shopping Bonus Card
-+ VISA
-+ Masterpass Wallet-Simulator
-+ Saferpay Testcard (Nur auf Nachfrage. Kontaktieren sie hierfür bitte das [Saferpay Integration Team](contact.html))
++ SEPA Direct Debit (Currency EUR only)
++	PayPal
++	American Express
++	Diners Club
++	JCB
++	Mastercard
++	myOne
++	Shopping Bonus Card
++	VISA
++	Masterpass Wallet 
++ Additional payment methods can be made available on demand. For this, please contact the [Saferpay Integration Team](mailto:integration.saferpay@six-payment-services.com?subject=Additional%20payment%20methods).
 
-## Welche Währungen sind auf dem Testsystem verfügbar?
+## What currencies are available in the test system?
 
-Standardmäßig sind auf den Testaccounts `EUR` und `CHF` aufgeschaltet. Auf Nachfrage können noch folgende Währungen aktiviert werden:
-```
-AUD, CAD, CZK, DKK, GBP, HUF, JPY, LVL, NOK, PLN, RON, RUB, RUR, SEK, USD
-```
-Kontaktieren sie hierfür bitte das [Saferpay Integration Team](contact.html).
+By default, EUR and CHF are enabled on test accounts. Other currencies can be activated on demand. For this, please contact the [Saferpay Integration Team](mailto:integration.saferpay@six-payment-services.com?subject=Test%20Account%20Currencies).
 
-## Ich habe bereits ein fertiges Webshop-System. Bieten sie hierfür fertige Plug-Ins an?
+## I have already a shop system. Do you offer an extension for it?
 
-Fertige Plug-Ins und Extensions für gängige Shopsysteme werden über unseren Partner [Customweb angeboten](https://www.sellxed.com/shop/en/eur/extensions/module/payment-service-provider/saferpay.html). Dort bekommen sie 1 Jahr lang Support und gegebenenfalls einen Installationsservice.
+Ready-to-use Saferpay payment extensions for several shop systems are offered by our partner [Customweb](https://www.sellxed.com/shop/en/eur/extensions/module/payment-service-provider/saferpay.html). You get 1 year support and where required integration service.
