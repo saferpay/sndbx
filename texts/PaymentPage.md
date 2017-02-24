@@ -1,55 +1,76 @@
-# PaymentPage
+# Payment Page
 
-Die [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) steht jedem Händler zur Verfügung und bietet das volle Portfolio an Zahlungsmitteln an.
-Einmal integriert, können Zahlungsmittel auch nachträglich noch aktiviert werden und stehen dann ohne größere Anpassungen zur Verfügung.
-Der Folgende Ablauf soll Ihnen einen Überblick darüber geben, wie der Generelle Ablauf über die Payment Page aussieht.
+The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) can be used both with a Saferpay eCommerce contract and with a Saferpay business contract. It allows the processing of all payment methods available through Saferpay. Once integrated, more payment methods can also be activated at any time and without major adjustments.
 
-### 1. PaymentPage Initialize
+## Description of the General Process for Using PaymentPage
 
-Der Ablauf beginnt mit dem [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize). Mit diesem Request übergeben sie alle für die Zahlung notwendigen Daten an Saferpay, wie z.B. Ihre Accountnummer, die Währung, den Betrag, eine Referenznummer (OrderId) zur späteren Identifizierung der Daten und auch Rücksprungadressen, an die der Kunde in bestimmten Fällen zurückgeleitet wird, wie zum Beispiel beim erfolgreichen Abschluss der Zahlung.
+### PaymentPage Initialize
 
-Hier ein paar Hinweise und Tipps zu den Möglichkeiten, die Ihnen nun zur Verfügung stehen:
+The process begins with the [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize) request. When this is loaded, all data necessary for the payment are forwarded to Saferpay.  These include the customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference no. of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer is returned after leaving the payment page.
 
-+ **PaymentMethods**: Wollen sie bereits vorher festlegen, welche Zahlungsmittel angezeigt werden, oder trifft der Kunde die Auswahl bereits in Ihrem Shop? Der Parameter PaymentMethods bietet Ihnen die Möglichkeit an genau dies zu tun. Bei mehreren Werten zeigt die PaymentPage nochmals eine Auswahl zwischen diesen Zahlungsmitteln an. Wird nur ein Wert übergeben, dann überspringt die PaymentPage diese Auswahl. Beachten sie, dass ungültige Werte, oder Methoden, die nicht aktiviert sind, von der PaymentPage ignoriert werden. Wird nur ein Wert übergeben und ist dieser ungültig, dann zeigt die PaymentPage selbstständig eine Auswahl an. Somit kann der Kunde notfalls an dieser Stelle eine Auswahl treffen. Gleiches gilt, wenn PaymentMethods leer, oder gar nicht übergeben wird.
-+ **ReturnUrls**: Saferpay liefert aus Sicherheitsgründen keinerlei Daten mit den ReturnUrls an den Shop zurück. Die Identifikation der Zahlung bzw. des zurückkehrenden Kunden, obliegt somit dem Händler. Wir empfehlen hierzu die verwendung von eigenen Parametern, welche sie per http-GET an die ReturnUrls hängen können. Werden diese aufgerufen, so liefert Saferpay auch die angehängten Parameter wieder zurück und ermöglich so eine einfache Identifikation des Kunden.
-+ **NotifyUrl**: Obwohl optional, empfehlen wir die Integration der NotifyUrl (Siehe Container **Notification**!). Sie müssen sich die NotifyUrl, wie eine zweite SuccessUrl vorstellen. Der Unterschied ist, dass diese Url von den Saferpay-Servern per http-GET direkt aufgerufen wird. Der Aufruf erfolgt ausschließlich bei einer **erfolgreichen Zahlung**. Achten sie darauf, dass Ihr Server den Aufruf mit einem http-Statuscode **200(OK)** beantwortet. Sollte Ihr Server nicht entsprechend antworten, so wird die NotifyUrl noch zwei Mal zusätzlich aufgerufen, um temporären Timeouts, oder Fehlern entgegenzuwirken. Auf diese Weise stellt die NotifyUrl sicher, dass der Shop die Information über eine erfolgreiche Zahlung auch wirklich erhält, sollte der Redirect an die SuccessUrl fehlschlagen.
-+ **Adressformular**: Wollen sie die Adresse des Kunden erfassen? Auch hier kann die PaymentPage abhelfen. Sie bietet die Möglichkeit an, dem Kunden im Laufe der Zahlung Adressformulare anzuzeigen. Sie können frei festlegen, welche Felder verpflichtend sind und welche nicht. Nach Abschluss der Zahlung liefert Saferpay die Adresse über den [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert) wieder zurück. Beachten sie hierfür nur die Container **BillingAddressForm** oder **DeliveryAddressForm**.
-+ **Secure Card Data**: Wollen sie die Kartendaten des Kunden für eine spätere Verwendung speichern? Die PaymentPage kann Kartendaten sicher und PCI-DSS konform für sie speichern. Beachten sie hierfür den Container **RegisterAlias**. Sie erhalten dadurch einen so genannten Alias mit dem [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert) zurück, den sie statt der Kreditkartennummer weiterverwenden dürfen.
+## Information on the Use and Significance of the Available Parameters
 
+### PaymentMethods
+
+By default, the payment page will always show all payment methods approved for the terminal in question. Limiting the display to a single item or preselection of the payment methods in the shop can be achieved via the **PaymentMethods** parameter. When using this parameter, the only payment methods displayed are those whose values are forwarded.  When forwarding multiple values, the PaymentPage opens with a page which offers the option to select the appropriate payment method. If only one value is passed, the PaymentPage skips the selection window. Invalid values or values from payment methods which are not available on the terminal or not available with the specified currency are ignored by the PaymentPage. For example, if only one value is forwarded and this is invalid, the Payment Page will display the same options as if **PaymentMethods** had not been used.
+
+### ReturnUrls
+
+Via the **ReturnUrls**, the customer is returned to the shop after the transaction. For security reasons, Saferpay provides no information on the transaction when doing this. The identification of the payment and/or the return customers is up to the merchant. We recommend using your own parameters (session ID or other unique values) that can be attached via HTTP GET to the **ReturnUrls**.  The parameters returned allow the corresponding assignment on the shop side. 
+
+### NotifyUrl 
+
+Although it is entirely optional, we strongly recommend integrating the **NotifyUrl**(see **Notification** container).
+With **NotifyUrl**, notification of the shop in the event of a successful payment is made regardless of connection problems that may prevent the customer getting back to the shop.   Without **NotifyUrl**, such an authorisation would be present in Saferpay Backoffice, but the shop would however have received no feedback on this. Looked at from a technical perspective, **NotifyUrl** notifies the merchant system in addition to the notification from Success URL. In contrast to Success URL, **NotifyUrl** is called up directly via HTTP GET Saferpay upon successful payment. It should be remembered that the notification via **NotifyUrl** takes place in addition to the call-up of the Success URL. Moreover, Saferpay expects the merchant server to answer the call-up of the address with a HTTP status code 200(OK). If the status code is not received, Saferpay will be called up once or twice more in order to counter temporary timeouts and errors. 
+It must therefore be ensured that any repeated response regarding the same transaction is processed correctly on the shop side.  
+
+### BillingAddressForm and DeliveryAddressForm
+
+The use of BillingAddressForm or DeliveryAddressForm allows customers to fill in a form during payment for the data capture of their address details. It can be freely decided which text entry boxes are mandatory to fill out and which are not. Upon completion of the payment, Saferpay returns the address in question via the [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert) response.
+
+### RegisterAlias 
+
+The use of **RegisterAlias** allows customer card details to be tokenised for later use. The card details, including expiration date, are stored by Saferpay in a secure database and linked to a replacement value. The parameter **IdGenerator** is used to determine how the replacement value is generated. If **MANUAL** is specified, the shop system passes an absolutely unique value. With **RANDOM**, an random alphanumeric value is generated by Saferpay. With **RANDOM_UNIQUE**, it will be additionally verified prior to generation of the replacement value, as to whether or not the card number/expiration date combination already exists as an alias entry in the database. If so, the already existing replacement value is returned and nothing new is generated.
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Die PaymentPage registriert die Daten nur dann, wenn auch die Zahlung selber erfolgreich war. Darüber hinaus kann die PaymentPage die Daten zwar speichern, aber nicht wiederverwenden. Hierfür müssen sie das [Transaction Interface](https://saferpay.github.io/jsonapi/#ChapterTransaction) nutzen.
+**Attention**: the registration and/or storage of the card details proceeds in each case only after authorisation, and even then only if this was successful. Moreover, the card details data can be tokenized with a PaymentPage transaction. However, transactions with the replacement card value thus generated are then only possible via the transaction interface.
 >
 
-In der Response auf den Initialize-Request erhalten sie zwei Dinge, welche für den weiteren Ablauf wichtig sind:
+## PaymentPage Initialize Response
 
-+ **Der Token:** Der Token ist für weitere Schritte innerhalb des Zahlungsablaufs wichtig. Es ist deshalb sehr wichtig, dass sie Ihn in Ihrer Datenbank abspeichern. Am besten verknüpfen sie Ihn mit den Parametern, die sie an die ReturnUrls/die NotifyUrl angehängt haben, damit sie Ihn später einfach wieder aus der Datenbank auslesen können.
-+ **Die RedirectUrl:** Diese URL wird dazu benutzt den Käufer letztendlich zur PaymentPage weiterzuleiten. Dies kann automatisch geschehen, oder indem sie die URL in einen HTML-Link Tag einbetten, auf den der Käufer klicken muss.
+### Token
 
-### 2. Transaktion
+The **Token** refers to the values temporarily stored regarding the Saferpay transaction and is mandatory during subsequent processing of the transaction ([for more information, see e.g. **PaymentPage Assert**](http://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert)). The Token should be coupled to the http-GET parameters that were previously attached to the **ReturnUrls** and **NotifyUr**l for identification. 
 
-Die eigentliche Transaktion findet nun auf der PaymentPage selber statt.
-Diese behandelt alle Schritte vollständig automatisiert, inklusive [3D Secure](https://saferpay.github.io/sndbx/index.html#3ds) und [DCC](https://saferpay.github.io/sndbx/index.html#dcc).
-Hierfür sind keinerlei zusätzliche Schritte notwendig.
+### RedirectUrl
 
-### 3. Rücksprung in den Shop
+**RedirectURL** provides the address via which the buyer is redirected to the PaymentPage. This can be done automatically via calling up the Iframe or by embedding the URL in an HTML link that must be clicked on by the buyer.
 
-Ist die Transaktion abgeschlossen, dann kehrt der Käufer, je nach Ergebnis, an eine der Returnurls zurück.
-Sie können nun die URL-Parameter per http-GET auslesen um mit deren Hilfe den Token aus Ihrer Datenbank zu holen.
-Dieser wird dann benutzt, um den nächsten Schritt auszuführen.
+## Transaction
 
-### 4. PaymentPage Assert
+The transaction will be fully processed by the PaymentPage. The Payment Page handles all steps automatically, including [3D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and [DCC](https://saferpay.github.io/sndbx/index.html#dcc). No additional steps are necessary on the merchant website.
 
-Der [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert) ist dazu gedacht das Ergebnis einer Transaktion zu erfragen. Sie dürfen alle Daten, die zurückgeliefert werden bei sich in der Datenbank abspeichern.
+## Return to the Shop
 
-Anhand der ausgelesenen Daten ist zu entscheiden, ob eine Transaktion weiterverarbeitet werden sollte, oder nicht.
-Folgende Daten sind hierbei interessant:
+When the transaction is complete, the buyer – depending on the result – is returned to one of the **ReturnUrls** in the shop. Via the URL parameters previously attached by way of http-GET, mapping to the corresponding token can take place and the next step be started.
 
-+ **Transaction > ID:** Diese ID ist die eindeutige Transaktionskennung für diese Transaktion. Nicht nur wird sie für weitere Verarbeitungsschritte benötigt, sie kann auch dazu benutzt werden, um im Saferpay Backoffice nach dieser Transaktion zu suchen. Aus diesem Grund muss die ID abgespeichert werden.
-+ **ThreeDs:** Dieser Container gibt Auskunft darüber, ob Haftungsumkehr durch [3D Secure](https://saferpay.github.io/sndbx/index.html#3ds) besteht. Es liegt im Ermessen des Händlers fortzufahren, allerdings empfehlen wir nur Transaktionen anzunehmen, welche auch Haftungsumkehr besitzen. 
-+ **Transaction > Status:** Wie [hier](https://saferpay.github.io/sndbx/General.html#capture-batch) bereits angegeben, gibt der Status an, ob eine Transaktion durch den [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) finalisiert werden muss, oder nicht. Ist dieser Status nicht **CAPTURED**, so muss der Capture ausgeführt werden, um die Transaktion zu finalisieren.
+## PaymentPage Assert
 
-### 5. Capture oder Cancel
+With [**PaymentPage Assert**](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert), the results of a transaction are displayed. The returned data may be stored on the merchant side.
 
-Als finaler Schritt steht nun an die Transaktion durch den [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) zu finalisieren, oder die Transaktion durch den [Cancel-Request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel) zu stornieren. Hierfür wird die im **Schritt 4** ausgelesene ID benötigt. Beachten sie die Hinweise [hier](https://saferpay.github.io/sndbx/General.html#capture-batch) und [hier](https://saferpay.github.io/sndbx/General.html#cancel-refund), bezüglich ob ein Capture notwendig ist und ob ein Cancel noch durchgeführt werden kann, oder nicht.
+Based on the data obtained, it is to be decided whether or not a transaction is to be further processed. The following data is interesting in this regard:
 
-Sind diese Schritte abgeschlossen, so ist der Transaktionsablauf beendet.
++ **Transaction > ID:**
+The transaction identifier returned in the container **Transaction** with **Id** is a unique identifier for a transaction. The value is obligatory for further processing steps (Transaction Capture or Transaction Cancel) and should therefore be saved.
+
++ **ThreeDs:**
+This container provides information about whether or not transaction liability shift via [3D Secure](https://saferpay.github.io/sndbx/index.html#3ds) is present. It is up to merchants whether or not they want to accept transactions without liability shift. Evaluation of the parameter provides the opportunity for merchants to incorporate appropriate rules here. 
+
++ **Transaction > Status:** 
+As already described [here](https://saferpay.github.io/sndbx/General.html#capture-batch), this status states whether or not a transaction has to be finalised via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture). If this status is not **CAPTURED**, the capture must be run in order to finalise the transaction.
+
+## Capture oder Cancel
+
+Subsequently, the transaction will be finalised via [**Capture**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or broken off via [**Cancel**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel).For this, the transaction identifier **Id** is required. Please refer to the notes on the payment methods on if and when a **Capture** is necessary, and whether a **Cancel** can still be carried out.
+
+Once these steps are complete, the transaction is completed.
+
