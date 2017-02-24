@@ -1,37 +1,35 @@
-# Postfinance
+# Swiss Postcard
 
-Sie können über die Saferpay JSON-API ebenfalls Postfinance anbinden.
-Saferpay bettet dabei die Postfinance-API ein, so dass sie nur die JSON-API integrieren müssen.
+Via the Saferpay JSON API, payments can be handled by Swiss Postcard and the card details are stored in the Saferpay Secure Card data store. This chapter describes what needs to be observed in this regard.
 
-Da es sich bei Postfinance jedoch um einen 3rd-Party Anbieter handelt, gibt es ein paar Dinge zu beachten.
-Dieses Kapitel soll Ihnen hierbei helfen.
+## <a name="pf-requirement"></a> Requirements
 
-## <a name="pf-requirement"></a> Voraussetzungen
+Acceptance of Swiss Postcard requires:
 
-Die Akzeptanz von Postfinance Karten setzt Folgendes voraus:
-* Eine entsprechende Lizenz und somit das Vorhandensein einer gültigen Kennung mit Benutzername und Passwort für das Saferpay System.
-* Ein gültiger Vertrag mit der Post
+* A corresponding licence and thus the existence of a valid identification with a username and password for the Saferpay system.
+* A valid contract with PostFinance.
 
-## <a name="pf-alias"></a> Speicherung im Secure Card Data - Store
+## <a name="pf-alias"></a> Storage in the Secure Card Data Store
 
-Saferpay bietet die Möglichkeit an, Postfinance **Karten** im Saferpay Secure Card Data - Store (SCD) zu speichern.
-Zu beachten ist hierbei, dass zum Einen folgende, zusätzliche, Voraussetzungen gegeben sein müssen:
+Saferpay provides the possibility of storing PostFinance’s Postcard in the Saferpay Secure Card store. For this, the following requirements must be met:
 
-* Die Aktivierung des Saferpay Secure Card Data-Stores
-* EineAktivierung für das Postfinance Alias-System bei der Post und Saferpay.
+*	Activation of Saferpay Secure Card Data in the merchant account
+* The activation of the PostFinance Alias System for PostFinance and Saferpay.
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **HINWEIS**: Beachten sie, dass die Registrierung von Postfinance-Karten nur über [Alias Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert) möglich ist!
+>    <i class="glyphicon glyphicon-hand-right"></i> **NOTE**: The registration of a Swiss Postcard is only possible with the [Alias Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert) method.
 >
 
-### Registrierungsdialog
+### Registration Dialogue
 
-Anders, als bei Kreditkarten, verlangt die Post, dass der Karteninhaber der Registrierung auf Ihrer Seite zustimmt.
+Unlike with credit cards, PostFinance requires the card holder to agree to registration on its site.
 
-1. Bestätigungsdialog bei der Post:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PFSCD1.png "Bestätigung")
-2. Nach einem Klick auf **Weiter** wird der Karteninhaber aufgefordert seine Kartennummer einzugeben:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PFSCD2.png "Eingabe")
-3. Anschließend muss der Karteninhaber die Registrierung mit einer TAN bestätigen, die er mit seinem Kartenleser erzeugt:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PFSCD3.png "Bestätigung")
-4. Nach Abschluss wird der Kunde zurück in den Shop geleitet und das Ergebnis der Registrierung kann ganz normal per [Alias AssertInsert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert) abgefragt werden.
+1. Confirmation dialogue on PostFinance:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_reg_for_payment.png "Confirmation")
+2. After clicking on **Next**, card holders are asked to enter their card ID:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_enter_id.png "Enter ID")
+3. Card holders must then confirm registration by entering a TAN. This is created using a card reader:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_input_reader.png "Enter Code")
+4. After registration, the result is displayed to the customer, who is then returned to the shop: 
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_reg_completed.png "Registration complete")
+The result of the registration can then be called up using the [Alias AssertInsert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert) feature.
