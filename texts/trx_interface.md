@@ -1,4 +1,4 @@
-# Integration Transaction Interface
+# Transaction Interface
 
 Das Transaction Interface ist als Erweiterung zur PaymentPage zu verstehen, kann allerdings auch alleine genutzt werden.
 Es bietet erweiterte Funktionen und Möglichkeiten zur Verarbeitung von Transaktionen an, sollten die Möglichkeiten PaymentPage nicht ausreichen.
