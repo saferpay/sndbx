@@ -28,8 +28,8 @@ So that PayPal payments can be handled via Saferpay, a few initial settings must
 1. The dialogue **Add New Third Party Permissions** appears:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_add_3rd_party_permission.png "3rd Party permission")
 ...
-<i class="glyphicon glyphicon-hand-right"></i> Enter **be-sfp_api1.six-group.com** into **Third Party Permission Username** box. Click on **Lookup**.
-...  
+Enter **be-sfp_api1.six-group.com** into **Third Party Permission Username** box. Click on **Lookup**.
+... 
 1. A list entitled *Available Permissions* will be shown:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_available_permission.png "Available permissions")
 
