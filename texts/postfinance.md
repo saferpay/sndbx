@@ -25,11 +25,11 @@ Saferpay provides the possibility of storing PostFinance’s Postcard in the Saf
 Unlike with credit cards, PostFinance requires the card holder to agree to registration on its site.
 
 1. Confirmation dialogue on PostFinance:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_reg_for_payment.png "Confirmation")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_reg_for_payment.png "Confirmation")  
 2. After clicking on **Next**, card holders are asked to enter their card ID:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_enter_id.png "Enter ID")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_enter_id.png "Enter ID")  
 3. Card holders must then confirm registration by entering a TAN. This is created using a card reader:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_input_reader.png "Enter Code")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_input_reader.png "Enter Code")  
 4. After registration, the result is displayed to the customer, who is then returned to the shop: 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_reg_completed.png "Registration complete")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_reg_completed.png "Registration complete")  
 The result of the registration can then be called up using the [Alias AssertInsert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert) feature.
