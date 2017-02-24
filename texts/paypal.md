@@ -18,29 +18,17 @@ The handling of PayPal payments with Saferpay requires:
 So that PayPal payments can be handled via Saferpay, a few initial settings must be changed in the PayPal merchant account.
 
 1. Log in to your PayPal business account at [www.paypal.com](http://www.paypal.com/).
-
-1. Click on the profile icon ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_icon.png "Profile") on the top right side of the page. From the **Business Profile** menu, select Account Settings.
-
+1. Click on the profile icon ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_icon.png "Profile") on the top right side of the page. From the **Business Profile** menu, select Account Settings.  
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_business_profile.png "Select Account settings")
-
 1. From the left menu, click **My selling tools**.
-
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_my_selling_tools.png "My selling tools")
-
 1. In the **Selling online** section, click the Update link for the **API access** item.
-
 1. The **API Access** dialogue appears. Click on **Grant API permission** under the bullet point **Pre-built payment solution**.  
-
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_grant_api_permission.png "API Access")
-
 1. The dialogue **Add New Third Party Permissions** appears:
-
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_add_3rd_party_permission.png "3rd Party permission")
-
 <i class="glyphicon glyphicon-hand-right"></i> Enter **be-sfp_api1.six-group.com** into **Third Party Permission Username** box. Click on **Lookup**.
-
 1. A list entitled *Available Permissions* will be shown:
-
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_available_permission.png "Available permissions")
 
 <i class="glyphicon glyphicon-hand-right"></i> Tick the following checkboxes and then click on **Add**:
