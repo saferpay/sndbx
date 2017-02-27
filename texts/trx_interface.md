@@ -1,93 +1,87 @@
 # Transaction Interface
 
-Das Transaction Interface ist als Erweiterung zur PaymentPage zu verstehen, kann allerdings auch alleine genutzt werden.
-Es bietet erweiterte Funktionen und Möglichkeiten zur Verarbeitung von Transaktionen an, sollten die Möglichkeiten PaymentPage nicht ausreichen.
-Im folgenden Kapitel werden auf einige dieser Möglichkeiten eingegangen.
+The Transaction Interface is an extension to Payment Page. It can be operated in parallel or alone. In comparison to Payment Page, more functions for the processing of transactions are available. 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **Hinweis**: Beachten sie bitte, dass die JSON-API vielseitig eingesetzt werden und somit viele Prozessabläufe abdecken kann. Aus diesem Grund werden im Folgenden nur standard Abläufe behandelt. Sollten sie besondere Ansprüche und zu diesen Fragen haben, dann kontaktieren sie bitte das **[Saferpay Integrationsteam](https://saferpay.github.io/sndbx/contact.html)**.
+**NOTE:** The JSON API can be used in various ways to cover the most diverse processes. For this reason, only the standard processes are discussed below. For other possible uses, or for questions about the standard procedures, please contact the [**Saferpay Integration Team**](https://saferpay.github.io/sndbx/contact.html).
 >
-
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **ACHTUNG**: Das Transaction Interface steht **ausschließlich** (Ausgenommen [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) und [Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel)) Händlern mit einem Business-Vertrag zur Verfügung. Sollten sie keinen Business-Vertrag haben, so werden die erweiterten Funktionen Ihnen im Livebetrieb nicht zur Verfügung stehen. Beachten sie auch, dass die Testaccounts auf dem Testsystem zur Evaluierung Business aktiviert haben. Dort stehen diese Funktionen zum testen zur Verfügung.
+**Attention:** the Transaction Interface is available for live use only for holders of a business licence. In the eCommerce licence, the advanced features are not available.
 >
 
-## <a name="trx-kk"></a> Kreditkarten
+## <a name="trx-kk"></a> Credit Cards
 
-Das Transaction Interface bietet die Möglichkeit an, Kreditkarten gezielter in den Händlershop zu integrieren, als mit der Saferpay Payment Page. Der grundlegende Ablauf Ähnelt zwar dem der Payment Page, jedoch gibt es auch gewisse Unterschiede, welche hier nun beleuchtet werden!
+In contrast to the payment page, credit card payments can be seamlessly integrated into the merchant's shop with the Transaction Interface. The procedure will be described in the following.
 
-### 1. Transaction Initialize
+### Transaction Initialize
 
-Der Ablauf beginnt mit dem [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize). Mit diesem Request übergeben sie alle für die Zahlung notwendigen Daten an Saferpay, wie z.B. Ihre Accountnummer, die Währung, den Betrag, eine Referenznummer (OrderId) zur späteren Identifizierung der Daten und auch Rücksprungadressen, an die der Kunde in bestimmten Fällen zurückgeleitet wird, wie zum Beispiel beim erfolgreichen Abschluss der Zahlung.
+The process begins with [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize). With this request, you forward to Saferpay all data necessary for the payment, such as your customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference number of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer is returned, depending on the outcome of the payment.
 
-Hier ein paar Hinweise und Tipps zu den Möglichkeiten, die Ihnen nun zur Verfügung stehen:
+Here are a few hints and tips about the options that are now available:
 
-+ **ReturnUrls**: Saferpay liefert aus Sicherheitsgründen keinerlei Daten mit den ReturnUrls an den Shop zurück. Die Identifikation der Zahlung bzw. des zurückkehrenden Kunden, obliegt somit dem Händler. Wir empfehlen hierzu die verwendung von eigenen Parametern, welche sie per http-GET an die ReturnUrls hängen können. Werden diese aufgerufen, so liefert Saferpay auch die angehängten Parameter wieder zurück und ermöglich so eine einfache Identifikation des Kunden.
-+ **Secure Card Data**: Mit dem Initialize Request können sie auch im Saferpay Secure Card Data Store gespeicherte Karten in Form eines Alias übergeben, wenn sie dem Kunden die Eingabe seiner Kartendaten ersparen wollen. Beachten sie hierfür den Container **PaymentMeans > Alias**.
+**ReturnUrls:** For security, Saferpay returns no data on return addresses to the shop. The identification of the payment or the return customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the ReturnUrls. When you call a return address, Saferpay returns the appended parameter, thus enabling identification of the customer.
 
->
->    <i class="glyphicon glyphicon-hand-right"></i> **Hinweis**: Da der CVC aus PCI-Gründen von uns und Ihnen nicht gespeichert werden darf, müssen sie diesen dennoch extra erfassen und später mit der Autorisierung (Siehe Schritt 4) übergeben.
->
-
-In der Response auf den Initialize-Request erhalten sie zwei Dinge, welche für den weiteren Ablauf wichtig sind:
-
-+ **Der Token:** Der Token ist für weitere Schritte innerhalb des Zahlungsablaufs wichtig. Es ist deshalb sehr wichtig, dass sie Ihn in Ihrer Datenbank abspeichern. Am besten verknüpfen sie Ihn mit den Parametern, die sie an die ReturnUrls/die NotifyUrl angehängt haben, damit sie Ihn später einfach wieder aus der Datenbank auslesen können.
-+ **Die RedirectUrl:** Anders, als bei der Payment Page wird diese URL nicht für einen Redirect benutzt, sondern in einen HTML-iFrame eingebettet. In diesem öffnet sich dann ein von Saferpay gehostetes Formular, mit dem der Händler die Kartendaten PCI-gerecht erfassen kann. Mehr zum Thema iFrame-Integration finden sie auf [dieser Seite](https://saferpay.github.io/sndbx/CssiFrame.html).
->
->    <i class="glyphicon glyphicon-hand-right"></i> **Hinweis**: Wenn sie mit dem Request bereits einen Alias übergeben haben, dann wird der Aufruf des Formulars übersprungen. 
->
-
-### 2. 3D Secure und DCC
-
-Wenn das Formular abgeschickt wird, dann werden automatisch [3D Secure](https://saferpay.github.io/sndbx/index.html#3ds) und [DCC](https://saferpay.github.io/sndbx/index.html#dcc) für diese Transaktion durchgeführt, falls aktiviert.
-Hierfür sind keinerlei zusätzliche Schritte vom Händler notwendig.
-Beachten sie, dass zu diesem Zeitpunkt noch keine Belastung/Transaktion durchgeführt wurde. Es wurden lediglich die beiden oberen Schritte durchgeführt.
-
-### 3. Rücksprung in den Shop
-
-Wurden [3D Secure](https://saferpay.github.io/sndbx/index.html#3ds) und [DCC](https://saferpay.github.io/sndbx/index.html#dcc) abgeschlossen, dann kehrt der Käufer, je nach Ergebnis, an eine der Returnurls zurück.
-Sie können nun die URL-Parameter per http-GET auslesen um mit deren Hilfe den Token aus Ihrer Datenbank zu holen.
-Dieser wird dann benutzt, um den nächsten Schritt auszuführen.
-
-### 4. Transaction Authorize
-
-Im Gegensatz zur Payment Page wird beim Transaction Interface erst mit dem [Authorize Request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize) die Karte des Kunden belastet. Das kann dazu genutzt werden, um dem Kunden zum Beispiel abschließend noch eine Bestellübersicht anzuzeigen.
-
-Darüber hinaus haben sie noch folgende Möglichkeiten an dieser Stelle:
-
-+ **Condition**: Dieser Parameter lermöglicht es dem Händler festzulegen, ob er Transaktionen ohne Haftungsumkehr durch 3D Secure erlauben will, oder nicht. Auch, wenn sich der Karteninhaber erfolgreich via 3D Secure authentifiziert hat, kann es sein, dass die Haftungsumkehr bei der Autorisation abgelehnt wird. Dieser Parameter stellt sicher, dass nur dann eine Autorisierung durchgeführt wird, wenn auch Haftungsumkehr besteht.
-+ **Secure Card Data**: Wollen sie die Kartendaten des Kunden für eine spätere Verwendung speichern? Die PaymentPage kann Kartendaten sicher und PCI-DSS konform für sie speichern. Beachten sie hierfür den Container **RegisterAlias**. Sie erhalten den Alias mit der Autorisationsant in der Response zurück. Diesen Alias können sie dann später statt der Kartennummer benutzen, um dem Kunden die Eingabe dieser zu ersparen.
+**Secure Card Data:** With the Initialize Request, it is also possible within Saferpay Secure Card Data Store to forward saved cards in the form of an alias. For example, this can be the case if the card number of the customer is already known, and you do not want her or him to have to re-enter this. For the alias, use the container PaymentMeans.
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Die Karte wird nur mit einer erfolgreichen Autorisierung registriert.
+**NOTE:** Although it is not permitted to store the Card Verification Code (CVC), it is usually still required for the authorization (see [Transaction Authorize](trx-ta))  and must be requested.
 >
 
-Mit der Response erhalten sie -im Erfolgsfall- die Autorisationsantwort zurück.
-Anhand der ausgelesenen Daten ist zu entscheiden, ob eine Transaktion weiterverarbeitet werden sollte, oder nicht.
-Folgende Daten sind hierbei interessant:
+In the Response of the Initialize Request these parameters are import for further processing:
 
-+ **Transaction > ID:** Diese ID ist die eindeutige Transaktionskennung für diese Transaktion. Nicht nur wird sie für weitere Verarbeitungsschritte benötigt, sie kann auch dazu benutzt werden, um im Saferpay Backoffice nach dieser Transaktion zu suchen. Aus diesem Grund muss die ID abgespeichert werden.
-+ **ThreeDs:** Dieser Container gibt Auskunft darüber, ob Haftungsumkehr durch [3D Secure](https://saferpay.github.io/sndbx/index.html#3ds) besteht. Es liegt im Ermessen des Händlers fortzufahren, allerdings empfehlen wir nur Transaktionen anzunehmen, welche auch Haftungsumkehr besitzen. 
-+ **Transaction > Status:** Wie [hier](https://saferpay.github.io/sndbx/General.html#capture-batch) bereits angegeben, gibt der Status an, ob eine Transaktion durch den [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) finalisiert werden muss, oder nicht. Ist dieser Status nicht **CAPTURED**, so muss der Capture ausgeführt werden, um die Transaktion zu finalisieren.
+**Token:**The Token is mandatory for further steps within the payment process and must therefore be cached. Preferably, it should be linked to the parameters attached to the ReturnUrls. It can thus be easily reassigned.
 
-### 5. Capture oder Cancel
+**RedirectUrl:** Unlike with Payment Page, this URL is not used for a redirect. Instead, it is embedded in an HTML Iframe. Within this, a form hosted by Saferpay is displayed. This form can provide data capture of card details as according to PCI. You can find out more about Iframe integration on [this website](https://saferpay.github.io/sndbx/CssiFrame.html).
+>
+**NOTE:** If a request has already forwarded an alias, loading of the form is skipped. 
+>
 
-Als finaler Schritt steht nun an die Transaktion durch den [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) zu finalisieren, oder die Transaktion durch den [Cancel-Request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel) zu stornieren. Hierfür wird die im **Schritt 4** ausgelesene ID benötigt. Beachten sie die Hinweise [hier](https://saferpay.github.io/sndbx/General.html#capture-batch) und [hier](https://saferpay.github.io/sndbx/General.html#cancel-refund), bezüglich ob ein Capture notwendig ist und ob ein Cancel noch durchgeführt werden kann, oder nicht.
+### 3-D Secure and DCC
 
-Sind diese Schritte abgeschlossen, so ist der Transaktionsablauf beendet.
+If [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc) are available on the terminal for the payment method being used, these services are automatically conducted for the transaction as soon as the form has been sent. For this, no additional steps are necessary for the merchant. 
 
-## <a name="trx-rp"></a> Redirect Payments
+### Return to the Shop
 
-Mit Redirect Payments haben sie die Möglichkeit durch die Saferpay JSON API andere 3rd Party Anbieter direkt an Ihr Shopsystem anzubinden. Sie müssen somit lediglich die Saferpay JSON-API in Ihr System integrieren.
+Once [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc) is complete, the buyer – depending on the outcome – is taken to one of the **ReturnUrls** in the shop. Here, GET parameters can be read and the **Token** can be assigned to the transaction. With the **Token**, the payment can subsequently be triggered.
 
-Zurzeit werden folgende Anbieter unterstützt:
+### <a name="trx-ta"></a>Transaction Authorize
 
-+ Paypal
-+ Postfinamce eFinance
-+ Postfinance Card
+With Payment Page, the payment is triggered automatically upon completion of[3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc). In contrast, with Transaction Interface it is triggered separately via [Authorize Request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize).
 
-## <a name="trx-sepa"></a> SEPA Lastschrift
+**Transaction Authorize** offers further possibilities:
+
+**Condition:** With the **Condition** parameter, it can be specified that a payment will only be authorised when a 3-D Secure liability shift is present for it.
+
+**Secure Card Data:** Via the **RegisterAlias** container, card details from a payment can be stored safely and in conformity with PCI. For this, the alias for the card details is transmitted back to the merchant system with the authorisation response. It is then available for another purchase in the shop, without customers having to enter their card details again.
+>
+**NOTE:** A card will be registered only after a successful authorisation.
+>
+
+With the **Transaction Authorize Response**, the authorisation data are returned in case of success. Based on this data, it can be decided how the transaction is to proceed. The following data is interesting in this regard:
+
+**Transaction > ID:** The transaction identifier returned in the container **Transaction** with **Id** is a unique identifier for a transaction. The value is obligatory for further processing steps (Transaction Capture) and should therefore be saved.
+
+**ThreeDs:** This container provides information about whether or not transaction liability shift via [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) is present. It is up to merchants whether or not they want to accept transactions without liability shift. Evaluation of the parameter provides the opportunity for merchants to incorporate appropriate rules here.
+
+**Transaction > Status:** As already described [here](https://saferpay.github.io/sndbx/General.html#capture-batch), this status states whether or not a transaction has to be finalised via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture). If this status is not **CAPTURED**, the capture must be run in order to finalise the transaction.
+
+### Capture or Cancel
+
+Subsequently, the transaction will be finalised via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or broken off via [Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel). For this, the transaction identifier **Id** is required. Please refer to the notes on the payment methods on if and when a capture is necessary, and whether or not a Cancel can still be carried out.
+
+Once these steps have been finalised, the transaction is complete.
+
+## <a name="trx-rp"></a> Redirect Payment Methods
+
+With the Saferpay JSON API, the following redirect payment methods can be directly connected to a shop system:
+
+*	Paypal
+*	Postfinamce eFinance
+*	Postfinance Card
+
+## <a name="trx-sepa"></a> SEPA Direct Debit
+
+Because there are no PCI requirements for direct debits, bank details data can be captured directly. The use of an in-house HTML form and the subsequent payment request are allowed. For this, the bank details must be forwarded to **AuthorizeDirect** with the **BankAccount** parameter in the **PaymentMeans** container.
 
 ## <a name="trx-recurring"></a> Recurring Payments
 
-## <a name="trx-end"></a> Abschließende Worte
-
+Recurring payments are particularly interesting for subscription systems. A recurring payment is initiated via an initial payment. This can proceed via the **Initialize** transaction or via **PaymentPage Initialize**. For this, it is important that this first transaction is marked as an initial payment. This means that subsequent payments can be referenced back to them and that the entire subscription chain can be tracked.
