@@ -1,4 +1,4 @@
-# Introduction
+# <a name="intro-start"></a> Introduction
 
 The Saferpay JSON API (**J**ava**S**cript **O**bject **N**otation **A**pplication **P**rogramming **I**nterface), hereinafter also referred to as JA, is a modern streamlined interface that is independent of programming languages. The JA supports all Saferpay methods and is suitable for all shop systems, call centre solutions, merchandise management, ERP and CRM systems and other applications in which online payments are processed. This Integration Guide focuses on the basics of the Saferpay JSON API and serves as a guide for programmers, developers and integrators.
 
@@ -615,7 +615,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
 
 These two features are extremely important Saferpay features. Depending on the means of payment, the two can be directly associated with each other and they must be carried out for cash flow to the merchant’s account.
 
-### Capture
+### <a name="capture"></a>Capture
 
 [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) serves to book and thus to conclude a payment. As long as a transaction has not passed through the capture, the amount is merely reserved (“authorised”) and has not yet been paid. On the API side, you receive information about the transaction via the “Status” parameter (note that this is only a part of the data):
 
@@ -662,17 +662,18 @@ Not all payment methods need a separate capture to trigger the cash flow. You ca
 IMPORTANT: A reservation is made in the payment option processor for a limited time only. If this is exceeded, the authorised amount is released and becomes available to the CH again. This may have the result that the amount can no longer be claimed. If possible, we recommend always triggering the booking immediately after authorisation. Either by direct API call, or manually via Saferpay Backoffice. If this is not possible, the update must nonetheless be done as soon as possible. With PayPal, this must be within 48 hours. Otherwise, it may be that the payment will be refused. For other payment methods, later booking is sometimes possible. When necessary, please speak to your processor about guaranteed reservation times.
 
 
-### Daily Closing
+### <a name="closing"></a>Daily Closing
+
 The daily closing follows the capture once daily, automatically at 22h CEST. For this, all transactions that have passed through the capture are filed with the payment method processor in order to initiate the cash flow.
 
 If desired, this step can also be triggered via the Saferpay API. The request necessary for this is called [Batch Close](http://saferpay.github.io/jsonapi/index.html#ChapterBatch).
 
 Before you can use the API, you first have to disable daily closing in the Saferpay Backoffice via Administration -> Disable terminals for the affected terminal. Closing should and must be carried out only once a day.
 
-### Special Cases
+### <a name="special"></a>Special Cases
 
-#### PayPal and Schweizer Postcard
-With these payment methods, daily closing is triggered alongside the capture automatically for each transaction and the cash flow is initiated immediately. With PayPal, this happens because the right is reserved to refuse the payment. For this reason, we demand the money for you immediately. For Schweizer Postcard, this is established in the protocol used by PostFinance.
+#### PayPal and Swiss Postcard
+With these payment methods, daily closing is triggered alongside the capture automatically for each transaction and the cash flow is initiated immediately. With PayPal, this happens because the right is reserved to refuse the payment. For this reason, we demand the money for you immediately. For Swiss Postcard, this is established in the protocol used by PostFinance.
 
 #### Online Banking 
 giropay, iDEAL, SOFORT, Bancontact, eprzelewy und eps are online payment methods that trigger a transfer and thus the cash flow via the purchaser’s online banking services. A successful transaction is always 100% complete.
