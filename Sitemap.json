@@ -20,7 +20,7 @@
     ]
   },
   {
-    "Title": "PaymentPage",
+    "Title": "Payment Page",
     "Source": "texts/PaymentPage.md",
     "Target": "Integration_PP.html"
   },
