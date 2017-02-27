@@ -1,56 +1,49 @@
-# IFrame Integration und CSS
+# Iframe Integration and CSS
 
 
-Sowohl die Saferpay PaymentPage, das Transaction Interface, sowie der Secure Alias-Store, bieten Möglichkeiten an per HTML-iFrame integriert und per CSS gestaltet zu werden.
-Das folgende Kapitel geht darauf ein, wie dieses Feature genutzt werden kann und was dabei beachtet werden muss.
+The Saferpay Payment Page, the Transaction Interface and Secure Card Data offer the options of Iframe integration and design with a Cascading Style Sheet (CSS). The following describes how this feature can be used and what needs to be adhered to.
 
-## <a name="css-iframe"></a> iFrame Integration
+## <a name="css-iframe"></a> Iframe Integration
 
-Die iFrame Integration ist denkbar einfach und steht bei folgenden Requests zur Verfügung:
+Iframe integration is supported for these methods:
 
 + [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize)
 + [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize)
 + [Alias Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert)
 
-In der Response zu diesen Requests erhalten sie, bei Erfolg, eine RedirectUrl.
-Diese müssen sie in den HTML-iFrame einbetten.
+IResponse Message includes a respective **RedirectURL** if successful. This needs to be embedded in the Iframe.
 
-### PaymentPage
+### Payment Page
 
-Da die Payment Page ein Responsive Design bietet, passt sich diese automatisch der iFrame Größe an.
-Hier zwei Beispiele:
+The Payment Page has a responsive design and automatically adapts to the size of the Iframe. Here are two examples:
 
-+ Fullsize:
++ Full size:  
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_desktop.png "Payment Page desktop view")
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iFramefull.PNG "PaymentPage Fullsize")
-
-+ Smallsize:
-
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iFramesml.PNG "PaymentPage Smallsize")
++ Small size:  
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_mobile.png "Payment Page mobile view")
 
 ### Transaction Initialize
 
-Hier öffnet sich das Saferpay Card Entry Form zur Erfassung der Kartendaten:
-
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/transactioniframe.PNG "Card Entry Form")
+Here, the Saferpay Card Entry Form appears for data capture of the card details:  
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pay_with_cvc.png "Saferpay Card Entry Form")
 
 ### Alias Insert
 
-Hier öffnet sich das Card Registration Form:
+Here, the Saferpay Card Registration Form opens:  
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/scdiframe.PNG "Card Registration Form")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_alias_insert.png "Card Registration Form")
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Bei der Registrierung ist die Erfassung des CVC aus PCI-Gründen nicht vorgesehen. Der CVC darf selbst von Saferpay nur für 20 Minuten zwischengespeichert werden. Eine dauerhafte Speicherung ist nicht erlaubt.
+**Attention!** For registration, the capture of the card verification code CVC data is not enabled, because it can only be saved by Saferpay on a temporary, 20-minute basis. PCI specifications prohibit permanent storage.
 >
 
-## <a name="css-iframe_size"></a> iFrame Größe
+## <a name="css-iframe_size"></a> Size of the Iframe
 
-Die Größe des iFrame wird dem Händler über eine HTML5-POST Message mitgeteilt, welche sich per Java Script auswerten lässt.
-Auf diese Weise kann sich der iFrame dynamisch an den Inhalt anpassen lassen.
+The size of the Iframe is communicated to the merchants via an HTML5-POST message. This can be evaluated using JavaScript. The Iframe can thus be dynamically adapted to the content.
 
 --->>>
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Die Post-Message liegt im JSON-Format vor:
+>    <i class="glyphicon glyphicon-hand-right"></i> The POST message is transmitted in JSON format:
 >
 ```json
 {  
@@ -61,7 +54,7 @@ Auf diese Weise kann sich der iFrame dynamisch an den Inhalt anpassen lassen.
 ```
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Beispiel zum Empfangen der Message (Für jQuery >= 1.9):
+>    <i class="glyphicon glyphicon-hand-right"></i> Example for receipt of message (for jQuery >= 1.9):
 >
 ```javascript
 $(window).bind("message", function (e) {
@@ -71,32 +64,30 @@ $(window).bind("message", function (e) {
 <<<---
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Nicht jede Seite meldet Ihre Größe an das Händlersystem zurück! Da Saferpay jedoch im Zahlungsverlauf auf die Seiten von Drittanbietern weiterleiten muss, empfehlen wir eine **Mindestgröße von 450x450 Pixeln!**
+**Attention!** Not every page reports its size to the merchant’s system. Because, however, Saferpay has to forward users to third parties during the payment process, we recommend a **minimum site of 450x450 pixels**.
 >
 
-## <a name="css-css"></a> Verwendung von CSS
-Die Verwendung von CSS steht bei folgenden Requests zur Verfügung:
+## <a name="css-css"></a> Using CSS
+The use of Cascading Style Sheets is available via the following methods:
 
 + [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize)
 + [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize)
 + [Alias Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert)
 
-Hierbei muss beim Request im Container **"Styling"** der Parameter **"CssUrl"** angegeben werden, mit einem verweis auf die zu verwendende CSS-Datei.
+With a request using the **Styling** container, the **CssUrl**  parameter must be forwarded, alongside a reference to the CSS file which is to be used.
 
-## Welche Elemente können verwendet werden?
+## <a name="css-element"></a> CSS Elements
 
-### Folgende Elemente dürfen benutzt werden:
+**Element Name**
 
-+ **Element Name**: Der Element Name darf gemäß der CSS Spezifikation verwendet werden.
-Beispiel:
 ```
 h1{
   text-decoration: underline;
 }
 ```
 
-+ **Class Name**: Sämtliche von der PaymentPage, Card Entry Form und Card Registration Form verwendeten CSS-Klassen dürfen für das CSS-Styling benutzt werden.
-Beispiel:
+**Class Name**
+
 ```
 h1{
   text-decoration: underline;
@@ -104,47 +95,50 @@ h1{
 ```
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **Tipp**: Die meisten modernen Browser (Chrome, Firefox) bringen von Haus aus Tools mit, um die Gestaltung per CSS zu vereinfachen. Sie können z.B. das CSS live im Browser einsehen und editieren.
+**Tip:** Most modern browsers include tools that simplify designing with CSS. CSS can thus be edited directly in the browser, and the results can be observed.
 >
 
-  * Klicken sie dazu mit der rechten maustaste auf das Element, welches sie editieren wollen (Beispiel Chrome):
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/CSSinspect1.png "CSS-Inspect 1")
+* Example for Chrome: 
 
-  * Es öffnet sich ein Menü, wo sie den HTML-Code, die CSS-Klassen und die daran hängenden Attribute einsehen können:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/CSSinspect2.png "CSS-Inspect 2")
+With the right mouse button, click the item to be edited:  
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_inspect.png "Inspect")
 
-  * Als Beispiel wird hier die Textfarbe angepasst (Es lassen sich auch Attribute hinzufügen und entfernen, sofern vom Browser unterstützt):
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/CSSinspect3.png "CSS-Inspect 3")
+It opens a menu which shows the HTML code and the CSS classes with the corresponding attributes:  
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_inspect_code.png "Inspect code")
 
-  * Der Browser zeigt die Änderung sofort an, sie müssen den Code nur noch in Ihr CSS-File überführen:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/CSSinspect4.png "CSS-Inspect 4")
+As an example, the text colour is adjusted here (attributes can also be added and removed, if supported by the browser):  
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_inspect_color.png "Inspect color")
 
+The change is immediately displayed in the browser. Then, the code simply needs to be transferred to the CSS file:  
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_card_data.png "See changes")
 
-### Folgende Elemente dürfen **NICHT** benutzt werden:
+The following elements should **NOT** be used:
 
-+ **Element ID**: Das Element ID sollte nicht verwendet werden, da sich die IDs unangekündigt ändern können.
-+ **Element Attribute**: Element Attribute sollten nicht verwendet werden, da sich die Attribute (name, value, data-*, etc.) unangekündigt ändern können.
++ **Element ID:** Element ID should not be used because the ID used may change without notice.
 
-## Welche CSS-Selektoren werden unterstützt?
++ **Element Attribute:** Element attributes should not be used, because attributes (name, value, data-*, etc.) can change without notice.
 
-Grundsätzlich werden alle CSS-Selektoren  für CSS1, CSS2 und CSS3 unterstützt.
+## <a name="css-selector"></a> CSS Selectors
 
-## <a name="css-info"></a> Abschließende Hinweise
+As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported.
 
-+ Das Stylesheet, auf das mit dem Parameter CSSURL verwiesen wird, muss auf einem Webserver abgelegt werden, der HTTPS unterstützt. Innerhalb des Stylesheets muss darauf geachtet werden, dass Grafiken über „HTTPS://“ geladen werden. Ansonsten wird im Browser eine Warnung angezeigt. Zum Beispiel: „[…] this page includes other resources which are not secure. […].
+## <a name="css-info"></a> More Information
 
-+ Es empfiehlt sich während des Ladens des Iframe eine Fortschrittsanzeige einzublenden.
++ The CSS file that is referenced by the CssUrl parameter must be stored on a web server that supports HTTPS.
 
-+ Sie sind aus PCI-Gründen **NICHT** erlaubt per Java Script in den iFrame einzudringen.
++ Within the CSS file, graphics must be loaded via “HTTPS://”. Otherwise, a warning is displayed in the browser, such as: “[…] this page includes other resources which are not secure. […]".
 
-+ Da innerhalb des iFrames Weiterleitungen zu Seiten von Drittanbietern geschehen, können wir nicht garantieren, dass diese nicht von selber einen Ausbruch aus diesem vornehmen. Es gibt derweil Anbieter, die die Integration im iFrame nicht zulassen, darunter fallen:
-  + PayPal
++ It is recommended to display a progress bar while something is loading in an Iframe.
 
-+ Es wird generell empfohlen beim Rücksprung in den Shop auf die Success-, Abort- oder Fail-Seite aus dem Iframe auszubrechen.
++ The PCI specifications do **NOT** allow jumping into the Iframe with JavaScript.
+
++ If forwarding to a third party occurs within an Iframe, it is possible that this will pop out from the Iframe because showing one’s own website within an Iframe is not permitted. This behaviour is familiar from PayPal.
+
+With PayPal payments, it is recommended to eject into a Success, Abort or Fail page from the Iframe when returning to the shop.
 
 --->>>
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Beispiel, für einen iFrame Ausbruch per Java Script:
+>    <i class="glyphicon glyphicon-hand-right"></i> Example of excessive Iframe JavaScript:
 >
 ```
 <HTML>
@@ -169,6 +163,6 @@ Grundsätzlich werden alle CSS-Selektoren  für CSS1, CSS2 und CSS3 unterstützt
 ```
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **ACHTUNG**: Hierbei wird die Return-Seite neu geladen!
+>    <i class="glyphicon glyphicon-hand-right"></i> **Attention!** When this is done, the return site is reloaded. The call-up thus occurs twice.!
 >
 <<<---
