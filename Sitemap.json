@@ -1,6 +1,6 @@
 [
   {
-    "Title": "Einleitung",
+    "Title": "Introduction",
     "Source": "texts/intro.md",
     "Target": "index.html",
     "Subsites": [
