@@ -23,7 +23,7 @@ Here are a few hints and tips about the options that are now available:
 **Secure Card Data:** With the Initialize Request, it is also possible within Saferpay Secure Card Data Store to forward saved cards in the form of an alias. For example, this can be the case if the card number of the customer is already known, and you do not want her or him to have to re-enter this. For the alias, use the container PaymentMeans.
 
 >
-**NOTE:** Although it is not permitted to store the Card Verification Code (CVC), it is usually still required for the authorization (see [Transaction Authorize](trx-ta))  and must be requested.
+**NOTE:** Although it is not permitted to store the Card Verification Code (CVC), it is usually still required for the authorization (see [Transaction Authorize](#transaction-authorize))  and must be requested.
 >
 
 In the Response of the Initialize Request these parameters are import for further processing:
