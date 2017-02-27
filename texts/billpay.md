@@ -249,13 +249,13 @@ Because it is not always possible to conduct certification in every shop without
 **Attetion:** Because this is not loaded via the shop, the shop is not informed about the purchase. It is therefore necessary to manually create the invoice required by BillPay. You can find the necessary data for this in the Saferpay Backoffice via **Transactions > Journal**. Here you can find a list of all transactions, which you can then view in detail.
 >
 
-In your Saferpay Backoffice go to the **Webshop** heading and select the option **All Offers**:
+In your Saferpay Backoffice go to the **Webshop** heading and select the option **All Offers**:  
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_all_offers.png "Webshop > All Offers")
 
-Then click on “Add new offer”: 
+Then click on “Add new offer”:  
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_add_new_offer.png "Add new offer")
 
-The form for a new offer is shown:
+The form for a new offer is shown:  
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_offer_form.png "New offer form")
 
 Fill out the fields for the description and the amount and, if necessary, select the currency and add the return addresses for your webshop. Then click on “Save”.
