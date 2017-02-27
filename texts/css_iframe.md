@@ -44,10 +44,10 @@ Here, the Saferpay Card Registration Form opens:
 
 The size of the Iframe is communicated to the merchants via an HTML5-POST message. This can be evaluated using JavaScript. The Iframe can thus be dynamically adapted to the content.
 
---->>>
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> The POST message is transmitted in JSON format:
 >
+
 ```json
 {  
   "message":"css",
@@ -59,12 +59,12 @@ The size of the Iframe is communicated to the merchants via an HTML5-POST messag
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Example for receipt of message (for jQuery >= 1.9):
 >
+
 ```javascript
 $(window).bind("message", function (e) {
 	$("#iframe").css("height", e.originalEvent.data.height + "px");
 });
 ```
-<<<---
 
 >
 **Attention!** Not every page reports its size to the merchant’s system. Because, however, Saferpay has to forward users to third parties during the payment process, we recommend a **minimum site of 450x450 pixels**.
@@ -101,18 +101,22 @@ h1{
 **Tip:** Most modern browsers include tools that simplify designing with CSS. CSS can thus be edited directly in the browser, and the results can be observed.
 >
 
-* Example for Chrome: 
+* Example for Chrome browser: 
 
 With the right mouse button, click the item to be edited:  
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_inspect.png "Inspect")
 
 It opens a menu which shows the HTML code and the CSS classes with the corresponding attributes:  
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_inspect_code.png "Inspect code")
 
 As an example, the text colour is adjusted here (attributes can also be added and removed, if supported by the browser):  
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_inspect_color.png "Inspect color")
 
 The change is immediately displayed in the browser. Then, the code simply needs to be transferred to the CSS file:  
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_card_data.png "See changes")
 
 The following elements should **NOT** be used:
@@ -139,10 +143,10 @@ As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported.
 
 With PayPal payments, it is recommended to eject into a Success, Abort or Fail page from the Iframe when returning to the shop.
 
---->>>
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Example of excessive Iframe JavaScript:
 >
+
 ```
 <HTML>
     <head>
@@ -164,8 +168,7 @@ With PayPal payments, it is recommended to eject into a Success, Abort or Fail p
     </body>
 </HTML>
 ```
-<<<---
+
 >
 **Attention!** When this is done, the return site is reloaded. The call-up thus occurs twice.!
 >
-
