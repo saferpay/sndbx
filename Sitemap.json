@@ -4,16 +4,19 @@
     "Source": "texts/intro.md",
     "Target": "index.html",
     "Subsites": [
-      { "Source": "texts/intro.md", "Title": "Einführung", "Target": "index.html#intro-start" },
-      { "Source": "texts/intro.md", "Title": "Voraussetzungen", "Target": "index.html#intro-requirement" },
-      { "Source": "texts/intro.md", "Title": "Datensicherheit und PCI DSS", "Target": "index.html#pci" },
-      { "Source": "texts/intro.md", "Title": "3D Secure", "Target": "index.html#3ds" },
+      { "Source": "texts/intro.md", "Title": "Introduction", "Target": "index.html#intro-start" },
+      { "Source": "texts/intro.md", "Title": "Requirements", "Target": "index.html#intro-requirement" },
+      { "Source": "texts/intro.md", "Title": "Data Security and PCI DSS", "Target": "index.html#pci" },
+      { "Source": "texts/intro.md", "Title": "3-D Secure", "Target": "index.html#3ds" },
       { "Source": "texts/intro.md", "Title": "Dynamic Currency Conversion", "Target": "index.html#dcc" },
-      { "Source": "texts/intro.md", "Title": "Unterstützte Zahlungsmittel", "Target": "index.html#paymentmethods" },
-      { "Source": "texts/intro.md", "Title": "Lizenzen", "Target": "index.html#licenses" },
-      { "Source": "texts/intro.md", "Title": "Zahlungsmittelfunktionen", "Target": "index.html#pm-functions" },
-      { "Source": "texts/intro.md", "Title": "Capture (Verbuchung) und der Tagesabschluss", "Target": "index.html#capture-batch" },
-      { "Source": "texts/intro.md", "Title": "Wann Storno (Cancel) und wann Gutschrift?", "Target": "index.html#cancel-refund" }
+      { "Source": "texts/intro.md", "Title": "Supported Payment Methods", "Target": "index.html#paymentmethods" },
+      { "Source": "texts/intro.md", "Title": "Licences", "Target": "index.html#licenses" },
+      { "Source": "texts/intro.md", "Title": "Payment Method Features", "Target": "index.html#pm-functions" },
+      { "Source": "texts/intro.md", "Title": "Capture and Daily Closing", "Target": "index.html#capture-batch" },
+      { "Source": "texts/intro.md", "Title": "Capture", "Target": "index.html#capture" },
+      { "Source": "texts/intro.md", "Title": "Daily Closing", "Target": "index.html#closing" },
+      { "Source": "texts/intro.md", "Title": "Special Cases", "Target": "index.html#special" },
+      { "Source": "texts/intro.md", "Title": "When Can Cancellations or Credit Payments Occur?", "Target": "index.html#cancel-refund" }
     ]
   },
   {
@@ -41,6 +44,15 @@
     ]
   },
   {
+    "Title": "PostFinance",
+    "Source": "texts/postfinance.md",
+    "Target": "PostFinance.html",
+    "Subsites": [
+      { "Source": "texts/postfinance.md", "Title": "Voraussetzungen", "Target": "PostFinance#pf-requirement" },
+      { "Source": "texts/postfinance.md", "Title": "Speicherung im Secure Card Data - Store", "Target": "PostFinance#pf-alias" }
+    ]
+  },
+  {
     "Title": "BillPay",
     "Source": "texts/billpay.md",
     "Target": "BillPay.html",
@@ -51,7 +63,7 @@
     ]
   },
   {
-    "Title": "IFrame Integration und CSS",
+    "Title": "IFrame Integration and CSS",
     "Source": "texts/css_iframe.md",
     "Target": "CssiFrame.html",
     "Subsites": [
@@ -63,33 +75,14 @@
     ]
   },
   {
-    "Title": "PostFinance",
-    "Source": "texts/postfinance.md",
-    "Target": "PostFinance.html",
-    "Subsites": [
-      { "Source": "texts/postfinance.md", "Title": "Voraussetzungen", "Target": "PostFinance#pf-requirement" },
-      { "Source": "texts/postfinance.md", "Title": "Speicherung im Secure Card Data - Store", "Target": "PostFinance#pf-alias" }
-    ]
-  },
-  {
     "Title": "FAQ",
     "Source": "texts/FAQ.md",
     "Target": "faq.html"
   },
   {
-    "Title": "Kontakt",
+    "Title": "Contact",
     "Source": "texts/contact.md",
     "Target": "contact.html"
-  },
-  {
-    "Title": "MarkDown Cheatsheet",
-    "Source": "texts/99_mdss.md",
-    "Target": "Markdown-Cheatsheet.html"
-  },
-  {
-    "Title": "CodeSnippets",
-    "Source": "texts/99_mdss.md",
-    "Target": "Markdown-Cheatsheet.html#code"
   },
   {
     "Title": "API Specification",
