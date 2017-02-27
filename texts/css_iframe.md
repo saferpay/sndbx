@@ -77,7 +77,7 @@ The use of Cascading Style Sheets is available via the following methods:
 + [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize)
 + [Alias Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert)
 
-With a request using the **Styling** container, the **CssUrl**  parameter must be forwarded, alongside a reference to the CSS file which is to be used.
+With a request using the **Styling** container, the **CssUrl** parameter must be forwarded, alongside a reference to the CSS file which is to be used.
 
 ## <a name="css-element"></a> CSS Elements
 
@@ -144,7 +144,7 @@ As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported.
 With PayPal payments, it is recommended to eject into a Success, Abort or Fail page from the Iframe when returning to the shop.
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Example of excessive Iframe JavaScript:
+>    <i class="glyphicon glyphicon-hand-right"></i> Example of Iframe break out JavaScript
 >
 
 ```
@@ -170,5 +170,5 @@ With PayPal payments, it is recommended to eject into a Success, Abort or Fail p
 ```
 
 >
-**Attention!** When this is done, the return site is reloaded. The call-up thus occurs twice.!
+**Attention!** When this is done, the return site is reloaded. The call-up thus occurs twice!
 >
