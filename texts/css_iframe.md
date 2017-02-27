@@ -18,14 +18,17 @@ IResponse Message includes a respective **RedirectURL** if successful. This need
 The Payment Page has a responsive design and automatically adapts to the size of the Iframe. Here are two examples:
 
 + Full size:  
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_desktop.png "Payment Page desktop view")
 
 + Small size:  
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_mobile.png "Payment Page mobile view")
 
 ### Transaction Initialize
 
-Here, the Saferpay Card Entry Form appears for data capture of the card details:  
+Here, the Saferpay Card Entry Form appears for data capture of the card details: 
+
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pay_with_cvc.png "Saferpay Card Entry Form")
 
 ### Alias Insert
@@ -161,8 +164,8 @@ With PayPal payments, it is recommended to eject into a Success, Abort or Fail p
     </body>
 </HTML>
 ```
-
->
->    <i class="glyphicon glyphicon-hand-right"></i> **Attention!** When this is done, the return site is reloaded. The call-up thus occurs twice.!
->
 <<<---
+>
+**Attention!** When this is done, the return site is reloaded. The call-up thus occurs twice.!
+>
+
