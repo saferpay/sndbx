@@ -308,8 +308,6 @@ The following table shows an overview of which functions are included in the two
   </tbody>
 </table>
 
-
-
 ## <a name="pm-functions"></a> Payment Method Features
 
 Saferpay supports a variety of payment methods, including 3rd party providers such as PayPal. These 3rd party providers are not obligated to support all Saferpay functions. The following table provides an overview of the features supported by the individual payment methods:
@@ -588,7 +586,6 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
 </table>
 
 --->>>
-
 <dl class="dl-horizontal">
   <dt>Capture</dt>
   <dd>Capture required</dd>
@@ -607,9 +604,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
   <dt>MOTO</dt>
   <dd>Mail Phone Order available</dd>
 </dl>
-
 <<<---
-
 
 ## <a name="capture-batch"></a> Capture and Daily Closing
 
