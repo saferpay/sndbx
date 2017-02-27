@@ -1,40 +1,35 @@
 # BillPay
 
-Sie können über die Saferpay JSON-API ebenfalls BillPay anbinden.
-Saferpay bettet dabei die BillPay-API ein, so dass sie nur die JSON-API integrieren müssen.
-
-Da es sich bei BillPay jedoch um einen 3rd-Party Anbieter handelt, gibt es ein paar Dinge zu beachten.
-Dieses Kapitel soll Ihnen hierbei helfen.
+BillPay can also be processed via the Saferpay JSON API. 
+However, as BillPay is a third party provider, there are a few things which must be observed:
 
 ## <a name="bp-requirement"></a> Voraussetzungen
 
-* Eine entsprechende Lizenz und somit das Vorhandensein einer gültigen Kennung mit Benutzername und Passwort für das Saferpay System.
-* Mindestens ein aktives Saferpay Terminal, über das die Zahlungen durchgeführt werden können ist vorhanden und die dazugehörige Saferpay TERMINALID liegt vor.
-* Ein gültiger Akzeptanzvertrag für Billpay liegt vor.
-* Die Adresse des Käufers liegt vor und wird an BillPay weitergereicht (siehe hierfür auch Kapitel 3).
+*	A corresponding licence and thus the existence of a valid identification with a username and password for the Saferpay system.
+*	Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
+*	A valid acceptance agreement for BillPay must be present.
+*	The address of the purchaser is present and is forwarded to BillPay.
+>
+**Attention** For BillPay activation on the Saferpay terminal, please inform **service.saferpay@six-payment-services.com** of the BillPay access details and the desired currency.
+>
+
+## <a name="bp-approval-api"></a> BillPay Certification via API
+
+Before they can conclude a transaction via BillPay, all BillPay customers have to be entered into a so-called “Certification Provider”. Prior to the going-live, BillPay expects each merchant to trigger a transaction via this provider. As proof, BillPay requires a complete invoice from the merchant system. After examination, information on the live account data is provided. In contracts for **BillPay Purchase on Receipt** and **BillPay Direct Debit**, the operation must be performed for each payment method.
+
+For certification, a simple transaction on the [Payment Page](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize) is performed using the JSON API. For this, the means of payment (**BillPay Purchase on Receipt** or **BillPay Direct Debit**) must always be specified explicitly via the **Payment Methods** parameter. Otherwise, the payment method will not be shown on the Payment Page. In addition, it is generally the case – even in live operations – that the transfer of address details to BillPay is not necessary. This can be mapped in two different ways:
+
+### 1. Delivery via parameters
+
+If address data have already been captured in the shop, they can be forwarded to Saferpay via the corresponding parameter.
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **Achtung**: Für die BillPay-Aktivierung auf dem Saferpay Terminal teilen Sie bitte **service.saferpay@six-payment-services.com** die BillPay Zugangsdaten und die gewünschten Währungen mit.
->
-
-## <a name="bp-approval-api"></a> BillPay Abnahme per API
-
-Bevor sie Transaktionen über BillPay abwickeln können, wird jeder Kunde von BillPay auf einen so genannten **"Abnahme Verarbeiter"** aufgeschaltet. BillPay erwartet, dass jeder Händler vor dem Livegang eine Transaktion über diesen Verarbeiter tätigt. Als Nachweis verlangt BillPay eine komplette Rechnung vom Händlersystem. Nach einer Prüfung wird der Kunde freigeschaltet und die Live-Kontodaten herausgegeben. Dieser Vorgang muss für **jeweils** für **"Kauf auf Rechnung"** und **"Kauf auf Lastschrift"** durchgeführt werden.
-
-Über die JSON-API müssen sie hierfür eine einfache Transaktion über die [Payment Page](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize) durchführen, mit der Ausnahme, dass sie das Zahlungsmittel **explizit** über den Parameter **"Payment Methods"** ansprechen, ansonsten funktioniert die Abnahme nicht.
-Darüber hinaus müssen sie generell **-also auch im Livebetrieb-** die Adresse des Käufers an BillPay überreichen. Die Saferpay Payment Page kann dies auf zwei Arten tun.
-
-### 1. Übergabe per Parameter
-
-Wird die Adresse bereits im Shop erfasst, so kann diese über entsprechende Parameter an Saferpay übergeben werden.
-
->
->    <i class="glyphicon glyphicon-hand-right"></i> Siehe hierfür den Container **"Payer > DeliveryAddress"**
+>    <i class="glyphicon glyphicon-hand-right"></i> For this, see the **"Payer > DeliveryAddress"** container.
 >
 
 --->>>
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Aufruf mit Adressübergabe :
+>    <i class="glyphicon glyphicon-hand-right"></i> Loading with address forwarding:
 >
 ```json
 {
@@ -59,7 +54,7 @@ Wird die Adresse bereits im Shop erfasst, so kann diese über entsprechende Para
     "Description": "Description", 
     "PayerNote": "Payernote", 
   }, 
-  "PaymentMethods": ["DIRECTDEBIT"], //Nutzen sie "INVOICE" für Kauf auf Rechnung!
+  "PaymentMethods": ["DIRECTDEBIT"], //Use "INVOICE" for Purchase on Receipt!
   "Payer": {
     "IpAddress": "111.111.111.111",
     "DeliveryAddress": {
@@ -88,17 +83,17 @@ Wird die Adresse bereits im Shop erfasst, so kann diese über entsprechende Para
 ```
 <<<---
 
-### 2. Erfassung per Formular
+### 2. Data capture via a form
 
-Die Payment Page kann alternativ ein Adressformular anzeigen, in dem der Kunde seine Daten eintragen kann. Stellen sie sicher, dass die von BillPay geforderten Felder verpflichtend sind. 
+Alternatively, an address form, in which the customer must enter their address details, can be displayed in the Saferpay Payment Page. Make sure that all the address details needed for BillPay payment are requested in the address form.
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Siehe hierfür den Container **"DeliveryAddressForm"**
+>    <i class="glyphicon glyphicon-hand-right"></i> For this, see the **"DeliveryAddressForm"** container.
 >
 
 --->>>
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Aufruf für Nutzung des Formulars:
+>    <i class="glyphicon glyphicon-hand-right"></i> Request for form usage:
 >
 ```json
 {
@@ -123,7 +118,7 @@ Die Payment Page kann alternativ ein Adressformular anzeigen, in dem der Kunde s
     "Description": "Description", 
     "PayerNote": "Payernote", 
   }, 
-  "PaymentMethods": ["INVOICE"], //Nutzen sie "DIRECTDEBIT" für Kauf auf Lastschrift!
+  "PaymentMethods": ["INVOICE"], //Use "DIRECTDEBIT" for Direct Debit!
   "Payer": {
     "IpAddress": "111.111.111.111"
   },
@@ -146,11 +141,11 @@ Die Payment Page kann alternativ ein Adressformular anzeigen, in dem der Kunde s
 
 ### Assert
 
-Mit dem [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert) erhält der Händler dann alle nötigen Informationen zurück, wie z.B. die Überweisungsdaten bei Kauf auf Rechnung, die dem Käufer übergeben werden müssen.
+With [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert), all the necessary information is sent back to the merchant. This includes the transfer of purchase-on-invoice credit transfer data that must be forwarded to the buyer.
 
 --->>>
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Beispiel Payment Page Assert Response:
+>    <i class="glyphicon glyphicon-hand-right"></i> Example Payment Page Assert Response:
 >
 ```json
 {
@@ -166,7 +161,7 @@ Mit dem [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_Pay
       "CurrencyCode": "EUR"
     }, 
     "OrderId": "Order_ID_is_mandatory", 
-    "AcquirerName": "Billpay Kauf auf Rechnung Abnahme",
+    "AcquirerName": "Purchase on Receipt certification",
     "AcquirerReference": "a83e4312-e85c-4b30-9e7c-50b511155a55",
     "Invoice": {
       "Payee": {
@@ -182,7 +177,7 @@ Mit dem [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_Pay
   "PaymentMeans":{
     "Brand":{
       "PaymentMethod": "INVOICE",
-      "Name": "Billpay Kauf auf Rechnung Abnahme"
+      "Name": "Billpay Purchase on Receipt certification"
     }
   }
 }
@@ -191,19 +186,15 @@ Mit dem [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_Pay
 
 ### Capture
 
-Wie auch bei anderen Zahlungsmitteln, müssen auch BillPay Transaktionen verbucht werden.
-Hier haben sie final die Möglichkeit die Fälligkeit der Zahlung hinauszuzögern.
-Beachten sie, dass die Fälligkeit der Zahlung mit BillPay abgesprochen werden muss.
-So auch, ob dieses Datum hinausgezögert werden kann.
-Für die Verbuchung benutzen sie den [Transaction Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture).
+Like other means of payment, BillPay transactions must also be booked. For this booking, use the [Transaction Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) method. If you have agreed upon the due dates of payments with BillPay, the due date of payment can be delayed in Capture Request with **DelayInDays**. 
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Siehe hierfür den Container **"Billpay"**
+For this, see the **Billpay** container.
 >
 
 --->>>
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Beispiel Capture Request:
+>    <i class="glyphicon glyphicon-hand-right"></i> Example for Capture Request:
 >
 ```json
 {
@@ -223,12 +214,11 @@ Für die Verbuchung benutzen sie den [Transaction Capture](https://saferpay.gith
 ```
 <<<---
 
-Einige der wichtigen Informationen liefert Saferpay darüber hinaus auch nochmals mit dem [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) zurück,
-wie z.B. die Rechnungsdaten.
+Some of the key information, such as the invoice data, are returned by Saferpay via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture).
 
 --->>>
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Beispiel Capture Response:
+>    <i class="glyphicon glyphicon-hand-right"></i> Example for Capture Response:
 >
 ```json
 {
@@ -252,36 +242,36 @@ wie z.B. die Rechnungsdaten.
 ```
 <<<---
 
-## <a name="bp-approval-bo"></a> BillPay Abnahme über das Saferpay Backoffice
+## <a name="bp-approval-bo"></a> BillPay Certification via Saferpay Backoffice
 
-Da es mitunter nicht in jedem Shop möglich ist die Abnahme durchzuführen, ohne den Live-Betrieb zu stören, bietet das Saferpay Backoffice die Möglichkeit einen Zahlungs-URL für eine Billpay-Testzahlung über die Payment Page zu erstellen.
-Hiermit kann der Abnahmetest durchgeführt werden.
+Because it is not always possible to conduct certification in every shop without interrupting live operations, Saferpay Backoffice offers the option of creating a payment URL for a BillPay test payment via the Payment Page. This can be used to perform the acceptance test.
 >
->    <i class="glyphicon glyphicon-hand-right"></i> ACHTUNG! Da der Aufruf nicht durch den Shop durchgeführt wird, wird dieser über den Kauf nicht in Kenntnis gesetzt. Es ist somit vonnöten, dass die von BillPay geforderte Rechnung manuell erstellt wird. Die dafür nötigen Daten finden sie im Saferpay Backoffice unter **Transaktionen > Journal**. Hier finden sie eine Auflistung aller Transaktionen, die sie dann im Detail einsehen können.
->
-
-1. Wählen Sie in Ihrem Saferpay Saferpay Backoffice in der Rubrik "Webshop" den Menüpunkt "Neue Angebote":
- 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BP_1_nav.jpg "Backoffice Webshop")
-
-2. Es erscheint der Dialog "Neues Angebot hinzufügen". Tragen sie dort Ihre Daten ein und klicken sie auf *"Weiter"*.
-
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BP_2_order.jpg "Backoffice Angebot 1")
->
->    <i class="glyphicon glyphicon-hand-right"></i> ACHTUNG: Achten Sie darauf, dass die Checkbox für den Billpay Abnahme-Test gesetzt ist! 
+**Attetion:** Because this is not loaded via the shop, the shop is not informed about the purchase. It is therefore necessary to manually create the invoice required by BillPay. You can find the necessary data for this in the Saferpay Backoffice via **Transactions > Journal**. Here you can find a list of all transactions, which you can then view in detail.
 >
 
-3. Tragen sie, falls nötig, die Rücksprungadressen für Ihren Webshop ein und wählen Sie abschließend "Angebot speichern".
+In your Saferpay Backoffice go to the **Webshop** heading and select the option **All Offers**:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_all_offers.png "Webshop > All Offers")
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BP_3_order2.jpg "Backoffice Angebot 2")
+Then click on “Add new offer”: 
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_add_new_offer.png "Add new offer")
 
-4. Es erscheint das gespeicherte Angebot mit dem Testzahlungs-URL, den Sie für die Billpay-Abnahme.
+The form for a new offer is shown:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_offer_form.png "New offer form")
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BP_4_order3.jpg "Backoffice Angebot URL")
+Fill out the fields for the description and the amount and, if necessary, select the currency and add the return addresses for your webshop. Then click on “Save”.
+
+The stored offer will appear with the test payment URL for BillPay acceptance:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_offer_url.png "Offer URL")
 >
->    <i class="glyphicon glyphicon-hand-right"></i> ACHTUNG: Der Erzeugte Test-URL enthält eine zufällige, von Saferpay vergebene ORDERID. Außerdem muss die Adresse bei Nutzung des Test-URL manuell in der Payment Page eingegeben werden. 
+**Attention!** Make sure that the checkbox marked “Caution: only use for test transactions!” has been ticked. 
+>
+>
+**Attention!** When creating an acceptance invoice, ensure that the test URL created contains a random OrderId allocated by Saferpay.  
+>
+>
+**Attention!** When using a test URL, the customer address must be entered manually in the Payment Page.
 >
 
-5. Nach Aufruf des Links erscheint die Saferpay Payment Page mit dem oder den Billpay-Testzahlungsmitteln zur Auswahl:
+After loading the links, the Saferpay Payment Page appears with one or more options for BillPay test payment methods:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_payment_page.png "Payment Page")
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BP_5_PP.jpg "Saferpay Payment Page")
