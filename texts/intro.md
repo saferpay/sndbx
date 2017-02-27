@@ -619,8 +619,6 @@ These two features are extremely important Saferpay features. Depending on the m
 
 [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) serves to book and thus to conclude a payment. As long as a transaction has not passed through the capture, the amount is merely reserved (“authorised”) and has not yet been paid. On the API side, you receive information about the transaction via the “Status” parameter (note that this is only a part of the data):
 
---->>>
-
 ```json
 "Transaction": {
   "Type": "PURCHASE",
@@ -636,11 +634,8 @@ These two features are extremely important Saferpay features. Depending on the m
 }
 ```
 
-<<<---
-
 Transactions which have not yet been booked are visible in Saferpay Backoffice as “Reservation.” If a transaction has already passed through the capture, the status is changed to “CAPTURED”:
 
---->>>
 ```json
 "Transaction": {
   "Type": "PURCHASE",
@@ -655,12 +650,10 @@ Transactions which have not yet been booked are visible in Saferpay Backoffice a
   "AcquirerReference": "Reference"
 }
 ```
-<<<---
 
 Not all payment methods need a separate capture to trigger the cash flow. You can find an overview of which payment methods should be booked [under Payment Option Functions](https://saferpay.github.io/sndbx/index.html#pm-functions).
 
 IMPORTANT: A reservation is made in the payment option processor for a limited time only. If this is exceeded, the authorised amount is released and becomes available to the CH again. This may have the result that the amount can no longer be claimed. If possible, we recommend always triggering the booking immediately after authorisation. Either by direct API call, or manually via Saferpay Backoffice. If this is not possible, the update must nonetheless be done as soon as possible. With PayPal, this must be within 48 hours. Otherwise, it may be that the payment will be refused. For other payment methods, later booking is sometimes possible. When necessary, please speak to your processor about guaranteed reservation times.
-
 
 ### <a name="closing"></a>Daily Closing
 
