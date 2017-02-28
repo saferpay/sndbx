@@ -1,5 +1,5 @@
 [
-  {
+ {
     "Title": "Introduction",
     "Source": "texts/intro.md",
     "Target": "index.html",
@@ -20,7 +20,7 @@
     ]
   },
   {
-    "Title": "Payment Page",
+    "Title": "PaymentPage",
     "Source": "texts/PaymentPage.md",
     "Target": "Integration_PP.html"
   },
@@ -44,15 +44,6 @@
     ]
   },
   {
-    "Title": "PostFinance",
-    "Source": "texts/postfinance.md",
-    "Target": "PostFinance.html",
-    "Subsites": [
-      { "Source": "texts/postfinance.md", "Title": "Voraussetzungen", "Target": "PostFinance#pf-requirement" },
-      { "Source": "texts/postfinance.md", "Title": "Speicherung im Secure Card Data - Store", "Target": "PostFinance#pf-alias" }
-    ]
-  },
-  {
     "Title": "BillPay",
     "Source": "texts/billpay.md",
     "Target": "BillPay.html",
@@ -63,7 +54,7 @@
     ]
   },
   {
-    "Title": "IFrame Integration and CSS",
+    "Title": "IFrame Integration und CSS",
     "Source": "texts/css_iframe.md",
     "Target": "CssiFrame.html",
     "Subsites": [
@@ -75,14 +66,33 @@
     ]
   },
   {
+    "Title": "PostFinance",
+    "Source": "texts/postfinance.md",
+    "Target": "PostFinance.html",
+    "Subsites": [
+      { "Source": "texts/postfinance.md", "Title": "Voraussetzungen", "Target": "PostFinance#pf-requirement" },
+      { "Source": "texts/postfinance.md", "Title": "Speicherung im Secure Card Data - Store", "Target": "PostFinance#pf-alias" }
+    ]
+  },
+  {
     "Title": "FAQ",
     "Source": "texts/FAQ.md",
     "Target": "faq.html"
   },
   {
-    "Title": "Contact",
+    "Title": "Kontakt",
     "Source": "texts/contact.md",
     "Target": "contact.html"
+  },
+  {
+    "Title": "MarkDown Cheatsheet",
+    "Source": "texts/99_mdss.md",
+    "Target": "Markdown-Cheatsheet.html"
+  },
+  {
+    "Title": "CodeSnippets",
+    "Source": "texts/99_mdss.md",
+    "Target": "Markdown-Cheatsheet.html#code"
   },
   {
     "Title": "API Specification",
