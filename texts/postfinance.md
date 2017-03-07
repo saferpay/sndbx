@@ -1,4 +1,4 @@
-# Swiss Postcard
+# <a name="pf"></a> Swiss Postcard
 
 Via the Saferpay JSON API, payments can be handled by Swiss Postcard and the card details are stored in the Saferpay Secure Card data store. This chapter describes what needs to be observed in this regard.
 
@@ -20,7 +20,7 @@ Saferpay provides the possibility of storing PostFinance’s Postcard in the Saf
 >    <i class="glyphicon glyphicon-hand-right"></i> **NOTE**: The registration of a Swiss Postcard is only possible with the [Alias Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert) method.
 >
 
-### Registration Dialogue
+### <a name="pf-regdial"></a> Registration Dialogue
 
 Unlike with credit cards, PostFinance requires the card holder to agree to registration on its site.
 
