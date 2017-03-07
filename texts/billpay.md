@@ -1,4 +1,4 @@
-# <a name="bp"></a> BillPay
+# BillPay
 
 BillPay can also be processed via the Saferpay JSON API. 
 However, as BillPay is a third party provider, there are a few things which must be observed:
