@@ -1,4 +1,4 @@
-# <a name="pf"></a> Swiss Postcard
+# Swiss Postcard
 
 Via the Saferpay JSON API, payments can be handled by Swiss Postcard and the card details are stored in the Saferpay Secure Card data store. This chapter describes what needs to be observed in this regard.
 
