@@ -1,4 +1,4 @@
-# <a name="trx"></a> Transaction Interface
+# Transaction Interface
 The Transaction Interface is an extension to Payment Page. It can be operated in parallel or alone. In comparison to Payment Page, more functions for the processing of transactions are available. >**NOTE:** The JSON API can be used in various ways to cover the most diverse processes. For this reason, only the standard processes are discussed below. For other possible uses, or for questions about the standard procedures, please contact the [**Saferpay Integration Team**](https://saferpay.github.io/sndbx/contact.html).>>**Attention:** the Transaction Interface is available for live use only for holders of a business licence. In the eCommerce licence, the advanced features are not available.>
 ## <a name="trx-cc"></a> Credit Cards
 In contrast to the payment page, credit card payments can be seamlessly integrated into the merchant's shop with the Transaction Interface. The procedure will be described in the following.
