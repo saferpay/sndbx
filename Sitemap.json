@@ -15,7 +15,7 @@
       { "Source": "texts/intro.md", "Title": "Capture", "Target": "index.html#capture" },
       { "Source": "texts/intro.md", "Title": "Daily Closing", "Target": "index.html#closing" },
       { "Source": "texts/intro.md", "Title": "Special Cases", "Target": "index.html#special" },
-      { "Source": "texts/intro.md", "Title": "When Can Cancellations or Credit Payments Occur&quest;", "Target": "index.html#cancel-refund" }
+      { "Source": "texts/intro.md", "Title": "When Can Cancellations or Credit Payments Occur", "Target": "index.html#cancel-refund" }
     ]
   },
   {
@@ -39,7 +39,6 @@
     "Source": "texts/PaymentPage.md",
     "Target": "Integration_PP.html"
    "Subsites": [    
-    
     { "Source": "texts/PaymentPage.md", "Title": "PaymentPage Initialize", "Target": "Integration_PP.html#pp-initialize" },
     { "Source": "texts/PaymentPage.md", "Title": "PaymentMethods", "Target": "Integration_PP.html#pp-paymethod" },
     { "Source": "texts/PaymentPage.md", "Title": "ReturnUrls", "Target": "Integration_PP.html#pp-returl" },
