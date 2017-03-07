@@ -1,9 +1,9 @@
-# BillPay
+# <a name="bp"></a> BillPay
 
 BillPay can also be processed via the Saferpay JSON API. 
 However, as BillPay is a third party provider, there are a few things which must be observed:
 
-## <a name="bp-requirement"></a> Voraussetzungen
+## <a name="bp-requirement"></a> Requirements
 
 *	A corresponding licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 *	Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
@@ -139,7 +139,7 @@ Alternatively, an address form, in which the customer must enter their address d
 ```
 <<<---
 
-### Assert
+### <a name="bp-assert"></a> Assert
 
 With [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert), all the necessary information is sent back to the merchant. This includes the transfer of purchase-on-invoice credit transfer data that must be forwarded to the buyer.
 
@@ -184,7 +184,7 @@ With [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_Paymen
 ```
 <<<---
 
-### Capture
+### <a name="bp-capt"></a> Capture
 
 Like other means of payment, BillPay transactions must also be booked. For this booking, use the [Transaction Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) method. If you have agreed upon the due dates of payments with BillPay, the due date of payment can be delayed in Capture Request with **DelayInDays**. 
 
