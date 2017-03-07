@@ -1,4 +1,4 @@
-# PayPal
+# <a name="ppal"></a> PayPal
 
 Via the Saferpay JSON API, PayPal payments can be handled without too much expenditure of effort. This chapter describes what needs to be observed in this regard.
 
