@@ -1,4 +1,4 @@
-# <a name="css"></a> Iframe Integration and CSS
+# Iframe Integration and CSS
 
 The Saferpay Payment Page, the Transaction Interface and Secure Card Data offer the options of Iframe integration and design with a Cascading Style Sheet (CSS). The following describes how this feature can be used and what needs to be adhered to.
 
