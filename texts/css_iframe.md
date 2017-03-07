@@ -1,5 +1,4 @@
-# Iframe Integration and CSS
-
+# <a name="css"></a> Iframe Integration and CSS
 
 The Saferpay Payment Page, the Transaction Interface and Secure Card Data offer the options of Iframe integration and design with a Cascading Style Sheet (CSS). The following describes how this feature can be used and what needs to be adhered to.
 
@@ -13,7 +12,7 @@ Iframe integration is supported for these methods:
 
 IResponse Message includes a respective **RedirectURL** if successful. This needs to be embedded in the Iframe.
 
-### Payment Page
+### <a name="css-pp"></a> Payment Page
 
 The Payment Page has a responsive design and automatically adapts to the size of the Iframe. Here are two examples:
 
@@ -25,13 +24,13 @@ The Payment Page has a responsive design and automatically adapts to the size of
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_mobile.png "Payment Page mobile view")
 
-### Transaction Initialize
+### <a name="css-trxini"></a> Transaction Initialize
 
 Here, the Saferpay Card Entry Form appears for data capture of the card details: 
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pay_with_cvc.png "Saferpay Card Entry Form")
 
-### Alias Insert
+### <a name="css-aliasins"></a> Alias Insert
 
 Here, the Saferpay Card Registration Form opens:  
 
@@ -70,7 +69,8 @@ $(window).bind("message", function (e) {
 **Attention!** Not every page reports its size to the merchant’s system. Because, however, Saferpay has to forward users to third parties during the payment process, we recommend a **minimum site of 450x450 pixels**.
 >
 
-## <a name="css-css"></a> Using CSS
+## <a name="css-usecss"></a> Using CSS
+
 The use of Cascading Style Sheets is available via the following methods:
 
 + [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize)
