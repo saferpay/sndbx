@@ -15,7 +15,7 @@ In contrast to the payment page, credit card payments can be seamlessly integrat
 ### <a name="trx-ini"></a>Transaction Initialize
 The process begins with [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize). With this request, you forward all data necessary for the payment to Saferpay. Such as your customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference number of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer will return, depending on the outcome of the payment. 
 
-#### Here are a few hints and tips about the options that are available for the merchant:
+### Here are a few hints and tips about the options that are available for the merchant:
 
 + **ReturnUrls:** For security, Saferpay returns no data to return addresses of the shop. The identification of the payment or the returning customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the ReturnUrls. When a ReturnUrl is called, Saferpay returns the appended parameter, thus enabling identification of the customer. 
 
@@ -24,7 +24,7 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
 ><i class="glyphicon glyphicon-hand-right"></i> **NOTE:** Although it is not permitted to store the Card Verification Code (CVC), it is usually still required for the authorization (see [Transaction Authorize](#transaction-authorize))  and must be requested.
 >
 
-#### In the Response of the Initialize Request these parameters are import for further processing:
+### In the Response of the Initialize Request these parameters are import for further processing:
 
 + **Token:** The Token is mandatory for further steps within the payment process and must therefore be cached. Preferably, it should be linked to the parameters attached to the ReturnUrls. It can thus be easily reassigned.
 
@@ -42,7 +42,7 @@ Once [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](
 ### <a name="trx-ta"></a>Transaction Authorize
 With Payment Page, the payment is triggered automatically upon completion of [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc). In contrast, with Transaction Interface it is triggered separately via [Authorize Request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize).
 
-#### Transaction Authorize offers further possibilities:
+### Transaction Authorize offers further possibilities:
 
 + **Condition:** With the **Condition** parameter, it can be specified that a payment will only be authorised when a 3-D Secure liability shift is present for it.
 
@@ -50,7 +50,7 @@ With Payment Page, the payment is triggered automatically upon completion of [3-
 >
 ><i class="glyphicon glyphicon-hand-right"></i> **NOTE:** A card will be registered only after a successful authorisation.
 >
-#### With the **Transaction Authorize Response**, the authorisation data is returned in case of success. Based on this data, it can be decided how the transaction is to proceed. The following data is interesting in this regard:
+### With the **Transaction Authorize Response**, the authorisation data is returned in case of success. Based on this data, it can be decided how the transaction is to proceed. The following data is interesting in this regard:
 
 + **Transaction > ID:** The transaction identifier (**Id**) returned in the container **Transaction**, is a unique identifier for a transaction. The value is obligatory for further processing steps (Transaction [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel)) and should therefore be saved.
 
