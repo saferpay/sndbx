@@ -4,11 +4,11 @@
 ><i class="glyphicon glyphicon-hand-right"></i> **Tips for contacting us**
 > Our technicians here at SIX are glad to help you with any kind of technical problems, but to make this process even faster, here are some tips you should consider, when contacting us.
 >
-1. Do not forget to send your CustomerId. It makes it easier to find your account in our system.
-2. Please tell us, if you are using the test- or live-system.
-3. Our servers log your activity on API-Side. Those logs can help to identify your problem, but note, that we only save them for 6 days!
-4. If available, tell us the transactionId of the transaction you had problems with. This way we can find it instantly.
-5. If you don't have an Id, then give us a timestamp, so we can pinpoint the timeframe, where you had your problem.
+> 1. Do not forget to send your CustomerId. It makes it easier to find your account in our system.
+> 2. Please tell us, if you are using the test- or live-system.
+> 3. Our servers log your activity on API-Side. Those logs can help to identify your problem, but note, that we only save them for 6 days!
+> 4. If available, tell us the transactionId of the transaction you had problems with. This way we can find it instantly.
+> 5. If you don't have an Id, then give us a timestamp, so we can pinpoint the timeframe, where you had your problem.
 >
 
 ## Saferpay Integration Team
