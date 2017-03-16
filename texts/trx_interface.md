@@ -15,12 +15,22 @@ In contrast to the payment page, credit card payments can be seamlessly integrat
 ### <a name="trx-ini"></a>Transaction Initialize
 The process begins with [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize). With this request, you forward to Saferpay all data necessary for the payment, such as your customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference number of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer is returned, depending on the outcome of the payment.
 Here are a few hints and tips about the options that are now available:
-**ReturnUrls:** For security, Saferpay returns no data on return addresses to the shop. The identification of the payment or the return customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the ReturnUrls. When you call a return address, Saferpay returns the appended parameter, thus enabling identification of the customer.
-**Secure Card Data:** With the Initialize Request, it is also possible within Saferpay Secure Card Data Store to forward saved cards in the form of an alias. For example, this can be the case if the card number of the customer is already known, and you do not want her or him to have to re-enter this. For the alias, use the container PaymentMeans.
->**NOTE:** Although it is not permitted to store the Card Verification Code (CVC), it is usually still required for the authorization (see [Transaction Authorize](#transaction-authorize))  and must be requested.>
-In the Response of the Initialize Request these parameters are import for further processing:
-**Token:**The Token is mandatory for further steps within the payment process and must therefore be cached. Preferably, it should be linked to the parameters attached to the ReturnUrls. It can thus be easily reassigned.
-**RedirectUrl:** Unlike with Payment Page, this URL is not used for a redirect. Instead, it is embedded in an HTML Iframe. Within this, a form hosted by Saferpay is displayed. This form can provide data capture of card details as according to PCI. You can find out more about Iframe integration on [this website](https://saferpay.github.io/sndbx/CssiFrame.html).>**NOTE:** If a request has already forwarded an alias, loading of the form is skipped. >
+
++ **ReturnUrls:** For security, Saferpay returns no data on return addresses to the shop. The identification of the payment or the return customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the ReturnUrls. When you call a return address, Saferpay returns the appended parameter, thus enabling identification of the customer.
+
++ **Secure Card Data:** With the Initialize Request, it is also possible within Saferpay Secure Card Data Store to forward saved cards in the form of an alias. For example, this can be the case if the card number of the customer is already known, and you do not want her or him to have to re-enter this. For the alias, use the container PaymentMeans.
+>**NOTE:** Although it is not permitted to store the Card Verification Code (CVC), it is usually still required for the authorization (see [Transaction Authorize](#transaction-authorize))  and must be requested.
+>
+
+#### In the Response of the Initialize Request these parameters are import for further processing:
+
++ **Token:**The Token is mandatory for further steps within the payment process and must therefore be cached. Preferably, it should be linked to the parameters attached to the ReturnUrls. It can thus be easily reassigned.
+
++ **RedirectUrl:** Unlike with Payment Page, this URL is not used for a redirect. Instead, it is embedded in an HTML Iframe. Within this, a form hosted by Saferpay is displayed. This form can provide data capture of card details as according to PCI. You can find out more about Iframe integration on [this website](https://saferpay.github.io/sndbx/CssiFrame.html).
+>
+> **NOTE:** If a request has already forwarded an alias, loading of the form is skipped.
+>
+
 ### <a name="trx-3ds"></a> 3-D Secure and DCC
 If [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc) are available on the terminal for the payment method being used, these services are automatically conducted for the transaction as soon as the form has been sent. For this, no additional steps are necessary for the merchant. 
 ### <a name="trx-retshop"></a>Return to the Shop
