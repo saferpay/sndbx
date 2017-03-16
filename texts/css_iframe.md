@@ -1,6 +1,6 @@
 # Iframe Integration and CSS
 
-The Saferpay Payment Page, the Transaction Interface and Secure Card Data offer the options of Iframe integration and design with a Cascading Style Sheet (CSS). The following describes how this feature can be used and what needs to be adhered to.
+The Saferpay Payment Page, the Transaction Interface and Secure Card Data offer the options for Iframe integration and design with a Cascading Style Sheets (CSS). The following describes how these features can be used and what needs to be adhered to.
 
 ## <a name="css-iframe"></a> Iframe Integration
 
@@ -10,7 +10,7 @@ Iframe integration is supported for these methods:
 + [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize)
 + [Alias Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert)
 
-IResponse Message includes a respective **RedirectURL** if successful. This needs to be embedded in the Iframe.
+The Response Message includes a respective **RedirectURL**, if successful executed. This URL needs to be embedded in the Iframe.
 
 ### <a name="css-pp"></a> Payment Page
 
@@ -36,7 +36,7 @@ Here, the Saferpay Card Registration Form opens:
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_alias_insert.png "Card Registration Form")
 >
-**Attention!** For registration, the capture of the card verification code CVC data is not enabled, because it can only be saved by Saferpay on a temporary, 20-minute basis. PCI specifications prohibit permanent storage.
+><i class="glyphicon glyphicon-hand-right"></i> **Attention!** For registration, the capture of the card verification code (CVC) is not enabled, because it can only be saved by Saferpay on a temporary, 20-minute basis. PCI specifications prohibit permanent storage. For payments with the CVC, [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize) and [Authorize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize) shall be used.
 >
 
 ## <a name="css-iframe_size"></a> Size of the Iframe
@@ -66,7 +66,7 @@ $(window).bind("message", function (e) {
 ```
 
 >
-**Attention!** Not every page reports its size to the merchant’s system. Because, however, Saferpay has to forward users to third parties during the payment process, we recommend a **minimum site of 450x450 pixels**.
+><i class="glyphicon glyphicon-hand-right"></i> **Attention!** Not every page reports its size to the merchant’s system. However, Saferpay has to forward users to third parties during the payment process (Like with the 3D Secure procedure), thus we recommend a minimum size of 450x450 pixels.
 >
 
 ## <a name="css-usecss"></a> Using CSS
