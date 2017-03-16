@@ -1,7 +1,7 @@
 # Kontakt
 
 >
-><i class="glyphicon glyphicon-hand-right"></i> **Tips for contacting us**
+><i class="glyphicon glyphicon-hand-right"></i> **Tips for contacting us:**
 > Our technicians here at SIX are glad to help you with any kind of technical problems, but to make this process even faster, here are some tips you should consider, when contacting us.
 >
 > 1. Do not forget to send your CustomerId. It makes it easier to find your account in our system.
