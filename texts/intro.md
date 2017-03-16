@@ -671,7 +671,7 @@ With these payment methods, daily closing is triggered alongside the capture aut
 #### Online Banking 
 giropay, iDEAL, SOFORT, Bancontact, eprzelewy und eps are online payment methods that trigger a transfer and thus the cash flow via the purchaser’s online banking services. A successful transaction is always 100% complete.
 
-## <a name="cancel-refund"></a> When Can Cancellations or Credit Payments Occur?
+## <a name="cancel-refund"></a> When can Cancellations or Refunds occur?
 
 It’s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation either want to cancel or make a refund for the transaction in question. It should be noted that there are payment methods that do not offer this functionality. [An overview can be found in the Payment Method Features chapter](https://saferpay.github.io/sndbx/index.html#pm-functions).
 
