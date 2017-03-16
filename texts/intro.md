@@ -2,6 +2,8 @@
 
 The Saferpay JSON API (**J**ava**S**cript **O**bject **N**otation **A**pplication **P**rogramming **I**nterface), hereinafter also referred to as JA, is a modern streamlined interface that is independent of programming languages. The JA supports all Saferpay methods and is suitable for all shop systems, call centre solutions, merchandise management, ERP and CRM systems and other applications in which online payments are processed. This Integration Guide focuses on the basics of the Saferpay JSON API and serves as a guide for programmers, developers and integrators.
 
+This Guide uses the [Saferpay JSON-API Specification](https://saferpay.github.io/jsonapi/) as a base reference and will frequently link to the respective Requests. All requests and parameters will be specified there.
+
 ## <a name="intro-requirement"></a> Requirements
 
 Use of the JA requires the following:
@@ -608,7 +610,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
 
 ## <a name="capture-batch"></a> Capture and Daily Closing
 
-These two features are extremely important Saferpay features. Depending on the means of payment, the two can be directly associated with each other and they must be carried out for cash flow to the merchant’s account.
+These two features are extremely important Saferpay features. Depending on the means of payment, the two can be directly associated with each other and they must be carried out for the cash flow to be initiated to the merchant’s account.
 
 ### <a name="capture"></a>Capture
 
@@ -646,28 +648,35 @@ Transactions which have not yet been booked are visible in Saferpay Backoffice a
 }
 ```
 
-Not all payment methods need a separate capture to trigger the cash flow. You can find an overview of which payment methods should be booked [under Payment Option Functions](https://saferpay.github.io/sndbx/index.html#pm-functions).
+Not all payment methods need a separate capture to trigger the cash flow. You can find an overview of which payment methods should be booked [under Payment Method Features](https://saferpay.github.io/sndbx/index.html#pm-functions).
 
-IMPORTANT: A reservation is made in the payment option processor for a limited time only. If this is exceeded, the authorised amount is released and becomes available to the CH again. This may have the result that the amount can no longer be claimed. If possible, we recommend always triggering the booking immediately after authorisation. Either by direct API call, or manually via Saferpay Backoffice. If this is not possible, the update must nonetheless be done as soon as possible. With PayPal, this must be within 48 hours. Otherwise, it may be that the payment will be refused. For other payment methods, later booking is sometimes possible. When necessary, please speak to your processor about guaranteed reservation times.
+IMPORTANT: A reservation made through a certain payment processor, may only last for a limited time only. If this timeframe is exceeded, the authorised amount is released and 
+becomes available to the card holder again. This may have the result that the amount can no longer be claimed. If possible, we recommend always triggering the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) immediately after authorisation. Either by direct API call, or manually via Saferpay Backoffice. If this is not possible, the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) nonetheless must be done as soon as possible. With PayPal, this must happen within 48 hours. 
+Otherwise, it may be that the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) -and thus the money-transfer- will be refused. For other payment methods, a later [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) is sometimes possible. If necessary, please speak to your processor about guaranteed reservation times.
 
 ### <a name="closing"></a>Daily Closing
 
-The daily closing follows the capture once daily, automatically at 22h CEST. For this, all transactions that have passed through the capture are filed with the payment method processor in order to initiate the cash flow.
+The daily closing follows the capture once daily, automatically at 22h CEST. During this process, all transactions that have passed through the capture are filed with the payment method processor in order to initiate the cash flow.
 
 If desired, this step can also be triggered via the Saferpay API. The request necessary for this is called [Batch Close](http://saferpay.github.io/jsonapi/index.html#ChapterBatch).
 
-Before you can use the API, you first have to disable daily closing in the Saferpay Backoffice via Administration -> Disable terminals for the affected terminal. Closing should and must be carried out only once a day.
+However, before you can use the API, you need to disable the daily closing in the Saferpay 
+Backoffice via "Administration -> Terminals" for the respective terminal. Closing should be carried out only once a day.
 
 ### <a name="special"></a>Special Cases
 
-#### PayPal and Swiss Postcard
-With these payment methods, daily closing is triggered alongside the capture automatically for each transaction and the cash flow is initiated immediately. With PayPal, this happens because the right is reserved to refuse the payment. For this reason, we demand the money for you immediately. For Swiss Postcard, this is established in the protocol used by PostFinance.
+#### PAYPAL, SWISS POSTCARD, SEPA ELV (BANCONTACT AND PAY DIREKT <= War mir nicht sicher)
+With these payment methods, daily closing is triggered alongside the capture automatically for each transaction and the cash flow is initiated immediately. With PayPal, this happens because the right is reserved to refuse the payment. For this reason, we demand the money for you immediately. For Swiss Postcard, this is established in the protocol used by PostFinance. Same goes for SEPA ELV ,Bancontact and PayDirekt.
 
 #### Online Banking 
 giropay, iDEAL, SOFORT, Bancontact, eprzelewy und eps are online payment methods that trigger a transfer and thus the cash flow via the purchaser’s online banking services. A successful transaction is always 100% complete.
 
 ## <a name="cancel-refund"></a> When Can Cancellations or Credit Payments Occur?
 
-It’s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation want to either cancel or to make a credit payment for the transaction in question. It should be noted here that there are means of payment that do not offer this functionality. [An overview can be found in the Payment Method Features chapter](https://saferpay.github.io/sndbx/index.html#pm-functions).
+It’s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation either want to cancel or make a refund for the transaction in question. It should be noted that there are payment methods that do not offer this functionality. [An overview can be found in the Payment Method Features chapter](https://saferpay.github.io/sndbx/index.html#pm-functions).
 
-If this is permitted by the payment method, payments that have not been submitted via daily closing may be cancelled. If daily closing has already been triggered, a credit note will have to be issued.
+If this isn’t permitted by the payment method, payments that have not been submitted via daily closing may be canceled. If the daily closing has already been triggered, a refund will have to be issued.
+
+>
+><i class="glyphicon glyphicon-hand-right"></i> **IMPORTANT NOTE:** Online banking methods do not offer either functionality by default.
+>
