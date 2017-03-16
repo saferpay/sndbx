@@ -38,6 +38,8 @@ Ready-to-use Saferpay payment extensions for several shop systems are offered by
 
 ## I have finished my testing. What are the next steps? How do i go live?
 
+If you haven't already, you need to contact our [Sales](https://www.six-payment-services.com/en/shared/contacts.html#ch) in Order to sign a live contract.
+
 We will activate the things necessary for you and will send you the respective logins and Ids (like Customer-and TerminalId), in order to go live.
 However, there are things you need to change with the Go-Live, before you can start accepting payments:
 
