@@ -1,7 +1,17 @@
 # Transaction Interface
-The Transaction Interface is an extension to Payment Page. It can be operated in parallel or alone. In comparison to Payment Page, more functions for the processing of transactions are available. >**NOTE:** The JSON API can be used in various ways to cover the most diverse processes. For this reason, only the standard processes are discussed below. For other possible uses, or for questions about the standard procedures, please contact the [**Saferpay Integration Team**](https://saferpay.github.io/sndbx/contact.html).>>**Attention:** the Transaction Interface is available for live use only for holders of a business licence. In the eCommerce licence, the advanced features are not available.>
+The Transaction Interface is an extension to Payment Page. It can be operated in parallel or alone. In comparison to Payment Page, more functions for the processing of transactions are available. 
+
+>
+><i class="glyphicon glyphicon-hand-right"></i>**NOTE:** The JSON API can be used in various ways to cover the most diverse processes. For this reason, only the standard processes are discussed below. For other possible uses, or for questions about the standard procedures, please contact the [**Saferpay Integration Team**](https://saferpay.github.io/sndbx/contact.html).
+>
+
+>
+><i class="glyphicon glyphicon-hand-right"></i>**Attention:** The Transaction Interface is only for holders of a business licence on the live system. For the eCommerce licence, the advanced features are not available. The test accounts have business activated by default, for evaluation purposes.
+>
+
 ## <a name="trx-cc"></a> Credit Cards
 In contrast to the payment page, credit card payments can be seamlessly integrated into the merchant's shop with the Transaction Interface. The procedure will be described in the following.
+
 ### <a name="trx-ini"></a>Transaction Initialize
 The process begins with [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize). With this request, you forward to Saferpay all data necessary for the payment, such as your customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference number of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer is returned, depending on the outcome of the payment.
 Here are a few hints and tips about the options that are now available:
