@@ -35,3 +35,13 @@ By default, EUR and CHF are enabled on test accounts. Other currencies can be ac
 ## I have already a shop system. Do you offer an extension for it?
 
 Ready-to-use Saferpay payment extensions for several shop systems are offered by our partner [Customweb](https://www.sellxed.com/shop/en/eur/extensions/module/payment-service-provider/saferpay.html). You get 1 year support and where required integration service.
+
+## I have finished my testing. What are the next steps? How do i go live?
+
+We will activate the things necessary for you and will send you the respective logins and Ids (like Customer-and TerminalId), in order to go live.
+However, there are things you need to change with the Go-Live, before you can start accepting payments:
+
+* As mentioned, you will get new Logins and IDs with your live account. Those have to be changed inside your application.
+* The JSON-API user and password need to be changed. Once you have recieved your live Backoffice user, you need to log into [This site here | Link zum BO]. Then you need to create your own credentials under [Administration > JSON API | Link dorthin]. Those credentials have to be entered inside your application.
+
+* Lastly, you need to change the request-gateway URL from https://test.saferpay.com/api/[...] to https://www.saferpay.com/api/[...] in order  to send your requests to the Saferpay live-system, instead of the test-system.
