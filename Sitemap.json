@@ -40,14 +40,8 @@
     "Target": "Integration_PP.html",
    "Subsites": [    
     { "Source": "texts/PaymentPage.md", "Title": "PaymentPage Initialize", "Target": "Integration_PP.html#pp-initialize" },
-    { "Source": "texts/PaymentPage.md", "Title": "PaymentMethods", "Target": "Integration_PP.html#pp-paymethod" },
-    { "Source": "texts/PaymentPage.md", "Title": "ReturnUrls", "Target": "Integration_PP.html#pp-returl" },
-    { "Source": "texts/PaymentPage.md", "Title": "NotifyUrl", "Target": "Integration_PP.html#pp-noturl" },
-    { "Source": "texts/PaymentPage.md", "Title": "BillingAddressForm and DeliveryAddressForm", "Target": "Integration_PP.html#pp-address" },
-    { "Source": "texts/PaymentPage.md", "Title": "RegisterAlias", "Target": "Integration_PP.html#pp-regalias" },
-    { "Source": "texts/PaymentPage.md", "Title": "Token", "Target": "Integration_PP.html#pp-token" },
-    { "Source": "texts/PaymentPage.md", "Title": "RedirectUrl", "Target": "Integration_PP.html#pp-redirecturl" },
-    { "Source": "texts/PaymentPage.md", "Title": "Transaction", "Target": "Integration_PP.html#pp-transaction" },
+    { "Source": "texts/PaymentPage.md", "Title": "PaymentPage Initialize Response", "Target": "Integration_PP.html#pp-initialize-response" },
+    { "Source": "texts/PaymentPage.md", "Title": "Redirect and Transaction", "Target": "Integration_PP.html#pp-transaction" },
     { "Source": "texts/PaymentPage.md", "Title": "Return to the Shop", "Target": "Integration_PP.html#pp-retshop" },
     { "Source": "texts/PaymentPage.md", "Title": "PaymentPage Assert", "Target": "Integration_PP.html#pp-assert" },
     { "Source": "texts/PaymentPage.md", "Title": "Capture oder Cancel", "Target": "Integration_PP.html#pp-captcancel" }  
