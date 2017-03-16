@@ -8,7 +8,7 @@ The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPa
 
 The process begins with the [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize) request. With this request, you forward all data necessary for the payment to Saferpay. These include the customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference no. of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer will return after leaving the payment page.
 
-## Information on the Use and Significance of the Available Parameters
+### Information on the Use and Significance of the Available Parameters
 
 + **PaymentMethods:** By default, the payment page will always show all payment methods approved for the terminal in question. Limiting the display to a single item or preselection of the payment methods in the shop can be achieved via the **PaymentMethods** parameter. When using this parameter, the only payment methods displayed are those whose values are forwarded.  When forwarding multiple values, the PaymentPage opens with a page which offers the option to select the appropriate payment method. If only one value is passed, the PaymentPage skips the selection window. Invalid values or values from payment methods which are not available on the terminal or not available with the specified currency are ignored by the PaymentPage. For example, if only one value is forwarded and this is invalid, the Payment Page will display the same options as if **PaymentMethods** had not been used.
 
@@ -25,7 +25,7 @@ The process begins with the [PaymentPage Initialize](https://saferpay.github.io/
 
 ## <a name="pp-initialize-response"></a>PaymentPage Initialize Response
 
-Inside the PaymentPage Initialize Response, the following parameters are important:
+### Inside the PaymentPage Initialize Response, the following parameters are important:
 
 + **Token:** The **Token** refers to the values temporarily stored regarding the Saferpay transaction and is mandatory during subsequent processing of the transaction ([for more information, see e.g. PaymentPage Assert](http://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert)). The Token should be coupled to the http-GET parameters that were previously attached to the **ReturnUrls** and **NotifyUr**l for identification. 
 
