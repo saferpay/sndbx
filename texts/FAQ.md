@@ -44,6 +44,6 @@ We will activate the things necessary for you and will send you the respective l
 However, there are things you need to change with the Go-Live, before you can start accepting payments:
 
 * As mentioned, you will get new Logins and IDs with your live account. Those have to be changed inside your application.
-* The JSON-API user and password need to be changed. Once you have recieved your live Backoffice user, you need to log into [This site here | Link zum BO]. Then you need to create your own credentials under [Administration > JSON API | Link dorthin]. Those credentials have to be entered inside your application.
+* The JSON-API user and password need to be changed. Once you have recieved your live Backoffice user, you need to log into [This site here](https://www.saferpay.com/BO/Login). Then you need to create your own credentials under **Administration > JSON API**. Those credentials have to be entered inside your application.
 
 * Lastly, you need to change the request-gateway URL from **https://test.saferpay.com/api/[...]** to **https://www.saferpay.com/api/[...]** in order  to send your requests to the Saferpay live-system, instead of the test-system.
