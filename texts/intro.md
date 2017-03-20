@@ -665,7 +665,7 @@ Backoffice via "Administration -> Terminals" for the respective terminal. Closin
 
 ### <a name="special"></a>Special Cases
 
-#### PAYPAL, SWISS POSTCARD, SEPA ELV (BANCONTACT AND PAY DIREKT <= War mir nicht sicher)
+#### PAYPAL, SWISS POSTCARD, SEPA ELV, BANCONTACT and PayDirekt
 With these payment methods, daily closing is triggered alongside the capture automatically for each transaction and the cash flow is initiated immediately. With PayPal, this happens because the right is reserved to refuse the payment. For this reason, we demand the money for you immediately. For Swiss Postcard, this is established in the protocol used by PostFinance. Same goes for SEPA ELV ,Bancontact and PayDirekt.
 
 #### Online Banking 
