@@ -102,7 +102,7 @@
   "Target": "sofort.html",
   "Subsites": [
       { "Source": "texts/sofort.md", "Title": "Requirements", "Target": "sofort#sf-requirement" },
-      { "Source": "texts/sofort.md", "Title": "Storage in the Secure Card Data Store", "Target": "sofort#ff-newproject" },
+      { "Source": "texts/sofort.md", "Title": "Create a new project for SOFORT", "Target": "sofort#ff-newproject" }
     ] 
    }, 
   {
