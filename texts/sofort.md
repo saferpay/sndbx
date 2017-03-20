@@ -52,6 +52,7 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 >		 https://-USER_VARIABLE_0-paymentStatus=cancel
 >
 <<<---
+
 8. Save and click the tab „Extended settings“ to complete the project settings.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_extended.png "Extended settings")
 
@@ -65,6 +66,7 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 >		 https://-USER_VARIABLE_0-paymentStatus=timeout
 >
 <<<---
+
 10. Again click the tab „Extended Settings“ and choose „Notifications“.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_notification.png "Notifications")
 
@@ -79,6 +81,7 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 >		 https://-USER_VARIABLE_1-
 >
 <<<---
+
 13. Finally create a project password. Click again the tab „Extended settings“ and there „Passwords and hash algorithm“.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_password.png "Project password")  
 
