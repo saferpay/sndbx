@@ -96,6 +96,14 @@
       { "Source": "texts/postfinance.md", "Title": "Registration Dialogue", "Target": "PostFinance#pf-regdial" }
     ]
   },
+ {
+  "Title": "SOFORT",
+  "Source": "texts/sofort.md",
+  "Target": "sofort.html", "Subsites": [
+      { "Source": "texts/sofort.md", "Title": "Requirements", "Target": "sofort#sf-requirement" },
+      { "Source": "texts/sofort.md", "Title": "Storage in the Secure Card Data Store", "Target": "sofort#ff-newproject" },
+    ] 
+   }, 
   {
     "Title": "FAQ",
     "Source": "texts/FAQ.md",
