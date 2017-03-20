@@ -68,7 +68,3 @@ Once these steps have been finalised, the transaction is complete.
 Because there are no PCI requirements for direct debits, bank details data can be captured directly. The use of an in-house HTML form and the subsequent payment request are allowed. For this, the bank details must be forwarded to [AuthorizeDirect](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect) with the **BankAccount** parameter in the **PaymentMeans** container.
 ## <a name="trx-recurring"></a> Recurring Payments
 Recurring payments are particularly interesting for subscription systems. A recurring payment is initiated via an initial payment. This can proceed via the **Initialize** transaction or via **PaymentPage Initialize**. For this, it is important that this first transaction is marked as an initial payment. This means that subsequent payments can be referenced back to them and that the entire subscription chain can be tracked.
-
->
-><i class="glyphicon glyphicon-hand-right"></i> **TO DO! DIESES KAPITEL IST UNVOLLSTÄNDIG!**
->
