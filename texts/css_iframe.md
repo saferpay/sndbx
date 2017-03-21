@@ -98,7 +98,7 @@ h1{
 ```
 
 >
-**Tip:** Most modern browsers include tools that simplify designing with CSS. CSS can thus be edited directly in the browser, and the results can be observed.
+><i class="glyphicon glyphicon-hand-right"></i> **Tip:** Most modern browsers include tools that simplify designing with CSS. CSS can thus be edited directly in the browser, and the results can be observed.
 >
 
 * Example for Chrome browser: 
@@ -170,5 +170,5 @@ With PayPal payments, it is recommended to eject into a Success, Abort or Fail p
 ```
 
 >
-**Attention!** When this is done, the return site is reloaded. The call-up thus occurs twice!
+><i class="glyphicon glyphicon-hand-right"></i> **Attention!** When this is done, the return site is reloaded. The call-up thus occurs twice!
 >
