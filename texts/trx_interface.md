@@ -34,7 +34,9 @@ If [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](ht
 Once [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc) are completed, the card holder – depending on the outcome – is taken to one of the **ReturnUrls** in the shop. Here, the GET parameters can be read and the **Token** can be assigned to the transaction. With the **Token**, the payment can be continued to the next step.
 ### <a name="trx-ta"></a>Transaction Authorize
 With Payment Page, the payment is triggered automatically upon completion of [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc). In contrast, with Transaction Interface it is triggered separately via [Authorize Request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize).
-### Transaction Authorize offers further possibilities:
+
+**Further possibilities of Transaction Authorize Request**
+These possibilities of the Transaction Authorize Request are good to know:
 
 + **Condition:** With the **Condition** parameter, it can be specified that a payment will only be authorized when a 3-D Secure liability shift is present for it.
 
@@ -42,7 +44,7 @@ With Payment Page, the payment is triggered automatically upon completion of [3-
 >
 ><i class="glyphicon glyphicon-hand-right"></i> **NOTE:** A card will be registered only after a successful authorization.
 >
-### Transaction Authorize Response data
+**Transaction Authorize Response data**
  
 In case of success the authorization data is returned with the Transaction Authorize Response. Based on this data, it can be decided how the transaction is to proceed. The following data is interesting in this regard:
 
