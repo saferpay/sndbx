@@ -35,8 +35,8 @@ Once [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](
 ### <a name="trx-ta"></a>Transaction Authorize
 With Payment Page, the payment is triggered automatically upon completion of [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc). In contrast, with Transaction Interface it is triggered separately via [Authorize Request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize).
 
-**Further possibilities of Transaction Authorize Request**
-These possibilities of the Transaction Authorize Request are good to know:
+**The Transaction Authorize Request offers further possibilities:**
+
 
 + **Condition:** With the **Condition** parameter, it can be specified that a payment will only be authorized when a 3-D Secure liability shift is present for it.
 
