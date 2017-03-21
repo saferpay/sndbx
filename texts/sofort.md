@@ -48,6 +48,7 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Success link:  
 >		 https://-USER_VARIABLE_0-paymentStatus=ok-USER_VARIABLE_2--USER_VARIABLE_3--USER_VARIABLE_4--USER_VARIABLE_5--SENDER_IBAN-
+>
 >    <i class="glyphicon glyphicon-hand-right"></i> Success link:  
 >		 https://-USER_VARIABLE_0-paymentStatus=cancel
 >
