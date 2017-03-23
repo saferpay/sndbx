@@ -27,6 +27,7 @@ If the minimum required delivery data is missing or not complete, the Payment Pa
 ## <a name="pd-pending"></a> Display of pending status for bookings
 paydirekt transfers every booking request to the buyer's bank for validation. If the validation process hasn’t yet taken place, the transaction status is shown as "pending". Even if the validation process normally only takes a few seconds, Saferpay waits a few seconds for the result before transmitting the "pending" status with the booking response to the merchant system.
 In this case a notice will be displayed in the transaction details in the Saferpay Backoffice to inform that the booking is not yet completed.  
+ 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paydirekt_pend.PNG "paydirekt pending Backoffice")
 The status of the transaction remains as "reservation", not permitting any follow-up actions until the pending action is completed.
 ## <a name="pd-note"></a>Notification after change from pending to final status
