@@ -105,6 +105,19 @@
       { "Source": "texts/sofort.md", "Title": "Create a new project for SOFORT", "Target": "sofort#sf-newproject" }
     ] 
    }, 
+    {
+  "Title": "paydirekt",
+  "Source": "texts/paydirekt.md",
+  "Target": "paydirekt.html",
+  "Subsites": [
+      { "Source": "texts/paydirekt.md", "Title": "Requirements", "Target": "paydirekt#pd-requirement" },
+      { "Source": "texts/paydirekt.md", "Title": "Handling of delivery address", "Target": "paydirekt#pd-address" },
+      { "Source": "texts/paydirekt.md", "Title": "Display of pending status for bookings", "Target": "paydirekt#pd-pending" },
+      { "Source": "texts/paydirekt.md", "Title": "Notification after change from pending to final status", "Target": "paydirekt#pd-note" },
+      { "Source": "texts/paydirekt.md", "Title": "Querying the transaction status", "Target": "paydirekt#pd-query" },
+      { "Source": "texts/paydirekt.md", "Title": "Refunds", "Target": "paydirekt#pd-refund" }
+    ] 
+   }, 
   {
     "Title": "FAQ",
     "Source": "texts/FAQ.md",
