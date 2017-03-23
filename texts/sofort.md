@@ -56,7 +56,7 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 9. Go to „Shop interface settings“ and enter timeout value and link.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_timeout.png "Timeout")
 
-<i class="glyphicon glyphicon-hand-right"></i>Timeout in seconds:  
+<i class="glyphicon glyphicon-hand-right"></i> Timeout in seconds:  
 *300*
 
 <i class="glyphicon glyphicon-hand-right"></i> Timeout link:  
@@ -71,7 +71,7 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 12. Save and complete with adding the notification URL. As method choose „POST“.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_noturl.png "Notification URL")
 
-<i class="glyphicon glyphicon-hand-right"></i>HTTPS URL:  
+<i class="glyphicon glyphicon-hand-right"></i> HTTPS URL:  
 *https://-USER_VARIABLE_1-*
 
 13. Finally create a project password. Click again the tab „Extended settings“ and there „Passwords and hash algorithm“.
