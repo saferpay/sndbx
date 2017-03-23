@@ -62,7 +62,7 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 <i class="glyphicon glyphicon-hand-right"></i> Timeout link:  
 *https://-USER_VARIABLE_0-paymentStatus=timeout*
 
-10. Again click the tab „Extended Settings“ and choose „Notifications“.
+10. Again click the tab „Extended Settings“ and choose „Notifications“.  
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_notification.png "Notifications")
 
 11. Click „Add new notification“ and add your email address to receive notification messages.
