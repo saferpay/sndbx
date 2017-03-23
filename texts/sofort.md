@@ -8,7 +8,7 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 
 *	A corresponding licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 *	Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
-*	A valid acceptance agreement for SOFORT must be present.
+*	A valid acceptance agreement for BillPay must be present.
 
  For SOFORT activation Saferpay needs:
  
@@ -45,25 +45,19 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 7. For processiing SOFORT payments via Saferpay enter the redirect links.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_interface.png "Interface")
 
---->>>
-
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Success link:  
 >		 https://-USER_VARIABLE_0-paymentStatus=ok-USER_VARIABLE_2--USER_VARIABLE_3--USER_VARIABLE_4--USER_VARIABLE_5--SENDER_IBAN-
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Success link:  
+>    <i class="glyphicon glyphicon-hand-right"></i> Abort link:  
 >		 https://-USER_VARIABLE_0-paymentStatus=cancel
 >
-
-<<<---
 
 8. Save and click the tab „Extended settings“ to complete the project settings.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_extended.png "Extended settings")
 
 9. Go to „Shop interface settings“ and enter timeout value and link.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_timeout.png "Timeout")
-
---->>>
 
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Timeout in seconds:  
@@ -72,8 +66,6 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 >    <i class="glyphicon glyphicon-hand-right"></i> Timeout link:  
 >		 https://-USER_VARIABLE_0-paymentStatus=timeout
 >
-
-<<<---
 
 10. Again click the tab „Extended Settings“ and choose „Notifications“.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_notification.png "Notifications")
@@ -84,14 +76,11 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 12. Save and complete with adding the notification URL. As method choose „POST“.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_noturl.png "Notification URL")
 
---->>>
 
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> HTTPS URL:  
 >		 https://-USER_VARIABLE_1-
 >
-
-<<<---
 
 13. Finally create a project password. Click again the tab „Extended settings“ and there „Passwords and hash algorithm“.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_password.png "Project password")  
