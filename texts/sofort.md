@@ -44,7 +44,6 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 
 7. For processiing SOFORT payments via Saferpay enter the redirect links.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_interface.png "Interface")
-
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Success link:  
 >		 https://-USER_VARIABLE_0-paymentStatus=ok-USER_VARIABLE_2--USER_VARIABLE_3--USER_VARIABLE_4--USER_VARIABLE_5--SENDER_IBAN-
@@ -58,7 +57,6 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 
 9. Go to „Shop interface settings“ and enter timeout value and link.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_timeout.png "Timeout")
-
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Timeout in seconds:  
 >		 300
@@ -75,8 +73,6 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 
 12. Save and complete with adding the notification URL. As method choose „POST“.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_noturl.png "Notification URL")
-
-
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> HTTPS URL:  
 >		 https://-USER_VARIABLE_1-
