@@ -27,9 +27,9 @@ If address data have already been captured in the shop, they can be forwarded to
 >    <i class="glyphicon glyphicon-hand-right"></i> For this, see the **"Payer > DeliveryAddress"** container.
 >
 
---->>>
+
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Loading with address forwarding:
+>    <i class="glyphicon glyphicon-hand-right"></i> Request with address forwarding:
 >
 ```json
 {
@@ -81,7 +81,7 @@ If address data have already been captured in the shop, they can be forwarded to
   }
 }
 ```
-<<<---
+
 
 ### 2. Data capture via a form
 
@@ -91,7 +91,7 @@ Alternatively, an address form, in which the customer must enter their address d
 >    <i class="glyphicon glyphicon-hand-right"></i> For this, see the **"DeliveryAddressForm"** container.
 >
 
---->>>
+
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Request for form usage:
 >
@@ -137,7 +137,7 @@ Alternatively, an address form, in which the customer must enter their address d
   }
 }
 ```
-<<<---
+
 
 ### <a name="bp-assert"></a> Assert
 
