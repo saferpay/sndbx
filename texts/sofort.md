@@ -42,12 +42,8 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_iban.png "Bank account")
 
 7. For processiing SOFORT payments via Saferpay enter the redirect links.
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_interface.png "Interface")
-
-<i class="glyphicon glyphicon-hand-right"></i> Success link:  
-*https://-USER_VARIABLE_0-paymentStatus=ok-USER_VARIABLE_2--USER_VARIABLE_3--USER_VARIABLE_4--USER_VARIABLE_5--SENDER_IBAN-*
-
-<i class="glyphicon glyphicon-hand-right"></i> Abort link:  
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_interface.png "Interface")<br /><i class="glyphicon glyphicon-hand-right"></i> Success link:  
+*https://-USER_VARIABLE_0-paymentStatus=ok-USER_VARIABLE_2--USER_VARIABLE_3--USER_VARIABLE_4--USER_VARIABLE_5--SENDER_IBAN-*<br /><i class="glyphicon glyphicon-hand-right"></i> Abort link:  
 *https://-USER_VARIABLE_0-paymentStatus=cancel*
 
 8. Save and click the tab „Extended settings“ to complete the project settings.
