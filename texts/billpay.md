@@ -143,7 +143,7 @@ Alternatively, an address form, in which the customer must enter their address d
 
 With [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert), all the necessary information is sent back to the merchant. This includes the transfer of purchase-on-invoice credit transfer data that must be forwarded to the buyer.
 
---->>>
+
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Example Payment Page Assert Response:
 >
@@ -182,7 +182,7 @@ With [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_Paymen
   }
 }
 ```
-<<<---
+
 
 ### <a name="bp-capt"></a> Capture
 
@@ -192,7 +192,7 @@ Like other means of payment, BillPay transactions must also be booked. For this 
 For this, see the **Billpay** container.
 >
 
---->>>
+
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Example for Capture Request:
 >
@@ -212,11 +212,11 @@ For this, see the **Billpay** container.
   }
 }
 ```
-<<<---
+
 
 Some of the key information, such as the invoice data, are returned by Saferpay via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture).
 
---->>>
+
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Example for Capture Response:
 >
@@ -240,7 +240,7 @@ Some of the key information, such as the invoice data, are returned by Saferpay 
   }
 }
 ```
-<<<---
+
 
 ## <a name="bp-approval-bo"></a> BillPay Certification via Saferpay Backoffice
 
