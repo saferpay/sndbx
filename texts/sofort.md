@@ -60,10 +60,7 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_email.png "Email notification")
 
 12. Save and complete with adding the notification URL. As method choose „POST“.
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_noturl.png "Notification URL")
-
-<i class="glyphicon glyphicon-hand-right"></i> HTTPS URL:  
-*https://-USER_VARIABLE_1-*
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_noturl.png "Notification URL")<br /><i class="glyphicon glyphicon-hand-right"></i> HTTPS URL:<br />*https://-USER_VARIABLE_1-*
 
 13. Finally create a project password. Click again the tab „Extended settings“ and there „Passwords and hash algorithm“.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_password.png "Project password")  
