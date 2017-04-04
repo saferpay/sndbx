@@ -64,7 +64,7 @@ For PayPal Seller Protection to be valid when your customer uses PayPal to pay v
 
 The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) can help in forwarding the address parameters in the **Payer** container with the delivery address, or you can use the Saferpay Payment Page’s own address form.
 
---->>>
+
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Load with address forwarding:
 >
@@ -163,65 +163,6 @@ The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPa
   }
 }
 ```
-<<<---
-
-With [Redirect Payment](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment), the address must be forwarded with Initialize and via the corresponding container.
-
---->>>
->
->    <i class="glyphicon glyphicon-hand-right"></i> Load with address forwarding:
->
-```json
-{
-  "RequestHeader": {
-    "SpecVersion": "1.3", 
-    "CustomerId": "123123", 
-    "RequestId": "33e8af17-35c1-4165-a343-c1c86a320f3b", 
-    "RetryIndicator": 0, 
-    "ClientInfo": {
-        "ShopInfo": "My Shop", 
-        "ApplicationInfo": "ApplicationInfo", 
-        "OsInfo": "Windows Server 2013"
-    }
-  }, 
-  "TerminalId": "12345678", 
-  "Payment": {
-    "Amount": {
-      "Value": "100", 
-      "CurrencyCode": "EUR"
-    }, 
-    "OrderId": "OrderId", 
-    "Description": "Description", 
-    "PayerNote": "Payernote", 
-  }, 
-  "ServiceProvider": "PAYPAL", 
-  "Payer": {
-    "IpAddress": "111.111.111.111",
-    "DeliveryAddress": {
-      "FirstName": "Hans",
-      "LastName": "Muster",
-      "DateOfBirth": "1969-07-21",
-      "Street": "Strasse 1",
-      "Zip": "12345",
-      "City": "Musterstadt",
-      "CountryCode": "DE",
-      "Phone": "+49 40 1234 5678",
-      "Email": "Muster@muster.com",
-      "Gender": "MALE",
-    }
-  }, 
-  "ReturnUrls": {
-    "Success": "https://merchanthost/success", 
-    "Fail": "https://merchanthost/fail", 
-    "Abort": "https://merchanthost/abort"
-  }, 
-  "Notification": {
-    "MerchantEmail": "merchant@saferpay.com", 
-    "NotifyUrl": "https://merchanthost/notify"
-  }
-}
-```
-<<<---
 
 For Canada, USA and Mexico, specification of the province or the state with the parameter **CountrySubdivisionCode** is required. The abbreviation which must be forwarded corresponds to the two-digit code of the province or the federal state per ISO 3166-2.
 
