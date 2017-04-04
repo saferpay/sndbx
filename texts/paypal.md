@@ -66,7 +66,7 @@ The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPa
 
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Load with address forwarding:
+>    <i class="glyphicon glyphicon-hand-right"></i> Request with address forwarding:
 >
 ```json
 {
@@ -119,7 +119,7 @@ The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPa
 }
 ```
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Load for the use of the form:
+>    <i class="glyphicon glyphicon-hand-right"></i> Request for the use of the form:
 >
 ```json
 {
