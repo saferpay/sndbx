@@ -50,13 +50,8 @@ Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_extended.png "Extended settings")
 
 9. Go to „Shop interface settings“ and enter timeout value and link.
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_timeout.png "Timeout")
-
-<i class="glyphicon glyphicon-hand-right"></i> Timeout in seconds:  
-*300*
-
-<i class="glyphicon glyphicon-hand-right"></i> Timeout link:  
-*https://-USER_VARIABLE_0-paymentStatus=timeout*
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_timeout.png "Timeout")<br /><i class="glyphicon glyphicon-hand-right"></i> Timeout in seconds:  
+*300*<br /><i class="glyphicon glyphicon-hand-right"></i> Timeout link:<br />*https://-USER_VARIABLE_0-paymentStatus=timeout*
 
 10. Again click the tab „Extended Settings“ and choose „Notifications“.  
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_notification.png "Notifications")
