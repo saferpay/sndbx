@@ -13,9 +13,9 @@
 
 ## Saferpay Integration Team
 
-Haben Sie Fragen zu dieser Dokumentation oder Probleme bei der Saferpay Integration oder benötigen Unterstützung? Dann wenden Sie sich gern an das Integration Team:
+Do you have any questions regarding this document? Are you experiencing problems with the Saferpay integration? Or do you require support? If so, the Integration Team would be happy to assist you:
 
-### Saferpay Schweiz					
+### Saferpay Switzerland
 
 SIX Payment Services AG<br/>
 Hardturmstrasse 201<br/>
@@ -25,7 +25,7 @@ Hardturmstrasse 201<br/>
 [integration.saferpay@six-payment-services.com](mailto:integration.saferpay@six-payment-services.com)
 
 
-### Saferpay Europa
+### Saferpay Europe
 
 SIX Payment Services (Germany) GmbH<br/>
 Langenhorner Chaussee 92-94<br/>
@@ -36,9 +36,9 @@ Langenhorner Chaussee 92-94<br/>
 
 
 ## Saferpay Support Team
-Haben Sie Fragen zu Fehlermeldungen oder gibt es Probleme im laufenden Betrieb? Dann steht Ihnen unser Support Team zur Verfügung:
+Do you have any questions regarding error messages or are you having problems with your day-to-day operations. If so, our Support Team will be happy to assist you in finding:
 
-### Saferpay Schweiz <br />
+### Saferpay Switzerland <br />
 SIX Payment Services AG <br />
 Hardturmstrasse 201 <br />
 8021 Zürich <br />
@@ -46,7 +46,7 @@ Hardturmstrasse 201 <br />
 www.six-payment-services.com/saferpay <br /> 
 support.saferpay@six-payment-services.com <br />
 
-### Saferpay Europa
+### Saferpay Europe
 SIX Payment Services (Germany) GmbH <br />
 Langenhorner Chaussee 92-94 <br />
 22415 Hamburg <br />
