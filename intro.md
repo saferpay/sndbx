@@ -676,5 +676,5 @@ It’s by no means rare that customers want to cancel their orders or return goo
 If this isn’t permitted by the payment method, payments that have not been submitted via daily closing may be canceled. If the daily closing has already been triggered, a refund will have to be issued.
 
 >
-><i class="glyphicon glyphicon-hand-right"></i> **IMPORTANT NOTE:** Online banking methods do not offer either functionality by default.
+><i class="glyphicon glyphicon-hand-right"></i> **IMPORTANT NOTE:** Online banking payment methods do not support these two functionality by default.
 >
