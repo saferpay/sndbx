@@ -36,7 +36,7 @@ Langenhorner Chaussee 92-94<br/>
 
 
 ## Saferpay Support Team
-Do you have any questions regarding error messages or are you having problems with your day-to-day operations. If so, our Support Team will be happy to assist you in finding:
+Do you have any questions regarding error messages or are you having problems with your day-to-day operations. If so, our Support Team will be happy to assist you:
 
 ### Saferpay Switzerland <br />
 SIX Payment Services AG <br />
