@@ -15,7 +15,7 @@
       { "Source": "texts/intro.md", "Title": "Capture", "Target": "index.html#capture" },
       { "Source": "texts/intro.md", "Title": "Daily Closing", "Target": "index.html#closing" },
       { "Source": "texts/intro.md", "Title": "Special Cases", "Target": "index.html#special" },
-      { "Source": "texts/intro.md", "Title": "When Can Cancellations or Credit Payments Occur", "Target": "index.html#cancel-refund" }
+      { "Source": "texts/intro.md", "Title": "Cancel or Refund", "Target": "index.html#cancel-refund" }
     ]
   },
   {
@@ -60,7 +60,7 @@
       { "Source": "texts/css_iframe.md", "Title": "Using CSS", "Target": "CssiFrame.html#css-usecss" },
       { "Source": "texts/css_iframe.md", "Title": "CSS Elements", "Target": "CssiFrame.html#css-element" },
       { "Source": "texts/css_iframe.md", "Title": "CSS Selectors", "Target": "CssiFrame.html#css-selector" },
-      { "Source": "texts/css_iframe.md", "Title": "info", "Target": "CssiFrame.html#css-info" }
+      { "Source": "texts/css_iframe.md", "Title": "Additional Info", "Target": "CssiFrame.html#css-info" }
     ]
   }, 
   {
