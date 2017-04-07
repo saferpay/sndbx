@@ -32,7 +32,21 @@
     ]
   },
   {
-  "Title": "Transaction Interface",    "Source": "texts/trx_interface.md",    "Target": "Integration_trx.html",    "Subsites": [      { "Source": "texts/trx_interface.md", "Title": "Credit Cards", "Target": "Integration_trx.html#trx-cc" },      { "Source": "texts/trx_interface.md", "Title": "Transaction Initialize", "Target": "Integration_trx.html#trx-ini" },     { "Source": "texts/trx_interface.md", "Title": "3-D Secure and DCC", "Target": "Integration_trx.html#trx-3ds" },      { "Source": "texts/trx_interface.md", "Title": "Return to the Shop", "Target": "Integration_trx.html#trx-retshop" },      { "Source": "texts/trx_interface.md", "Title": "Transaction Authorize", "Target": "Integration_trx.html#trx-ta" },      { "Source": "texts/trx_interface.md", "Title": "Capture or Cancel", "Target": "Integration_trx.html#trx-captcancel" },      { "Source": "texts/trx_interface.md", "Title": "Redirect Payment Methods", "Target": "Integration_trx.html#trx-redpaymethod" },      { "Source": "texts/trx_interface.md", "Title": "SEPA Direct Debit", "Target": "Integration_trx.html#trx-sepa" },      { "Source": "texts/trx_interface.md", "Title": "Recurring Payments", "Target": "Integration_trx.html#trx-recurring" }    ]  },
+    "Title": "Transaction Interface",
+    "Source": "texts/trx_interface.md",
+    "Target": "Integration_trx.html",
+    "Subsites": [
+      { "Source": "texts/trx_interface.md", "Title": "Credit Cards", "Target": "Integration_trx.html#trx-cc" },
+      { "Source": "texts/trx_interface.md", "Title": "Transaction Initialize", "Target": "Integration_trx.html#trx-ini" },
+  	  { "Source": "texts/trx_interface.md", "Title": "3-D Secure and DCC", "Target": "Integration_trx.html#trx-3ds" },
+      { "Source": "texts/trx_interface.md", "Title": "Return to the Shop", "Target": "Integration_trx.html#trx-retshop" },
+      { "Source": "texts/trx_interface.md", "Title": "Transaction Authorize", "Target": "Integration_trx.html#trx-ta" },
+      { "Source": "texts/trx_interface.md", "Title": "Capture or Cancel", "Target": "Integration_trx.html#trx-captcancel" },
+      { "Source": "texts/trx_interface.md", "Title": "Redirect Payment Methods", "Target": "Integration_trx.html#trx-redpaymethod" },
+      { "Source": "texts/trx_interface.md", "Title": "SEPA Direct Debit", "Target": "Integration_trx.html#trx-sepa" },
+      { "Source": "texts/trx_interface.md", "Title": "Recurring Payments", "Target": "Integration_trx.html#trx-recurring" }
+    ]
+  },
   {
     "Title": "IFrame Integration und CSS",
     "Source": "texts/css_iframe.md",
