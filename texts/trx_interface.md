@@ -1,5 +1,5 @@
 # Transaction Interface
-The Transaction Interface is an extension to Payment Page. It can be operated in parallel or alone. In comparison to Payment Page, more functions for the processing of transactions are available. 
+The Transaction Interface is an extension to Payment Page. It can be operated in parallel or alone. The Transaction interface offers more functions for the processing and handling of payments, in comparison to Payment Page. 
 
 >
 ><i class="glyphicon glyphicon-hand-right"></i>**NOTE:** The JSON API can be used in various ways to cover the most diverse processes. For this reason, only the standard processes are discussed below. For other possible uses, or for questions about the standard procedures, please contact the [**Saferpay Integration Team**](https://saferpay.github.io/sndbx/contact.html).
