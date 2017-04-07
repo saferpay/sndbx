@@ -2,7 +2,7 @@
 
 >
 ><i class="glyphicon glyphicon-hand-right"></i> **Tips for contacting us:**
-> Our technicians here at SIX are glad to help you with any kind of technical problems, but to make this process even faster, here are some tips you should consider, when contacting us.
+> Our technicians here at SIX are glad to assist you with any kind of technical problems. To make this process even faster, here are a few point you should consider, when contacting us.
 >
 > 1. Do not forget to send us your CustomerId and/or TerminalId. It makes it easier to find your account in our system.
 > 2. Please tell us, if you are using the test- or live-system.
