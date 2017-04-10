@@ -1,4 +1,4 @@
-# Kontakt
+# Contact
 
 >
 ><i class="glyphicon glyphicon-hand-right"></i> **Tips for contacting us:**
