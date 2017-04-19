@@ -29,10 +29,10 @@ The risk of misuse of credit card details is significantly reduced via the use o
 If you have questions about PCI DSS, your processor or a specialised company will provide answers. More information can be found on the [PCI Security Standards Council website](https://www.pcisecuritystandards.org/).
 
 ## Further tips for PCI-compliance
-
 The following tips, tricks and also "don't"s should help you building a fully PCI-compliant shop-plattform, with the least effort involved to do so.
 
-### Certification Levels <br />The PCI-DSS certification is devided into multiple compliance levels, called SAQ (Self Assigned Questionary). Each SAQ has its own set of questions and requirements to meet in order to be certified. **Every** party involved with the processing of credit card information as to be PCI-compliant. That includes you -the merchant-, your Payment Service Processor -in this case Saferpay- your Acquirer -for example SIX Payment Services- and the card holders bank -also called Issuer-. Each certification is valid for a year at most and then has to be re-applied.
+### Certification Levels
+The PCI-DSS certification is devided into multiple compliance levels, called SAQ (Self Assigned Questionary). Each SAQ has its own set of questions and requirements to meet in order to be certified. **Every** party involved with the processing of credit card information as to be PCI-compliant. That includes you -the merchant-, your Payment Service Processor -in this case Saferpay- your Acquirer -for example SIX Payment Services- and the card holders bank -also called Issuer-. Each certification is valid for a year at most and then has to be re-applied.
 
 For you, only two levels are of interest, in terms of your webshop, SAQ-A and SAQ-A EP.
 
