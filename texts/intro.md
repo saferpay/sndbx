@@ -46,7 +46,7 @@ For you, only two levels are of interest, in terms of your webshop, SAQ-A and SA
 
 ### Processes, that are NOT allowed
 
-Even with an SAQ-A EP certification, some processes are still not allowed. The following describes such processes, that the merchant **MUST NOT DO!**
+Even with an SAQ-A EP certification, some processes are still not allowed. The following describes such processes, that the merchant **MUST NOT DO UNDER ANY CIRCUMSTANCES!**
 
 1. **Credit Card Information**: The merchant must not process credit card information through his own server. That involves, processing (like posting them from an HTML-form to the merchant-server, to do a request to Saferpay) and especially saving them inside a database. All credit card information involving the Card Verification Code (CVC/CVV) and the card number (PAN), must be processed through Saferpay! Saferpay does offer this option, but it may only be used by merchants that are fully PCI-certified and allowed to process/save this data.
 
