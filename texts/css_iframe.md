@@ -135,7 +135,7 @@ As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported.
 
 + Within the CSS file, graphics must be loaded via “HTTPS://”. Otherwise, a warning is displayed in the browser, such as: “[…] this page includes other resources which are not secure. […]".
 
-+ When aiming for the PCI DSS SAQ-A compliance, you must set the **ContentSecurityEnabled** parameter to true. Furthermore, you have to consider the following things:
++ When aiming for the PCI DSS SAQ-A compliance, you must set the **ContentSecurityEnabled** parameter inside the **Styling**-container to **true**. Furthermore, you have to consider the following things:
 
   + Every bit of code must be contained within one CSS-file. Importing other files is not supported!
   + Image-files must be loaded via a Data-Url within the CSS file itself!
