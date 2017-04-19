@@ -28,21 +28,31 @@ The risk of misuse of credit card details is significantly reduced via the use o
 
 If you have questions about PCI DSS, your processor or a specialised company will provide answers. More information can be found on the [PCI Security Standards Council website](https://www.pcisecuritystandards.org/).
 
-### Further tips for PCI-compliance
+## Further tips for PCI-compliance
 
 The following tips, tricks and also "don't"s should help you building a fully PCI-compliant shop-plattform, with the least effort involved to do so.
 
-**Certification Levels** <br />The PCI-DSS certification is devided into multiple compliance levels, called SAQ (Self Assigned Questionary). Each SAQ has its own set of questions and requirements to meet in order to be certified. **Every** party involved with the processing of credit card information as to be PCI-compliant. That includes you -the merchant-, your Payment Service Processor -in this case Saferpay- your Acquirer -for example SIX Payment Services- and the card holders bank -also called Issuer-.
+### Certification Levels <br />The PCI-DSS certification is devided into multiple compliance levels, called SAQ (Self Assigned Questionary). Each SAQ has its own set of questions and requirements to meet in order to be certified. **Every** party involved with the processing of credit card information as to be PCI-compliant. That includes you -the merchant-, your Payment Service Processor -in this case Saferpay- your Acquirer -for example SIX Payment Services- and the card holders bank -also called Issuer-. Each certification is valid for a year at most and then has to be re-applied.
 
-For you, only two levels are of interest, in terms of your webshop, SAQ-A and SAQ-EP.
+For you, only two levels are of interest, in terms of your webshop, SAQ-A and SAQ-A EP.
 
 >
 ><i class="glyphicon glyphicon-hand-right"></i> **Attention!** Saferpay is capable of covering multiple levels of PCI-compliance, that are different, than just SAQ-A and EP. If you have any further questions about PCI-compliance, you may ask your Acquirer for help.
 >
 
 1. **SAQ-A** <br /> This level of certification is the easiest to maintain for a merchant. It mostly involves using a solution, that is maintained by a fully PCI-certified processor. The merchant only specifies his PSP to be compliant, which then holds the risk and responsibility of being compliant. Saferpay is fully PCI SAQ-A compliant and offers solutions for the merchant to be SAQ-A compliant, however the merchant has to follow the following rules, in order to apply this to his plattform:
-..**The merchant must not use his own (HTML-)form to capture credit card data!** This is now forbidden for SAQ-A merchants, articled by the PCI DSS standard version 3, released on January 1st 2015! The merchant may use the [Saferpay Payment Page](https://saferpay.github.io/jsonapi/index.html#ChapterPaymentPage), or the Hosted Forms inside an iFrame, provided by the transaction Interface through [Transaction Initialize](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize) and the Secure Alias Store through [Alias Insert](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Alias_Insert).
-..**Every Element on the Payment Page and/or inside the iFrame, must be hosted by a PCI-certified processor!** The merchant is **NOT** allowed to add any elemts or change them by hosting external CSS, or by breaking into the iFrame, using JavaScript. However, both solutions offer ways to go around this issue. In terms of CSS, you may want to [read this chapter]() on how to use the CSS-styling-feature.
+
+<br />**The merchant must not use his own (HTML-)form to capture credit card data!** This is now forbidden for SAQ-A merchants, articled by the PCI DSS standard version 3, released on January 1st 2015! The merchant may use the [Saferpay Payment Page](https://saferpay.github.io/jsonapi/index.html#ChapterPaymentPage), or the Hosted Forms inside an iFrame, provided by the transaction Interface through [Transaction Initialize](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize) and the Secure Alias Store through [Alias Insert](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Alias_Insert).
+
+<br />**Every Element on the Payment Page and/or inside the iFrame, must be hosted by a PCI-certified processor!** The merchant is **NOT** allowed to add any elemts or change them by hosting **external** CSS, or by breaking into the iFrame, using JavaScript. However, both solutions offer ways to go around this issue. In terms of CSS, you may want to [read this chapter]() on how to use the CSS-styling-feature, while being SAQ-A compliant.
+
+2. **SAQ-A EP** <br /> If you are not pleased with these restrictions, then you can certify for SAQ-A EP. This level however is way more advanced and involves quite some effort to be certified each time. The certification involves things like intruder and virus scans and certain firewall configurations, but enables you to use your own (HTML-)form. However, we highly recommend, that you apply for SAQ-A.
+
+### Processes, that are NOT allowed
+
+Even with an SAQ-A EP certification, some processes are still not allowed. The following describes such processes, that the merchant **MUST NOT DO!**
+
+1. **Credit Card Information**: The merchant must not process credit card information through his own server. That involves, processing (like posting them from an HTML-form to the merchant-server, to do a request to Saferpay) and especially saving them inside a database. All credit card information involving the Card Verification Code (CVC/CVV) and the card number (PAN), must be processed through Saferpay! Saferpay does offer this option, but it may only be used by merchants that are fully PCI-certified and allowed to process/save this data.
 
 ## <a name="3ds"></a> 3-D Secure
 
