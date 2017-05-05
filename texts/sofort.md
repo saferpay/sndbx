@@ -4,7 +4,7 @@ SOFORT is a third party means of payment by Klarna Group. To process SOFORT via 
 
 ## <a name="sf-requirement"></a> Requirements
 
-Die Abwicklung von PayPal-Zahlungen mit Saferpay setzt Folgendes voraus:
+The handling of SOFORT payments with Saferpay requires:
 
 *	A corresponding licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 *	Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
