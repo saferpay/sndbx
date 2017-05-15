@@ -691,6 +691,14 @@ Backoffice via "Administration -> Terminals" for the respective terminal. Closin
 #### PAYPAL, SWISS POSTCARD, SEPA ELV, BANCONTACT and PayDirekt
 With these payment methods, daily closing is triggered alongside the capture automatically for each transaction and the cash flow is initiated immediately. With PayPal, this happens because the right is reserved to refuse the payment. For this reason, we demand the money for you immediately. For Swiss Postcard, this is established in the protocol used by PostFinance. Same goes for SEPA ELV ,Bancontact and PayDirekt.
 
+#### Capturing a different amount
+The [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) can also be used to change the amount of the transaction. It is generally possible to capture less than initially authorized. So applying things like voucher codes or similar is possible. 
+Capturing more than initially authorized however may result in an error and is not recommended.
+
+>
+**Attention** A transaction can only be captured once. Partial captures are only possible with PayPal. If the amount changes again, you must do an additional transaction. 
+>
+
 #### Online Banking 
 giropay, iDEAL, SOFORT, Bancontact, eprzelewy und eps are online payment methods that trigger a transfer and thus the cash flow via the purchaser’s online banking services. A successful transaction is always 100% complete.
 
