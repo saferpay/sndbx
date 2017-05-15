@@ -695,8 +695,8 @@ With these payment methods, daily closing is triggered alongside the capture aut
 giropay, iDEAL, SOFORT, Bancontact, eprzelewy und eps are online payment methods that trigger a transfer and thus the cash flow via the purchaser’s online banking services. A successful transaction is always 100% complete.
 
 #### Capturing a different amount
-The [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) can also be used to change the amount of the transaction. It is generally possible to capture less than initially authorized. So applying things like voucher codes or similar is possible. 
-Capturing more than initially authorized however may result in an error and is not recommended.
+The [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) can also be used to change the amount of the transaction. It is generally possible to capture less, than initially authorized. So applying things like voucher codes, or similar is possible. 
+Capturing more than initially authorized however, may result in an error and is not recommended. That however depends on your processor.
 
 >
 **Attention** A transaction can only be captured once. If the amount changes again, you must do an additional transaction. However PayPal offers the possability, to do partial captures.
