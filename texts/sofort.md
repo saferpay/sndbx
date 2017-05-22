@@ -65,4 +65,4 @@ The handling of SOFORT payments with Saferpay requires:
 13. Finally create a project password. Click again the tab „Extended settings“ and there „Passwords and hash algorithm“.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_password.png "Project password")  
 
-The settings for processing SOFORT via Saferpay are completed!
+The settings to process SOFORT via Saferpay are completed!
