@@ -105,6 +105,15 @@
       { "Source": "texts/sofort.md", "Title": "Create a new project for SOFORT", "Target": "sofort#sf-newproject" }
     ] 
    }, 
+ {
+  "Title": "eps",
+  "Source": "texts/eps.md",
+  "Target": "eps.html",
+  "Subsites": [
+      { "Source": "texts/eps.md", "Title": "Requirements", "Target": "eps#eps-requirement" },
+      { "Source": "texts/eps.md", "Title": "How toget an EPS acceptance agreement", "Target": "eps#eps-newproject" }
+    ] 
+   }, 
     {
   "Title": "paydirekt",
   "Source": "texts/paydirekt.md",
