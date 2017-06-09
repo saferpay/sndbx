@@ -18,7 +18,7 @@ The handling of eps payments with Saferpay requires:
 *	Your eps PIN.
 *	The Currency your customers will purchase with eps.
 *	Your Saferpay Customer ID.
-*	The ID of the Saferpay eCommerce Terminal eps is to be added.
+*	The ID of the Saferpay eCommerce Terminal eps has to be added.
 
 **Attention**: Please send the information to activate eps to **service.saferpay@six-payment-services.com**.
 
