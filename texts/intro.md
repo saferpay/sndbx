@@ -610,7 +610,6 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
   </tbody>
 </table>
 
---->>>
 <dl class="dl-horizontal">
   <dt>Capture</dt>
   <dd>Capture required</dd>
@@ -629,7 +628,6 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
   <dt>MOTO</dt>
   <dd>Mail Phone Order available</dd>
 </dl>
-<<<---
 
 ## <a name="capture-batch"></a> Capture and Daily Closing
 
