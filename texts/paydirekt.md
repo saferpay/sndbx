@@ -24,7 +24,7 @@ The minimum required delivery address values are:
 If the minimum required delivery address values are submitted during the Payment Page initialization, the delivery address form will not be displayed or will be skipped, except if the **DeliveryAddressForm** value is set to “true”.  
 
 If the minimum required delivery data is missing or not complete, the Payment Page delivery address form, will be displayed during the payment process for the cardholder/purchaser to enter or complete the missing values. In this case the delivery address form is displayed regardless of the **DeliveryAddressForm** configuration (true or false).
-## <a name="pd-pending"></a> Display of pending status for bookings
+## <a name="pd-pending"></a> Display of pending status for captures (booking) and refunds
 paydirekt transfers every booking request to the buyer's bank for validation. If the validation process hasn’t yet taken place, the transaction status is shown as "pending". Even if the validation process normally only takes a few seconds, Saferpay waits a few seconds for the result before transmitting the "pending" status with the booking response to the merchant system.
 In this case a notice will be displayed in the transaction details in the Saferpay Backoffice to inform that the booking is not yet completed.  
  
@@ -35,6 +35,10 @@ As soon as Saferpay receives a response from paydirekt that a booking or refund 
 
 The merchant email address is configurable via the JSON API or the Backoffice.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paydirekt_email.PNG "paydirekt email Backoffice")
+
+>
+><i class="glyphicon glyphicon-hand-right"></i> **IMPORTANT NOTE:** The "PENDING" status can only occur with [Transaction/Capture](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) and [Transaction/Refund](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Refund). **The status-change can take up to several days, however, refunds may always be "PENDING" for at least one day!**
+>
 
 ## <a name="pd-query"></a> Querying the transaction status
 The status of a paydirekt booking and/or refund can be queried with the JSON API.  The corresponding functions are [Transaction/AssertCapture](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AssertCapture) and [Transaction/AssertRefund](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AssertRefund). These functions are only available for paydirekt transactions.
