@@ -1,6 +1,6 @@
 # Iframe Integration and CSS
 
-The Saferpay Payment Page, the Transaction Interface and Secure Card Data offer the options for Iframe integration and design with a Cascading Style Sheets (CSS). The following describes how these features can be used and what needs to be adhered to.
+The Saferpay Payment Page, the Transaction Interface and Secure Card Data offer the options for Iframe integration and custom design using Cascading Style Sheets (CSS). The following describes how these features can be used and what needs to be adhered to.
 
 ## <a name="css-iframe"></a> Iframe Integration
 
@@ -41,7 +41,7 @@ Here, the Saferpay Card Registration Form opens:
 
 ## <a name="css-iframe_size"></a> Size of the Iframe
 
-The size of the Iframe is communicated to the merchants via an HTML5-POST message. This can be evaluated using JavaScript. The Iframe can thus be dynamically adapted to the content.
+The size of the Iframe is communicated to the merchants via an HTML5-POST message, which can be captured using JavaScript. The Iframe can thus be dynamically adapted to the content.
 
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> The POST message is transmitted in JSON format:
@@ -56,7 +56,7 @@ The size of the Iframe is communicated to the merchants via an HTML5-POST messag
 ```
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Example for receipt of message (for jQuery >= 1.9):
+>    <i class="glyphicon glyphicon-hand-right"></i> JavaScript example for receipt of message (for jQuery >= 1.9):
 >
 
 ```javascript
@@ -111,7 +111,7 @@ It opens a menu which shows the HTML code and the CSS classes with the correspon
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_inspect_code.png "Inspect code")
 
-As an example, the text colour is adjusted here (attributes can also be added and removed, if supported by the browser):  
+As an example, the text colour is adjusted here (CSS attributes can also be added and removed, if supported by the browser):  
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_inspect_color.png "Inspect color")
 
@@ -123,17 +123,15 @@ The following elements should **NOT** be used:
 
 + **Element ID:** Element ID should not be used because the ID used may change without notice.
 
-+ **Element Attribute:** Element attributes should not be used, because attributes (name, value, data-*, etc.) can change without notice.
++ **Element Attribute:** Element attributes should not be used, because attributes (name, value, data-\*, etc.) can change without notice.
 
 ## <a name="css-selector"></a> CSS Selectors
 
-As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported.
+As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported, depending on the used browser.
 
 ## <a name="css-info"></a> More Information
 
 + The CSS file that is referenced by the CssUrl parameter must be stored on a web server that supports HTTPS.
-
-+ Within the CSS file, graphics must be loaded via “HTTPS://”. Otherwise, a warning is displayed in the browser, such as: “[…] this page includes other resources which are not secure. […]".
 
 + When aiming for the PCI DSS SAQ-A compliance, you must set the **ContentSecurityEnabled** parameter inside the **Styling**-container to **true**. Furthermore, you have to consider the following things:
 
@@ -142,11 +140,11 @@ As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported.
 
 + It is recommended to display a progress bar while something is loading in an Iframe.
 
-+ The PCI specifications do **NOT** allow jumping into the Iframe with JavaScript. So manipulating it, using JavaScript, is strictly permitted!
++ The PCI specifications **DO NOT** allow jumping into the Iframe with JavaScript. So manipulating it, using JavaScript, is strictly permitted!
 
-+ Some third party payment providers (e.g. PayPal) **DO NOT** support the integration inside an iFrame. Thus, the paymentPage will break out of the frame beforehand!
++ Some third party payment providers (e.g. PayPal) **DO NOT** support the integration inside an iFrame. Thus, the PaymentPage will break out of the frame beforehand!
 
-+ Integrating Saferpay via an iFrame will also cause the SuccessUrls to be called inside said frame. If you want to present the success-pages in fullsize, you can break out of the frame yourself, using JavaScript!
++ Integrating Saferpay via an iFrame will also cause the SuccessUrls to be called inside said frame. If you want to present the return pages in fullsize, you can break out of the frame yourself, using JavaScript!
 
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> Example of Iframe break out in JavaScript
