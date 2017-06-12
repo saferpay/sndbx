@@ -142,14 +142,14 @@ As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported.
 
 + It is recommended to display a progress bar while something is loading in an Iframe.
 
-+ The PCI specifications do **NOT** allow jumping into the Iframe with JavaScript.
++ The PCI specifications do **NOT** allow jumping into the Iframe with JavaScript. So manipulating it, using JavaScript, is strictly permitted!
 
-+ If forwarding to a third party occurs within an Iframe, it is possible that this will pop out from the Iframe because showing one’s own website within an Iframe is not permitted. This behaviour is familiar from PayPal.
++ Some third party payment providers (e.g. PayPal) **DO NOT** support the integration inside an iFrame. Thus, the paymentPage will break out of the frame beforehand!
 
-With PayPal payments, it is recommended to eject into a Success, Abort or Fail page from the Iframe when returning to the shop.
++ Integrating Saferpay via an iFrame will also cause the SuccessUrls to be called inside said frame. If you want to present the success-pages in fullsize, you can break out of the frame yourself, using JavaScript!
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> Example of Iframe break out JavaScript
+>    <i class="glyphicon glyphicon-hand-right"></i> Example of Iframe break out in JavaScript
 >
 
 ```
@@ -175,5 +175,5 @@ With PayPal payments, it is recommended to eject into a Success, Abort or Fail p
 ```
 
 >
-><i class="glyphicon glyphicon-hand-right"></i> **Attention!** When this is done, the return site is reloaded. The call-up thus occurs twice!
+><i class="glyphicon glyphicon-hand-right"></i> **Attention!** Executing this code, will re-load the return-page, resulting in it being called twice. Please consider this while implementing!
 >
