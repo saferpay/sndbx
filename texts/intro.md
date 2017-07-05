@@ -342,7 +342,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>Zahlungsmittel</th>
+      <th>Payment method</th>
       <th class="text-center">Capture</th>
       <th class="text-center">Batch</th>
       <th class="text-center">SCD</th>
