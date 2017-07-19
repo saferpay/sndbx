@@ -2,8 +2,8 @@
 
 ## Is there some kind of test-system or sandbox, where i can test the API?
 
-Yes! Saferpay offers a test system, where you can [register for your own individual test account](https://test.saferpay.com/BO/Welcome?lang=en). Please note, that the test system and thbe live environment run on two seperate systems.
-Due to that, you need to apply seperate base-urls for test and live, when doing requests, as [mentioned here (see right side)](https://saferpay.github.io/jsonapi/index.html#intro)
+Yes! Saferpay offers a test system, where you can [register for your own individual test account](https://test.saferpay.com/BO/Welcome?lang=en). Please note, that the test system and the live environment run on two seperate systems.
+Due to that, you need to apply seperate base-urls for test and live, when doing requests, as [mentioned here (see right side)](https://saferpay.github.io/jsonapi/index.html#intro).
 
 ## Can I use my test account on the live system?
 
