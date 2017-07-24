@@ -54,7 +54,7 @@ Based on the data obtained, it is to be decided whether or not a transaction is 
 
 + **Transaction > Status:** As already described [here](https://saferpay.github.io/sndbx/General.html#capture-batch), this status states whether or not a transaction has to be finalized via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture). If this status is not **CAPTURED**, the capture must be executed in order to finalise the transaction.
 
-## <a name="pp-captcancel"></a> Capture oder Cancel
+## <a name="pp-captcancel"></a> Capture or Cancel
 
 Subsequently, the transaction will be finalised via [**Capture**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or broken off via [**Cancel**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel).For this, the transaction identifier **Id** is required. Please refer to the notes on the payment methods on if and when a **Capture** is necessary, and whether a **Cancel** can still be carried out.
 
