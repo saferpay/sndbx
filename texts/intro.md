@@ -196,12 +196,12 @@ Dynamic Currency Conversion (DCC) is a dynamic currency converter that allows in
 
 ## <a name="licenses"></a> Licences
 
-For use in e-commerce, Saferpay distinguishes between two licences:
+Saferpay distinguishes between two licences:
 
 * Saferpay eCommerce
 * Saferpay Business
 
-It is extremely important to clarify before the implementation of Saferpay whether an eCommerce licence or a business license is to be used, as they provide different functions. The Saferpay Business licence is an extension of the eCommerce licence. If you have any queries, please contact your relevant contractually appointed person.
+It is extremely important to clarify before the implementation of Saferpay, whether an eCommerce licence or a business license is to be used, as they provide different functions. The Saferpay Business licence is an extension of the eCommerce licence. If you have any queries, please contact your relevant contractually appointed person.
 
 The following table shows an overview of which functions are included in the two licence models:
 
