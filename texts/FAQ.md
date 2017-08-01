@@ -38,6 +38,22 @@ Currently, the following payment methods are available:
 
 By default, EUR and CHF are enabled on test accounts. Other currencies can be activated on demand. For this, please contact the [Saferpay Integration Team](mailto:integration.saferpay@six-payment-services.com?subject=Test%20Account%20Currencies).
 
+## Can i combine Saferpay with my ERP-System?
+
+Generally yes!
+There are multiple options to do this however.
+two scenarios may be:
+
+1.) The shop does the Transaction, but the ERP does the [Capture](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) only at a point, when the goods can be shipped!
+You simply need to set up a connection between the shop and ERP-system, so the transaction-data can be shared between them, and the ERP can execute the [Capture](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) using the transaction id the shop recieves from Saferpay.
+But please note, that reservations can expire, depending on the brand and issuer of the card, [as stated here](https://saferpay.github.io/sndbx/index.html#capture). To avoid this, you may want to use approach 2.
+
+2.) The customers credit card gets saved within the [Saferpay Secure Card Data Store](http://saferpay.github.io/sndbx) but the transaction happens at a point, when all the goods can be shipped!
+Note, that the solvency of the card holder can change until this point.
+
+There are more scenarios Saferpay can cover, together with different ERP-systems.
+If you have some detailed questions, feel free to ask the [Integration Support Team](https://saferpay.github.io/sndbx/contact.html)
+
 ## I have already a shop system. Do you offer an extension for it?
 
 Ready-to-use Saferpay payment extensions for several shop systems are offered by our partner [Customweb](https://www.sellxed.com/shop/en/eur/extensions/module/payment-service-provider/saferpay.html). You get 1 year support and, if wanted, an installation service!
