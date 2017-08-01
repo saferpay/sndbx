@@ -55,6 +55,11 @@ In case of success the authorization data is returned with the Transaction Autho
 ><i class="glyphicon glyphicon-hand-right"></i> **IMPORTANT:** Accepting transaction without LiabilityShift happens at the merchants own risk.
 >
 + **Transaction > Status:** As already described [here](https://saferpay.github.io/sndbx/General.html#capture-batch), this status states whether or not a transaction has to be finalized via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture). If the status is not **CAPTURED**, the capture must be run in order to finalize the transaction.
+
+>
+><i class="glyphicon glyphicon-hand-right"></i> **Tipp:** You can also call Authorize, if the FailUrl has been called. It will then give you information about the error!
+>
+
 ### <a name="trx-captcancel"></a>Capture or Cancel
 Subsequently, the transaction will be finalised via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or broken off via [Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel). For this, the transaction identifier **Id** is required. Please refer to the notes on the payment methods on if and when a capture is necessary, and whether or not a Cancel can still be carried out.
 Once these steps have been finalised, the transaction is complete.
