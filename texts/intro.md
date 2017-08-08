@@ -695,9 +695,7 @@ giropay, iDEAL, SOFORT, Bancontact, eprzelewy und eps are online payment methods
 The [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) can also be used to change the amount of the transaction. It is generally possible to capture less, than initially authorized. So applying things like voucher codes, or similar is possible. 
 Capturing more than initially authorized however, may result in an error and is not recommended. This however depends on your processor.
 
->
-**Attention** A transaction can only be captured once. If the amount value changes during the payment process, a new transaction has to be initialized with the new adjusted amount. PayPal, however offers the option, to perform partial captures.
->
+> **Attention** A transaction can only be captured once. If the amount value changes during the payment process, a new transaction has to be initialized with the new adjusted amount. PayPal, however offers the option, to perform partial captures. >
 
 ## <a name="cancel-refund"></a> When can Cancellations or Refunds occur?
 
