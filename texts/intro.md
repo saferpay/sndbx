@@ -191,6 +191,11 @@ Dynamic Currency Conversion (DCC) is a dynamic currency converter that allows in
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
+    <tr>
+      <td>Twint</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
   </tbody>
 </table>
 
