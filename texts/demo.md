@@ -8,7 +8,7 @@ Here you can find different flow-demos that will show you the every request in d
 #Under Construction!
 This site is under construction!
 
-## <a name="paymentpage"></a> Payment Page flow
+## <a name="paymentpage"></a> Payment Page
 
 ### Here you can see the general Payment Page flow in action.
 <iframe id="frame" src='http://shop.saferpay.eu/SafpGithub/pp_initialize.php' style='height: 1024px; width: 768px;'></iframe>
