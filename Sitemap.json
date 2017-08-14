@@ -140,13 +140,5 @@
   {
     "Title": "API Specification",
     "Target": "http://saferpay.github.io/jsonapi/"
-  },
-  {
-    "Title": "Flow Demos",
-    "Source": "texts/demo.md",
-    "Target": "demo.html",
-    "Subsites": [
-      { "Source": "texts/demo.md", "Title": "Payment Page", "Target": "demo.html#paymentpage" }
-    ]
   }
 ]
