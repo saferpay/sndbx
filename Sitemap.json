@@ -70,7 +70,8 @@
       { "Source": "texts/paypal.md", "Title": "Requirements", "Target": "PayPal.html#ppal-requirement" },
       { "Source": "texts/paypal.md", "Title": "Grant API Approval for Saferpay", "Target": "PayPal.html#api-access" },
       { "Source": "texts/paypal.md", "Title": "Seller Protection", "Target": "PayPal.html#merchant-protection" },
-      { "Source": "texts/paypal.md", "Title": "Partial Capture", "Target": "PayPal.html#partial-capture" }
+      { "Source": "texts/paypal.md", "Title": "Partial Capture", "Target": "PayPal.html#partial-capture" },
+      { "Source": "texts/paypal.md", "Title": "Capture and the solvency of the customer", "Target": "PayPal.html#capture" }
     ]
   },
   {
