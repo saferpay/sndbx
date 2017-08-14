@@ -45,3 +45,6 @@ The status of a paydirekt booking and/or refund can be queried with the JSON API
 
 ## <a name="pd-refund"></a> Refunds 
 Refunds on existing paydirekt bookings can be initiated via the JSON API or manually in the Saferpay Backoffice. Any number of refunds can be issued to an existing booking. Each refund will be validated directly by paydirekt.
+
+## <a name="pd-orderID"></a> Autmoatic trimming of OrderId
+Paydirekt restricts the OrderId to a maximal length of 20 characters. The OrderId will be automatically trimmed if it exceeds the maximal length. Please keep this in mind to properly handle the use of the OrderId.
