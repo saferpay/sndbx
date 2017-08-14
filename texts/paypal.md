@@ -173,3 +173,10 @@ With Partial Capture, the booking of an authorised amount is possible in up to t
 
 The **OrderPartId** parameter must be unique for a partial booking, so as to be able to refer to it later in follow-up actions, such as a credit note payment. 
 With the parameter Type, it is determined whether the amount that is to be booked is a partial step or a final booking. 
+
+## <a name="capture"></a> Capture and the solvency of the customer
+
+Unlike credit cards, that give the merchant a certain guarantee for the authorized money, PayPal reserves itself the right to deny the disbursal of a specific transaction, if the solvency of the account holder has changed negatively, since the authorization has happened.
+
+Therefore Saferpay claims the money, once the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) of the transaction has been successfully executed. If the money cannot be claimed, the capture then returns an error.
+We generally recommend to execute the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) as soon as possible, to avoid this behaviour!
