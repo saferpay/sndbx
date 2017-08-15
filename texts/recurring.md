@@ -61,13 +61,14 @@ In order to define a transaction as initial, as the base transaction which will 
 
 
 By defining the Container
-```json Recurring": {
-      "Initial": true```
-
+```json 
+Recurring": {
+      "Initial": true
+```
 
 Here is an example of a Paymentpage Request with the Container **Recurring**:
                
-               ```json 
+ ```json 
  { 
  "RequestHeader": {
     "SpecVersion": "1.7",
@@ -172,6 +173,7 @@ Here are some important points to consider:
 3.)	Each Transaction with the  Status ”Authorized”  has to be captured to initiate the actual transfer of money (This also applies to the initial Transaction):
 You can do so, by taking the TransactionId and calling the Transaction Capture function (https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture)!
 
+```json
 {
   "ResponseHeader": {
     "SpecVersion": "1.5",
@@ -214,6 +216,7 @@ You can do so, by taking the TransactionId and calling the Transaction Capture f
     }
   }
 }
+```json
 
 Automating the Recurring Payments
 4.)	Automated recurring payments have to be triggered by merchant system.
