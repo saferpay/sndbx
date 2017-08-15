@@ -43,6 +43,20 @@ Here, the Saferpay Card Registration Form opens:
 
 The size of the Iframe is communicated to the merchants via an HTML5-POST message, which can be captured using JavaScript. The Iframe can thus be dynamically adapted to the content.
 
+### <a name="html-form"></a> Example of HTML Form
+
+```HTML
+<HTML>
+   <head>
+      <title>Payment Form</title>
+   </head>
+   <body>
+      <h1>Payment Form</h1>
+      <iframe src= "<%= RedirectUrl %>"> </iframe> 
+   </body>
+</HTML>
+```
+
 >
 >    <i class="glyphicon glyphicon-hand-right"></i> The POST message is transmitted in JSON format:
 >
@@ -150,7 +164,7 @@ As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported, dependi
 >    <i class="glyphicon glyphicon-hand-right"></i> Example of Iframe break out in JavaScript
 >
 
-```
+```HTML
 <HTML>
     <head>
         <title>Success Page</title>
