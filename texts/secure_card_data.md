@@ -33,7 +33,7 @@ The registration process takes place via the Saferpay Hosted Register Form which
 
 Alias Insert
 
-To retrieve a redirectUrl that can be integrated via Iframe the Alais Insert function has to be called by providng all the necessary data. Pleae view the tecnicall documentation for an example of the Alias Insert Request.
+To retrieve a redirectUrl that can be integrated via Iframe the Alais Insert function has to be called by providng all the necessary data. Please view the technical documentation for an example of the Alias Insert Request.
 
 
 ## <a name="scd-use"></a> How to use the obtained data
