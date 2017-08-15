@@ -187,5 +187,5 @@ As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported, dependi
 ```
 
 >
-><i class="glyphicon glyphicon-hand-right"></i> **Attention!** Executing this code, will re-load the return-page, resulting in it being called twice. Please consider this while implementing!
+><i class="glyphicon glyphicon-hand-right"></i> **Attention!** Executing this code, will re-load the return-page, resulting in it being called twice. Please consider this while <mark> implementing! </mark>
 >
