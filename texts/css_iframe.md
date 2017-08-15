@@ -164,7 +164,7 @@ As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported, dependi
 >    <i class="glyphicon glyphicon-hand-right"></i> Example of Iframe break out in JavaScript
 >
 
-```HTML
+```html
 <HTML>
     <head>
         <title>Success Page</title>
