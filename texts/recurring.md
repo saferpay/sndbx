@@ -61,12 +61,14 @@ This process must be carried out for every initial transaction, that might have 
 
 By defining the Container
 ```json Recurring": {
-      "Initial": true ```
+      "Initial": true```
 
 
 Here is an example of a Paymentpage Request with the Container **Recurring**:
-               {
-  "RequestHeader": {
+               
+               ```json 
+ { 
+ "RequestHeader": {
     "SpecVersion": "1.7",
     "CustomerId": "[your customer id]",
     "RequestId": "[unique request id]",
@@ -93,14 +95,14 @@ Here is an example of a Paymentpage Request with the Container **Recurring**:
     "CssUrl": "[your shop css url]"
   }
 }
-
-
+```
 
 Validating the transaction
 
 •	You can validate the transaction and assess transaction based information with either:
 the PaymentPage Assert (PaymentPage: https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert) or Transaction Authorize function (Transaction Interface: https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize)  Both will provide you with information about the Transaction as well as the  3D Secure response:
 
+```json
 {
   "ResponseHeader": {
     "SpecVersion": "1.5",
@@ -143,7 +145,7 @@ the PaymentPage Assert (PaymentPage: https://saferpay.github.io/jsonapi/index.ht
     "VerificationValue": "AAABBIIFmAAAAAAAAAAAAAAAAAA="
   }
 }
-
+```
 
 
 Notice:
