@@ -30,7 +30,7 @@ Recurring payments are supported by the following payment means:
 
 SCD------
 
-*	Sepa Directdebit 
+*	<mark>Sepa Directdebit </mark>
 *	Paypal
 *	Bancontact
 *	Maestro
