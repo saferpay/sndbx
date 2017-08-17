@@ -99,8 +99,6 @@ Here is an example of a Paymentpage Request with the Container **Recurring**:
 }
 ```
 
-><i class="glyphicon icon-exclamation-sign"></i> This process must be carried out for every initial transaction, that might have a follow up.
-
 ### B.      Validating the transaction
 
 You can validate the transaction and assess transaction based information with either:
