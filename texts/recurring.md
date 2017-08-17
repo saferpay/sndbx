@@ -91,11 +91,11 @@ Here is an example of a Paymentpage Request with the Container **Recurring**:
   }
 }
 ```
-**It is important to consider the following issues:**
 
-... -You should perform the initial transaction with your normal eCommerce TerminalID. It is more secure if the cardholder goes through all security measures like, entering the CVC and performing the 3D Secure authentication process. These security measures are not applicable with the recurring transaction as the cardholder is not present. Thus, recurring payments do not offer liability shift. 
 
-... -If you want to validate the cardholder without actually charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)
+> You should perform the initial transaction with your normal eCommerce TerminalID. It is more secure if the cardholder goes through all security measures like, entering the CVC and performing the 3D Secure authentication process. These security measures are not applicable with the recurring transaction as the cardholder is not present. Thus, recurring payments do not offer liability shift. 
+
+> If you want to validate the cardholder without actually charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)
 
 
 ### B.      Validating the transaction
@@ -153,14 +153,12 @@ Here is an example of a PaymentPage Assert Response:
 ```
 
 
->**Notice:**
+
 >We recommend only to proceed, if the parameter “Authenticated” is true. This value indicates that the card holder has performed a full successful authentication (3D Secure process) at his bank. This option gives you the highest level of security.
 
-Please take notice that some banks will skip the 3Dsecure process if they consider the transaction to have a low risk thus will still grant Liabilityshift although the cardholder did not have to authenticate him or herself. In that case the values returned for ”LiabilityShift” will be “true” and  “Authenticated” will be “false”.
+>Please take notice that some banks will skip the 3Dsecure process if they consider the transaction to have a low risk thus will still grant Liabilityshift although the cardholder did not have to authenticate him or herself. In that case the values returned for ”LiabilityShift” will be “true” and  “Authenticated” will be “false”.You should assess which level of security suits best to your business model and target group before deciding how to handle these two parameters.
 
-You should assess which level of security suits best to your business model and target group before deciding how to handle these two parameters.
-
-You have to save the TransactionId, returned in the Paymentpage Assert or Transaction Authorize response as this value will be used to reference for the actual recurring transactions/payments.
+You have to save the TransactionId, returned in the Paymentpage Assert or Transaction Authorize response as this value will be used to reference recurring payments.
 
 
 
