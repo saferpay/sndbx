@@ -101,14 +101,14 @@ Here is an example of a **PaymentPage Assert Response**:
 ```json
 {
   "ResponseHeader": {
-    "SpecVersion": "1.5",
+    "SpecVersion": "1.7",
     "RequestId": "[your request id]"
   },
   "Transaction": {
     "Type": "PAYMENT",
     "Status": "AUTHORIZED",
     "Id": "MUOGAWA9pKr6rAv5dUKIbAjrCGYA",
-    "Date": "2015-09-18T09:19:27.078Z",
+    "Date": "2017-06-18T09:19:27.078Z",
     "Amount": {
       "Value": "100",
       "CurrencyCode": "CHF"
@@ -124,7 +124,7 @@ Here is an example of a **PaymentPage Assert Response**:
     "DisplayText": "9123 45xx xxxx 1234",
     "Card": {
       "MaskedNumber": "912345xxxxxx1234",
-      "ExpYear": 2015,
+      "ExpYear": 2021,
       "ExpMonth": 9,
       "HolderName": "Max Mustermann",
       "CountryCode": "CH"
@@ -132,7 +132,7 @@ Here is an example of a **PaymentPage Assert Response**:
   },
   "Payer": {
     "IpAddress": "1.2.3.4",
-    "IpLocation": "DE"
+    "IpLocation": "CH"
   },
   "ThreeDs": {
     "Authenticated": true,
@@ -157,6 +157,31 @@ You have to save the TransactionId, returned in the Paymentpage Assert or Transa
 The next step is to perform the actual recurring transaction(s).
 The API-Function that is required is [Authorize Referenced](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced).
 You have to simply submit the TransactionId from your initial transaction (discussed in step B) to trigger/perform the recurring transaction(s)
+
+Here is an example of a **Authorize Referenced Request**:
+
+```json
+{
+  "RequestHeader": {
+    "SpecVersion": "1.7",
+    "CustomerId": "[your customer id]",
+    "RequestId": "[unique request id]",
+    "RetryIndicator": 0
+  },
+  "TerminalId": "[your terminal id]",
+  "Payment": {
+    "Amount": {
+      "Value": "100",
+      "CurrencyCode": "CHF"
+    },
+    "Description": "Test123",
+    "PayerNote": "Order123_Testshop"
+  },
+  "TransactionReference": {
+    "TransactionId": "MUOGAWA9pKr6rAv5dUKIbAjrCGYA"
+  }
+}
+```
 
 > The recurring transactions has to be performed with a Mail Phone Order TerminalId (MOTO Terminal) to ensure they are not rejected by the processor as the cardholder is not present and therefore cannot provide the CVC or partake in the 3D Secure process.
 > The Amount is a mandatory value which can vary from the Amount of the the initial transaction. Please make sure to inform the cardholder of price changes beforehand, else he or she might request a chargeback.
