@@ -36,7 +36,7 @@ Recurring payments are supported by the following payment means:
 ## <a name="recurring-referenced"></a> Recurring Payments with the Referenced  transactions method
 
 The Process in Short: 
-The initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVV and and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
+The initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
 
 ### A.      Initial Transaction:
 
@@ -201,5 +201,5 @@ With cronjobs you can schedules a command or script on your server to run automa
 
 The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will be executed, every time the cronjob is triggered to automatically perform transactions. You have to decide when and how often the payments have to be triggered depending on your business model and the prearranged schedulling of payments. 
 
->Please note that each transaction has to be finalized by calling the [capture function] (https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) including the automated recurring transactions.
+>Please note that each transaction has to be finalized by calling the [capture function](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) including the automated recurring transactions.
 
