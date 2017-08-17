@@ -169,7 +169,7 @@ Here are some important points to consider:
 Automated recurring payments have to be triggered by merchant system. There are multiple ways to setup up the automated triggering of payments. The easiest way is to setup a Cronjob (Linux) or a Task (Windows).
 With cronjobs you can schedules a command or script on your server to run automatically at a specified time and date (e.g. every minute, every 15 Minutes, every hour, or every day at 10pm or even every Sunday.) 
 
-The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will be executed, every time the cronjob is triggered to automatically perform transactions. You have to decide when and how often the payments have to be triggered depending on your business model and the prearranged schedule of payments. 
+The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will be executed, every time the cronjob is triggered to automatically perform transactions. You have to decide when and how often the payments have to be triggered depending on your business model and the prearranged schedulling of payments. 
 
 >Please note that each transaction has to be finalized by calling the capture function including the automated recurring transactions.
 
