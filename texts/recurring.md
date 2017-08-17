@@ -79,7 +79,6 @@ Here is an example of a Paymentpage Request with the Container **Recurring**:
   },
   "Styling": {
     "CssUrl": "[your shop css url]"
-    <mark>Sepa Directdebit </mark>
   }
 }
 ```
