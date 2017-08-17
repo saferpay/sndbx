@@ -144,13 +144,11 @@ Here is an example of a **PaymentPage Assert Response**:
 ```
 
 
+You have to save the TransactionId (Container: "Transaction">"ID"), returned in the Paymentpage Assert or Transaction Authorize response as this value will be used to reference recurring payments.
 
 >We recommend only to proceed, if the parameter “Authenticated” is true. This value indicates that the card holder has performed a full successful authentication (3D Secure process) at his bank. This option gives you the highest level of security.
 
 >Please take notice that some banks will skip the 3Dsecure process if they consider the transaction to have a low risk thus will still grant Liabilityshift although the cardholder did not have to authenticate him or herself. In that case the values returned for ”LiabilityShift” will be “true” and  “Authenticated” will be “false”.You should assess which level of security suits best to your business model and target group before deciding how to handle these two parameters.
-
-You have to save the TransactionId, returned in the Paymentpage Assert or Transaction Authorize response as this value will be used to reference recurring payments.
-
 
 
 ### C.      Recurring Transaction:
