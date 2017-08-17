@@ -55,7 +55,7 @@ It is important to consider the following issues:
 
 > * If you want to validate the cardholder without actually charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.) 
 
-In order to define a transaction as initial, as the base transaction which will be used as reference for future recurrent transactions, you need to set a special flag, either with  
+In order to define a transaction as the base transaction which will be used as reference for future recurrent transactions, you need to set a special flag, either with  
 
 [PaymentPage Initialize] (https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize "PaymentPage Initialize") or [Transaction Initialize] (https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize "Transaction Initialize" 
 
@@ -99,7 +99,7 @@ Here is an example of a Paymentpage Request with the Container **Recurring**:
 }
 ```
 
-> This process must be carried out for every initial transaction, that might have a follow up.
+> ><i class="glyphicon icon-exclamation-sign"></i> This process must be carried out for every initial transaction, that might have a follow up.
 
 ###Validating the transaction
 
