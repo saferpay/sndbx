@@ -28,10 +28,11 @@ Recurring payments are supported by the following payment means:
 *	JCB
 *	Sepa Direct Debit 
 *	Paypal
+*     Bonus Card
 *	Bancontact
 *	Myone
 *	Discover
-*     Bonus Card
+
 
 ## <a name="recurring-referenced"></a> Recurring Payments with the Referenced  transactions method
 
