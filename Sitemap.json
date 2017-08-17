@@ -149,9 +149,7 @@
      
   {
    "Source": "texts/recurring.md",
-    "Target": "recurring.html",
-    "Subsites": [
-      { "Source": "texts/recurring.md", "Title": "Payment Page", "Target": "recurring.html#paymentpage"}
+    "Target": "recurring.html"}
      
     ]
   }
