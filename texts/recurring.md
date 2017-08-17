@@ -51,7 +51,12 @@ Recurring": {
 ```
 
 Here is an example of a Paymentpage Request with the Container **Recurring**:
-               
+
+**Request URL**
+```http
+POST /Payment/v1/PaymentPage/Initialize
+```
+
  ```json 
  { 
  "RequestHeader": {
