@@ -1,6 +1,6 @@
 # PayPal
 
-Via the Saferpay JSON API, PayPal payments can be handled without too much expenditure of effort. This chapter describes what needs to be observed in this regard.
+Paypal payments can be processed with Saferpay without much effort. This chapter describes what needs to be observed in this regard.
 
 ## <a name="ppal-requirement"></a> Requirements
 
@@ -15,7 +15,7 @@ The handling of PayPal payments with Saferpay requires:
 
 ## <a name="api-access"></a> Grant API Approval for Saferpay
 
-So that PayPal payments can be handled via Saferpay, a few initial settings must be changed in the PayPal merchant account.
+To enable processing of PayPal payments via Saferpay a few settings must be first specified in the PayPal Mercahnt account.
 
 1. Log in to your PayPal business account at [www.paypal.com](http://www.paypal.com/).
 1. Click on the profile icon ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_icon.png "Profile") on the top right side of the page. From the **Business Profile** menu, select Account Settings.  
