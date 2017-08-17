@@ -171,5 +171,5 @@ With cronjobs you can schedules a command or script on your server to run automa
 
 The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will be executed, every time the cronjob is triggered to automatically perform transactions. You have to decide when and how often the payments have to be triggered depending on your business model and the prearranged schedulling of payments. 
 
->Please note that each transaction has to be finalized by calling the capture function including the automated recurring transactions.
+>Please note that each transaction has to be finalized by calling the [capture function] (https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) including the automated recurring transactions.
 
