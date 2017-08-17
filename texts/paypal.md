@@ -176,7 +176,7 @@ With the parameter Type, it is determined whether the amount that is to be booke
 
 ## <a name="capture"></a> Capture and the solvency of the customer
 
-Unlike credit cards, that give the merchant a certain guarantee for the authorized money, PayPal reserves itself the right to deny the disbursal of a specific transaction, if the solvency of the account holder has changed negatively, since the authorization has happened.
+Unlike credit cards, that give the merchant a certain guarantee for the authorized money, PayPal reserves the right to deny the payout of a transaction, if the solvency of the account holder changes negatively after the authorization.
 
-Therefore Saferpay claims the money, once the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) of the transaction has been successfully executed. If the money cannot be claimed, the capture then returns an error.
-We generally recommend to execute the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) as soon as possible, to avoid this behaviour!
+Therefore Saferpay claims the money directly, once the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) of the transaction has been successfully executed. If the money cannot be claimed, the capture then returns an error.
+We generally recommend to execute the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) as soon as possible, to avoid any issues.
