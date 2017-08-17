@@ -150,7 +150,8 @@
   {
    "Title": "Recurring payments",
    "Source": "texts/recurring.md",
-    "Target": "recurring.html"}
+    "Target": "recurring.html"
+  },
      
     ]
   }
