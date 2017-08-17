@@ -45,11 +45,11 @@ The initial transaction is performed with either the PaymentPage Interface or wi
 
 ### A.	Initial Transaction:
 
-The Initial Transaction can be performed with the PaymentPage Interface(https://saferpay.github.io/jsonapi/index.html#ChapterPaymentPage) or via the transaction interface, using Transaction Initialize and Transaction Authorize (https://saferpay.github.io/jsonapi/index.html#ChapterTransaction).
+The Initial Transaction can be performed with the [PaymentPage Interface](https://saferpay.github.io/jsonapi/index.html#ChapterPaymentPage) or via the [Transaction Interface](https://saferpay.github.io/jsonapi/index.html#ChapterTransaction), using **Transaction Initialize** and **Transaction Authorize** .
 
-This transaction basically captures the credit card details and sets a flag, to mark it as an initial transaction that can be used as a reference for recurring transactions (referenced transactions)
+This transaction basically captures the credit card details and sets a flag, to mark it as an initial transaction that can be used as a reference for recurring transactions.
 
-It is important to consider the following issues:
+**It is important to consider the following issues:**
 
 > * You should perform the initial transaction with your normal eCommerce TerminalID. It is more secure if the cardholder goes through all security measures like, entering the CVC and performing the 3D Secure authentication process. These security measures are not applicable with the recurring transaction as the cardholder is not present. Thus, recurring payments do not offer liability shift. 
 
@@ -104,7 +104,7 @@ Here is an example of a Paymentpage Request with the Container **Recurring**:
 ###Validating the transaction
 
 •	You can validate the transaction and assess transaction based information with either:
-the PaymentPage Assert (PaymentPage: https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert) or Transaction Authorize function (Transaction Interface: https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize)  Both will provide you with information about the Transaction as well as the  3D Secure response:
+the [PaymentPage Assert](PaymentPage: https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert) or [Transaction Authorize](Transaction Interface: https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize) function. Both will provide you with information about the Transaction including the 3D Secure response:
 
 ```json
 {
