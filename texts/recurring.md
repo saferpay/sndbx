@@ -161,7 +161,7 @@ You have to simply submit the TransactionId from your initial transaction (discu
 Here is an example of a **Authorize Referenced Request**:
 
 **Request URL**
-```
+```http
 POST /Payment/v1/Transaction/AuthorizeReferenced
 ```
 
