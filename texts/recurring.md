@@ -19,19 +19,19 @@ Recurring payments are card transactions processed on a regular basis under a pr
 
 ## <a name="recurring-payment-methods"></a> Supported Payment Methods: 
 Recurring payments are supported by the following payment means: 
-*	Visa
-*	MasterCard
-*	Maestro International
-*	VPAY
-*	American Express
-*	Diners Club
-*	JCB
-*	Sepa Direct Debit 
-*	Paypal
-*     Bonus Card
-*	Bancontact
-*	Myone
-*	Discover
+* Visa
+* MasterCard
+* Maestro International
+* VPAY
+* American Express
+* Diners Club
+* JCB
+* Sepa Direct Debit 
+* Paypal
+* Bonus Card
+* Bancontact
+* Myone
+* Discover
 
 
 ## <a name="recurring-referenced"></a> Recurring Payments with the Referenced  transactions method
@@ -39,7 +39,7 @@ Recurring payments are supported by the following payment means:
 The Process in Short: 
 The initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
 
-### A.      Initial Transaction:
+### A. Initial Transaction:
 
 The Initial Transaction can be performed with the [PaymentPage Interface](https://saferpay.github.io/jsonapi/index.html#ChapterPaymentPage) or via the [Transaction Interface](https://saferpay.github.io/jsonapi/index.html#ChapterTransaction), using **Transaction Initialize** and **Transaction Authorize** .
 
@@ -95,7 +95,7 @@ POST /Payment/v1/PaymentPage/Initialize
 > If you want to validate the cardholder without actually charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)
 
 
-### B.      Validating the transaction
+### B. Validating the transaction
 
 Depending on the Interface used to initialize the transaction, you can validate the payment and assess transaction based information with either:
 - the [PaymentPage Assert](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert) or 
@@ -157,7 +157,7 @@ You have to save the TransactionId (Container: "Transaction">"ID"), returned in 
 >Please take notice that some banks will skip the 3Dsecure process if they consider the transaction to have a low risk thus will still grant Liabilityshift although the cardholder did not have to authenticate him or herself. In that case the values returned for ”LiabilityShift” will be “true” and  “Authenticated” will be “false”.You should assess which level of security suits best to your business model and target group before deciding how to handle these two parameters.
 
 
-### C.      Recurring Transaction:
+### C. Recurring Transaction:
 The next step is to perform the actual recurring transaction(s).
 The API-Function that is required is [Authorize Referenced](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced).
 You have to simply submit the TransactionId from your initial transaction (discussed in step B) to trigger/perform the recurring transaction(s)
