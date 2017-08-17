@@ -36,7 +36,7 @@ Recurring payments are supported by the following payment means:
 ## <a name="recurring-referenced"></a> Recurring Payments with the Referenced  transactions method
 
 The Process in Short: 
-The initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process. Which includes entering the CVV and with 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
+The initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVV and and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
 
 ### A.      Initial Transaction:
 
