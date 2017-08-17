@@ -32,7 +32,6 @@ Recurring payments are supported by the following payment means:
 *	Myone
 *	Discover
 *     Bonus Card
-*     Bonus Card
 
 
 ## <a name="recurring-referenced"></a> Recurring Payments with the Referenced  transactions method
