@@ -47,6 +47,14 @@
     ]
   },
   {
+   "Title": "Recurring Payments",
+   "Source": "texts/recurring.md",
+   "Target": "recurring.html"
+   "Subsites": [
+      { "Source": "texts/recurring.md", "Title": "Refererenced Transactions", "Target": "recurring.html#recurring-referenced" }
+    ]
+  },
+  {
     "Title": "IFrame Integration and CSS",
     "Source": "texts/css_iframe.md",
     "Target": "CssiFrame.html",
@@ -145,14 +153,7 @@
     "Source": "texts/demo.md",
     "Target": "demo.html",
     "Subsites": [
-      { "Source": "texts/demo.md", "Title": "Payment Page", "Target": "demo.html#paymentpage" 
-   },   
-  {
-   "Title": "Recurring payments",
-   "Source": "texts/recurring.md",
-    "Target": "recurring.html"
-  },
-     
+      { "Source": "texts/demo.md", "Title": "Payment Page", "Target": "demo.html#paymentpage" }   
     ]
   }
 ]
