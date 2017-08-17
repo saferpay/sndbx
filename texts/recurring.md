@@ -19,23 +19,20 @@ Recurring payments are card transactions processed on a regular basis under a pr
 
 ## <a name="recurring-payment-methods"></a> Supported Payment Methods: 
 Recurring payments are supported by the following payment means: 
-*	Visa 
-*	MasterCard 
-*	Maestro international 
-*	V PAY 
-*	American Express 
-*	Diners Club 
-*	J.C.B. 
-*	Paydirekt
-
-SCD------
-
-*	<mark>Sepa Directdebit </mark>
+*	Visa
+*	MasterCard
+*	Maestro International
+*	VPAY
+*	American Express
+*	Diners Club
+*	JCB
+*	Sepa Direct Debit 
 *	Paypal
 *	Bancontact
-*	Maestro
 *	Myone
-*	
+*	Discover
+*     Bonus Card
+*     Bonus Card
 
 
 ## <a name="recurring-referenced"></a> Recurring Payments with the Referenced  transactions method
@@ -88,6 +85,7 @@ Here is an example of a Paymentpage Request with the Container **Recurring**:
   },
   "Styling": {
     "CssUrl": "[your shop css url]"
+    <mark>Sepa Directdebit </mark>
   }
 }
 ```
