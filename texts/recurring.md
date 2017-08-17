@@ -51,9 +51,9 @@ This transaction basically captures the credit card details and sets a flag, to 
 
 **It is important to consider the following issues:**
 
-> * You should perform the initial transaction with your normal eCommerce TerminalID. It is more secure if the cardholder goes through all security measures like, entering the CVC and performing the 3D Secure authentication process. These security measures are not applicable with the recurring transaction as the cardholder is not present. Thus, recurring payments do not offer liability shift. 
+> You should perform the initial transaction with your normal eCommerce TerminalID. It is more secure if the cardholder goes through all security measures like, entering the CVC and performing the 3D Secure authentication process. These security measures are not applicable with the recurring transaction as the cardholder is not present. Thus, recurring payments do not offer liability shift. 
 
-> * If you want to validate the cardholder without actually charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.) 
+> If you want to validate the cardholder without actually charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.) 
 
 In order to define a transaction as the base transaction which will be used as reference for future recurrent transactions, you need to set a special flag, either with  
 
@@ -99,12 +99,16 @@ Here is an example of a Paymentpage Request with the Container **Recurring**:
 }
 ```
 
-> ><i class="glyphicon icon-exclamation-sign"></i> This process must be carried out for every initial transaction, that might have a follow up.
+><i class="glyphicon icon-exclamation-sign"></i> This process must be carried out for every initial transaction, that might have a follow up.
 
-###Validating the transaction
+### Validating the transaction
 
-•	You can validate the transaction and assess transaction based information with either:
-the [PaymentPage Assert](PaymentPage: https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert) or [Transaction Authorize](Transaction Interface: https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize) function. Both will provide you with information about the Transaction including the 3D Secure response:
+You can validate the transaction and assess transaction based information with either:
+- the [PaymentPage Assert](PaymentPage: https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert) or 
+- [Transaction Authorize](Transaction Interface: https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize) function. 
+Both will provide you with information about the Transaction including the 3D Secure response:
+
+Here is an example of a PaymentPage Assert Response:
 
 ```json
 {
