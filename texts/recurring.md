@@ -44,11 +44,7 @@ The Initial Transaction can be performed with the [PaymentPage Interface](https:
 
 This transaction basically captures the credit card details and sets a flag, to mark it as an initial transaction that can be used as a reference for recurring transactions.
 
-In order to define a transaction as the base transaction which will be used as reference for future recurrent transactions, you need to set a special flag with either the  
-
-[PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize "PaymentPage Initialize") or [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize "Transaction Initialize")
-
-By defining the Container
+In order to define a transaction as the base transaction which will be used as reference for future recurrent transactions, you need to set a special flag with either the [PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize "PaymentPage Initialize") or [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize "Transaction Initialize") by defining the Container
 ```json 
 Recurring": {
       "Initial": true
