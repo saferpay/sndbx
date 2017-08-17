@@ -145,7 +145,7 @@
     "Source": "texts/demo.md",
     "Target": "demo.html",
     "Subsites": [
-      { "Source": "texts/demo.md", "Title": "Payment Page", "Target": "demo.html#paymentpage" }   
+      { "Source": "texts/demo.md", "Title": "Payment Page", "Target": "demo.html#paymentpage" }
     ]
   }
 ]
