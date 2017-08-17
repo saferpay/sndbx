@@ -47,14 +47,6 @@
     ]
   },
   {
-   "Title": "Recurring Payments",
-   "Source": "texts/recurring.md",
-   "Target": "recurring.html"
-   "Subsites": [
-      { "Source": "texts/recurring.md", "Title": "Refererenced Transactions", "Target": "recurring.html#recurring-referenced" }
-    ]
-  },
-  {
     "Title": "IFrame Integration and CSS",
     "Source": "texts/css_iframe.md",
     "Target": "CssiFrame.html",
