@@ -57,7 +57,7 @@ It is important to consider the following issues:
 
 In order to define a transaction as initial, as the base transaction which will be used as reference for future recurrent transactions, you need to set a special flag, either with  
 
-[PaymentPage Initialize](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize "PaymentPage Initialize) or [Transaction Initialize](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize "Transaction Initialize" 
+[PaymentPage Initialize] (https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize "PaymentPage Initialize) or [Transaction Initialize] (https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize "Transaction Initialize" 
 
 
 By defining the Container
