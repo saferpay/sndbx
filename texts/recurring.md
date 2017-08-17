@@ -155,13 +155,11 @@ You have to save the TransactionId, returned in the Paymentpage Assert or Transa
 
 ### C.      Recurring Transaction:
 The next step is to perform the actual recurring transaction(s).
-The API-Function that is required is “Authorize Referenced” (https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced).
-You have to simply submit the TransactionId from your initial transaction (discussed in step 1) to trigger/perform the recurring transaction(s)
+The API-Function that is required is [Authorize Referenced](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced).
+You have to simply submit the TransactionId from your initial transaction (discussed in step B) to trigger/perform the recurring transaction(s)
 
-Here are some important points to consider:
-
-> -The recurring transactions has to be performed with a Mail Phone Order TerminalId (MOTO Terminal) to ensure they are not rejected by the processor as the cardholder is not present and therefore cannot provide the CVC or partake in the 3D Secure process.
-> -The Amount is a mandatory value which can vary from the Amount of the the initial transaction. Please make sure to inform the cardholder of price changes beforehand, else he or she might request a chargeback.
+> The recurring transactions has to be performed with a Mail Phone Order TerminalId (MOTO Terminal) to ensure they are not rejected by the processor as the cardholder is not present and therefore cannot provide the CVC or partake in the 3D Secure process.
+> The Amount is a mandatory value which can vary from the Amount of the the initial transaction. Please make sure to inform the cardholder of price changes beforehand, else he or she might request a chargeback.
 > -Each Transaction with the  Status ”Authorized”  has to be [Captured](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) to initiate the actual transfer of money.
 
 
