@@ -33,7 +33,6 @@ Recurring payments are supported by the following payment means:
 *	Discover
 *     Bonus Card
 
-
 ## <a name="recurring-referenced"></a> Recurring Payments with the Referenced  transactions method
 
 The Process in Short: 
