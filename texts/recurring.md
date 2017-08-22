@@ -94,7 +94,7 @@ POST /Payment/v1/PaymentPage/Initialize
 ### B. Validating the transaction
 
 Depending on the Interface used to initialize the transaction, you can validate the payment and assess transaction based information with either:
-- the [PaymentPage Assert](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert) or 
+- [PaymentPage Assert](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert) or 
 - [Transaction Authorize](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize) function. 
 Both request will provide you with information about the Transaction including the 3D Secure response:
 
