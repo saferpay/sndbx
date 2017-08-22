@@ -30,7 +30,7 @@ Recurring payments are supported by the following payment means:
 *	Visa
 *	VPAY
 
-## <a name="recurring-referenced"></a> Recurring Payments with the Referenced transactions method
+## <a name="recurring-referenced"></a> Recurring Payments with the Referenced Transactions Method
 
 With this method, the initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
 
