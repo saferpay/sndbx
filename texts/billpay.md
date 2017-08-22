@@ -9,9 +9,8 @@ However, as BillPay is a third party provider, there are a few things which must
 *	Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 *	A valid acceptance agreement for BillPay must be present.
 *	The address of the purchaser is present and is forwarded to BillPay.
->
-**Attention** For BillPay activation on the Saferpay terminal, please inform **service.saferpay@six-payment-services.com** of the BillPay access details and the desired currency.
->
+
+>**Attention** For BillPay activation on the Saferpay terminal, please inform **service.saferpay@six-payment-services.com** of the BillPay access details and the desired currency.
 
 ## <a name="bp-approval-api"></a> BillPay Certification via API
 
