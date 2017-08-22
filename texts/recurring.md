@@ -188,7 +188,7 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 
 > The recurring transactions has to be performed with a Mail Phone Order TerminalId (MOTO Terminal) to ensure they are not rejected by the processor as the cardholder is not present and therefore cannot provide the CVC or partake in the 3D Secure process.
 
-> The Amount is a mandatory value which can vary from the Amount of the initial transaction. Please make sure to inform the cardholder of price changes beforehand, else he or she might request a chargeback.
+> The Amount is a mandatory value which can vary from the Amount of the initial transaction. Please make sure to inform the cardholder of amount changes beforehand, else he or she might request a chargeback.
 
 > Each Transaction with the Status **Authorized** has to be [Captured](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) to initiate the actual transfer of money.
 
