@@ -47,6 +47,18 @@
     ]
   },
   {
+    "Title": "Recurring Payments",
+    "Source": "texts/recurring.md",
+    "Target": "recurring.html",
+    "Subsites": [
+      { "Source": "texts/recurring.md", "Title": "Requirements", "Target": "recurring.html#recurring-req" },
+      { "Source": "texts/recurring.md", "Title": "Supported Payment Methods", "Target": "recurring.html#recurring-payment-methods" },
+  	  { "Source": "texts/recurring.md", "Title": "Recurring Payments with the Referenced  transactions method", "Target": "recurring.html#recurring-referenced" },
+      { "Source": "texts/recurring.md", "Title": "SCD Alias", "Target": "recurring.html#recurring-auto" },
+      { "Source": "texts/recurring.md", "Title": "Automating the Recurring Payments", "Target": "recurring.html#trx-ta" }
+    ]
+  },
+  {
     "Title": "IFrame Integration and CSS",
     "Source": "texts/css_iframe.md",
     "Target": "CssiFrame.html",
