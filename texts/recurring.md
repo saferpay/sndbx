@@ -2,8 +2,8 @@
 
 Recurring payments are card transactions processed on a regular basis under a pre-authorized agreement. Saferpay offers several ways to perform recurring payments. This chapter describes the two main concepts.
 
--	Transanction Referenced Method - AuthorizeReferenced Function with the TransactionID of the initial transaction
--	Secure Card Data  Method      - AuthorizeDirect Function with previously registered Aliases
+-	Transaction Referenced Method - AuthorizeReferenced Function with the TransactionId of the initial transaction
+-	Secure Card Data Method       - AuthorizeDirect Function with previously registered Aliases
 
 ## <a name="recurring-req"></a> Requirements:
 
