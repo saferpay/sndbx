@@ -15,27 +15,25 @@ Recurring payments are card transactions processed on a regular basis under a pr
 *	valid acceptance agreement for credit cards or other payment methods
 *	Secure Card Data Module (if recurring payments are performed by using Aliases)
 
-
-
 ## <a name="recurring-payment-methods"></a> Supported Payment Methods: 
 Recurring payments are supported by the following payment means: 
 *	American Express
+*	Bancontact (SCD method only)
 *	Bonus Card
 *	Diners Club
 *	Discover
 *	JCB
-*	Maestro International
+*	Maestro International (SCD method only)
 *	MasterCard
 *	Myone
 *	Sepa Direct Debit
 *	Visa
 *	VPAY
 
-
 ## <a name="recurring-referenced"></a> Recurring Payments with the Referenced  transactions method
 
-The Process in Short: 
-The initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
+With this method the initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
+
 
 ### A. Initial Transaction:
 
