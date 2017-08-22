@@ -30,9 +30,9 @@ Recurring payments are supported by the following payment means:
 *	Visa
 *	VPAY
 
-## <a name="recurring-referenced"></a> Recurring Payments with the Referenced  transactions method
+## <a name="recurring-referenced"></a> Recurring Payments with the Referenced transactions method
 
-With this method the initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
+With this method, the initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
 
 
 ### A. Initial Transaction:
@@ -41,13 +41,13 @@ The Initial Transaction can be performed with the [PaymentPage Interface](https:
 
 This transaction basically captures the credit card details and sets a flag, to mark it as an initial transaction that can be used as a reference for recurring transactions.
 
-In order to define a transaction as the base transaction which will be used as reference for future recurrent transactions, you need to set a special flag with either the [PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize "PaymentPage Initialize") or [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize "Transaction Initialize") by defining the Container
+To define a transaction as the base transaction which will be used as reference for future recurrent transactions, you need to set a special flag with either the [PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize "PaymentPage Initialize") or [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize "Transaction Initialize") by defining the Container
 ```json 
 Recurring": {
       "Initial": true
 ```
 
-Here is an example of a Paymentpage Request with the Container **Recurring**:
+Here is an example of a PaymentPage Request with the Container **Recurring**:
 
 **Request URL**
 ```http
@@ -88,7 +88,7 @@ POST /Payment/v1/PaymentPage/Initialize
 
 > You should perform the initial transaction with your normal eCommerce TerminalID. It is more secure if the cardholder goes through all security measures like, entering the CVC and performing the 3D Secure authentication process. These security measures are not applicable with the recurring transaction as the cardholder is not present. Thus, recurring payments do not offer liability shift. 
 
-> If you want to validate the cardholder without actually charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)
+> If you want to validate the cardholder without charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)
 
 
 ### B. Validating the transaction
@@ -146,11 +146,11 @@ Here is an example of a **PaymentPage Assert Response**:
 ```
 
 
-You have to save the TransactionId (Container: "Transaction">"ID"), returned in the Paymentpage Assert or Transaction Authorize response as this value will be used to reference recurring payments.
+You must save the TransactionId (Container: "Transaction">"ID"), returned in the Paymentpage Assert or Transaction Authorize response as this value will be used to reference recurring payments.
 
 >We recommend only to proceed, if the parameter “Authenticated” is true. This value indicates that the card holder has performed a full successful authentication (3D Secure process) at his bank. This option gives you the highest level of security.
 
->Please take notice that some banks will skip the 3Dsecure process if they consider the transaction to have a low risk thus will still grant Liabilityshift although the cardholder did not have to authenticate him or herself. In that case the values returned for ”LiabilityShift” will be “true” and  “Authenticated” will be “false”.You should assess which level of security suits best to your business model and target group before deciding how to handle these two parameters.
+>Please take notice that some banks will skip the 3Dsecure process if they consider the transaction to have a low risk thus will still grant Liabilityshift although the cardholder did not have to authenticate him or herself. In that case the values returned for ”LiabilityShift” will be “true” and  “Authenticated” will be “false”. You should assess which level of security suits best to your business model and target group before deciding how to handle these two parameters.
 
 
 ### C. Recurring Transaction:
@@ -190,16 +190,16 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 
 > The recurring transactions has to be performed with a Mail Phone Order TerminalId (MOTO Terminal) to ensure they are not rejected by the processor as the cardholder is not present and therefore cannot provide the CVC or partake in the 3D Secure process.
 
-> The Amount is a mandatory value which can vary from the Amount of the the initial transaction. Please make sure to inform the cardholder of price changes beforehand, else he or she might request a chargeback.
+> The Amount is a mandatory value which can vary from the Amount of the initial transaction. Please make sure to inform the cardholder of price changes beforehand, else he or she might request a chargeback.
 
-> Each Transaction with the  Status ”Authorized”  has to be [Captured](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) to initiate the actual transfer of money.
+> Each Transaction with the Status **Authorized** has to be [Captured](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) to initiate the actual transfer of money.
 
 
 ## <a name="recurring-auto"></a>  Automating the Recurring Payments
 Automated recurring payments have to be triggered by merchant system. There are multiple ways to setup up the automated triggering of payments. The easiest way is to setup a Cronjob (Linux) or a Task (Windows).
 With cronjobs you can schedules a command or script on your server to run automatically at a specified time and date (e.g. every minute, every 15 Minutes, every hour, or every day at 10pm or even every Sunday.) 
 
-The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will be executed, every time the cronjob is triggered to automatically perform transactions. You have to decide when and how often the payments have to be triggered depending on your business model and the prearranged schedulling of payments. 
+The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will be executed, every time the cronjob is triggered to automatically perform transactions. You should decide when and how often the payments have to be triggered depending on your business model and the prearranged scheduling of payments. 
 
 >Please note that each transaction has to be finalized by calling the [capture function](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) including the automated recurring transactions.
 
