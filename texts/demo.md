@@ -11,4 +11,9 @@ This site is under construction!
 ## <a name="paymentpage"></a> Payment Page
 
 ### Here you can see the general Payment Page flow in action.
-<iframe id="frame" src='https://shop.saferpay.eu/SafpGithub/pp_initialize.php' style='height: 1024px; width: 768px; border: none'></iframe>
+<iframe id="frame" src='https://shop.saferpay.eu/SafpGithub/pp_initialize.php' style='height: 1024px; width: 900px; border: none; background-color: white;'></iframe>
+
+## <a name="transactioninterface"></a> Transaction Interface
+
+### Here you can see the general Transaction interface flow in action.
+<iframe id="frame" src='https://shop.saferpay.eu/SafpGithub/initialize.php' style='height: 1024px; width: 900px; border: none; background-color: white;'></iframe>
