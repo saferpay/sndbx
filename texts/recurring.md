@@ -20,7 +20,6 @@ Recurring payments are card transactions processed on a regular basis under a pr
 ## <a name="recurring-payment-methods"></a> Supported Payment Methods: 
 Recurring payments are supported by the following payment means: 
 *	American Express
-*	Bancontact
 *	Bonus Card
 *	Diners Club
 *	Discover
