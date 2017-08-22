@@ -19,19 +19,18 @@ Recurring payments are card transactions processed on a regular basis under a pr
 
 ## <a name="recurring-payment-methods"></a> Supported Payment Methods: 
 Recurring payments are supported by the following payment means: 
-* Visa
-* MasterCard
-* Maestro International
-* VPAY
-* American Express
-* Diners Club
-* JCB
-* Sepa Direct Debit 
-* Paypal
-* Bonus Card
-* Bancontact
-* Myone
-* Discover
+*	American Express
+*	Bancontact
+*	Bonus Card
+*	Diners Club
+*	Discover
+*	JCB
+*	Maestro International
+*	MasterCard
+*	Myone
+*	Sepa Direct Debit
+*	Visa
+*	VPAY
 
 
 ## <a name="recurring-referenced"></a> Recurring Payments with the Referenced  transactions method
