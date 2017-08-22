@@ -159,7 +159,7 @@ You have to save the TransactionId (Container: "Transaction">"ID"), returned in 
 ### C. Recurring Transaction:
 The next step is to perform the actual recurring transaction(s).
 The API-Function that is required is [Authorize Referenced](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced).
-You have to simply submit the TransactionId from your initial transaction (discussed in step B) to trigger/perform the recurring transaction(s)
+You have to simply submit the **TransactionId** from your initial transaction (discussed in step B) to trigger/perform the recurring transaction(s)
 
 Here is an example of a **Authorize Referenced Request**:
 
