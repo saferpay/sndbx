@@ -2,9 +2,8 @@
 
 Recurring payments are card transactions processed on a regular basis under a pre-authorized agreement. Saferpay offers several ways to perform recurring payments. This chapter describes the two main concepts.
 
--	AuthorizeReferenced Function with the TransactionID of the initial transaction
--	AuthorizeDirect Function with previously registered Aliases
-
+-	Transanction Referenced Method - AuthorizeReferenced Function with the TransactionID of the initial transaction
+-	Secure Card Data  Method      - AuthorizeDirect Function with previously registered Aliases
 
 ## <a name="recurring-req"></a> Requirements:
 
@@ -13,7 +12,7 @@ Recurring payments are card transactions processed on a regular basis under a pr
 *	one active Saferpay ecommerce terminal and an additional MOTO terminal via which payment can be carried out and the associated
 *	Saferpay terminal number (TerminalId parameter) and Saferpay customer number (CustomerId parameter).
 *	valid acceptance agreement for credit cards or other payment methods
-*	Secure Card Data Module (if recurring payments are performed by using Aliases)
+*	Secure Card Data Module (if recurring payments are performed with using Aliases)
 
 ## <a name="recurring-payment-methods"></a> Supported Payment Methods: 
 Recurring payments are supported by the following payment means: 
@@ -195,7 +194,7 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 
 ## <a name="recurring-auto"></a>  Automating the Recurring Payments
 Automated recurring payments have to be triggered by merchant's system. There are multiple ways to setup up the automated triggering of payments. The easiest way is to setup a Cronjob (Linux) or a Task (Windows).
-With cronjobs you can schedules a command or script on your server to run automatically at a specified time and date (e.g. every minute, every 15 Minutes, every hour, or every day at 10pm or even every Sunday.) 
+With cronjobs you can schedule a command or script on your server to run automatically at a specified time and date (e.g. every minute, every 15 Minutes, every hour, or every day at 10pm or even every Sunday.) 
 
 The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will be executed, every time the cronjob is triggered to automatically perform transactions. You should decide when and how often the payments have to be triggered depending on your business model and the prearranged scheduling of payments. 
 
