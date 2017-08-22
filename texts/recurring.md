@@ -1,6 +1,6 @@
 # Recurring Payments
 
-Recurring payments are transactions processed on a regular basis under a pre-authorized agreement. They are particularly interesting for subscription business models. This chapter describes the two main concepts on how the perform recuring payments.
+Recurring payments are transactions processed on a regular basis under a pre-authorized agreement. They are particularly interesting for subscription or instalment business models. This chapter describes the two main concepts on how the perform recuring payments.
 
 -	Transaction Referenced Method -  [AuthorizeReferenced](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced)Function with the TransactionId of the initial transaction
 -	Secure Card Data Method       - [AuthorizeDirect](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeDirect) Function with previously registered Aliases
