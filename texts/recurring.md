@@ -195,7 +195,7 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 > Each Transaction with the  Status ”Authorized”  has to be [Captured](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) to initiate the actual transfer of money.
 
 
-### Automating the Recurring Payments
+## <a name="recurring-auto"></a>  Automating the Recurring Payments
 Automated recurring payments have to be triggered by merchant system. There are multiple ways to setup up the automated triggering of payments. The easiest way is to setup a Cronjob (Linux) or a Task (Windows).
 With cronjobs you can schedules a command or script on your server to run automatically at a specified time and date (e.g. every minute, every 15 Minutes, every hour, or every day at 10pm or even every Sunday.) 
 
