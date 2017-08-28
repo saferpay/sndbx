@@ -15,5 +15,10 @@ This site is under construction!
 
 ## <a name="transactioninterface"></a> Transaction Interface
 
-### Here you can see the general Transaction interface flow in action.
+### Here you can see the general Transaction Interface flow in action.
+<iframe id="frame" src='https://shop.saferpay.eu/SafpGithub/initialize.php' style='height: 1024px; width: 900px; border: none; background-color: white;'></iframe>
+
+## <a name="securealiasstore"></a> Secure Alias Store
+
+### Here you can see the general Secure Alias Store flow in action.
 <iframe id="frame" src='https://shop.saferpay.eu/SafpGithub/initialize.php' style='height: 1024px; width: 900px; border: none; background-color: white;'></iframe>
