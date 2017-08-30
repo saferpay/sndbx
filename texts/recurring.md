@@ -4,6 +4,7 @@ Recurring payments are transactions processed on a regular basis under a pre-aut
 
 -	Transaction Referenced Method -  [AuthorizeReferenced Function](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced) with the TransactionId of the initial transaction
 -	Secure Card Data Method       - [AuthorizeDirect Function](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeDirect) with previously registered Aliases
+---
 
 ## <a name="recurring-req"></a> Requirements:
 
@@ -13,6 +14,7 @@ Recurring payments are transactions processed on a regular basis under a pre-aut
 *	Saferpay terminal number (TerminalId parameter) and Saferpay customer number (CustomerId parameter).
 *	valid acceptance agreement for credit cards or other payment methods
 *	Secure Card Data Module (if recurring payments are performed with using Aliases)
+---
 
 ## <a name="recurring-payment-methods"></a> Supported Payment Methods: 
 Recurring payments are supported by the following payment means: 
@@ -28,13 +30,14 @@ Recurring payments are supported by the following payment means:
 *	Sepa Direct Debit
 *	Visa
 *	VPAY
+---
 
 ## <a name="recurring-referenced"></a> Recurring Payments with the Referenced Transactions Method
 
 With this method, the initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
 
 
-### A. Initial Transaction:
+### 1. Initial Transaction:
 
 The Initial Transaction can be performed with the [PaymentPage Interface](https://saferpay.github.io/jsonapi/index.html#ChapterPaymentPage) or via the [Transaction Interface](https://saferpay.github.io/jsonapi/index.html#ChapterTransaction), using **Transaction Initialize** and **Transaction Authorize** .
 
@@ -90,7 +93,7 @@ POST /Payment/v1/PaymentPage/Initialize
 > If you want to validate the cardholder without charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)
 
 
-### B. Validating the transaction
+### 2. Validating the transaction
 
 Depending on the Interface used to initialize the transaction, you can validate the payment and assess transaction based information with either:
 - [PaymentPage Assert](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert) or 
@@ -151,7 +154,7 @@ You must save the **TransactionId** (Container: "Transaction">"ID"), returned in
 >We recommend only to proceed, if the parameter “Authenticated” is true. This value indicates that the card holder has performed a full successful authentication (3D Secure process) at his bank. This option provides the highest level of security against fraud. Please take notice that some banks will skip the 3Dsecure process if they consider the transaction to have a low risk thus will still grant Liabilityshift although the cardholder did not have to authenticate him or herself. In that case the values returned for ”LiabilityShift” will be “true” and  “Authenticated” will be “false”. You should assess which level of security suits best to your business model and target group before deciding how to handle these two parameters.
 
 
-### C. Recurring Transaction:
+### 3. Recurring Transaction:
 The next step is to perform the actual recurring transaction(s).
 The API-Function that is required is [Authorize Referenced](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced).
 You have to simply submit the **TransactionId** from your initial transaction (discussed in step B) to perform the recurring transaction(s)
@@ -190,6 +193,7 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 
 > Each Transaction with the Status **Authorized** has to be [Captured](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) to initiate the actual transfer of money.
 
+---
 
 ## <a name="recurring-auto"></a>  Automating the Recurring Payments
 Automated recurring payments have to be triggered by merchant's system. There are multiple ways to setup up the automated triggering of payments. The easiest way is to setup a Cronjob (Linux) or a Task (Windows).
