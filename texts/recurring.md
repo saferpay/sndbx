@@ -190,12 +190,12 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 ```
 
 <div class="warning">
-  <p><strong>NOTE</strong> The recurring transactions have to be performed with a Mail Phone Order TerminalId (MOTO Terminal) to ensure they are not rejected by the processor as the cardholder is not present and therefore cannot provide the CVC or partake in the 3D Secure process. The Amount is a mandatory value which can vary from the Amount of the initial transaction. Please make sure to inform the cardholder of amount changes beforehand, else he or she might request a chargeback.</p>
+  <p><strong>NOTE:</strong> The recurring transactions have to be performed with a Mail Phone Order TerminalId (MOTO Terminal) to ensure they are not rejected by the processor as the cardholder is not present and therefore cannot provide the CVC or partake in the 3D Secure process. The Amount is a mandatory value which can vary from the Amount of the initial transaction. Please make sure to inform the cardholder of amount changes beforehand, else he or she might request a chargeback.</p>
 </div>
 
 
 <div class="danger">
-  <p><strong>IMPORTANT</strong> Each Transaction with the Status **Authorized** has to be [Captured](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) to initiate the actual transfer of money.</p>
+  <p><strong>IMPORTANT:</strong> Each Transaction with the Status **Authorized** has to be [Captured](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) to initiate the actual transfer of money.</p>
 </div>
 
 ---
@@ -207,8 +207,6 @@ With cronjobs you can schedule a command or script on your server to run automat
 The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will be executed, every time the cronjob is triggered to automatically perform transactions. You should decide when and how often the payments have to be triggered depending on your business model and the prearranged scheduling of payments. 
 
 <div class="info">
-  <p><strong>NOTE</strong>Please note that each transaction has to be finalized by calling the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">capture function</a> including the automated recurring transactions.</p>
+  <p><strong>NOTE: </strong>Please note that each transaction has to be finalized by calling the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">capture function</a> including the automated recurring transactions.</p>
 </div>
-
->Please note that each transaction has to be finalized by calling the [capture function](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) including the automated recurring transactions.
 
