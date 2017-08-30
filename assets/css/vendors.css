@@ -6737,3 +6737,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     background-color: #ffffcc;
     border-left: 6px solid #ffeb3b;
 }
+
+div {
+    margin-bottom: 20px;
+    padding: 1px 12px;
+}
