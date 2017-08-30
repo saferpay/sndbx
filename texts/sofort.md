@@ -29,10 +29,10 @@ The handling of SOFORT payments with Saferpay requires:
 2. Set the radio button for „Classic project“ and click again „Create project“.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_classic_project.png "Classic project")
 
-3. In the next step specify general settings fort he project.
+3. In the next step specify general settings fort he project. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_general.png "General settings")
 
-4. Then enter your address.
+4. Then enter your address. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_address.png "Address")
 
 5. Specify the currency for your customer’s payments.
