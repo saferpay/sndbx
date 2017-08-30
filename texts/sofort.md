@@ -66,3 +66,5 @@ The handling of SOFORT payments with Saferpay requires:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_password.png "Project password")  
 
 The settings for processing SOFORT via Saferpay are completed!
+
+---
