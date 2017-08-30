@@ -53,7 +53,7 @@
       { "Source": "texts/recurring.md", "Title": "Requirements", "Target": "recurring.html#recurring-req" },
       { "Source": "texts/recurring.md", "Title": "Supported Payment Methods", "Target": "recurring.html#recurring-payment-methods" },
   	   { "Source": "texts/recurring.md", "Title": "Referenced  Transactions Method", "Target": "recurring.html#recurring-referenced" },
-      { "Source": "texts/recurring.md", "Title": "Automating the Recurring Payments", "Target": "recurring.html#trx-ta" }
+      { "Source": "texts/recurring.md", "Title": "Automating the Recurring Payments", "Target": "recurring.html#recurring-auto" }
     ]
   },
   {
