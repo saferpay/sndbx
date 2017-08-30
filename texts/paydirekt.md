@@ -26,10 +26,10 @@ If the minimum required delivery address values are submitted during the Payment
 If the minimum required delivery data is missing or not complete, the Payment Page delivery address form, will be displayed during the payment process for the cardholder/purchaser to enter or complete the missing values. In this case the delivery address form is displayed regardless of the **DeliveryAddressForm** configuration (true or false).
 ## <a name="pd-pending"></a> Display of pending status for captures (booking) and refunds
 paydirekt transfers every booking request to the buyer's bank for validation. If the validation process hasn’t yet taken place, the transaction status is shown as "pending". Even if the validation process normally only takes a few seconds, Saferpay waits a few seconds for the result before transmitting the "pending" status with the booking response to the merchant system.
-In this case a notice will be displayed in the transaction details in the Saferpay Backoffice to inform that the booking is not yet completed.  
- 
+In this case a notice will be displayed in the transaction details in the Saferpay Backoffice to inform that the booking is not yet completed. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paydirekt_pend.PNG "paydirekt pending Backoffice")
-The status of the transaction remains as "reservation", not permitting any follow-up actions until the pending action is completed.
+The status of the transaction remains as "reservation", not permitting any follow-up actions until the pending action is completed.<br>
+
 ## <a name="pd-note"></a>Notification after change from pending to final status
 As soon as Saferpay receives a response from paydirekt that a booking or refund with the status "pending"  has been completed, an email notification is sent to the merchant or a server-to-server notification to the notification URL which was submitted via the JSON API. The notification informs the merchant whether the booking of the reservation or the credit has been accepted or rejected.  
 
