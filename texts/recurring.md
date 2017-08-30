@@ -189,9 +189,14 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 }
 ```
 
-> The recurring transactions has to be performed with a Mail Phone Order TerminalId (MOTO Terminal) to ensure they are not rejected by the processor as the cardholder is not present and therefore cannot provide the CVC or partake in the 3D Secure process. The Amount is a mandatory value which can vary from the Amount of the initial transaction. Please make sure to inform the cardholder of amount changes beforehand, else he or she might request a chargeback.
+<div class="warning">
+  <p><strong>NOTE</strong> The recurring transactions have to be performed with a Mail Phone Order TerminalId (MOTO Terminal) to ensure they are not rejected by the processor as the cardholder is not present and therefore cannot provide the CVC or partake in the 3D Secure process. The Amount is a mandatory value which can vary from the Amount of the initial transaction. Please make sure to inform the cardholder of amount changes beforehand, else he or she might request a chargeback.</p>
+</div>
 
-> Each Transaction with the Status **Authorized** has to be [Captured](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) to initiate the actual transfer of money.
+
+<div class="danger">
+  <p><strong>IMPORTANT</strong> Each Transaction with the Status **Authorized** has to be [Captured](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) to initiate the actual transfer of money.</p>
+</div>
 
 ---
 
@@ -203,6 +208,3 @@ The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will b
 
 >Please note that each transaction has to be finalized by calling the [capture function](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) including the automated recurring transactions.
 
-<div class="info">
-  <p><strong>Info!</strong> Some text...test..test..tes..test</p>
-</div>
