@@ -204,5 +204,5 @@ The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will b
 >Please note that each transaction has to be finalized by calling the [capture function](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) including the automated recurring transactions.
 
 <div class="info">
-  <p><strong>Info!</strong> Some text...</p>
+  <p><strong>Info!</strong> Some text...test..test..tes..test</p>
 </div>
