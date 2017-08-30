@@ -87,10 +87,14 @@ POST /Payment/v1/PaymentPage/Initialize
 }
 ```
 
+<div class="warning">
+  <p><strong>NOTE:</strong> You should perform the initial transaction with your normal eCommerce TerminalID. It is more secure if the cardholder goes through all security measures like, entering the CVC and performing the 3D Secure authentication process. These security measures are not applicable with the recurring transaction as the cardholder is not present. Thus, recurring payments do not offer liability shift.</p>
+</div>
 
-> You should perform the initial transaction with your normal eCommerce TerminalID. It is more secure if the cardholder goes through all security measures like, entering the CVC and performing the 3D Secure authentication process. These security measures are not applicable with the recurring transaction as the cardholder is not present. Thus, recurring payments do not offer liability shift. 
-
-> If you want to validate the cardholder without charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)
+ 
+<div class="info">
+  <p><strong>TIPP:</strong> If you want to validate the cardholder without charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)</p>
+</div>
 
 
 ### 2. Validating the transaction
@@ -151,7 +155,9 @@ Here is an example of a **PaymentPage Assert Response**:
 
 You must save the **TransactionId** (Container: "Transaction">"ID"), returned in the Paymentpage Assert or Transaction Authorize response as this value will be used to reference recurring payments.
 
->We recommend only to proceed, if the parameter “Authenticated” is true. This value indicates that the card holder has performed a full successful authentication (3D Secure process) at his bank. This option provides the highest level of security against fraud. Please take notice that some banks will skip the 3Dsecure process if they consider the transaction to have a low risk thus will still grant Liabilityshift although the cardholder did not have to authenticate him or herself. In that case the values returned for ”LiabilityShift” will be “true” and  “Authenticated” will be “false”. You should assess which level of security suits best to your business model and target group before deciding how to handle these two parameters.
+<div class="warning">
+  <p><strong>NOTE:</strong>We recommend only to proceed, if the parameter “Authenticated” is true. This value indicates that the card holder has performed a full successful authentication (3D Secure process) at his bank. This option provides the highest level of security against fraud. Please take notice that some banks will skip the 3Dsecure process if they consider the transaction to have a low risk thus will still grant Liabilityshift although the cardholder did not have to authenticate him or herself. In that case the values returned for ”LiabilityShift” will be “true” and  “Authenticated” will be “false”. You should assess which level of security suits best to your business model and target group before deciding how to handle these two parameters.</p>
+</div>
 
 
 ### 3. Recurring Transaction:
@@ -195,7 +201,7 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 
 
 <div class="danger">
-  <p><strong>IMPORTANT:</strong> Each Transaction with the Status **Authorized** has to be [Captured](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) to initiate the actual transfer of money.</p>
+  <p><strong>IMPORTANT:</strong> Each Transaction with the Status **Authorized** has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual transfer of money.</p>
 </div>
 
 ---
