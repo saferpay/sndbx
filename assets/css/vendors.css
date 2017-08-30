@@ -98,7 +98,7 @@ hr {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box
-    border-top: 2px solid #eee;
+    border-top : 1px solid #d07979;
 }
 pre {
     overflow: auto
