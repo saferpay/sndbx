@@ -11,6 +11,7 @@ However, as BillPay is a third party provider, there are a few things which must
 *	The address of the purchaser is present and is forwarded to BillPay.
 
 >**Attention** For BillPay activation on the Saferpay terminal, please inform **service.saferpay@six-payment-services.com** of the BillPay access details and the desired currency.
+---
 
 ## <a name="bp-approval-api"></a> BillPay Certification via API
 
@@ -236,7 +237,7 @@ Some of the key information, such as the invoice data, are returned by Saferpay 
   }
 }
 ```
-
+---
 
 ## <a name="bp-approval-bo"></a> BillPay Certification via Saferpay Backoffice
 
