@@ -52,7 +52,7 @@ Based on the data obtained, it is to be decided whether or not a transaction is 
 ><i class="glyphicon glyphicon-hand-right"></i> **IMPORTANT:** Accepting transaction without LiabilityShift happens at the merchants own risk.
 >
 
-+ **Transaction > Status:** As already described [here](https://saferpay.github.io/sndbx/General.html#capture-batch), this status states whether or not a transaction has to be finalized via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture). If this status is not **CAPTURED**, the capture must be executed in order to finalise the transaction.
++ **Transaction > Status:** As already described [here](https://saferpay.github.io/sndbx/index.html#capture-batch), this status states whether or not a transaction has to be finalized via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture). If this status is not **CAPTURED**, the capture must be executed in order to finalise the transaction.
 
 >
 ><i class="glyphicon glyphicon-hand-right"></i> **Tipp:** You can also call the Assert, if the FailUrl has been called. It will then give you information about the error!
