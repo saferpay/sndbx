@@ -29,7 +29,6 @@
     { "Source": "texts/PaymentPage.md", "Title": "Return to the Shop", "Target": "Integration_PP.html#pp-retshop" },
     { "Source": "texts/PaymentPage.md", "Title": "PaymentPage Assert", "Target": "Integration_PP.html#pp-assert" },
     { "Source": "texts/PaymentPage.md", "Title": "Capture or Cancel", "Target": "Integration_PP.html#pp-captcancel" },
-    {"Source": "texts/pp_demo.md", "Title": "DEMO", "Target": "pp_demo.html"}
     ]
   },
   {
@@ -44,7 +43,6 @@
       { "Source": "texts/trx_interface.md", "Title": "Transaction Authorize", "Target": "Integration_trx.html#trx-ta" },
       { "Source": "texts/trx_interface.md", "Title": "Capture or Cancel", "Target": "Integration_trx.html#trx-captcancel" },
       { "Source": "texts/trx_interface.md", "Title": "SEPA Direct Debit", "Target": "Integration_trx.html#trx-sepa" },
-      {"Source": "texts/trx_demo.md", "Title": "DEMO", "Target": "trx_demo.html"}
     ]
   },
   {
@@ -147,9 +145,9 @@
   {
     "Title": "API-Demo",
     "Subsites": [
-      {"Title": "Payment Page", "Target": "pp_demo.html"},
-      {"Title": "Transaction Interface", "Target": "trx_demo.html"},
-      {"Title": "Secure Alias Store", "Target": "scd_demo.html"}
+      {"Source": "texts/pp_demo.md", "Title": "Payment Page", "Target": "pp_demo.html"},
+      {"Source": "texts/trx_demo.md", "Title": "Transaction Interface", "Target": "trx_demo.html"},
+      {"Source": "texts/scd_demo.md", "Title": "Secure Alias Store", "Target": "scd_demo.html"}
     ]
   },
   {
