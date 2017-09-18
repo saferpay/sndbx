@@ -102,7 +102,7 @@
     "Target": "PostFinance.html",
     "Subsites": [
       { "Source": "texts/postfinance.md", "Title": "Requirements", "Target": "PostFinance.html#pf-requirement" },
-      { "Source": "texts/postfinance.md", "Title": "Storage in the Secure Card Data Store", "Target": "PostFinance.htmml#pf-alias" },
+      { "Source": "texts/postfinance.md", "Title": "Storage in the Secure Card Data Store", "Target": "PostFinance.html#pf-alias" },
       { "Source": "texts/postfinance.md", "Title": "Registration Dialogue", "Target": "PostFinance.html#pf-regdial" }
     ]
   },
