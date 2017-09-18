@@ -28,8 +28,7 @@
      { "Source": "texts/PaymentPage.md", "Title": "Redirect and Transaction", "Target": "Integration_PP.html#pp-transaction" },
      { "Source": "texts/PaymentPage.md", "Title": "Return to the Shop", "Target": "Integration_PP.html#pp-retshop" },
      { "Source": "texts/PaymentPage.md", "Title": "PaymentPage Assert", "Target": "Integration_PP.html#pp-assert" },
-     { "Source": "texts/PaymentPage.md", "Title": "Capture or Cancel", "Target": "Integration_PP.html#pp-captcancel" },
-     {"Title": "Try it out!","Target": "pp_demo.html"}
+     { "Source": "texts/PaymentPage.md", "Title": "Capture or Cancel", "Target": "Integration_PP.html#pp-captcancel" }
     ]
   },
   {
