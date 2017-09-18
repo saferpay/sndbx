@@ -152,9 +152,8 @@
     "Target": "http://saferpay.github.io/jsonapi/"
   },
   {
-    "Title": "API Demo",
-    "Subsites": [
-      { "Source": "texts/pp_demo.md", "Title": "Payment Page", "Target": "pp_demo.html" }
-    ]
+    "Title": "Payment Page Demo",
+    "Source": "texts/pp_demo.md",
+    "Target": "pp_demo.html"
   }
 ]
