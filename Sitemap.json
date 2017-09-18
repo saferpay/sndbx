@@ -28,8 +28,7 @@
     { "Source": "texts/PaymentPage.md", "Title": "Redirect and Transaction", "Target": "Integration_PP.html#pp-transaction" },
     { "Source": "texts/PaymentPage.md", "Title": "Return to the Shop", "Target": "Integration_PP.html#pp-retshop" },
     { "Source": "texts/PaymentPage.md", "Title": "PaymentPage Assert", "Target": "Integration_PP.html#pp-assert" },
-    { "Source": "texts/PaymentPage.md", "Title": "Capture or Cancel", "Target": "Integration_PP.html#pp-captcancel" },
-    {"Source": "texts/pp_demo.md", "Title": "DEMO", "Target": "pp_demo.html"}
+    { "Source": "texts/PaymentPage.md", "Title": "Capture or Cancel", "Target": "Integration_PP.html#pp-captcancel" }  
     ]
   },
   {
@@ -43,8 +42,7 @@
       { "Source": "texts/trx_interface.md", "Title": "Return to the Shop", "Target": "Integration_trx.html#trx-retshop" },
       { "Source": "texts/trx_interface.md", "Title": "Transaction Authorize", "Target": "Integration_trx.html#trx-ta" },
       { "Source": "texts/trx_interface.md", "Title": "Capture or Cancel", "Target": "Integration_trx.html#trx-captcancel" },
-      { "Source": "texts/trx_interface.md", "Title": "SEPA Direct Debit", "Target": "Integration_trx.html#trx-sepa" },
-      {"Source": "texts/trx_demo.md", "Title": "DEMO", "Target": "trx_demo.html"}
+      { "Source": "texts/trx_interface.md", "Title": "SEPA Direct Debit", "Target": "Integration_trx.html#trx-sepa" }
     ]
   },
   {
@@ -145,14 +143,6 @@
     "Target": "faq.html"
   },
   {
-    "Title": "API-Demo",
-    "Subsites": [
-      {"Title": "Payment Page", "Target": "pp_demo.html"},
-      {"Title": "Transaction Interface", "Target": "trx_demo.html"},
-      {"Title": "Secure Alias Store", "Target": "scd_demo.html"}
-    ]
-  },
-  {
     "Title": "Contact",
     "Source": "texts/contact.md",
     "Target": "contact.html"
@@ -160,5 +150,12 @@
   {
     "Title": "API Specification",
     "Target": "http://saferpay.github.io/jsonapi/"
+  },
+  {
+    "Source": "texts/demo.md",
+    "Target": "demo.html",
+    "Subsites": [
+      { "Source": "texts/demo.md", "Title": "Payment Page", "Target": "demo.html#paymentpage" }
+    ]
   }
 ]
