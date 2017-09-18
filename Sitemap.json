@@ -28,7 +28,7 @@
     { "Source": "texts/PaymentPage.md", "Title": "Redirect and Transaction", "Target": "Integration_PP.html#pp-transaction" },
     { "Source": "texts/PaymentPage.md", "Title": "Return to the Shop", "Target": "Integration_PP.html#pp-retshop" },
     { "Source": "texts/PaymentPage.md", "Title": "PaymentPage Assert", "Target": "Integration_PP.html#pp-assert" },
-    { "Source": "texts/PaymentPage.md", "Title": "Capture or Cancel", "Target": "Integration_PP.html#pp-captcancel" },
+    { "Source": "texts/PaymentPage.md", "Title": "Capture or Cancel", "Target": "Integration_PP.html#pp-captcancel" }  
     ]
   },
   {
@@ -38,11 +38,11 @@
     "Subsites": [
       { "Source": "texts/trx_interface.md", "Title": "Credit Cards", "Target": "Integration_trx.html#trx-cc" },
       { "Source": "texts/trx_interface.md", "Title": "Transaction Initialize", "Target": "Integration_trx.html#trx-ini" },
-      { "Source": "texts/trx_interface.md", "Title": "3-D Secure and DCC", "Target": "Integration_trx.html#trx-3ds" },
+  	  { "Source": "texts/trx_interface.md", "Title": "3-D Secure and DCC", "Target": "Integration_trx.html#trx-3ds" },
       { "Source": "texts/trx_interface.md", "Title": "Return to the Shop", "Target": "Integration_trx.html#trx-retshop" },
       { "Source": "texts/trx_interface.md", "Title": "Transaction Authorize", "Target": "Integration_trx.html#trx-ta" },
       { "Source": "texts/trx_interface.md", "Title": "Capture or Cancel", "Target": "Integration_trx.html#trx-captcancel" },
-      { "Source": "texts/trx_interface.md", "Title": "SEPA Direct Debit", "Target": "Integration_trx.html#trx-sepa" },
+      { "Source": "texts/trx_interface.md", "Title": "SEPA Direct Debit", "Target": "Integration_trx.html#trx-sepa" }
     ]
   },
   {
@@ -101,9 +101,9 @@
     "Source": "texts/postfinance.md",
     "Target": "PostFinance.html",
     "Subsites": [
-      { "Source": "texts/postfinance.md", "Title": "Requirements", "Target": "PostFinance.html#pf-requirement" },
-      { "Source": "texts/postfinance.md", "Title": "Storage in the Secure Card Data Store", "Target": "PostFinance.html#pf-alias" },
-      { "Source": "texts/postfinance.md", "Title": "Registration Dialogue", "Target": "PostFinance.html#pf-regdial" }
+      { "Source": "texts/postfinance.md", "Title": "Requirements", "Target": "PostFinance#pf-requirement" },
+      { "Source": "texts/postfinance.md", "Title": "Storage in the Secure Card Data Store", "Target": "PostFinance#pf-alias" },
+      { "Source": "texts/postfinance.md", "Title": "Registration Dialogue", "Target": "PostFinance#pf-regdial" }
     ]
   },
  {
@@ -111,8 +111,8 @@
   "Source": "texts/sofort.md",
   "Target": "sofort.html",
   "Subsites": [
-      { "Source": "texts/sofort.md", "Title": "Requirements", "Target": "sofort.html#sf-requirement" },
-      { "Source": "texts/sofort.md", "Title": "Create a new project for SOFORT", "Target": "sofort.html#sf-newproject" }
+      { "Source": "texts/sofort.md", "Title": "Requirements", "Target": "sofort#sf-requirement" },
+      { "Source": "texts/sofort.md", "Title": "Create a new project for SOFORT", "Target": "sofort#sf-newproject" }
     ] 
    }, 
  {
@@ -120,8 +120,8 @@
   "Source": "texts/eps.md",
   "Target": "eps.html",
   "Subsites": [
-      { "Source": "texts/eps.md", "Title": "Requirements", "Target": "eps.html#eps-requirement" },
-      { "Source": "texts/eps.md", "Title": "How toget an EPS acceptance agreement", "Target": "eps.html#eps-newproject" }
+      { "Source": "texts/eps.md", "Title": "Requirements", "Target": "eps#eps-requirement" },
+      { "Source": "texts/eps.md", "Title": "How toget an EPS acceptance agreement", "Target": "eps#eps-newproject" }
     ] 
    }, 
     {
@@ -129,26 +129,18 @@
   "Source": "texts/paydirekt.md",
   "Target": "paydirekt.html",
   "Subsites": [
-      { "Source": "texts/paydirekt.md", "Title": "Requirements", "Target": "paydirekt.html#pd-requirement" },
-      { "Source": "texts/paydirekt.md", "Title": "Handling of delivery address", "Target": "paydirekt.html#pd-address" },
-      { "Source": "texts/paydirekt.md", "Title": "Display of pending status for bookings", "Target": "paydirekt.html#pd-pending" },
-      { "Source": "texts/paydirekt.md", "Title": "Notification after change from pending to final status", "Target": "paydirekt.html#pd-note" },
-      { "Source": "texts/paydirekt.md", "Title": "Querying the transaction status", "Target": "paydirekt.html#pd-query" },
-      { "Source": "texts/paydirekt.md", "Title": "Refunds", "Target": "paydirekt.html#pd-refund" }
+      { "Source": "texts/paydirekt.md", "Title": "Requirements", "Target": "paydirekt#pd-requirement" },
+      { "Source": "texts/paydirekt.md", "Title": "Handling of delivery address", "Target": "paydirekt#pd-address" },
+      { "Source": "texts/paydirekt.md", "Title": "Display of pending status for bookings", "Target": "paydirekt#pd-pending" },
+      { "Source": "texts/paydirekt.md", "Title": "Notification after change from pending to final status", "Target": "paydirekt#pd-note" },
+      { "Source": "texts/paydirekt.md", "Title": "Querying the transaction status", "Target": "paydirekt#pd-query" },
+      { "Source": "texts/paydirekt.md", "Title": "Refunds", "Target": "paydirekt#pd-refund" }
     ] 
    }, 
   {
     "Title": "FAQ",
     "Source": "texts/FAQ.md",
     "Target": "faq.html"
-  },
-  {
-    "Title": "API-Demo",
-    "Subsites": [
-      {"Source": "texts/pp_demo.md", "Title": "Payment Page", "Target": "pp_demo.html"},
-      {"Source": "texts/trx_demo.md", "Title": "Transaction Interface", "Target": "trx_demo.html"},
-      {"Source": "texts/scd_demo.md", "Title": "Secure Alias Store", "Target": "scd_demo.html"}
-    ]
   },
   {
     "Title": "Contact",
@@ -158,5 +150,12 @@
   {
     "Title": "API Specification",
     "Target": "http://saferpay.github.io/jsonapi/"
+  },
+  {
+    "Source": "texts/demo.md",
+    "Target": "demo.html",
+    "Subsites": [
+      { "Source": "texts/demo.md", "Title": "Payment Page", "Target": "demo.html#paymentpage" }
+    ]
   }
 ]
