@@ -142,6 +142,7 @@
     "Source": "texts/FAQ.md",
     "Target": "faq.html"
   },
+ 
   {
     "Title": "Contact",
     "Source": "texts/contact.md",
@@ -152,10 +153,11 @@
     "Target": "http://saferpay.github.io/jsonapi/"
   },
   {
-    "Source": "texts/demo.md",
-    "Target": "demo.html",
+    "Title": "Demo",
     "Subsites": [
-      { "Source": "texts/demo.md", "Title": "Payment Page", "Target": "demo.html#paymentpage" }
+      { "Source": "texts/pp_demo.md", "Title": "Payment Page", "Target": "pp_demo.html" },
+      { "Source": "texts/trx_demo.md", "Title": "Transaction Interface", "Target": "trx_demo.html" },
+      { "Source": "texts/scd_demo.md", "Title": "Secure Card Data", "Target": "scd_demo.html" }
     ]
   }
 ]
