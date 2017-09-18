@@ -28,8 +28,7 @@
     { "Source": "texts/PaymentPage.md", "Title": "Redirect and Transaction", "Target": "Integration_PP.html#pp-transaction" },
     { "Source": "texts/PaymentPage.md", "Title": "Return to the Shop", "Target": "Integration_PP.html#pp-retshop" },
     { "Source": "texts/PaymentPage.md", "Title": "PaymentPage Assert", "Target": "Integration_PP.html#pp-assert" },
-    { "Source": "texts/PaymentPage.md", "Title": "Capture or Cancel", "Target": "Integration_PP.html#pp-captcancel" },
-    { "Title": "Try it out!","Target": "pp_demo.html"}
+    { "Source": "texts/PaymentPage.md", "Title": "Capture or Cancel", "Target": "Integration_PP.html#pp-captcancel" }
     ]
   },
   {
@@ -43,8 +42,7 @@
       { "Source": "texts/trx_interface.md", "Title": "Return to the Shop", "Target": "Integration_trx.html#trx-retshop" },
       { "Source": "texts/trx_interface.md", "Title": "Transaction Authorize", "Target": "Integration_trx.html#trx-ta" },
       { "Source": "texts/trx_interface.md", "Title": "Capture or Cancel", "Target": "Integration_trx.html#trx-captcancel" },
-      { "Source": "texts/trx_interface.md", "Title": "SEPA Direct Debit", "Target": "Integration_trx.html#trx-sepa" },
-      { "Title": "Try it out!","Target": "trx_demo.html"}
+      { "Source": "texts/trx_interface.md", "Title": "SEPA Direct Debit", "Target": "Integration_trx.html#trx-sepa" }
     ]
   },
   {
