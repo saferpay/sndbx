@@ -207,5 +207,7 @@ a[target='_blank'] {
 .demobtn:hover {
     background: #204d74;
     border: 1px solid #204d74;
+    color: white;
+    text-decoration: none;
 }
 
