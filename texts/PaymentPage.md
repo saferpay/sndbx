@@ -70,5 +70,5 @@ Once these steps are complete, the transaction is completed.
 
 ## <a name="pp-demo"></a> Try it out!
 
-Want to see this flow in action? <a href="https://saferpay.github.io/sndbx/pp_demo.html" class="demobtn">Click here for a live demo!</a>
+<a href="https://saferpay.github.io/sndbx/pp_demo.html" class="demobtn">Click here for a live demo!</a>
 
