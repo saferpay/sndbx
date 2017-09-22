@@ -32,7 +32,7 @@ The handling of SOFORT payments with Saferpay requires:
 3. In the next step specify general settings fort he project. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_general.png "General settings")
 
-4. Then enter your address. <br>
+4. Then enter <b><u>your address</u></b>. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_address.png "Address")
 
 5. Specify the currency for your customer’s payments. <br>
