@@ -75,7 +75,6 @@ However, there are things you need to change with the Go-Live, before you can st
 
 The following IPs may need to be whitelisted in order to accept outgoing and incoming requests from and to Saferpay:
 
-**wave.six-group.com**
 + 153.46.244.84
 + 193.247.180.4
 + 153.46.254.150
