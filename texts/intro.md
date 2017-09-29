@@ -37,7 +37,7 @@ The PCI-DSS certification is devided into multiple compliance levels, called SAQ
 The two PCI levels most relevant for the majority of merchants integrating Saferpay into their webhsop are; SAQ-A and SAQ-A EP.
 
 <div class="warning">
-  <p><strong>Attention:</strong> Saferpay is capable of covering multiple levels of PCI-compliance besides SAQ-A and EP. Please contact your acquirer/processor or a specialized company, should you have any questions regarding PCI compliancy. You can also find more information as well as sample SAQ-questionnaires [on the official PCI DSS website](https://www.pcisecuritystandards.org/document_library?category=saqs#results) to get a better understanding and overview about the requirements you have to meet as a merchant.</p>
+  <p><strong>Attention:</strong> Saferpay is capable of covering multiple levels of PCI-compliance besides SAQ-A and EP. Please contact your acquirer/processor or a specialized company, should you have any questions regarding PCI compliancy. You can also find more information as well as sample SAQ-questionnaires <a href="https://www.pcisecuritystandards.org/document_library?category=saqs#results>on the official PCI DSS website</a> to get a better understanding and overview about the requirements you have to meet as a merchant.</p>
 </div>
 
 
@@ -47,7 +47,9 @@ The two PCI levels most relevant for the majority of merchants integrating Safer
 
 3. **SAQ-C (VT)** <br /> This is a special certification for merchants, who want to do Mail Phone Order Transactions and card registrations through their own systems. While the JSON-API can be used to capture cards by a merchant employee through the phone, on the merchant system, further tasks and requirements have to be met by the merchant and his system, in order to be allowed to do this. Even the usage of the SDaferpay Hosted Form is not enough in this case, because the card details are captured by the merchants employee. Due to that, a higher certification-level is required!
 
-><i class="glyphicon glyphicon-hand-right"></i> **Note!** The Saferpay Backoffice itself offers tools to capture card details in a PCI-compliant manner, for Mail Phone Order Transactions, or just register them inside the Secure Alias Store! However the Backoffice does not offer an interface, to be integrated into a merchant-system. If that is required, a SAQ-C certification is inevitable!
+<div class="info">
+  <p><strong>Note:</strong> The Saferpay Backoffice itself offers tools to capture card details in a PCI-compliant manner, for Mail Phone Order Transactions, or just register them inside the Secure Alias Store! However the Backoffice does not offer an interface, to be integrated into a merchant-system. If that is required, a SAQ-C certification is inevitable!</p>
+</div>
 
 ### Processes, that are NOT allowed
 
@@ -705,7 +707,9 @@ giropay, iDEAL, SOFORT, Bancontact, eprzelewy und eps are online payment methods
 The [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) can also be used to change the amount of the transaction. It is generally possible to capture less, than initially authorized. So applying things like voucher codes, or similar is possible. 
 Capturing more than initially authorized however, may result in an error and is not recommended. This however depends on your processor.
 
-> **Attention** A transaction can only be captured once. If the amount value changes during the payment process, a new transaction has to be initialized with the new adjusted amount. PayPal, however offers the option, to perform partial captures. 
+<div class="warning">
+  <p><strong>Attention:</strong> A transaction can only be captured once. If the amount value changes during the payment process, a new transaction has to be initialized with the new adjusted amount. Only PayPal offers the option, to perform partial captures. </p>
+</div>
 
 ## <a name="cancel-refund"></a> When can Cancellations or Refunds occur?
 
@@ -713,6 +717,6 @@ It’s by no means rare that customers want to cancel their orders or return goo
 
 If this isn’t permitted by the payment method, payments that have not been submitted via daily closing may be canceled. If the daily closing has already been triggered, a refund will have to be issued.
 
-
-><i class="glyphicon glyphicon-hand-right"></i> **IMPORTANT NOTE:** Online banking methods do not offer either functionality by default.
-
+<div class="info">
+  <p><strong>Important Note:</strong> Online banking methods do not offer either functionality by default. </p>
+</div>
