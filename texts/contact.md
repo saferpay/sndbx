@@ -3,11 +3,13 @@
   <p><strong><i class="glyphicon glyphicon-hand-right"></i> Tips for contacting us:</strong>
   Our technicians here at SIX are glad to assist you with any kind of technical problems. To make this process even faster, here are a few point you should consider, when contacting us.
   </p>
-  1. Do not forget to send us your CustomerId and/or TerminalId. It makes it easier to find your account in our system.
-  2. Please tell us, if you are using the test- or live-system.
-  3. Our servers log your activity on API-Side. Those logs make it easier for us to understand, what exactly you are trying to achieve and can help to easily identify your problem. Please note however, that the logfiles are only saved for 6 days.
-  4. If available, tell us the transactionId of the transaction you had problems with. This way we can find it instantly.
-  5. If you don't have an Id, then give us a timestamp, so we can pinpoint the timeframe, where you had your problem.
+  <ul>
+    <li>1. Do not forget to send us your CustomerId and/or TerminalId. It makes it easier to find your account in our system.</li>
+    <li>2. Please tell us, if you are using the test- or live-system.</li>
+    <li>3. Our servers log your activity on API-Side. Those logs make it easier for us to understand, what exactly you are trying to achieve and can help to easily identify your problem. Please note however, that the logfiles are only saved for 14 days.</li>
+    <li>4. If available, tell us the transactionId of the transaction you had problems with. This way we can find it instantly.</li>
+    <li>5. If you don't have an Id, then give us a timestamp, so we can pinpoint the timeframe, where you had your problem.</li>
+  </ul>
 </div>
 
 <div class="warning">
