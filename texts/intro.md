@@ -37,7 +37,7 @@ The PCI-DSS certification is devided into multiple compliance levels, called SAQ
 The two PCI levels most relevant for the majority of merchants integrating Saferpay into their webhsop are; SAQ-A and SAQ-A EP.
 
 <div class="warning">
-  <p><strong>Attention:</strong> Saferpay is capable of covering multiple levels of PCI-compliance besides SAQ-A and EP. Please contact your acquirer/processor or a specialized company, should you have any questions regarding PCI compliancy. You can also find more information as well as sample SAQ-questionnaires <a href="https://www.pcisecuritystandards.org/document_library?category=saqs#results>on the official PCI DSS website</a> to get a better understanding and overview about the requirements you have to meet as a merchant.</p>
+  <p><strong>Attention:</strong> Saferpay is capable of covering multiple levels of PCI-compliance besides SAQ-A and EP. Please contact your acquirer/processor or a specialized company, should you have any questions regarding PCI compliancy. You can also find more information as well as sample SAQ-questionnaires <a href="https://www.pcisecuritystandards.org/document_library?category=saqs#results">on the official PCI DSS website</a> to get a better understanding and overview about the requirements you have to meet as a merchant.</p>
 </div>
 
 
