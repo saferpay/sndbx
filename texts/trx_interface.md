@@ -1,13 +1,14 @@
 # Transaction Interface
 The Transaction Interface is an extension to Payment Page. It can be operated in parallel or alone. The Transaction interface offers more functions for the processing and handling of payments, in comparison to the Payment Page. 
 
->
-><i class="glyphicon glyphicon-hand-right"></i>**NOTE:** The JSON API can be used in various ways to cover the most diverse processes. For this reason, only the standard processes are discussed below. For other possible uses, or for questions about the standard procedures, please contact the [**Saferpay Integration Team**](https://saferpay.github.io/sndbx/contact.html).
->
+<div class="info">
+  <p><strong>Note:</strong> The JSON API can be used in various ways to cover the most diverse processes. For this reason, only the standard processes are discussed below. For other possible uses, or for questions about the standard procedures, please contact the <a href="https://saferpay.github.io/sndbx/contact.html">Saferpay Integration Team</a></p>
+</div>
 
->
-><i class="glyphicon glyphicon-hand-right"></i>**Attention:** The Transaction Interface is only for holders of a business licence on the live system. For the eCommerce licence, the advanced features are not available. The test accounts have business activated by default, for evaluation purposes.
->
+<div class="warning">
+  <p><strong>Attention:</strong> The Transaction Interface is only for holders of a business licence on the live system. For the eCommerce licence, the advanced features are not available. The test accounts have business activated by default, for evaluation purposes.</p>
+</div>
+
 ## <a name="trx-cc"></a> Credit Cards
 In contrast to the payment page, credit card payments can be seamlessly integrated into the merchant's shop with the Transaction Interface. The procedure will be described in the following.
 ### <a name="trx-ini"></a>Transaction Initialize
@@ -19,17 +20,21 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
 + **Card Verification Value:** The Card Verification Value (CVC) is mandatory, when using the Card Entry Form, except for card brand Maestro, which offers cards with and without CVC.
 
 + **Secure Card Data:** With the Initialize Request, it is also possible within Saferpay Secure Card Data to forward saved cards in the form of an alias. For example, this can be the case if the customers card number has been already saved (tokenized), and you do not want her or him to re-enter this data. To use the alias value instead of the actual card data, use the container PaymentMeans.
->
-><i class="glyphicon glyphicon-hand-right"></i> **NOTE:** Although it is not permitted to store the Card Verification Code (CVC), it is usually still required for the authorization (see [Transaction Authorize](#transaction-authorize))  and must be requested with an own form.
->
+
+<div class="info">
+ <p><strong>Note:</strong> The CVC is <strong>NOT</strong> required, when doing a 3DS transaction with an alias!</p>
+</div>
+
 ### In the Response of the Initialize Request these parameters are import for further processing:
 
 + **Token:** The Token is mandatory for further steps within the payment process and must therefore be cached. Preferably, it should be linked to the parameters attached to the ReturnUrls. It can thus be easily reassigned.
 
 + **RedirectUrl:** Unlike with the Payment Page, this URL is not used for a redirect. Instead, it is embedded in an HTML Iframe. Within this, a form hosted by Saferpay is displayed. This form is also called the Hosted Entry Form. It can be used to capture sensitive card details in a PCI-compliant manner. You can find out more about the Iframe integration [in this chapter](https://saferpay.github.io/sndbx/CssiFrame.html).
->
-><i class="glyphicon glyphicon-hand-right"></i> **NOTE:** If an alias is forwarded in the initalize request, the display of the form will be skipped.
->
+
+<div class="info">
+  <p><strong>Note:</strong> If an alias is forwarded in the initalize request (See the step above!), the display of the form will be skipped.</p>
+</div>
+
 ### <a name="trx-3ds"></a> 3-D Secure and DCC
 If [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc) are activated on the terminal for the payment method being used, these services are automatically conducted for the transaction as soon as the form has been sent. For this, no additional steps are necessary for the merchant. 
 ### <a name="trx-retshop"></a>Return to the Shop
@@ -43,9 +48,11 @@ With Payment Page, the payment is triggered automatically upon completion of [3-
 + **Condition:** With the **Condition** parameter, it can be specified that a payment will only be authorized when a 3-D Secure liability shift is present for it.
 
 + **Secure Card Data:** Via the **RegisterAlias** container, card details from a payment can be stored safely and in conformity with PCI. For this, the alias for the card details is transmitted back to the merchant system with the authorization response. It is then available for another purchase in the shop, without customers having to enter their card details again. See for example the [Initialize request above](https://saferpay.github.io/sndbx/Integration_trx.html#trx-ini). The parameter **IdGenerator** is used to determine how the alias is generated. If **MANUAL** is specified, the shop system passes an absolutely unique value. With **RANDOM**, a random alphanumeric value is generated by Saferpay. With **RANDOM_UNIQUE**, it will be additionally verified prior to generation of the alias, as to whether or not the card number/expiration date combination already exists as an alias entry in the database. If so, the already existing alias is returned and nothing new is generated.
->
-><i class="glyphicon glyphicon-hand-right"></i> **NOTE:** A card will be registered only after a successful authorization.
->
+
+<div class="info">
+  <p><strong>Note:</strong> A card will be registered only after a successful authorization.</p>
+</div>
+
 **Transaction Authorize Response data**
  
 In case of success the authorization data is returned with the Transaction Authorize Response. Based on this data, it can be decided how the transaction is to proceed. The following data is interesting in this regard:
@@ -53,14 +60,16 @@ In case of success the authorization data is returned with the Transaction Autho
 + **Transaction > ID:** The transaction identifier (**Id**) returned in the container **Transaction**, is a unique identifier for a transaction. The value is obligatory for further processing steps (Transaction [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel)) and should therefore be saved.
 
 + **ThreeDs:** This container provides information about whether or not transaction liability shift via [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) is available or not. It is up to merchants whether or not they want to accept transactions without liability shift. Evaluation of the parameter provides the opportunity for merchants to incorporate appropriate rules here.
->
-><i class="glyphicon glyphicon-hand-right"></i> **IMPORTANT:** Accepting transaction without LiabilityShift happens at the merchants own risk.
->
+
+<div class="warning">
+  <p><strong>Important:</strong> Accepting transaction without LiabilityShift happens at the merchants own risk.</p>
+</div>
+
 + **Transaction > Status:** As already described [here](https://saferpay.github.io/sndbx/General.html#capture-batch), this status states whether or not a transaction has to be finalized via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture). If the status is not **CAPTURED**, the capture must be run in order to finalize the transaction.
 
->
-><i class="glyphicon glyphicon-hand-right"></i> **Tipp:** You can also call Authorize, if the FailUrl has been called. It will then give you information about the error!
->
+<div class="info">
+  <p><strong>Tip:</strong> You can also call Authorize, if the FailUrl has been called. It will then give you information about the error!</p>
+</div>
 
 ### <a name="trx-captcancel"></a>Capture or Cancel
 Subsequently, the transaction will be finalised via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or broken off via [Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel). For this, the transaction identifier **Id** is required. Please refer to the notes on the payment methods on if and when a capture is necessary, and whether or not a Cancel can still be carried out.
