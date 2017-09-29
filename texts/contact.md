@@ -3,7 +3,7 @@
   <p><strong><i class="glyphicon glyphicon-hand-right"></i> Tips for contacting us:</strong>
   Our technicians here at SIX are glad to assist you with any kind of technical problems. To make this process even faster, here are a few point you should consider, when contacting us.
   </p>
-  <ul>
+  <ul style="list-style: none;">
     <li>1. Do not forget to send us your CustomerId and/or TerminalId. It makes it easier to find your account in our system.</li>
     <li>2. Please tell us, if you are using the test- or live-system.</li>
     <li>3. Our servers log your activity on API-Side. Those logs make it easier for us to understand, what exactly you are trying to achieve and can help to easily identify your problem. Please note however, that the logfiles are only saved for 14 days.</li>
