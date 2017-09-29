@@ -12,7 +12,7 @@
   </ul>
 </div>
 
-<div class="warning">
+<div class="danger">
   <p><strong>VERY IMPORTANT:</strong> Make sure that you <strong>NEVER</strong> accidently submit your real Card Details via E-Mail -Be it by Text or Screenshot-, when contacting us! If the mail is intercepted, or your mail service provder is hacked, then your card details will be leaked to the public! You can submit the last four numbers of your PAN however, which -in most cases- is sufficient, to identify it, but not to do harmful actions to you and your bank-account!</p>
 </div>
 
