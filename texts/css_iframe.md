@@ -35,9 +35,10 @@ Here, the Saferpay Card Entry Form appears for data capture of the card details:
 Here, the Saferpay Card Registration Form opens:  
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_alias_insert.png "Card Registration Form")
->
-><i class="glyphicon glyphicon-hand-right"></i> **Attention!** For registration, the capture of the card verification code (CVC) is not enabled, because it can only be saved by Saferpay on a temporary, 20-minute basis. PCI specifications prohibit permanent storage. For payments with the CVC, [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize) and [Authorize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize) shall be used.
->
+
+<div class="warning">
+  <p><strong>Attention:</strong> For registration, the capture of the card verification code (CVC) is not enabled, because it can only be saved by Saferpay on a temporary, 20-minute basis. PCI specifications prohibit permanent storage. For payments with the CVC, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Inintialize</a> and<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> shall be used.</p>
+</div>
 
 ## <a name="css-iframe_size"></a> Size of the Iframe
 
@@ -57,9 +58,9 @@ The size of the Iframe is communicated to the merchants via an HTML5-POST messag
 </HTML>
 ```
 
->
->    <i class="glyphicon glyphicon-hand-right"></i> The POST message is transmitted in JSON format:
->
+<div class="info">
+  <p>The POST message is transmitted in JSON format:</p>
+</div>
 
 ```json
 {  
@@ -69,9 +70,9 @@ The size of the Iframe is communicated to the merchants via an HTML5-POST messag
 }
 ```
 
->
->    <i class="glyphicon glyphicon-hand-right"></i> JavaScript example for receipt of message (for jQuery >= 1.9):
->
+<div class="info">
+  <p>JavaScript example for receipt of message (for jQuery >= 1.9)</p>
+</div>
 
 ```javascript
 $(window).bind("message", function (e) {
@@ -79,9 +80,9 @@ $(window).bind("message", function (e) {
 });
 ```
 
->
-><i class="glyphicon glyphicon-hand-right"></i> **Attention!** Not every page reports its size to the merchant’s system. However, Saferpay has to forward users to third parties during the payment process (Like with the 3D Secure procedure), thus we recommend a minimum size of 450x450 pixels.
->
+<div class="warning">
+  <p><strong>Attention:</strong> Not every page reports its size to the merchant’s system. However, Saferpay has to forward users to third parties during the payment process (Like with the 3D Secure procedure), thus we recommend a minimum size of 450x450 pixels.</p>
+</div>
 
 ## <a name="css-usecss"></a> Using CSS
 
@@ -111,9 +112,9 @@ h1{
 }
 ```
 
->
-><i class="glyphicon glyphicon-hand-right"></i> **Tip:** Most modern browsers include tools that simplify designing with CSS. CSS can thus be edited directly in the browser, and the results can be observed.
->
+<div class="info">
+  <p><strong>Tip:</strong> Most modern browsers include tools that simplify designing with CSS. CSS can thus be edited directly in the browser, and the results can be observed.</p>
+</div>
 
 * Example for Chrome browser: 
 
@@ -160,9 +161,9 @@ As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported, dependi
 
 + Integrating Saferpay via an iFrame will also cause the SuccessUrls to be called inside said frame. If you want to present the return pages in fullsize, you can break out of the frame yourself, using JavaScript!
 
->
->    <i class="glyphicon glyphicon-hand-right"></i> Example of Iframe break out in JavaScript
->
+<div class="info">
+  <p>Example of Iframe break out in JavaScript</p>
+</div>
 
 ```html
 <HTML>
@@ -186,6 +187,6 @@ As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported, dependi
 </HTML>
 ```
 
->
-><i class="glyphicon glyphicon-hand-right"></i> **Attention!** Executing this code, will re-load the return-page, resulting in it being called twice. Please consider this while <mark> implementing! </mark>
->
+<div class="warning">
+  <p><strong>Attention:</strong> Executing this code, will re-load the return-page, resulting in it being called twice. Please consider this while <mark> implementing!</p>
+</div>
