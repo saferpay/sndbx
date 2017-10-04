@@ -144,6 +144,13 @@
     "Source": "texts/FAQ.md",
     "Target": "faq.html"
   },
+  "Title": "Payment means for testing",
+  "Source": "texts/paymentmeans.md",
+  "Target": "paymentmeans.html",
+  "Subsites": [
+      { "Source": "texts/paymentmeans.md", "Title": "VISA", "Target": "paymentmeans.html#pm-visa" }
+    ] 
+   }, 
   {
     "Title": "Contact",
     "Source": "texts/contact.md",
