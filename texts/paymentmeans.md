@@ -3,7 +3,7 @@
 In this Chapter you will find a list of payment means you can use for testing purposes!
 
 ### <span id="visa-cards"><a name="pm-visa"></a> VISA</span>
-<div id="visa-cards-hider">
+<div id="visa-cards-hider" style="display:none;">
   <table class="table table-striped table-hover">
     <thead>
       <tr>
