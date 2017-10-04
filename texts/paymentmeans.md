@@ -7,7 +7,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
   <table class="table table-striped table-hover">
     <thead>
       <tr>
-        <th>Card Number/th>
+        <th>Card Number</th>
         <th class="text-center">Test-case</th>
       </tr>
     </thead>
