@@ -8,6 +8,10 @@ $(document).on('scroll', function () {
     }
 });
 
+$("#visa-cards").click(function(){
+    $("#visa-cards-hider").toggle(250);
+});
+
 $('a[href*=#]').click(function () {
     var id = $(this).attr('href') + '';
     if ($(this).data('toggle') === 'tab') {
