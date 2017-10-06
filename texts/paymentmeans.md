@@ -332,7 +332,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
   </table>
 </div>
 
-### <span id="jcb-cards"><a name="pm-jcb"></a> Maestro International &dArr;</span>
+### <span id="jcb-cards"><a name="pm-jcb"></a> JCB &dArr;</span>
 <div id="jcb-cards-hider" style="display:none;">
   <table class="table table-striped table-hover">
     <thead>
