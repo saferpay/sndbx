@@ -151,7 +151,16 @@
    "Subsites": [
        { "Source": "texts/paymentmeans.md", "Title": "VISA", "Target": "paymentmeans.html#pm-visa" },
        { "Source": "texts/paymentmeans.md", "Title": "Mastercard", "Target": "paymentmeans.html#pm-mc" },
-       { "Source": "texts/paymentmeans.md", "Title": "American Express", "Target": "paymentmeans.html#pm-amex" }
+       { "Source": "texts/paymentmeans.md", "Title": "American Express", "Target": "paymentmeans.html#pm-amex" },
+       { "Source": "texts/paymentmeans.md", "Title": "Diners Club", "Target": "paymentmeans.html#pm-diners" },
+       { "Source": "texts/paymentmeans.md", "Title": "Maestro international", "Target": "paymentmeans.html#pm-maestro" },
+       { "Source": "texts/paymentmeans.md", "Title": "JCB", "Target": "paymentmeans.html#pm-jcb" },
+       { "Source": "texts/paymentmeans.md", "Title": "My One", "Target": "paymentmeans.html#pm-myone" },
+       { "Source": "texts/paymentmeans.md", "Title": "Bonus Card", "Target": "paymentmeans.html#pm-bonus" },
+       { "Source": "texts/paymentmeans.md", "Title": "Bancontact", "Target": "paymentmeans.html#pm-bc" },
+       { "Source": "texts/paymentmeans.md", "Title": "SEPA Direct Debit", "Target": "paymentmeans.html#pm-sepa" },
+       { "Source": "texts/paymentmeans.md", "Title": "PayPal", "Target": "paymentmeans.html#pm-paypal" },
+       { "Source": "texts/paymentmeans.md", "Title": "TWINT", "Target": "paymentmeans.html#pm-twint" }
    ] 
   }, 
   {
