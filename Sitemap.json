@@ -150,7 +150,8 @@
    "Target": "paymentmeans.html",
    "Subsites": [
        { "Source": "texts/paymentmeans.md", "Title": "VISA", "Target": "paymentmeans.html#pm-visa" },
-       { "Source": "texts/paymentmeans.md", "Title": "Mastercard", "Target": "paymentmeans.html#pm-mc" }
+       { "Source": "texts/paymentmeans.md", "Title": "Mastercard", "Target": "paymentmeans.html#pm-mc" },
+       { "Source": "texts/paymentmeans.md", "Title": "American Express", "Target": "paymentmeans.html#pm-amex" }
    ] 
   }, 
   {
