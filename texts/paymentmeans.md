@@ -159,3 +159,67 @@ In this Chapter you will find a list of payment means you can use for testing pu
     </tbody>
   </table>
 </div>
+
+### <span id="amex-cards"><a name="pm-amex"></a> American Express &dArr;</span>
+<div id="amex-cards-hider" style="display:none;">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Card Number</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">9070100052000001</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>"enrolled"</strong>. This card is subjected to the full 3D Secure authentication process! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070100052101007</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>"enrolled"</strong>. Bank rejects liability shift despite a successful authentication!<br /><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> true <br />
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070100352000008</td>
+        <td style="border-left: 1px solid #ddd;"><strong>"Authentication Attempt"</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br />
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070101052000009</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070101052101005</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank rejects liability shift!<br /><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> false<br />
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070101152000008</td>
+        <td style="border-left: 1px solid #ddd;"><strong>"Unable to enroll"</strong>. 3D Secure is not possible! <br /><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> false<br />
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070100152000000</td>
+        <td style="border-left: 1px solid #ddd;"><strong>"Authentication failed"</strong>. The card holder failed to authenticate him/herself!<br />
+          <div class="warning">
+            <p><strong>Important:</strong> In this case, the authorization will fail!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070101052900000</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>"simulating response codes" via the amount</strong>. <br /> The last two digits in the currency amount determine the issuance of the authorisation request. A successful payment is only triggered with a value equal to "00" or "01". While requests with the AMOUNT "00" simulate a request with an "enrolled" card, the amount "01" simulates a transaction without a liability shift. For all other values that are different to "00" or "01", a rejection is simulated with the authorisation.
+        </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
