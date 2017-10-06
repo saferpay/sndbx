@@ -91,6 +91,19 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     margin-top: 20px;
 }
 
+.dropdown{
+    font-size: 20px;
+    background-color: #efefef;
+    color: black;
+    padding-right: 90%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;   
+}
+
+.dropdown:hover{
+    background-color: #D9D9D9;
+}
 
 #content main section, .path-def {
     margin-top: -21px;
