@@ -2,7 +2,7 @@
 
 In this Chapter you will find a list of payment means you can use for testing purposes!
 
-### <span id="visa-cards"><a name="pm-visa">VISA &dArr;</a></span>
+<a class="dropdown" id="visa-cards" name="pm-visa">VISA &dArr;</a>
 <div id="visa-cards-hider" style="display:none;">
   <table class="table table-striped table-hover">
     <thead>
@@ -81,7 +81,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
   </table>
 </div>
 
-### <span id="master-cards"><a name="pm-mc"></a> Mastercard &dArr;</span>
+<a id="master-cards" class="dropdown" name="pm-mc">Mastercard &dArr;</a>
 <div id="master-cards-hider" style="display:none;">
   <table class="table table-striped table-hover">
     <thead>
@@ -160,7 +160,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
   </table>
 </div>
 
-### <span id="amex-cards"><a name="pm-amex"></a> American Express &dArr;</span>
+<a id="amex-cards" class="dropdown" name="pm-amex">American Express &dArr;</a> 
 <div id="amex-cards-hider" style="display:none;">
   <table class="table table-striped table-hover">
     <thead>
@@ -224,7 +224,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
   </table>
 </div>
 
-### <span id="diners-cards"><a name="pm-diners"></a> Diners Club &dArr;</span>
+<a id="diners-cards" class="dropdown" name="pm-diners">Diners Club &dArr;</a>
 <div id="diners-cards-hider" style="display:none;">
   <table class="table table-striped table-hover">
     <thead>
@@ -288,7 +288,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
   </table>
 </div>
 
-### <span id="maestro-cards"><a name="pm-maestro"></a> Maestro International &dArr;</span>
+<a id="maestro-cards" class="dropdown" name="pm-maestro">Maestro International &dArr;</a>
 <div id="maestro-cards-hider" style="display:none;">
   <table class="table table-striped table-hover">
     <thead>
@@ -332,7 +332,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
   </table>
 </div>
 
-### <span id="jcb-cards"><a name="pm-jcb"></a> JCB &dArr;</span>
+<a id="jcb-cards" class="dropdown" name="pm-jcb">JCB &dArr;</a>
 <div id="jcb-cards-hider" style="display:none;">
   <table class="table table-striped table-hover">
     <thead>
@@ -355,7 +355,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
   </table>
 </div>
 
-### <span id="myone-cards"><a name="pm-myone"></a> My One &dArr;</span>
+<a id="myone-cards" class="dropdown" name="pm-myone">My One &dArr;</a>
 <div id="myone-cards-hider" style="display:none;">
   <table class="table table-striped table-hover">
     <thead>
@@ -378,7 +378,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
   </table>
 </div>
 
-### <span id="bonus-cards"><a name="pm-bonus"></a> Bonus Card &dArr;</span>
+<a id="bonus-cards" class="dropdown" name="pm-bonus">Bonus Card &dArr;</a>
 <div id="bonus-cards-hider" style="display:none;">
   <table class="table table-striped table-hover">
     <thead>
@@ -401,7 +401,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
   </table>
 </div>
 
-### <span id="bc-cards"><a name="pm-bc"></a> Bancontact &dArr;</span>
+<a id="bc-cards" class="dropdown" name="pm-bc">Bancontact &dArr;</a>
 <div id="bc-cards-hider" style="display:none;">
   <div class="info">
     <p><strong>Note:</strong> Bancontact uses an authentication-procedure similar to 3D Secure with VISA and MasterCard. However the difference is, that Bancontact will automatically refuse all payments, that aren't fully authenticated. Due to this, there are only these few outcomes possible.</p>
@@ -430,7 +430,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
   </table>
 </div>
 
-### <span id="sepa-cards"><a name="pm-sepa"></a> SEPA Direct Debit &dArr;</span>
+<a id="sepa-cards" class="dropdown" name="pm-sepa">SEPA Direct Debit &dArr;</a> 
 <div id="sepa-cards-hider" style="display:none;">
   <table class="table table-striped table-hover">
     <thead>
@@ -456,12 +456,12 @@ In this Chapter you will find a list of payment means you can use for testing pu
   </table>
 </div>
 
-### <span id="paypal-cards"><a name="pm-paypal"></a> PayPal &dArr;</span>
+<a id="paypal-cards" class="dropdown" name="pm-paypal">PayPal &dArr;</a>
 <div id="paypal-cards-hider" style="display:none;">
   <p>PayPal payments can be operated by a simulator in the Saferpay test account. The first version of the simulator supports successful transactions and declines only. The range of function will be upgraded soon.</p>
 </div>
 
-### <span id="twint-cards"><a name="pm-twint"></a> TWINT &dArr;</span>
+<a id="twint-cards" class="dropdown" name="pm-twint">TWINT &dArr;</a>
 <div id="twint-cards-hider" style="display:none;">
   <p>On the test environment, Saferpay offers a TWINT Simulator for the Currencies CHF only, since this Payment Method is only avalable for the swiss market.<br />
   The Simulator is controlled by submitting different amount-values to simulate the following cases:</p>
