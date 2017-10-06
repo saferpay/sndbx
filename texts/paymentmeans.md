@@ -1,6 +1,9 @@
 # Payment Means for testing
 
 In this Chapter you will find a list of payment means you can use for testing purposes!
+<div class="info">
+    <p><strong>Note:</strong> The CVC can be any value you want, same goes for the Expiration-date. However, the latter needs to be valid. If you enter a date set in the past, the card will be rejected, because it is expired!</p>
+  </div>
 
 <a name="pm-visa"></a><div class="dropdown" id="visa-cards">VISA &dArr;</div>
 <div id="visa-cards-hider" style="display:none;">
