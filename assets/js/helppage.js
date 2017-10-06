@@ -11,6 +11,9 @@ $(document).on('scroll', function () {
 $("#visa-cards").click(function(){
     $("#visa-cards-hider").toggle(250);
 });
+$("#master-cards").click(function(){
+    $("#master-cards-hider").toggle(250);
+});
 
 $('a[href*=#]').click(function () {
     var id = $(this).attr('href') + '';
