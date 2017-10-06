@@ -14,6 +14,9 @@ $("#visa-cards").click(function(){
 $("#master-cards").click(function(){
     $("#master-cards-hider").toggle(250);
 });
+$("#amex-cards").click(function(){
+    $("#amex-cards-hider").toggle(250);
+});
 
 $('a[href*=#]').click(function () {
     var id = $(this).attr('href') + '';
