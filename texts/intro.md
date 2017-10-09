@@ -713,10 +713,20 @@ Capturing more than initially authorized however, may result in an error and is 
 
 ## <a name="cancel-refund"></a> When can Cancellations or Refunds occur?
 
-It’s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation either want to cancel or make a refund for the transaction in question. It should be noted that there are payment methods that do not offer this functionality. [An overview can be found in the Payment Method Features chapter](https://saferpay.github.io/sndbx/index.html#pm-functions).
+It’s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation either want to cancel or make a refund for the transaction in question.  
 
-If this isn’t permitted by the payment method, payments that have not been submitted via daily closing may be canceled. If the daily closing has already been triggered, a refund will have to be issued.
+### When do i cancel, when do i have to issue a refund?
 
-<div class="info">
-  <p><strong>Important Note:</strong> Online banking methods do not offer either functionality by default. </p>
-</div>
+A cancel can be issued as long as the money-flow hasn't been initiated. That also applies to transactions, that have been captured, depending on the payment-method.
+
+All Payment Methods, that go through the Daily Closing, can be cancelled this way, until the Daily Closing has been executed.
+Once that happened, the money flow has been initated and the transaction can no longer be cancelled.
+In this case you need to issue a refund, to transfer the money back to the card holders bank account!
+
+Please note, that there are exceptions.
+Some payment methods initiate the money flow with the capture, like PayPal and the Postcard.
+Some methods downright do not support this behaviour, like all online banking methods, because those transfer the money right away and also do not offer the refund-functionality.
+
+[An overview can be found in the Payment Method Features chapter](https://saferpay.github.io/sndbx/index.html#pm-functions).
+
+
