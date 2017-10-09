@@ -715,8 +715,6 @@ Capturing more than initially authorized however, may result in an error and is 
 
 It’s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation either want to cancel or make a refund for the transaction in question.  
 
-### When do i cancel, when do i have to issue a refund?
-
 A cancel can be issued as long as the money-flow hasn't been initiated. That also applies to transactions, that have been captured, depending on the payment-method.
 
 All Payment Methods, that go through the Daily Closing, can be cancelled this way, until the Daily Closing has been executed.
