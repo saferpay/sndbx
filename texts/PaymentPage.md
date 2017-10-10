@@ -64,7 +64,7 @@ Based on the data obtained, it is to be decided whether or not a transaction is 
   <p><strong>Tip:</strong> You can also call the Assert, if the Fail-or AbortUrl has been called. It will then give you information about the failure!</p>
 </div>
 <div class="info">
-  <p><strong>Info:</strong> A PaymentPage Session can be valid for about 1 hour. For example, if the buyer is distracted and leaves the page open!).</p>
+  <p><strong>Info:</strong> Under certain circumstances a PaymentPage Session can be valid for about 1 hour -other sessions, like external redirections to 3D Secure and 3rd party providers can add up to this!-, but a normal session does not take longer, than 20 minutes!</p>
 </div>
 
 ## <a name="pp-captcancel"></a> Capture or Cancel
