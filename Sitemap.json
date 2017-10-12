@@ -59,6 +59,15 @@
     ]
   },
   {
+    "Title": "Mobile App integration",
+    "Source": "texts/app_integration.md",
+    "Target": "app-integration.html",
+    "Subsites": [
+      { "Source": "texts/recurring.md", "Title": "Process", "Target": "app-integration.html#mobile-process" },
+      { "Source": "texts/recurring.md", "Title": "FAQ", "Target": "app-integration.html#mobile-faq" }
+    ]
+  },
+  {
     "Title": "IFrame Integration and CSS",
     "Source": "texts/css_iframe.md",
     "Target": "CssiFrame.html",
