@@ -4,6 +4,9 @@ Payments done via a smartphone through a mobile app, becomes more and more impor
 Saferpay offers all the tools needed to be integrated via a mobile app.
 The following guide covers the recommended practice for a mobile-app integration.
 
+The Integration centers around a server-client model (the app being the client), in which a merchant server hosts all the necessary data, to do the requests itself and store any vital data, the app and therefore the customer/card holder does not need to know!
+
+
 ## <a name="mobile-process"></a>Process
 
 The general Process looks as follows:
