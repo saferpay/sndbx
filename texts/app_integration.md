@@ -26,16 +26,17 @@ The general Process looks as follows:
 
 ## <a name="mobile-faq"></a>FAQ
 
-+ You are talking about a webview! Can't i just use my own form? <br />
+## You are talking about a webview! Can't I just use my own form?
 Yes, for now.
 The PCI council basically dictates how to capture and process credit card details.
 As mentioned in the [PCI Chapter](https://saferpay.github.io/sndbx/#pci), the usage of your own form is possible, but it requires a special certification. However this is only applicable to normal webshops. The rules for web-apps aren't defined yet, making all this a grey area.
 So you are allowed to use your own form, but only because there are no rules yet.
 We expect this to change in a way, that this is no longer allowed. So we highly recommend using the webview instead to be future-proof.
 
-+ Why should i use a Server? Can't i just integrate Saferpay directly into my App? <br />
+## Why should i use a Server? Can't I just integrate Saferpay directly into my App?
 Technically yes, but it means, that you need to integrate the API-credentials and requests directly into the app.
 This is a security concern, because all things that are client-side, can be manipulated, or hacked by the user.
 The credentials then could be leaked to the public and used for mailicious requests. Additionally the Server can circumvent any connection issues Smartphones may have, if the connection is weak, unstable, or currently interrupted.
 
-+ Can't i just capture the credit card information and send it off to my server, so it can do a direct authorization?<br /> <strong>NO!</strong> If you would do that, you would fall into the PCI-scope under PCI-DSS SAQ-D, which means, that you'd need a full PCI certification. Without that certification, the card details <strong>MUST NOT</strong> come in contact with your systems. Not even for a short time, like inside a cache! 
+## Can't I just capture the credit card information and send it off to my server, so it can do a direct authorization? 
+<strong>NO!</strong> If you would do that, you would fall into the PCI-scope under PCI-DSS SAQ-D, which means, that you'd need a full PCI certification. Without that certification, the card details <strong>MUST NOT</strong> come in contact with your systems. Not even for a short time, like inside a cache! 
