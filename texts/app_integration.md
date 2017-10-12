@@ -4,7 +4,7 @@ Payments done via a smartphone through a mobile app, becomes more and more impor
 Saferpay offers all the tools needed to be integrated via a mobile app.
 The following guide covers the recommended practice for a mobile-app integration.
 
-The Integration centers around a server-client model (the app being the client), in which a merchant server hosts all the necessary data, to do the requests itself and store any vital data, the app and therefore the customer/card holder does not need to know!
+The Integration centers around a client-server model (the app being the client), in which a merchant server hosts all the necessary data, to do the requests itself and store any vital data, the app and therefore the customer/card holder, does not need to know!
 
 
 ## <a name="mobile-process"></a>Process
@@ -37,3 +37,5 @@ We expect this to change in a way, that this is no longer allowed. So we highly 
 Technically yes, but it means, that you need to integrate the API-credentials and requests directly into the app.
 This is a security concern, because all things that are client-side, can be manipulated, or hacked by the user.
 The credentials then could be leaked to the public and used for mailicious requests. Additionally the Server can circumvent any connection issues Smartphones may have, if the connection is weak, unstable, or currently interrupted.
+
++ Can't i just capture the credit card information and send it off to my server, so it can do a direct authorization?<br /> <strong>NO!</strong> If you would do that, you would fall into the PCI-scope under PCI-DSS SAQ-D, which means, that you'd need a full PCI certification. Without that certification, the card details <strong>MUST NOT</strong> come in contact with your systems. Not even for a short time, like inside a cache! 
