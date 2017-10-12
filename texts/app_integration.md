@@ -33,4 +33,4 @@ We expect this to change in a way, that this is no longer allowed. So we highly 
 + Why should i use a Server? Can't i just integrate Saferpay directly into my App? <br />
 Technically yes, but it means, that you need to integrate the API-credentials and requests directly into the app.
 This is a security concern, because all things that are client-side, can be manipulated, or hacked by the user.
-The credentials then could be leaked to the public and used for mailicious requests.
+The credentials then could be leaked to the public and used for mailicious requests. Additionally the Server can circumvent any connection issues Smartphones may have, if the connection is weak, unstable, or currently interrupted.
