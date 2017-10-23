@@ -144,7 +144,7 @@ The form-inputs need to be set up in a specific way, so Saferpay can parse the s
       <td style="width: 15%;">FormAjax</td>
       <td class="text-center" style="width: 10%;">Boolean</span></td>
       <td class="text-center" style="width: 10%;">optional</span></td>
-      <td>Set to true, if the form-submission shall be done via AJAX. When used, Saferpay returns validation-messages through a JSON-response, which can be catched with JavaScript</span></td>     
+      <td>Set to true, if the form-submission shall be done via AJAX. When used, Saferpay returns validation-messages through a JSON-response, which can be catched with JavaScript!</span></td>     
     </tr>
   </tbody>
 </table>
