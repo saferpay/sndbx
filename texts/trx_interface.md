@@ -105,46 +105,46 @@ The form-inputs need to be set up in a specific way, so Saferpay can parse the s
   </thead>
   <tbody>
     <tr>
-      <td>RedirectUrl</td>
-      <td class="text-center">URL</span></td>
-      <td class="text-center">mandatory</span></td>
-      <td class="text-center">The redirectUrl you get through <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a> or <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Alias_Insert">Alias Insert</a>. It has to be set as the form action. If no AJAX is used, the method will be POST!</span></td>     
+      <td style="width: 15%;">RedirectUrl</td>
+      <td class="text-center" style="width: 10%;">URL</span></td>
+      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td>The redirectUrl you get through <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a> or <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Alias_Insert">Alias Insert</a>. It has to be set as the form action. If no AJAX is used, the method will be POST!</span></td>     
     </tr>
     <tr>
-      <td>HolderName</td>
-      <td class="text-center">String</span></td>
-      <td class="text-center">mandatory</span></td>
-      <td class="text-center">Input for the card-holder name.</span></td>     
+      <td style="width: 15%;">HolderName</td>
+      <td class="text-center" style="width: 10%;">String</span></td>
+      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td>Input for the card-holder name.</span></td>     
     </tr>
     <tr>
-      <td>CardNumber</td>
-      <td class="text-center">String</span></td>
-      <td class="text-center">mandatory</span></td>
-      <td class="text-center">Input for the card-number (PAN).</span></td>     
+      <td style="width: 15%;">CardNumber</td>
+      <td class="text-center" style="width: 10%;">String</span></td>
+      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td>Input for the card-number (PAN).</span></td>     
     </tr>
     <tr>
-      <td>ExpMonth</td>
-      <td class="text-center">String</span></td>
-      <td class="text-center">mandatory</span></td>
-      <td class="text-center">Input for the expiration-month.</span></td>     
+      <td style="width: 15%;">ExpMonth</td>
+      <td class="text-center" style="width: 10%;">String</span></td>
+      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td>Input for the expiration-month.</span></td>     
     </tr>
     <tr>
-      <td>ExpYear</td>
-      <td class="text-center">String</span></td>
-      <td class="text-center">mandatory</span></td>
-      <td class="text-center">Input for the expiration-year.</span></td>     
+      <td style="width: 15%;">ExpYear</td>
+      <td class="text-center" style="width: 10%;">String</span></td>
+      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td>Input for the expiration-year.</span></td>     
     </tr>
     <tr>
-      <td>VerificationCode</td>
-      <td class="text-center">String</span></td>
-      <td class="text-center">mandatory</span></td>
-      <td class="text-center">Input for the Card Verification Code (CVC).</span></td>     
+      <td style="width: 15%;">VerificationCode</td>
+      <td class="text-center" style="width: 10%;">String</span></td>
+      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td>Input for the Card Verification Code (CVC).</span></td>     
     </tr>
     <tr>
-      <td>FormAjax</td>
-      <td class="text-center">Boolean</span></td>
-      <td class="text-center">optional</span></td>
-      <td class="text-center">Set to true, if the form-submission shall be done via AJAX. When used, Saferpay returns validation-messages through a JSON-response, which can be catched with JavaScript</span></td>     
+      <td style="width: 15%;">FormAjax</td>
+      <td class="text-center" style="width: 10%;">Boolean</span></td>
+      <td class="text-center" style="width: 10%;">optional</span></td>
+      <td>Set to true, if the form-submission shall be done via AJAX. When used, Saferpay returns validation-messages through a JSON-response, which can be catched with JavaScript</span></td>     
     </tr>
   </tbody>
 </table>
@@ -214,10 +214,10 @@ $("#myForm").submit(function (e) {
   </thead>
   <tbody>
     <tr>
-      <td>RedirectUrl</td>
-      <td class="text-center">URL</span></td>
-      <td class="text-center">mandatory</span></td>
-      <td class="text-center">RedirectUrl to which to redirect your customer to!</span></td>     
+      <td style="width: 15%;">RedirectUrl</td>
+      <td class="text-center" style="width: 10%;">URL</span></td>
+      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td>RedirectUrl to which to redirect your customer to!</span></td>     
     </tr>
   </tbody>
 </table>
@@ -235,22 +235,22 @@ $("#myForm").submit(function (e) {
   </thead>
   <tbody>
     <tr>
-      <td>ErrorName</td>
-      <td class="text-center">String</span></td>
-      <td class="text-center">mandatory</span></td>
-      <td class="text-center">Description, or ID of the error</span></td>     
+      <td style="width: 15%;">ErrorName</td>
+      <td class="text-center" style="width: 10%;">String</span></td>
+      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td>Description, or ID of the error</span></td>     
     </tr>
     <tr>
-      <td>Behavior</td>
-      <td class="text-center">String</span></td>
-      <td class="text-center">mandatory</span></td>
-      <td class="text-center">Further details on how to proceed (RETRY_LATER, RETRY, ABORT...).</span></td>     
+      <td style="width: 15%;">Behavior</td>
+      <td class="text-center" style="width: 10%;">String</span></td>
+      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td>Further details on how to proceed (RETRY_LATER, RETRY, ABORT...).</span></td>     
     </tr>
     <tr>
-      <td>ErrorDetail</td>
-      <td class="text-center">String</span></td>
-      <td class="text-center">optional</span></td>
-      <td class="text-center">Further details on the error itself, if available. For example, if the ErrorName=VALIDATION_FAILED, the ErrorDetail contains a list of the invalid input-fields (“CardNumber”, “ExpYear”, “Ex-pMonth”, etc.)</span></td>     
+      <td style="width: 15%;">ErrorDetail</td>
+      <td class="text-center" style="width: 10%;">String</span></td>
+      <td class="text-center" style="width: 10%;">optional</span></td>
+      <td>Further details on the error itself, if available. For example, if the ErrorName=VALIDATION_FAILED, the ErrorDetail contains a list of the invalid input-fields (“CardNumber”, “ExpYear”, “Ex-pMonth”, etc.)</span></td>     
     </tr>
   </tbody>
 </table>
