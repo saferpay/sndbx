@@ -108,7 +108,7 @@ The form-inputs need to be set up in a specific way, so Saferpay can parse the s
       <td style="width: 15%;">RedirectUrl</td>
       <td class="text-center" style="width: 10%;">URL</span></td>
       <td class="text-center" style="width: 10%;">mandatory</span></td>
-      <td>The redirectUrl you get through <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a> or <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Alias_Insert">Alias Insert</a>. It has to be set as the form action. If no AJAX is used, the method will be POST!</span></td>     
+      <td>The redirectUrl you get through <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a> or <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Alias_Insert">Alias Insert</a>. It has to be set as the form action. The form-method will be POST!</span></td>     
     </tr>
     <tr>
       <td style="width: 15%;">HolderName</td>
