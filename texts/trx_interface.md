@@ -80,3 +80,182 @@ Because there are no PCI requirements for direct debits, bank details data can b
 ## <a name="trx-demo"></a> Try it out!
 
 <a href="https://saferpay.github.io/sndbx/trx_demo.html" class="demobtn">Click here for a live demo!</a>
+
+## <a name="trx-post"></a> Using your own HTML-Form
+
+Even though it is not allowed in most cases, Saferpay still offers the possability to use a custom HTML-form, if you still desire to use it. The basic transaction-flow stays the same.
+
+<div class="danger">
+  <p><strong>Warning:</strong> As mentioned before: <strong>DO NOT PROCEED</strong>, if you do not have the necessary PCI certification (SAQ-A EP) in order to use your own form!</p>
+</div>
+
+### The form
+
+The form-inputs need to be set up in a specific way, so Saferpay can parse the submitted parameters. Please make sure, that you name the inputs in the following way:
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th class="text-center">Type</th>
+      <th class="text-center">Usage</th>
+      <th class="text-center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RedirectUrl</td>
+      <td class="text-center">URL</span></td>
+      <td class="text-center">mandatory</span></td>
+      <td class="text-center">The redirectUrl you get through <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a> or <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Alias_Insert">Alias Insert</a>. It has to be set as the form action. If no AJAX is used, the method will be POST!</span></td>     
+    </tr>
+    <tr>
+      <td>HolderName</td>
+      <td class="text-center">String</span></td>
+      <td class="text-center">mandatory</span></td>
+      <td class="text-center">Input for the card-holder name.</span></td>     
+    </tr>
+    <tr>
+      <td>CardNumber</td>
+      <td class="text-center">String</span></td>
+      <td class="text-center">mandatory</span></td>
+      <td class="text-center">Input for the card-number (PAN).</span></td>     
+    </tr>
+    <tr>
+      <td>ExpMonth</td>
+      <td class="text-center">String</span></td>
+      <td class="text-center">mandatory</span></td>
+      <td class="text-center">Input for the expiration-month.</span></td>     
+    </tr>
+    <tr>
+      <td>ExpYear</td>
+      <td class="text-center">String</span></td>
+      <td class="text-center">mandatory</span></td>
+      <td class="text-center">Input for the expiration-year.</span></td>     
+    </tr>
+    <tr>
+      <td>VerificationCode</td>
+      <td class="text-center">String</span></td>
+      <td class="text-center">mandatory</span></td>
+      <td class="text-center">Input for the Card Verification Code (CVC).</span></td>     
+    </tr>
+    <tr>
+      <td>FormAjax</td>
+      <td class="text-center">Boolean</span></td>
+      <td class="text-center">optional</span></td>
+      <td class="text-center">Set to true, if the form-submission shall be done via AJAX. When used, Saferpay returns validation-messages through a JSON-response, which can be catched with JavaScript</span></td>     
+    </tr>
+  </tbody>
+</table>
+
+### Example HTML-form
+
+```html
+<html>
+  <head>
+    <title>Credentials-Form</title>
+  </head>
+  <body>
+    <h1>Credentials Form</h1>
+    <form method="POST" action= "<%= RedirectUrl %>">
+      Karteninhabername
+      <input type="text" name="HolderName" size="20"><br />
+      Kartennummer
+      <input type="text" name="CardNumber" size="16"><br />
+      G&uuml;ltig bis
+      <input type="text" name="ExpMonth" size="2">
+      <input type="text" name="ExpYear" size="2"><br />
+      Kartenpr&uuml;fnummer
+      <input type="text" name="VerificationCode" size="4"><br />
+      <input type="submit" name="submit" value="purchase">
+    </form>
+  </body>
+</html>
+```
+
+### JavaScript example for AJAX-handling (Requires jQuery 1.9 or higher!)
+
+```javascript
+$("#myForm").submit(function (e) {
+	// prevent normal (non-ajax) formular submission
+	e.preventDefault();
+ 
+	var formData = $(this).serializeArray();
+	// add flag to ensure AJAX handling on server
+	formData.push({ name: "FromAjax", value: true });
+ 
+	$.post($(this).attr("action"), $.param(formData))
+		// data has been posted successfully and user can be redirected
+		.done(function(data, textStatus, jqXHR) {
+			// NOTE: data is a json response
+			window.location.href = data.RedirectUrl;
+		})
+		// validation failed or server error occured
+		.fail(function(jqXHR, textStatus, errorThrown) {
+      // NOTE: use $.parseJSON(jqXHR.responseText) in order to try to get a json response
+		});
+});
+
+```
+
+### Data-response over Ajax
+
+#### Success-Response in case of an http-200 response:
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th class="text-center">Type</th>
+      <th class="text-center">Usage</th>
+      <th class="text-center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RedirectUrl</td>
+      <td class="text-center">URL</span></td>
+      <td class="text-center">mandatory</span></td>
+      <td class="text-center">RedirectUrl to which to redirect your customer to!</span></td>     
+    </tr>
+  </tbody>
+</table>
+
+#### Error-Response in case of an http-400 response:
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th class="text-center">Type</th>
+      <th class="text-center">Usage</th>
+      <th class="text-center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ErrorName</td>
+      <td class="text-center">String</span></td>
+      <td class="text-center">mandatory</span></td>
+      <td class="text-center">Description, or ID of the error</span></td>     
+    </tr>
+    <tr>
+      <td>Behavior</td>
+      <td class="text-center">String</span></td>
+      <td class="text-center">mandatory</span></td>
+      <td class="text-center">Further details on how to proceed (RETRY_LATER, RETRY, ABORT...).</span></td>     
+    </tr>
+    <tr>
+      <td>ErrorDetail</td>
+      <td class="text-center">String</span></td>
+      <td class="text-center">optional</span></td>
+      <td class="text-center">Further details on the error itself, if available. For example, if the ErrorName=VALIDATION_FAILED, the ErrorDetail contains a list of the invalid input-fields (“CardNumber”, “ExpYear”, “Ex-pMonth”, etc.)</span></td>     
+    </tr>
+  </tbody>
+</table>
+
+### Return to shop
+
+After the card holder has gone through the 3D Secure and DCC process, he returns to one of the returnUrls.
+After that an <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize">Authorization</a> can be attempted.
