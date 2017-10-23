@@ -86,7 +86,7 @@ Because there are no PCI requirements for direct debits, bank details data can b
 Even though it is not allowed in most cases, Saferpay still offers the possability to use a custom HTML-form, if you still desire to use it. The basic transaction-flow stays the same.
 
 <div class="danger">
-  <p><strong>Warning:</strong> As mentioned before: <strong>DO NOT PROCEED</strong>, if you do not have the necessary PCI certification (SAQ-A EP) in order to use your own form!</p>
+  <p><strong>Warning:</strong> As mentioned before: <strong>DO NOT PROCEED</strong>, if you do not have the necessary PCI certification (SAQ-A EP) in order to use your own form! <strong>SIX Payment Services will not take any kind of responsibility in case of a noncompliance!</strong></p>
 </div>
 
 ### The form
