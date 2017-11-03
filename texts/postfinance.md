@@ -17,7 +17,7 @@ Saferpay provides the possibility of storing PostFinance’s Postcard in the Saf
 * The activation of the PostFinance Alias System for PostFinance and Saferpay.
 
 >
->    <i class="glyphicon glyphicon-hand-right"></i> **NOTE**: The registration of a Swiss Postcard is only possible with the [Alias Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert) method.
+>    <i class="glyphicon glyphicon-hand-right"></i> **NOTE**: The registration of a Swiss Postcard is only possible with the [Alias Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert) method. You have to set the parameter "CARD" to "POSTFINANCE".
 >
 
 ### <a name="pf-regdial"></a> Registration Dialogue
@@ -33,3 +33,9 @@ Unlike with credit cards, PostFinance requires the card holder to agree to regis
 4. After registration, the result is displayed to the customer, who is then returned to the shop:  
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_reg_completed.png "Registration complete")  
 The result of the registration can then be called up using the [Alias AssertInsert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert) feature.
+
+The gathered alias can then be used for further authorizations, using [AuthorizeDirect](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeDirect).
+
+<div class="info">
+  <p><strong>Info:</strong> Note, that Postfinance does not know the, for credit cards known and used, Mail Phone Order-Contracts. Simply use your normal eCommerce Terminal with Postfinance/Card activated!</p>
+</div>
