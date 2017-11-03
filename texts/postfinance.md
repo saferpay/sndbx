@@ -22,7 +22,7 @@ Saferpay provides the possibility of storing PostFinance’s Postcard in the Saf
 
 ### <a name="pf-regdial"></a> Registration Dialogue
 
-Unlike with credit cards, PostFinance requires the card holder to agree to registration on its site.
+Unlike with credit cards, PostFinance requires the card holder to agree to registration on its site, so a redirect will be done!
 
 1. Confirmation dialogue on PostFinance:  
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_reg_for_payment.png "Confirmation")  
