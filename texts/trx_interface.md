@@ -67,7 +67,7 @@ In case of success the authorization data is returned with the Transaction Autho
   <p><strong>Important:</strong> Accepting transaction without LiabilityShift happens at the merchants own risk.</p>
 </div>
 
-+ **Transaction > Status:** As already described [here](https://saferpay.github.io/sndbx/General.html#capture-batch), this status states whether or not a transaction has to be finalized via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture). If the status is not **CAPTURED**, the capture must be run in order to finalize the transaction.
++ **Transaction > Status:** As already described [here](https://saferpay.github.io/sndbx/index.html#capture-batch), this status states whether or not a transaction has to be finalized via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture). If the status is not **CAPTURED**, the capture must be run in order to finalize the transaction.
 
 <div class="info">
   <p><strong>Tip:</strong> You can also call Authorize, if the FailUrl has been called. It will then give you information about the error!</p>
