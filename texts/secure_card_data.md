@@ -229,9 +229,7 @@ With the **Token**, the can be obtained, by submitting it through the [Alias Ass
 
 The ID-generator is used to choose what kind of alias you want to recieve. Right now, there are three options to choose from:
 
-1. **MANUAL**: Manual should be used, if you want to define an alias yourself. This is helpful, if the alias has to be in a specific format, like all numeric, or 16 characters long etc. You then have to supply the Id you want to use within the **Id** parameter.<div class="danger">
-  <p><strong>Important:</strong>Make sure, that all your aliases are unique! Saferpay will only authorize the first card to come up inside the database, if there are multiple records with the same alias!</p>
-</div>
+1. **MANUAL**: Manual should be used, if you want to define an alias yourself. This is helpful, if the alias has to be in a specific format, like all numeric, or 16 characters long etc. You then have to supply the Id you want to use within the **Id** parameter. <div class="danger"><p><strong>Important:</strong>Make sure, that all your aliases are unique! Saferpay will only authorize the first card to come up inside the database, if there are multiple records with the same alias!</p></div>
 2. **RANDOM**: This value will generate a random alpha numerical hash, as your alias-id, for you! No need to supply an id yourself!
 3. **RANDOM_UNIQUE**: Similar to **RANDOM**, it will create a random alpha numerical hash for you. The difference is, that it will check, if the card number (PAN) provided has already saved inside your alias store. If so, Saferpay will return the already existing alias, making sure, that no PAN can be saved twice or more!
 
