@@ -207,13 +207,29 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 
 ---
 
-## <a name="recurring-referenced"></a> Recurring Payments with the Alias Method
+## <a name="recurring-alias"></a> Recurring Payments using an alias
 
 A second method is to use the Saferpay Secure Alias Store in conjunction with the [AuthorizeDirect Request](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeDirect) with previously registered Aliases
 
 ### 1. Obtaining the Alias
 
-The first step is
+The alias can be obtained in multiple ways, using the Saferpay Secure Card Data store. [All of those options are described over here](https://saferpay.github.io/sndbx/scd.html).
+
+### 2. Recurring Transaction
+
+Once tha alias has been obtained, you can execute the subsequent transactions using [AuthorizeDirect Request](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeDirect). The alias has to be filled into the **PaymentMeans => Alias** container.
+
+<div class="warning">
+      <p><strong>Important:</strong> Please <strong>DO NOT</strong> save the CVC value inside your database and submit it yourself, unless you are certified to do so.</p>
+</div>
+
+<div class="danger">
+  <p><strong>Important:</strong> Each Transaction with the Status **Authorized** has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual transfer of money.</p>
+</div>
+
+<div class="warning">
+  <p><strong>Note:</strong> The recurring transactions have to be performed with a Mail Phone Order TerminalId (MOTO Terminal) to ensure that they are not rejected by the processor as the cardholder is not present and therefore cannot provide the CVC or partake in the 3D Secure process. The Amount is a mandatory value which can vary from the Amount of the initial transaction. Please make sure to inform the cardholder of amount changes beforehand, else he or she might request a chargeback.</p>
+</div>
 
 ## <a name="recurring-auto"></a>  Automating the Recurring Payments
 Automated recurring payments have to be triggered by the merchant's system. There are multiple ways to setup up the automated triggering of payments. The easiest way is to setup a Cronjob (Linux) or a Task (Windows).
