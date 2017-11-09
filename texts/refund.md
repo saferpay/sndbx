@@ -1,9 +1,9 @@
 # Refunds via API
 Saferpay generally offers a refund functionality from the start through the Saferpay Backoffice.
-However, if automated, or more integrated processes are needed, the JSON-API can be used to execute refunds from the merchants webshop, or ERP-system. This part of the guide covers the whole process of how to execute refunds through the Saferpay JSON-API, which can be done in two ways.
+However, if automated, or more integrated processes are needed, the JSON-API can be used to execute refunds from the merchants webshop, or ERP-system. This part of the guide covers the whole process of how to execute refunds through the Saferpay JSON-API, which can be performed in two ways.
 
 <div class="info">
-  <p><strong>Note:</strong> Not all payment methods to support a refund functionality. Especially online banking does not provide refund due to how the money is prpcessed. You can find a complete <a href="https://saferpay.github.io/sndbx/#pm-functions">overview over here</a></p>. 
+  <p><strong>Note:</strong> Not all payment methods support a refund functionality. Especially online banking payment methods do not provide refund functionality due to how the money is processed. You can find a complete overview of the supported fucntionalalities in the <a href="https://saferpay.github.io/sndbx/#pm-functions">Payment Method Features matrix</a></p>. 
 </div>
 
 <div class="warning">
