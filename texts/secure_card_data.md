@@ -10,18 +10,15 @@ Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive p
 
 ### <a name="scd-payment-methods"></a> Supported Payment Methods
 
-•	Visa
-•	MasterCard
-•	Maestro international
-•	V PAY
-•	American Express
-•	Diners Club
-•	JCB
-•	PostFinance e-finance 
-•	PostFinance card 
-
-
-
+*	Visa
+*	MasterCard
+*	Maestro international
+*	V PAY
+*	American Express
+*	Diners Club
+*	JCB
+*	PostFinance e-finance 
+*	PostFinance card 
 
 ## <a name="scd-pp"></a> Secure Card Data and the Payment Page
 
