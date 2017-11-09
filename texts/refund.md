@@ -1,15 +1,23 @@
 # Refunds via API
 Saferpay generally offers a refund functionality from the start through the Saferpay Backoffice.
-However, if automated, or more integrated processes are needed, the JSON-API can be used to execute refunds from the merchants webshop, or ERP-system. This part of the guide covers the whole process of how to execute refunds through the Saferpay JSON-API, which can be performed in two ways.
+However, if automated, or more integrated processes are needed, the JSON-API can be used to execute refunds from the merchants webshop, or ERP-system. This part of the guide covers the whole process of how to execute refunds through the Saferpay JSON-API, which can be done in two ways.
 
 <div class="info">
-  <p><strong>Note:</strong> Not all payment methods support a refund functionality. Especially online banking payment methods do not provide refund functionality due to how the money is processed. You can find a complete overview of the supported fucntionalalities in the <a href="https://saferpay.github.io/sndbx/#pm-functions">Payment Method Features matrix</a></p>. 
+  <p><strong>Note:</strong> Not all payment methods to support a refund functionality. Especially online banking does not provide refund due to how the money is prpcessed. You can find a complete <a href="https://saferpay.github.io/sndbx/#pm-functions">overview over here</a></p>. 
 </div>
 
 <div class="warning">
   <p><strong>Attention:</strong> The refund functionality is part of the Transaction Interface, which is only available for holders of a business licence on the live system. For the eCommerce licence, these features are not available and a refund has to be executed through the Backoffice. The test accounts have business activated by default, for evaluation purposes.</p>
 </div>
 
+## <a name="refund-req"></a> Requirements
+
+*	a Saferpay Business License
+*	a valid login access with a username and password for the Saferpay Backoffice.
+*	one active Saferpay ecommerce terminal
+*	Saferpay terminal number (TerminalId parameter) and Saferpay customer number (CustomerId parameter).
+*	valid acceptance agreement for credit cards or other payment methods
+*	Secure Card Data Module (if refunds are performed using Aliases. Method 2!)
 
 ## <a name="refund-reference"></a> Method 1: Refernced refunds
 
@@ -23,7 +31,7 @@ By clicking on the transaction ID you'll be redirected to the original transacti
 
 ## <a name="refund-alias"></a> Method 2: Refunds using an alias
 
-A different method is using an alias obtained through Secure Card Data, either through the [Payment Page](https://saferpay.github.io/sndbx/Integration_PP.html#pp-initialize), [Transaction Autorize](https://saferpay.github.io/sndbx/Integration_trx.html#trx-ta), or the [Secure Alias Store](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Alias_Insert) directly.
+A different method is using an alias obtained through Secure Card Data, which [can be obtained in multiple ways](https://saferpay.github.io/sndbx/scd.html).
 
 The request however is a different one, than with referenced refunds. When using an alias, the [Refund Direct request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_RefundDirect) has to be used.
 
