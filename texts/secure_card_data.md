@@ -116,7 +116,7 @@ Once a successful transaction has been made through the PaymentPage, you will ge
   <p><strong>Important:</strong>The Payment Page <strong>CAN NOT</strong> be used to authorize the obtained Alias! It can only register cards!</p>
 </div>
 
-## <a name="scd-trx"></a> Secure Card Data and the Transaction interface
+## <a name="scd-trx"></a> Secure Card Data and the Transaction Interface
 
 [The Transaction Interface](http://saferpay.github.io/jsonapi/#ChapterTransaction) can also be used to obtain a Secure Card Data alias **also after a successful authorization**! The submitted Data is the same, as with the [PaymentPage Initialize request](http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize), but with [the Transaction Interface](http://saferpay.github.io/jsonapi/#ChapterTransaction) you **MUST NOT USE** the **RegisterAlias** container within [Transaction Initialize](http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize). Here the registration actually is made with the [Transaction Authorize request](http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize) (**Remember:** A registration is only made, if the Authorization is successful!), thus you have to submit the necessary data here:
 
