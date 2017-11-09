@@ -254,3 +254,7 @@ The obtained alias can be used in two basic ways, which boils down to one import
 <div class="warning">
   <p><strong>NOTE:</strong> Bancontact only supports the former, while Maestro has some cards, that also are 3D Secure only!</p>
 </div>
+
+<div class="warning">
+  <p><strong>NOTE:</strong> Every alias is bound to the CustomerId you provide with the registration-request. All Terminals bound to that id can use the aliases, but not other CustomerIds! There is no way to share the aliases between different CustomerIds</p>
+</div>
