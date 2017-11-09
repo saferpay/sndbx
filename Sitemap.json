@@ -53,13 +53,13 @@
     "Source": "texts/secure_card_data.md",
     "Target": "scd.html",
     "Subsites": [
-      { "Source": "texts/recurring.md", "Title": "Requirements", "Target": "scd.html#scd-req" },
-      { "Source": "texts/recurring.md", "Title": "Supported Payment Methods", "Target": "scd.html#scd-payment-methods" },
-  	   { "Source": "texts/recurring.md", "Title": "Secure Card Data and the Payment Page", "Target": "scd.html#scd-pp" },
-      { "Source": "texts/recurring.md", "Title": "Secure Card Data and the Transaction Interface", "Target": "scd.html#scd-trx" },
-      { "Source": "texts/recurring.md", "Title": "Standalone Secure Card Data registration", "Target": "scd.html#scd-sa" },
-      { "Source": "texts/recurring.md", "Title": "The Id-generator", "Target": "scd.html#scd-generator" },
-      { "Source": "texts/recurring.md", "Title": "How to use the obtained data", "Target": "scd.html#scd-use" }
+      { "Source": "texts/secure_card_data.md", "Title": "Requirements", "Target": "scd.html#scd-req" },
+      { "Source": "texts/secure_card_data.md", "Title": "Supported Payment Methods", "Target": "scd.html#scd-payment-methods" },
+  	   { "Source": "texts/secure_card_data.md", "Title": "Secure Card Data and the Payment Page", "Target": "scd.html#scd-pp" },
+      { "Source": "texts/secure_card_data.md", "Title": "Secure Card Data and the Transaction Interface", "Target": "scd.html#scd-trx" },
+      { "Source": "texts/secure_card_data.md", "Title": "Standalone Secure Card Data registration", "Target": "scd.html#scd-sa" },
+      { "Source": "texts/secure_card_data.md", "Title": "The Id-generator", "Target": "scd.html#scd-generator" },
+      { "Source": "texts/secure_card_data.md", "Title": "How to use the obtained data", "Target": "scd.html#scd-use" }
     ]
   },
   {
@@ -79,11 +79,11 @@
     "Source": "texts/refund.md",
     "Target": "refund.html",
     "Subsites": [
-      { "Source": "texts/recurring.md", "Title": "Requirements", "Target": "refund.html#refund-req" },
-      { "Source": "texts/recurring.md", "Title": "Method 1: Refernced refunds", "Target": "refund.html#refund-reference" },
-  	   { "Source": "texts/recurring.md", "Title": "Method 2: Refunds using an alias", "Target": "refund.html#refund-alias" },
-      { "Source": "texts/recurring.md", "Title": "Capture", "Target": "refund.html#refund-capture" },
-      { "Source": "texts/recurring.md", "Title": "Additional information", "Target": "refunds.html#refund-info" }
+      { "Source": "texts/refund.md", "Title": "Requirements", "Target": "refund.html#refund-req" },
+      { "Source": "texts/refund.md", "Title": "Method 1: Refernced refunds", "Target": "refund.html#refund-reference" },
+  	   { "Source": "texts/refund.md", "Title": "Method 2: Refunds using an alias", "Target": "refund.html#refund-alias" },
+      { "Source": "texts/refund.md", "Title": "Capture", "Target": "refund.html#refund-capture" },
+      { "Source": "texts/refund.md", "Title": "Additional information", "Target": "refunds.html#refund-info" }
     ]
   },
   {
@@ -91,8 +91,8 @@
     "Source": "texts/app_integration.md",
     "Target": "app-integration.html",
     "Subsites": [
-      { "Source": "texts/recurring.md", "Title": "Process", "Target": "app-integration.html#mobile-process" },
-      { "Source": "texts/recurring.md", "Title": "FAQ", "Target": "app-integration.html#mobile-faq" }
+      { "Source": "texts/app_integration.md", "Title": "Process", "Target": "app-integration.html#mobile-process" },
+      { "Source": "texts/app_integration.md", "Title": "FAQ", "Target": "app-integration.html#mobile-faq" }
     ]
   },
   {
