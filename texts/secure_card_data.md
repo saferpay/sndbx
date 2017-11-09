@@ -229,6 +229,10 @@ Once the registration is completed, the card holder – depending on the outcome
 
 With the **Token**, the can be obtained, by submitting it through the [Alias AssertInsert request](http://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert). The response will give you the alias itself and further information about the card itself, like the masked card number, or the holder name.
 
+## Try it out!
+
+<a href="https://saferpay.github.io/sndbx/scd_demo.html" class="demobtn">Click here for a live demo!</a>
+
 ## <a name="scd-generator"></a> The Id-generator
 
 The ID-generator is used to choose what kind of alias you want to recieve. Right now, there are three options to choose from:
