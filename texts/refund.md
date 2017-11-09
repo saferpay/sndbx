@@ -33,7 +33,7 @@ By clicking on the transaction ID you'll be redirected to the original transacti
 
 A different method is using an alias obtained through Secure Card Data, which [can be obtained in multiple ways](https://saferpay.github.io/sndbx/scd.html).
 
-The request however is a different one, than with referenced refunds. When using an alias, the [Refund Direct request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_RefundDirect) has to be used.
+This request is different from the that of the referenced refunds. When using an alias, the [Refund Direct request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_RefundDirect) has to be used.
 
 <div class="danger">
   <p><strong>Attention:</strong> While <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_RefundDirect">Refund Direct</a> does offer the possibilities to submit the card number (PAN) directly, it is not allowed to do this without a full PCI-DSS certification. More on that topic can be found in the<a href="https://saferpay.github.io/sndbx/index.html#pci">Data Security and PCI DSS chapter</a>. </p>
