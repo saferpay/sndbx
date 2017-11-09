@@ -207,6 +207,14 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 
 ---
 
+## <a name="recurring-referenced"></a> Recurring Payments with the Alias Method
+
+A second method is to use the Saferpay Secure Alias Store in conjunction with the [AuthorizeDirect Request](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeDirect) with previously registered Aliases
+
+### 1. Obtaining the Alias
+
+The first step is
+
 ## <a name="recurring-auto"></a>  Automating the Recurring Payments
 Automated recurring payments have to be triggered by the merchant's system. There are multiple ways to setup up the automated triggering of payments. The easiest way is to setup a Cronjob (Linux) or a Task (Windows).
 With cronjobs you can schedule a command or script on your server to run automatically at a specified time and date (e.g. every minute, every 15 Minutes, every hour, or every day at 10pm or even every Sunday.) 
