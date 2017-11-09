@@ -248,5 +248,5 @@ The obtained alias can be used in two basic ways, which boils down to one import
 + If not, then you can use [AuthorizeDirect](http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect) to authorize the card directly. This is especially intersting, if you want to [implement recurring payments, which are sdescribed over here](https://saferpay.github.io/sndbx/recurring.html#recurring-alias).
 
 <div class="warning">
-  <p><strong>NOTE:</strong>Bancontact only supports the former, while Maestro has some cards, that also are 3D Secure only!</p>
+  <p><strong>NOTE:</strong> Bancontact only supports the former, while Maestro has some cards, that also are 3D Secure only!</p>
 </div>
