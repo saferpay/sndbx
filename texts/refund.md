@@ -29,6 +29,14 @@ By clicking on the transaction ID you'll be redirected to the original transacti
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/refund_trx.PNG "Refunded Transaction")
 
+### Try it out
+
+You can try it out, by first doing a complete (including the Capture!) transaction, by using the PaymentPage, or Transaction Interface.
+The refund-option will be displayed, after the Capture has been executed!
+
+<a href="https://saferpay.github.io/sndbx/pp_demo.html" class="demobtn">Start with the Payment Page</a><br />
+<a href="https://saferpay.github.io/sndbx/trx_demo.html" class="demobtn">Start with the Transaction Interface</a><br />
+
 ## <a name="refund-alias"></a> Method 2: Refunds using an alias
 
 A different method is using an alias obtained through Secure Card Data, which [can be obtained in multiple ways](https://saferpay.github.io/sndbx/scd.html).
@@ -42,6 +50,18 @@ This request is different from the that of the referenced refunds. When using an
 <div class="info">
   <p><strong>Note:</strong> Due to the fact, that the original transaction ID is not submitted, like with referenced refunds, the refund will not be linked to the original transaction inside the Saferpay Backoffice!</p>. 
 </div>
+
+### Try it out
+
+You can try it out, by first doing a complete (including the Capture!) transaction, by using the PaymentPage, Transaction Interface, or the Secure Alias Store. The refund-option will be displayed, after the Capture has been executed!
+
+<div class="info">
+  <p><strong>Note:</strong> You have to set the <strong>RegisterAlias</strong> container, to create the Alias needed for this, when using <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>!</p> 
+</div>
+
+<a href="https://saferpay.github.io/sndbx/pp_demo.html" class="demobtn">Start with the Payment Page</a><br />
+<a href="https://saferpay.github.io/sndbx/trx_demo.html" class="demobtn">Start with the Transaction Interface</a><br />
+<a href="https://saferpay.github.io/sndbx/scd_demo.html" class="demobtn">Start with the Secure Alias Store</a><br />
 
 ## <a name="refund-capture"></a> Capture
 
