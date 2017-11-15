@@ -16,7 +16,7 @@ Only test cards may be used on the test-environment, which you can [find here](h
 
 ## Which functions are available in the test system?
 
-On the test system, all Saferpay functions are available. Saferpay Business is usually switched off for test accounts. For this reason, it is important that you decide in advance whether or not you will also be using the business features in live operations later on.
+On the test system, all Saferpay functions are available. Saferpay Business is usually switched off for **live** accounts. For this reason, it is important that you decide in advance whether or not you will also be using the business features in live operations later on.
 
 ## Which payment methods can I test?
 
