@@ -54,9 +54,9 @@ Note, that the solvency of the card holder can change until this point.
 There are more scenarios Saferpay can cover, together with different ERP-systems.
 If you have some detailed questions, feel free to ask the [Integration Support Team](https://saferpay.github.io/sndbx/contact.html)
 
-## I have already a shop system. Do you offer an extension for it?
+## I already have a shop system. Do you offer an extension for it?
 
-Ready-to-use Saferpay payment extensions for several shop systems are offered by our partner [Customweb](https://www.sellxed.com/shop/en/eur/extensions/module/payment-service-provider/saferpay.html). You get 1 year support and, if wanted, an installation service!
+Ready-to-use Saferpay payment extensions for several shop systems are offered by our partner [Customweb](https://www.sellxed.com/shop/en/eur/extensions/module/payment-service-provider/saferpay.html). You get 1 year support and, if wanted, an installation service! Your SIX-contract partner may provide you with a voucher to purchase the extension free of charge.
 
 ## I have finished my testing. What are the next steps? How do i go live?
 
