@@ -31,7 +31,7 @@ The handling of SOFORT payments with Saferpay requires:
 
 3. In the next step specify general settings for the project. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_general.png "General settings")<br />
-<i class="glyphicon glyphicon-hand-right"></i><b><u>Don't forget to deactivate the Testmode before going live!</u></b>
+<i class="glyphicon glyphicon-hand-right"></i> <b><u>Don't forget to deactivate the Test mode before going live!</u></b>
 
 4. Then enter <b><u>your address</u></b>. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_address.png "Address")
