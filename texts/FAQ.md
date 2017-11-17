@@ -71,7 +71,7 @@ However, there are things you need to change with the Go-Live, before you can st
 * Lastly, you need to change the request-gateway URL from **https://test.saferpay.com/api/[...]** to **https://www.saferpay.com/api/[...]** in order  to send your requests to the Saferpay live-system, instead of the test-system. Some pre-made modules (Like the ones by our partner Customweb!) however offer a live-mode, which does this step for you! You simply have to activate it!
 
 
-## We use a Firewall and therefore have to whitelist the IPs for the Saferpay test-system/production. Where can i find them?
+## My company uses a Firewall and therefore has to whitelist the IPs for the Saferpay test-system/production. Where can i find them?
 
 The following IPs may need to be whitelisted in order to accept outgoing and incoming requests from and to Saferpay:
 
