@@ -9,8 +9,6 @@ Note that the requests can be edited in certain ways to simulate different bahav
   <p><strong>NOTE:</strong> Some API-functions are embedded within the examples, because some require some steps to be executed beforehand. For example a referenced refund can only be executed, if a normal transaction has been authorized and captured, so it can be refunded. Also, if you register an alias using the transaction interface, payment page, or alias store, the examples will display different options to use said alias at the end of the initial flow!</p>
 </div>
 
----
-
 ## Please choose a demo
 
 + [Payment Page](https://saferpay.github.io/sndbx/pp_demo.html)
