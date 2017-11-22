@@ -63,7 +63,7 @@ For PayPal Seller Protection to be valid when your customer uses PayPal to pay v
 The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) can help in forwarding the address parameters in the **Payer** container with the delivery address, or you can use the Saferpay Payment Page’s own address form.
 
 <div class="info">
-  <p><strong>Attention:</strong> Request with address forwarding:</p>
+  <p>Request with address forwarding:</p>
 </div>
 ```json
 {
@@ -117,7 +117,7 @@ The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPa
 ```
 
 <div class="info">
-  <p><strong>Attention:</strong> Request for the use of the form:</p>
+  <p> Request for the use of the form:</p>
 </div>
 
 ```json
