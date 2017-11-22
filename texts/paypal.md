@@ -9,9 +9,10 @@ The handling of PayPal payments with Saferpay requires:
 * The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 * A valid PayPal merchant account.
->
->    <i class="glyphicon glyphicon-hand-right"></i> **Attention**: for PayPal activation on the Saferpay terminal, please inform **service.saferpay@six-payment-services.com** of your PayPal merchant account ID and the desired currency.
->
+
+<div class="warning">
+  <p><strong>Attention:</strong> For PayPal activation on the Saferpay terminal, please inform **service.saferpay@six-payment-services.com** of your PayPal merchant account ID and the desired currency.</p>
+</div>
 
 ## <a name="api-access"></a> Grant API Approval for Saferpay
 
@@ -61,10 +62,9 @@ For PayPal Seller Protection to be valid when your customer uses PayPal to pay v
 
 The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) can help in forwarding the address parameters in the **Payer** container with the delivery address, or you can use the Saferpay Payment Page’s own address form.
 
-
->
->    <i class="glyphicon glyphicon-hand-right"></i> Request with address forwarding:
->
+<div class="info">
+  <p><strong>Attention:</strong> Request with address forwarding:</p>
+</div>
 ```json
 {
   "RequestHeader": {
@@ -115,9 +115,11 @@ The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPa
   }
 }
 ```
->
->    <i class="glyphicon glyphicon-hand-right"></i> Request for the use of the form:
->
+
+<div class="info">
+  <p><strong>Attention:</strong> Request for the use of the form:</p>
+</div>
+
 ```json
 {
   "RequestHeader": {
@@ -180,3 +182,15 @@ Unlike credit cards, that give the merchant a certain guarantee for the authoriz
 
 Therefore Saferpay claims the money directly, once the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) of the transaction has been successfully executed. If the money cannot be claimed, the capture then returns an error.
 We generally recommend to execute the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) as soon as possible, to avoid any issues.
+
+## <a name="iframe"></a> PayPal iFrame integration
+
+<div class="danger">
+  <p><strong>Warning:</strong> PayPal does not support the iFrame Integration!</p>
+</div>
+
+PayPal actively blocks the iFrame-Integration.
+In order to circumvent this issue, the Saferpay Payment Page will break out of the iFrame and display the PayPal website full-size, in order to make a payment possible.
+However, please keep in mind, that the ReturnUrls will also be displayed full-size!
+
+
