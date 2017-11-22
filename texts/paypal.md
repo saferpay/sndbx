@@ -65,6 +65,7 @@ The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPa
 <div class="info">
   <p>Request with address forwarding:</p>
 </div>
+
 ```json
 {
   "RequestHeader": {
