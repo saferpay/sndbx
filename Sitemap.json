@@ -110,7 +110,15 @@
       { "Source": "texts/css_iframe.md", "Title": "CSS Selectors", "Target": "CssiFrame.html#css-selector" },
       { "Source": "texts/css_iframe.md", "Title": "Additional Info", "Target": "CssiFrame.html#css-info" }
     ]
-  }, 
+  },
+  {
+    "Title": "Credit Cards - Special Cases",
+    "Source": "texts/creditcards.md",
+    "Target": "creditcards.html",
+    "Subsites": [
+      { "Source": "texts/creditcards.md", "Title": "Chase Paymentech", "Target": "creditcards.html#cc-chase" }
+    ]
+  },
   {
     "Title": "PayPal",
     "Source": "texts/paypal.md",
