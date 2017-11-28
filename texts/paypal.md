@@ -14,7 +14,7 @@ The handling of PayPal payments with Saferpay requires:
   <p><strong>Attention:</strong> For PayPal activation on the Saferpay terminal, please inform <strong>service.saferpay@six-payment-services.com</strong> of your PayPal merchant account ID and the desired currency.</p>
 </div>
 
-## <a name="api-access"></a> Grant API Approval for Saferpay
+## <a name="ppal-api-access"></a> Grant API Approval for Saferpay
 
 To enable processing of PayPal payments via Saferpay a few settings must be first specified in the PayPal Mercahnt account.
 
@@ -41,7 +41,7 @@ To enable processing of PayPal payments via Saferpay a few settings must be firs
 * Accept or deny a pending transaction.
 * Issue a refund for any prior transaction.
 
-## <a name="merchant-protection"></a> Seller Protection
+## <a name="ppal-merchant-protection"></a> Seller Protection
 
 PayPal Seller Protection protects you against payment default when your customer pays for your goods or services with PayPal. Occasionally, an expected payment does not arrive because the customer has insufficient account funds or there is a delivery fault. Your buyer may revoke any payment – for example, when credit card fraud occurs.
 
@@ -168,7 +168,7 @@ For Canada, USA and Mexico, specification of the province or the state with the 
 
 As soon as these attributes have been forwarded, Seller Protection comes into effect. PayPal verifies the supplied address details with the data filed by the buyer and refuses payment if the registered address does not concur with the specified address.
 
-## <a name="partial-capture"></a> Partial Capture
+## <a name="ppal-partial-capture"></a> Partial Capture
 
 With Partial Capture, it is possible to book a PayPal authorisation in several individual steps. For this, additional parameters must be forwarded with [Transaction Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) in the **Partial** container.
 
@@ -177,14 +177,14 @@ With Partial Capture, the booking of an authorised amount is possible in up to t
 The **OrderPartId** parameter must be unique for a partial booking, so as to be able to refer to it later in follow-up actions, such as a credit note payment. 
 With the parameter Type, it is determined whether the amount that is to be booked is a partial step or a final booking. 
 
-## <a name="capture"></a> Capture and the solvency of the customer
+## <a name="ppal-capture"></a> Capture and the solvency of the customer
 
 Unlike credit cards, that give the merchant a certain guarantee for the authorized money, PayPal reserves the right to deny the payout of a transaction, if the solvency of the account holder changes negatively after the authorization.
 
 Therefore Saferpay claims the money directly, once the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) of the transaction has been successfully executed. If the money cannot be claimed, the capture then returns an error.
 We generally recommend to execute the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) as soon as possible, to avoid any issues.
 
-## <a name="iframe"></a> PayPal iFrame integration
+## <a name="ppal-iframe"></a> PayPal iFrame integration
 
 <div class="danger">
   <p><strong>Warning:</strong> PayPal does not support the iFrame Integration!</p>
