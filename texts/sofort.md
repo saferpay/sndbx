@@ -1,4 +1,4 @@
-# SOFORT
+# SOFORT by Klarna
 
 SOFORT is a third party means of payment by Klarna Group. To process SOFORT via the Saferpay JSON API a few things must be observed.
 
@@ -69,3 +69,13 @@ The handling of SOFORT payments with Saferpay requires:
 The settings for processing SOFORT via Saferpay are completed!
 
 ---
+
+## <a name="sf-iframe"></a> Sofort iFrame integration
+
+<div class="danger">
+  <p><strong>Warning:</strong> Sofort does not support the iFrame Integration!</p>
+</div>
+
+Sofort/Klarna actively blocks the iFrame-Integration.
+In order to circumvent this issue, the Saferpay Payment Page will break out of the iFrame and display the Sofort website full-size, in order to make a payment possible.
+However, please keep in mind, that the ReturnUrls will also be displayed full-size!
