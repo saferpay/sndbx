@@ -155,12 +155,13 @@
     ]
   },
  {
-  "Title": "SOFORT",
+  "Title": "SOFORT by Klarna",
   "Source": "texts/sofort.md",
   "Target": "sofort.html",
   "Subsites": [
-      { "Source": "texts/sofort.md", "Title": "Requirements", "Target": "sofort#sf-requirement" },
-      { "Source": "texts/sofort.md", "Title": "Create a new project for SOFORT", "Target": "sofort#sf-newproject" }
+      { "Source": "texts/sofort.md", "Title": "Requirements", "Target": "sofort.html#sf-requirement" },
+      { "Source": "texts/sofort.md", "Title": "Create a new project for SOFORT", "Target": "sofort.html#sf-newproject" },
+      { "Source": "texts/sofort.md", "Title": "Sofort iFrame integration", "Target": "sofort.html#sf-iFrame" }
     ] 
    }, 
  {
