@@ -229,7 +229,7 @@ Once the registration is completed, the card holder – depending on the outcome
 
 With the **Token**, the can be obtained, by submitting it through the [Alias AssertInsert request](http://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert). The response will give you the alias itself and further information about the card itself, like the masked card number, or the holder name.
 
-<div style="display:none;">
+<div style="display: none;">
  
 ## Try it out!
 
