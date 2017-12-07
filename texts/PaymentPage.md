@@ -50,6 +50,10 @@ Once the transaction is complete, the card holder – depending on the outcome 
 
 With the [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert), the results of a transaction are requested. The returned data may be stored on the merchant side.
 
+<div class="warning">
+  <p><strong>Important:</strong> The Assert does <strong>NOT</strong> do the transaction itself. The PaymentPage will do that automatically for you. The Assert only calls for the result! So, if you call the Assert, the transaction already happened!</p>
+</div>
+
 Based on the data obtained, it is to be decided whether or not a transaction is to be further processed. The following data is interesting in this regard:
 
 + **Transaction > ID:** The transaction identifier returned in the container **Transaction** with **Id** is a unique identifier for a transaction. The value is obligatory for further processing steps (Transaction Capture or Transaction Cancel) and should therefore be saved.
