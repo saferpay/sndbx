@@ -29,7 +29,7 @@ By clicking on the transaction ID you'll be redirected to the original transacti
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/refund_trx.PNG "Refunded Transaction")
 
-<div style="display:none;">
+<div style="display: none;">
   
 ### Try it out
 
@@ -56,7 +56,7 @@ This request is different from the that of the referenced refunds. When using an
   <p><strong>Note:</strong> Due to the fact, that the original transaction ID is not submitted, like with referenced refunds, the refund will not be linked to the original transaction inside the Saferpay Backoffice!</p>. 
 </div>
 
-<div style="display:none;">
+<div style="display: none;">
 
 ### Try it out
 
