@@ -218,13 +218,5 @@
   {
     "Title": "API Specification",
     "Target": "http://saferpay.github.io/jsonapi/"
-  },
-  {
-    "Title": "API DEMO",
-    "Source": "texts/demo.md",
-    "Target": "demo.html"
-  },
-  { "Source": "texts/pp_demo.md", "Title": "Payment Page Demo", "Target": "pp_demo.html" },
-  { "Source": "texts/trx_demo.md", "Title": "Transaction Interface Demo", "Target": "trx_demo.html"},
-  { "Source": "texts/scd_demo.md", "Title": "Secure Alias Store Demo", "Target": "scd_demo.html" }
+  }
 ]
