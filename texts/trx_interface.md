@@ -79,7 +79,7 @@ Once these steps have been finalised, the transaction is complete.
 ## <a name="trx-sepa"></a> SEPA Direct Debit
 Because there are no PCI requirements for direct debits, bank details data can be captured directly. The use of an in-house HTML form and the subsequent payment request are allowed. For this, the bank details must be forwarded to [AuthorizeDirect](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect) with the **BankAccount** parameter in the **PaymentMeans** container.
 
-<div style="display:none;">
+<div style="display: none;">
 	
 ## <a name="trx-demo"></a> Try it out!
 
