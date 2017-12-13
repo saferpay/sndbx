@@ -118,7 +118,7 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
       <td>Everything is okay. <strong>Abort transaction!</strong> Continue at your own risk!</td>
     </tr>
       <tr>
-      <td class="text-center"><strong>false/strong></td>
+      <td class="text-center"><strong>false</strong></td>
       <td class="text-center"><strong>false</strong></td>
       <td>Everything is okay. <strong>Abort transaction!</strong> Continue at your own risk!</td>
     </tr>
