@@ -75,7 +75,7 @@ A transaction with the 3-D Secure process proceeds as follows:
 
 ### 3D Secure on API-Level
 
-The Saferpay JSON-API does return all necessary information inside the ThreeDs-Container.
+The Saferpay JSON-API does return all necessary information inside the ThreeDs-Container, when using [Transaction Authorize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize) or [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert).
 The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>.
 
 ```json
