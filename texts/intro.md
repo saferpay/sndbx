@@ -73,6 +73,59 @@ A transaction with the 3-D Secure process proceeds as follows:
 6.	Saferpay links the 3DS data to the token used by the JSON API and asks for this automatically when authorising the card.
 7.	When receiving the authorisation answer, the merchant also receives information about the output of the 3-D Secure process.
 
+### 3D Secure on API-Level
+
+The Saferpay JSON-API does return all necessary information inside the ThreeDs-Container.
+The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>:
+
+```json
+"ThreeDs": {
+  "Authenticated": true,
+  "LiabilityShift": true,
+  "Xid": "YjJ1LgtpQBZtBA5RMTwDbCUeTAE=",
+  "VerificationValue": "AAABBIIFmAAAAAAAAAAAAAAAAAA="
+ },
+```
+
+It depends on the merchant, how to proceed further, however Saferpay does recommend the following behaviors:
+
+<div class="warning">
+  <p><strong>Attention:</strong> These are <strong>only recommendations!</strong> Your credit card contract can dictate otherwise. Please contact your acquirer/card processor for further information!</p>
+</div>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Authenticated</th>
+      <th class="text-center">LiabilityShift</th>
+      <th class="text-center">Recommended behavior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center"><strong>true</strong></td>
+      <td class="text-center"><strong>true</strong></td>
+      <td>Everything is okay. <strong>Continue transaction!</strong></td>
+    </tr>
+    <tr>
+      <td class="text-center"><strong>false</strong></td>
+      <td class="text-center"><strong>true</strong></td>
+      <td><strong>Continue transaction!</strong> But please note, that the card holder did not authenticate him/herself. LiabilityShift however is granted by the card holders bank! It is your decision, if you want accept this, or if you want the highest level of security!</td>
+    </tr>
+    <tr>
+      <td class="text-center"><strong>true</strong></td>
+      <td class="text-center"><strong>false</strong></td>
+      <td>Everything is okay. <strong>Abort transaction!</strong> Continue at your own risk!</td>
+    </tr>
+      <tr>
+      <td class="text-center"><strong>false/strong></td>
+      <td class="text-center"><strong>false</strong></td>
+      <td>Everything is okay. <strong>Abort transaction!</strong> Continue at your own risk!</td>
+    </tr>
+  </tbody>
+</table>
+
+
 ## <a name="dcc"></a> Dynamic Currency Conversion
 
 Dynamic Currency Conversion (DCC) is a dynamic currency converter that allows international customers to pay the purchase price in the local currency or their home currency. DCC is available for SIX acceptance contracts with DCC expansion. For this, the terminal used for making the payment request receives a base currency in which all transactions are settled. Via DCC, international customers are shown the purchase price in the base currency and the current exchange rate in their national currency. The customer can then decide the currency in which the payment is to be made. Separate implementation by the merchant is not necessary for DCC. Saferpay automatically handles this step during the redirect. 
