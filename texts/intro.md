@@ -76,7 +76,7 @@ A transaction with the 3-D Secure process proceeds as follows:
 ### 3D Secure on API-Level
 
 The Saferpay JSON-API does return all necessary information inside the ThreeDs-Container.
-The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>:
+The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>.
 
 ```json
 "ThreeDs": {
@@ -110,7 +110,7 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
     <tr>
       <td class="text-center"><strong>false</strong></td>
       <td class="text-center"><strong>true</strong></td>
-      <td><strong>Continue transaction!</strong> But please note, that the card holder did not authenticate him/herself. LiabilityShift however is granted by the card holders bank! It is your decision, if you want accept this, or if you want the highest level of security!</td>
+      <td><strong>Continue transaction!</strong> Please note, that the card holder did not authenticate him/herself. LiabilityShift however is granted by the card holders bank! It is your decision, if you want accept this, or if you want the highest level of security!</td>
     </tr>
     <tr>
       <td class="text-center"><strong>true</strong></td>
