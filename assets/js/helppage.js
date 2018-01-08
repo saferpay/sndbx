@@ -7,7 +7,9 @@ $(document).on('scroll', function () {
         $('.scroll-top-wrapper').removeClass('show');
     }
 });
-
+$(".dropdown").click(function(e){
+    alert(e.target.id);
+});
 $("#visa-cards").click(function(){
     $("#visa-cards-hider").toggle(250);
 });
