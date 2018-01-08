@@ -8,46 +8,7 @@ $(document).on('scroll', function () {
     }
 });
 $(".dropdown").click(function(e){
-    alert(e.target.id);
-});
-$("#visa-cards").click(function(){
-    $("#visa-cards-hider").toggle(250);
-});
-$("#master-cards").click(function(){
-    $("#master-cards-hider").toggle(250);
-});
-$("#amex-cards").click(function(){
-    $("#amex-cards-hider").toggle(250);
-});
-$("#diners-cards").click(function(){
-    $("#diners-cards-hider").toggle(250);
-});
-$("#maestro-cards").click(function(){
-    $("#maestro-cards-hider").toggle(250);
-});
-$("#jcb-cards").click(function(){
-    $("#jcb-cards-hider").toggle(250);
-});
-$("#myone-cards").click(function(){
-    $("#myone-cards-hider").toggle(250);
-});
-$("#bonus-cards").click(function(){
-    $("#bonus-cards-hider").toggle(250);
-});
-$("#bc-cards").click(function(){
-    $("#bc-cards-hider").toggle(250);
-});
-$("#sepa-cards").click(function(){
-    $("#sepa-cards-hider").toggle(250);
-});
-$("#paypal-cards").click(function(){
-    $("#paypal-cards-hider").toggle(250);
-});
-$("#paydirekt-cards").click(function(){
-    $("#paydirekt-cards-hider").toggle(250);
-});
-$("#twint-cards").click(function(){
-    $("#twint-cards-hider").toggle(250);
+    $("#" + e.target.id + "-hider").toggle(250);
 });
 
 $('a[href*=#]').click(function () {
