@@ -41,6 +41,9 @@ $("#sepa-cards").click(function(){
 $("#paypal-cards").click(function(){
     $("#paypal-cards-hider").toggle(250);
 });
+$("#paydirekt-cards").click(function(){
+    $("#paydirekt-cards-hider").toggle(250);
+});
 $("#twint-cards").click(function(){
     $("#twint-cards-hider").toggle(250);
 });
