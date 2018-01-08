@@ -512,3 +512,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
     </tbody>
   </table>
 </div>
+<a name="pm-paydirekt"></a><div id="paydirekt-cards" class="dropdown">paydirekt &dArr;</div>
+<div id="paydirekt-cards-hider" style="display:none;">
+  <p>Saferpay does offer an extensive paydirekt simulator. All test-cases are controlled through the simulator-ui, when opening up the payment page.</p>
+</div>
