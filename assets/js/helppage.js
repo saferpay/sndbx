@@ -8,10 +8,7 @@ $(document).on('scroll', function () {
     }
 });
 
-$(".dropdown").click(function(e){
-    e.toggle(250);
-});
-/* $("#visa-cards").click(function(){
+$("#visa-cards").click(function(){
     $("#visa-cards-hider").toggle(250);
 });
 $("#master-cards").click(function(){
@@ -49,7 +46,7 @@ $("#paydirekt-cards").click(function(){
 });
 $("#twint-cards").click(function(){
     $("#twint-cards-hider").toggle(250);
-}); */
+});
 
 $('a[href*=#]').click(function () {
     var id = $(this).attr('href') + '';
