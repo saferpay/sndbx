@@ -132,9 +132,21 @@ Dynamic Currency Conversion (DCC) is a dynamic currency converter that allows in
 
 ## <a name="version"></a>  Versioning
 
-If you are implementing new Payment Methods, please make sure to implement the correct SpecVersion of our API.
-If you are unsure, you should refer to the newest SpecVersion. [Our Changelog](https://saferpay.github.io/jsonapi/Changelog.html) will give you further information about the current SpecVersion.
-You'll also find it in the top left of our [API Specification](https://saferpay.github.io/jsonapi/)
+If you are implementing new payment methods and/or features, please make sure to implement the correct **SpecVersion** of our API.
+If you are unsure, you should refer to the newest SpecVersion. [Our Changelog](https://saferpay.github.io/jsonapi/Changelog.html) will give you further information about the current and past spec-versions.
+You'll also find the newest Version in the top left of our [API Specification](https://saferpay.github.io/jsonapi/).
+
+Furthermore, it is possible to go back to previous spec-versions, by adding the version to the url.
+For example, if you want to go back to the 1.4 specification, simply add the version to the url like this:
+
+```
+https://saferpay.github.io/jsonapi/1.4
+```
+
+<div class="info">
+  <p><strong>Note:</strong> SpecVersion 1.1 and lower are not available, since those were only released for internal use!</p>
+</div>
+
 
 ## <a name="paymentmethods"></a> Supported Payment Methods
 
