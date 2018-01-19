@@ -41,6 +41,9 @@ The merchant email address is configurable via the JSON API or the Backoffice.
 >
 
 ## <a name="pd-query"></a> Querying the transaction status
+To automatize this process, you first need to set the **PendingNotification => NotifyUrl** option, available for the [Transaction/Capture](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) and [Transaction/Refund](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Refund).
+Once Saferpay recieves a status-update, the NotifyUrl will be called, enabling you to query the final status.
+
 The status of a paydirekt booking and/or refund can be queried with the JSON API.  The corresponding functions are [Transaction/AssertCapture](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AssertCapture) and [Transaction/AssertRefund](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AssertRefund). These functions are only available for paydirekt transactions.
 
 ## <a name="pd-refund"></a> Refunds 
