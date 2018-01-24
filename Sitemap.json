@@ -184,7 +184,15 @@
       { "Source": "texts/paydirekt.md", "Title": "Querying the transaction status", "Target": "paydirekt#pd-query" },
       { "Source": "texts/paydirekt.md", "Title": "Refunds", "Target": "paydirekt#pd-refund" }
     ] 
-   }, 
+   },
+ {
+  "Title": "iDeal",
+  "Source": "texts/ideal.md",
+  "Target": "ideal.html",
+  "Subsites": [
+      { "Source": "texts/ideal.md", "Title": "Session Timeouts", "Target": "ideal.html#ideal-timeout" }
+    ] 
+   },
   {
     "Title": "FAQ",
     "Source": "texts/FAQ.md",
