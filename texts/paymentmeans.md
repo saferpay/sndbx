@@ -516,3 +516,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
 <div id="paydirekt-cards-hider" style="display:none;">
   <p>Saferpay does offer an extensive paydirekt simulator. All test-cases are controlled through the simulator-ui, when opening up the payment page.</p>
 </div>
+<a name="pm-unionpay"></a><div id="unionpay-cards" class="dropdown">UnionPay &dArr;</div>
+<div id="unionpay-cards-hider" style="display:none;">
+  <p>Saferpay does offer an extensive unionpay simulator. All test-cases are controlled through the simulator-ui, when opening up the Payment Page. However, you need to use the following test-card, in order to activate it: <strong>9100100052000005</strong></p>
+</div>
