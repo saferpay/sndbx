@@ -245,7 +245,7 @@ The ID-generator is used to choose what kind of alias you want to recieve. Right
 2. **RANDOM**: This value will generate a random alpha numerical hash, as your alias-id, for you! No need to supply an id yourself!
 3. **RANDOM_UNIQUE**: Similar to **RANDOM**, it will create a random alpha numerical hash for you. The difference is, that it will check, if the card number (PAN) provided has already saved inside your alias store. If so, Saferpay will return the already existing alias, making sure, that no PAN can be saved twice or more!
 
-## <a name="scd-check"></a> The Check-Function
+## <a name="scd-check"></a> The check-Function
 
 The Check function is used, to check, if an entered card does exist, or not, before the authorization itself.
 However, you need to consider the following restrictions:
