@@ -245,6 +245,67 @@ The ID-generator is used to choose what kind of alias you want to recieve. Right
 2. **RANDOM**: This value will generate a random alpha numerical hash, as your alias-id, for you! No need to supply an id yourself!
 3. **RANDOM_UNIQUE**: Similar to **RANDOM**, it will create a random alpha numerical hash for you. The difference is, that it will check, if the card number (PAN) provided has already saved inside your alias store. If so, Saferpay will return the already existing alias, making sure, that no PAN can be saved twice or more!
 
+## <a name="scd-check"></a> The Check-Function
+
+The Check function is used, to check, if an entered card does exist, or not, before the authorization itself.
+However, you need to consider the following restrictions:
+
+1. The check-function is only available with the standalone registration, since the other options do said authorization!
+2. The check-function **does not** check the solvency of the account. Only an authorization does!
+3. The check-function is only available for VISA and Mastercard, over SIX Payment Services Acquiring contracts!
+
+### Request
+
+In order, to let a card get checkted, you need to set the **Check**-container within the [initial registration-request](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert).
+You need to make sure, to provide a valid terminal Id, with activated acquiring-contracts for VISA and MasterCard.
+
+```json
+{
+  "RequestHeader": {
+    "SpecVersion": "1.8",
+    "CustomerId": "[your customer id]",
+    "RequestId": "[your request id]",
+    "RetryIndicator": 0,
+    "ClientInfo": {
+      "ShopInfo": "My Shop",
+      "OsInfo": "Windows Server 2013"
+    }
+  },
+  "RegisterAlias": {
+    "IdGenerator": "RANDOM_UNIQUE"
+  },
+  "Type": "CARD",
+  "LanguageCode": "en",
+  "ReturnUrls": {
+    "Success": "[your shop payment success url]",
+    "Fail": "[your shop payment fail url]"
+  },
+  "Check": {
+    "Type": "ONLINE",
+    "TerminalId": "[your terminal id]"
+  }
+}
+```
+
+### Response
+
+If the check was successful, you will get a successful registration-response with the [Assert Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert).
+If the chek failed, the registration too, will fail and you'll get an error-response:
+
+```json
+{
+    "ResponseHeader": {
+        "SpecVersion": "1.8",
+        "RequestId": "55"
+    },
+    "Behavior": "ABORT",
+    "ErrorName": "CARD_CHECK_FAILED",
+    "ErrorMessage": "Online card check failed",
+    "ErrorDetail": [
+        "online card check failed"
+    ]
+}
+```
 
 ## <a name="scd-use"></a> How to use the obtained data
 
