@@ -228,7 +228,7 @@ $("#myForm").submit(function (e) {
   </tbody>
 </table>
 
-#### Error-Response in case of an http-400 response:
+#### Error-Response in case of an http-4xx response:
 
 <table class="table table-striped table-hover">
   <thead>
