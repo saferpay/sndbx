@@ -247,7 +247,7 @@ The ID-generator is used to choose what kind of alias you want to recieve. Right
 
 ## <a name="scd-check"></a> The check-Function
 
-The Check function is used, to check, if an entered card does exist, or not, before the authorization itself.
+The Check function is used, to check, if an entered card connects to a valid account, or not, before the authorization itself.
 However, you need to consider the following restrictions:
 
 1. The check-function is only available with the standalone registration, since the other options do said authorization!
@@ -290,7 +290,7 @@ You need to make sure, to provide a valid terminal Id, with activated acquiring-
 ### Response
 
 If the check was successful, you will get a successful registration-response with the [Assert Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert).
-If the chek failed, the registration too, will fail and you'll get an error-response:
+If the chek failed, the registration too will fail and you'll get an error-response:
 
 ```json
 {
@@ -309,7 +309,7 @@ If the chek failed, the registration too, will fail and you'll get an error-resp
 
 ## <a name="scd-use"></a> How to use the obtained data
 
-The obtained alias can be used in two basic ways, which boils down to one important question:
+The obtained alias can be used in two basic ways, which boil down to one important question:
 
 **Do you want to do a 3D Secure transaction?**
 
