@@ -155,7 +155,7 @@ As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported, dependi
 
 + It is recommended to display a progress bar while something is loading in an Iframe.
 
-+ The PCI specifications **DO NOT** allow jumping into the Iframe with JavaScript. So manipulating it, using JavaScript, is strictly permitted!
++ The PCI specifications **DO NOT** allow jumping into the Iframe with JavaScript. So manipulating it, using JavaScript, is strictly prohibited!
 
 + Some third party payment providers (e.g. PayPal) **DO NOT** support the integration inside an iFrame. Thus, the PaymentPage will break out of the frame beforehand!
 
