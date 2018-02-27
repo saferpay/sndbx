@@ -16,7 +16,7 @@
       { "Source": "texts/intro.md", "Title": "Capture", "Target": "index.html#capture" },
       { "Source": "texts/intro.md", "Title": "Daily Closing", "Target": "index.html#closing" },
       { "Source": "texts/intro.md", "Title": "Special Cases", "Target": "index.html#special" },
-     { "Source": "texts/intro.md", "Title": "Reservation-Times", "Target": "index.html#reservation-times" },
+     { "Source": "texts/intro.md", "Title": "Reservation-Times", "Target": "index.html#reservation" },
       { "Source": "texts/intro.md", "Title": "Cancel or Refund", "Target": "index.html#cancel-refund" }
     ]
   },
