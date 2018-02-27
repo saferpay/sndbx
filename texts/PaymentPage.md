@@ -40,6 +40,7 @@ The process begins with the [PaymentPage Initialize](https://saferpay.github.io/
 
 ## <a name="pp-transaction"></a> Redirect and Transaction
 
+Redirect the buyer to the **RedirectUrl** from the  [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize) response, using your desired method.
 The transaction will be fully processed by the PaymentPage. The Payment Page handles all steps automatically, including [3D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and [DCC](https://saferpay.github.io/sndbx/index.html#dcc). No additional steps are necessary on the merchant website.
 
 ## <a name="pp-retshop"></a> Return to the Shop
