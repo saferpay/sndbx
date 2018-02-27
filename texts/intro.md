@@ -797,6 +797,11 @@ Capturing more than initially authorized however, may result in an error and is 
   <p><strong>Attention:</strong> A transaction can only be captured once. If the amount value changes during the payment process, a new transaction has to be initialized with the new adjusted amount. Only PayPal offers the option, to perform partial captures. </p>
 </div>
 
+### <a name="reservation"></a>Reservation-Times
+
+The time, in which a reservation can be successfully captured, highly depends on the respective processor and sometimes even the contract. Due to that, we cannot provide exact information, on when exactly to execute the capture of a specific transaction.
+Please contact your contract manager, or the processor, in order to get more information on the reservation-times.
+
 ## <a name="cancel-refund"></a> When can Cancellations or Refunds occur?
 
 It’s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation either want to cancel or make a refund for the transaction in question.  
