@@ -74,7 +74,7 @@ You can try it out, by first doing a complete (including the Capture!) transacti
 
 ## <a name="refund-capture"></a> Capture
 
-Like normal transactions, refunds need to be captured/booked by executing the [Capture request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) successfully! **The actual transfer of money will not be executed if the refund hasn't been captured!**
+Like normal transactions, refunds need to be captured/booked by executing the [Capture request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) successfully, if the transaction **STATUS** is **AUTHORIZED**. **The actual transfer of money will not be executed if the refund hasn't been captured!**
 
 ## <a name="refund-info"></a> Additional information
 
