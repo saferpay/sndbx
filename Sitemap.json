@@ -84,6 +84,7 @@
       { "Source": "texts/refund.md", "Title": "Method 1: Refernced refunds", "Target": "refund.html#refund-reference" },
   	   { "Source": "texts/refund.md", "Title": "Method 2: Refunds using an alias", "Target": "refund.html#refund-alias" },
       { "Source": "texts/refund.md", "Title": "Capture", "Target": "refund.html#refund-capture" },
+      { "Source": "texts/refund.md", "Title": "Difference, between Cancel and Refund", "Target": "refunds.html#refund-cancel" },
       { "Source": "texts/refund.md", "Title": "Additional information", "Target": "refunds.html#refund-info" }
     ]
   },
