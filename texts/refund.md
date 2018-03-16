@@ -76,15 +76,7 @@ You can try it out, by first doing a complete (including the Capture!) transacti
 
 Like normal transactions, refunds need to be captured/booked by executing the [Capture request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) successfully, if the transaction **STATUS** is **AUTHORIZED**. **The actual transfer of money will not be executed if the refund hasn't been captured!**
 
-## <a name="refund-info"></a> Additional information
-
-Refunds are basically normal transactions where instead of debiting the cardholders account, you are crediting it. That means, that refunds go through the same authorization-steps like a normal (debit) authorization. Please keep in mind that a refund can also be rejected.
-
-The refund amount value can differ from the originally authorized (debited) amount. This also applies to referenced refunds. The refund will be regarded as a completely new transaction, with its own set of parameters, like the amount value. So, if you want to refund two transactions in one batch, you can do that by simply adding the amounts together. Please make sure to keep track of this process.
-
-One way to do so (like with normal transactions) is to submit the parameter **"OrderId"** inside the **"Refund"** container. This ID will be forwarded by Saferpay and will show up inside the Saferpay Backoffice (as the Reference number) as well as in your reconciliation-files.
-
-## <a name="refund-cancel"></a> When can Cancellations or Refunds occur?
+## <a name="refund-cancel"></a> Difference, between Cancel and Refund
 
 It’s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation either want to cancel or make a refund for the transaction in question.  
 
@@ -93,9 +85,19 @@ A [cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel) ca
 All Payment Methods, that go through the Daily Closing, can be cancelled this way, until the Daily Closing has been executed.
 Once that happened, the money flow has been initated and the transaction can no longer be cancelled.
 In this case you need to issue a refund, to transfer the money back to the card holders bank account!
+So a cancel actually stops the money transfer from happening, while a refund reverses the transfer, once it happened!
 
 Please note, that there are exceptions.
 Some payment methods initiate the money flow with the capture, like PayPal, SEPA ELV and the Postcard.
 Some methods downright do not support this behaviour, like all online banking methods, because those transfer the money right away and also do not offer the refund-functionality.
 
 [An overview can be found in the Payment Method Features chapter](https://saferpay.github.io/sndbx/index.html#pm-functions).
+
+
+## <a name="refund-info"></a> Additional information
+
+Refunds are basically normal transactions where instead of debiting the cardholders account, you are crediting it. That means, that refunds go through the same authorization-steps like a normal (debit) authorization. Please keep in mind that a refund can also be rejected.
+
+The refund amount value can differ from the originally authorized (debited) amount. This also applies to referenced refunds. The refund will be regarded as a completely new transaction, with its own set of parameters, like the amount value. So, if you want to refund two transactions in one batch, you can do that by simply adding the amounts together. Please make sure to keep track of this process.
+
+One way to do so (like with normal transactions) is to submit the parameter **"OrderId"** inside the **"Refund"** container. This ID will be forwarded by Saferpay and will show up inside the Saferpay Backoffice (as the Reference number) as well as in your reconciliation-files.
