@@ -10,7 +10,9 @@ However, as BillPay is a third party provider, there are a few things which must
 *	A valid acceptance agreement for BillPay must be present.
 *	The address of the purchaser is present and is forwarded to BillPay.
 
->**Attention** For BillPay activation on the Saferpay terminal, please inform **service.saferpay@six-payment-services.com** of the BillPay access details and the desired currency.
+<div class="info">
+  <p><strong>Note:</strong> For BillPay activation on the Saferpay terminal, please inform **service.saferpay@six-payment-services.com** of the BillPay access details and the desired currency.</p>
+</div>
 ---
 
 ## <a name="bp-approval-api"></a> BillPay Certification via API
@@ -23,14 +25,10 @@ For certification, a simple transaction on the [Payment Page](https://saferpay.g
 
 If address data have already been captured in the shop, they can be forwarded to Saferpay via the corresponding parameter.
 
->
->    <i class="glyphicon glyphicon-hand-right"></i> For this, see the **"Payer > DeliveryAddress"** container.
->
+<div class="info">
+  <p><strong>Note:</strong> Request with address forwarding. See the <strong>Payer => DeliveryAddress</strong> container.</p>
+</div>
 
-
->
->    <i class="glyphicon glyphicon-hand-right"></i> Request with address forwarding:
->
 ```json
 {
   "RequestHeader": {
@@ -87,14 +85,10 @@ If address data have already been captured in the shop, they can be forwarded to
 
 Alternatively, an address form, in which the customer must enter their address details, can be displayed in the Saferpay Payment Page. Make sure that all the address details needed for BillPay payment are requested in the address form.
 
->
->    <i class="glyphicon glyphicon-hand-right"></i> For this, see the **"DeliveryAddressForm"** container.
->
+<div class="info">
+  <p><strong>Note:</strong> Request for form usage. See the <strong>DeliveryAddressForm</strong> container.</p>
+</div>
 
-
->
->    <i class="glyphicon glyphicon-hand-right"></i> Request for form usage:
->
 ```json
 {
   "RequestHeader": {
@@ -143,10 +137,10 @@ Alternatively, an address form, in which the customer must enter their address d
 
 With [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert), all the necessary information is sent back to the merchant. This includes the transfer of purchase-on-invoice credit transfer data that must be forwarded to the buyer.
 
+<div class="info">
+  <p><strong>Note:</strong> Example Payment Page Assert Response</p>
+</div>
 
->
->    <i class="glyphicon glyphicon-hand-right"></i> Example Payment Page Assert Response:
->
 ```json
 {
   "ResponseHeader": {
@@ -188,10 +182,9 @@ With [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_Paymen
 
 Like other means of payment, BillPay transactions must also be booked. For this booking, use the [Transaction Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) method. If you have agreed upon the due dates of payments with BillPay, the due date of payment can be delayed in Capture Request with **DelayInDays**. 
 
-> For this, see the **Billpay** container.
-
-
-> <i class="glyphicon glyphicon-hand-right"></i> Example for Capture Request:
+<div class="info">
+  <p><strong>Note:</strong> Example for Capture Request. For this, see the <strong>Billpay</strong> container.</p>
+</div>
 
 ```json
 {
@@ -213,9 +206,9 @@ Like other means of payment, BillPay transactions must also be booked. For this 
 
 Some of the key information, such as the invoice data, are returned by Saferpay via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture).
 
-
-
-> <i class="glyphicon glyphicon-hand-right"></i> Example for Capture Response:
+<div class="info">
+  <p><strong>Note:</strong> Example for Capture Response</p>
+</div>
 
 ```json
 {
@@ -243,8 +236,9 @@ Some of the key information, such as the invoice data, are returned by Saferpay 
 
 Because it is not always possible to conduct certification in every shop without interrupting live operations, Saferpay Backoffice offers the option of creating a payment URL for a BillPay test payment via the Payment Page. This can be used to perform the acceptance test.
 
-> **Attetion:** Because this is not loaded via the shop, the shop is not informed about the purchase. It is therefore necessary to manually create the invoice required by BillPay. You can find the necessary data for this in the Saferpay Backoffice via **Transactions > Journal**. Here you can find a list of all transactions, which you can then view in detail.
-
+<div class="warning">
+  <p><strong>Attention:</strong> Because this is not loaded via the shop, the shop is not informed about the purchase. It is therefore necessary to manually create the invoice required by BillPay. You can find the necessary data for this in the Saferpay Backoffice via <strong>Transactions > Journal</strong>. Here you can find a list of all transactions, which you can then view in detail.</p>
+</div>
 
 In your Saferpay Backoffice go to the **Webshop** heading and select the option **All Offers**:  
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_all_offers.png "Webshop > All Offers")
@@ -260,14 +254,9 @@ Fill out the fields for the description and the amount and, if necessary, select
 The stored offer will appear with the test payment URL for BillPay acceptance:<br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_offer_url.png "Offer URL")
 
-> **Attention!** Make sure that the checkbox marked “Caution: only use for test transactions!” has been ticked. 
-
-
-> **Attention!** When creating an acceptance invoice, ensure that the test URL created contains a random OrderId allocated by Saferpay.  
-
-
-> **Attention!** When using a test URL, the customer address must be entered manually in the Payment Page.
-
+<div class="warning">
+  <p><strong>Attention:</strong> Make sure that the checkbox marked “Caution: only use for test transactions!” has been ticked. When creating an acceptance invoice, ensure that the test URL created contains a random OrderId allocated by Saferpay. When using a test URL, the customer address must be entered manually in the Payment Page.</p>
+</div>
 
 After loading the links, the Saferpay Payment Page appears with one or more options for BillPay test payment methods: <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_payment_page.png "Payment Page")
