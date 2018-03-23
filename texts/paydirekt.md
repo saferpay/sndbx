@@ -36,9 +36,9 @@ As soon as Saferpay receives a response from paydirekt that a booking or refund 
 The merchant email address is configurable via the JSON API or the Backoffice.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paydirekt_email.PNG "paydirekt email Backoffice")
 
->
-><i class="glyphicon glyphicon-hand-right"></i> **IMPORTANT NOTE:** The "PENDING" status can only occur with [Transaction/Capture](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) and [Transaction/Refund](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Refund). **The status-change can take up to several days, however, refunds may always be "PENDING" for at least one day!**
->
+<div class="warning">
+  <p><strong>Important Note:</strong> The "PENDING" status can only occur with <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">Transaction/Capture</a> and <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Refund">Transaction/Refund</a>. <strong>The status-change can take up to several days, however, refunds may always be "PENDING" for at least one day!</strong></p>
+</div>
 
 ## <a name="pd-query"></a> Querying the transaction status
 To automatize this process, you first need to set the **PendingNotification => NotifyUrl** option, available for the [Transaction/Capture](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) and [Transaction/Refund](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Refund).
