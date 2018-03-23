@@ -69,8 +69,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 
 .nav > li > a {
     padding: 5px;
-    color: white;
-    font-weight: bold;
+    color: black;
 }
 
 #navScrollspy ul li ul {
