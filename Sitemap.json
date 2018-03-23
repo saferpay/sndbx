@@ -145,9 +145,6 @@
        { "Source": "texts/paymentmeans.md", "Title": "TWINT", "Target": "paymentmeans.html#pm-twint" }
    ] 
   }, 
-   {
-    "Title": "3rd Party Payment Providers"
-  },
  {
     "Title": "PayPal",
     "Source": "texts/paypal.md",
@@ -223,9 +220,6 @@
       { "Source": "texts/ideal.md", "Title": "Session Timeouts", "Target": "ideal.html#ideal-timeout" }
     ] 
    }, 
-   {
-    "Title": "Additional Information"
-  },
   {
     "Title": "Contact",
     "Source": "texts/contact.md",
