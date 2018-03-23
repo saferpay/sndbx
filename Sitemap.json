@@ -222,7 +222,6 @@
   "Subsites": [
       { "Source": "texts/ideal.md", "Title": "Session Timeouts", "Target": "ideal.html#ideal-timeout" }
     ] 
-   },
    }, 
    {
     "Title": "Additional Information"
