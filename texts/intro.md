@@ -770,7 +770,7 @@ Transactions which have not yet been booked are visible in Saferpay Backoffice a
 ```
 Executing the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) is not needed in this case!
 
-Not all payment methods need a separate capture to trigger the cash flow. You can find an overview of which payment methods should be booked [under Payment Method Features](https://saferpay.github.io/sndbx/index.html#pm-functions).
+Not all payment methods need a separate capture to trigger the cash flow. You can find an overview of which payment methods should be captured [under Payment Method Features](https://saferpay.github.io/sndbx/index.html#pm-functions).
 
 **IMPORTANT:** A reservation made through a certain payment processor, may only last for a limited time only. If this timeframe is exceeded, the authorised amount is released and 
 becomes available to the card holder again. This may have the result that the amount can no longer be claimed. If possible, we recommend always triggering the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) immediately after authorisation. Either by direct API call, or manually via Saferpay Backoffice. If this is not possible, the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) nonetheless must be done as soon as possible. With PayPal, this must happen within 48 hours. 
