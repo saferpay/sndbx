@@ -274,6 +274,11 @@ https://saferpay.github.io/jsonapi/1.4
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
+    <tr>
+      <td>Unionpay</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
   </tbody>
 </table>
 
