@@ -732,7 +732,8 @@ These two features are extremely important Saferpay features. Depending on the m
 
 ### <a name="capture"></a>Capture
 
-[Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) serves to book and thus to conclude a payment. As long as a transaction has not passed through the capture, the amount is merely reserved (“authorised”) and has not yet been paid. On the API side, you receive information about the transaction via the “Status” parameter (note that this is only a part of the data):
+[Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) serves to book and thus to conclude/finalize a payment. As long as a transaction has not passed through the capture, the amount is merely reserved (“authorised”), but it will not be transfered to the merchant account. On the API side, you receive information about the transaction via the **Transaction => Status** parameter (note that this is only a part of the data), e.g. through the [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert), or [Transaction Authorize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize).
+Transactions which have not yet been booked are visible in Saferpay Backoffice as **“Reservation"**, Reservations are marked as **"AUTHORIZED"** on API-level and have to go through the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture), to be finalized:
 
 ```json
 "Transaction": {
@@ -749,7 +750,7 @@ These two features are extremely important Saferpay features. Depending on the m
 }
 ```
 
-Transactions which have not yet been booked are visible in Saferpay Backoffice as “Reservation.” If a transaction has already passed through the capture, the status is changed to “CAPTURED”:
+ If a transaction has already passed through the capture, the status is changed to **“CAPTURED”**:
 
 ```json
 "Transaction": {
@@ -764,11 +765,14 @@ Transactions which have not yet been booked are visible in Saferpay Backoffice a
   "AcquirerName": "AcquirerName",
   "AcquirerReference": "Reference"
 }
+
+
 ```
+Executing the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) is not needed in this case!
 
 Not all payment methods need a separate capture to trigger the cash flow. You can find an overview of which payment methods should be booked [under Payment Method Features](https://saferpay.github.io/sndbx/index.html#pm-functions).
 
-IMPORTANT: A reservation made through a certain payment processor, may only last for a limited time only. If this timeframe is exceeded, the authorised amount is released and 
+**IMPORTANT:** A reservation made through a certain payment processor, may only last for a limited time only. If this timeframe is exceeded, the authorised amount is released and 
 becomes available to the card holder again. This may have the result that the amount can no longer be claimed. If possible, we recommend always triggering the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) immediately after authorisation. Either by direct API call, or manually via Saferpay Backoffice. If this is not possible, the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) nonetheless must be done as soon as possible. With PayPal, this must happen within 48 hours. 
 Otherwise, it may be that the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) -and thus the money-transfer- will be refused. For other payment methods, a later [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) is sometimes possible. If necessary, please speak to your processor about guaranteed reservation times.
 
