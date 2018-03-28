@@ -148,6 +148,15 @@
     "Title": "3rd Party Payment Providers"
  },
  {
+    "Title": "TWINT",
+    "Source": "texts/twint.md",
+    "Target": "Twint.html",
+    "Subsites": [
+      { "Source": "texts/twint.md", "Title": "Requirements", "Target": "Twint.html#twint-requirement" },
+      { "Source": "texts/twint.md", "Title": "General specifics", "Target": "Twint.html#twint-general" }
+    ]
+  },
+ {
     "Title": "PayPal",
     "Source": "texts/paypal.md",
     "Target": "PayPal.html",
