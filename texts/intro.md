@@ -454,7 +454,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></td>
     </tr>
     <tr>
       <td>Bancontact</td>
@@ -717,7 +717,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
-      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></td>
       <td> </td>
     </tr>  
   </tbody>
@@ -740,6 +740,8 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
   <dd>3-D Secure available</dd>
   <dt>MOTO</dt>
   <dd>Mail Phone Order available</dd>
+  <dt><span class="glyphicon glyphicon-ok" style="color: #ff0000"></dt>
+  <dd>This feature is mandatory, for this payment method to function!</dt>
 </dl>
 
 ## <a name="capture-batch"></a> Capture and Daily Closing
