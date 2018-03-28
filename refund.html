@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="assets/css/vendors.css" />
+	<link rel="stylesheet" href="assets/css/helppage.css">
+
+	<title>Saferpay documentation | json api v1.8</title>
+</head>
+<body data-spy="scroll" data-target="#navScrollspy">
+
+	<div id="content" class="container-fluid">
+		<div>
+			<nav class="hidden-xs hidden-sm hidden-md" id="navScrollspy">
+				<div data-spy="affix" class="affix">
+
+					<h3>
+						<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+						<span class="text-primary">json api v1.8</span>
+					</h3>
+
+					<ul class="nav">
+							<li>
+							<a href="index.html">Introduction</a>
+							<ul class="nav">
+								<li><a href="#intro-requirement">Requirements</a></li>
+								<li><a href="#pci">Data Security and PCI DSS</a></li>
+								<li><a href="#3ds">3-D Secure</a></li>
+								<li><a href="#dcc">Dynamic Currency Conversion</a></li>
+								<li><a href="#version">Versioning</a></li>
+								<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+								<li><a href="#licenses">Licences</a></li>
+								<li><a href="#pm-functions">Payment Method Features</a></li>
+								<li><a href="#capture-batch">Capture and Daily Closing</a></li>
+								<li><a href="#capture">Capture</a></li>
+								<li><a href="#closing">Daily Closing</a></li>
+								<li><a href="#special">Special Cases</a></li>
+								<li><a href="#reservation">Reservation-Times</a></li>
+								<li><a href="#cancel-refund">Cancel or Refund</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="Integration_PP.html">Payment Page</a>
+							<ul class="nav">
+								<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
+								<li><a href="#pp-initialize-response">PaymentPage Initialize Response</a></li>
+								<li><a href="#pp-transaction">Redirect and Transaction</a></li>
+								<li><a href="#pp-retshop">Return to the Shop</a></li>
+								<li><a href="#pp-assert">PaymentPage Assert</a></li>
+								<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="Integration_trx.html">Transaction Interface</a>
+							<ul class="nav">
+								<li><a href="#trx-cc">Credit Cards</a></li>
+								<li><a href="#trx-ini">Transaction Initialize</a></li>
+								<li><a href="#trx-3ds">3-D Secure and DCC</a></li>
+								<li><a href="#trx-retshop">Return to the Shop</a></li>
+								<li><a href="#trx-ta">Transaction Authorize</a></li>
+								<li><a href="#trx-captcancel">Capture or Cancel</a></li>
+								<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+								<li><a href="#trx-post">Using your own HTML-Form</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="scd.html">Secure Card Data</a>
+							<ul class="nav">
+								<li><a href="#scd-req">Requirements</a></li>
+								<li><a href="#scd-payment-methods">Supported Payment Methods</a></li>
+								<li><a href="#scd-pp">Secure Card Data and the Payment Page</a></li>
+								<li><a href="#scd-trx">Secure Card Data and the Transaction Interface</a></li>
+								<li><a href="#scd-sa">Standalone Secure Card Data registration</a></li>
+								<li><a href="#scd-generator">The Id-generator</a></li>
+								<li><a href="#scd-check">The Check function</a></li>
+								<li><a href="#scd-use">How to use the obtained data</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="recurring.html">Recurring Payments</a>
+							<ul class="nav">
+								<li><a href="#recurring-req">Requirements</a></li>
+								<li><a href="#recurring-payment-methods">Supported Payment Methods</a></li>
+								<li><a href="#recurring-referenced">Referenced  Transactions Method</a></li>
+								<li><a href="#recurring-alias">Recurring Payments using an alias</a></li>
+								<li><a href="#recurring-auto">Automating the Recurring Payments</a></li>
+							</ul>
+							</li>
+							<li class="active">
+							<a href="refund.html">Refunds via API</a>
+							<ul class="nav">
+								<li><a href="#refund-req">Requirements</a></li>
+								<li><a href="#refund-reference">Method 1: Refernced refunds</a></li>
+								<li><a href="#refund-alias">Method 2: Refunds using an alias</a></li>
+								<li><a href="#refund-capture">Capture</a></li>
+								<li><a href="#refund-cancel">Difference, between Cancel and Refund</a></li>
+								<li><a href="#refund-info">Additional information</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="app-integration.html">Mobile App integration</a>
+							<ul class="nav">
+								<li><a href="#mobile-process">Process</a></li>
+								<li><a href="#mobile-faq">FAQ</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="CssiFrame.html">IFrame Integration and CSS</a>
+							<ul class="nav">
+								<li><a href="#css-iframe">Iframe Integration</a></li>
+								<li><a href="#css-pp">Payment Page</a></li>
+								<li><a href="#css-trxini">Transaction Initialize</a></li>
+								<li><a href="#css-aliasins">Alias Insert</a></li>
+								<li><a href="#css-iframe_size">Size of the Iframe</a></li>
+								<li><a href="#css-usecss">Using CSS</a></li>
+								<li><a href="#css-element">CSS Elements</a></li>
+								<li><a href="#css-selector">CSS Selectors</a></li>
+								<li><a href="#css-info">Additional Info</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="creditcards.html">Credit Cards - Special Cases</a>
+							<ul class="nav">
+								<li><a href="#cc-chase">Chase Paymentech</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="faq.html">FAQ</a>
+							</li>
+							<li>
+							<a href="paymentmeans.html">Payment means for testing</a>
+							<ul class="nav">
+								<li><a href="#pm-visa">VISA</a></li>
+								<li><a href="#pm-mc">Mastercard</a></li>
+								<li><a href="#pm-amex">American Express</a></li>
+								<li><a href="#pm-diners">Diners Club</a></li>
+								<li><a href="#pm-maestro">Maestro international</a></li>
+								<li><a href="#pm-jcb">JCB</a></li>
+								<li><a href="#pm-myone">My One</a></li>
+								<li><a href="#pm-bonus">Bonus Card</a></li>
+								<li><a href="#pm-bc">Bancontact</a></li>
+								<li><a href="#pm-sepa">SEPA Direct Debit</a></li>
+								<li><a href="#pm-paypal">PayPal</a></li>
+								<li><a href="#pm-twint">TWINT</a></li>
+							</ul>
+							</li>
+							<li>
+								<a><h4>3rd Party Payment Providers</h4></a>
+							</li>
+							<li>
+							<a href="PayPal.html">PayPal</a>
+							<ul class="nav">
+								<li><a href="#ppal-requirement">Requirements</a></li>
+								<li><a href="#ppal-api-access">Grant API Approval for Saferpay</a></li>
+								<li><a href="#ppal-merchant-protection">Seller Protection</a></li>
+								<li><a href="#ppal-partial-capture">Partial Capture</a></li>
+								<li><a href="#ppal-capture">Capture and the solvency of the customer</a></li>
+								<li><a href="#ppal-iframe">PayPal iFrame integration</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="BillPay.html">BillPay</a>
+							<ul class="nav">
+								<li><a href="#bp-requirement">Requirements</a></li>
+								<li><a href="#bp-approval-api">BillPay Certification via API</a></li>
+								<li><a href="#bp-assert">Assert</a></li>
+								<li><a href="#bp-capt">Capture</a></li>
+								<li><a href="#bp-approval-bo">BillPay Certification via Saferpay Backoffice</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="PostFinance.html">Swiss Postcard</a>
+							<ul class="nav">
+								<li><a href="#pf-requirement">Requirements</a></li>
+								<li><a href="#pf-alias">Storage in the Secure Card Data Store</a></li>
+								<li><a href="#pf-regdial">Registration Dialogue</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="sofort.html">SOFORT by Klarna</a>
+							<ul class="nav">
+								<li><a href="#sf-requirement">Requirements</a></li>
+								<li><a href="#sf-newproject">Create a new project for SOFORT</a></li>
+								<li><a href="#sf-iFrame">Sofort iFrame integration</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="eps.html">eps</a>
+							<ul class="nav">
+								<li><a href="#eps-requirement">Requirements</a></li>
+								<li><a href="#eps-newproject">How toget an EPS acceptance agreement</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="paydirekt.html">paydirekt</a>
+							<ul class="nav">
+								<li><a href="#pd-requirement">Requirements</a></li>
+								<li><a href="#pd-address">Handling of delivery address</a></li>
+								<li><a href="#pd-pending">Display of pending status for bookings</a></li>
+								<li><a href="#pd-note">Notification after change from pending to final status</a></li>
+								<li><a href="#pd-query">Querying the transaction status</a></li>
+								<li><a href="#pd-refund">Refunds</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="ideal.html">iDeal</a>
+							<ul class="nav">
+								<li><a href="#ideal-timeout">Session Timeouts</a></li>
+							</ul>
+							</li>
+							<li>
+								<a><h4>Additional Information</h4></a>
+							</li>
+							<li>
+							<a href="contact.html">Contact</a>
+							</li>
+							<li>
+							<a href="http://saferpay.github.io/jsonapi/" target="_blank">API Specification</a>
+							</li>
+							<li>
+								<a><h4></h4></a>
+							</li>
+							<li>
+								<a><h4></h4></a>
+							</li>
+
+					</ul>
+				</div>
+			</nav>
+
+			<span class="print-page-break"></span>
+
+			<main>
+				<div class="hidden-print hidden-lg">
+					<div id="navCollapse">
+
+						<button class="menu-btn" type="button" data-toggle="collapse" data-target="#menu-collapse">
+							<span class="glyphicon glyphicon-menu-hamburger"></span>
+							<h3 style="display: inline-block">
+								<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+								<span class="text-primary">json api v1.8</span>
+							</h3>
+						</button>
+
+					</div>
+
+					<ul class="nav collapse" id="menu-collapse">
+							<li>
+							<a href="index.html">Introduction</a>
+							<ul class="nav">
+								<li><a href="#intro-requirement">Requirements</a></li>
+								<li><a href="#pci">Data Security and PCI DSS</a></li>
+								<li><a href="#3ds">3-D Secure</a></li>
+								<li><a href="#dcc">Dynamic Currency Conversion</a></li>
+								<li><a href="#version">Versioning</a></li>
+								<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+								<li><a href="#licenses">Licences</a></li>
+								<li><a href="#pm-functions">Payment Method Features</a></li>
+								<li><a href="#capture-batch">Capture and Daily Closing</a></li>
+								<li><a href="#capture">Capture</a></li>
+								<li><a href="#closing">Daily Closing</a></li>
+								<li><a href="#special">Special Cases</a></li>
+								<li><a href="#reservation">Reservation-Times</a></li>
+								<li><a href="#cancel-refund">Cancel or Refund</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="Integration_PP.html">Payment Page</a>
+							<ul class="nav">
+								<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
+								<li><a href="#pp-initialize-response">PaymentPage Initialize Response</a></li>
+								<li><a href="#pp-transaction">Redirect and Transaction</a></li>
+								<li><a href="#pp-retshop">Return to the Shop</a></li>
+								<li><a href="#pp-assert">PaymentPage Assert</a></li>
+								<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="Integration_trx.html">Transaction Interface</a>
+							<ul class="nav">
+								<li><a href="#trx-cc">Credit Cards</a></li>
+								<li><a href="#trx-ini">Transaction Initialize</a></li>
+								<li><a href="#trx-3ds">3-D Secure and DCC</a></li>
+								<li><a href="#trx-retshop">Return to the Shop</a></li>
+								<li><a href="#trx-ta">Transaction Authorize</a></li>
+								<li><a href="#trx-captcancel">Capture or Cancel</a></li>
+								<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+								<li><a href="#trx-post">Using your own HTML-Form</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="scd.html">Secure Card Data</a>
+							<ul class="nav">
+								<li><a href="#scd-req">Requirements</a></li>
+								<li><a href="#scd-payment-methods">Supported Payment Methods</a></li>
+								<li><a href="#scd-pp">Secure Card Data and the Payment Page</a></li>
+								<li><a href="#scd-trx">Secure Card Data and the Transaction Interface</a></li>
+								<li><a href="#scd-sa">Standalone Secure Card Data registration</a></li>
+								<li><a href="#scd-generator">The Id-generator</a></li>
+								<li><a href="#scd-check">The Check function</a></li>
+								<li><a href="#scd-use">How to use the obtained data</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="recurring.html">Recurring Payments</a>
+							<ul class="nav">
+								<li><a href="#recurring-req">Requirements</a></li>
+								<li><a href="#recurring-payment-methods">Supported Payment Methods</a></li>
+								<li><a href="#recurring-referenced">Referenced  Transactions Method</a></li>
+								<li><a href="#recurring-alias">Recurring Payments using an alias</a></li>
+								<li><a href="#recurring-auto">Automating the Recurring Payments</a></li>
+							</ul>
+							</li>
+							<li class="active">
+							<a href="refund.html">Refunds via API</a>
+							<ul class="nav">
+								<li><a href="#refund-req">Requirements</a></li>
+								<li><a href="#refund-reference">Method 1: Refernced refunds</a></li>
+								<li><a href="#refund-alias">Method 2: Refunds using an alias</a></li>
+								<li><a href="#refund-capture">Capture</a></li>
+								<li><a href="#refund-cancel">Difference, between Cancel and Refund</a></li>
+								<li><a href="#refund-info">Additional information</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="app-integration.html">Mobile App integration</a>
+							<ul class="nav">
+								<li><a href="#mobile-process">Process</a></li>
+								<li><a href="#mobile-faq">FAQ</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="CssiFrame.html">IFrame Integration and CSS</a>
+							<ul class="nav">
+								<li><a href="#css-iframe">Iframe Integration</a></li>
+								<li><a href="#css-pp">Payment Page</a></li>
+								<li><a href="#css-trxini">Transaction Initialize</a></li>
+								<li><a href="#css-aliasins">Alias Insert</a></li>
+								<li><a href="#css-iframe_size">Size of the Iframe</a></li>
+								<li><a href="#css-usecss">Using CSS</a></li>
+								<li><a href="#css-element">CSS Elements</a></li>
+								<li><a href="#css-selector">CSS Selectors</a></li>
+								<li><a href="#css-info">Additional Info</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="creditcards.html">Credit Cards - Special Cases</a>
+							<ul class="nav">
+								<li><a href="#cc-chase">Chase Paymentech</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="faq.html">FAQ</a>
+							</li>
+							<li>
+							<a href="paymentmeans.html">Payment means for testing</a>
+							<ul class="nav">
+								<li><a href="#pm-visa">VISA</a></li>
+								<li><a href="#pm-mc">Mastercard</a></li>
+								<li><a href="#pm-amex">American Express</a></li>
+								<li><a href="#pm-diners">Diners Club</a></li>
+								<li><a href="#pm-maestro">Maestro international</a></li>
+								<li><a href="#pm-jcb">JCB</a></li>
+								<li><a href="#pm-myone">My One</a></li>
+								<li><a href="#pm-bonus">Bonus Card</a></li>
+								<li><a href="#pm-bc">Bancontact</a></li>
+								<li><a href="#pm-sepa">SEPA Direct Debit</a></li>
+								<li><a href="#pm-paypal">PayPal</a></li>
+								<li><a href="#pm-twint">TWINT</a></li>
+							</ul>
+							</li>
+							<li>
+								<a><h4>3rd Party Payment Providers</h4></a>
+							</li>
+							<li>
+							<a href="PayPal.html">PayPal</a>
+							<ul class="nav">
+								<li><a href="#ppal-requirement">Requirements</a></li>
+								<li><a href="#ppal-api-access">Grant API Approval for Saferpay</a></li>
+								<li><a href="#ppal-merchant-protection">Seller Protection</a></li>
+								<li><a href="#ppal-partial-capture">Partial Capture</a></li>
+								<li><a href="#ppal-capture">Capture and the solvency of the customer</a></li>
+								<li><a href="#ppal-iframe">PayPal iFrame integration</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="BillPay.html">BillPay</a>
+							<ul class="nav">
+								<li><a href="#bp-requirement">Requirements</a></li>
+								<li><a href="#bp-approval-api">BillPay Certification via API</a></li>
+								<li><a href="#bp-assert">Assert</a></li>
+								<li><a href="#bp-capt">Capture</a></li>
+								<li><a href="#bp-approval-bo">BillPay Certification via Saferpay Backoffice</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="PostFinance.html">Swiss Postcard</a>
+							<ul class="nav">
+								<li><a href="#pf-requirement">Requirements</a></li>
+								<li><a href="#pf-alias">Storage in the Secure Card Data Store</a></li>
+								<li><a href="#pf-regdial">Registration Dialogue</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="sofort.html">SOFORT by Klarna</a>
+							<ul class="nav">
+								<li><a href="#sf-requirement">Requirements</a></li>
+								<li><a href="#sf-newproject">Create a new project for SOFORT</a></li>
+								<li><a href="#sf-iFrame">Sofort iFrame integration</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="eps.html">eps</a>
+							<ul class="nav">
+								<li><a href="#eps-requirement">Requirements</a></li>
+								<li><a href="#eps-newproject">How toget an EPS acceptance agreement</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="paydirekt.html">paydirekt</a>
+							<ul class="nav">
+								<li><a href="#pd-requirement">Requirements</a></li>
+								<li><a href="#pd-address">Handling of delivery address</a></li>
+								<li><a href="#pd-pending">Display of pending status for bookings</a></li>
+								<li><a href="#pd-note">Notification after change from pending to final status</a></li>
+								<li><a href="#pd-query">Querying the transaction status</a></li>
+								<li><a href="#pd-refund">Refunds</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="ideal.html">iDeal</a>
+							<ul class="nav">
+								<li><a href="#ideal-timeout">Session Timeouts</a></li>
+							</ul>
+							</li>
+							<li>
+								<a><h4>Additional Information</h4></a>
+							</li>
+							<li>
+							<a href="contact.html">Contact</a>
+							</li>
+							<li>
+							<a href="http://saferpay.github.io/jsonapi/" target="_blank">API Specification</a>
+							</li>
+							<li>
+								<a><h4></h4></a>
+							</li>
+							<li>
+								<a><h4></h4></a>
+							</li>
+
+					</ul>
+				</div>
+
+				
+<section><h1>Refunds via API</h1><div class="row"><div class="col-md-6"><p>Saferpay generally offers a refund functionality from the start through the Saferpay Backoffice.
+However, if automated, or more integrated processes are needed, the JSON-API can be used to execute refunds from the merchants webshop, or ERP-system. This part of the guide covers the process of how to execute refunds through the Saferpay JSON-API, which can be performed in two ways.</p><div class="info">
+  <p><strong>Note:</strong> Not all payment methods to support a refund functionality. Especially online banking payment methods do not provide refund functionality due to how the money is processed. You can find a complete overview of the supported functionalities in the <a href="https://saferpay.github.io/sndbx/#pm-functions">Payment Method Features Matrix</a></p>.
+</div><div class="warning">
+  <p><strong>Attention:</strong> The refund functionality is part of the Transaction Interface, which is only available for holders of a business license on the live system. For the eCommerce license, these features are not available and a refund has to be executed through the Backoffice. The test accounts have business activated by default for evaluation purposes.</p>
+</div></div></div></section><section id="refund-req"><h2><a name="refund-req"></a> Requirements</h2><div class="row"><div class="col-md-6"><ul>
+<li>a Saferpay Business License</li>
+<li>a valid login access with a username and password for the Saferpay Backoffice.</li>
+<li>one active Saferpay ecommerce terminal</li>
+<li>Saferpay terminal number (TerminalId parameter) and Saferpay customer number (CustomerId parameter).</li>
+<li>valid acceptance agreement for credit cards or other payment methods</li>
+<li>Secure Card Data Module (if refunds are performed using Aliases. Method 2)</li>
+</ul></div></div></section><section id="refund-reference"><h2><a name="refund-reference"></a> Method 1: Referenced refunds</h2><div class="row"><div class="col-md-6"><p>Referenced refunds are performed, by using the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Refund">Refund request</a>. This request accepts the <strong>original transaction ID, of the transaction you want to refund!</strong>. By passing this ID through to Saferpay, the refund will be linked to the original transaction inside the Saferpay Backoffice:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/refund.PNG" alt="alt text" title="Refund"></p><p>By clicking on the transaction ID you'll be redirected to the original transaction:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/refund_trx.PNG" alt="alt text" title="Refunded Transaction"></p><div style="display: none;">
+  
+### Try it out
+<p>You can try it out, by first doing a complete (including the Capture!) transaction, by using the PaymentPage, or Transaction Interface.
+The refund-option will be displayed, after the Capture has been executed!</p>
+<p><a class="demobtn" href="https://saferpay.github.io/sndbx/pp_demo.html">Start with the Payment Page</a><br>
+<a class="demobtn" href="https://saferpay.github.io/sndbx/trx_demo.html">Start with the Transaction Interface</a><br></p>
+</div></div></div></section><section id="refund-alias"><h2><a name="refund-alias"></a> Method 2: Refunds using an alias</h2><div class="row"><div class="col-md-6"><p>A different method is using an alias obtained through Secure Card Data, which <a href="https://saferpay.github.io/sndbx/scd.html">can be obtained in multiple ways</a>.</p><p>This request is different from the that of the referenced refunds. When using an alias, the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_RefundDirect">Refund Direct request</a> has to be used.</p><div class="danger">
+  <p><strong>Attention:</strong> While <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_RefundDirect">Refund Direct</a> does offer the possibilities to submit the card number (PAN) directly, it is not allowed to do this without a full PCI-DSS certification. More on that topic can be found in the<a href="https://saferpay.github.io/sndbx/index.html#pci">Data Security and PCI DSS chapter</a>. </p>
+</div><div class="info">
+  <p><strong>Note:</strong> Due to the fact, that the original transaction ID is not submitted, like with referenced refunds, the refund will not be linked to the original transaction inside the Saferpay Backoffice!</p>. 
+</div><div style="display: none;">
+<h3>Try it out</h3>
+<p>You can try it out, by first doing a complete (including the Capture!) transaction, by using the PaymentPage, Transaction Interface, or the Secure Alias Store. The refund-option will be displayed, after the Capture has been executed!</p>
+<div class="info">
+  <p><strong>Note:</strong> You have to set the <strong>RegisterAlias</strong> container, to create the Alias needed for this, when using <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>!</p> 
+</div>
+<p><a class="demobtn" href="https://saferpay.github.io/sndbx/pp_demo.html">Start with the Payment Page</a><br>
+<a class="demobtn" href="https://saferpay.github.io/sndbx/trx_demo.html">Start with the Transaction Interface</a><br>
+<a class="demobtn" href="https://saferpay.github.io/sndbx/scd_demo.html">Start with the Secure Alias Store</a><br></p>
+</div></div></div></section><section id="refund-capture"><h2><a name="refund-capture"></a> Capture</h2><div class="row"><div class="col-md-6"><p>Like normal transactions, refunds need to be captured/booked by executing the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">Capture request</a> successfully, if the transaction <strong>STATUS</strong> is <strong>AUTHORIZED</strong>. <strong>The actual transfer of money will not be executed if the refund hasn't been captured!</strong></p></div></div></section><section id="refund-cancel"><h2><a name="refund-cancel"></a> Difference, between Cancel and Refund</h2><div class="row"><div class="col-md-6"><p>It&#8217;s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation either want to cancel or make a refund for the transaction in question.</p><p>A <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">cancel</a> can be issued as long as the money-flow hasn't been initiated. That also applies to transactions, that have been captured, depending on the payment-method.</p><p>All Payment Methods, that go through the Daily Closing, can be cancelled this way, until the Daily Closing has been executed.
+Once that happened, the money flow has been initated and the transaction can no longer be cancelled.
+In this case you need to issue a refund, to transfer the money back to the card holders bank account!
+So a cancel actually stops the money transfer from happening, while a refund reverses the transfer, once it happened!</p><p>Please note, that there are exceptions.
+Some payment methods initiate the money flow with the capture, like PayPal, SEPA ELV and the Postcard.
+Some methods downright do not support this behaviour, like all online banking methods, because those transfer the money right away and also do not offer the refund-functionality.</p><p><a href="https://saferpay.github.io/sndbx/index.html#pm-functions">An overview can be found in the Payment Method Features chapter</a>.</p></div></div></section><section id="refund-info"><h2><a name="refund-info"></a> Additional information</h2><div class="row"><div class="col-md-6"><p>Refunds are basically normal transactions where instead of debiting the cardholders account, you are crediting it. That means, that refunds go through the same authorization-steps like a normal (debit) authorization. Please keep in mind that a refund can also be rejected.</p><p>The refund amount value can differ from the originally authorized (debited) amount. This also applies to referenced refunds. The refund will be regarded as a completely new transaction, with its own set of parameters, like the amount value. So, if you want to refund two transactions in one batch, you can do that by simply adding the amounts together. Please make sure to keep track of this process.</p><p>One way to do so (like with normal transactions) is to submit the parameter <strong>&quot;OrderId&quot;</strong> inside the <strong>&quot;Refund&quot;</strong> container. This ID will be forwarded by Saferpay and will show up inside the Saferpay Backoffice (as the Reference number) as well as in your reconciliation-files.</p></div></div></section>
+
+			</main>
+
+		</div>
+	</div>
+
+	<div class="scroll-top-wrapper">
+		<a href="#top" class="scroll-top-inner" onclick="$('html,body').animate({ scrollTop: 0 }, 'slow'); return false;">
+			<span class="glyphicon glyphicon-chevron-up"></span> Back to Top
+		</a>
+	</div>
+
+	<script src="assets/js/vendors.js"></script>
+	<script src="assets/js/helppage.js"></script>
+</body>
+</html>
+
