@@ -808,7 +808,7 @@ For example, if you want to go back to the 1.4 specification, simply add the ver
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></td>
     </tr>
     <tr>
       <td>Bancontact</td>
@@ -1071,7 +1071,7 @@ For example, if you want to go back to the 1.4 specification, simply add the ver
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
-      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></td>
       <td> </td>
     </tr>  
   </tbody>
@@ -1092,7 +1092,9 @@ For example, if you want to go back to the 1.4 specification, simply add the ver
   <dd>3-D Secure available</dd>
   <dt>MOTO</dt>
   <dd>Mail Phone Order available</dd>
-</dl></div></div></section><section id="capture-batch"><h2><a name="capture-batch"></a> Capture and Daily Closing</h2><div class="row"><div class="col-md-6"><p>These two features are extremely important Saferpay features. Depending on the means of payment, the two can be directly associated with each other and they must be carried out for the cash flow to be initiated to the merchant&#8217;s account.</p></div></div></section><section id="capture"><h3><a name="capture"></a>Capture</h3><div class="row"><div class="col-md-6"><p><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> serves to book and thus to conclude/finalize a payment. As long as a transaction has not passed through the capture, the amount is merely reserved (&#8220;authorised&#8221;), but it will not be transfered to the merchant account. On the API side, you receive information about the transaction via the <strong>Transaction =&gt; Status</strong> parameter (note that this is only a part of the data), e.g. through the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>.
+  <dt><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></dt>
+  <dd>This feature is mandatory, for this payment method to function!
+</dd></dl></div></div></section><section id="capture-batch"><h2><a name="capture-batch"></a> Capture and Daily Closing</h2><div class="row"><div class="col-md-6"><p>These two features are extremely important Saferpay features. Depending on the means of payment, the two can be directly associated with each other and they must be carried out for the cash flow to be initiated to the merchant&#8217;s account.</p></div></div></section><section id="capture"><h3><a name="capture"></a>Capture</h3><div class="row"><div class="col-md-6"><p><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> serves to book and thus to conclude/finalize a payment. As long as a transaction has not passed through the capture, the amount is merely reserved (&#8220;authorised&#8221;), but it will not be transfered to the merchant account. On the API side, you receive information about the transaction via the <strong>Transaction =&gt; Status</strong> parameter (note that this is only a part of the data), e.g. through the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>.
 Transactions which have not yet been booked are visible in Saferpay Backoffice as <strong>&#8220;Reservation&quot;</strong>, Reservations are marked as <strong>&quot;AUTHORIZED&quot;</strong> on API-level and have to go through the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>, to be finalized:</p><pre><code class="language-json">&quot;Transaction&quot;: {
   &quot;Type&quot;: &quot;PURCHASE&quot;,
   &quot;Status&quot;: &quot;AUTHORIZED&quot;,
