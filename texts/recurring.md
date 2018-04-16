@@ -218,6 +218,11 @@ A second method is to use the Saferpay Secure Alias Store in conjunction with th
 ### 1. Obtaining the Alias
 
 The alias can be obtained in multiple ways, using the Saferpay Secure Card Data store. [All of those options are described over here](https://saferpay.github.io/sndbx/scd.html).
+By using the [Payment Page](https://saferpay.github.io/sndbx/Integration_PP.html) or [transaction Interface](https://saferpay.github.io/sndbx/Integration_trx.html), it is possible to do an initial transaction, to validate the card (e.g. through 3D Secure), similar to the referenced transaction-process above! The initial payment, unlike with a referenced authorization, can then be discarded, once the alias has been obtained, using [Transaction Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel). This way the card holder doesn't get charged for the dummy-amount!
+
+<div class="warning">
+      <p><strong>Important:</strong> Amount values that undercut a certain value, can cause problems during the 3D Secure-process, thus we recommend a value of 500 (5,00 €). As mentioned above, this transaction can be discarded. It is only used, to prevend the mentioned issues with 3D Secure!</p>
+</div>
 
 ### 2. Recurring Transaction
 
@@ -228,7 +233,7 @@ Once tha alias has been obtained, you can execute the subsequent transactions us
 </div>
 
 <div class="danger">
-  <p><strong>Important:</strong> Each Transaction with the Status **Authorized** has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual transfer of money.</p>
+      <p><strong>Important:</strong> Each Transaction with the Status <strong>Authorized</strong> has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual transfer of money.</p>
 </div>
 
 <div class="warning">
