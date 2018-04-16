@@ -221,7 +221,7 @@ The alias can be obtained in multiple ways, using the Saferpay Secure Card Data 
 By using the [Payment Page](https://saferpay.github.io/sndbx/Integration_PP.html) or [transaction Interface](https://saferpay.github.io/sndbx/Integration_trx.html), it is possible to do an initial transaction, to validate the card (e.g. through 3D Secure), similar to the referenced transaction-process above! The initial payment, unlike with a referenced authorization, can then be discarded, once the alias has been obtained, using [Transaction Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel). This way the card holder doesn't get charged for the dummy-amount!
 
 <div class="warning">
-      <p><strong>Important:</strong> Amount values that undercut a certain value, can cause problems during the 3D Secure-process, thus we recommend a value of 500 (5,00 €). As mentioned above, this transaction can be discarded. It is only used, to prevend the mentioned issues with 3D Secure!</p>
+      <p><strong>Important:</strong> Amount values that undercut a certain value, can cause problems during the 3D Secure-process, thus we recommend a value of 500 (5,00 €). As mentioned above, this transaction can be discarded. It is only, to prevend the mentioned issues with 3D Secure!</p>
 </div>
 
 ### 2. Recurring Transaction
@@ -237,7 +237,7 @@ Once tha alias has been obtained, you can execute the subsequent transactions us
 </div>
 
 <div class="warning">
-  <p><strong>Note:</strong> The recurring transactions have to be performed with a Mail Phone Order TerminalId (MOTO Terminal) to ensure that they are not rejected by the processor as the cardholder is not present and therefore cannot provide the CVC or partake in the 3D Secure process. The Amount is a mandatory value which can vary from the Amount of the initial transaction. Please make sure to inform the cardholder of amount changes beforehand, else he or she might request a chargeback.</p>
+  <p><strong>Note:</strong> The recurring transactions have to be performed with a Mail Phone Order TerminalId (MOTO Terminal) to ensure that they are not rejected by the processor as the cardholder is not present and therefore cannot provide the CVC or partake in the 3D Secure process. The Amount is a mandatory value which can vary from the Amount of the initial transaction. Please make sure to inform the cardholder of amount changes beforehand, or else he or she might request a chargeback.</p>
 </div>
 
 ## <a name="recurring-auto"></a>  Automating the Recurring Payments
