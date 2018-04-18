@@ -73,6 +73,29 @@ A transaction with the 3-D Secure process proceeds as follows:
 6.	Saferpay links the 3DS data to the token used by the JSON API and asks for this automatically when authorising the card.
 7.	When receiving the authorisation answer, the merchant also receives information about the output of the 3-D Secure process.
 
+### What is LiabilityShift and why is it important for me as a merchant?
+
+The best way to understand what **LiabilityShift** means, is by a small example:
+
+Let's say a merchant is offering certain goods and gets an order for 1000,-.
+The merchant finalizes the order and the money gets charged from the card holders bank account.
+After he recieved his money, the merchant ships the goods to the given destination.
+
+After three weeks the merchant gets the information, that this transaction is a fraud-case and that the actual card holder initiated a chargeback.
+Here is what happens, either with, or without 3D Secure/LiabilityShift:
+
+1. **Without 3D Secure/Liabilityshift:** 
+The Money gets transfered back, from the merchants bank account, to the original card holder. The merchant, in this case, is liable for the damage that has been caused and even though the goods already have been shipped (probably to a criminal subject), he has to pay the full amount back to the card holder. So he carries the whole risk and the cost in a fraud-case!
+
+<div class="danger">
+  <p><strong>Attention:</strong> A high amount of chargebacks can also cause penalties from VISA and MasterCard directly! So it can be, that they will force you -the merchant- into using 3D Secure, if the fraud-rate is too high!</p>
+</div>
+
+2. **With 3D Secure/LiabilityShift:**
+Like the name suggests, the liability gets shiftet!
+Shifted from the merchant, to the bank. So in case of fraud, the chargeback gets completely carried by the issuer.
+The card holder will get his money back, **BUT**, unlike before, the merchant can keep the charged money. The risk and the cost is carried by the issuer in this case, negating the costs on the merchant side.
+
 ### 3D Secure on API-Level
 
 The Saferpay JSON-API does return all necessary information inside the ThreeDs-Container, when using [Transaction Authorize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize) or [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert).
