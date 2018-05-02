@@ -495,6 +495,7 @@
 </code></pre><div class="info">
   <p>JavaScript example for receipt of message (for jQuery &gt;= 1.9)</p>
 </div><pre><code class="language-javascript">$(window).bind(&quot;message&quot;, function (e) {
+	if (e.originalEvent.data.height &lt;= 450) return;
 	$(&quot;#iframe&quot;).css(&quot;height&quot;, e.originalEvent.data.height + &quot;px&quot;);
 });
 </code></pre><div class="warning">
