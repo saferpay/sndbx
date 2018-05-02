@@ -76,6 +76,7 @@ The size of the Iframe is communicated to the merchants via an HTML5-POST messag
 
 ```javascript
 $(window).bind("message", function (e) {
+	if (e.originalEvent.data.height <= 450) return;
 	$("#iframe").css("height", e.originalEvent.data.height + "px");
 });
 ```
