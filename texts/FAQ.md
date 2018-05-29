@@ -12,7 +12,7 @@ No, the test and live systems are completely separate from each other. No data e
 ## Can I use real card details in the test environment? <br />When i use my Card on the Test environment i get an error. What is the cause?
 
 The test-environment does **NOT** accept real credit cards, to avoid confusion between live and test.
-Only test cards may be used on the test-environment, which you can [find here](https://www.six-payment-services.com/en/site/saferpay-support/testaccount/Saferpay_Testdaten.html).
+Only test cards may be used on the test-environment, which you can [find here](paymentmeans.html).
 
 ## Which functions are available in the test system?
 
