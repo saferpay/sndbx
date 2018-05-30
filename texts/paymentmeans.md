@@ -31,11 +31,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
         <td style="word-break: unset;">9010100352000001</td>
         <td style="border-left: 1px solid #ddd;"><strong>"Authentication Attempt"</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br />
         </td>
-      </tr>
-      <tr style="display: none;">
-        <td style="word-break: unset;">9010101052000002</td>
-        <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
-      </tr>
+        </tr>
       <tr>
         <td style="word-break: unset;">9010101052101008</td>
         <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank rejects liability shift!<br /><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> false<br />
@@ -110,10 +106,6 @@ In this Chapter you will find a list of payment means you can use for testing pu
         <td style="word-break: unset;">9030100352000007</td>
         <td style="border-left: 1px solid #ddd;"><strong>"Authentication Attempt"</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br />
         </td>
-      </tr>
-      <tr style="display: none;">
-        <td style="word-break: unset;">9030101052000008</td>
-        <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
       </tr>
       <tr>
         <td style="word-break: unset;">9030101052101004</td>
@@ -190,10 +182,6 @@ In this Chapter you will find a list of payment means you can use for testing pu
         <td style="border-left: 1px solid #ddd;"><strong>"Authentication Attempt"</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br />
         </td>
       </tr>
-      <tr  style="display: none;">
-        <td style="word-break: unset;">9070101052000009</td>
-        <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
-      </tr>
       <tr>
         <td style="word-break: unset;">9070101052101005</td>
         <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank rejects liability shift!<br /><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> false<br />
@@ -253,10 +241,6 @@ In this Chapter you will find a list of payment means you can use for testing pu
         <td style="word-break: unset;">9050100352000002</td>
         <td style="border-left: 1px solid #ddd;"><strong>"Authentication Attempt"</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br />
         </td>
-      </tr>
-      <tr  style="display: none;">
-        <td style="word-break: unset;">9050101052000003</td>
-        <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
       </tr>
       <tr>
         <td style="word-break: unset;">9050101052101009</td>
@@ -524,3 +508,33 @@ In this Chapter you will find a list of payment means you can use for testing pu
 <div id="unionpay-cards-hider" style="display:none;">
   <p>Saferpay does offer an extensive unionpay simulator. All test-cases are controlled through the simulator-ui, when opening up the Payment Page. However, you need to use the following test-card, in order to activate it: <strong>9100100052000005</strong></p>
 </div>
+
+
+
+
+<table class="table table-striped table-hover" style="display: none;">
+    <thead>
+      <tr>
+          <th>Card Number (<strong>BROKEN! DO NOT USE THESE CARDS FOR NOW!</strong>)</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">9010101052000002</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br />    <strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9030101052000008</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070101052000009</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9050101052000003</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
+      </tr>
+    </tbody>
+</table>
