@@ -32,7 +32,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
         <td style="border-left: 1px solid #ddd;"><strong>"Authentication Attempt"</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br />
         </td>
       </tr>
-      <tr>
+      <tr style="display: none;">
         <td style="word-break: unset;">9010101052000002</td>
         <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
       </tr>
@@ -111,7 +111,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
         <td style="border-left: 1px solid #ddd;"><strong>"Authentication Attempt"</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br />
         </td>
       </tr>
-      <tr>
+      <tr style="display: none;">
         <td style="word-break: unset;">9030101052000008</td>
         <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
       </tr>
@@ -190,7 +190,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
         <td style="border-left: 1px solid #ddd;"><strong>"Authentication Attempt"</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br />
         </td>
       </tr>
-      <tr>
+      <tr  style="display: none;">
         <td style="word-break: unset;">9070101052000009</td>
         <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
       </tr>
@@ -254,7 +254,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
         <td style="border-left: 1px solid #ddd;"><strong>"Authentication Attempt"</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br />
         </td>
       </tr>
-      <tr>
+      <tr  style="display: none;">
         <td style="word-break: unset;">9050101052000003</td>
         <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
       </tr>
