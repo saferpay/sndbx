@@ -314,7 +314,7 @@ The obtained alias can be used in two basic ways, which boil down to one importa
 **Do you want to do a 3D Secure transaction?**
 
 + If yes, then you have to use the [Transaction Interface](https://saferpay.github.io/sndbx/Integration_trx.html). The Hosted Form used there will not open up and instead proceed with the 3D Secure process right away.
-+ If not, then you can use [AuthorizeDirect](http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect) to authorize the card directly. This is especially intersting, if you want to [implement recurring payments, which are sdescribed over here](https://saferpay.github.io/sndbx/recurring.html#recurring-alias).
++ If not, then you can use [AuthorizeDirect](http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect) to authorize the card directly. This is especially intersting, if you want to [implement recurring payments, which are described over here](https://saferpay.github.io/sndbx/recurring.html#recurring-alias).
 
 <div class="warning">
   <p><strong>NOTE:</strong> Bancontact only supports the former, while Maestro has some cards, that also are 3D Secure only!</p>
