@@ -410,6 +410,16 @@ The following table shows an overview of which functions are included in the two
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
+      <td>Transaction AssertCapture</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction AssertRefund</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
       <th><b>Secure Alias Store</b></th>
       <th></th>
       <th></th>
