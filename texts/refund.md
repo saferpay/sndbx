@@ -98,6 +98,6 @@ Some methods downright do not support this behaviour, like all online banking me
 
 Refunds are basically normal transactions where instead of debiting the cardholders account, you are crediting it. That means, that refunds go through the same authorization-steps like a normal (debit) authorization. Please keep in mind that a refund can also be rejected.
 
-The refund amount value can differ from the originally authorized (debited) amount. This also applies to referenced refunds. The refund will be regarded as a completely new transaction, with its own set of parameters, like the amount value. So, if you want to refund two transactions in one batch, you can do that by simply adding the amounts together. Please make sure to keep track of this process.
+The refund amount value can differ from the originally authorized (debited) amount. This also applies to referenced refunds. The refund will be regarded as a completely new transaction, with its own set of parameters, like the amount value. So, if you want to refund two transactions in one batch, you can do that by simply adding the amounts together. It is also possible to do multiple refunds on one transaction, even though the originally authorized amount has been exceeded! Please make sure to keep track of this process.
 
 One way to do so (like with normal transactions) is to submit the parameter **"OrderId"** inside the **"Refund"** container. This ID will be forwarded by Saferpay and will show up inside the Saferpay Backoffice (as the Reference number) as well as in your reconciliation-files.
