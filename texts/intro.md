@@ -58,7 +58,7 @@ Even with an SAQ-A EP certification, some processes are still not allowed. The f
 1. **Credit Card Information**: It is not allowed to process credit card data through the merchants server. This includes, among others posting credit card data from an HTML-form to the merchant-server to perform a Saferpay request. It is especially forbidden to save credit card data. It doesn't just involve saving! It is enough, if the card details run through your system and be it for just a second! **All credit card information involving the Card Verification Code (CVC/CVV) and the card number (PAN), must be processed through Saferpay, if you aren't explicitly allowed to do otherwise!** Saferpay does offer the option, to post the collected data directly, however this can only be used by merchants that are fully PCI-certified and allowed to process/save credit card data accordingly.
 
 <div class="danger">
-  <p><strong>Warning:</strong> **DO NOT** use real credit card details, when testing on the Saferpay test-environment! Even though the test accounts cannot process real payment means, it is also important to not share them in the first place an a test-system!</p>
+  <p><strong>Warning:</strong> **DO NOT** use real credit card details, when testing on the Saferpay test-environment! Even though the test accounts cannot process real payment means, it is also important to not share them in the first place on the test-system, for security reasons!</p>
 </div>
 
 ## <a name="3ds"></a> 3-D Secure
