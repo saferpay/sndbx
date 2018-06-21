@@ -15,7 +15,7 @@ The test-environment does **NOT** accept real credit cards, to avoid confusion b
 Only test cards may be used on the test-environment, which you can [find here](paymentmeans.html).
 
 <div class="danger">
-  <p><strong>Warning:</strong> **DO NOT** use real credit card details, when testing on the Saferpay test-environment! Even though the test accounts cannot process real payment means, it is also important to not share them in the first place on the test-system, for security reasons!</p>
+  <p><strong>Warning: DO NOT</strong> use real credit card details, when testing on the Saferpay test-environment! Even though the test accounts cannot process real payment means, it is also important to not share them in the first place on the test-system, for security reasons!</p>
 </div>
 
 ## Which functions are available in the test system?
