@@ -2,7 +2,7 @@
 
 In this Chapter you will find a list of payment means you can use for testing purposes!
 <div class="danger">
-  <p><strong>Warning:</strong> **DO NOT** use real credit card details, when testing on the Saferpay test-environment! Even though the test accounts cannot process real payment means, it is also important to not share them in the first place on the test-system, for security reasons!</p>
+  <p><strong>Warning: DO NOT</strong> use real credit card details, when testing on the Saferpay test-environment! Even though the test accounts cannot process real payment means, it is also important to not share them in the first place on the test-system, for security reasons!</p>
 </div>
 <div class="info">
     <p><strong>Note:</strong> The CVC can be any value you want, same goes for the Expiration-date. However, the latter needs to be valid. If you enter a date set in the past, the card will be rejected, because it is expired!</p>
