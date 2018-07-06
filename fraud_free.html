@@ -127,7 +127,8 @@
 							<li class="active">
 							<a href="fraud_free.html">Fraud Free Service</a>
 							<ul class="nav">
-								<li><a href="#ff-mandatory">Fraud Free Service</a></li>
+								<li><a href="#ff-mandatory">Mandatory Data Points</a></li>
+								<li><a href="#ff-response">API Response</a></li>
 							</ul>
 							</li>
 							<li>
@@ -365,7 +366,8 @@
 							<li class="active">
 							<a href="fraud_free.html">Fraud Free Service</a>
 							<ul class="nav">
-								<li><a href="#ff-mandatory">Fraud Free Service</a></li>
+								<li><a href="#ff-mandatory">Mandatory Data Points</a></li>
+								<li><a href="#ff-response">API Response</a></li>
 							</ul>
 							</li>
 							<li>
@@ -481,16 +483,16 @@
 
 				
 <section><h1>Fraud Free</h1><div class="row"><div class="col-md-6"><div class="warning">
-  <p><strong>NOTE:</strong> This service still in evaluation - contact your account manager for further information.</p>
+  <p><strong>NOTE:</strong> This service is still in evaluation - contact your account manager for further information.</p>
 </div><p>When using our Fraud Free solution (requires a concerned contract amendment) the transmission of the specific parameters is mandatory:</p></div></div></section><section id="ff-mandatory"><h3><a name="ff-mandatory"></a> Mandatory Data Points</h3><div class="row"><div class="col-md-6"><p>The following data points are mandatory and must contain valid values when using the Fraud Free Service and calling <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize Request</a> or <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize Request</a>:</p><p>| Data Point  | Exmaple | Validation |
 | ------------- | ------------- | ------------- |
 | BillingAddress Email | payer@gmail.com  | Valid email address |
 | DeliveryAddress CountryCode  | DE  | ISO 3166-1 alpha-2 country code |
 | Payer IpAddress* | 212.243.178.130  | Valid IP address |</p><p>(*) The Payer IpAddress is only mandatory when calling <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize Request</a>. With <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize Request</a> the Payer IpAdress ist detected automatically.</p></div></div></section><section id="ff-response"><h3><a name="ff-response"></a> API Response</h3><div class="row"><div class="col-md-6"><p>The Fraud Free Service takes the liability for the transaction only if the API response contains all of the following attributes with values as specified:</p><ul>
 <li>In the Liability Container is <code>LiabilityShift</code> set to <code>true</code>, and</li>
-<li>The &#8220;LiableEntity&#8221; equals <code>FraudFree</code>, and</li>
+<li>The <code>LiableEntity</code> equals <code>FraudFree</code>, and</li>
 <li>Within the FraudFree Container is  <code>LiabilityShift</code> set to <code>true</code></li>
-</ul><p>The image below depicts an example reply where the Fraud Free Service accepts liability:</p><pre><code class="language-json">
+</ul><p>The image below snippet is an example response where the Fraud Free Service accepts liability for the transaction:</p><pre><code class="language-json">
 &quot;Liability&quot;:{ 
    &quot;LiabilityShift&quot;:true,
    &quot;LiableEntity&quot;:&quot;FraudFree&quot;,
