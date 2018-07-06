@@ -16,6 +16,7 @@ The following data points are mandatory and must contain valid values when using
  Payer IpAddress | 212.243.178.130  | Valid IP address 
 
 (*) The Payer IpAddress is only mandatory when calling [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize). With [PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize) the Payer IpAdress ist detected automatically.
+
 ## <a name="ff-response"></a> API Response
 
 The Fraud Free Service takes the liability for the transaction only if the API response contains all of the following attributes with values as specified:
