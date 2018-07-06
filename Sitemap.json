@@ -125,7 +125,8 @@
     "Source": "texts/fraud_free.md",
     "Target": "fraud_free.html",
     "Subsites": [
-      { "Source": "texts/fraud_free.md", "Title": "Fraud Free Service", "Target": "fraud_free.html#ff-mandatory" }
+      { "Source": "texts/fraud_free.md", "Title": "Mandatory Data Points", "Target": "fraud_free.html#ff-mandatory" }
+     { "Source": "texts/fraud_free.md", "Title": "API Response", "Target": "fraud_free.html#ff-response" }
     ]
   },
   {
