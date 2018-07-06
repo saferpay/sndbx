@@ -40,12 +40,12 @@ The following data points are mandatory and must contain valid values when using
 
 ## <a name="ff-response"></a> API Response
 
-The Fraud Free Service takes the liability for the transaction only if the API response contains all of the following attributes with values as specified:
+The Fraud Free Service only accepts liability for the transaction if the API response contains all of the following attributes with values as specified:
 -	In the Liability Container is `LiabilityShift` set to `true`, and
 -	The `LiableEntity` equals `FraudFree`, and 
 -	Within the FraudFree Container is  `LiabilityShift` set to `true`
 
-The image below snippet is an example response where the Fraud Free Service accepts liability for the transaction: 
+The below snippet is an example response where the Fraud Free Service accepts liability for the transaction: 
 
 ```json
 
