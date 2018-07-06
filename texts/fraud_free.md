@@ -12,26 +12,26 @@ The following data points are mandatory and must contain valid values when using
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th class="text-center">Data Point</th>
-      <th class="text-center">Example</th>
-      <th class="text-center">Validation</th>
+      <th>Data Point</th>
+      <th>Example</th>
+      <th>Validation</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="text-center">BillingAddress Email</td>
-      <td class="text-center">payer@gmail.com</td>
-      <td class="text-center">Valid email address</td>
+      <td>BillingAddress Email</td>
+      <td>payer@gmail.com</td>
+      <td>Valid email address</td>
     </tr>
     <tr>
-      <td class="text-center">DeliveryAddress CountryCode</td>
-      <td class="text-center"> DE</td>
-      <td class="text-center"> ISO 3166-1 alpha-2 country code</td>
+      <td>DeliveryAddress CountryCode</td>
+      <td> DE</td>
+      <td> ISO 3166-1 alpha-2 country code</td>
     </tr>
     <tr>
-      <td class="text-center">Payer IpAddress*</td>
-      <td class="text-center">212.243.178.130 </td>
-      <td class= "test-center"> Valid IP address</td>
+      <td>Payer IpAddress*</td>
+      <td>212.243.178.130 </td>
+      <td> Valid IP address</td>
     </tr>
   </tbody>
 </table>
