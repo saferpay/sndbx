@@ -484,11 +484,32 @@
 				
 <section><h1>Fraud Free</h1><div class="row"><div class="col-md-6"><div class="warning">
   <p><strong>NOTE:</strong> This service is still in evaluation - contact your account manager for further information.</p>
-</div><p>When using our Fraud Free solution (requires a concerned contract amendment) the transmission of specific parameters is mandator.</p></div></div></section><section id="ff-mandatory"><h2><a name="ff-mandatory"></a> Mandatory Data Points</h2><div class="row"><div class="col-md-6"><p>The following data points are mandatory and must contain valid values when using the Fraud Free Service and calling <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize Request</a> or <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize Request</a>:</p><p>Data Point  | Exmaple | Validation
-------------- | ------------- | -------------
-BillingAddress Email | payer@gmail.com  | Valid email address
-DeliveryAddress CountryCode  | DE  | ISO 3166-1 alpha-2 country code
-Payer IpAddress | 212.243.178.130  | Valid IP address</p><p>(*) The Payer IpAddress is only mandatory when calling <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize Request</a>. With <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize Request</a> the Payer IpAdress ist detected automatically.</p></div></div></section><section id="ff-response"><h2><a name="ff-response"></a> API Response</h2><div class="row"><div class="col-md-6"><p>The Fraud Free Service takes the liability for the transaction only if the API response contains all of the following attributes with values as specified:</p><ul>
+</div><p>When using our Fraud Free solution (requires a concerned contract amendment) the transmission of specific parameters is mandator.</p></div></div></section><section id="ff-mandatory"><h2><a name="ff-mandatory"></a> Mandatory Data Points</h2><div class="row"><div class="col-md-6"><p>The following data points are mandatory and must contain valid values when using the Fraud Free Service and calling <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize Request</a> or <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize Request</a>:</p><table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th class="text-center">Data Point</th>
+      <th class="text-center">Example</th>
+      <th class="text-center">Validation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">BillingAddress Email</td>
+      <td class="text-center">payer@gmail.com</td>
+      <td class="text-center">Valid email address</td>
+    </tr>
+    <tr>
+      <td class="text-center">DeliveryAddress CountryCode</td>
+      <td class="text-center"> DE</td>
+      <td class="text-center"> ISO 3166-1 alpha-2 country code</td>
+    </tr>
+    <tr>
+      <td class="text-center">Payer IpAddress*</td>
+      <td class="text-center">212.243.178.130 </td>
+      <td class="test-center"> Valid IP address</td>
+    </tr>
+  </tbody>
+</table><p>(*) The Payer IpAddress is only mandatory when calling <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize Request</a>. With <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize Request</a> the Payer IpAdress ist detected automatically.</p></div></div></section><section id="ff-response"><h2><a name="ff-response"></a> API Response</h2><div class="row"><div class="col-md-6"><p>The Fraud Free Service takes the liability for the transaction only if the API response contains all of the following attributes with values as specified:</p><ul>
 <li>In the Liability Container is <code>LiabilityShift</code> set to <code>true</code>, and</li>
 <li>The <code>LiableEntity</code> equals <code>FraudFree</code>, and</li>
 <li>Within the FraudFree Container is  <code>LiabilityShift</code> set to <code>true</code></li>
