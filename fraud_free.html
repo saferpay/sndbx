@@ -509,11 +509,11 @@
       <td> Valid IP address</td>
     </tr>
   </tbody>
-</table><p>(*) The Payer IpAddress is only mandatory when calling <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize Request</a>. With <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize Request</a> the Payer IpAdress ist detected automatically.</p></div></div></section><section id="ff-response"><h2><a name="ff-response"></a> API Response</h2><div class="row"><div class="col-md-6"><p>The Fraud Free Service takes the liability for the transaction only if the API response contains all of the following attributes with values as specified:</p><ul>
+</table><p>(*) The Payer IpAddress is only mandatory when calling <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize Request</a>. With <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize Request</a> the Payer IpAdress ist detected automatically.</p></div></div></section><section id="ff-response"><h2><a name="ff-response"></a> API Response</h2><div class="row"><div class="col-md-6"><p>The Fraud Free Service only accepts liability for the transaction if the API response contains all of the following attributes with values as specified:</p><ul>
 <li>In the Liability Container is <code>LiabilityShift</code> set to <code>true</code>, and</li>
 <li>The <code>LiableEntity</code> equals <code>FraudFree</code>, and</li>
 <li>Within the FraudFree Container is  <code>LiabilityShift</code> set to <code>true</code></li>
-</ul><p>The image below snippet is an example response where the Fraud Free Service accepts liability for the transaction:</p><pre><code class="language-json">
+</ul><p>The below snippet is an example response where the Fraud Free Service accepts liability for the transaction:</p><pre><code class="language-json">
 &quot;Liability&quot;:{ 
    &quot;LiabilityShift&quot;:true,
    &quot;LiableEntity&quot;:&quot;FraudFree&quot;,
