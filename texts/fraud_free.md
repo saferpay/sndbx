@@ -15,6 +15,7 @@ The following data points are mandatory and must contain valid values when using
 | DeliveryAddress CountryCode  | DE  | ISO 3166-1 alpha-2 country code |
 | Payer IpAddress* | 212.243.178.130  | Valid IP address |
 
+
 (*) The Payer IpAddress is only mandatory when calling [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize). With [PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize) the Payer IpAdress ist detected automatically.
 
 
@@ -22,10 +23,10 @@ The following data points are mandatory and must contain valid values when using
 
 The Fraud Free Service takes the liability for the transaction only if the API response contains all of the following attributes with values as specified:
 -	In the Liability Container is `LiabilityShift` set to `true`, and
--	The “LiableEntity” equals `FraudFree`, and 
+-	The `LiableEntity` equals `FraudFree`, and 
 -	Within the FraudFree Container is  `LiabilityShift` set to `true`
 
-The image below depicts an example reply where the Fraud Free Service accepts liability: 
+The image below snippet is an example response where the Fraud Free Service accepts liability for the transaction: 
 
 ```json
 
