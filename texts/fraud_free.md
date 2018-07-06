@@ -35,10 +35,10 @@ The image below depicts an example reply where the Fraud Free Service accepts li
    "FraudFree":{ 
       "Id":"fb126ca6853f4217853df26213da4de8",
       "LiabilityShift":true,
-      "Score":0.00,
+      "Score":x.xx,
       "Investigationpoints":[ 
-         "susp_bill_ad",
-         "susp_machine"
+         "susp_xxx_xx",
+         "susp_xxxxx"
       ]
    }
 }
