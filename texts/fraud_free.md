@@ -1,4 +1,5 @@
-# Fraud Free # (still in evaluation - contact your account manager for further information)
+# Fraud Free 
+(still in evaluation - contact your account manager for further information)
 
 When using our Fraud Free solution (requires a concerned contract amendment) the transmission of the specific parameters is mandatory:
 
