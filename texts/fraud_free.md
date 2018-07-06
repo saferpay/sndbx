@@ -1,7 +1,7 @@
 # Fraud Free
 
 <div class="warning">
-  <p><strong>NOTE:</strong> This service still in evaluation - contact your account manager for further information.</p>
+  <p><strong>NOTE:</strong> This service is still in evaluation - contact your account manager for further information.</p>
 </div>
 
 When using our Fraud Free solution (requires a concerned contract amendment) the transmission of the specific parameters is mandatory:
