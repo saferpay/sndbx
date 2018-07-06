@@ -1,4 +1,4 @@
-# Fraud Free 
+# Fraud Free
 (still in evaluation - contact your account manager for further information)
 
 When using our Fraud Free solution (requires a concerned contract amendment) the transmission of the specific parameters is mandatory:
@@ -11,6 +11,7 @@ The following data points are mandatory and must contain valid values when using
 | BillingAddress Email | payer@gmail.com  | Valid email address |
 | DeliveryAddress CountryCode  | DE  | ISO 3166-1 alpha-2 country code |
 | Payer IpAddress* | 212.243.178.130  | Valid IP address |
+(*) The Payer IpAddress is mandatory only when calling Transaction Initialize.
 
 ### <a name="ff-response"></a> API Response
 
