@@ -1,5 +1,5 @@
 # Fraud Free
-(still in evaluation - contact your account manager for further information)
+
 <div class="warning">
   <p><strong>NOTE:</strong> This service still in evaluation - contact your account manager for further information.</p>
 </div>
