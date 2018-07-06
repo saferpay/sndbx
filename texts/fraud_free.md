@@ -4,7 +4,7 @@
   <p><strong>NOTE:</strong> This service is still in evaluation - contact your account manager for further information.</p>
 </div>
 
-When using our Fraud Free solution (requires a concerned contract amendment) the transmission of the specific parameters is mandatory:
+When using our Fraud Free solution (requires a concerned contract amendment) the transmission of specific parameters is mandator.
 
 ### <a name="ff-mandatory"></a> Mandatory Data Points
 The following data points are mandatory and must contain valid values when using the Fraud Free Service and calling [PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize) or [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize):
@@ -13,9 +13,9 @@ The following data points are mandatory and must contain valid values when using
 | ------------- | ------------- | ------------- |
 | BillingAddress Email | payer@gmail.com  | Valid email address |
 | DeliveryAddress CountryCode  | DE  | ISO 3166-1 alpha-2 country code |
-| Payer IpAddress* | 212.243.178.130  | Valid IP address |
+| Payer IpAddress | 212.243.178.130  | Valid IP address |
 
-
+(*) The Payer IpAddress is only mandatory when calling [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize). With [PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize) the Payer IpAdress ist detected automatically.
 ### <a name="ff-response"></a> API Response
 
 The Fraud Free Service takes the liability for the transaction only if the API response contains all of the following attributes with values as specified:
