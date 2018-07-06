@@ -12,10 +12,10 @@ The following data points are mandatory and must contain valid values when using
 | DeliveryAddress CountryCode  | DE  | ISO 3166-1 alpha-2 country code |
 | Payer IpAddress* | 212.243.178.130  | Valid IP address |
 
-(*) The Payer IpAddress is mandatory only when calling [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize "Transaction Initialize"). With [PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize "PaymentPage Initialize" the Payer IpAdress ist automatically detected and forwarded.
+(*) The Payer IpAddress is mandatory only when calling [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize). With [PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize) the Payer IpAdress ist automatically detected and forwarded.
 
 <div class="warning">
-  <p><strong>NOTE:</strong>(*) The Payer IpAddress is mandatory only when calling [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize "Transaction Initialize"). With [PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize "PaymentPage Initialize" the Payer IpAdress ist automatically detected and forwarded.</p>
+  <p><strong>NOTE:</strong>(*) The Payer IpAddress is mandatory only when calling. With the Payer IpAdress ist automatically detected and forwarded.</p>
 </div>
 
 ### <a name="ff-response"></a> API Response
