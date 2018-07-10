@@ -19,17 +19,17 @@ The following data points are mandatory and must contain valid values when using
   </thead>
   <tbody>
     <tr>
-      <td>BillingAddress Email</td>
+      <td>BillingAddress.Email</td>
       <td>payer@gmail.com</td>
       <td>Valid email address</td>
     </tr>
     <tr>
-      <td>DeliveryAddress CountryCode</td>
+      <td>DeliveryAddress.CountryCode</td>
       <td> DE</td>
       <td> ISO 3166-1 alpha-2 country code</td>
     </tr>
     <tr>
-      <td>Payer IpAddress*</td>
+      <td>Payer.IpAddress*</td>
       <td>212.243.178.130 </td>
       <td> Valid IP address</td>
     </tr>
