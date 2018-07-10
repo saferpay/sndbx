@@ -39,9 +39,7 @@ The following data points are mandatory and must contain valid values when using
 (*) The Payer IpAddress is only mandatory when calling [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize). With [PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize) the Payer IpAdress ist detected automatically.
 
 ## <a name="ff-response"></a> API Response
-
-Fraud free service assumes liability for the concerned transaction if returning  “Fraudfree” with parameter “LiableEntity” within the Liabilty container of the authorization response (PaymentPage/Assert response, Transaction/authorize response)   
-
+  
 The Fraud Free Service only accepts liability for the transaction if the API response (PaymentPage/Assert response, Transaction/authorize response) contains all of the following attributes with values as specified:
 -	In the Liability Container is `LiabilityShift` set to `true`, and
 -	The `LiableEntity` equals `FraudFree`, and 
