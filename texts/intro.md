@@ -126,6 +126,7 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
       <th>Authenticated</th>
       <th class="text-center">LiabilityShift</th>
       <th class="text-center">Recommended behavior</th>
+      <th class="text-center">Info</th>
     </tr>
   </thead>
   <tbody>
@@ -133,21 +134,25 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
       <td class="text-center"><strong>true</strong></td>
       <td class="text-center"><strong>true</strong></td>
       <td>Everything is okay. <strong>Continue transaction!</strong></td>
+      <td>A full 3D Secure authentication has been performed by the card holder. This is the best case scenario!</td>
     </tr>
     <tr>
       <td class="text-center"><strong>false</strong></td>
       <td class="text-center"><strong>true</strong></td>
-      <td><strong>Continue transaction!</strong> Please note, that the card holder did not authenticate him/herself. LiabilityShift however is granted by the card holders bank! It is your decision, if you want accept this, or if you want the highest level of security!</td>
+      <td><strong>Continue transaction!</strong></td>
+      <td>In some cases, it can be, that the card holders bank grants the LiabilityShift. For instance, some banks only require one 3D Secure every 24 hours and the others will be approved, in order to speed up the payment process. The LiabilityShift is still granted, however high risk businesses (Jewelery, Electronics, ect.) may want to stick to the highest level of security. It is your (The merchant) decision, if you want to accept these transactions, or if you want a full authentication.</td>
     </tr>
     <tr>
       <td class="text-center"><strong>true</strong></td>
       <td class="text-center"><strong>false</strong></td>
       <td><strong>Abort transaction!</strong> Continue at your own risk!</td>
+      <td>In this case, the card holder authenticated him-/herself successfully, but his bank still rejects the LiabilityShift for internal reasons. You are allowed to continue, but please note, that you (The merchant) will be liable in case of fraud (See above in this chapter!)!</td>
     </tr>
       <tr>
       <td class="text-center"><strong>false</strong></td>
       <td class="text-center"><strong>false</strong></td>
       <td><strong>Abort transaction!</strong> Continue at your own risk!</td>
+        <td>Similar to the previous case, but this time, the card holder <strong>did not</strong> authenticated him-/herself successfully, which causes the LiabilityShift to be completely rejected. You are allowed to continue, but please note, that you (The merchant) will be liable in case of fraud (See above in this chapter!)! We highly recommend to not continue!</td>
     </tr>
   </tbody>
 </table>
