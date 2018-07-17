@@ -1,6 +1,6 @@
 # PayPal
 
-Paypal payments can be processed with Saferpay without much effort. This chapter describes what needs to be observed in this regard.
+Paypal payments can be processed with Saferpay without much effort. This chapter describes what needs to be considered in this regard.
 
 ## <a name="ppal-requirement"></a> Requirements
 
