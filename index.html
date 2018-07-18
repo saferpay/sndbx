@@ -630,12 +630,12 @@ For example, if you want to go back to the 1.4 specification, simply add the ver
     </tr>
     <tr>
       <td>Postfinance E-Finance</td>
-      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c">*</span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>PostFinance Card</td>
-      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c">*</span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
@@ -650,7 +650,7 @@ For example, if you want to go back to the 1.4 specification, simply add the ver
     </tr>
     <tr>
       <td>PayPal</td>
-      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c">*</span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
@@ -704,7 +704,9 @@ For example, if you want to go back to the 1.4 specification, simply add the ver
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
   </tbody>
-</table></div></div></section><section id="licenses"><h2><a name="licenses"></a> Licences</h2><div class="row"><div class="col-md-6"><p>Saferpay distinguishes between two licences:</p><ul>
+</table><div class="warning">
+  <p><strong>*<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment">Transaction Interface - Redirect Payment</a></strong> is deprecated and replaced by the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page!</a>. Please use the parameter <strong>PaymentMethods</strong> to directly select your desired provider!</p>
+</div></div></div></section><section id="licenses"><h2><a name="licenses"></a> Licences</h2><div class="row"><div class="col-md-6"><p>Saferpay distinguishes between two licences:</p><ul>
 <li>Saferpay eCommerce</li>
 <li>Saferpay Business</li>
 </ul><p>It is extremely important to clarify before the implementation of Saferpay, whether an eCommerce licence or a business license is to be used, as they provide different functions. The Saferpay Business licence is an extension of the eCommerce licence. If you have any queries, please contact your relevant contractually appointed person.</p><div class="info">
