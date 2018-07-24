@@ -314,9 +314,6 @@ https://saferpay.github.io/jsonapi/1.4
   </tbody>
 </table>
 
-<div class="warning">
-  <p><strong>*<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment">Transaction Interface - Redirect Payment</a></strong> is deprecated and replaced by the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page!</a>. Please use the parameter <strong>PaymentMethods</strong> to directly select your desired provider!</p>
-</div>
 
 ## <a name="licenses"></a> Licences
 
@@ -469,6 +466,10 @@ The following table shows an overview of which functions are included in the two
     </tr>
   </tbody>
 </table>
+
+<div class="warning">
+  <p><strong>*<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment">Transaction Interface - Redirect Payment</a></strong> is deprecated and replaced by the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page!</a>. Please use the parameter <strong>PaymentMethods</strong> to directly select your desired provider!</p>
+</div>
 
 ## <a name="pm-functions"></a> Payment Method Features
 
