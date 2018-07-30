@@ -21,12 +21,13 @@ Before they can conclude a transaction via BillPay, all BillPay customers have t
 
 For certification, a simple transaction on the [Payment Page](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize) is performed using the JSON API. For this, the means of payment (**BillPay Purchase on Receipt** or **BillPay Direct Debit**) must always be specified explicitly via the **Payment Methods** parameter. Otherwise, the payment method will not be shown on the Payment Page. In addition, it is generally the case – even in live operations – that the transfer of address details to BillPay is not necessary. This can be mapped in two different ways:
 
+
 ### 1. Delivery via parameters
 
 If address data have already been captured in the shop, they can be forwarded to Saferpay via the corresponding parameter.
 
 <div class="info">
-  <p><strong>Note:</strong> Request with address forwarding. See the <strong>Payer => DeliveryAddress</strong> container.</p>
+  <p><strong>Note:</strong> Request with address forwarding. See the <strong>Payer => DeliveryAddress</strong> container. <Strong>Important:</strong> DeliveryAddress <strong>must</strong> be used!</p>
 </div>
 
 ```json
@@ -86,7 +87,7 @@ If address data have already been captured in the shop, they can be forwarded to
 Alternatively, an address form, in which the customer must enter their address details, can be displayed in the Saferpay Payment Page. Make sure that all the address details needed for BillPay payment are requested in the address form.
 
 <div class="info">
-  <p><strong>Note:</strong> Request for form usage. See the <strong>DeliveryAddressForm</strong> container.</p>
+  <p><strong>Note:</strong> Request for form usage. See the <strong>DeliveryAddressForm</strong> container. <Strong>Important: DeliveryAddressForm must</strong> be used!</p>
 </div>
 
 ```json
