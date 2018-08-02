@@ -56,7 +56,7 @@ If address data have already been captured in the shop, they can be forwarded to
   "PaymentMethods": ["DIRECTDEBIT"], //Use "INVOICE" for Purchase on Receipt!
   "Payer": {
     "IpAddress": "111.111.111.111",
-    "DeliveryAddress": {
+    "BillingAddress": {
       "FirstName": "Hans",
       "LastName": "Muster",
       "DateOfBirth": "1969-07-21",
