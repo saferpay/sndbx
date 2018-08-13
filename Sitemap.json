@@ -112,14 +112,6 @@
       { "Source": "texts/css_iframe.md", "Title": "Additional Info", "Target": "CssiFrame.html#css-info" }
     ]
   },
-  {
-    "Title": "Credit Cards - Special Cases",
-    "Source": "texts/creditcards.md",
-    "Target": "creditcards.html",
-    "Subsites": [
-      { "Source": "texts/creditcards.md", "Title": "Chase Paymentech", "Target": "creditcards.html#cc-chase" }
-    ]
-  },
    {
     "Title": "Fraud Free Service",
     "Source": "texts/fraud_free.md",
@@ -154,8 +146,26 @@
    ] 
   },
   {
-    "Title": "3rd Party Payment Providers"
+    "Title": "Payment Method specifics"
  },
+ {
+    "Title": "Credit Cards",
+    "Source": "texts/creditcards.md",
+    "Target": "creditcards.html",
+    "Subsites": [
+      { "Source": "texts/creditcards.md", "Title": "Chase Paymentech", "Target": "creditcards.html#cc-chase" }
+    ]
+  },
+ {
+    "Title": "Masterpass",
+    "Source": "texts/masterpass.md",
+    "Target": "Masterpass.html",
+    "Subsites": [
+      { "Source": "texts/masterpass.md", "Title": "Requirements", "Target": "Masterpass.html#mp-req" },
+      { "Source": "texts/masterpass.md", "Title": "Masterpass via Payment Page", "Target": "Twint.html#mp-pp" },
+      { "Source": "texts/masterpass.md", "Title": "Special Cases", "Target": "Twint.html#mp-special" }
+    ]
+  },
  {
     "Title": "TWINT",
     "Source": "texts/twint.md",
