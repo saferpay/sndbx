@@ -162,8 +162,8 @@
     "Target": "Masterpass.html",
     "Subsites": [
       { "Source": "texts/masterpass.md", "Title": "Requirements", "Target": "Masterpass.html#mp-req" },
-      { "Source": "texts/masterpass.md", "Title": "Masterpass via Payment Page", "Target": "Twint.html#mp-pp" },
-      { "Source": "texts/masterpass.md", "Title": "Special Cases", "Target": "Twint.html#mp-special" }
+      { "Source": "texts/masterpass.md", "Title": "Masterpass via Payment Page", "Target": "Masterpass.html#mp-pp" },
+      { "Source": "texts/masterpass.md", "Title": "Special Cases", "Target": "Masterpass.html#mp-special" }
     ]
   },
  {
