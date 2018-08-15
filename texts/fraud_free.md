@@ -51,7 +51,7 @@ Liability shift is excluded if the transaction changes to a status as within thi
       <td>Transaction was refunded</td>
     </tr>
     <tr>
-      <td>CHbk</td>
+      <td>Chbk</td>
       <td>Client received a chargeback for an unspecified reason</td>
     </tr>
     <tr>
