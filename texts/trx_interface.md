@@ -1,5 +1,5 @@
 # Transaction Interface
-The Transaction Interface is an extension to Payment Page. It can be operated in parallel or alone. The Transaction interface offers more functions for the processing and handling of payments, in comparison to the Payment Page. 
+The Transaction Interface is an extension to Payment Page. It can be operated in parallel or alone. The Transaction interface offers more functions for the processing and handling of payments, in comparison to the Payment Page. It offers the Hosted Entry Form (HEF) to process card payments seamlessly. This interface can also be used in combination with Secure Card Data to store/tokenize payment data during the payment process. 
 
 <div class="info">
   <p><strong>Note:</strong> The JSON API can be used in various ways to cover the most diverse processes. For this reason, only the standard processes are discussed below. For other possible uses, or for questions about the standard procedures, please contact the <a href="https://saferpay.github.io/sndbx/contact.html">Saferpay Integration Team</a></p>
