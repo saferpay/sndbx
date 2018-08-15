@@ -62,9 +62,10 @@ Liability shift is excluded if the transaction changes to a status as within thi
 </table>
 
 
-When using our Fraud Free solution (requires a concerned contract amendment) the transmission of specific parameters is mandator.
-
 ## <a name="ff-mandatory"></a> Mandatory Data Points
+
+When using our Fraud Free solution (requires a concerned contract amendment) the transmission of specific parameters is mandatory.
+
 The following data points are mandatory and must contain valid values when using the Fraud Free Service and calling [PaymentPage Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize) or [Transaction Initialize Request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize):
 
 <table class="table table-striped table-hover">
