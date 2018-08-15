@@ -7,8 +7,6 @@ The Payment Page can be either used to offer the payer the option to select a de
 
 ## Description of the General Process for Using PaymentPage
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PP_Paymet_Process_or.png
- "PaymentPage Payment Process")
 
 ### <a name="pp-initialize"></a> PaymentPage Initialize
 
