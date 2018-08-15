@@ -10,4 +10,6 @@
 
 ## Handling Refunds
 
+### Capturing a Refund
+
 ## Error Handling
