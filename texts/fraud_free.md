@@ -44,7 +44,7 @@ Liability shift is excluded if the transaction changes to a status as within thi
   <tbody>
     <tr>
       <td>cancelled</td>
-      <td>Transaction was cancelled by the clinet prior to shipment</td>
+      <td>Transaction was cancelled by the client prior to shipment</td>
     </tr>
     <tr>
       <td>Refund</td>
