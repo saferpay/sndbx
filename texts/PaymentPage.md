@@ -7,6 +7,9 @@ The Payment Page can be either used to offer the payer the option to select a de
 
 ## Description of the General Process for Using PaymentPage
 
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PP_Paymet_Process_or.png
+ "PaymentPage Payment Process")
+
 ### <a name="pp-initialize"></a> PaymentPage Initialize
 
 The process begins with the [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize) request. With this request, you forward all data necessary for the payment to Saferpay. These include the customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference no. of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer will return after leaving the payment page.
