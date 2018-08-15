@@ -1,6 +1,6 @@
 # Secure Card Data
 
-Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive payment means information in the certified Saferpay data center. By using SCD, the payment means data is separated from the merchant application and no longer comes into contact with it. Secure Card Data is suitable for shop systems, call center solutions, inventory management, ERP and CRM systems.
+Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive payment means information in the certified Saferpay data center. By using SCD, the payment means data is separated from the merchant application and no longer comes into contact with it. Secure Card Data is suitable for shop systems, call center solutions, inventory management, ERP and CRM systems. It offers the Hosted Register Form (HRF) to store payment data regardless of an actual payment been made.
 
 ## <a name="scd-req"></a> Requirements
 
