@@ -4,6 +4,8 @@ The Saferpay JSON API (**J**ava**S**cript **O**bject **N**otation **A**pplicatio
 
 This Guide uses the [Saferpay JSON-API Specification](https://saferpay.github.io/jsonapi/) as a base reference and will frequently link to the respective Requests. All requests and parameters will be specified there.
 
+The sequential steps of the general integration process are described in our [Step-by-step Integration-Manual](https://www.six-payment-services.com/en/site/e-commerce/support/integration.html).
+
 ## <a name="intro-requirement"></a> Requirements
 
 Use of the JA requires the following:
