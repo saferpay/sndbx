@@ -2,7 +2,7 @@
 
 The Saferpay JSON API (**J**ava**S**cript **O**bject **N**otation **A**pplication **P**rogramming **I**nterface), hereinafter also referred to as JA, is a modern streamlined interface that is independent of programming languages. The JA supports all Saferpay methods and is suitable for all shop systems, call centre solutions, merchandise management, ERP and CRM systems and other applications in which online payments are processed. This Integration Guide focuses on the basics of the Saferpay JSON API and serves as a guide for programmers, developers and integrators.
 
-This Guide uses the [Saferpay JSON-API Specification](https://saferpay.github.io/jsonapi/) as a base reference and will frequently link to the respective Requests. All requests and parameters will be specified there.
+This Guide uses the [Saferpay JSON-API Specification](https://saferpay.github.io/jsonapi/) as a base reference and will frequently link to the respective Requests. All requests and parameters are specified there.
 
 The sequential steps of the general integration process are described in our [Step-by-step Integration-Manual](https://www.six-payment-services.com/en/site/e-commerce/support/integration.html).
 
@@ -135,26 +135,26 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
     <tr>
       <td class="text-center"><strong>true</strong></td>
       <td class="text-center"><strong>true</strong></td>
-      <td>Everything is okay. <strong>Continue transaction!</strong></td>
-      <td>A full 3D Secure authentication has been performed by the card holder. This is the best case scenario!</td>
+      <td>Everything is okay. <strong>Continue transaction</strong></td>
+      <td>A full 3D Secure authentication has been performed by the card holder. This is the best case scenario</td>
     </tr>
     <tr>
       <td class="text-center"><strong>false</strong></td>
       <td class="text-center"><strong>true</strong></td>
-      <td><strong>Continue transaction!</strong></td>
+      <td><strong>Continue transaction</strong></td>
       <td>In some cases, it can be, that the card holders bank grants the LiabilityShift. For instance, some banks only require one 3D Secure every 24 hours and the others will be approved, in order to speed up the payment process. The LiabilityShift is still granted, however high risk businesses (Jewelery, Electronics, ect.) may want to stick to the highest level of security. It is your (The merchant) decision, if you want to accept these transactions, or if you want a full authentication.</td>
     </tr>
     <tr>
       <td class="text-center"><strong>true</strong></td>
       <td class="text-center"><strong>false</strong></td>
-      <td><strong>Abort transaction!</strong> Continue at your own risk!</td>
-      <td>In this case, the card holder authenticated him-/herself successfully, but his/her bank still rejects the LiabilityShift for internal reasons (Note that we -Saferpay- only get a rejection. The real reason is only known to the card holders bank!). You are allowed to continue, but please note, that you (The merchant) will be liable in case of fraud (See above in this chapter!)! We recommend to not continue!</td>
+      <td><strong>Abort transaction</strong> Continue at your own risk</td>
+      <td>In this case, the card holder authenticated him-/herself successfully, but his/her bank still rejects the LiabilityShift for internal reasons (Note that we -Saferpay- only get a rejection. The real reason is only known to the card holders bank). You are allowed to continue, but please note, that you (The merchant) will be liable in case of fraud (See above in this chapter). We recommend to not continue</td>
     </tr>
       <tr>
       <td class="text-center"><strong>false</strong></td>
       <td class="text-center"><strong>false</strong></td>
-      <td><strong>Abort transaction!</strong> Continue at your own risk!</td>
-        <td>Similar to the previous case, but this time, the card holder <strong>did not</strong> authenticated him-/herself successfully, which causes the LiabilityShift to be completely rejected. You are allowed to continue, but please note, that you (The merchant) will be liable in case of fraud (See above in this chapter!)! We highly recommend to not continue!</td>
+      <td><strong>Abort transaction</strong> Continue at your own risk</td>
+        <td>Similar to the previous case, but this time, the card holder <strong>did not</strong> authenticated him-/herself successfully, which causes the LiabilityShift to be completely rejected. You are allowed to continue, but please note, that you (The merchant) will be liable in case of fraud (See above in this chapter). We highly recommend to not continue</td>
     </tr>
   </tbody>
 </table>
@@ -178,7 +178,7 @@ https://saferpay.github.io/jsonapi/1.4
 ```
 
 <div class="info">
-  <p><strong>Note:</strong> SpecVersion 1.1 and lower are not available, since those were only released for internal use!</p>
+  <p><strong>Note:</strong> SpecVersion 1.1 and lower are not available, since those were only released for internal use</p>
 </div>
 
 
