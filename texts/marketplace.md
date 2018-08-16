@@ -23,7 +23,7 @@ Additional to the standard parameters, needed to execute a [Capture](https://saf
 
 A complete request may look like this:
 
- ```json 
+```json 
 {
     "RequestHeader": {
       "SpecVersion": "1.10",
@@ -42,6 +42,23 @@ A complete request may look like this:
     "OderPartId": "123456789"
 }
 ```
+
+The response may look like this:
+
+
+```json 
+{
+    "ResponseHeader": {
+        "SpecVersion": "1.10",
+        "RequestId": "[unique request identifier]"
+    },
+    "CaptureId": "723n4MAjMdhjSAhAKEUdA8jtl9jb_c",
+    "Status": "CAPTURED",
+    "Date": "2018-08-08T12:45:22.258+01:00"
+}
+```
+
+Each capture is identified by a **CaptureId**, identified by the suffix **\_c** , which should be saved, since this Id is used for further actions, like refunds. More on the latter later in this very chapter!
 
 <div class="info">
  <p><strong>Note:</strong> The basic reservation times <a href="https://saferpay.github.io/sndbx/#reservation">mentioned here</a> do still aplly for <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures!</a> If this time is exceeded, the reservation could void and the money flow will be rejected by the card holders bank!</p>
@@ -104,8 +121,47 @@ The general money-flow may look like this:
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Submerchants_MultiPart.png "Multipart Capture with Submerchants")
 
+Now in order for this to work, the following requirements have to be met:
+
+1. Each Submerchant you want to cover, needs an acquiring-contract with SIX, so the money can be directly transfered to their bank-account! **Make sure to specifically request these contracts for the marketplace-solution, since those need a special setup!**
+2. Each submerchant will get their own Id, which has to be submitted with each [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), to define the merchant, who is getting the money!
+
+### Executing a Multipart Capture with a Submerchant
+
+A [Multipart Capture request with a submerchant](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) requires you, to correctly fill the **Marketplace => SubmerchantId** parameter, with the corresponding Id. A request then may look like this:
+
+ ```json 
+{
+    "RequestHeader": {
+      "SpecVersion": "1.10",
+      "CustomerId": "[your customer id]",
+      "RequestId": "[unique request identifier]",
+      "RetryIndicator": 0
+    },
+    "TransactionReference": {
+        "TransactionId": "723n4MAjMdhjSAhAKEUdA8jtl9jb"
+    },
+    "Amount": {
+        "Value": "1000",
+        "CurrencyCode": "CHF"
+    },
+    "Type": "PARTIAL",
+    "OderPartId": "123456789",
+    "Marketplace": {
+        "SubmerchantId": "17312345"
+    }
+}
+```
+
+This request will transfer 10 CHF to the merchant with the Id 17312345!
+
 ## Handling Refunds
 
+Since [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) basically split an existing transaction into multiple parts, refunds also need to be processed in a different way.
+Unlike normal Refunds, you now need to reference each Capture you want to refund individually!
+
 ### Capturing a Refund
+
+## Fees
 
 ## Error Handling
