@@ -58,7 +58,7 @@ The response may look like this:
 }
 ```
 
-Each capture is identified by a **CaptureId**, identified by the suffix **\_c** , which should be saved, since this Id is used for further actions, like refunds. More on the latter later in this very chapter!
+Each capture is identified by a **CaptureId** (Marked with the suffix **"\_c"**) , which should be saved, since this Id is used for further actions, like refunds. More on the latter later in this very chapter!
 
 <div class="info">
  <p><strong>Note:</strong> The basic reservation times <a href="https://saferpay.github.io/sndbx/#reservation">mentioned here</a> do still aplly for <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures!</a> If this time is exceeded, the reservation could void and the money flow will be rejected by the card holders bank!</p>
