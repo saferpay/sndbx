@@ -98,6 +98,12 @@ There are two reasons, why you, the merchant, should finalize a transactions, on
 
 ## Submerchants
 
+In some cases, a merchant, or marketplace-operator, needs to be able to split the authorized amounts do different contracts, bank accounts and/or submerchants. Saferpay does offer this option through [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture).
+
+The general money-flow may look like this:
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Submerchants_MultiPart.png "Multipart Capture with Submerchants")
+
 ## Handling Refunds
 
 ### Capturing a Refund
