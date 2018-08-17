@@ -37,7 +37,7 @@ A complete request may look like this:
         "TransactionId": "723n4MAjMdhjSAhAKEUdA8jtl9jb"
     },
     "Amount": {
-        "Value": "1000",
+        "Value": 1000,
         "CurrencyCode": "CHF"
     },
     "Type": "PARTIAL",
@@ -96,7 +96,7 @@ In order to capture a final amount, the merchant-system simply needs to execute 
         "TransactionId": "723n4MAjMdhjSAhAKEUdA8jtl9jb"
     },
     "Amount": {
-        "Value": "1000",
+        "Value": 1000,
         "CurrencyCode": "CHF"
     },
     "Type": "FINAL",
@@ -144,7 +144,7 @@ A [Multipart Capture request with a submerchant](https://saferpay.github.io/json
         "TransactionId": "723n4MAjMdhjSAhAKEUdA8jtl9jb"
     },
     "Amount": {
-        "Value": "1000",
+        "Value": 1000,
         "CurrencyCode": "CHF"
     },
     "Type": "PARTIAL",
@@ -176,7 +176,7 @@ A [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Re
   },
   "Refund": {
     "Amount": {
-      "Value": "100",
+      "Value": 100,
       "CurrencyCode": "CHF"
     }
   },
@@ -211,7 +211,7 @@ For that, it is necessary to correctly set the **Marketplace => Fee** container,
         "TransactionId": "723n4MAjMdhjSAhAKEUdA8jtl9jb"
     },
     "Amount": {
-        "Value": "1000",
+        "Value": 1000,
         "CurrencyCode": "CHF"
     },
     "Type": "PARTIAL",
@@ -243,7 +243,7 @@ For that, the [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Tr
   },
   "Refund": {
     "Amount": {
-      "Value": "900",
+      "Value": 900,
       "CurrencyCode": "CHF"
     }
   },
