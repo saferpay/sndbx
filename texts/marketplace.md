@@ -217,10 +217,10 @@ For that, it is necessary to correctly set the **Marketplace => Fee** container,
     "Type": "PARTIAL",
     "OderPartId": "123456789",
     "Marketplace": {
-        "SubmerchantId": "17312345"
+        "SubmerchantId": "17312345",
         "Fee": {
             "Value": 100,
-            "CurrencyCode". "CHF"
+            "CurrencyCode": "CHF"
         }
     }
 }
@@ -251,7 +251,7 @@ For that, the [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Tr
     "CaptureId": "723n4MAjMdhjSAhAKEUdA8jtl9jb_c"
   },
   "Marketplace": {
-    "SubmerchantId": "17312345"
+    "SubmerchantId": "17312345",
     "FeeRefund": {
       "Value": 100,
       "CurrencyCode": "CHF"
