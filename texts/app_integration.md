@@ -11,7 +11,7 @@ The Integration centers around a client-server model (the app being the client),
 
 The general Process looks as follows:
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/App-Integration.png "App-Integration Process")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/App-Integration2.png "App-Integration Process")
 
 1. The app calls the server to make a payment.
 2. The Server calls Saferpay, doing either a [PaymentPage Initialize](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize), [Transaction Initialize](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize), or [Alias Insert](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize).
@@ -19,10 +19,11 @@ The general Process looks as follows:
 4. The server saves the Token and forwards the RedirectUrl to the app.
 5. The app opens up the RedirectUrl either inside the default browser, or a Webview inside the app, so the customer can make his/her payment.
 6. The customer goes through the normal payment-process. After that he/she gets redirected to one of the RedirectUrls.
+7. Once the server recieves the callback, it executes the Assert/Authorization to call for the outcome. It then forwards all necessary data to the app, so the app can display a success, or failure!
+
 <div class="info">
   <p><strong>Tip:</strong> We highly recommend using the NotifyUrl (See container <strong>"Notification > NotifyUrl"</strong>), since it is a server-to-server callback, which avoids connection issues the customer may has with his/her smartphone. Once the connection is re-established, the app may execute a subsequent request to the server, to ask for the outcome!</p>
 </div>
-7. Once the server recieved the callback, it executes the Assert/Authorization to call for the outcome. It then forwards all necessary data to the app, so the app can display a success, or failure!
 
 ## <a name="mobile-faq"></a>FAQ
 
