@@ -6,7 +6,7 @@ In order to understand the Saferpay marketplace-solution, one must first grasp t
 
 ### Things to consider
 
-1. [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) is available for SIX Acquiring contracts and PayPal<strong>only!</strong>
+1. [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) is available for SIX Acquiring contracts and PayPal <strong>only!</strong>
 2. Your live merchant-account needs to be configured, in order to support Multipart Captures, or the request will fail!
 3. No MultipartCapture request should be sent before receiving the response of a preceeding request (i.e. no parallel calls are allowed).
 4. The sum of multipart captures must not exceed the authorized amount.
