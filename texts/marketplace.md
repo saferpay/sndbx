@@ -254,7 +254,7 @@ For that, the [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Tr
     "SubmerchantId": "17312345"
     "FeeRefund": {
       "Value": 100,
-      "CurrencyCode". "CHF"
+      "CurrencyCode": "CHF"
     }
   }
 }
