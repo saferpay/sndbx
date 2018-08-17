@@ -16,7 +16,9 @@ In order to understand the Saferpay marketplace-solution, one must first grasp t
 
 ### Correctly executing a Multipart Capture
 
-Additional to the standard parameters, needed to execute a [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture), the following parameters are important for a [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture):
+Before you can even execute a [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), you, of course, need a transaction, that needs to be captured. This can be any normal authorization, either done by the [Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage), or [Transaction Interface](https://saferpay.github.io/jsonapi/#ChapterTransaction). You don't have to consider anything special, up to this point!
+
+Additionally to the standard parameters, needed to execute a [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture), the following parameters are important for a [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture):
 
 - **Type:** The **Type** specifies, whether this is one subsequent, or final Capture.
 - **OrderPartId:** Each [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) is identified by a unique **OrderPartId**, which will also be forwarded to the respective reconciliation-files you will recieve later. That makes this Id very important for later identification, thus you have to make sure, that said Id is set an unique, so confusions can be averted.
@@ -160,8 +162,102 @@ This request will transfer 10 CHF to the merchant with the Id 17312345!
 Since [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) basically split an existing transaction into multiple parts, refunds also need to be processed in a different way.
 Unlike normal Refunds, you now need to reference each Capture you want to refund individually!
 
+To do so, you have to reference the **CaptureId** from the [Multipart Capture Response](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), you want to refund. Remember, that all **CaptureId**s have the suffix **\_c** for that reason. 
+
+A [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund) may look like this then:
+
+```JSON
+{
+  "RequestHeader": {
+    "SpecVersion": "1.10",
+    "CustomerId": "[your customer id]",
+    "RequestId": "[your request id]",
+    "RetryIndicator": 0
+  },
+  "Refund": {
+    "Amount": {
+      "Value": "100",
+      "CurrencyCode": "CHF"
+    }
+  },
+  "CaptureReference": {
+    "CaptureId": "723n4MAjMdhjSAhAKEUdA8jtl9jb_c"
+  }
+}
+```
+
 ### Capturing a Refund
+
+<div class="warning">
+  <p><strong>Important:</strong> Like every other <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund</a>, these too need to be captured.
+However <strong>please make sure to use the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">normal Capture request</a> in this case and NOT MultipartCapture!</strong> Refunds cannot be split into multiple parts, like authorizations!</p>
+</div>
 
 ## Fees
 
-## Error Handling
+Especially for marketplace providers, it is not unusual to charge a small fee for each transaction, that is handled through the marketplace, from the respective merchant. Saferpay also offers options to charge these fees, through [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture).
+
+For that, it is necessary to correctly set the **Marketplace => Fee** container, within a [Multipart Capture request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), which may look like this then:
+
+ ```json 
+{
+    "RequestHeader": {
+      "SpecVersion": "1.10",
+      "CustomerId": "[your customer id]",
+      "RequestId": "[unique request identifier]",
+      "RetryIndicator": 0
+    },
+    "TransactionReference": {
+        "TransactionId": "723n4MAjMdhjSAhAKEUdA8jtl9jb"
+    },
+    "Amount": {
+        "Value": "1000",
+        "CurrencyCode": "CHF"
+    },
+    "Type": "PARTIAL",
+    "OderPartId": "123456789",
+    "Marketplace": {
+        "SubmerchantId": "17312345"
+        "Fee": {
+            "Value": 100,
+            "CurrencyCode". "CHF"
+        }
+    }
+}
+```
+
+This request will transfer 1000 CHF to the merchant account 17312345, but will also charge a 1 CHF for said transaction. So effectively the merchant will get 9 CHF transferred, **not including the acquiring-costs**, since that can vary from merchant to merchant and even contract!
+
+**VVV===VALIDATION NEEDED FROM DEVELOPMENT! NOT FINAL!===VVV**
+
+But, what if you want to refund said transaction, including the transaction fee?
+For that, the [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund) also offers the option, to submit a fee, but note, that the container is named **FeeRefund** this time. A request then may look like this:
+
+```JSON
+{
+  "RequestHeader": {
+    "SpecVersion": "1.10",
+    "CustomerId": "[your customer id]",
+    "RequestId": "[your request id]",
+    "RetryIndicator": 0
+  },
+  "Refund": {
+    "Amount": {
+      "Value": "900",
+      "CurrencyCode": "CHF"
+    }
+  },
+  "CaptureReference": {
+    "CaptureId": "723n4MAjMdhjSAhAKEUdA8jtl9jb_c"
+  },
+  "Marketplace": {
+    "SubmerchantId": "17312345"
+    "FeeRefund": {
+      "Value": 100,
+      "CurrencyCode". "CHF"
+    }
+  }
+}
+```
+This request will refund 9 CHF (Please keep track of this!) to ther merchant account 17312345, including the 1 CHF fee from before!
+
