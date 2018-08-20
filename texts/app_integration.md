@@ -9,7 +9,7 @@ The Integration centers around a client-server model (the app being the client),
 
 ## <a name="mobile-process"></a>Process
 
-The general process looks is follows:
+The general process is as follows:
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/App-Integration2.png "App-Integration Process")
 
