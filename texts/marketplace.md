@@ -228,8 +228,6 @@ For that, it is necessary to correctly set the **Marketplace => Fee** container,
 
 This request will transfer 1000 CHF to the merchant account 17312345, but will also charge a 1 CHF for said transaction. So effectively the merchant will get 9 CHF transferred, **not including the acquiring-costs**, since that can vary from merchant to merchant and even contract!
 
-**VVV===VALIDATION NEEDED FROM DEVELOPMENT! NOT FINAL!===VVV**
-
 But, what if you want to refund said transaction, including the transaction fee?
 For that, the [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund) also offers the option, to submit a fee, but note, that the container is named **FeeRefund** this time. A request then may look like this:
 
@@ -243,7 +241,7 @@ For that, the [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Tr
   },
   "Refund": {
     "Amount": {
-      "Value": 900,
+      "Value": 1000,
       "CurrencyCode": "CHF"
     }
   },
@@ -259,5 +257,4 @@ For that, the [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Tr
   }
 }
 ```
-This request will refund 9 CHF (Please keep track of this!) to ther merchant account 17312345, including the 1 CHF fee from before!
-
+This request will refund 10 CHF (Please keep track of this!) from the merchant account 17312345, to the card holder! The fee then will be taken from the marketplace and transfered to the submerchant. So the full amount will be refunded first from the submerchant-account and then they will recieve the fee back from the marketplace!
