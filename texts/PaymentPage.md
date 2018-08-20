@@ -80,7 +80,7 @@ Based on the data obtained, it is to be decided whether or not a transaction is 
 
 ## <a name="pp-captcancel"></a> Capture or Cancel
 
-Subsequently, the transaction will be finalised via [**Capture**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or aborted via [**Cancel**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel).For this, the transaction identifier **Id** is required. Please refer to the notes [in the payment methods chapter](index.html#pm-functions), to check, if and when a **Capture** is necessary, and whether a **Cancel** can still be carried out.
+Subsequently, the transaction will be finalised via [**Capture**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or aborted via [**Cancel**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel).For this, the transaction identifier **Id** is required. Please refer to the notes [in the payment methods chapter](index.html#pm-functions), to check, if and when a **Capture** is necessary, and whether a **Cancel** can still be executed.
 
 Once these steps are complete, the transaction is completed.
 
