@@ -14,7 +14,7 @@ The PaymentPage can be either used to offer the payer the option to select a des
 2. Redirect to the RedirectUrl
 3. Return to ReturnUrl depending on the outcome of the transaction. The ReturnUrls are defined in step 1.
 4. [Payment Page Assert](index.html#Payment_v1_PaymentPage_Assert)
-  * Gathers all the information about the payment, like LiabilityShift through 3D Secure and more, using the Token, gathered in step 1!
+  * Gathers all the information about the payment, like LiabilityShift through 3D Secure and more, using the Token, gathered in step 1.
 5. Depending on the outcome of step 4 you may
   * [Capture/Finalize the Transaction](index.html#Payment_v1_Transaction_Capture)
   * [Cancel/Abort the Transaction](index.html#Payment_v1_Transaction_Cancel)
