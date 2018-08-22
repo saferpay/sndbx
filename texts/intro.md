@@ -326,6 +326,8 @@ Saferpay distinguishes between two licences:
 
 It is extremely important to clarify before the implementation of Saferpay, whether an eCommerce licence or a business license is to be used, as they provide different functions. The Saferpay Business licence is an extension of the eCommerce licence. If you have any queries, please contact your relevant contractually appointed person.
 
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/LicenseOptions.png "License Options")
+
 <div class="info">
   <p><strong>Note:</strong> All Saferpay Test-Accounts do have Business activated by default, for evaluation purposes!</p>
 </div>
