@@ -118,7 +118,7 @@
 								<li><a href="#css-info">Additional Info</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="marketplace.html">Marketplace and Partial Captures</a>
 							<ul class="nav">
 								<li><a href="#pc-partial">Partial Captures</a></li>
@@ -181,7 +181,7 @@
 								<li><a href="#twint-general">General specifics</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="PayPal.html">PayPal</a>
 							<ul class="nav">
 								<li><a href="#ppal-requirement">Requirements</a></li>
@@ -377,7 +377,7 @@
 								<li><a href="#css-info">Additional Info</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="marketplace.html">Marketplace and Partial Captures</a>
 							<ul class="nav">
 								<li><a href="#pc-partial">Partial Captures</a></li>
@@ -440,7 +440,7 @@
 								<li><a href="#twint-general">General specifics</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="PayPal.html">PayPal</a>
 							<ul class="nav">
 								<li><a href="#ppal-requirement">Requirements</a></li>
@@ -522,144 +522,166 @@
 				</div>
 
 				
-<section><h1>PayPal</h1><div class="row"><div class="col-md-6"><p>Paypal payments can be processed with Saferpay without much effort. This chapter describes what needs to be considered in this regard.</p></div></div></section><section id="ppal-requirement"><h2><a name="ppal-requirement"></a> Requirements</h2><div class="row"><div class="col-md-6"><p>The handling of PayPal payments with Saferpay requires:</p><ul>
-<li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
-<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
-<li>A valid PayPal merchant account.</li>
-</ul><div class="warning">
-  <p><strong>Attention:</strong> For PayPal activation on the Saferpay terminal, please inform <strong>cs.ecom@six-payment-services.com</strong> of your PayPal merchant account ID and the desired currency.</p>
-</div></div></div></section><section id="ppal-api-access"><h2><a name="ppal-api-access"></a> Grant API Approval for Saferpay</h2><div class="row"><div class="col-md-6"><p>To enable processing of PayPal payments via Saferpay a few settings must be first specified in the PayPal Mercahnt account.</p><ol>
-<li>Log in to your PayPal business account at <a href="http://www.paypal.com/">www.paypal.com</a>.</li>
-<li>Click on the profile icon <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_icon.png" alt="alt text" title="Profile"> on the top right side of the page. From the <strong>Business Profile</strong> menu, select Account Settings.<br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_business_profile.png" alt="alt text" title="Select Account settings"></li>
-<li>From the left menu, click <strong>My selling tools</strong>.
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_my_selling_tools.png" alt="alt text" title="My selling tools"></li>
-<li>In the <strong>Selling online</strong> section, click the Update link for the <strong>API access</strong> item.</li>
-<li>The <strong>API Access</strong> dialogue appears. Click on <strong>Grant API permission</strong> under the bullet point <strong>Pre-built payment solution</strong>.<br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_grant_api_permission.png" alt="alt text" title="API Access"></li>
-<li>The dialogue <strong>Add New Third Party Permissions</strong> appears:
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_add_3rd_party_permission.png" alt="alt text" title="3rd Party permission"><br><pre>Enter <b>be-sfp_api1.six-group.com</b> into <b>Third Party Permission Username</b> box. Click on <b>Lookup</b>.</pre></li>
-<li>The <em>Available Permissions</em> list will be shown:
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_available_permission.png" alt="alt text" title="Available permissions"></li>
-</ol><p><i class="glyphicon glyphicon-hand-right"></i> Tick the following checkboxes and then click on <strong>Add</strong>:</p><ul>
-<li>Use Express Checkout to process payments.</li>
-<li>Issue a refund for a specific transaction.</li>
-<li>Authorize and capture your PayPal transactions.</li>
-<li>Obtain information about a single transaction.</li>
-<li>Search your transactions for items that match specific criteria and display the results</li>
-<li>Obtain authorization for pre-approved payments and initiate pre-approved transactions.</li>
-<li>Accept or deny a pending transaction.</li>
-<li>Issue a refund for any prior transaction.</li>
-</ul></div></div></section><section id="ppal-merchant-protection"><h2><a name="ppal-merchant-protection"></a> Seller Protection</h2><div class="row"><div class="col-md-6"><p>PayPal Seller Protection protects you against payment default when your customer pays for your goods or services with PayPal. Occasionally, an expected payment does not arrive because the customer has insufficient account funds or there is a delivery fault. Your buyer may revoke any payment &#8211; for example, when credit card fraud occurs.</p><p>Seller protection occurs in the following cases:</p><ul>
-<li>Your buyer revokes a debit or credit card payment</li>
-<li>The buyer&#8217;s account has insufficient funds</li>
-<li>Your buyer has complained unjustly and sought Buyer Protection</li>
-<li>Credit Card Fraud</li>
-</ul><p>If a credit card payment or direct debit is revoked (chargeback), the sum will automatically be returned to the bank or to the customer&#8217;s card issuer. In these cases, PayPal will deduct the credited amount from your PayPal account. If Seller Protection then enters into force, PayPal will refund the amount to you after the case is closed.</p><p>To benefit from PayPal seller protection, the following conditions must be met:</p><ul>
-<li>The goods are sent insured and with a sales slip</li>
-<li>The article is sent, where possible, within seven days</li>
-<li>The goods will then be sent to the buyer address as appears in the transaction details and the PayPal account.</li>
-</ul><p>For PayPal Seller Protection to be valid when your customer uses PayPal to pay via Saferpay, it is imperative that the address details are forwarded to Saferpay.</p><p>The <a href="https://saferpay.github.io/jsonapi/#ChapterPaymentPage">Saferpay Payment Page</a> can help in forwarding the address parameters in the <strong>Payer</strong> container with the delivery address, or you can use the Saferpay Payment Page&#8217;s own address form.</p><div class="info">
-  <p>Request with address forwarding:</p>
-</div><pre><code class="language-json">{
-  &quot;RequestHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;1.3&quot;, 
-    &quot;CustomerId&quot;: &quot;123123&quot;, 
-    &quot;RequestId&quot;: &quot;33e8af17-35c1-4165-a343-c1c86a320f3b&quot;, 
-    &quot;RetryIndicator&quot;: 0, 
-    &quot;ClientInfo&quot;: {
-        &quot;ShopInfo&quot;: &quot;My Shop&quot;, 
-        &quot;ApplicationInfo&quot;: &quot;ApplicationInfo&quot;, 
-        &quot;OsInfo&quot;: &quot;Windows Server 2013&quot;
-    }
-  }, 
-  &quot;TerminalId&quot;: &quot;12345678&quot;, 
-  &quot;Payment&quot;: {
+<div class="danger">
+ <p><strong>IMPORTANT:</strong> The following functionalities are currently in their pilot phase. Please contact your contract manager, if you are interested!</p>
+</div><section><h1>The Marketplace and Partial Captures</h1><div class="row"><div class="col-md-6"></div></div></section><section id="pc-partial"><h2><a name="pc-partial"></a> Partial Captures</h2><div class="row"><div class="col-md-6"><p>In order to understand the Saferpay marketplace-solution, one must first grasp the concept of partial- or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a>, for they are the very foundation, on which the marketplace-solution is built upon.</p></div></div></section><section><h3>Things to consider</h3><div class="row"><div class="col-md-6"><ol>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> is available for SIX Acquiring contracts and PayPal <strong>only!</strong></li>
+<li>Your live merchant-account needs to be configured, in order to support Multipart Captures, or the request will fail!</li>
+<li>No MultipartCapture request should be sent before receiving the response of a preceeding request (i.e. no parallel calls are allowed).</li>
+<li>The sum of multipart captures must not exceed the authorized amount.</li>
+<li>A unique OrderPartId must be used for each request.</li>
+<li>Unlike normal <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Captures</a>, which also undergo the daily batch close, with <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a>, the money-flow will be initiated with the execution of the capture itself! A cancel of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> therefore is not possible!</li>
+<li>MultipartCapture is only available for <strong>SpecVersions 1.10 and higher!</strong></li>
+</ol></div></div></section><section><h3>Correctly executing a Multipart Capture</h3><div class="row"><div class="col-md-6"><p>Before you can even execute a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>, you, of course, need a transaction, that needs to be captured. This can be any normal authorization, either done by the <a href="https://saferpay.github.io/jsonapi/#ChapterPaymentPage">Payment Page</a>, or <a href="https://saferpay.github.io/jsonapi/#ChapterTransaction">Transaction Interface</a>. You don't have to consider anything special, up to this point!</p><p>Additionally to the standard parameters, needed to execute a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>, the following parameters are important for a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>:</p><ul>
+<li><strong>Type:</strong> The <strong>Type</strong> specifies, whether this is one subsequent, or final Capture.</li>
+<li><strong>OrderPartId:</strong> Each <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a> is identified by a unique <strong>OrderPartId</strong>, which will also be forwarded to the respective reconciliation-files you will recieve later. That makes this Id very important for later identification, thus you have to make sure, that said Id is set an unique, so confusions can be averted.</li>
+</ul><p>A complete request may look like this:</p><pre><code class="language-json">{
+    &quot;RequestHeader&quot;: {
+      &quot;SpecVersion&quot;: &quot;1.10&quot;,
+      &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+      &quot;RequestId&quot;: &quot;[unique request identifier]&quot;,
+      &quot;RetryIndicator&quot;: 0
+    },
+    &quot;TransactionReference&quot;: {
+        &quot;TransactionId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb&quot;
+    },
     &quot;Amount&quot;: {
-      &quot;Value&quot;: &quot;100&quot;, 
-      &quot;CurrencyCode&quot;: &quot;EUR&quot;
-    }, 
-    &quot;OrderId&quot;: &quot;OrderId&quot;, 
-    &quot;Description&quot;: &quot;Description&quot;, 
-    &quot;PayerNote&quot;: &quot;Payernote&quot;, 
-  }, 
-  &quot;PaymentMethods&quot;: [&quot;PAYPAL&quot;], 
-  &quot;Payer&quot;: {
-    &quot;IpAddress&quot;: &quot;111.111.111.111&quot;,
-    &quot;DeliveryAddress&quot;: {
-      &quot;FirstName&quot;: &quot;Hans&quot;,
-      &quot;LastName&quot;: &quot;Muster&quot;,
-      &quot;DateOfBirth&quot;: &quot;1969-07-21&quot;,
-      &quot;Street&quot;: &quot;Strasse 1&quot;,
-      &quot;Zip&quot;: &quot;12345&quot;,
-      &quot;City&quot;: &quot;Musterstadt&quot;,
-      &quot;CountryCode&quot;: &quot;DE&quot;,
-      &quot;Phone&quot;: &quot;+49 40 1234 5678&quot;,
-      &quot;Email&quot;: &quot;Muster@muster.com&quot;,
-      &quot;Gender&quot;: &quot;MALE&quot;,
+        &quot;Value&quot;: 1000,
+        &quot;CurrencyCode&quot;: &quot;CHF&quot;
+    },
+    &quot;Type&quot;: &quot;PARTIAL&quot;,
+    &quot;OderPartId&quot;: &quot;123456789&quot;
+}
+</code></pre><p>The response may look like this:</p><pre><code class="language-json">{
+    &quot;ResponseHeader&quot;: {
+        &quot;SpecVersion&quot;: &quot;1.10&quot;,
+        &quot;RequestId&quot;: &quot;[unique request identifier]&quot;
+    },
+    &quot;CaptureId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb_c&quot;,
+    &quot;Status&quot;: &quot;CAPTURED&quot;,
+    &quot;Date&quot;: &quot;2018-08-08T12:45:22.258+01:00&quot;
+}
+</code></pre><p>Each capture is identified by a <strong>CaptureId</strong> (Marked with the suffix <strong>&quot;_c&quot;</strong>) , which should be saved, since this Id is used for further actions, like refunds. More on the latter later in this very chapter!</p><div class="info">
+ <p><strong>Note:</strong> The basic reservation times <a href="https://saferpay.github.io/sndbx/#reservation">mentioned here</a> do still aplly for <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures!</a> If this time is exceeded, the reservation could void and the money flow will be rejected by the card holders bank!</p>
+</div></div></div></section><section id="pc-final"><h2><a name="pc-final"></a> Finalizing a Capture-Chain</h2><div class="row"><div class="col-md-6"><p>After a transaction has been captured to the merchants liking using <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>, it should be finalized, in order to seclude the transaction.
+There are two different ways to finalize a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>. Each covering one specific case, that should be differentiated, by asking one specific question:</p><p><strong>Does the merchant intend to capture a final amount, or not?</strong></p><div class="warning">
+  <p><strong>Important:</strong> Once finalized, a transaction cannot be opened again. Make sure, that you really want to finalize the transaction. Other captures won't be possible!</p>
+</div></div></div></section><section><h3>Finalizing, while also capturing a certain amount</h3><div class="row"><div class="col-md-6"><div class="warning">
+  <p><strong>Remember:</strong> Like mentioned previously, make sure to not exceed the initially authorized amount, or the capture will fail!</p>
+</div><p>In order to capture a final amount, the merchant-system simply needs to execute <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>, whilst setting the parameter <strong>Type</strong> to <strong>&quot;FINAL&quot;</strong>. A full request then may look like this:</p><pre><code class="language-json">{
+   &quot;RequestHeader&quot;: {
+     &quot;SpecVersion&quot;: &quot;1.10&quot;,
+     &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+     &quot;RequestId&quot;: &quot;[unique request identifier]&quot;,
+     &quot;RetryIndicator&quot;: 0
+   },
+   &quot;TransactionReference&quot;: {
+       &quot;TransactionId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb&quot;
+   },
+   &quot;Amount&quot;: {
+       &quot;Value&quot;: 1000,
+       &quot;CurrencyCode&quot;: &quot;CHF&quot;
+   },
+   &quot;Type&quot;: &quot;FINAL&quot;,
+   &quot;OderPartId&quot;: &quot;123456790&quot;
+}
+</code></pre></div></div></section><section><h3>Finalizing without capturing/ Capturing with amount 0</h3><div class="row"><div class="col-md-6"><p>In order to avoid confusion and merchants accidently executing the wrong request, the finalization with amount 0 is done through a completely different request called <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartFinalize">Multipart Finalize</a>. Executing this request will close the transaction without transfering any money.</p></div></div></section><section id="pc-final-why"><h2><a name="pc-final-why"></a> Why do you need to finalize a transaction?</h2><div class="row"><div class="col-md-6"><p>There are two reasons, why you, the merchant, should finalize a transactions, once you have finished all your actions:</p><ol>
+<li>It is the cleaner process! Four you, the merchant, this is the cleaner solution and helps keeping track of every transaction and its status, not just inside your own system, but also inside the Saferpay Backoffice, where still open and closed transactions, will be marked as such!</li>
+<li>It means less hassle for your customers. Each time you successfully authorize a credit card, the authorized amount gets reserved on the card holders credit limit. That effectively means, that he/she cannot use this money, as long as you haven't claimed the money, or the reservation voids, after a certain time-frame. A finalization will open up the credit-limit for the card holder, so he/she may use it again, which is especially important in situations, where the merchant does not want, or can't claim all of the money, originally authorized!</li>
+</ol></div></div></section><section id="pc-submerchants"><h2><a name="pc-submerchants"></a> Submerchants</h2><div class="row"><div class="col-md-6"><p>In some cases, a merchant, or marketplace-operator, needs to be able to split the authorized amounts do different contracts, bank accounts and/or submerchants. Saferpay does offer this option through <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a>.</p><p>The general money-flow may look like this:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/Submerchants_MultiPart.png" alt="alt text" title="Multipart Capture with Submerchants"></p><p>Now in order for this to work, the following requirements have to be met:</p><ol>
+<li>Each Submerchant you want to cover, needs an acquiring-contract with SIX, so the money can be directly transfered to their bank-account! <strong>Make sure to specifically request these contracts for the marketplace-solution, since those need a special setup!</strong></li>
+<li>Each submerchant will get their own Id, which has to be submitted with each <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>, to define the merchant, who is getting the money!</li>
+</ol></div></div></section><section><h3>Executing a Multipart Capture with a Submerchant</h3><div class="row"><div class="col-md-6"><p>A <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture request with a submerchant</a> requires you, to correctly fill the <strong>Marketplace =&gt; SubmerchantId</strong> parameter, with the corresponding Id. A request then may look like this:</p><pre><code class="language-json">{
+   &quot;RequestHeader&quot;: {
+     &quot;SpecVersion&quot;: &quot;1.10&quot;,
+     &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+     &quot;RequestId&quot;: &quot;[unique request identifier]&quot;,
+     &quot;RetryIndicator&quot;: 0
+   },
+   &quot;TransactionReference&quot;: {
+       &quot;TransactionId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb&quot;
+   },
+   &quot;Amount&quot;: {
+       &quot;Value&quot;: 1000,
+       &quot;CurrencyCode&quot;: &quot;CHF&quot;
+   },
+   &quot;Type&quot;: &quot;PARTIAL&quot;,
+   &quot;OderPartId&quot;: &quot;123456789&quot;,
+   &quot;Marketplace&quot;: {
+       &quot;SubmerchantId&quot;: &quot;17312345&quot;
+   }
+}
+</code></pre><p>This request will transfer 10 CHF to the merchant with the Id 17312345!</p></div></div></section><section id="pc-refund"><h2><a name="pc-refund"></a> Handling Refunds</h2><div class="row"><div class="col-md-6"><p>Since <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> basically split an existing transaction into multiple parts, refunds also need to be processed in a different way.
+Unlike normal Refunds, you now need to reference each Capture you want to refund individually!</p><p>To do so, you have to reference the <strong>CaptureId</strong> from the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture Response</a>, you want to refund. Remember, that all <strong>CaptureId</strong>s have the suffix <strong>_c</strong> for that reason.</p><p>A <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund request</a> may look like this then:</p><pre><code class="language-JSON">{
+  &quot;RequestHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.10&quot;,
+    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+    &quot;RequestId&quot;: &quot;[your request id]&quot;,
+    &quot;RetryIndicator&quot;: 0
+  },
+  &quot;Refund&quot;: {
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: 100,
+      &quot;CurrencyCode&quot;: &quot;CHF&quot;
     }
-  }, 
-  &quot;ReturnUrls&quot;: {
-    &quot;Success&quot;: &quot;https://merchanthost/success&quot;, 
-    &quot;Fail&quot;: &quot;https://merchanthost/fail&quot;, 
-    &quot;Abort&quot;: &quot;https://merchanthost/abort&quot;
-  }, 
-  &quot;Notification&quot;: {
-    &quot;MerchantEmail&quot;: &quot;merchant@saferpay.com&quot;, 
-    &quot;NotifyUrl&quot;: &quot;https://merchanthost/notify&quot;
+  },
+  &quot;CaptureReference&quot;: {
+    &quot;CaptureId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb_c&quot;
   }
 }
-</code></pre><div class="info">
-  <p> Request for the use of the form:</p>
-</div><pre><code class="language-json">{
+</code></pre></div></div></section><section><h3>Capturing a Refund</h3><div class="row"><div class="col-md-6"><div class="warning">
+  <p><strong>Important:</strong> Like every other <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund</a>, these too need to be captured.
+However <strong>please make sure to use the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">normal Capture request</a> in this case and NOT MultipartCapture!</strong> Refunds cannot be split into multiple parts, like authorizations!</p>
+</div></div></div></section><section id="pc-fee"><h2><a name="pc-fee"></a> Applying Fees</h2><div class="row"><div class="col-md-6"><p>Especially for marketplace providers, it is not unusual to charge a small fee for each transaction, that is handled through the marketplace, from the respective merchant. Saferpay also offers options to charge these fees, through <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a>.</p><p>For that, it is necessary to correctly set the <strong>Marketplace =&gt; Fee</strong> container, within a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture request</a>, which may look like this then:</p><pre><code class="language-json">{
+   &quot;RequestHeader&quot;: {
+     &quot;SpecVersion&quot;: &quot;1.10&quot;,
+     &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+     &quot;RequestId&quot;: &quot;[unique request identifier]&quot;,
+     &quot;RetryIndicator&quot;: 0
+   },
+   &quot;TransactionReference&quot;: {
+       &quot;TransactionId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb&quot;
+   },
+   &quot;Amount&quot;: {
+       &quot;Value&quot;: 1000,
+       &quot;CurrencyCode&quot;: &quot;CHF&quot;
+   },
+   &quot;Type&quot;: &quot;PARTIAL&quot;,
+   &quot;OderPartId&quot;: &quot;123456789&quot;,
+   &quot;Marketplace&quot;: {
+       &quot;SubmerchantId&quot;: &quot;17312345&quot;,
+       &quot;Fee&quot;: {
+           &quot;Value&quot;: 100,
+           &quot;CurrencyCode&quot;: &quot;CHF&quot;
+       }
+   }
+}
+</code></pre><p>This request will transfer 1000 CHF to the merchant account 17312345, but will also charge a 1 CHF for said transaction. So effectively the merchant will get 9 CHF transferred, <strong>not including the acquiring-costs</strong>, since that can vary from merchant to merchant and even contract!</p><p>But, what if you want to refund said transaction, including the transaction fee?
+For that, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund request</a> also offers the option, to submit a fee, but note, that the container is named <strong>FeeRefund</strong> this time. A request then may look like this:</p><pre><code class="language-JSON">{
   &quot;RequestHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;1.3&quot;, 
-    &quot;CustomerId&quot;: &quot;123123&quot;, 
-    &quot;RequestId&quot;: &quot;33e8af17-35c1-4165-a343-c1c86a320f3b&quot;, 
-    &quot;RetryIndicator&quot;: 0, 
-    &quot;ClientInfo&quot;: {
-      &quot;ShopInfo&quot;: &quot;My Shop&quot;, 
-      &quot;ApplicationInfo&quot;: &quot;ApplicationInfo&quot;, 
-      &quot;OsInfo&quot;: &quot;Windows Server 2013&quot;
-    }
-  }, 
-  &quot;TerminalId&quot;: &quot;12345678&quot;, 
-  &quot;Payment&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.10&quot;,
+    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+    &quot;RequestId&quot;: &quot;[your request id]&quot;,
+    &quot;RetryIndicator&quot;: 0
+  },
+  &quot;Refund&quot;: {
     &quot;Amount&quot;: {
-      &quot;Value&quot;: &quot;100&quot;, 
-      &quot;CurrencyCode&quot;: &quot;EUR&quot;
-    }, 
-    &quot;OrderId&quot;: &quot;OrderId&quot;, 
-    &quot;Description&quot;: &quot;Description&quot;, 
-    &quot;PayerNote&quot;: &quot;Payernote&quot;, 
-  }, 
-  &quot;PaymentMethods&quot;: [&quot;PAYPAL&quot;], 
-  &quot;Payer&quot;: {
-    &quot;IpAddress&quot;: &quot;111.111.111.111&quot;
+      &quot;Value&quot;: 1000,
+      &quot;CurrencyCode&quot;: &quot;CHF&quot;
+    }
   },
-  &quot;DeliveryAddressForm&quot;: {
-    &quot;Display&quot;: true,
-    &quot;MandatoryFields&quot;: [&quot;CITY&quot;,&quot;COUNTRY&quot;,&quot;EMAIL&quot;,&quot;FIRSTNAME&quot;,&quot;LASTNAME&quot;,&quot;PHONE&quot;,&quot;SALUTATION&quot;,&quot;STATE&quot;,&quot;STREET&quot;,&quot;ZIP&quot;],
+  &quot;CaptureReference&quot;: {
+    &quot;CaptureId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb_c&quot;
   },
-  &quot;ReturnUrls&quot;: {
-    &quot;Success&quot;: &quot;https://merchanthost/success&quot;, 
-    &quot;Fail&quot;: &quot;https://merchanthost/fail&quot;, 
-    &quot;Abort&quot;: &quot;https://merchanthost/abort&quot;
-  }, 
-  &quot;Notification&quot;: {
-    &quot;MerchantEmail&quot;: &quot;merchant@saferpay.com&quot;, 
-    &quot;NotifyUrl&quot;: &quot;https://merchanthost/notify&quot;
+  &quot;Marketplace&quot;: {
+    &quot;SubmerchantId&quot;: &quot;17312345&quot;,
+    &quot;FeeRefund&quot;: {
+      &quot;Value&quot;: 100,
+      &quot;CurrencyCode&quot;: &quot;CHF&quot;
+    }
   }
 }
-</code></pre><p>For Canada, USA and Mexico, specification of the province or the state with the parameter <strong>CountrySubdivisionCode</strong> is required. The abbreviation which must be forwarded corresponds to the two-digit code of the province or the federal state per ISO 3166-2.</p><p>As soon as these attributes have been forwarded, Seller Protection comes into effect. PayPal verifies the supplied address details with the data filed by the buyer and refuses payment if the registered address does not concur with the specified address.</p></div></div></section><section id="ppal-partial-capture"><h2><a name="ppal-partial-capture"></a> Partial Capture</h2><div class="row"><div class="col-md-6"><p>With Partial Capture, it is possible to book a PayPal authorisation in several individual steps. For this, additional parameters must be forwarded with <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Transaction Capture</a> in the <strong>Partial</strong> container.</p><p>With Partial Capture, the booking of an authorised amount is possible in up to ten partial steps. The total number of individual bookings may not exceed the authorised amount.</p><p>The <strong>OrderPartId</strong> parameter must be unique for a partial booking, so as to be able to refer to it later in follow-up actions, such as a credit note payment.
-With the parameter Type, it is determined whether the amount that is to be booked is a partial step or a final booking.</p></div></div></section><section id="ppal-capture"><h2><a name="ppal-capture"></a> Capture and the solvency of the customer</h2><div class="row"><div class="col-md-6"><p>Unlike credit cards, that give the merchant a certain guarantee for the authorized money, PayPal reserves the right to deny the payout of a transaction, if the solvency of the account holder changes negatively after the authorization.</p><p>Therefore Saferpay claims the money directly, once the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> of the transaction has been successfully executed. If the money cannot be claimed, the capture then returns an error.
-We generally recommend to execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> as soon as possible, to avoid any issues.</p></div></div></section><section id="ppal-iframe"><h2><a name="ppal-iframe"></a> PayPal iFrame integration</h2><div class="row"><div class="col-md-6"><div class="danger">
-  <p><strong>Warning:</strong> PayPal does not support the iFrame Integration!</p>
-</div><p>PayPal actively blocks the iFrame-Integration.
-In order to circumvent this issue, the Saferpay Payment Page will break out of the iFrame and display the PayPal website full-size, in order to make a payment possible.
-However, please keep in mind, that the ReturnUrls will also be displayed full-size!</p></div></div></section><section id="ppal-special"><h2><a name="ppal-special"></a> Other special cases</h2><div class="row"><div class="col-md-6"><p>PayPal does also require you to meet the following requirements:</p><ul>
-<li><strong>OrderId:</strong> PayPal requires the <strong>Payment =&gt; OrderId</strong> to be unique. Saferpay however does not limit the use of the <strong>OrderId</strong> in any way. If you use PayPal, you have to make sure, that your system submits unique OrderIds for every PayPal-transaction, otherwise you will get an error-message during the authorization.</li>
-</ul></div></div></section>
+</code></pre><p>This request will refund 10 CHF (Please keep track of this!) from the merchant account 17312345, to the card holder! The fee then will be taken from the marketplace and transfered to the submerchant. So the full amount will be refunded first from the submerchant-account and then they will recieve the fee back from the marketplace!</p></div></div></section>
 
 			</main>
 
