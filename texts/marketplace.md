@@ -1,6 +1,10 @@
+<div class="danger">
+ <p><strong>IMPORTANT:</strong> The following functionalities are currently in their pilot phase. Please contact your contract manager, if you are interested!</p>
+</div>
+
 # The Marketplace and Partial Captures
 
-## Partial Captures
+## <a name="pc-partial"></a> Partial Captures
 
 In order to understand the Saferpay marketplace-solution, one must first grasp the concept of partial- or [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), for they are the very foundation, on which the marketplace-solution is built upon.
 
@@ -66,7 +70,7 @@ Each capture is identified by a **CaptureId** (Marked with the suffix **"\_c"**)
  <p><strong>Note:</strong> The basic reservation times <a href="https://saferpay.github.io/sndbx/#reservation">mentioned here</a> do still aplly for <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures!</a> If this time is exceeded, the reservation could void and the money flow will be rejected by the card holders bank!</p>
 </div>
 
-## Finalizing a Capture-Chain
+## <a name="pc-final"></a> Finalizing a Capture-Chain
 
 After a transaction has been captured to the merchants liking using [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), it should be finalized, in order to seclude the transaction.
 There are two different ways to finalize a [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture). Each covering one specific case, that should be differentiated, by asking one specific question:
@@ -108,14 +112,14 @@ In order to capture a final amount, the merchant-system simply needs to execute 
 
 In order to avoid confusion and merchants accidently executing the wrong request, the finalization with amount 0 is done through a completely different request called [Multipart Finalize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartFinalize). Executing this request will close the transaction without transfering any money.
 
-## Why do you need to finalize a transaction?
+## <a name="pc-final-why"></a> Why do you need to finalize a transaction?
 
 There are two reasons, why you, the merchant, should finalize a transactions, once you have finished all your actions:
 
 1. It is the cleaner process! Four you, the merchant, this is the cleaner solution and helps keeping track of every transaction and its status, not just inside your own system, but also inside the Saferpay Backoffice, where still open and closed transactions, will be marked as such!
 2. It means less hassle for your customers. Each time you successfully authorize a credit card, the authorized amount gets reserved on the card holders credit limit. That effectively means, that he/she cannot use this money, as long as you haven't claimed the money, or the reservation voids, after a certain time-frame. A finalization will open up the credit-limit for the card holder, so he/she may use it again, which is especially important in situations, where the merchant does not want, or can't claim all of the money, originally authorized!
 
-## Submerchants
+## <a name="pc-submerchants"></a> Submerchants
 
 In some cases, a merchant, or marketplace-operator, needs to be able to split the authorized amounts do different contracts, bank accounts and/or submerchants. Saferpay does offer this option through [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture).
 
@@ -157,7 +161,7 @@ A [Multipart Capture request with a submerchant](https://saferpay.github.io/json
 
 This request will transfer 10 CHF to the merchant with the Id 17312345!
 
-## Handling Refunds
+## <a name="pc-refund"></a> Handling Refunds
 
 Since [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) basically split an existing transaction into multiple parts, refunds also need to be processed in a different way.
 Unlike normal Refunds, you now need to reference each Capture you want to refund individually!
@@ -193,7 +197,7 @@ A [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Re
 However <strong>please make sure to use the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">normal Capture request</a> in this case and NOT MultipartCapture!</strong> Refunds cannot be split into multiple parts, like authorizations!</p>
 </div>
 
-## Fees
+## <a name="pc-fee"></a> Applying Fees
 
 Especially for marketplace providers, it is not unusual to charge a small fee for each transaction, that is handled through the marketplace, from the respective merchant. Saferpay also offers options to charge these fees, through [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture).
 
