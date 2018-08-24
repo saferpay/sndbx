@@ -1,5 +1,5 @@
 <div class="danger">
- <p><strong>IMPORTANT:</strong> The following functionalities are currently in their pilot phase. Please contact your contract manager, if you are interested!</p>
+ <p><strong>IMPORTANT:</strong> The following functionalities are currently in their pilot phase. Please contact your contract manager, if you are interested! This guide however is also subject to change, until the feature will be released in production!</p>
 </div>
 
 # The Marketplace and Partial Captures
