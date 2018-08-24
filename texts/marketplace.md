@@ -121,6 +121,10 @@ There are two reasons, why you, the merchant, should finalize a transactions, on
 
 ## <a name="pc-submerchants"></a> Submerchants
 
+<div class="danger">
+ <p><strong>IMPORTANT:</strong> Please read this chapter completely, <strong>INCLUDING</strong> the chapter about <strong>Applying Fees</strong>!</p>
+</div>
+
 In some cases, a merchant, or marketplace-operator, needs to be able to split the authorized amounts do different contracts, bank accounts and/or submerchants. Saferpay does offer this option through [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture).
 
 The general money-flow may look like this:
@@ -198,6 +202,10 @@ However <strong>please make sure to use the <a href="https://saferpay.github.io/
 </div>
 
 ## <a name="pc-fee"></a> Applying Fees
+
+<div class="danger">
+ <p><strong>IMPORTANT:</strong> If you are using the submerchant-feature, you <strong>must</strong> set either <strong>Fee</strong> or <strong>FeeRefund</strong> (Depending on the request!). If you do not intend on applying a fee, you musst still set it, with an amount set to 0!</p>
+</div>
 
 Especially for marketplace providers, it is not unusual to charge a small fee for each transaction, that is handled through the marketplace, from the respective merchant. Saferpay also offers options to charge these fees, through [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture).
 
