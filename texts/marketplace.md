@@ -25,7 +25,7 @@ Before you can even execute a [Multipart Capture](https://saferpay.github.io/jso
 Additionally to the standard parameters, needed to execute a [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture), the following parameters are important for a [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture):
 
 - **Type:** The **Type** specifies, whether this is one subsequent, or final Capture.
-- **OrderPartId:** Each [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) is identified by a unique **OrderPartId**, which will also be forwarded to the respective reconciliation-files you will recieve later. That makes this Id very important for later identification, thus you have to make sure, that said Id is set an unique, so confusions can be averted.
+- **OrderPartId:** Each [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) is identified by a unique **OrderPartId**, which will also be forwarded to the respective reconciliation-files you will recieve later. That makes this Id very important for later identification, thus you have to make sure, that said Id is set as unique, so confusions can be averted.
 
 A complete request may look like this:
 
@@ -64,7 +64,7 @@ The response may look like this:
 }
 ```
 
-Each capture is identified by a **CaptureId** (Marked with the suffix **"\_c"**) , which should be saved, since this Id is used for further actions, like refunds. More on the latter later in this very chapter!
+Each capture is identified by a **CaptureId** (Marked with the suffix **"\_c"**) , which should be saved, since this Id is used for further actions, like refunds. More on the latter later in this very chapter.
 
 <div class="info">
  <p><strong>Note:</strong> The basic reservation times <a href="https://saferpay.github.io/sndbx/#reservation">mentioned here</a> do still aplly for <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures!</a> If this time is exceeded, the reservation could void and the money flow will be rejected by the card holders bank!</p>
