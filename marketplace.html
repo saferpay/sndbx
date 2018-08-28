@@ -660,7 +660,7 @@ However <strong>please make sure to use the <a href="https://saferpay.github.io/
        }
    }
 }
-</code></pre><p>This request will transfer 1000 CHF to the merchant account 17312345, but will also charge a 1 CHF for said transaction. So effectively the merchant will get 9 CHF transferred, <strong>not including the acquiring-costs</strong>, since that can vary from merchant to merchant and even contract!</p><p>But, what if you want to refund said transaction, including the transaction fee?
+</code></pre><p>This request will transfer 10 CHF to the merchant account 17312345, but will also charge a 1 CHF for said transaction. So effectively the merchant will get 9 CHF transferred, <strong>not including the acquiring-costs</strong>, since that can vary from merchant to merchant and even contract!</p><p>But, what if you want to refund said transaction, including the transaction fee?
 For that, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund request</a> also offers the option, to submit a fee, but note, that the container is named <strong>FeeRefund</strong> this time. A request then may look like this:</p><pre><code class="language-JSON">{
   &quot;RequestHeader&quot;: {
     &quot;SpecVersion&quot;: &quot;1.10&quot;,
