@@ -238,7 +238,7 @@ For that, it is necessary to correctly set the **Marketplace => Fee** container,
 }
 ```
 
-This request will transfer 1000 CHF to the merchant account 17312345, but will also charge a 1 CHF for said transaction. So effectively the merchant will get 9 CHF transferred, **not including the acquiring-costs**, since that can vary from merchant to merchant and even contract!
+This request will transfer 10 CHF to the merchant account 17312345, but will also charge a 1 CHF for said transaction. So effectively the merchant will get 9 CHF transferred, **not including the acquiring-costs**, since that can vary from merchant to merchant and even contract!
 
 But, what if you want to refund said transaction, including the transaction fee?
 For that, the [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund) also offers the option, to submit a fee, but note, that the container is named **FeeRefund** this time. A request then may look like this:
