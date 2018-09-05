@@ -3,7 +3,7 @@
 Recurring payments are transactions processed on a regular basis under a pre-authorized agreement. They are particularly interesting for subscription or instalment business models. This chapter describes the two main concepts on how the perform recurring payments.
 
 <div class="warning">
-      <p><strong>NOTE: </strong>Before you start, you have to consider the following: Each transaction you want to perform, has to be triggered by you your system. Please see <strong>Automating the Recurring Payments</strong> further down in this chapter!</p>
+      <p><strong>NOTE: </strong>Before you start, you have to consider the following: Each transaction has to be explicitly triggered by you your system. Please see <strong>Automating the Recurring Payments</strong> further down in this chapter!</p>
 </div>
 
 -	Transaction Referenced Method -  [AuthorizeReferenced Function](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced) with the TransactionId of the initial transaction
