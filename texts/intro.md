@@ -841,9 +841,11 @@ Executing the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transacti
 
 Not all payment methods need a separate capture to trigger the cash flow. You can find an overview of which payment methods should be captured [under Payment Method Features](https://saferpay.github.io/sndbx/index.html#pm-functions). Methods, that do not need the capture, will return the status **"CAPTURED"** right away.
 
-**IMPORTANT:** A reservation made through a certain payment processor, may only last for a limited time only. If this timeframe is exceeded, the authorised amount is released and 
-becomes available to the card holder again. This may have the result that the amount can no longer be claimed. If possible, we recommend always triggering the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) immediately after authorisation. Either by direct API call, or manually via Saferpay Backoffice. If this is not possible, the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) nonetheless must be done as soon as possible. With PayPal, this must happen within 48 hours. 
-Otherwise, it may be that the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) -and thus the money-transfer- will be refused. For other payment methods, a later [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) is sometimes possible. If necessary, please speak to your processor about guaranteed reservation times.
+<div class="info">
+  <p><strong>Important:</strong> A reservation made through a certain payment processor, may only last for a limited time only. If this timeframe is exceeded, the authorised amount is released and 
+becomes available to the card holder again. This may have the result that the amount can no longer be claimed. If possible, we recommend always triggering the <a href"https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> immediately after authorisation. Either by direct API call, or manually via Saferpay Backoffice. If this is not possible, the <a href"https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> nonetheless must be done as soon as possible. With PayPal, this must happen within 48 hours. 
+Otherwise, it may be that the <a href"https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> -and thus the money-transfer- will be refused. For other payment methods, a later <a href"https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> is sometimes possible. If necessary, please speak to your processor about guaranteed reservation times.</p>
+</div>
 
 ### <a name="closing"></a>Daily Closing
 
@@ -861,6 +863,9 @@ With these payment methods, daily closing is triggered alongside the capture aut
 
 #### Online Banking 
 giropay, iDEAL, SOFORT, Bancontact, eprzelewy und eps are online payment methods that trigger a transfer and thus the cash flow via the purchaser’s online banking services. A successful transaction is always 100% complete.
+
+#### Marketplace
+If you intend to use the [Marketplace](marketplace.html) and therefore [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), you should be aware, that these [Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) will also execute the money-flow with the [Capture request]() itself and not with the Daily Closing, due to the nature of [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture). Further actions, like a [Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel) are therefore not possible anymore! A Refund has to be executed in this case instead!
 
 #### Capturing a different amount
 The [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) can also be used to change the amount of the transaction. It is generally possible to capture less, than initially authorized. So applying things like voucher codes, or similar is possible. 
