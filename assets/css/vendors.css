@@ -3918,6 +3918,9 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
     position: relative;
     display: block
 }
+.nav>li.active {
+    margin-bottom: -60px;
+}
 .nav>li>a {
     position: relative;
     display: block;
