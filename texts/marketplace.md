@@ -15,7 +15,7 @@ In order to understand the Saferpay marketplace-solution, one must first grasp t
 3. No MultipartCapture request should be sent before receiving the response of a preceeding request (i.e. no parallel calls are allowed). The timeout for this are 100 seconds.
 4. The sum of multipart captures must not exceed the authorized amount.
 5. A unique OrderPartId must be used for each request.
-6. Unlike normal [Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture), which also undergo the daily batch close, with [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), the money-flow will be initiated with the execution of the capture itself! A cancel of a [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) therefore is not possible!
+6. Unlike normal [Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture), which also undergo the daily batch close, [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) execute the money-flow (closing) with the execution of the capture itself! A [Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel) of a [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) therefore is not possible!
 7. MultipartCapture is only available for **SpecVersions 1.10 and higher!**
 
 ### Correctly executing a Multipart Capture
