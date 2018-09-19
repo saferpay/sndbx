@@ -12,7 +12,7 @@ In order to understand the Saferpay marketplace-solution, one must first grasp t
 
 1. [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) is available for SIX Acquiring contracts and PayPal <strong>only!</strong>
 2. Your live merchant-account needs to be configured, in order to support Multipart Captures, or the request will fail!
-3. No MultipartCapture request should be sent before receiving the response of a preceeding request (i.e. no parallel calls are allowed).
+3. No MultipartCapture request should be sent before receiving the response of a preceeding request (i.e. no parallel calls are allowed). The timeout for this are 100 seconds.
 4. The sum of multipart captures must not exceed the authorized amount.
 5. A unique OrderPartId must be used for each request.
 6. Unlike normal [Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture), which also undergo the daily batch close, with [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), the money-flow will be initiated with the execution of the capture itself! A cancel of a [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) therefore is not possible!
