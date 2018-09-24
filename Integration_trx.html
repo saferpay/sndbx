@@ -520,7 +520,24 @@
   <p><strong>Note:</strong> The JSON API can be used in various ways to cover the most diverse processes. For this reason, only the standard processes are discussed below. For other possible uses, or for questions about the standard procedures, please contact the <a href="https://saferpay.github.io/sndbx/contact.html">Saferpay Integration Team</a></p>
 </div><div class="warning">
   <p><strong>Attention:</strong> The Transaction Interface is only for holders of a business licence on the live system. For the eCommerce licence, the advanced features are not available. The test accounts have business activated by default, for evaluation purposes.</p>
-</div></div></div></section><section id="trx-cc"><h2><a name="trx-cc"></a> Credit Cards</h2><div class="row"><div class="col-md-6"><p>In contrast to the payment page, credit card payments can be seamlessly integrated into the merchant's shop with the Transaction Interface. The procedure will be described in the following.</p></div></div></section><section id="trx-ini"><h3><a name="trx-ini"></a>Transaction Initialize</h3><div class="row"><div class="col-md-6"><p>The process begins with <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a>. With this request, you forward all data necessary for the payment to Saferpay. Such as your customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference number of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer will return, depending on the outcome of the payment.</p></div></div></section><section><h3>Here are a few hints and tips about the options that are available for the merchant:</h3><div class="row"><div class="col-md-6"><ul>
+</div></div></div></section><section><h2>Description of the General Process for Using PaymentPage</h2><div class="row"><div class="col-md-6"><ol>
+<li><a href="index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a></li>
+</ol><ul>
+<li>Initializes the Payment and generates the RedirectUrl for the <a href="https://saferpay.github.io/sndbx/CssiFrame.html">iFrame Integration</a>.</li>
+</ul><ol start="2">
+<li>Open the RedirectUrl inside an HTML-iFrame, to show the hosted card entry form!</li>
+<li>Return to Return Url depending on the outcome of the 3D Secure procedure. The ReturnUrls are defined in step 1!</li>
+<li><a href="index.html#Payment_v1_Transaction_Authorize">Transaction Authorize</a></li>
+</ol><ul>
+<li>Authorizes the card, which has been gathered in step 2. Up until now, <em>no transaction has been made</em>!</li>
+</ul><ol start="5">
+<li>Depending on the outcome of step 4 you may</li>
+</ol><ul>
+<li><a href="index.html#Payment_v1_Transaction_Capture">Capture/Finalize the Transaction</a></li>
+<li><a href="index.html#Payment_v1_Transaction_Cancel">Cancel/Abort the Transaction</a></li>
+</ul><ol start="6">
+<li>Transaction is finished!</li>
+</ol><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/tx_FlowChart.png" alt="alt text" title="Transaction Interface Flow Chart"></p></div></div></section><section id="trx-cc"><h2><a name="trx-cc"></a> Credit Cards</h2><div class="row"><div class="col-md-6"><p>In contrast to the payment page, credit card payments can be seamlessly integrated into the merchant's shop with the Transaction Interface. The procedure will be described in the following.</p></div></div></section><section id="trx-ini"><h3><a name="trx-ini"></a>Transaction Initialize</h3><div class="row"><div class="col-md-6"><p>The process begins with <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a>. With this request, you forward all data necessary for the payment to Saferpay. Such as your customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference number of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer will return, depending on the outcome of the payment.</p></div></div></section><section><h3>Here are a few hints and tips about the options that are available for the merchant:</h3><div class="row"><div class="col-md-6"><ul>
 <li><p><strong>ReturnUrls:</strong> For security, Saferpay returns no data to return addresses of the shop. The identification of the payment or the returning customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the ReturnUrls. When a ReturnUrl is called, Saferpay returns the appended parameter, thus enabling identification of the customer.</p>
 </li>
 <li><p><strong>&quot;Payment&quot;=&gt;&quot;OrderId&quot;:</strong> This optinal parameter is important to keep track of all your transactions in later processes. This ID will be forwarded, so it will show up inside the Saferpay Backoffice (As the Reference number!) and on your reconciliation-files. This will help associate all the transactions for your accounting-department.</p>
