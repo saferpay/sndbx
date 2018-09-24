@@ -11,7 +11,7 @@ However, as BillPay is a third party provider, there are a few things which must
 *	The address of the purchaser is present and is forwarded to BillPay.
 
 <div class="warning">
-  <p><strong>Attention:</strong> For BillPay activation on the Saferpay terminal, please inform <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your BillPay credentials and the desired currency.</p>
+  <p><strong>Attention:</strong> For BillPay activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your BillPay credentials and the desired currency.</p>
 </div>
 ---
 
