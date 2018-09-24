@@ -11,7 +11,7 @@ The handling of PayPal payments with Saferpay requires:
 * A valid PayPal merchant account.
 
 <div class="warning">
-  <p><strong>Attention:</strong> For PayPal activation on the Saferpay terminal, please inform <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> of your PayPal merchant account ID and the desired currency.</p>
+  <p><strong>Attention:</strong> For PayPal activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your PayPal merchant account ID and the desired currency.</p>
 </div>
 
 ## <a name="ppal-api-access"></a> Grant API Approval for Saferpay
