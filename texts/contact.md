@@ -48,13 +48,13 @@ SIX Payment Services AG <br />
 Hardturmstrasse 201 <br />
 8021 Zürich <br />
 +41 848 66 44 44 <br />
-www.six-payment-services.com/saferpay <br /> 
-support.saferpay@six-payment-services.com <br />
+[www.six-payment-services.com/saferpay](https://www.six-payment-services.com/saferpay) <br /> 
+[support.saferpay@six-payment-services.com](mailto:support.saferpay@six-payment-services.com) <br />
 
 ### Saferpay Europe
 SIX Payment Services (Germany) GmbH <br />
 Langenhorner Chaussee 92-94 <br />
 22415 Hamburg <br />
 +49 40 325 967- 250 <br />
-www.six-payment-services.com/saferpay <br /> 
-support.saferpay@six-payment-services.com <br />
+[www.six-payment-services.com/saferpay](https://www.six-payment-services.com/saferpay) <br /> 
+[support.saferpay@six-payment-services.com](mailto:support.saferpay@six-payment-services.com) <br />
