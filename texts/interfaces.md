@@ -7,7 +7,8 @@ The Main interfaces are:
 - **Transaction Interface**
 -	and the additional **Secure Card Data** module
 
-It is important to understand the different intended uses and functionalities of each component to decide which Interface is best suited for your business and use cases.
-
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Interfaces.png "The Interfaces")
 
+<div class="warning">
+  <p><strong>Important:</strong>It is important to understand the different intended uses and functionalities of each component to decide which Interface is best suited for your business and use cases.</p>
+</div>
