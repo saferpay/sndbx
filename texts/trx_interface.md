@@ -40,7 +40,7 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
 
 + **"Payment"=>"OrderId":** This optinal parameter is important to keep track of all your transactions in later processes. This ID will be forwarded, so it will show up inside the Saferpay Backoffice (As the Reference number!) and on your reconciliation-files. This will help associate all the transactions for your accounting-department.
 
-+ **Card Verification Value:** The Card Verification Value (CVC) is mandatory, when using the Card Entry Form, except for card brand Maestro, which offers cards with and without CVC.
++ **Card Verification Value:** The Card Verification Value (CVC) is mandatory, when using the Card Entry Form, except for card brand Maestro, which offers cards with and without CVC. 
 
 + **Secure Card Data:** With the Initialize Request, it is also possible within Saferpay Secure Card Data to forward saved cards in the form of an alias. For example, this can be the case if the customers card number has been already saved (tokenized), and you do not want her or him to re-enter this data. To use the alias value instead of the actual card data, use the container PaymentMeans.
 
