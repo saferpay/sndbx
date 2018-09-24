@@ -11,6 +11,12 @@ The Transaction Interface is an extension to Payment Page. It can be operated in
 
 ## Description of the General Process for Using the Transaction Interface
 
+<div class="warning">
+	<p><strong>Important Note:</strong> The Transaction Interface offers various options to perform transactions. This flow only describes the general flow.</p>
+</div>
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/TX_FlowChart.png "Transaction Interface Flow Chart")
+
 1. [Transaction Initialize](index.html#Payment_v1_Transaction_Initialize)
   * Initializes the Payment and generates the RedirectUrl for the [iFrame Integration](https://saferpay.github.io/sndbx/CssiFrame.html).
 2. Open the RedirectUrl inside an HTML-iFrame, to show the hosted card entry form!
@@ -22,7 +28,7 @@ The Transaction Interface is an extension to Payment Page. It can be operated in
   * [Cancel/Abort the Transaction](index.html#Payment_v1_Transaction_Cancel)
 6. Transaction is finished!
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/tx_FlowChart.png "Transaction Interface Flow Chart")
+
 
 ## <a name="trx-cc"></a> Credit Cards
 In contrast to the payment page, credit card payments can be seamlessly integrated into the merchant's shop with the Transaction Interface. The procedure will be described in the following.
