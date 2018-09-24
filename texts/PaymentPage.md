@@ -20,6 +20,10 @@ The PaymentPage can be either used to offer the payer the option to select a des
   * [Cancel/Abort the Transaction](index.html#Payment_v1_Transaction_Cancel)
 6. Transaction is finished!
 
+<div class="info">
+  <p><strong>Want to take a look at the Payment Page?</strong> <a href="http://shop.saferpay.eu/test.php">Click here to be redirected.</a>.</p>
+</div>
+
 ### <a name="pp-initialize"></a> PaymentPage Initialize
 
 The process begins with the [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize) request. With this request, you forward all data necessary for the payment to Saferpay. These include the customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference no. of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer will return after leaving the PaymentPage.
