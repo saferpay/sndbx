@@ -25,7 +25,7 @@
     "Target": "Interfaces.html"
 },
     {
-    "Title": "Payment Page",
+    "Title": "Payment Page Interface",
     "Source": "texts/PaymentPage.md",
     "Target": "Integration_PP.html",
     "Subsites": [    
