@@ -2,7 +2,7 @@
 
 The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) can be used both with a Saferpay eCommerce license and with a Saferpay business license. It allows the processing of all payment methods available through Saferpay. Once integrated, more payment methods can also be activated at any time and without major adjustments.
 
-The PaymentPage can be either used to offer the payer the option to select a desired payment method or can be defined to jump directly to one specific payment method with a preselection option. It can also be used in combination with the Secure Card Data to store/tokonize payment data during the payment process.
+The PaymentPage can be either used to offer the payer the option to select a desired payment method or can be defined to jump directly to one specific payment method with a preselection option. It can also be used in combination with the Secure Card Data to store/tokonize payment data during the payment process. 
 
 
 ## Description of the General Process for Using PaymentPage
