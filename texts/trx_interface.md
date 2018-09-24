@@ -15,7 +15,7 @@ The Transaction Interface is an extension to Payment Page. It can be operated in
 	<p><strong>Important Note:</strong> The Transaction Interface offers various options to perform transactions. This flow only describes the general flow.</p>
 </div>
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/TX_FlowChart.png "Transaction Interface Flow Chart")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/TXI_FlowChart.png "Transaction Interface Flow Chart")
 
 1. [Transaction Initialize](index.html#Payment_v1_Transaction_Initialize)
   * Initializes the Payment and generates the RedirectUrl for the [iFrame Integration](https://saferpay.github.io/sndbx/CssiFrame.html).
