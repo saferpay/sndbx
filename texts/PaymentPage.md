@@ -1,4 +1,4 @@
-# Payment Page
+# Payment Page Interface
 
 The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage) can be used both with a Saferpay eCommerce license and with a Saferpay business license. It allows the processing of all payment methods available through Saferpay. Once integrated, more payment methods can also be activated at any time and without major adjustments.
 
