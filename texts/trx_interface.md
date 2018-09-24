@@ -9,6 +9,21 @@ The Transaction Interface is an extension to Payment Page. It can be operated in
   <p><strong>Attention:</strong> The Transaction Interface is only for holders of a business licence on the live system. For the eCommerce licence, the advanced features are not available. The test accounts have business activated by default, for evaluation purposes.</p>
 </div>
 
+## Description of the General Process for Using PaymentPage
+
+1. [Transaction Initialize](index.html#Payment_v1_Transaction_Initialize)
+  * Initializes the Payment and generates the RedirectUrl for the [iFrame Integration](https://saferpay.github.io/sndbx/CssiFrame.html).
+2. Open the RedirectUrl inside an HTML-iFrame, to show the hosted card entry form!
+3. Return to Return Url depending on the outcome of the 3D Secure procedure. The ReturnUrls are defined in step 1!
+4. [Transaction Authorize](index.html#Payment_v1_Transaction_Authorize)
+  * Authorizes the card, which has been gathered in step 2. Up until now, *no transaction has been made*!
+5. Depending on the outcome of step 4 you may
+  * [Capture/Finalize the Transaction](index.html#Payment_v1_Transaction_Capture)
+  * [Cancel/Abort the Transaction](index.html#Payment_v1_Transaction_Cancel)
+6. Transaction is finished!
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/tx_FlowChart.png "Transaction Interface Flow Chart")
+
 ## <a name="trx-cc"></a> Credit Cards
 In contrast to the payment page, credit card payments can be seamlessly integrated into the merchant's shop with the Transaction Interface. The procedure will be described in the following.
 ### <a name="trx-ini"></a>Transaction Initialize
