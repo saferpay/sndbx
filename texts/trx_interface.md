@@ -9,7 +9,7 @@ The Transaction Interface is an extension to Payment Page. It can be operated in
   <p><strong>Attention:</strong> The Transaction Interface is only for holders of a business licence on the live system. For the eCommerce licence, the advanced features are not available. The test accounts have business activated by default, for evaluation purposes.</p>
 </div>
 
-## Description of the General Process for Using PaymentPage
+## Description of the General Process for Using the Transaction Interface
 
 1. [Transaction Initialize](index.html#Payment_v1_Transaction_Initialize)
   * Initializes the Payment and generates the RedirectUrl for the [iFrame Integration](https://saferpay.github.io/sndbx/CssiFrame.html).
