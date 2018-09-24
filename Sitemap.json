@@ -19,6 +19,11 @@
      { "Source": "texts/intro.md", "Title": "Reservation-Times", "Target": "index.html#reservation" }
     ]
   },
+  {
+    "Title": "THE INTERFACES",
+    "Source": "texts/interfaces.md",
+    "Target": "Interfaces.html"
+},
     {
     "Title": "Payment Page",
     "Source": "texts/PaymentPage.md",
