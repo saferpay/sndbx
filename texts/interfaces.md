@@ -1,6 +1,6 @@
 # The Interfaces
 
-Saferpay consist of two main interfaces and a set of different additional modules that can added to each interface depending on the business requriements and payment flow.
+Saferpay consist of two main interfaces and a set of different additional modules that can added to each interface depending on the business requriements and required payment flow.
 
 The Main interfaces are:
 - **Payment Page Interface**
