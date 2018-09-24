@@ -18,7 +18,7 @@ The PaymentPage can be either used to offer the payer the option to select a des
 5. Depending on the outcome of step 4 you may
     * [Capture/Finalize the Transaction](index.html#Payment_v1_Transaction_Capture)
     * [Cancel/Abort the Transaction](index.html#Payment_v1_Transaction_Cancel)
-6. Transaction is finished!
+6. Transaction is finished! 
 
 <div class="info">
   <p><strong>Want to take a look at the Payment Page?</strong> <a target="_blank" href="http://shop.saferpay.eu/test.php">Click here to be redirected.</a></p>
