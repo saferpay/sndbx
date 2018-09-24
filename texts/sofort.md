@@ -19,7 +19,9 @@ The handling of SOFORT payments with Saferpay requires:
 *	Your Saferpay Customer ID.
 *	The ID of the Saferpay eCommerce Terminal SOFORT is to be added.
 
-**Attention**: Please send the information to activate SOFORT to **cs.ecom@six-payment-services.com**.
+<div class="warning">
+  <p><strong>Attention:</strong> For Sofort activation on the Saferpay terminal, please inform <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> of your Sofort credentials and the desired currency.</p>
+</div>
 
 ## <a name="sf-newproject"></a> Create a new project for SOFORT
 
