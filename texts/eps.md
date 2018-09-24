@@ -20,7 +20,9 @@ The handling of eps payments with Saferpay requires:
 *	Your Saferpay Customer ID.
 *	The ID of the Saferpay eCommerce Terminal eps has to be added.
 
-**Attention**: Please send the information to activate eps to **service.saferpay@six-payment-services.com**.
+<div class="warning">
+  <p><strong>Attention:</strong> For eps activation on the Saferpay terminal, please inform <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> of your eps credentials and the desired currency.</p>
+</div>
 
 ## <a name="eps-newproject"></a>How to get an EPS acceptance agreement
 
