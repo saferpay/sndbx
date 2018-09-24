@@ -21,7 +21,7 @@ The PaymentPage can be either used to offer the payer the option to select a des
 6. Transaction is finished!
 
 <div class="info">
-  <p><strong>Want to take a look at the Payment Page?</strong> <a href="http://shop.saferpay.eu/test.php">Click here to be redirected.</a></p>
+  <p><strong>Want to take a look at the Payment Page?</strong> <a target="_blank" href="http://shop.saferpay.eu/test.php">Click here to be redirected.</a></p>
 </div>
 
 ### <a name="pp-initialize"></a> PaymentPage Initialize
