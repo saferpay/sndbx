@@ -165,6 +165,14 @@ A [Multipart Capture request with a submerchant](https://saferpay.github.io/json
 
 This request will transfer 10 CHF to the merchant with the Id 17312345!
 
+## <a name="pc-capture"></a>Capture and Multipart Capture
+
+A classical Saferpay Integration uses the [Capture request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture), in order to finalize an authorization.
+Unlike [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) finalizes the whole authorization and not just a part (hence the name).
+However it is still an option to use, even for marketplaces and it also support Submerchants.
+
+It is up to the merchant, what to use in a specific situation, but note, that **either one, or the other has to be used! Not both!**
+
 ## <a name="pc-refund"></a> Handling Refunds
 
 Since [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) basically split an existing transaction into multiple parts, refunds also need to be processed in a different way.
