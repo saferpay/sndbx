@@ -1,6 +1,6 @@
 # The Interfaces
 
-Saferpay consist of two main interfaces and a set of different additional modules that can added to each interface depending on the business requriements and required payment flow.
+Saferpay consist of two main interfaces and a set of different additional modules that can be added to each interface depending on the business requriements and desired payment flow.
 
 The main components of the Saferpay JSON API are:
 - **Payment Page Interface**
