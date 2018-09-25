@@ -4,7 +4,7 @@ The Saferpay [Payment Page Interface](https://saferpay.github.io/jsonapi/#Chapte
 
 The PaymentPage can be either used to offer the payer the option to select a desired payment method or can be defined to jump directly to one specific payment method with a preselection option. See chapter [**Iframe Integration and CSS**](https://saferpay.github.io/sndbx/CssiFrame.html#css-iframe) for exapmles. It can also be used in combination with the Secure Card Data to store/tokonize payment data during the payment process. 
 
-*<sup>1</sup> this term refers to name of the interface*
+*<sup>1</sup> this term refers to name of the interface*<br>
 *<sup>2</sup> this term refers to the actual payment form were the customer enter his payment details and not to the name of the interface*
 
 ## Description of the General Process for Using PaymentPage
