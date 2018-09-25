@@ -12,9 +12,9 @@ Iframe integration is supported for these methods:
 
 The Response Message includes a respective **RedirectURL**, if successful executed. This URL needs to be embedded in the Iframe.
 
-### <a name="css-pp"></a> Payment Page
+### <a name="css-pp"></a> Payment Page Initialize
 
-The Payment Page has a responsive design and automatically adapts to the size of the Iframe. Here are two examples:
+The Payment Page (payment form) has a responsive design and automatically adapts to the size of the Iframe. Here are two examples:
 
 + Full size:  
 
@@ -26,13 +26,13 @@ The Payment Page has a responsive design and automatically adapts to the size of
 
 ### <a name="css-trxini"></a> Transaction Initialize
 
-Here, the Saferpay Card Entry Form appears for data capture of the card details: 
+Here, an example of the Saferpay Card Entry Form (**Hosted Entry Form**) for capturing card details:
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pay_with_cvc.png "Saferpay Card Entry Form")
 
 ### <a name="css-aliasins"></a> Alias Insert
 
-Here, the Saferpay Card Registration Form opens:  
+Here, an example of the Saferpay Card Registration Form (**Hosted Register Form**):  
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_alias_insert.png "Card Registration Form")
 
