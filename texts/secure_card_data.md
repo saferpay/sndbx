@@ -1,6 +1,8 @@
 # Secure Card Data
 
-Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive payment means information in the certified Saferpay data center. By using SCD, the payment means data is separated from the merchant application and no longer comes into contact with it. Secure Card Data is suitable for shop systems, call center solutions, inventory management, ERP and CRM systems. It offers the Hosted Register Form (HRF) to store payment data regardless of an actual payment been made.
+Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive payment data in the certified Saferpay data center. By using SCD, the payment data is separated from the merchant's application and thus no longer comes into contact with it. Secure Card Data is suitable for shop systems, call center solutions, inventory management, ERP and CRM systems in which stored payment data is required for future/deferred or recurring/instalments payments.
+
+ It provides the Hosted Register Form (HRF) to simply store/tokenize payment data regardless of any actual payment been made. For example, if a customer wants to add different payment options to his account so that he/she can decide which one to use during the actual payment process.
 
 ## <a name="scd-req"></a> Requirements
 
@@ -256,7 +258,7 @@ However, you need to consider the following restrictions:
 
 ### Request
 
-In order, to let a card get checkted, you need to set the **Check**-container within the [initial registration-request](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert).
+In order, to let a card get checked, you need to set the **Check**-container within the [initial registration-request](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert).
 You need to make sure, to provide a valid terminal Id, with activated acquiring-contracts for VISA and MasterCard.
 
 ```json
