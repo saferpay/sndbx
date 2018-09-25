@@ -2,7 +2,7 @@
 
 The Saferpay [Payment Page Interface](https://saferpay.github.io/jsonapi/#ChapterPaymentPage)<sup>1</sup> is intended for a simplified and universal integration of the payment process by using the PaymentPage payment form<sup>2</sup>. The Saferpay Payment Page can be used both with a Saferpay eCommerce license and with a Saferpay business license. All Saferpay supported payment methods can be processes with the PaymentPage Interface; credit cards and third-party payment methods like “PayPal, iDEAL, SOFORT/Klarna adn more. Once integrated, more payment methods can be added at any time and without major adjustments.
 
-The PaymentPage can be either used to offer the payer the option to select a desired payment method or can be defined to jump directly to one specific payment method with a preselection option. Please read chapter [**Iframe Integration and CSS**](https://saferpay.github.io/sndbx/CssiFrame.html#css-iframe) for exapmles. It can also be used in combination with the Secure Card Data to store/tokonize payment data during the payment process. 
+The PaymentPage can be either used to offer the payer the option to select a desired payment method or can be defined to jump directly to one specific payment method with a preselection option. Please read chapter [**Iframe Integration and CSS**](https://saferpay.github.io/sndbx/CssiFrame.html#css-iframe) for examples of the different payment forms. It can also be used in combination with the Secure Card Data to store/tokonize payment data during the payment process. 
 
 *<sup>1</sup> this term refers to name of the interface*<br>
 *<sup>2</sup> this term refers to the actual payment form which is used to capture payment details*
