@@ -6,8 +6,7 @@ The PaymentPage can be either used to offer the payer the option to select a des
 
 [1] this term refers to name of the interface
 
-####² this term refers to the actual payment form were the customer enter his payment details and not to the name of the interface.
-[²]:#-note-two 
+####² this term refers to the actual payment form were the customer enter his payment details and not to the name of the interface. [²]:#-note-two 
 
 
 ## Description of the General Process for Using PaymentPage
