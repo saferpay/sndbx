@@ -11,7 +11,7 @@ Apart from the processing of payments via the Hosted Entry from, it also offers 
   <p><strong>Attention:</strong> The Transaction Interface is only for holders of a business licence on the live system. For the eCommerce licence, the advanced features are not available. The test accounts have business activated by default, for evaluation purposes.</p>
 </div>
 
-## Description of the General Process for Using the Transaction Interface
+## Description of the general process for using the Transaction Interface
 
 <div class="warning">
 	<p><strong>Important Note:</strong> The Transaction Interface offers various options to perform transactions. This flow only describes the general flow.</p>
