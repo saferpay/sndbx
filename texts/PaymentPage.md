@@ -7,7 +7,7 @@ The PaymentPage can be either used to offer the payer the option to select a des
 *<sup>1</sup> this term refers to name of the interface*<br>
 *<sup>2</sup> this term refers to the actual payment form which is used to capture payment details*
 
-## Description of the General Process for Using PaymentPage
+## Description of the general process for using the Payment Page Interface
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PP_FlowChart2.png "Payment Page Flow Chart")
 
