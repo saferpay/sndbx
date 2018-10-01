@@ -26,7 +26,7 @@ The PaymentPage can be either used to offer the payer the option to select a des
   <p><strong>Want to take a look at the Payment Page?</strong> <a target="_blank" href="http://shop.saferpay.eu/test.php">Click here to be redirected.</a></p>
 </div>
 
-### <a name="pp-initialize"></a> PaymentPage Initialize
+### <a name="pp-initialize"></a> 1 - PaymentPage Initialize
 
 The process begins with the [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize) request. With this request, you forward all data necessary for the payment to Saferpay. These include the customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference no. of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer will return after leaving the PaymentPage.
 
@@ -61,16 +61,16 @@ The process begins with the [PaymentPage Initialize](https://saferpay.github.io/
 
 + **RedirectUrl:** The **RedirectURL** provides the address via which the buyer is redirected to the PaymentPage. This can be done automatically via calling up the Iframe or by embedding the URL in an HTML link that must be clicked on by the buyer.
 
-## <a name="pp-transaction"></a> Redirect and Transaction
+## <a name="pp-transaction"></a> 2 - Redirect and Transaction
 
 Redirect the buyer to the **RedirectUrl** from the  [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize) response, using your desired method.
 The transaction will be fully processed by the PaymentPage. The Payment Page handles all steps automatically, including [3D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and [DCC](https://saferpay.github.io/sndbx/index.html#dcc). No additional steps are necessary on the merchant website.
 
-## <a name="pp-retshop"></a> Return to the Shop
+## <a name="pp-retshop"></a> 3 - Return to the Shop
 
 Once the transaction is complete, the card holder – depending on the outcome – is taken back to the shop, to one of the **ReturnUrls**. Here, the GET parameters can be read and the **Token** can be assigned to the transaction. With the **Token**, the payment can be continued to the next step.
 
-## <a name="pp-assert"></a> PaymentPage Assert
+## <a name="pp-assert"></a> 4- PaymentPage Assert
 
 With the [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert), the results of a transaction are requested. The returned data may be stored on the merchant side.
 
@@ -97,7 +97,7 @@ Based on the data obtained, it is to be decided whether or not a transaction is 
   <p><strong>Info:</strong> Under certain circumstances a PaymentPage Session can be valid for about 1 hour -other sessions, like external redirections to 3D Secure and 3rd party providers can add up to this!-, but a normal session does not take longer, than 20 minutes!</p>
 </div>
 
-## <a name="pp-captcancel"></a> Capture or Cancel
+## <a name="pp-captcancel"></a> 5 - Capture or Cancel
 
 Subsequently, the transaction will be finalised via [**Capture**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or aborted via [**Cancel**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel).For this, the transaction identifier **Id** is required. Please refer to the notes [in the payment methods chapter](index.html#pm-functions), to check, if and when a **Capture** is necessary, and whether a **Cancel** can still be executed.
 
