@@ -70,7 +70,7 @@ The transaction will be fully processed by the PaymentPage. The Payment Page han
 
 Once the transaction is complete, the card holder – depending on the outcome – is taken back to the shop, to one of the **ReturnUrls**. Here, the GET parameters can be read and the **Token** can be assigned to the transaction. With the **Token**, the payment can be continued to the next step.
 
-## <a name="pp-assert"></a> 4- PaymentPage Assert
+## <a name="pp-assert"></a> 4 - PaymentPage Assert
 
 With the [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert), the results of a transaction are requested. The returned data may be stored on the merchant side.
 
