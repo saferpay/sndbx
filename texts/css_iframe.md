@@ -16,9 +16,13 @@ The Response Message includes a respective **RedirectURL**, if successful execut
 
 The Payment Page (payment form) has a responsive design and automatically adapts to the size of the Iframe. Here are two examples:
 
-+ Full size:  
++ Full size - with multiple payment methods:  
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_desktop.png "Payment Page desktop view")
+
++ Full size - credit card entry form:  
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_desktop_form.png "Payment Page desktop view - Card Entry")
 
 + Small size:  
 
