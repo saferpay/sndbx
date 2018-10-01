@@ -24,9 +24,13 @@ The Payment Page (payment form) has a responsive design and automatically adapts
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_desktop_form.png "Payment Page desktop view - Card Entry")
 
-+ Small size:  
++ Small responsive size:  
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_mobile.png "Payment Page mobile view")
+
++ Small responsive size - credit card entry form: 
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_mobile_form.png "Payment Page mobile view - Card Entry")
 
 ### <a name="css-trxini"></a> Transaction Initialize
 
