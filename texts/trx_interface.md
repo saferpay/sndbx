@@ -63,7 +63,7 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
 ### <a name="trx-iframe"></a>2 - Open RedirectUrl inside an HTML-iFrame
 The RedirectUrl should be opened inside an HTML-iFrame embeded in your webshop or application, to show the hosted card entry form. Please view the chapter [**Iframe Integration and CSS**](https://saferpay.github.io/sndbx/CssiFrame.html#chapter-css-iframe) for more information on the iframe integration and use of CSS to style the hosted entry form.
 
-### <a name="trx-3ds"></a> 3-D Secure and DCC
+#### <a name="trx-3ds"></a> 3-D Secure and DCC
 If [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc) are activated on the terminal for the payment method being used, these services are automatically performed for the transaction as soon as the form has been sent. For this, no additional steps are necessary for the merchant. 
 
 ### <a name="trx-retshop"></a>3 - Return to the Shop
