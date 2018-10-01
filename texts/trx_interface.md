@@ -21,20 +21,20 @@ Apart from the processing of payments via the Hosted Entry from, it also offers 
 
 1. [Transaction Initialize](index.html#Payment_v1_Transaction_Initialize)
   	* Initializes the Payment and generates the RedirectUrl for the [iFrame Integration](https://saferpay.github.io/sndbx/CssiFrame.html).
-2. Open the RedirectUrl inside an HTML-iFrame, to show the hosted card entry form!
-3. Return to Return Url depending on the outcome of the 3D Secure procedure. The ReturnUrls are defined in step 1!
+2. Open the RedirectUrl inside an HTML-iFrame, to show the hosted card entry form.
+3. Return to Return Url depending on the outcome of the 3D Secure procedure. The ReturnUrls are defined in step 1.
 4. [Transaction Authorize](index.html#Payment_v1_Transaction_Authorize)
   	* Authorizes the card, which has been gathered in step 2. Up until now, *no transaction has been made*!
 5. Depending on the outcome of step 4 you may
   	* [Capture/Finalize the Transaction](index.html#Payment_v1_Transaction_Capture)
   	* [Cancel/Abort the Transaction](index.html#Payment_v1_Transaction_Cancel)
-6. Transaction is finished!
+6. Transaction is finished.
 
 
 
 ## <a name="trx-cc"></a> Credit Cards
 In contrast to the payment page, credit card payments can be seamlessly integrated into the merchant's shop with the Transaction Interface. The procedure will be described in the following.
-### <a name="trx-ini"></a>Transaction Initialize
+### <a name="trx-ini"></a>1 - Transaction Initialize
 The process begins with [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize). With this request, you forward all data necessary for the payment to Saferpay. Such as your customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference number of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer will return, depending on the outcome of the payment. 
 ### Here are a few hints and tips about the options that are available for the merchant:
 
@@ -60,17 +60,20 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
   <p><strong>Note:</strong> If an alias is forwarded in the initalize request (See the step above!), the display of the form will be skipped.</p>
 </div>
 
+### <a name="trx-iframe"></a>2 - Open RedirectUrl inside an HTML-iFrame
+The RedirectUrl should be opened inside an HTML-iFrame embeded in your webshop or application, to show the hosted card entry form. Please view the chapter [**Iframe Integration and CSS**](https://saferpay.github.io/sndbx/CssiFrame.html#chapter-css-iframe) for more information on the iframe integration and use of CSS to style the hosted entry form.
+
 ### <a name="trx-3ds"></a> 3-D Secure and DCC
-If [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc) are activated on the terminal for the payment method being used, these services are automatically conducted for the transaction as soon as the form has been sent. For this, no additional steps are necessary for the merchant. 
-### <a name="trx-retshop"></a>Return to the Shop
+If [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc) are activated on the terminal for the payment method being used, these services are automatically performed for the transaction as soon as the form has been sent. For this, no additional steps are necessary for the merchant. 
+
+### <a name="trx-retshop"></a>3 - Return to the Shop
 Once [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc) are completed, the card holder – depending on the outcome – is taken back to one of the **ReturnUrls** of the shop. Here, the GET parameters can be read and the **Token** can be assigned to the transaction. With the **Token**, the payment can be continued to the next step.
-### <a name="trx-ta"></a>Transaction Authorize
+
+### <a name="trx-ta"></a>4 - Transaction Authorize
 With Payment Page, the payment is triggered automatically upon completion of [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc). In contrast, with Transaction Interface it is triggered separately via [Authorize Request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize).
 
 **The Transaction Authorize Request offers further possibilities:**
-
-
-+ **Condition:** With the **Condition** parameter, it can be specified that a payment will only be authorized when a 3-D Secure liability shift is present for it.
++ **Condition:** With the **Condition** parameter, it can be specified that a payment will only be authorized when a 3-D Secure liability shift is provided by the cardholders bank.
 
 + **Secure Card Data:** Via the **RegisterAlias** container, card details from a payment can be stored safely and in conformity with PCI. For this, the alias for the card details is transmitted back to the merchant system with the authorization response. It is then available for another purchase in the shop, without customers having to enter their card details again. See for example the [Initialize request above](https://saferpay.github.io/sndbx/Integration_trx.html#trx-ini). The parameter **IdGenerator** is used to determine how the alias is generated. If **MANUAL** is specified, the shop system passes an absolutely unique value. With **RANDOM**, a random alphanumeric value is generated by Saferpay. With **RANDOM_UNIQUE**, it will be additionally verified prior to generation of the alias, as to whether or not the card number/expiration date combination already exists as an alias entry in the database. If so, the already existing alias is returned and nothing new is generated.
 
@@ -79,7 +82,6 @@ With Payment Page, the payment is triggered automatically upon completion of [3-
 </div>
 
 **Transaction Authorize Response data**
- 
 In case of success the authorization data is returned with the Transaction Authorize Response. Based on this data, it can be decided how the transaction is to proceed. The following data is interesting in this regard:
 
 + **Transaction > ID:** The transaction identifier (**Id**) returned in the container **Transaction**, is a unique identifier for a transaction. The value is obligatory for further processing steps (Transaction [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel)) and should therefore be saved.
@@ -96,7 +98,7 @@ In case of success the authorization data is returned with the Transaction Autho
   <p><strong>Tip:</strong> You can also call Authorize, if the FailUrl has been called. It will then give you information about the error!</p>
 </div>
 
-### <a name="trx-captcancel"></a>Capture or Cancel
+### <a name="trx-captcancel"></a>5 - Capture or Cancel
 Subsequently, the transaction will be finalised via [**Capture**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or aborted via [**Cancel**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel).For this, the transaction identifier **Id** is required. Please refer to the notes [in the payment methods chapter](index.html#pm-functions), to check, if and when a **Capture** is necessary, and whether a **Cancel** can still be executed.
 Once these steps have been finalised, the transaction is complete.
 ## <a name="trx-sepa"></a> SEPA Direct Debit
@@ -112,7 +114,7 @@ Because there are no PCI requirements for direct debits, bank details data can b
 
 ## <a name="trx-post"></a> Using your own HTML-Form
 
-Even though it is not allowed in most cases, Saferpay still offers the possability to use a custom HTML-form, if you still desire to use it. The basic transaction-flow stays the same.
+Saferpay also offers the possibility to use a custom HTML-for form merchants with the required PCI certification. The basic transaction-flow stays the same.
 
 <div class="danger">
   <p><strong>Warning:</strong> As mentioned before: <strong>DO NOT PROCEED</strong>, if you do not have the necessary PCI certification (SAQ-A EP) in order to use your own form! <strong>SIX Payment Services will not take any kind of responsibility in case of a noncompliance!</strong></p>
