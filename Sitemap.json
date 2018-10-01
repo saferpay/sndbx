@@ -44,7 +44,7 @@
     "Subsites": [
       { "Source": "texts/trx_interface.md", "Title": "Credit Cards", "Target": "Integration_trx.html#trx-cc" },
       { "Source": "texts/trx_interface.md", "Title": "Transaction Initialize", "Target": "Integration_trx.html#trx-ini" },
-      { "Source": "texts/trx_interface.md", "Title": "RedirectUrl in iframe", "Target": "Integration_trx.html#trx-iframe" },
+      { "Source": "texts/trx_interface.md", "Title": "RedirectUrl inside iframe", "Target": "Integration_trx.html#trx-iframe" },
   	   { "Source": "texts/trx_interface.md", "Title": "3-D Secure and DCC", "Target": "Integration_trx.html#trx-3ds" },
       { "Source": "texts/trx_interface.md", "Title": "Return to the Shop", "Target": "Integration_trx.html#trx-retshop" },
       { "Source": "texts/trx_interface.md", "Title": "Transaction Authorize", "Target": "Integration_trx.html#trx-ta" },
