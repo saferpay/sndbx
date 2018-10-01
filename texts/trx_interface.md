@@ -12,8 +12,8 @@ Apart from the processing of payments via the Hosted Entry from, it also offers 
   <p><strong>Attention:</strong> The Transaction Interface is only for holders of a business licence on the live system. For the eCommerce licence, the advanced features are not available. The test accounts have business activated by default, for evaluation purposes.</p>
 </div>
 
-Description of the general process for using the Transaction Interface
-------
+## Description of the general process for using the Transaction Interface
+
 
 <div class="warning">
 	<p><strong>Important Note:</strong> The Transaction Interface offers various options to perform transactions. This flow only describes the general flow.</p>
@@ -117,7 +117,7 @@ Because there are no PCI requirements for direct debits, bank details data can b
 
 ## <a name="trx-post"></a> Using your own HTML-Form
 
-Saferpay also offers the possibility to use a custom HTML-for form merchants with the required PCI certification. The basic transaction-flow stays the same.
+Saferpay also offers the possibility to use a custom HTML-form for merchants with the required PCI certification. The basic transaction-flow stays the same.
 
 <div class="danger">
   <p><strong>Warning:</strong> As mentioned before: <strong>DO NOT PROCEED</strong>, if you do not have the necessary PCI certification (SAQ-A EP) in order to use your own form! <strong>SIX Payment Services will not take any kind of responsibility in case of a noncompliance!</strong></p>
