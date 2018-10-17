@@ -25,7 +25,161 @@ Simply follow the basic [Payment Page integration steps](Integration_PP.html). I
 Furthermore, Masterpass will also show up, once a credit card brand has been selected, as an alternative:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/MasterpassPPageCEF.PNG "Masterpass Payment Page Card Entry Form")
 
-## <a name="mp-special"></a> Special Cases
+### Direct redirect to Masterpass
 
-+ **Billing address:** Saferpay can capture the billing address in multiple ways. Either the merchant does capture it himself and submits the data through the respective request, or, in case of the [Payment Page](Integration_PP.html), the page does offer respective forms, that can capture the address! In case of Masterpass however, the address is saved within the Masterpass Wallet of the card holder. Should the billing address be captured, using one of the other methods, it will be overwritten by the wallet-address!
-+ **Pre-Selection:** Similar to normal payment methods, it is possible to pre-select Masterpass, when using the [Payment Page](Integration_PP.html). If done so, Saferpay will perform the redirect to Masterpass right away and skip the Payment Page entirely. However the pre-selection of Masterpass needs to be done through a different parameter. While normal payment methods do use the parameter **PaymentMethods**, wallets like Masterpass, need to use the parameter **Wallets**, as described inside the [JSON-API specification](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize). Also note, that if you submit both parameters at the same time, the Payment Page will display the payment method selection screen. So please make sure to submit either one, or the other, if you want to skip this step!
+If you want to perform a direct redirect to Masterpass, you have to use the parameter **Wallets** within the [PaymentPage Initialize request](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize)!
+
+```json 
+{
+    "RequestHeader": {
+        "SpecVersion": "1.10",
+        "CustomerId": "[YOUR CUSTOMERID]",
+        "RequestId": "2f3f941282ebf63933052693194b5e61",
+        "RetryIndicator": 0,
+        "ClientInfo": {
+            "ShopInfo": "My Shop",
+            "OsInfo": "Windows Server 2013"
+        }
+    },
+    "TerminalId": "[YOUR TERMINAL]",
+    "Payment": {
+        "Amount": {
+            "Value": "12345",
+            "CurrencyCode": "EUR"
+        },
+        "OrderId": 123,
+        "Description": "Test Order #123"
+    },
+    "Wallets": [
+        "MASTERPASS"
+    ],
+    "ReturnUrls": {
+        "Success": "[YOUR URL]",
+        "Fail": "[YOUR URL]",
+        "Abort": "[YOUR URL]"
+    },
+}
+
+```
+
+<div class="info">
+  <p><strong>IMPORTANT:</strong> If you are using <strong>"Wallets"</strong> alongside <strong>"PaymentMethods"</strong>, both parameters will be treated equally and a selection-screen will be displayed!</p>
+</div>
+
+
+
+### Forcing the Delivery Address
+
+If you want to **force** the user into selecting a delivery address, within his Masterpass Wallet, you can do so, via the **DeliveryAddressForm** parameter, within the [PaymentPage Initialize request](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize):
+
+```json 
+{
+    "RequestHeader": {
+        "SpecVersion": "1.10",
+        "CustomerId": "[YOUR CUSTOMERID]",
+        "RequestId": "2f3f941282ebf63933052693194b5e61",
+        "RetryIndicator": 0,
+        "ClientInfo": {
+            "ShopInfo": "My Shop",
+            "OsInfo": "Windows Server 2013"
+        }
+    },
+    "TerminalId": "[YOUR TERMINAL]",
+    "Payment": {
+        "Amount": {
+            "Value": "12345",
+            "CurrencyCode": "EUR"
+        },
+        "OrderId": 123,
+        "Description": "Test Order #123"
+    },
+    "Wallets": [
+        "MASTERPASS"
+    ],
+     "DeliveryAddressForm": {
+        "Display": true
+    },
+    "ReturnUrls": {
+        "Success": "[YOUR URL]",
+        "Fail": "[YOUR URL]",
+        "Abort": "[YOUR URL]"
+    },
+}
+
+```
+
+The address will then be delivered via the [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert):
+
+```json 
+{
+    "ResponseHeader": {
+        "SpecVersion": "1.9",
+        "RequestId": "1c9f941282ebf6e3a05261144b5fb4"
+    },
+    "Transaction": {
+        "Type": "PAYMENT",
+        "Status": "AUTHORIZED",
+        "Id": "14IMtdbljnYhtA9x2WbhbKrA1Odb",
+        "Date": "2018-10-17T16:27:15.000+02:00",
+        "Amount": {
+            "Value": "12345",
+            "CurrencyCode": "EUR"
+        },
+        "OrderId": "123",
+        "AcquirerName": "MasterCard Saferpay Test",
+        "AcquirerReference": "59428236614",
+        "SixTransactionReference": "0:0:3:14IMtdbljnYhtA9x2WbhbKrA1Odb",
+        "ApprovalCode": "387800"
+    },
+    "PaymentMeans": {
+        "Brand": {
+            "PaymentMethod": "MASTERCARD",
+            "Name": "MasterCard"
+        },
+        "DisplayText": "xxxx xxxx xxxx 0003",
+        "Wallet": "MASTERPASS",
+        "Card": {
+            "MaskedNumber": "903010xxxxxx0003",
+            "ExpYear": 2022,
+            "ExpMonth": 10,
+            "HolderName": "Max Simulator",
+            "CountryCode": "DE",
+        }
+    },
+    "Payer": {
+        "IpAddress": "153.46.97.98",
+        "IpLocation": "CH",
+        "DeliveryAddress": {
+            "FirstName": "",
+            "LastName": "Max Simulator",
+            "Street": "Dorfstrasse 54",
+            "Street2": "",
+            "Zip": "6000",
+            "City": "Luzern",
+            "CountrySubdivisionCode": "CH-LU",
+            "CountryCode": "CH",
+            "Phone": "+41 41 765-4321",
+            "Email": "max.simulator@saferpay.com"
+        }
+    },
+    "Liability": {
+        "LiabilityShift": true,
+        "LiableEntity": "ThreeDs",
+        "ThreeDs": {
+            "Authenticated": true,
+            "LiabilityShift": true,
+            "Xid": "n0kq9Z41MKK2wSKE+x+gPH9LoOw=",
+            "VerificationValue": "AAABBIIFmAAAAAAAAAAAAAAAAAA="
+        }
+    }
+}
+
+
+```
+
+<div class="warning">
+  <p><strong>IMPORTANT:</strong> Saferpay can capture the billing address in multiple ways. Either the merchant does capture it himself and submits the data through the respective request, or, in case of the Payment Page, the page does offer respective forms, that can capture the address! In case of Masterpass however, the address is saved within the Masterpass Wallet of the card holder. Should the delivery address be captured, using one of the other methods, it will be overwritten by the wallet-address!</p>
+</div>
+
+
+
