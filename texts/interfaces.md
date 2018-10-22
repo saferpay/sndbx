@@ -341,4 +341,4 @@ This is also helpful, if you decide to upgrade from E Commerce to Business (For 
 ## <a name="int-questions"></a> Questions?
 
 Still unsure what you need?
-[Contact the Saferpay Integration Support!](https://saferpay.github.io/sndbx/contact.html) and we will help you deciding!
+[Contact the Saferpay Integration Support](https://saferpay.github.io/sndbx/contact.html) and we will help you deciding!
