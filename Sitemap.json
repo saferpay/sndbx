@@ -9,8 +9,6 @@
       { "Source": "texts/intro.md", "Title": "3-D Secure", "Target": "index.html#3ds" },
       { "Source": "texts/intro.md", "Title": "Dynamic Currency Conversion", "Target": "index.html#dcc" },
       { "Source": "texts/intro.md", "Title": "Versioning", "Target": "index.html#version" },
-      { "Source": "texts/intro.md", "Title": "Supported Payment Methods", "Target": "index.html#paymentmethods" },
-      { "Source": "texts/intro.md", "Title": "Licences", "Target": "index.html#licenses" },
       { "Source": "texts/intro.md", "Title": "Payment Method Features", "Target": "index.html#pm-functions" },
       { "Source": "texts/intro.md", "Title": "Capture and Daily Closing", "Target": "index.html#capture-batch" },
       { "Source": "texts/intro.md", "Title": "Capture", "Target": "index.html#capture" },
@@ -20,9 +18,15 @@
     ]
   },
   {
-    "Title": "THE INTERFACES",
+    "Title": "Licenses and Interfaces",
     "Source": "texts/interfaces.md",
-    "Target": "Interfaces.html"
+    "Target": "Interfaces.html",
+   "Subsites": [
+      { "Source": "texts/interfaces.md", "Title": "The Interfaces", "Target": "Interfaces.html#interfaces" },
+      { "Source": "texts/interfaces.md", "Title": "Supported Payment Methods", "Target": "Interfaces.html#int-paymentmethods" },
+      { "Source": "texts/interfaces.md", "Title": "What should i use?", "Target": "Interfaces.html#int-what" },
+      { "Source": "texts/interfaces.md", "Title": "Questions?", "Target": "Interfaces.html#int-questions" }
+    ]
 },
     {
     "Title": "Payment Page Interface",
