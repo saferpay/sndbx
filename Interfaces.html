@@ -526,7 +526,7 @@
 				</div>
 
 				
-<section><h1>Licences and Interfaces</h1><div class="row"><div class="col-md-6"><p>Saferpay distinguishes between two licences:</p><ul>
+<section id="int-licenses"><h1><a name="int-licenses"></a> Licences and Interfaces</h1><div class="row"><div class="col-md-6"><p>Saferpay distinguishes between two licences:</p><ul>
 <li>Saferpay eCommerce</li>
 <li>Saferpay Business</li>
 </ul><p>It is extremely important to clarify before the implementation of Saferpay, whether an eCommerce licence or a business license is to be used, as they provide different functions. The Saferpay Business licence is an extension of the eCommerce licence. If you have any queries, please contact your relevant contractually appointed person.</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/LicenseOptions.png" alt="alt text" title="License Options"></p><div class="info">
@@ -820,7 +820,7 @@
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
   </tbody>
-</table></div></div></section><section id="int-what"><h2><a name="int-what"></a> What should i use?</h2><div class="row"><div class="col-md-6"><p>Before implementing, it is important to clarify, which functions are important for you!</p></div></div></section><section><h3>Use the PaymentPage/ E Commerce, if...</h3><div class="row"><div class="col-md-6"><ul>
+</table></div></div></section><section id="int-when"><h2><a name="int-when"></a> What should i use?</h2><div class="row"><div class="col-md-6"><p>Before implementing, it is important to clarify, which functions are important for you!</p></div></div></section><section><h3>Use the PaymentPage/ E Commerce, if...</h3><div class="row"><div class="col-md-6"><ul>
 <li><strong>You only want to do transactions:</strong> Do you have a small and simple webshop? Are <a href="refund.html">refunds over the API</a>, or <a href="recurring.html">recurring payments</a> not important for you? The Payment Page and thus a normal E Commerce contract is more, than sufficient for you!</li>
 <li><strong>You want to have one solution for every payment method:</strong> <a href="Integration_PP.html">The PaymentPage</a> does support every payment method Saferpay has to offer. Once integrated, it is a simple matter of activating the payment methods you need and they will show up on the page.</li>
 </ul></div></div></section><section><h3>Use the Transaction Interface/Saferpay Business, if...</h3><div class="row"><div class="col-md-6"><ul>
@@ -831,8 +831,7 @@
 </ul></div></div></section><section><h3>Why not both?</h3><div class="row"><div class="col-md-6"><p>If you have access to Saferpay Business, you also have access to all API-functions Saferpay has to offer. You don't have to stick to one interface, or the other, you can also mix both interfaces.
 In some cases, you <strong>have</strong> to use the <a href="Integration_PP.html">PaymentPage</a>, for example, if you want to use <a href="PayPal.html">PayPal</a>, or any other 3rd party provider.
 Another use case could be, that you do all your normal authorizations over the <a href="Integration_PP.html">PaymentPage</a>, but then you use the <a href="refund.html">Transaction Interface for Refunds</a>.
-This is also helpful, if you decide to upgrade from E Commerce to Business (For example for executing said refunds via API!) and already have a <a href="Integration_PP.html">PaymentPage Integration</a>. You can simply extend your Integration for the functions you need, without changing the whole existing implementation.</p></div></div></section><section id="int-questions"><h2><a name="int-questions"></a> Questions?</h2><div class="row"><div class="col-md-6"><p>Still unsure what you need?
-<a href="https://saferpay.github.io/sndbx/contact.html">Contact the Saferpay Integration Support</a> and we will help you deciding!</p></div></div></section>
+This is also helpful, if you decide to upgrade from E Commerce to Business (For example for executing said refunds via API!) and already have a <a href="Integration_PP.html">PaymentPage Integration</a>. You can simply extend your Integration for the functions you need, without changing the whole existing implementation.</p></div></div></section>
 
 			</main>
 
