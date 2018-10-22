@@ -540,7 +540,7 @@
 </ul></div></div></section><section id="scd-pp"><h2><a name="scd-pp"></a> Secure Card Data and the Payment Page</h2><div class="row"><div class="col-md-6"><p>The Payment Page can be used to save a credit card, <strong>after a successful authorization</strong>!
 In order to request an Alias with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>, you first need to set the <strong>RegisterAlias</strong> container within the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>.</p><pre><code class="language-json">{ 
 &quot;RequestHeader&quot;: {
-   &quot;SpecVersion&quot;: &quot;1.8&quot;,
+   &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
    &quot;RequestId&quot;: &quot;[unique request id]&quot;,
    &quot;RetryIndicator&quot;: 0
@@ -570,7 +570,7 @@ In order to request an Alias with the <a href="http://saferpay.github.io/jsonapi
   <p><strong>NOTE:</strong>The IdGenerator has multiple options to choose from. All of them will be explained later in this chapter!</p>
 </div><p>Once a successful transaction has been made through the PaymentPage, you will get the result of the registration with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>(See <strong>&quot;RegistrationResult&quot;</strong>!):</p><pre><code class="language-json">{
   &quot;ResponseHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;1.8&quot;,
+    &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
     &quot;RequestId&quot;: &quot;[your request id]&quot;
   },
   &quot;Transaction&quot;: {
@@ -621,7 +621,7 @@ In order to request an Alias with the <a href="http://saferpay.github.io/jsonapi
   <p><strong>Important:</strong>The Payment Page <strong>CAN NOT</strong> be used to authorize the obtained Alias! It can only register cards!</p>
 </div></div></div></section><section id="scd-trx"><h2><a name="scd-trx"></a> Secure Card Data and the Transaction Interface</h2><div class="row"><div class="col-md-6"><p><a href="http://saferpay.github.io/jsonapi/#ChapterTransaction">The Transaction Interface</a> can also be used to obtain a Secure Card Data alias <strong>also after a successful authorization</strong>! The submitted Data is the same, as with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>, but with <a href="http://saferpay.github.io/jsonapi/#ChapterTransaction">the Transaction Interface</a> you <strong>MUST NOT USE</strong> the <strong>RegisterAlias</strong> container within <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a>. Here the registration actually is made with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize request</a> (<strong>Remember:</strong> A registration is only made, if the Authorization is successful!), thus you have to submit the necessary data here:</p><pre><code class="language-json">{ 
 &quot;RequestHeader&quot;: {
-   &quot;SpecVersion&quot;: &quot;1.8&quot;,
+   &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
    &quot;RequestId&quot;: &quot;[unique request id]&quot;,
    &quot;RetryIndicator&quot;: 0
@@ -635,7 +635,7 @@ In order to request an Alias with the <a href="http://saferpay.github.io/jsonapi
   <p><strong>NOTE:</strong>The IdGenerator has multiple options to choose from. All of them will be explained later in this chapter!</p>
 </div><p>Once a successful transaction has been made, you will get the result of the registration with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize response</a> (See <strong>&quot;RegistrationResult&quot;</strong>!):</p><pre><code class="language-json">{
   &quot;ResponseHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;1.8&quot;,
+    &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
     &quot;RequestId&quot;: &quot;[your request id]&quot;
   },
   &quot;Transaction&quot;: {
@@ -710,7 +710,7 @@ However, you need to consider the following restrictions:</p><ol>
 </ol></div></div></section><section><h3>Request</h3><div class="row"><div class="col-md-6"><p>In order, to let a card get checked, you need to set the <strong>Check</strong>-container within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">initial registration-request</a>.
 You need to make sure, to provide a valid terminal Id, with activated acquiring-contracts for VISA and MasterCard.</p><pre><code class="language-json">{
   &quot;RequestHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;1.8&quot;,
+    &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
     &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
     &quot;RequestId&quot;: &quot;[your request id]&quot;,
     &quot;RetryIndicator&quot;: 0,
@@ -736,7 +736,7 @@ You need to make sure, to provide a valid terminal Id, with activated acquiring-
 </code></pre></div></div></section><section><h3>Response</h3><div class="row"><div class="col-md-6"><p>If the check was successful, you will get a successful registration-response with the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert">Assert Insert</a>.
 If the chek failed, the registration too will fail and you'll get an error-response:</p><pre><code class="language-json">{
     &quot;ResponseHeader&quot;: {
-        &quot;SpecVersion&quot;: &quot;1.8&quot;,
+        &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
         &quot;RequestId&quot;: &quot;55&quot;
     },
     &quot;Behavior&quot;: &quot;ABORT&quot;,
