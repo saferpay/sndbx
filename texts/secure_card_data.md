@@ -35,7 +35,7 @@ In order to request an Alias with the [PaymentPage Assert](http://saferpay.githu
  ```json 
  { 
  "RequestHeader": {
-    "SpecVersion": "1.8",
+    "SpecVersion": "[CURRENT-SPEC-VERSION]",
     "CustomerId": "[your customer id]",
     "RequestId": "[unique request id]",
     "RetryIndicator": 0
@@ -71,7 +71,7 @@ Once a successful transaction has been made through the PaymentPage, you will ge
 ```json
 {
   "ResponseHeader": {
-    "SpecVersion": "1.8",
+    "SpecVersion": "[CURRENT-SPEC-VERSION]",
     "RequestId": "[your request id]"
   },
   "Transaction": {
@@ -130,7 +130,7 @@ Once a successful transaction has been made through the PaymentPage, you will ge
  ```json 
  { 
  "RequestHeader": {
-    "SpecVersion": "1.8",
+    "SpecVersion": "[CURRENT-SPEC-VERSION]",
     "CustomerId": "[your customer id]",
     "RequestId": "[unique request id]",
     "RetryIndicator": 0
@@ -151,7 +151,7 @@ Once a successful transaction has been made, you will get the result of the regi
 ```json
 {
   "ResponseHeader": {
-    "SpecVersion": "1.8",
+    "SpecVersion": "[CURRENT-SPEC-VERSION]",
     "RequestId": "[your request id]"
   },
   "Transaction": {
@@ -265,7 +265,7 @@ You need to make sure, to provide a valid terminal Id, with activated acquiring-
 ```json
 {
   "RequestHeader": {
-    "SpecVersion": "1.8",
+    "SpecVersion": "[CURRENT-SPEC-VERSION]",
     "CustomerId": "[your customer id]",
     "RequestId": "[your request id]",
     "RetryIndicator": 0,
@@ -298,7 +298,7 @@ If the chek failed, the registration too will fail and you'll get an error-respo
 ```json
 {
     "ResponseHeader": {
-        "SpecVersion": "1.8",
+        "SpecVersion": "[CURRENT-SPEC-VERSION]",
         "RequestId": "55"
     },
     "Behavior": "ABORT",
