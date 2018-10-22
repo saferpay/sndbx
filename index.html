@@ -29,6 +29,8 @@
 								<li><a href="#3ds">3-D Secure</a></li>
 								<li><a href="#dcc">Dynamic Currency Conversion</a></li>
 								<li><a href="#version">Versioning</a></li>
+								<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+								<li><a href="#licenses">Licences</a></li>
 								<li><a href="#pm-functions">Payment Method Features</a></li>
 								<li><a href="#capture-batch">Capture and Daily Closing</a></li>
 								<li><a href="#capture">Capture</a></li>
@@ -38,13 +40,7 @@
 							</ul>
 							</li>
 							<li>
-							<a href="Interfaces.html">Licenses and Interfaces</a>
-							<ul class="nav">
-								<li><a href="#interfaces">The Interfaces</a></li>
-								<li><a href="#int-paymentmethods">Supported Payment Methods</a></li>
-								<li><a href="#int-what">What should i use?</a></li>
-								<li><a href="#int-questions">Questions?</a></li>
-							</ul>
+							<a href="Interfaces.html">THE INTERFACES</a>
 							</li>
 							<li>
 							<a href="Integration_PP.html">Payment Page Interface</a>
@@ -290,6 +286,8 @@
 								<li><a href="#3ds">3-D Secure</a></li>
 								<li><a href="#dcc">Dynamic Currency Conversion</a></li>
 								<li><a href="#version">Versioning</a></li>
+								<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+								<li><a href="#licenses">Licences</a></li>
 								<li><a href="#pm-functions">Payment Method Features</a></li>
 								<li><a href="#capture-batch">Capture and Daily Closing</a></li>
 								<li><a href="#capture">Capture</a></li>
@@ -299,13 +297,7 @@
 							</ul>
 							</li>
 							<li>
-							<a href="Interfaces.html">Licenses and Interfaces</a>
-							<ul class="nav">
-								<li><a href="#interfaces">The Interfaces</a></li>
-								<li><a href="#int-paymentmethods">Supported Payment Methods</a></li>
-								<li><a href="#int-what">What should i use?</a></li>
-								<li><a href="#int-questions">Questions?</a></li>
-							</ul>
+							<a href="Interfaces.html">THE INTERFACES</a>
 							</li>
 							<li>
 							<a href="Integration_PP.html">Payment Page Interface</a>
@@ -618,6 +610,278 @@ You'll also find the newest Version in the top left of our <a href="https://safe
 For example, if you want to go back to the 1.4 specification, simply add the version to the url like this:</p><pre><code>https://saferpay.github.io/jsonapi/1.4
 </code></pre><div class="info">
   <p><strong>Note:</strong> SpecVersion 1.1 and lower are not available, since those were only released for internal use</p>
+</div></div></div></section><section id="paymentmethods"><h2><a name="paymentmethods"></a> Supported Payment Methods</h2><div class="row"><div class="col-md-6"><table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Payment method</th>
+      <th class="text-center">Transaction Interface</th>
+      <th class="text-center">Payment Page</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Visa</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>V PAY</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>MasterCard</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Maestro International</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>American Express</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Bancontact</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Diners Club</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>JCB</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Bonus Card</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Postfinance E-Finance</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c">*</span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>PostFinance Card</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c">*</span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>MyOne</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>SEPA Direct Debit</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>PayPal</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c">*</span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>ePrzelewy</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>eps</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>giropay</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>iDEAL</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>BillPay Purchase on Receipt</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>BillPay Direct Debit</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+        <tr>
+      <td>SOFORT</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>paydirekt</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Twint</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Unionpay</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+  </tbody>
+</table></div></div></section><section id="licenses"><h2><a name="licenses"></a> Licences</h2><div class="row"><div class="col-md-6"><p>Saferpay distinguishes between two licences:</p><ul>
+<li>Saferpay eCommerce</li>
+<li>Saferpay Business</li>
+</ul><p>It is extremely important to clarify before the implementation of Saferpay, whether an eCommerce licence or a business license is to be used, as they provide different functions. The Saferpay Business licence is an extension of the eCommerce licence. If you have any queries, please contact your relevant contractually appointed person.</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/LicenseOptions.png" alt="alt text" title="License Options"></p><div class="info">
+  <p><strong>Note:</strong> All Saferpay Test-Accounts do have Business activated by default, for evaluation purposes!</p>
+</div><p>The following table shows an overview of which functions are included in the two licence models:</p><table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Interface</th>
+      <th class="text-center">eCommerce</th>
+      <th class="text-center">Business</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><b>PaymentPage Interface</b></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Initialize Payment Page</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Assert Payment Page</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <th><b>Transaction Interface</b></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Transaction Initialize</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction Authorize</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction QueryPaymentMeans</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction AdjustAmount</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction Authorize Direct</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction Authorize Referenced</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction Capture</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction Cancel</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction Refund</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction Refund Direct</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction Redirect Payment</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction Assert Redirect Payment</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction AssertCapture</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Transaction AssertRefund</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <th><b>Secure Alias Store</b></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Alias Insert</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Alias Assert Insert</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Alias Insert Direct</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <td>Alias Delete</td>
+      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+    <tr>
+      <th><b>Batch</b></th>
+      <th class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
+      <th class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
+    </tr>
+    <tr>
+      <td>Close</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
+  </tbody>
+</table><div class="warning">
+  <p><strong>*<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment">Transaction Interface - Redirect Payment</a></strong> is deprecated and replaced by the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page!</a>. Please use the parameter <strong>PaymentMethods</strong> to directly select your desired provider!</p>
 </div></div></div></section><section id="pm-functions"><h2><a name="pm-functions"></a> Payment Method Features</h2><div class="row"><div class="col-md-6"><p>Saferpay supports a variety of payment methods, including 3rd party providers such as PayPal. These 3rd party providers are not obligated to support all Saferpay functions. The following table provides an overview of the features supported by the individual payment methods:</p><p></p><table class="table table-striped table-hover">
   <thead>
     <tr>
