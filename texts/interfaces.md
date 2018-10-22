@@ -1,4 +1,4 @@
-# <a name="int-licenses"></a> Licences and Interfaces
+# Licences and Interfaces
 
 Saferpay distinguishes between two licences:
 
@@ -315,7 +315,7 @@ The main components of the Saferpay JSON API are:
   </tbody>
 </table>
 
-## <a name="int-when"></a> What should i use?
+## <a name="int-what"></a> What should i use?
 
 Before implementing, it is important to clarify, which functions are important for you!
 
@@ -337,3 +337,8 @@ If you have access to Saferpay Business, you also have access to all API-functio
 In some cases, you **have** to use the [PaymentPage](Integration_PP.html), for example, if you want to use [PayPal](PayPal.html), or any other 3rd party provider.
 Another use case could be, that you do all your normal authorizations over the [PaymentPage](Integration_PP.html), but then you use the [Transaction Interface for Refunds](refund.html). 
 This is also helpful, if you decide to upgrade from E Commerce to Business (For example for executing said refunds via API!) and already have a [PaymentPage Integration](Integration_PP.html). You can simply extend your Integration for the functions you need, without changing the whole existing implementation.
+
+## <a name="int-questions"></a> Questions?
+
+Still unsure what you need?
+[Contact the Saferpay Integration Support!](https://saferpay.github.io/sndbx/contact.html) and we will help you deciding!
