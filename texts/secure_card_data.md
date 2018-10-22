@@ -25,6 +25,7 @@ Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive p
 *	PostFinance card (Please read the [information over here](https://saferpay.github.io/sndbx/PostFinance.html#pf-alias)!)
 *	SEPA ELV (Not via the Transaction Interface!)
 * Bancontact
+* Credit Cards over Masterpass
 
 ## <a name="scd-pp"></a> Secure Card Data and the Payment Page
 
