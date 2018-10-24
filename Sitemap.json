@@ -167,7 +167,10 @@
        { "Source": "texts/paymentmeans.md", "Title": "Bancontact", "Target": "paymentmeans.html#pm-bc" },
        { "Source": "texts/paymentmeans.md", "Title": "SEPA Direct Debit", "Target": "paymentmeans.html#pm-sepa" },
        { "Source": "texts/paymentmeans.md", "Title": "PayPal", "Target": "paymentmeans.html#pm-paypal" },
-       { "Source": "texts/paymentmeans.md", "Title": "TWINT", "Target": "paymentmeans.html#pm-twint" }
+       { "Source": "texts/paymentmeans.md", "Title": "TWINT", "Target": "paymentmeans.html#pm-twint" },
+       { "Source": "texts/paymentmeans.md", "Title": "iDeal", "Target": "paymentmeans.html#ideal-cards" },
+       { "Source": "texts/paymentmeans.md", "Title": "paydirekt", "Target": "paymentmeans.html#paydirekt-cards" },
+       { "Source": "texts/paymentmeans.md", "Title": "UnionPay", "Target": "paymentmeans.html#unionpay-cards" }
    ] 
   },
   {
