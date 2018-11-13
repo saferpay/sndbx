@@ -197,7 +197,7 @@ If you plan on upgrading to a newer SpecVersion, you may have to keep the follow
       <td class="text-center"><strong>1.10+</strong></td>
       <td>
         <ul>
-          <li><strong>Refund Handling: </strong>Due to the introduction of <a href="marketplace.html">Partial Captures</a> and thus the splitting of a transaction into multiple transactions, you must do a refund using the <strong>CaptureId</strong> provided in the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">MultipartCapture response</a> and no longer the <strong>TransactionId</strong>, as SpecVersions 1.9 and lower!</li>
+          <li><strong>Refund Handling: </strong>Due to the introduction of <a href="marketplace.html">Partial Captures</a> and thus the splitting of a transaction into multiple transactions, you must do a refund using the <strong>CaptureId</strong> provided in the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">MultipartCapture response</a> and no longer the <strong>TransactionId</strong>, as with SpecVersions 1.9 and lower!</li>
         </ul>
       </td>
     </tr>
