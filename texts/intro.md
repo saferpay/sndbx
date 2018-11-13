@@ -181,6 +181,29 @@ https://saferpay.github.io/jsonapi/1.4
   <p><strong>Note:</strong> SpecVersion 1.1 and lower are not available, since those were only released for internal use</p>
 </div>
 
+### Important Changes in certain SpecVersions
+
+If you plan on upgrading to a newer SpecVersion, you may have to keep the following major changes in mind:
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th class="text-center">SpecVersion</th>
+      <th class="text-center">Changes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center"><strong>1.10</strong></td>
+      <td>
+        <ul>
+          <li><strong>Refund Handling: </strong>Due to the introduction of <a href="marketplace.html">Partial Captures</a> and thus the splitting of a transaction into multiple transactions, you must do a refund using the <strong>CaptureId</strong> provided in the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">MultipartCapture response</a> and no longer the <strong>TransactionId</strong>, as SpecVersions 1.9 and lower!</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 
 ## <a name="pm-functions"></a> Payment Method Features
