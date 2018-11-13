@@ -21,7 +21,7 @@ However, if automated, or more integrated processes are needed, the JSON-API can
 
 ## <a name="refund-reference"></a> Method 1: Referenced refunds
 
-Referenced refunds are performed, by using the [Refund request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Refund). This request accepts the **original transaction ID, of the transaction you want to refund!**. By passing this ID through to Saferpay, the refund will be linked to the original transaction inside the Saferpay Backoffice:
+Referenced refunds are performed, by using the [Refund request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Refund). This request accepts the **CaptureId, of the transaction you want to refund!**. By passing this ID through to Saferpay, the refund will be linked to the original transaction inside the Saferpay Backoffice:
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/refund.PNG "Refund")
 
