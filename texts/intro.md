@@ -204,7 +204,9 @@ If you plan on upgrading to a newer SpecVersion, you may have to keep the follow
   </tbody>
 </table>
 
-
+<div class="info">
+  <p><strong>Tip:</strong> You should also keep an eye on <a target="_blank" href="https://saferpay.github.io/jsonapi/#changelog">our API Changelog</a>, where we keep a record of API changes!</p>
+</div>
 
 ## <a name="pm-functions"></a> Payment Method Features
 
