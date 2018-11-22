@@ -55,6 +55,7 @@
       { "Source": "texts/trx_interface.md", "Title": "Transaction Authorize", "Target": "Integration_trx.html#trx-ta" },
       { "Source": "texts/trx_interface.md", "Title": "Capture or Cancel", "Target": "Integration_trx.html#trx-captcancel" },
       { "Source": "texts/trx_interface.md", "Title": "SEPA Direct Debit", "Target": "Integration_trx.html#trx-sepa" },
+      { "Source": "texts/trx_interface.md", "Title": "Try it!", "Target": "Integration_trx.html#trx-demo },
       { "Source": "texts/trx_interface.md", "Title": "Using your own HTML-Form", "Target": "Integration_trx.html#trx-post" }
     ]
   },
@@ -181,6 +182,21 @@
    "Title": "Payment Page",
    "Source": "texts/pp_demo.md",
    "Target": "pp_demo.html"
+  },
+  {
+   "Title": "Transaction interface",
+   "Source": "texts/trx_demo.md",
+   "Target": "trx_demo.html"
+  },
+  {
+   "Title": "Secure Alias Store",
+   "Source": "texts/scd_demo.md",
+   "Target": "scd_demo.html"
+  },
+  {
+   "Title": "Refunds",
+   "Source": "texts/refund_demo.md",
+   "Target": "refund_demo.html"
   },
   {
     "Title": "Payment Method specifics"
