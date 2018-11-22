@@ -176,14 +176,14 @@
   {
    "Title": "Demo"
   },
-  }
+  {
    "Title": "Payment Page",
    "Source": "texts/pp_demo.md",
    "Target": "pp_demo.html"
   },
   {
     "Title": "Payment Method specifics"
- },
+  },
  {
     "Title": "Credit Cards",
     "Source": "texts/creditcards.md",
