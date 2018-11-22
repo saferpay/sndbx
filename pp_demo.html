@@ -171,7 +171,7 @@
 							<li>
 								<a><h4>Demo</h4></a>
 							</li>
-							<li>
+							<li class="active">
 							<a href="pp_demo.html">Payment Page</a>
 							</li>
 							<li>
@@ -183,7 +183,7 @@
 								<li><a href="#cc-chase">Chase Paymentech</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="Masterpass.html">Masterpass</a>
 							<ul class="nav">
 								<li><a href="#mp-req">Requirements</a></li>
@@ -441,7 +441,7 @@
 							<li>
 								<a><h4>Demo</h4></a>
 							</li>
-							<li>
+							<li class="active">
 							<a href="pp_demo.html">Payment Page</a>
 							</li>
 							<li>
@@ -453,7 +453,7 @@
 								<li><a href="#cc-chase">Chase Paymentech</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="Masterpass.html">Masterpass</a>
 							<ul class="nav">
 								<li><a href="#mp-req">Requirements</a></li>
@@ -544,149 +544,9 @@
 				</div>
 
 				
-<section><h1>Masterpass</h1><div class="row"><div class="col-md-6"><p>Masterpass is a Wallet-Solution introduced by Mastercard.
-It is <strong>NOT</strong> a typical payment method, like Mastercard, it is more like a database, that contains payment methods, that can be registered there by the card holder.
-Masterpass can indeed contain Mastercard, as well as Visa and other payment means, which will then be used for the transaction. These transactions will then show up as Visa, or Mastercard transactions, with the added information, that the payment means have been provided by a Masterpass wallet!
-This chapter will cover all things worth to know about Masterpass!</p></div></div></section><section id="mp-req"><h2><a name="mp-req"></a> Requirements</h2><div class="row"><div class="col-md-6"><p>The handling of Masterpass payments with Saferpay requires:</p><ul>
-<li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
-<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
-</ul><div class="info">
-  <p><strong>Note:</strong> In order for Masterpass to be activated, please contact your contract manager. He/She can guide you and will initiate all the necessary steps, so you can start accepting Masterpass.</p>
-</div></div></div></section><section id="mp-pp"><h2><a name="mp-pp"></a> Masterpass via Payment Page</h2><div class="row"><div class="col-md-6"><p>The Integration of Masterpass via the Payment Page may be the easiest way to integrate Masterpass.
-Simply follow the basic <a href="Integration_PP.html">Payment Page integration steps</a>. If you already have a Payment Page integration, you can, of course, skip this step. After you have contacted your contract manager and Masterpass has been activated, Masterpass will show up on the Payment Page, just like any other payment method:
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/MasterpassPPage.PNG" alt="alt text" title="Masterpass Payment Page"></p><p>Furthermore, Masterpass will also show up, once a credit card brand has been selected, as an alternative:
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/MasterpassPPageCEF.PNG" alt="alt text" title="Masterpass Payment Page Card Entry Form"></p></div></div></section><section><h3>Direct redirect to Masterpass</h3><div class="row"><div class="col-md-6"><p>If you want to perform a direct redirect to Masterpass, you have to use the parameter <strong>Wallets</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>!</p><pre><code class="language-json">{
-    &quot;RequestHeader&quot;: {
-        &quot;SpecVersion&quot;: &quot;1.10&quot;,
-        &quot;CustomerId&quot;: &quot;[YOUR CUSTOMERID]&quot;,
-        &quot;RequestId&quot;: &quot;2f3f941282ebf63933052693194b5e61&quot;,
-        &quot;RetryIndicator&quot;: 0,
-        &quot;ClientInfo&quot;: {
-            &quot;ShopInfo&quot;: &quot;My Shop&quot;,
-            &quot;OsInfo&quot;: &quot;Windows Server 2013&quot;
-        }
-    },
-    &quot;TerminalId&quot;: &quot;[YOUR TERMINAL]&quot;,
-    &quot;Payment&quot;: {
-        &quot;Amount&quot;: {
-            &quot;Value&quot;: &quot;12345&quot;,
-            &quot;CurrencyCode&quot;: &quot;EUR&quot;
-        },
-        &quot;OrderId&quot;: 123,
-        &quot;Description&quot;: &quot;Test Order #123&quot;
-    },
-    &quot;Wallets&quot;: [
-        &quot;MASTERPASS&quot;
-    ],
-    &quot;ReturnUrls&quot;: {
-        &quot;Success&quot;: &quot;[YOUR URL]&quot;,
-        &quot;Fail&quot;: &quot;[YOUR URL]&quot;,
-        &quot;Abort&quot;: &quot;[YOUR URL]&quot;
-    },
-}
-
-</code></pre><div class="info">
-  <p><strong>IMPORTANT:</strong> If you are using <strong>&quot;Wallets&quot;</strong> alongside <strong>&quot;PaymentMethods&quot;</strong>, both parameters will be treated equally and a selection-screen will be displayed!</p>
-</div></div></div></section><section><h3>Forcing the Delivery Address</h3><div class="row"><div class="col-md-6"><p>If you want to <strong>force</strong> the user into selecting a delivery address, within his Masterpass Wallet, you can do so, via the <strong>DeliveryAddressForm</strong> parameter, within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>:</p><pre><code class="language-json">{
-    &quot;RequestHeader&quot;: {
-        &quot;SpecVersion&quot;: &quot;1.10&quot;,
-        &quot;CustomerId&quot;: &quot;[YOUR CUSTOMERID]&quot;,
-        &quot;RequestId&quot;: &quot;2f3f941282ebf63933052693194b5e61&quot;,
-        &quot;RetryIndicator&quot;: 0,
-        &quot;ClientInfo&quot;: {
-            &quot;ShopInfo&quot;: &quot;My Shop&quot;,
-            &quot;OsInfo&quot;: &quot;Windows Server 2013&quot;
-        }
-    },
-    &quot;TerminalId&quot;: &quot;[YOUR TERMINAL]&quot;,
-    &quot;Payment&quot;: {
-        &quot;Amount&quot;: {
-            &quot;Value&quot;: &quot;12345&quot;,
-            &quot;CurrencyCode&quot;: &quot;EUR&quot;
-        },
-        &quot;OrderId&quot;: 123,
-        &quot;Description&quot;: &quot;Test Order #123&quot;
-    },
-    &quot;Wallets&quot;: [
-        &quot;MASTERPASS&quot;
-    ],
-     &quot;DeliveryAddressForm&quot;: {
-        &quot;Display&quot;: true
-    },
-    &quot;ReturnUrls&quot;: {
-        &quot;Success&quot;: &quot;[YOUR URL]&quot;,
-        &quot;Fail&quot;: &quot;[YOUR URL]&quot;,
-        &quot;Abort&quot;: &quot;[YOUR URL]&quot;
-    },
-}
-
-</code></pre><p>The address will then be delivered via the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>:</p><pre><code class="language-json">{
-    &quot;ResponseHeader&quot;: {
-        &quot;SpecVersion&quot;: &quot;1.9&quot;,
-        &quot;RequestId&quot;: &quot;1c9f941282ebf6e3a05261144b5fb4&quot;
-    },
-    &quot;Transaction&quot;: {
-        &quot;Type&quot;: &quot;PAYMENT&quot;,
-        &quot;Status&quot;: &quot;AUTHORIZED&quot;,
-        &quot;Id&quot;: &quot;14IMtdbljnYhtA9x2WbhbKrA1Odb&quot;,
-        &quot;Date&quot;: &quot;2018-10-17T16:27:15.000+02:00&quot;,
-        &quot;Amount&quot;: {
-            &quot;Value&quot;: &quot;12345&quot;,
-            &quot;CurrencyCode&quot;: &quot;EUR&quot;
-        },
-        &quot;OrderId&quot;: &quot;123&quot;,
-        &quot;AcquirerName&quot;: &quot;MasterCard Saferpay Test&quot;,
-        &quot;AcquirerReference&quot;: &quot;59428236614&quot;,
-        &quot;SixTransactionReference&quot;: &quot;0:0:3:14IMtdbljnYhtA9x2WbhbKrA1Odb&quot;,
-        &quot;ApprovalCode&quot;: &quot;387800&quot;
-    },
-    &quot;PaymentMeans&quot;: {
-        &quot;Brand&quot;: {
-            &quot;PaymentMethod&quot;: &quot;MASTERCARD&quot;,
-            &quot;Name&quot;: &quot;MasterCard&quot;
-        },
-        &quot;DisplayText&quot;: &quot;xxxx xxxx xxxx 0003&quot;,
-        &quot;Wallet&quot;: &quot;MASTERPASS&quot;,
-        &quot;Card&quot;: {
-            &quot;MaskedNumber&quot;: &quot;903010xxxxxx0003&quot;,
-            &quot;ExpYear&quot;: 2022,
-            &quot;ExpMonth&quot;: 10,
-            &quot;HolderName&quot;: &quot;Max Simulator&quot;,
-            &quot;CountryCode&quot;: &quot;DE&quot;,
-        }
-    },
-    &quot;Payer&quot;: {
-        &quot;IpAddress&quot;: &quot;153.46.97.98&quot;,
-        &quot;IpLocation&quot;: &quot;CH&quot;,
-        &quot;DeliveryAddress&quot;: {
-            &quot;FirstName&quot;: &quot;&quot;,
-            &quot;LastName&quot;: &quot;Max Simulator&quot;,
-            &quot;Street&quot;: &quot;Dorfstrasse 54&quot;,
-            &quot;Street2&quot;: &quot;&quot;,
-            &quot;Zip&quot;: &quot;6000&quot;,
-            &quot;City&quot;: &quot;Luzern&quot;,
-            &quot;CountrySubdivisionCode&quot;: &quot;CH-LU&quot;,
-            &quot;CountryCode&quot;: &quot;CH&quot;,
-            &quot;Phone&quot;: &quot;+41 41 765-4321&quot;,
-            &quot;Email&quot;: &quot;max.simulator@saferpay.com&quot;
-        }
-    },
-    &quot;Liability&quot;: {
-        &quot;LiabilityShift&quot;: true,
-        &quot;LiableEntity&quot;: &quot;ThreeDs&quot;,
-        &quot;ThreeDs&quot;: {
-            &quot;Authenticated&quot;: true,
-            &quot;LiabilityShift&quot;: true,
-            &quot;Xid&quot;: &quot;n0kq9Z41MKK2wSKE+x+gPH9LoOw=&quot;,
-            &quot;VerificationValue&quot;: &quot;AAABBIIFmAAAAAAAAAAAAAAAAAA=&quot;
-        }
-    }
-}
-
-
-</code></pre><div class="warning">
-  <p><strong>IMPORTANT:</strong> Saferpay can capture the billing address in multiple ways. Either the merchant does capture it himself and submits the data through the respective request, or, in case of the Payment Page, the page does offer respective forms, that can capture the address! In case of Masterpass however, the address is saved within the Masterpass Wallet of the card holder. Should the delivery address be captured, using one of the other methods, it will be overwritten by the wallet-address!</p>
-</div></div></div></section>
+<section><h2>Payment Page-Demo</h2><div class="row"><div class="col-md-6"><div class="info">
+  <p><strong>Note:</strong> If you want to test other parameters, you can add them, before submitting the request. <strong>PLEASE NOTE</strong>, that you should not edit the SuccessUrls, the TerminalId and CustomerId -since that would change the whole demo-account-, unless you want to simulate the API behavior and force a respective error-message.</p>
+</div></div></div></section><section><h3>Here you can see the general Payment Page flow in action.</h3><div class="row"><div class="col-md-6"><iframe style="height: 1600px; width: 900px; border: none; background-color: white;" id="frame" src="https://shop.saferpay.eu/saferpayintegration/pp_initialize.php"></iframe></div></div></section>
 
 			</main>
 
