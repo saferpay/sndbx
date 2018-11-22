@@ -179,7 +179,7 @@
 							<li>
 							<a href="trx_demo.html">Transaction interface</a>
 							</li>
-							<li>
+							<li class="active">
 							<a href="scd_demo.html">Secure Alias Store</a>
 							</li>
 							<li>
@@ -188,7 +188,7 @@
 							<li>
 								<a><h4>Payment Method specifics</h4></a>
 							</li>
-							<li class="active">
+							<li>
 							<a href="creditcards.html">Credit Cards</a>
 							<ul class="nav">
 								<li><a href="#cc-chase">Chase Paymentech</a></li>
@@ -460,7 +460,7 @@
 							<li>
 							<a href="trx_demo.html">Transaction interface</a>
 							</li>
-							<li>
+							<li class="active">
 							<a href="scd_demo.html">Secure Alias Store</a>
 							</li>
 							<li>
@@ -469,7 +469,7 @@
 							<li>
 								<a><h4>Payment Method specifics</h4></a>
 							</li>
-							<li class="active">
+							<li>
 							<a href="creditcards.html">Credit Cards</a>
 							<ul class="nav">
 								<li><a href="#cc-chase">Chase Paymentech</a></li>
@@ -566,12 +566,9 @@
 				</div>
 
 				
-<section><h1>Credit Cards - Special Cases</h1><div class="row"><div class="col-md-6"><p>Though we at SIX Payment Services do offer the possibility to process credit cards, it sometimes is necessary to involve third parties in order to process credit cards in certain countries and regions.
-This chapter will cover the special characteristics you need to consider, if you want to use Saferpay with these processors.</p></div></div></section><section id="cc-chase"><h3><a name="cc-chase"></a> Chase Paymentech</h3><div class="row"><div class="col-md-6"><p>Chase Paymentech is a US credit card processor with office in Dallas, Texas.
-SIX Payment Services offers the pssibility to process credit cards over this processor, directly in the US.
-However please take note to the following restrictions and characteristics.</p><ul>
-<li><strong>OrderId:</strong> Due to technical restrictions, the <strong>OrderId</strong> will not be forwarded to Chase to be shown on your reconciliation-files from chase. Saferpay will instead fill it with a unique, increasing, numeric value, to meet Chase Paymentechs requirements. Therefore a later identification through the <strong>OrderId</strong> will not be possible!</li>
-</ul></div></div></section>
+<section id="securealiasstore"><h2><a name="securealiasstore"></a> Secure Alias Store</h2><div class="row"><div class="col-md-6"><div class="info">
+  <p><strong>Note:</strong> If you want to test other parameters, you can add them, by clicking &quot;Edit Request&quot;. <strong>PLEASE NOTE</strong>, that you should not edit the SuccessUrls, the TerminalId and CustomerId -since that would change the whole demo-account-, unless you want to simulate the API behavior and force a respective error-message.</p>
+</div></div></div></section><section><h3>Here you can see the general Secure Alias Store flow in action.</h3><div class="row"><div class="col-md-6"><iframe style="height: 1600px; width: 900px; border: none; background-color: white;" id="frame" src="https://shop.saferpay.eu/saferpayintegration/insert.php"></iframe></div></div></section>
 
 			</main>
 

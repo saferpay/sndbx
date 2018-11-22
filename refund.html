@@ -55,6 +55,7 @@
 								<li><a href="#pp-retshop">Return to the Shop</a></li>
 								<li><a href="#pp-assert">PaymentPage Assert</a></li>
 								<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+								<li><a href="#pp-demo">Try it!</a></li>
 							</ul>
 							</li>
 							<li>
@@ -68,6 +69,7 @@
 								<li><a href="#trx-ta">Transaction Authorize</a></li>
 								<li><a href="#trx-captcancel">Capture or Cancel</a></li>
 								<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+								<li><a href="#trx-demo">Try it!</a></li>
 								<li><a href="#trx-post">Using your own HTML-Form</a></li>
 							</ul>
 							</li>
@@ -173,6 +175,15 @@
 							</li>
 							<li>
 							<a href="pp_demo.html">Payment Page</a>
+							</li>
+							<li>
+							<a href="trx_demo.html">Transaction interface</a>
+							</li>
+							<li>
+							<a href="scd_demo.html">Secure Alias Store</a>
+							</li>
+							<li>
+							<a href="refund_demo.html">Refunds</a>
 							</li>
 							<li>
 								<a><h4>Payment Method specifics</h4></a>
@@ -325,6 +336,7 @@
 								<li><a href="#pp-retshop">Return to the Shop</a></li>
 								<li><a href="#pp-assert">PaymentPage Assert</a></li>
 								<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+								<li><a href="#pp-demo">Try it!</a></li>
 							</ul>
 							</li>
 							<li>
@@ -338,6 +350,7 @@
 								<li><a href="#trx-ta">Transaction Authorize</a></li>
 								<li><a href="#trx-captcancel">Capture or Cancel</a></li>
 								<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+								<li><a href="#trx-demo">Try it!</a></li>
 								<li><a href="#trx-post">Using your own HTML-Form</a></li>
 							</ul>
 							</li>
@@ -443,6 +456,15 @@
 							</li>
 							<li>
 							<a href="pp_demo.html">Payment Page</a>
+							</li>
+							<li>
+							<a href="trx_demo.html">Transaction interface</a>
+							</li>
+							<li>
+							<a href="scd_demo.html">Secure Alias Store</a>
+							</li>
+							<li>
+							<a href="refund_demo.html">Refunds</a>
 							</li>
 							<li>
 								<a><h4>Payment Method specifics</h4></a>
@@ -567,16 +589,8 @@ The refund-option will be displayed, after the Capture has been executed!</p>
   <p><strong>Attention:</strong> While <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_RefundDirect">Refund Direct</a> does offer the possibilities to submit the card number (PAN) directly, it is not allowed to do this without a full PCI-DSS certification. More on that topic can be found in the<a href="https://saferpay.github.io/sndbx/index.html#pci">Data Security and PCI DSS chapter</a>. </p>
 </div><div class="info">
   <p><strong>Note:</strong> Due to the fact, that the original transaction ID is not submitted, like with referenced refunds, the refund will not be linked to the original transaction inside the Saferpay Backoffice!</p>. 
-</div><div style="display: none;">
-<h3>Try it out</h3>
-<p>You can try it out, by first doing a complete (including the Capture!) transaction, by using the PaymentPage, Transaction Interface, or the Secure Alias Store. The refund-option will be displayed, after the Capture has been executed!</p>
-<div class="info">
-  <p><strong>Note:</strong> You have to set the <strong>RegisterAlias</strong> container, to create the Alias needed for this, when using <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>!</p> 
-</div>
-<p><a class="demobtn" href="https://saferpay.github.io/sndbx/pp_demo.html">Start with the Payment Page</a><br>
-<a class="demobtn" href="https://saferpay.github.io/sndbx/trx_demo.html">Start with the Transaction Interface</a><br>
-<a class="demobtn" href="https://saferpay.github.io/sndbx/scd_demo.html">Start with the Secure Alias Store</a><br></p>
-</div></div></div></section><section id="refund-capture"><h2><a name="refund-capture"></a> Capture</h2><div class="row"><div class="col-md-6"><p>Like normal transactions, refunds need to be captured/booked by executing the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">Capture request</a> successfully, if the transaction <strong>STATUS</strong> is <strong>AUTHORIZED</strong>. <strong>The actual transfer of money will not be executed if the refund hasn't been captured!</strong></p></div></div></section><section id="refund-cancel"><h2><a name="refund-cancel"></a> Difference, between Cancel and Refund</h2><div class="row"><div class="col-md-6"><p>It&#8217;s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation either want to cancel or make a refund for the transaction in question.</p><p>A <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">cancel</a> can be issued as long as the money-flow hasn't been initiated. That also applies to transactions, that have been captured, depending on the payment-method.</p><p>All Payment Methods, that go through the Daily Closing, can be cancelled this way, until the Daily Closing has been executed.
+</div></div></div></section><section><h3>Try it out</h3><div class="row"><div class="col-md-6"><p>You can try it out, by first doing a complete (including the Capture!) transaction, by using the PaymentPage, Transaction Interface, or the Secure Alias Store. The refund-option will be displayed, after the Capture has been executed!</p><p><a class="demobtn" href="https://saferpay.github.io/sndbx/pp_demo.html">Start with the Payment Page</a><br>
+<a class="demobtn" href="https://saferpay.github.io/sndbx/trx_demo.html">Start with the Transaction Interface</a><br></p></div></div></section><section id="refund-capture"><h2><a name="refund-capture"></a> Capture</h2><div class="row"><div class="col-md-6"><p>Like normal transactions, refunds need to be captured/booked by executing the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">Capture request</a> successfully, if the transaction <strong>STATUS</strong> is <strong>AUTHORIZED</strong>. <strong>The actual transfer of money will not be executed if the refund hasn't been captured!</strong></p></div></div></section><section id="refund-cancel"><h2><a name="refund-cancel"></a> Difference, between Cancel and Refund</h2><div class="row"><div class="col-md-6"><p>It&#8217;s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation either want to cancel or make a refund for the transaction in question.</p><p>A <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">cancel</a> can be issued as long as the money-flow hasn't been initiated. That also applies to transactions, that have been captured, depending on the payment-method.</p><p>All Payment Methods, that go through the Daily Closing, can be cancelled this way, until the Daily Closing has been executed.
 Once that happened, the money flow has been initated and the transaction can no longer be cancelled.
 In this case you need to issue a refund, to transfer the money back to the card holders bank account!
 So a cancel actually stops the money transfer from happening, while a refund reverses the transfer, once it happened!</p><p>Please note, that there are exceptions.
