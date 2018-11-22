@@ -39,7 +39,7 @@
      { "Source": "texts/PaymentPage.md", "Title": "Return to the Shop", "Target": "Integration_PP.html#pp-retshop" },
      { "Source": "texts/PaymentPage.md", "Title": "PaymentPage Assert", "Target": "Integration_PP.html#pp-assert" },
      { "Source": "texts/PaymentPage.md", "Title": "Capture or Cancel", "Target": "Integration_PP.html#pp-captcancel" },
-     { "Source": "texts/PaymentPage.md", "Title": "Try it!", "Target": "Integration_PP.html#pp-demo }
+     { "Source": "texts/PaymentPage.md", "Title": "Try it!", "Target": "Integration_PP.html#pp-demo" }
     ]
   },
   {
