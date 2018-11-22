@@ -103,8 +103,6 @@ Subsequently, the transaction will be finalised via [**Capture**](https://saferp
 
 Once these steps are complete, the transaction is completed.
 
-<div style="display: none;">
 ## <a name="pp-demo"></a> Try it out!
 
 <a href="https://saferpay.github.io/sndbx/pp_demo.html" class="demobtn">Click here for a live demo!</a>
-</div>
