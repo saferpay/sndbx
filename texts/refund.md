@@ -56,7 +56,7 @@ This request is different from the that of the referenced refunds. When using an
   <p><strong>Note:</strong> Due to the fact, that the original transaction ID is not submitted, like with referenced refunds, the refund will not be linked to the original transaction inside the Saferpay Backoffice!</p>. 
 </div>
 
-### Try it out
+### <a name="refund-demo">Try it out
 
 You can try it out, by first doing a complete (including the Capture!) transaction, by using the PaymentPage, Transaction Interface, or the Secure Alias Store. The refund-option will be displayed, after the Capture has been executed!
 
