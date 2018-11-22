@@ -93,6 +93,7 @@
     "Subsites": [
       { "Source": "texts/refund.md", "Title": "Requirements", "Target": "refund.html#refund-req" },
       { "Source": "texts/refund.md", "Title": "Method 1: Refernced refunds", "Target": "refund.html#refund-reference" },
+      { "Source": "texts/refund.md", "Title": "Try it!", "Target": "refund.html#refund-demo" },
   	   { "Source": "texts/refund.md", "Title": "Method 2: Refunds using an alias", "Target": "refund.html#refund-alias" },
       { "Source": "texts/refund.md", "Title": "Capture", "Target": "refund.html#refund-capture" },
       { "Source": "texts/refund.md", "Title": "Difference, between Cancel and Refund", "Target": "refunds.html#refund-cancel" },
