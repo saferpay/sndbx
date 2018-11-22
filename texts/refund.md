@@ -31,7 +31,7 @@ By clicking on the transaction ID you'll be redirected to the original transacti
 
 <div style="display: none;">
   
-### Try it out
+## <a name="refund-demo"></a> Try it out
 
 You can try it out, by first doing a complete (including the Capture!) transaction, by using the PaymentPage, or Transaction Interface.
 The refund-option will be displayed, after the Capture has been executed!
