@@ -218,7 +218,8 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
   <thead>
     <tr>
       <th>Payment method</th>
-      <th class="text-center">Capture</th>
+      <th class="text-center">Capture|Cancel</th>
+      <th class="text-center">Multipart Captures</th>
       <th class="text-center">Batch</th>
       <th class="text-center">SCD</th>
       <th class="text-center">Refund</th>
@@ -232,6 +233,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <tr>
       <td>American Express</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -243,6 +245,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     <tr>
       <td>Bancontact</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -254,6 +257,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     <tr>
       <td>BillPay Direct Debit</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
@@ -265,6 +269,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     <tr>
       <td>BillPay Purchase on Receipt</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
@@ -276,6 +281,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     <tr>
       <td>Bonus Card</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -287,6 +293,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     <tr>
       <td>Diners Club</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -298,6 +305,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
         <tr>
       <td>Discover</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -316,9 +324,11 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>eps</td>
+      <td> </td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -338,9 +348,11 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>iDEAL</td>
+      <td> </td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -353,6 +365,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     <tr>
       <td>JCB</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -363,6 +376,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     </tr>
     <tr>
       <td>Maestro Int.</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -382,10 +396,12 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>MyOne</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -399,6 +415,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
@@ -407,6 +424,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     </tr>
     <tr>
       <td>PayPal</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
@@ -420,6 +438,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td>PostFinance Card</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
@@ -432,6 +451,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
@@ -442,6 +462,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td>SEPA Direct Debit</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
+      <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -451,6 +472,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     </tr>
     <tr>
       <td>SOFORT</td>
+      <td> </td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -470,9 +492,11 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
         <tr>
       <td>VPay</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -485,6 +509,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     <tr>
       <td>TWINT</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -496,6 +521,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     <tr>
       <td>Unionpay</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -508,8 +534,10 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
 </table>
 
 <dl class="dl-horizontal">
-  <dt>Capture</dt>
-  <dd>Capture required</dd>
+  <dt>Capture|Cancel</dt>
+  <dd>Capture required, Cancel possible</dd>
+  <dt>Multipart Captures</dt>
+  <dd>Multipart Captures can be performed! <strong>SIX ACQUIRING ONLY!</strong></dd>
   <dt>Batch</dt>
   <dd>Daily closing required</dd>
   <dt>SCD</dt>
@@ -589,16 +617,21 @@ If desired, this step can also be triggered via the Saferpay API. The request ne
 However, before you can use the API, you need to disable the daily closing in the Saferpay 
 Backoffice via "Administration -> Terminals" for the respective terminal. Closing should be carried out only once a day.
 
+<div class="info">
+  <p><strong>Important:</strong> Once the closing is complete, a transaction cannot be <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">cancelled</a></p> anymore! You have to execute a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund</a> instead!
+</div>
+
 ### <a name="special"></a>Special Cases
 
 #### PAYPAL, SWISS POSTCARD, SEPA ELV, BANCONTACT and paydirekt
 With these payment methods, daily closing is triggered alongside the capture automatically for each transaction and the cash flow is initiated immediately. With PayPal, this happens because the right is reserved to refuse the payment. For this reason, we demand the money for you immediately. For Swiss Postcard, this is established in the protocol used by PostFinance. Same goes for SEPA ELV ,Bancontact and paydirekt.
 
 #### Online Banking 
-giropay, iDEAL, SOFORT, Bancontact, eprzelewy und eps are online payment methods that trigger a transfer and thus the cash flow via the purchaser’s online banking services. A successful transaction is always 100% complete.
+giropay, iDEAL, SOFORT, Bancontact, eprzelewy und eps are online-banking solutions, that trigger a transfer and thus the cash flow via the purchaser’s online banking services. A successful transaction is always 100% complete.
 
-#### Marketplace
-If you intend to use the [Marketplace](marketplace.html) and therefore [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), you should be aware, that these [Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) will also execute the money-flow with the [Capture request]() itself and not with the Daily Closing, due to the nature of [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture). Further actions, like a [Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel) are therefore not possible anymore! A Refund has to be executed in this case instead!
+#### Credit Cards via SIX Acquiring
+
+Credit Cards (Includes: VISA, VPay, Mastercard, Maestro) with SIX Payment Services as processor, also execute the Daily Closing with the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture)!
 
 #### Capturing a different amount
 The [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) can also be used to change the amount of the transaction. It is generally possible to capture less, than initially authorized. So applying things like voucher codes, or similar is possible. 
