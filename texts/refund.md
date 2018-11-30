@@ -73,7 +73,7 @@ Like normal transactions, refunds need to be captured/booked by executing the [C
 
 It’s by no means rare that customers want to cancel their orders or return goods. As a merchant, you will in such a situation either want to cancel or make a refund for the transaction in question.  
 
-A [cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel) can be issued as long as the money-flow hasn't been initiated. That also applies to transactions, that have been captured, depending on the payment-method.
+A [cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel) can be issued as long as the money-flow hasn't been initiated.
 
 All Payment Methods, that go through the Daily Closing, can be cancelled this way, until the Daily Closing has been executed.
 Once that happened, the money flow has been initated and the transaction can no longer be cancelled.
@@ -81,10 +81,10 @@ In this case you need to issue a refund, to transfer the money back to the card 
 So a cancel actually stops the money transfer from happening, while a refund reverses the transfer, once it happened!
 
 Please note, that there are exceptions.
-Some payment methods initiate the money flow with the capture, like PayPal, SEPA ELV and the Postcard.
+Some payment methods initiate the money flow with the capture. See: [Special Cases](index.html#special)
 Some methods downright do not support this behaviour, like all online banking methods, because those transfer the money right away and also do not offer the refund-functionality.
 
-[An overview can be found in the Payment Method Features chapter](https://saferpay.github.io/sndbx/index.html#pm-functions).
+[An overview can be found in the Payment Method Features chapter](index.html#pm-functions).
 
 
 ## <a name="refund-info"></a> Additional information
