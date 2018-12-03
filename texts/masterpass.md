@@ -178,7 +178,7 @@ The address will then be delivered via the [PaymentPage Assert](https://saferpay
 ```
 
 <div class="warning">
-  <p><strong>IMPORTANT:</strong> Saferpay can capture the billing address in multiple ways. Either the merchant does capture it himself and submits the data through the respective request, or, in case of the Payment Page, the page does offer respective forms, that can capture the address! In case of Masterpass however, the address is saved within the Masterpass Wallet of the card holder. Should the delivery address be captured, using one of the other methods, it will be overwritten by the wallet-address!</p>
+  <p><strong>IMPORTANT:</strong> Saferpay can capture the billing address in multiple ways. Either the merchant does capture it himself and submits the data through the respective request. If you request the DeliveryAddress through Masterpass, using above example, it will be overwritten by the wallet-address!</p>
 </div>
 
 
