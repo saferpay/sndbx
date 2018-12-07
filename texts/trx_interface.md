@@ -1,3 +1,8 @@
+
+<div class="warning">
+  <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant!</p>
+</div>
+
 # Transaction Interface
 
 The Transaction Interface is an extension to Payment Page Interface intended for a more modular und seamless integration of the payment process and thus offers a wide variety of functions to process and handle payments. It can be operated in parallel with the Payment Page Interface or alone. It offers the **Hosted Entry Form** (HEF) to process **card payments** seamlessly. Please read chapter [**Iframe Integration and CSS**](https://saferpay.github.io/sndbx/CssiFrame.html#chapter-css-iframe) for examples of the different payment forms. This interface can also be used in combination with Secure Card Data to store/tokenize payment data during the payment process.
