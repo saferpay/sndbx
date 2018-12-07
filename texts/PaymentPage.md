@@ -1,5 +1,9 @@
 # Payment Page Interface
 
+<div class="warning">
+  <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant!</p>
+</div>
+
 The Saferpay [Payment Page Interface](https://saferpay.github.io/jsonapi/#ChapterPaymentPage)<sup>1</sup> is intended for a simplified and universal integration of the payment process by using the PaymentPage payment form<sup>2</sup>. The Saferpay Payment Page can be used both with a Saferpay eCommerce license and with a Saferpay business license. All Saferpay supported payment methods can be processes with the Payment Page Interface; credit cards and third-party payment methods like “PayPal, iDEAL, SOFORT/Klarna and more. Once integrated, more payment methods can be added at any time without major adjustments.
 
 The PaymentPage can be either used to offer the payer the option to select a desired payment method or can be defined to jump directly to one specific payment method with a preselection option. Please read chapter [**Iframe Integration and CSS**](https://saferpay.github.io/sndbx/CssiFrame.html#chapter-css-iframe) for examples of the different payment forms. It can also be used in combination with the Secure Card Data to store/tokonize payment data during the payment process. 
@@ -21,10 +25,6 @@ The PaymentPage can be either used to offer the payer the option to select a des
     * [Capture/Finalize the Transaction](index.html#Payment_v1_Transaction_Capture)
     * [Cancel/Abort the Transaction](index.html#Payment_v1_Transaction_Cancel)
 6. Transaction is finished! 
-
-<div class="info">
-  <p><strong>Want to take a look at the Payment Page?</strong> <a target="_blank" href="http://shop.saferpay.eu/test.php">Click here to be redirected.</a></p>
-</div>
 
 ### <a name="pp-initialize"></a> 1 - PaymentPage Initialize
 
