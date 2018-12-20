@@ -78,7 +78,7 @@ The following data points are mandatory and must contain valid values when using
   </thead>
   <tbody>
     <tr>
-      <td>BillingAddress.Email</td>
+      <td>DeliveryAddress.Email</td>
       <td>payer@gmail.com</td>
       <td>Valid email address</td>
     </tr>
