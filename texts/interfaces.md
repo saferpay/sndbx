@@ -154,8 +154,8 @@ The following table shows an overview of which functions are included in the two
     </tr>
     <tr>
       <th><b>Batch</b></th>
-      <th class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
-      <th class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></th>
+      <th>/th>
+      <th></th>
     </tr>
     <tr>
       <td>Close</td>
