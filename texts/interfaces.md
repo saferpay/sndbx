@@ -10,6 +10,9 @@ It is extremely important to clarify before the implementation of Saferpay, whet
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/LicenseOptions.png "License Options")
 
 <div class="info">
+  <p><strong>Note:</strong> Inside the <a href="https://saferpay.github.io/jsonapi/">API-Specification</a>, all Business-Requests are marked with the additional <strong>Business License</strong> tag, to indicate, that they may only be used with Saferpay Business!</p>
+</div>
+<div class="info">
   <p><strong>Note:</strong> All Saferpay Test-Accounts do have Business activated by default, for evaluation purposes!</p>
 </div>
 
