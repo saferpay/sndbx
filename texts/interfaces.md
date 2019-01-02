@@ -165,10 +165,6 @@ The following table shows an overview of which functions are included in the two
   </tbody>
 </table>
 
-<div class="warning">
-  <p><strong>*<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment">Transaction Interface - Redirect Payment</a></strong> is deprecated and replaced by the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page!</a>. Please use the parameter <strong>PaymentMethods</strong> to directly select your desired provider!</p>
-</div>
-
 ## <a name="interfaces"></a> The Interfaces
 
 Saferpay consist of two main interfaces and a set of different additional modules that can be added to each interface depending on the business requriements and desired payment flow.
@@ -317,6 +313,10 @@ The main components of the Saferpay JSON API are:
     </tr>
   </tbody>
 </table>
+
+<div class="warning">
+  <p><strong>*<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment">Transaction Interface - Redirect Payment</a></strong> is deprecated and replaced by the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page!</a>. Please use the parameter <strong>PaymentMethods</strong> to directly select your desired provider!</p>
+</div>
 
 ## <a name="int-what"></a> What should i use?
 
