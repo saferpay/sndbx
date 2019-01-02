@@ -722,9 +722,7 @@
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
   </tbody>
-</table><div class="warning">
-  <p><strong>*<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment">Transaction Interface - Redirect Payment</a></strong> is deprecated and replaced by the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page!</a>. Please use the parameter <strong>PaymentMethods</strong> to directly select your desired provider!</p>
-</div></div></div></section><section id="interfaces"><h2><a name="interfaces"></a> The Interfaces</h2><div class="row"><div class="col-md-6"><p>Saferpay consist of two main interfaces and a set of different additional modules that can be added to each interface depending on the business requriements and desired payment flow.</p><p>The main components of the Saferpay JSON API are:</p><ul>
+</table></div></div></section><section id="interfaces"><h2><a name="interfaces"></a> The Interfaces</h2><div class="row"><div class="col-md-6"><p>Saferpay consist of two main interfaces and a set of different additional modules that can be added to each interface depending on the business requriements and desired payment flow.</p><p>The main components of the Saferpay JSON API are:</p><ul>
 <li><strong>Payment Page Interface</strong></li>
 <li><strong>Transaction Interface</strong></li>
 <li>and the additional <strong>Secure Card Data</strong> module</li>
@@ -860,7 +858,9 @@
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
   </tbody>
-</table></div></div></section><section id="int-what"><h2><a name="int-what"></a> What should i use?</h2><div class="row"><div class="col-md-6"><p>Before implementing, it is important to clarify, which functions are important for you!</p></div></div></section><section><h3>Use the PaymentPage/ E Commerce, if...</h3><div class="row"><div class="col-md-6"><ul>
+</table><div class="warning">
+  <p><strong>*<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment">Transaction Interface - Redirect Payment</a></strong> is deprecated and replaced by the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page!</a>. Please use the parameter <strong>PaymentMethods</strong> to directly select your desired provider!</p>
+</div></div></div></section><section id="int-what"><h2><a name="int-what"></a> What should i use?</h2><div class="row"><div class="col-md-6"><p>Before implementing, it is important to clarify, which functions are important for you!</p></div></div></section><section><h3>Use the PaymentPage/ E Commerce, if...</h3><div class="row"><div class="col-md-6"><ul>
 <li><strong>You only want to do transactions:</strong> Do you have a small and simple webshop? Are <a href="refund.html">refunds over the API</a>, or <a href="recurring.html">recurring payments</a> not important for you? The Payment Page and thus a normal E Commerce contract is more, than sufficient for you!</li>
 <li><strong>You want to have one solution for every payment method:</strong> <a href="Integration_PP.html">The PaymentPage</a> does support every payment method Saferpay has to offer. Once integrated, it is a simple matter of activating the payment methods you need and they will show up on the page.</li>
 </ul></div></div></section><section><h3>Use the Transaction Interface/Saferpay Business, if...</h3><div class="row"><div class="col-md-6"><ul>
