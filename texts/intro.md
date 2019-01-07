@@ -227,6 +227,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <th class="text-center">DCC</th>
       <th class="text-center">3DS</th>
       <th class="text-center">MOTO</th>
+      <th class="text-center">Testing</th>
     </tr>
   </thead>
   <tbody>
@@ -241,6 +242,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Bancontact</td>
@@ -253,12 +255,14 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></td>
       <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>   
     <tr>
       <td>BillPay Direct Debit</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -277,6 +281,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>Bonus Card</td>
@@ -289,6 +294,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Diners Club</td>
@@ -299,6 +305,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
@@ -313,6 +320,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"> (See Diners)</span></td>
     </tr>
     <tr>
       <td>ePrzelewy</td>
@@ -325,9 +333,11 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>eps</td>
+      <td> </td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -349,6 +359,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>iDEAL</td>
@@ -361,6 +372,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>  
     <tr>
       <td>JCB</td>
@@ -372,6 +384,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
@@ -385,9 +398,11 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>    
     <tr>
       <td>Mastercard</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -409,6 +424,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>paydirekt</td>
@@ -421,6 +437,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>PayPal</td>
@@ -433,6 +450,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>PostFinance Card</td>
@@ -441,6 +459,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -457,6 +476,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>SEPA Direct Debit</td>
@@ -469,9 +489,11 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>SOFORT</td>
+      <td> </td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -493,6 +515,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
         <tr>
       <td>VPay</td>
@@ -505,6 +528,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td> </td>
     </tr>
     <tr>
       <td>TWINT</td>
@@ -517,6 +541,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Unionpay</td>
@@ -529,6 +554,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></td>
       <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>  
   </tbody>
 </table>
@@ -554,6 +580,8 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
   <dd>Mail Phone Order available</dd>
   <dt><span class="glyphicon glyphicon-ok" style="color: #ff0000"></dt>
   <dd>This feature is mandatory, for this payment method to function!</dt>
+  <dt>Testing</dt>
+  <dd>A Simulator/Sandbox is available</dd>
 </dl>
 
 ## <a name="capture-batch"></a> Capture and Daily Closing
