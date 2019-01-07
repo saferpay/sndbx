@@ -628,7 +628,7 @@ Transactions which have not yet been booked are visible in Saferpay Backoffice a
 ```
 Executing the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) is not needed in this case!
 
-Not all payment methods need a separate capture to trigger the cash flow. You can find an overview of which payment methods should be captured [under Payment Method Features](https://saferpay.github.io/sndbx/index.html#pm-functions). Methods, that do not need the capture, will return the status **"CAPTURED"** right away.
+Not all payment methods need a separate capture to trigger the cash flow. You can find an overview of which payment methods must be captured [under Payment Method Features](https://saferpay.github.io/sndbx/index.html#pm-functions). Methods, that do not need the capture, will return the status **"CAPTURED"** right away.
 
 <div class="info">
   <p><strong>Important:</strong> A reservation made through a certain payment processor, may only last for a limited time only. If this timeframe is exceeded, the authorised amount is released and 
