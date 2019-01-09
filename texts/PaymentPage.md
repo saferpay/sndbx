@@ -62,7 +62,9 @@ The process begins with the [PaymentPage Initialize](https://saferpay.github.io/
 
 + **Token:** The **Token** refers to the values temporarily stored regarding the Saferpay transaction and is mandatory during subsequent processing of the transaction ([for more information, see e.g. PaymentPage Assert](http://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert)). The Token should be coupled to the http-GET parameters that were previously attached to the **ReturnUrls** and **NotifyUr**l for identification. 
 
-+ **RedirectUrl:** The **RedirectURL** provides the address via which the buyer is redirected to the PaymentPage. This can be done automatically via calling up the Iframe or by embedding the URL in an HTML link that must be clicked on by the buyer.
++ **RedirectUrl:** The **RedirectURL** provides the address via which the buyer is redirected to the PaymentPage. This can be done automatically via calling up the Iframe or by embedding the URL in an HTML link that must be clicked on by the buyer.<div class="warning">
+  <p><strong>VERY IMPORTANT:</strong> The <strong>RedirectUrl</strong> can only be called one time, due to security restraints. Please make sure, that the <strong>RedirectUrl</strong> cannot be called twice. The second call will automatically trigger the <strong>FailUrl</strong> or <strong>AbortUrl</strong>, if the latter is defined!</p>
+</div>
 
 ## <a name="pp-transaction"></a> 2 - Redirect and Transaction
 
