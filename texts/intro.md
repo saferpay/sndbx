@@ -569,7 +569,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
   <dt>SCD</dt>
   <dd>Secure Alias Store available</dd>
   <dt>Refund</dt>
-  <dd>Credits payments can be made</dd>
+  <dd>Credit payments can be made</dd>
   <dt>Recurring</dt>
   <dd>Recurring payments</dd>
   <dt>DCC</dt>
