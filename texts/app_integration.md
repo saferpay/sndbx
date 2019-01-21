@@ -1,6 +1,6 @@
 # Mobile App integration
 
-Payments done via a smartphone through a mobile app, becomes more and more important.
+Payments done via a smartphone through a mobile app, are becoming more and more important.
 Saferpay offers the tools needed to be integrated via a mobile app.
 The following guide is an extension, to the standard integration methods for the [Payment Page](https://saferpay.github.io/sndbx/Integration_PP.html), [Transaction interface](https://saferpay.github.io/sndbx/Integration_trx.html) and [Secure Alias Store](https://saferpay.github.io/sndbx/scd.html#scd-sa).
 
