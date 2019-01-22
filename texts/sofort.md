@@ -44,15 +44,15 @@ The handling of SOFORT payments with Saferpay requires:
 6. Enter your IBAN for receiving your customer’s payments. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_iban.png "Bank account")
 
-7. For processiing SOFORT payments via Saferpay enter the redirect links. <br>
+7. For processsing SOFORT payments via Saferpay enter the redirect links. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_interface.png "Interface")<br /><i class="glyphicon glyphicon-hand-right"></i> Success link:  
 *https://-USER_VARIABLE_0-paymentStatus=ok-USER_VARIABLE_2--USER_VARIABLE_3--USER_VARIABLE_4--USER_VARIABLE_5--SENDER_IBAN-*<br /><i class="glyphicon glyphicon-hand-right"></i> Abort link:  
 *https://-USER_VARIABLE_0-paymentStatus=cancel*
 
-8. Save and click the tab „Extended settings“ to complete the project settings. <br>
+8.  Scroll downn and click on "Save" to save your General project settings. Click on the tab „Extended settings“ to configure additional project settings. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_extended.png "Extended settings")
 
-9. Go to „Shop interface settings“ and enter timeout value and link. <br>
+9. Go to „Shop interface settings“ in the "Extended settings" tab and enter the timeout value and link. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_timeout.png "Timeout")<br /><i class="glyphicon glyphicon-hand-right"></i> Timeout in seconds:  
 *900*<br /><i class="glyphicon glyphicon-hand-right"></i> Timeout link:<br />*https://-USER_VARIABLE_0-paymentStatus=timeout*
 
