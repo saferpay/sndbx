@@ -17,7 +17,7 @@ If you intend on saving Postcard-data for later use, Saferpay provides the possi
 * The activation of the PostFinance Alias System for PostFinance and Saferpay.
 
 <div class="info">
-  <p><strong>Note:</strong> The registration of a Swiss Postcard is only possible with the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert</a> method. For that, you have to set the parameter "CARD" to the value "POSTFINANCE".</p>
+  <p><strong>Note:</strong> The registration of a Swiss Postcard is only possible with the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert</a> method. For that, you have to set the parameter "TYPE" to the value "POSTFINANCE".</p>
 </div>
 
 ### <a name="pf-regdial"></a> Registration Dialogue
