@@ -15,6 +15,30 @@ It is extremely important to clarify before the implementation of Saferpay, whet
 <div class="info">
   <p><strong>Note:</strong> All Saferpay Test-Accounts do have Business activated by default, for evaluation purposes!</p>
 </div>
+<div class="warning">
+  <p><strong>Important Note:</strong> In case you are using Saferpay Business <strong>without</strong> the corresponding license, the API will throw an error (see below) in this case, you'll two options to proceed:</p>
+  <ul>
+    <li><p><strong>Option 1:</strong> Getting a Business license! You can contact your sales contact and ask for a change to Saferpay Business, so you have access to the needed functions!</p></li>
+    <li><p><strong>Option 2:</strong> Redo the integration! If you are not happy with option 1, the only other option would be to redo the whole integration, with the <a href="Integration_PP.html">Payment Page</a> in mind</p></li>
+  </ul>
+</div>
+
+## Example of a "missing Business license"-API error
+
+ ```json
+ {
+  "ResponseHeader": {
+    "SpecVersion": "1.10",
+    "RequestId": "[your request id]"
+  },
+  "Behavior": "ABORT",
+  "ErrorName": "PERMISSION_DENIED",
+  "ErrorMessage": "Permission denied",
+  "ErrorDetail": [
+    "Invalid license"
+  ]
+}
+ ```
 
 The following table shows an overview of which functions are included in the two licence models:
 
