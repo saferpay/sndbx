@@ -108,6 +108,10 @@ Subsequently, the transaction will be finalised via [**Capture**](https://saferp
 
 Once these steps are complete, the transaction is completed.
 
+<div class="warning">
+  <p><strong>VERY IMPORTANT:</strong> Keep in mind that you <strong>cannot cancel</strong> a transaction, once it is captured! At that point, a refund has to be executed, <a href="index.html#pm-functions">if available</a>! So please make sure, that you really want to finalize the transaction and initiate the money transfer, to avoid confusion with your customers!</p>
+</div>
+
 ## <a name="pp-demo"></a> Try it out!
 
 <a href="https://saferpay.github.io/sndbx/pp_demo.html" class="demobtn">Click here for a live demo!</a>
