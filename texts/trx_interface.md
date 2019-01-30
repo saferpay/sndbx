@@ -108,8 +108,14 @@ In case of success the authorization data is returned with the Transaction Autho
 ### <a name="trx-captcancel"></a>5 - Capture or Cancel
 Subsequently, the transaction will be finalised via [**Capture**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or aborted via [**Cancel**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel).For this, the transaction identifier **Id** is required. Please refer to the notes [in the payment methods chapter](index.html#pm-functions), to check, if and when a **Capture** is necessary, and whether a **Cancel** can still be executed.
 Once these steps have been finalised, the transaction is complete.
+
+<div class="warning">
+  <p><strong>VERY IMPORTANT:</strong> Keep in mind that you <strong>cannot cancel</strong> a transaction, once it is captured! At that point, a refund has to be executed, <a href="index.html#pm-functions">if available</a>! So please make sure, that you really want to finalize the transaction and initiate the money transfer, to avoid confusion with your customers!</p>
+</div>
+
 ## <a name="trx-sepa"></a> SEPA Direct Debit
 Because there are no PCI requirements for direct debits, bank details data can be captured directly. The use of an in-house HTML form and the subsequent payment request are allowed. For this, the bank details must be forwarded to [AuthorizeDirect](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect) with the **BankAccount** parameter in the **PaymentMeans** container.
+
 	
 ## <a name="trx-demo"></a> Try it out!
 
