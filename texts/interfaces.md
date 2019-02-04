@@ -178,7 +178,7 @@ The following table shows an overview of which functions are included in the two
     </tr>
     <tr>
       <th><b>Batch</b></th>
-      <th>/th>
+      <th></th>
       <th></th>
     </tr>
     <tr>
