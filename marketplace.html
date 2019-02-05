@@ -571,7 +571,7 @@
 
 				
 <section><h1>The Marketplace and Partial Captures</h1><div class="row"><div class="col-md-6"></div></div></section><section id="pc-partial"><h2><a name="pc-partial"></a> Partial Captures</h2><div class="row"><div class="col-md-6"><p>In order to understand the Saferpay marketplace-solution, one must first grasp the concept of partial- or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a>, for they are the very foundation, on which the marketplace-solution is built upon.</p></div></div></section><section><h3>Things to consider</h3><div class="row"><div class="col-md-6"><ol>
-<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> is available for SIX Acquiring contracts and PayPal <strong>only!</strong></li>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> is available for SIX Mastercard and Visa Acquiring contracts and PayPal <strong>only!</strong></li>
 <li>Your live merchant-account needs to be configured, in order to support Multipart Captures, or the request will fail!</li>
 <li>No MultipartCapture request should be sent before receiving the response of a preceeding request (i.e. no parallel calls are allowed). The timeout for this are 100 seconds.</li>
 <li>The sum of multipart captures must not exceed the authorized amount.</li>
