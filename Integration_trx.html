@@ -607,7 +607,11 @@
 </li>
 <li><p><strong>Secure Card Data:</strong> With the Initialize Request, it is also possible within Saferpay Secure Card Data to forward saved cards in the form of an alias. For example, this can be the case if the customers card number has been already saved (tokenized), and you do not want her or him to re-enter this data. To use the alias value instead of the actual card data, use the container PaymentMeans.</p>
 </li>
-</ul><div class="info">
+</ul><pre><code class="language-json">  &quot;PaymentMeans&quot;: {
+    &quot;Alias&quot;: {
+      &quot;Id&quot;: &quot;[YOUR ALIAS]&quot;
+    },
+</code></pre><div class="info">
  <p><strong>Note:</strong> The CVC is <strong>NOT</strong> required, when doing a 3DS transaction with an alias!</p>
 </div></div></div></section><section><h3>In the Response of the Initialize Request these parameters are import for further processing:</h3><div class="row"><div class="col-md-6"><ul>
 <li><p><strong>Token:</strong> The Token is mandatory for further steps within the payment process and must therefore be cached. Preferably, it should be linked to the parameters attached to the ReturnUrls. It can thus be easily reassigned.</p>
