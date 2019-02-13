@@ -4,14 +4,28 @@
   <p><strong>NOTE:</strong> This service is still in evaluation - contact your account manager for further information.</p>
 </div>
 
+## <a name="ff-req"></a> Requirements
+
+* The corresponding Saferpay licence and thus the existence of a valid identification with a username and password for the Saferpay system.
+* Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
+* A Fraud Free contract. Please contact your account manager for further information!
++ JSON-API Spec Version 1.9
+
 ## <a name="ff-response"></a> API Response
   
 The Fraud Free Service only accepts liability for the transaction if the API response (PaymentPage/Assert response, Transaction/authorize response) contains all of the following attributes with values as specified:
--	In the Liability Container is `LiabilityShift` set to `true`, and
--	The `LiableEntity` equals `FraudFree`, and 
--	Within the FraudFree Container is  `LiabilityShift` set to `true`
+-	In the Liability Container, `LiabilityShift` is set to `true`!
+-	The `LiableEntity` equals `FraudFree`!
+-	Within the FraudFree Container, `LiabilityShift` is set to `true`!
 
-The below snippet is an example response where the Fraud Free Service accepts liability for the transaction: 
+
+<div class="info">
+  <p><strong>Info:</strong> Should the Fraud Free service not accept liability, <strong>3D Secure</strong> is used instead!</p>
+</div>
+
+Below, you'll find JSON-examples of success and major fail cases, that are returned with the authorization response:
+
+### Fraud Free accepts liability
 
 ```json
 
@@ -30,6 +44,56 @@ The below snippet is an example response where the Fraud Free Service accepts li
 }
 
 ```
+
+### Fraud Free rejects liability and fallback to 3D Secure
+
+### Example of Rejection due to suspicious client data:
+
+```json
+"Liability":{ 
+   "LiabilityShift":true,
+   "LiableEntity":"ThreeDs",
+   "ThreeDs":{ 
+      "Authenticated":true,
+      "LiabilityShift":true,
+      "Xid":"X2lYXwpROW5IBC5tVCQLUlwrRQs=",
+      "VerificationValue":"AAABBIIFmAAAAAAAAAAAAAAAAAA="
+   },
+   "FraudFree":{ 
+      "Id":"c6057dcc280448ea8ee51307aadbb276",
+      "LiabilityShift":false,
+      "Score":0.80,
+      "Investigationpoints":[ 
+         "susp_bill_ad",
+         "susp_machine"
+      ]
+   }
+}
+```
+
+### Rejection due to too high authorization-amount:
+
+```json
+"Liability":{ 
+   "LiabilityShift":true,
+   "LiableEntity":"ThreeDs",
+   "ThreeDs":{ 
+      "Authenticated":true,
+      "LiabilityShift":true,
+      "Xid":"Gy0mNAETemwEBAhLNhQAVmJcSAc=",
+      "VerificationValue":"AAABBIIFmAAAAAAAAAAAAAAAAAA="
+   },
+   "FraudFree":{ 
+      "Id":"faaf76cff7de4b0f9997f941f99a626e",
+      "LiabilityShift":false,
+      "Score":0.00,
+      "Investigationpoints":[ 
+         "not_liable_high_amount"
+      ]
+   }
+}
+```
+
 ## <a name="ff-status"></a> Status Change
 
 Liability shift is excluded if the transaction changes to a status as within this list:
