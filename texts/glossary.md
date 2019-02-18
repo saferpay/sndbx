@@ -71,7 +71,7 @@
     </tr>
     <tr>
       <td class="text-center"><strong>TransactionId</strong></td>
-      <td><p>Each Saferpay transaction gets assigned a unique transactionId. This Id can be used to search for said transaction inside the Saferpay Backoffice, do captures, refunds and more. It can also help the Saferpay Support, if you need help with a certain transaction. If available, always submit the transactionId, this way the support can easily find the transaction and help you!</p><td>
+      <td><p>Each Saferpay transaction gets assigned a unique transactionId. This Id can be used to search for said transaction inside the Saferpay Backoffice, do captures, refunds and more. It can also help the Saferpay Support, if you need help with a certain transaction. If available, always submit the transactionId, this way the support can easily find the transaction and help you!</p></td>
       <td><p>The transactionId is only returned via the API. Either through <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Transaction AuthorizeDirect</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeReferenced">Transaction AuthorizeReferenced</a>, inside <strong>Transaction.Id</strong>.</p></td>
     </tr>
   </tbody>
