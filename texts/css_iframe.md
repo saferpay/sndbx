@@ -14,23 +14,11 @@ The Response Message includes a respective **RedirectURL**, if successful execut
 
 ### <a name="css-pp"></a> Payment Page Initialize
 
-The Payment Page (payment form) has a responsive design and automatically adapts to the size of the Iframe. Here are two examples:
+The Payment Page (payment form) has a responsive design and automatically adapts to the size of the Iframe. Here is an example:
 
-+ Full size - with multiple payment methods:  
-
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_desktop.png "Payment Page desktop view")
-
-+ Full size - credit card entry form:  
-
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_desktop_form.png "Payment Page desktop view - Card Entry")
-
-+ Small responsive size:  
-
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_mobile.png "Payment Page mobile view")
-
-+ Small responsive size - credit card entry form: 
-
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_mobile_form.png "Payment Page mobile view - Card Entry")
+<div style="resize: both; overflow: auto; min-height: 650px; height: 650px; width: 600px;">
+	<iframe src="https://shop.saferpay.eu/saferpayintegration/ppauto_initialize_submit.php" style="height: 100%; width: 100%; overflow: hidden;"></iframe>
+</div>
 
 ### <a name="css-trxini"></a> Transaction Initialize
 
