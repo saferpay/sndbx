@@ -30,9 +30,11 @@ Here, an example of the Saferpay Card Entry Form (**Hosted Entry Form**) for cap
 
 ### <a name="css-aliasins"></a> Alias Insert
 
-Here, an example of the Saferpay Card Registration Form (**Hosted Register Form**):  
+Here, an example of the Saferpay Card Registration Form (**Hosted Register Form**). Simply drag the window at the bottom right corner and see the the form adapt:
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_alias_insert.png "Card Registration Form")
+<div style="resize: both; overflow: auto; min-height: 480px; mon-width: 285px; height: 480px; width: 290px;">
+	<iframe src="https://shop.saferpay.eu/saferpayintegration/auto_insert_submit.php" style="height: 100%; width: 100%; overflow: hidden;"></iframe>
+</div>
 
 <div class="warning">
   <p><strong>Attention:</strong> For registration, the capture of the card verification code (CVC) is not enabled, because it can only be saved by Saferpay on a temporary, 20-minute basis. PCI specifications prohibit permanent storage. For payments with the CVC, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Inintialize</a> and<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> shall be used.</p>
