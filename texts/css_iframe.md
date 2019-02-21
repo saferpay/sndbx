@@ -22,9 +22,11 @@ The Payment Page (payment form) has a responsive design and automatically adapts
 
 ### <a name="css-trxini"></a> Transaction Initialize
 
-Here, an example of the Saferpay Card Entry Form (**Hosted Entry Form**) for capturing card details:
+Here, an example of the Saferpay Card Entry Form (**Hosted Entry Form**) for capturing card details. Simply drag the window at the bottom right corner and see the the form adapt:
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pay_with_cvc.png "Saferpay Card Entry Form")
+<div style="resize: both; overflow: auto; min-height: 480px; mon-width: 285px; height: 480px; width: 290px;">
+	<iframe src="https://shop.saferpay.eu/saferpayintegration/auto_initialize_submit.php" style="height: 100%; width: 100%; overflow: hidden;"></iframe>
+</div>
 
 ### <a name="css-aliasins"></a> Alias Insert
 
