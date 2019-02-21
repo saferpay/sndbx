@@ -14,7 +14,7 @@ The Response Message includes a respective **RedirectURL**, if successful execut
 
 ### <a name="css-pp"></a> Payment Page Initialize
 
-The Payment Page (payment form) has a responsive design and automatically adapts to the size of the Iframe. Here is an example:
+The Payment Page (payment form) has a responsive design and automatically adapts to the size of the Iframe. Here is an example. Simply drag the window at the bottom right corner and see the the Payment Page adapt:
 
 <div style="resize: both; overflow: auto; min-height: 650px; height: 820px; width: 1000px;">
 	<iframe src="https://shop.saferpay.eu/saferpayintegration/ppauto_initialize_submit.php" style="height: 100%; width: 100%; overflow: hidden;"></iframe>
