@@ -16,7 +16,7 @@ The Response Message includes a respective **RedirectURL**, if successful execut
 
 The Payment Page (payment form) has a responsive design and automatically adapts to the size of the Iframe. Here is an example. Simply drag the window at the bottom right corner and see the the Payment Page adapt:
 
-<div style="resize: both; overflow: auto; min-height: 650px; height: 820px; width: 1000px;">
+<div style="resize: both; overflow: auto; min-height: 800px; height: 820px; width: 1000px;">
 	<iframe src="https://shop.saferpay.eu/saferpayintegration/ppauto_initialize_submit.php" style="height: 100%; width: 100%; overflow: hidden;"></iframe>
 </div>
 
@@ -24,7 +24,7 @@ The Payment Page (payment form) has a responsive design and automatically adapts
 
 Here, an example of the Saferpay Card Entry Form (**Hosted Entry Form**) for capturing card details. Simply drag the window at the bottom right corner and see the the form adapt:
 
-<div style="resize: both; overflow: auto; min-height: 480px; mon-width: 285px; height: 480px; width: 290px;">
+<div style="resize: both; overflow: auto; min-height: 500px; mon-width: 285px; height: 480px; width: 290px;">
 	<iframe src="https://shop.saferpay.eu/saferpayintegration/auto_initialize_submit.php" style="height: 100%; width: 100%; overflow: hidden;"></iframe>
 </div>
 
@@ -32,7 +32,7 @@ Here, an example of the Saferpay Card Entry Form (**Hosted Entry Form**) for cap
 
 Here, an example of the Saferpay Card Registration Form (**Hosted Register Form**). Simply drag the window at the bottom right corner and see the the form adapt:
 
-<div style="resize: both; overflow: auto; min-height: 480px; mon-width: 285px; height: 480px; width: 290px;">
+<div style="resize: both; overflow: auto; min-height: 500x; mon-width: 285px; height: 480px; width: 290px;">
 	<iframe src="https://shop.saferpay.eu/saferpayintegration/auto_insert_submit.php" style="height: 100%; width: 100%; overflow: hidden;"></iframe>
 </div>
 
