@@ -37,7 +37,7 @@ Here, an example of the Saferpay Card Registration Form (**Hosted Register Form*
 </div>
 
 <div class="warning">
-  <p><strong>Attention:</strong> For registration, the capture of the card verification code (CVC) is not enabled, because it can only be saved by Saferpay on a temporary, 20-minute basis. PCI specifications prohibit permanent storage. For payments with the CVC, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Inintialize</a> and<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> shall be used.</p>
+  <p><strong>Attention:</strong> For registration, the capture of the card verification code (CVC) is not enabled, because it can only be saved by Saferpay on a temporary, 20-minute basis. PCI specifications prohibit permanent storage. For payments with the CVC, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Inintialize</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> shall be used.</p>
 </div>
 
 ## <a name="css-iframe_size"></a> Size of the Iframe
