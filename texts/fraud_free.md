@@ -22,6 +22,9 @@ The Fraud Free Service only accepts liability for the transaction if the API res
 <div class="info">
   <p><strong>Info:</strong> Should the Fraud Free service not accept liability, <strong>3D Secure</strong> is used instead!</p>
 </div>
+<div class="warning">
+  <p><strong>Important:</strong> The FraudFree-Response will not be visible inside the Saferpay Backoffice. Always save the API-response for further use, e.g. in case of fraud!</p>
+</div>
 
 Below, you'll find JSON-examples of success and major fail cases, that are returned with the authorization response:
 
