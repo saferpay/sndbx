@@ -584,6 +584,8 @@
 <li>Within the FraudFree Container, <code>LiabilityShift</code> is set to <code>true</code>!</li>
 </ul><div class="info">
   <p><strong>Info:</strong> Should the Fraud Free service not accept liability, <strong>3D Secure</strong> is used instead!</p>
+</div><div class="warning">
+  <p><strong>Important:</strong> The FraudFree-Response will not be visible inside the Saferpay Backoffice. Always save the API-response for further use, e.g. in case of fraud!</p>
 </div><p>Below, you'll find JSON-examples of success and major fail cases, that are returned with the authorization response:</p></div></div></section><section><h3>Fraud Free accepts liability</h3><div class="row"><div class="col-md-6"><pre><code class="language-json">
 &quot;Liability&quot;:{ 
    &quot;LiabilityShift&quot;:true,
