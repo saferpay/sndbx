@@ -157,7 +157,7 @@ However <strong>please make sure to use the <a href="https://saferpay.github.io/
  <p><strong>IMPORTANT:</strong> Please read this chapter completely, <strong>INCLUDING</strong> the chapter about <strong>Applying Fees</strong>!</p>
 </div>
 <div class="warning">
- <p><strong>Important:</strong> As mentioned in the beginning, a special setup is necessary to acces the following features. Once this setup has been done, you will be unable to execute normal <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Captures</a> and Captures inside the Saferpay Backoffice won't be possible anymore! Please keep that in mind, during implementation!</p>
+ <p><strong>Important:</strong> As mentioned in the beginning, a special setup is necessary to acces the following features. Once this setup has been done, you will be unable to execute normal <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Captures</a> <strong>(Exception being Refunds!)</strong> and Captures inside the Saferpay Backoffice won't be possible anymore! Please keep that in mind, during implementation!</p>
 </div>
 
 In some cases, a merchant, or marketplace-operator, needs to be able to split the authorized amounts do different contracts, bank accounts and/or submerchants. Saferpay does offer this option through [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture).
