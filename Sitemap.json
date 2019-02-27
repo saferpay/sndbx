@@ -134,8 +134,8 @@
       { "Source": "texts/marketplace.md", "Title": "Partial Captures", "Target": "marketplace.html#pc-partial" },
       { "Source": "texts/marketplace.md", "Title": "Finalizing a Capture-Chain", "Target": "marketplace.html#pc-final" },
       { "Source": "texts/marketplace.md", "Title": "Why do you need to finalize a transaction?", "Target": "marketplace.html#pc-final-why" },
-      { "Source": "texts/marketplace.md", "Title": "Submerchants", "Target": "marketplace.html#pc-submerchants" },
       { "Source": "texts/marketplace.md", "Title": "Handling Refunds", "Target": "marketplace.html#pc-refunds" },
+      { "Source": "texts/marketplace.md", "Title": "Submerchants", "Target": "marketplace.html#pc-submerchants" },
      { "Source": "texts/marketplace.md", "Title": "Applying Fees", "Target": "marketplace.html#pc-fee" }
     ]
   },
