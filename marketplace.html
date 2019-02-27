@@ -573,9 +573,12 @@
 <section><h1>The Marketplace and Partial Captures</h1><div class="row"><div class="col-md-6"></div></div></section><section id="pc-partial"><h2><a name="pc-partial"></a> Partial Captures</h2><div class="row"><div class="col-md-6"><p>In order to understand the Saferpay marketplace-solution, one must first grasp the concept of partial- or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a>, for they are the very foundation, on which the marketplace-solution is built upon.</p></div></div></section><section><h3>Things to consider</h3><div class="row"><div class="col-md-6"><ol>
 <li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> is available for SIX Mastercard and Visa Acquiring contracts and PayPal <strong>only!</strong></li>
 <li>If you want to use the Submerchant and Fee-features, your live merchant-account needs to be configured, in order to support Multipart Captures, or the request will fail!</li>
-</ol><div class="warning">
- <p><strong>Important:</strong> Once this setup has been done, you will be unable to execute normal <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Captures</a> and Captures inside the Saferpay Backoffice won't be possible anymore!</p>
-</div></div></div></section><section><h3>Correctly executing a Multipart Capture</h3><div class="row"><div class="col-md-6"><p>Before you can even execute a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>, you, of course, need a transaction, that needs to be captured. This can be any normal authorization, either done by the <a href="https://saferpay.github.io/jsonapi/#ChapterPaymentPage">Payment Page</a>, or <a href="https://saferpay.github.io/jsonapi/#ChapterTransaction">Transaction Interface</a>. You don't have to consider anything special, up to this point!</p><p>Additionally to the standard parameters, needed to execute a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>, the following parameters are important for a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>:</p><ul>
+<li>No MultipartCapture request should be sent before receiving the response of a preceeding request (i.e. no parallel calls are allowed). The timeout for this are 100 seconds.</li>
+<li>The sum of multipart captures must not exceed the authorized amount.</li>
+<li>A unique OrderPartId must be used for each request.</li>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> execute the money-flow (closing) with the execution of the capture itself! A <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">Cancel</a> of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a> therefore is not possible!</li>
+<li>MultipartCapture is only available for <strong>SpecVersions 1.10 and higher!</strong></li>
+</ol></div></div></section><section><h3>Correctly executing a Multipart Capture</h3><div class="row"><div class="col-md-6"><p>Before you can even execute a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>, you, of course, need a transaction, that needs to be captured. This can be any normal authorization, either done by the <a href="https://saferpay.github.io/jsonapi/#ChapterPaymentPage">Payment Page</a>, or <a href="https://saferpay.github.io/jsonapi/#ChapterTransaction">Transaction Interface</a>. You don't have to consider anything special, up to this point!</p><p>Additionally to the standard parameters, needed to execute a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>, the following parameters are important for a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>:</p><ul>
 <li><strong>Type:</strong> The <strong>Type</strong> specifies, whether this is one subsequent, or final Capture.</li>
 <li><strong>OrderPartId:</strong> Each <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a> is identified by a unique <strong>OrderPartId</strong>, which will also be forwarded to the respective reconciliation-files you will recieve later. That makes this Id very important for later identification, thus you have to make sure, that said Id is set as unique, so confusions can be averted.</li>
 </ul><p>A complete request may look like this:</p><pre><code class="language-json">{
@@ -631,8 +634,31 @@ There are two different ways to finalize a <a href="https://saferpay.github.io/j
 </code></pre></div></div></section><section><h3>Finalizing without capturing/ Capturing with amount 0</h3><div class="row"><div class="col-md-6"><p>In order to avoid confusion and merchants accidently executing the wrong request, the finalization with amount 0 is done through a completely different request called <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartFinalize">Multipart Finalize</a>. Executing this request will close the transaction without transfering any money.</p></div></div></section><section id="pc-final-why"><h2><a name="pc-final-why"></a> Why do you need to finalize a transaction?</h2><div class="row"><div class="col-md-6"><p>There are two reasons, why you, the merchant, should finalize a transactions, once you have finished all your actions:</p><ol>
 <li>It is the cleaner process! Four you, the merchant, this is the cleaner solution and helps keeping track of every transaction and its status, not just inside your own system, but also inside the Saferpay Backoffice, where still open and closed transactions, will be marked as such!</li>
 <li>It means less hassle for your customers. Each time you successfully authorize a credit card, the authorized amount gets reserved on the card holders credit limit. That effectively means, that he/she cannot use this money, as long as you haven't claimed the money, or the reservation voids, after a certain time-frame. A finalization will open up the credit-limit for the card holder, so he/she may use it again, which is especially important in situations, where the merchant does not want, or can't claim all of the money, originally authorized!</li>
-</ol></div></div></section><section id="pc-submerchants"><h2><a name="pc-submerchants"></a> Submerchants</h2><div class="row"><div class="col-md-6"><div class="danger">
+</ol></div></div></section><section id="pc-refund"><h2><a name="pc-refund"></a> Handling Refunds</h2><div class="row"><div class="col-md-6"><p>Since <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> basically split an existing transaction into multiple parts, refunds also need to be processed in a different way.
+Unlike normal Refunds, you now need to reference each Capture you want to refund individually!</p><p>To do so, you have to reference the <strong>CaptureId</strong> from the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture Response</a>, you want to refund. Remember, that all <strong>CaptureId</strong>s have the suffix <strong>_c</strong> for that reason.</p><p>A <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund request</a> may look like this then:</p><pre><code class="language-JSON">{
+  &quot;RequestHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.10&quot;,
+    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+    &quot;RequestId&quot;: &quot;[your request id]&quot;,
+    &quot;RetryIndicator&quot;: 0
+  },
+  &quot;Refund&quot;: {
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: 100,
+      &quot;CurrencyCode&quot;: &quot;CHF&quot;
+    }
+  },
+  &quot;CaptureReference&quot;: {
+    &quot;CaptureId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb_c&quot;
+  }
+}
+</code></pre></div></div></section><section><h3>Capturing a Refund</h3><div class="row"><div class="col-md-6"><div class="warning">
+  <p><strong>Important:</strong> Like every other <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund</a>, these too need to be captured.
+However <strong>please make sure to use the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">normal Capture request</a> in this case and NOT MultipartCapture!</strong> Refunds cannot be split into multiple parts, like authorizations!</p>
+</div></div></div></section><section id="pc-submerchants"><h2><a name="pc-submerchants"></a> Submerchants</h2><div class="row"><div class="col-md-6"><div class="danger">
  <p><strong>IMPORTANT:</strong> Please read this chapter completely, <strong>INCLUDING</strong> the chapter about <strong>Applying Fees</strong>!</p>
+</div><div class="warning">
+ <p><strong>Important:</strong> As mentioned in the beginning, a special setup is necessary to acces the following features. Once this setup has been done, you will be unable to execute normal <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Captures</a> and Captures inside the Saferpay Backoffice won't be possible anymore! Please keep that in mind, during implementation!</p>
 </div><p>In some cases, a merchant, or marketplace-operator, needs to be able to split the authorized amounts do different contracts, bank accounts and/or submerchants. Saferpay does offer this option through <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a>.</p><p>The general money-flow may look like this:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/Submerchants_MultiPart.png" alt="alt text" title="Multipart Capture with Submerchants"></p><p>Now in order for this to work, the following requirements have to be met:</p><ol>
 <li>Each Submerchant you want to cover, needs an acquiring-contract with SIX, so the money can be directly transfered to their bank-account! <strong>Make sure to specifically request these contracts for the marketplace-solution, since those need a special setup!</strong></li>
 <li>Each submerchant will get their own Id, which has to be submitted with each <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>, to define the merchant, who is getting the money!</li>
@@ -658,28 +684,7 @@ There are two different ways to finalize a <a href="https://saferpay.github.io/j
 }
 </code></pre><p>This request will transfer 10 CHF to the merchant with the Id 17312345!</p></div></div></section><section id="pc-capture"><h2><a name="pc-capture"></a>Capture and Multipart Capture</h2><div class="row"><div class="col-md-6"><p>A classical Saferpay Integration uses the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture request</a>, in order to finalize an authorization.
 Unlike <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a>, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> finalizes the whole authorization and not just a part (hence the name).
-However it is still an option to use, even for marketplaces and it also support Submerchants.</p><p>It is up to the merchant, what to use in a specific situation, but note, that <strong>either one, or the other has to be used! Not both!</strong></p></div></div></section><section id="pc-refund"><h2><a name="pc-refund"></a> Handling Refunds</h2><div class="row"><div class="col-md-6"><p>Since <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> basically split an existing transaction into multiple parts, refunds also need to be processed in a different way.
-Unlike normal Refunds, you now need to reference each Capture you want to refund individually!</p><p>To do so, you have to reference the <strong>CaptureId</strong> from the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture Response</a>, you want to refund. Remember, that all <strong>CaptureId</strong>s have the suffix <strong>_c</strong> for that reason.</p><p>A <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund request</a> may look like this then:</p><pre><code class="language-JSON">{
-  &quot;RequestHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;1.10&quot;,
-    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
-    &quot;RequestId&quot;: &quot;[your request id]&quot;,
-    &quot;RetryIndicator&quot;: 0
-  },
-  &quot;Refund&quot;: {
-    &quot;Amount&quot;: {
-      &quot;Value&quot;: 100,
-      &quot;CurrencyCode&quot;: &quot;CHF&quot;
-    }
-  },
-  &quot;CaptureReference&quot;: {
-    &quot;CaptureId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb_c&quot;
-  }
-}
-</code></pre></div></div></section><section><h3>Capturing a Refund</h3><div class="row"><div class="col-md-6"><div class="warning">
-  <p><strong>Important:</strong> Like every other <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund</a>, these too need to be captured.
-However <strong>please make sure to use the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">normal Capture request</a> in this case and NOT MultipartCapture!</strong> Refunds cannot be split into multiple parts, like authorizations!</p>
-</div></div></div></section><section id="pc-fee"><h2><a name="pc-fee"></a> Applying Fees</h2><div class="row"><div class="col-md-6"><div class="danger">
+However it is still an option to use, even for marketplaces and it also support Submerchants.</p><p>It is up to the merchant, what to use in a specific situation, but note, that <strong>either one, or the other has to be used! Not both!</strong></p></div></div></section><section id="pc-fee"><h2><a name="pc-fee"></a> Applying Fees</h2><div class="row"><div class="col-md-6"><div class="danger">
  <p><strong>IMPORTANT:</strong> If you are using the submerchant-feature, you <strong>must</strong> set either <strong>Fee</strong> or <strong>FeeRefund</strong> (Depending on the request!). If you do not intend on applying a fee, you musst still set it, with an amount set to 0!</p>
 </div><p>Especially for marketplace providers, it is not unusual to charge a small fee for each transaction, that is handled through the marketplace, from the respective merchant. Saferpay also offers options to charge these fees, through <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a>.</p><p>For that, it is necessary to correctly set the <strong>Marketplace =&gt; Fee</strong> container, within a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture request</a>, which may look like this then:</p><pre><code class="language-json">{
    &quot;RequestHeader&quot;: {
@@ -705,7 +710,7 @@ However <strong>please make sure to use the <a href="https://saferpay.github.io/
        }
    }
 }
-</code></pre><p>This request will transfer 10 CHF to the merchant account 17312345, but will also charge a 1 CHF for said transaction. So effectively the merchant will get 9 CHF transferred, <strong>not including the acquiring-costs</strong>, since that can vary from merchant to merchant and even contract!</p><p>But, what if you want to refund said transaction, including the transaction fee?
+</code></pre><p>This request will transfer 10 CHF to the merchant account 17312345, but will also charge a 1 CHF for said transaction. So effectively the merchant will get 9 CHF transferred, <strong>not including the acquiring-costs</strong>, since that can vary from merchant to merchant and even contract!</p></div></div></section><section><h3>Refund fees</h3><div class="row"><div class="col-md-6"><p>But, what if you want to refund said transaction, including the transaction fee?
 For that, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund request</a> also offers the option, to submit a fee, but note, that the container is named <strong>FeeRefund</strong> this time. A request then may look like this:</p><pre><code class="language-JSON">{
   &quot;RequestHeader&quot;: {
     &quot;SpecVersion&quot;: &quot;1.10&quot;,
