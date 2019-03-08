@@ -170,6 +170,20 @@ The next step is to perform the actual recurring transaction(s).
 The API-Function that is required is [Authorize Referenced](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced).
 You have to simply submit the **TransactionId** from your initial transaction (discussed in step 2) to perform the recurring transaction(s)
 
+### Flowchart
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Recurring_Referenced_FlowChart.PNG "Recurring with initial transaction")
+
+1. Gather the TransactionId from the previous, initial, transaction
+2. Aquire the necessary payment-data e.g. Amount, Currency, OrderId etc.
+3. Initialize and Execute Payment with [Transaction Authorize Referenced](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeReferenced)
+      * You will get the authorization-response right away
+4. Validate the request response
+5. Depending on the outcome of step 4 you may
+    * [Capture/Finalize the Transaction](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture)
+    * [Cancel/Abort the Transaction](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel)
+6. Transaction is finished! 
+
 Here is an example of a **Authorize Referenced Request**:
 
 **Request URL**
@@ -206,7 +220,7 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 
 
 <div class="danger">
-  <p><strong>IMPORTANT:</strong> Each Transaction with the Status **Authorized** has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual transfer of money.</p>
+  <p><strong>IMPORTANT:</strong> Each Transaction with the Status **Authorized** has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual money transfer.</p>
 </div>
 
 ---
@@ -231,6 +245,20 @@ Once tha alias has been obtained, you can execute the subsequent transactions us
 <div class="warning">
       <p><strong>Important:</strong> Please <strong>DO NOT</strong> save the CVC value inside your database and submit it yourself, unless you are certified to do so.</p>
 </div>
+
+### Flowchart
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Recurring_Alias_FlowChart.PNG "Recurring with initial transaction")
+
+1. Gather the AliasId from the previous, initial, transaction
+2. Aquire the necessary payment-data e.g. Amount, Currency, OrderId etc.
+3. Initialize and Execute Payment with [Transaction Authorize Referenced](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeReferenced)
+      * You will get the authorization-response right away
+4. Validate the request response
+5. Depending on the outcome of step 4 you may
+    * [Capture/Finalize the Transaction](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture)
+    * [Cancel/Abort the Transaction](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel)
+6. Transaction is finished! 
 
 <div class="danger">
       <p><strong>Important:</strong> Each Transaction with the Status <strong>Authorized</strong> has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual transfer of money.</p>
