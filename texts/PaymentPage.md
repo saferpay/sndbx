@@ -13,7 +13,7 @@ The PaymentPage can be either used to offer the payer the option to select a des
 
 ## Description of the general process for using the Payment Page Interface
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PP_FlowChart2.png "Payment Page Flow Chart")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PP_FlowChart2.PNG "Payment Page Flow Chart")
 
 1. [Payment Page Initialize](index.html#Payment_v1_PaymentPage_Initialize)
     * Initializes the Payment and generates the RedirectUrl for the Payment Page.
