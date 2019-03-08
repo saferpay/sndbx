@@ -15,15 +15,15 @@ The PaymentPage can be either used to offer the payer the option to select a des
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/PP_FlowChart2.PNG "Payment Page Flow Chart")
 
-1. [Payment Page Initialize](index.html#Payment_v1_PaymentPage_Initialize)
+1. [Payment Page Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize)
     * Initializes the Payment and generates the RedirectUrl for the Payment Page.
 2. Redirect to the RedirectUrl
 3. Return to ReturnUrl depending on the outcome of the transaction. The ReturnUrls are defined in step 1.
-4. [Payment Page Assert](index.html#Payment_v1_PaymentPage_Assert)
+4. [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert)
     * Gathers all the information about the payment, like LiabilityShift through 3D Secure and more, using the Token, gathered in step 1.
 5. Depending on the outcome of step 4 you may
-    * [Capture/Finalize the Transaction](index.html#Payment_v1_Transaction_Capture)
-    * [Cancel/Abort the Transaction](index.html#Payment_v1_Transaction_Cancel)
+    * [Capture/Finalize the Transaction](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture)
+    * [Cancel/Abort the Transaction](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel)
 6. Transaction is finished! 
 
 ### <a name="pp-initialize"></a> 1 - PaymentPage Initialize
