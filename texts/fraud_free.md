@@ -96,6 +96,9 @@ Below, you'll find JSON-examples of success and major fail cases, that are retur
    }
 }
 ```
+<div class="info">
+  <p><strong>Info:</strong> You can simulate rejections, by submitting <strong>reject@example.com</strong> as the payer e-mail (also see Mandatory Data Points).</p>
+</div>
 
 ## <a name="ff-status"></a> Status Change
 
