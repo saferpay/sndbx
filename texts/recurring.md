@@ -252,7 +252,7 @@ Once tha alias has been obtained, you can execute the subsequent transactions us
 
 1. Gather the AliasId from the previous, initial, transaction
 2. Aquire the necessary payment-data e.g. Amount, Currency, OrderId etc.
-3. Initialize and Execute Payment with [Transaction Authorize Referenced](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeReferenced)
+3. Initialize and Execute Payment with [Transaction Authorize Direct](http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect)
       * You will get the authorization-response right away
 4. Validate the request response
 5. Depending on the outcome of step 4 you may
