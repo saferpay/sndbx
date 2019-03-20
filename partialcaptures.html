@@ -130,7 +130,7 @@
 								<li><a href="#css-info">Additional Info</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="partialcaptures.html">Partial Captures</a>
 							<ul class="nav">
 								<li><a href="#pc-req">Requirements</a></li>
@@ -148,7 +148,7 @@
 								<li><a href="#mark-fee">Applying Fees</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="fraud_free.html">Fraud Free Service</a>
 							<ul class="nav">
 								<li><a href="#ff-response">API Response</a></li>
@@ -420,7 +420,7 @@
 								<li><a href="#css-info">Additional Info</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="partialcaptures.html">Partial Captures</a>
 							<ul class="nav">
 								<li><a href="#pc-req">Requirements</a></li>
@@ -438,7 +438,7 @@
 								<li><a href="#mark-fee">Applying Fees</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="fraud_free.html">Fraud Free Service</a>
 							<ul class="nav">
 								<li><a href="#ff-response">API Response</a></li>
@@ -584,127 +584,91 @@
 				</div>
 
 				
-<section><h1>Fraud Free</h1><div class="row"><div class="col-md-6"><div class="warning">
-  <p><strong>NOTE:</strong> This service is still in evaluation - contact your account manager for further information.</p>
-</div></div></div></section><section id="ff-req"><h2><a name="ff-req"></a> Requirements</h2><div class="row"><div class="col-md-6"><ul>
-<li>The corresponding Saferpay licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
-<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
-<li>A Fraud Free contract. Please contact your account manager for further information!</li>
-</ul><ul>
-<li>JSON-API Spec Version 1.9</li>
-</ul></div></div></section><section id="ff-response"><h2><a name="ff-response"></a> API Response</h2><div class="row"><div class="col-md-6"><p>The Fraud Free Service only accepts liability for the transaction if the API response (PaymentPage/Assert response, Transaction/authorize response) contains all of the following attributes with values as specified:</p><ul>
-<li>In the Liability Container, <code>LiabilityShift</code> is set to <code>true</code>!</li>
-<li>The <code>LiableEntity</code> equals <code>FraudFree</code>!</li>
-<li>Within the FraudFree Container, <code>LiabilityShift</code> is set to <code>true</code>!</li>
-</ul><div class="info">
-  <p><strong>Info:</strong> Should the Fraud Free service not accept liability, <strong>3D Secure</strong> is used instead!</p>
-</div><div class="warning">
-  <p><strong>Important:</strong> The FraudFree-Response will not be visible inside the Saferpay Backoffice. Always save the API-response for further use, e.g. in case of fraud!</p>
-</div><p>Below, you'll find JSON-examples of success and major fail cases, that are returned with the authorization response:</p></div></div></section><section><h3>Fraud Free accepts liability</h3><div class="row"><div class="col-md-6"><pre><code class="language-json">
-&quot;Liability&quot;:{ 
-   &quot;LiabilityShift&quot;:true,
-   &quot;LiableEntity&quot;:&quot;FraudFree&quot;,
-   &quot;FraudFree&quot;:{ 
-      &quot;Id&quot;:&quot;fb126ca6853f4217853df26213da4de8&quot;,
-      &quot;LiabilityShift&quot;:true,
-      &quot;Score&quot;:x.xx,
-      &quot;Investigationpoints&quot;:[ 
-         &quot;susp_xxx_xx&quot;,
-         &quot;susp_xxxxx&quot;
-      ]
-   }
+<section><h1>Partial Captures</h1><div class="row"><div class="col-md-6"><p>Saferpay does offer the option to do <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Partial Captures (Hereafter refered to as Multipart Captures)</a> on transactions, made with certain payment methods. <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> split the money authorized during one transactions into multiple batches, enabling the merchant to only capture the amount he wants to obtain e.g. for deliviering a part of a certain order.</p></div></div></section><section id="pc-req"><h2><a name="pc-req"></a> Requirements</h2><div class="row"><div class="col-md-6"><ol>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> are available for SIX Mastercard, Visa Acquiring contracts and PayPal <strong>only!</strong></li>
+<li>No MultipartCapture request should be sent before receiving the response of a preceeding request (i.e. no parallel calls are allowed). The timeout for this are 100 seconds.</li>
+<li>The sum of multipart captures must not exceed the authorized amount.</li>
+<li>A unique OrderPartId must be used for each request.</li>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> execute the money-flow (closing) with the execution of the capture itself! A <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">Cancel</a> of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a> therefore is not possible!</li>
+<li>MultipartCapture is only available for <strong>SpecVersions 1.10 and higher!</strong></li>
+</ol></div></div></section><section id="pc-exec"><h2><a name="pc-exec"></a> Executing a Multipart Capture</h2><div class="row"><div class="col-md-6"><p>Before you can even execute a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>, you, of course, need a transaction, that needs to be captured. This can be any normal authorization, either done by the <a href="https://saferpay.github.io/jsonapi/#ChapterPaymentPage">Payment Page</a>, or <a href="https://saferpay.github.io/jsonapi/#ChapterTransaction">Transaction Interface</a>. You don't have to consider anything special, up to this point!</p><p>Additionally to the standard parameters, needed to execute a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>, the following parameters are important for a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>:</p><ul>
+<li><strong>Type:</strong> The <strong>Type</strong> specifies, whether this is one subsequent, or final Capture.</li>
+<li><strong>OrderPartId:</strong> Each <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a> is identified by a unique <strong>OrderPartId</strong>, which will also be forwarded to the respective reconciliation-files you will recieve later. That makes this Id very important for later identification, thus you have to make sure, that said Id is set as unique, so confusions can be averted.</li>
+</ul><p>A complete request may look like this:</p><pre><code class="language-json">{
+    &quot;RequestHeader&quot;: {
+      &quot;SpecVersion&quot;: &quot;1.10&quot;,
+      &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+      &quot;RequestId&quot;: &quot;[unique request identifier]&quot;,
+      &quot;RetryIndicator&quot;: 0
+    },
+    &quot;TransactionReference&quot;: {
+        &quot;TransactionId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb&quot;
+    },
+    &quot;Amount&quot;: {
+        &quot;Value&quot;: 1000,
+        &quot;CurrencyCode&quot;: &quot;CHF&quot;
+    },
+    &quot;Type&quot;: &quot;PARTIAL&quot;,
+    &quot;OderPartId&quot;: &quot;123456789&quot;
 }
-
-</code></pre></div></div></section><section><h3>Fraud Free rejects liability and fallback to 3D Secure</h3><div class="row"><div class="col-md-6"></div></div></section><section><h3>Example of Rejection due to suspicious client data:</h3><div class="row"><div class="col-md-6"><pre><code class="language-json">&quot;Liability&quot;:{ 
-   &quot;LiabilityShift&quot;:true,
-   &quot;LiableEntity&quot;:&quot;ThreeDs&quot;,
-   &quot;ThreeDs&quot;:{ 
-      &quot;Authenticated&quot;:true,
-      &quot;LiabilityShift&quot;:true,
-      &quot;Xid&quot;:&quot;X2lYXwpROW5IBC5tVCQLUlwrRQs=&quot;,
-      &quot;VerificationValue&quot;:&quot;AAABBIIFmAAAAAAAAAAAAAAAAAA=&quot;
+</code></pre><p>The response may look like this:</p><pre><code class="language-json">{
+    &quot;ResponseHeader&quot;: {
+        &quot;SpecVersion&quot;: &quot;1.10&quot;,
+        &quot;RequestId&quot;: &quot;[unique request identifier]&quot;
+    },
+    &quot;CaptureId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb_c&quot;,
+    &quot;Status&quot;: &quot;CAPTURED&quot;,
+    &quot;Date&quot;: &quot;2018-08-08T12:45:22.258+01:00&quot;
+}
+</code></pre><p>Each capture is identified by a <strong>CaptureId</strong> (Marked with the suffix <strong>&quot;_c&quot;</strong>) , which should be saved, since this Id is used for further actions, like refunds. More on the latter later in this very chapter.</p><div class="info">
+ <p><strong>Note:</strong> The basic reservation times <a href="https://saferpay.github.io/sndbx/#reservation">mentioned here</a> do still aplly for <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures!</a> If this time is exceeded, the reservation could void and the money flow will be rejected by the card holders bank!</p>
+</div></div></div></section><section id="pc-final"><h2><a name="pc-final"></a> Finalizing a Capture-Chain</h2><div class="row"><div class="col-md-6"><p>After a transaction has been captured to the merchants liking using <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>, it should be finalized, in order to seclude the transaction.
+There are two different ways to finalize a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>. Each covering one specific case, that should be differentiated, by asking one specific question:</p><p><strong>Does the merchant intend to capture a final amount, or not?</strong></p><div class="warning">
+  <p><strong>Important:</strong> Once finalized, a transaction cannot be opened again. Make sure, that you really want to finalize the transaction. Other captures won't be possible!</p>
+</div></div></div></section><section><h3>Finalizing, while also capturing a certain amount</h3><div class="row"><div class="col-md-6"><div class="warning">
+  <p><strong>Remember:</strong> Like mentioned previously, make sure to not exceed the initially authorized amount, or the capture will fail!</p>
+</div><p>In order to capture a final amount, the merchant-system simply needs to execute <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a>, whilst setting the parameter <strong>Type</strong> to <strong>&quot;FINAL&quot;</strong>. A full request then may look like this:</p><pre><code class="language-json">{
+   &quot;RequestHeader&quot;: {
+     &quot;SpecVersion&quot;: &quot;1.10&quot;,
+     &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+     &quot;RequestId&quot;: &quot;[unique request identifier]&quot;,
+     &quot;RetryIndicator&quot;: 0
    },
-   &quot;FraudFree&quot;:{ 
-      &quot;Id&quot;:&quot;c6057dcc280448ea8ee51307aadbb276&quot;,
-      &quot;LiabilityShift&quot;:false,
-      &quot;Score&quot;:0.80,
-      &quot;Investigationpoints&quot;:[ 
-         &quot;susp_bill_ad&quot;,
-         &quot;susp_machine&quot;
-      ]
-   }
-}
-</code></pre></div></div></section><section><h3>Rejection due to too high authorization-amount:</h3><div class="row"><div class="col-md-6"><pre><code class="language-json">&quot;Liability&quot;:{ 
-   &quot;LiabilityShift&quot;:true,
-   &quot;LiableEntity&quot;:&quot;ThreeDs&quot;,
-   &quot;ThreeDs&quot;:{ 
-      &quot;Authenticated&quot;:true,
-      &quot;LiabilityShift&quot;:true,
-      &quot;Xid&quot;:&quot;Gy0mNAETemwEBAhLNhQAVmJcSAc=&quot;,
-      &quot;VerificationValue&quot;:&quot;AAABBIIFmAAAAAAAAAAAAAAAAAA=&quot;
+   &quot;TransactionReference&quot;: {
+       &quot;TransactionId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb&quot;
    },
-   &quot;FraudFree&quot;:{ 
-      &quot;Id&quot;:&quot;faaf76cff7de4b0f9997f941f99a626e&quot;,
-      &quot;LiabilityShift&quot;:false,
-      &quot;Score&quot;:0.00,
-      &quot;Investigationpoints&quot;:[ 
-         &quot;not_liable_high_amount&quot;
-      ]
-   }
+   &quot;Amount&quot;: {
+       &quot;Value&quot;: 1000,
+       &quot;CurrencyCode&quot;: &quot;CHF&quot;
+   },
+   &quot;Type&quot;: &quot;FINAL&quot;,
+   &quot;OderPartId&quot;: &quot;123456790&quot;
 }
-</code></pre><div class="info">
-  <p><strong>Info:</strong> You can simulate rejections, by submitting <strong>reject@example.com</strong> as the payer e-mail (also see Mandatory Data Points).</p>
-</div></div></div></section><section id="ff-status"><h2><a name="ff-status"></a> Status Change</h2><div class="row"><div class="col-md-6"><p>Liability shift is excluded if the transaction changes to a status as within this list:</p><table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Status</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>cancelled</td>
-      <td>Transaction was cancelled by the client prior to shipment</td>
-    </tr>
-    <tr>
-      <td>Refund</td>
-      <td>Transaction was refunded</td>
-    </tr>
-    <tr>
-      <td>Chbk</td>
-      <td>Client received a chargeback for an unspecified reason</td>
-    </tr>
-    <tr>
-      <td>cancelled_claim</td>
-      <td>Chargeback was cancelled</td>
-    </tr>
-  </tbody>
-</table></div></div></section><section id="ff-mandatory"><h2><a name="ff-mandatory"></a> Mandatory Data Points</h2><div class="row"><div class="col-md-6"><p>When using our Fraud Free solution (requires a concerned contract amendment) the transmission of specific parameters is mandatory.</p><p>The following data points are mandatory and must contain valid values when using the Fraud Free Service and calling <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize Request</a> or <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize Request</a>:</p><table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Data Point</th>
-      <th>Example</th>
-      <th>Validation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>DeliveryAddress.Email</td>
-      <td>payer@gmail.com</td>
-      <td>Valid email address</td>
-    </tr>
-    <tr>
-      <td>DeliveryAddress.CountryCode</td>
-      <td> DE</td>
-      <td> ISO 3166-1 alpha-2 country code</td>
-    </tr>
-    <tr>
-      <td>Payer.IpAddress*</td>
-      <td>212.243.178.130 </td>
-      <td> Valid IP address</td>
-    </tr>
-  </tbody>
-</table><p>(*) The Payer IpAddress is only mandatory when calling <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize Request</a>. With <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize Request</a> the Payer IpAdress ist detected automatically.</p></div></div></section>
+</code></pre></div></div></section><section><h3>Finalizing without capturing/ Capturing with amount 0</h3><div class="row"><div class="col-md-6"><p>In order to avoid confusion and merchants accidently executing the wrong request, the finalization with amount 0 is done through a completely different request called <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartFinalize">Multipart Finalize</a>. Executing this request will close the transaction without transfering any money.</p></div></div></section><section id="pc-final-why"><h2><a name="pc-final-why"></a> Why do you need to finalize a transaction?</h2><div class="row"><div class="col-md-6"><p>There are two reasons, why you, the merchant, should finalize a transactions, once you have finished all your actions:</p><ol>
+<li>It is the cleaner process! Four you, the merchant, this is the cleaner solution and helps keeping track of every transaction and its status, not just inside your own system, but also inside the Saferpay Backoffice, where still open and closed transactions, will be marked as such!</li>
+<li>It means less hassle for your customers. Each time you successfully authorize a credit card, the authorized amount gets reserved on the card holders credit limit. That effectively means, that he/she cannot use this money, as long as you haven't claimed the money, or the reservation voids, after a certain time-frame. A finalization will open up the credit-limit for the card holder, so he/she may use it again, which is especially important in situations, where the merchant does not want, or can't claim all of the money, originally authorized!</li>
+</ol></div></div></section><section id="pc-refund"><h2><a name="pc-refund"></a> Handling Refunds</h2><div class="row"><div class="col-md-6"><p>Since <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> basically split an existing transaction into multiple parts, refunds also need to be processed in a different way.
+Unlike normal Refunds, you now need to reference each Capture you want to refund individually!</p><p>To do so, you have to reference the <strong>CaptureId</strong> from the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture Response</a>, you want to refund. Remember, that all <strong>CaptureId</strong>s have the suffix <strong>_c</strong> for that reason.</p><p>A <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund request</a> may look like this then:</p><pre><code class="language-JSON">{
+  &quot;RequestHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.10&quot;,
+    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+    &quot;RequestId&quot;: &quot;[your request id]&quot;,
+    &quot;RetryIndicator&quot;: 0
+  },
+  &quot;Refund&quot;: {
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: 100,
+      &quot;CurrencyCode&quot;: &quot;CHF&quot;
+    }
+  },
+  &quot;CaptureReference&quot;: {
+    &quot;CaptureId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb_c&quot;
+  }
+}
+</code></pre></div></div></section><section><h3>Capturing a Refund</h3><div class="row"><div class="col-md-6"><div class="warning">
+  <p><strong>Important:</strong> Like every other <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund</a>, these too need to be captured.
+However <strong>please make sure to use the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">normal Capture request</a> in this case and NOT MultipartCapture!</strong> Refunds cannot be split into multiple parts, like authorizations!</p>
+</div></div></div></section>
 
 			</main>
 
