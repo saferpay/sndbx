@@ -127,18 +127,27 @@
     ]
   },
  {
-    "Title": "Marketplace and Partial Captures",
+    "Title": "Partial Captures",
+    "Source": "texts/partialcaptures.md",
+    "Target": "partialcaptures.html",
+    "Subsites": [
+      { "Source": "texts/partialcaptures.md", "Title": "Requirements", "Target": "partialcaptures.html#pc-req" },
+     { "Source": "texts/partialcaptures.md", "Title": "Executing a Multipart Capture", "Target": "partialcaptures.html#pc-exec" },
+      { "Source": "texts/partialcaptures.md", "Title": "Finalizing a Capture-Chain", "Target": "partialcaptures.html#pc-final" },
+      { "Source": "texts/partialcaptures.md", "Title": "Why do you need to finalize a transaction?", "Target": "partialcaptures#pc-final-why" },
+      { "Source": "texts/partialcaptures.md", "Title": "Handling Refunds", "Target": "partialcaptures.html#pc-refund" }
+    ]
+  },
+ {
+    "Title": "Marketplace",
     "Source": "texts/marketplace.md",
     "Target": "marketplace.html",
     "Subsites": [
-      { "Source": "texts/marketplace.md", "Title": "Partial Captures", "Target": "marketplace.html#pc-partial" },
-      { "Source": "texts/marketplace.md", "Title": "Finalizing a Capture-Chain", "Target": "marketplace.html#pc-final" },
-      { "Source": "texts/marketplace.md", "Title": "Why do you need to finalize a transaction?", "Target": "marketplace.html#pc-final-why" },
-      { "Source": "texts/marketplace.md", "Title": "Handling Refunds", "Target": "marketplace.html#pc-refunds" },
-      { "Source": "texts/marketplace.md", "Title": "Submerchants", "Target": "marketplace.html#pc-submerchants" },
-     { "Source": "texts/marketplace.md", "Title": "Applying Fees", "Target": "marketplace.html#pc-fee" }
+      { "Source": "texts/marketplace.md", "Title": "Requirements", "Target": "marketplace.html#mark-req" },
+      { "Source": "texts/marketplace.md", "Title": "Submerchants", "Target": "marketplace.html#mark-submerchants" },
+      { "Source": "texts/marketplace.md", "Title": "Applying Fees", "Target": "marketplace.html#mark-fee" }
     ]
-  },
+ },
  {
     "Title": "Fraud Free Service",
     "Source": "texts/fraud_free.md",
