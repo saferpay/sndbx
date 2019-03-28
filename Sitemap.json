@@ -314,6 +314,14 @@
   "Subsites": [
       { "Source": "texts/ideal.md", "Title": "Session Timeouts", "Target": "ideal.html#ideal-timeout" }
     ] 
+   },
+  {
+  "Title": "ePrzelewy",
+  "Source": "texts/eprzelewy.md",
+  "Target": "eprzelewy.md.html",
+  "Subsites": [
+      { "Source": "texts/eprzelewy.md", "Title": "Requirements", "Target": "eprzelewy.html#przelewy-requirement" }
+    ] 
    }, 
    {
     "Title": "Additional Information"
