@@ -46,7 +46,7 @@
 								<li><a href="#int-questions">Questions?</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="Integration_PP.html">Payment Page Interface</a>
 							<ul class="nav">
 								<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
@@ -280,7 +280,7 @@
 								<li><a href="#ideal-timeout">Session Timeouts</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="eprzelewy.md.html">ePrzelewy</a>
 							<ul class="nav">
 								<li><a href="#przelewy-requirement">Requirements</a></li>
@@ -342,7 +342,7 @@
 								<li><a href="#int-questions">Questions?</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="Integration_PP.html">Payment Page Interface</a>
 							<ul class="nav">
 								<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
@@ -576,7 +576,7 @@
 								<li><a href="#ideal-timeout">Session Timeouts</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="eprzelewy.md.html">ePrzelewy</a>
 							<ul class="nav">
 								<li><a href="#przelewy-requirement">Requirements</a></li>
@@ -596,76 +596,14 @@
 				</div>
 
 				
-<section><h1>Payment Page Interface</h1><div class="row"><div class="col-md-6"><div class="warning">
-  <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant!</p>
-</div><p>The Saferpay <a href="https://saferpay.github.io/jsonapi/#ChapterPaymentPage">Payment Page Interface</a><sup>1</sup> is intended for a simplified and universal integration of the payment process by using the PaymentPage payment form<sup>2</sup>. The Saferpay Payment Page can be used both with a Saferpay eCommerce license and with a Saferpay business license. All Saferpay supported payment methods can be processes with the Payment Page Interface; credit cards and third-party payment methods like &#8220;PayPal, iDEAL, SOFORT/Klarna and more. Once integrated, more payment methods can be added at any time without major adjustments.</p><p>The PaymentPage can be either used to offer the payer the option to select a desired payment method or can be defined to jump directly to one specific payment method with a preselection option. Please read chapter <a href="https://saferpay.github.io/sndbx/CssiFrame.html#chapter-css-iframe"><strong>Iframe Integration and CSS</strong></a> for examples of the different payment forms. It can also be used in combination with the Secure Card Data to store/tokonize payment data during the payment process.</p><p><em><sup>1</sup> this term refers to name of the interface</em><br>
-<em><sup>2</sup> this term refers to the actual payment form which is used to capture payment details</em></p></div></div></section><section><h2>Description of the general process for using the Payment Page Interface</h2><div class="row"><div class="col-md-6"><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/PP_FlowChart2.PNG" alt="alt text" title="Payment Page Flow Chart"></p><ol>
-<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a>
-<ul>
-<li>Initializes the Payment and generates the RedirectUrl for the Payment Page.</li>
-</ul>
-</li>
-<li>Redirect to the RedirectUrl</li>
-<li>Return to ReturnUrl depending on the outcome of the transaction. The ReturnUrls are defined in step 1.</li>
-<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>
-<ul>
-<li>Gathers all the information about the payment, like LiabilityShift through 3D Secure and more, using the Token, gathered in step 1.</li>
-</ul>
-</li>
-<li>Depending on the outcome of step 4 you may
-<ul>
-<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture/Finalize the Transaction</a></li>
-<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">Cancel/Abort the Transaction</a></li>
-</ul>
-</li>
-<li>Transaction is finished!</li>
-</ol></div></div></section><section id="pp-initialize"><h3><a name="pp-initialize"></a> 1 - PaymentPage Initialize</h3><div class="row"><div class="col-md-6"><p>The process begins with the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a> request. With this request, you forward all data necessary for the payment to Saferpay. These include the customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference no. of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer will return after leaving the PaymentPage.</p></div></div></section><section><h3>Information on the Use and Significance of the Available Parameters</h3><div class="row"><div class="col-md-6"><ul>
-<li><p><strong>PaymentMethods:</strong> By default, the PaymentPage will always show all payment methods approved for the terminal in question. Limiting the display to a single item or preselection of the payment methods in the shop can be achieved via the <strong>PaymentMethods</strong> parameter. When using this parameter, the only payment methods displayed are those whose values are forwarded.  When forwarding multiple values, the PaymentPage opens with a page which offers the option to select the appropriate payment method. If only one value is passed, the PaymentPage skips the selection window. Invalid values or values from payment methods which are not available on the terminal or not available with the specified currency are ignored by the PaymentPage. For example, if only one value is forwarded and this is invalid, the PaymentPage will display the same options as if <strong>PaymentMethods</strong> had not been used.</p>
-</li>
-<li><p><strong>ReturnUrls:</strong> Via the <strong>ReturnUrls</strong>, the customer is returned to the shop after the transaction. For security reasons, Saferpay returns no data to return addresses. The identification of the payment or the returning customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the <strong>ReturnUrls</strong>. When a ReturnUrl is called, Saferpay returns the appended parameter, thus enabling identification of the customer/transaction. The ReturnUrls are <strong>ALWAYS</strong> called through the clients Browser.</p>
-</li>
-<li><p><strong>&quot;Notification&quot;=&gt;&quot;NotifyUrl&quot;:</strong> Although it is entirely optional, we strongly recommend integrating the&nbsp;<strong>NotifyUrl</strong> (see&nbsp;Notification&nbsp;container). With&nbsp;<strong>NotifyUrl</strong>, a notification of the shop in the event of a successful payment is made via a http-GET, regardless of connection problems that may prevent the customer getting back to the <strong>SuccessUrl</strong>. Without&nbsp;<strong>NotifyUrl</strong>, such an authorisation would be present in Saferpay Backoffice, however the shop wouldn&#8217;t have received any feedback. Technically speaking,&nbsp;<strong>NotifyUrl</strong>&nbsp;notifies the merchant system, as a redundant measure. In contrast to the <strong>Success URL</strong>,&nbsp;<strong>NotifyUrl</strong>&nbsp;is called up directly via HTTP GET by the Saferpay servers upon successful payment and not the client. It should be noted that the notification via&nbsp;<strong>NotifyUrl</strong>&nbsp;takes place <strong>in addition to the Success URL</strong>. Moreover, Saferpay expects the merchant server to answer the call with a HTTP status code 200(OK). If no (e.g. a Timeout), or a different status code (e.g. http 500 ) is received, Saferpay will call the <strong>NotifyUrl</strong> up to two times more, for a total of three times, to ensure, that the previous error is not caused by a temporal problem. Note, that the merchants application needs to differentiate between the <strong>SuccessUrl</strong> and <strong>NotifyUrl</strong>, to prevent the application from processing the same transaction two, or more times. Finally, it should also be noted, that the <strong>NotifyUrl</strong> also does not return any data to the merchants application, except your own parameters (See <strong>ReturnUrls</strong> above!)!</p>
-</li>
+<section><h1>ePrzelewy</h1><div class="row"><div class="col-md-6"><p>ePrzelewy payments can be processed with Saferpay without much effort. This chapter describes what needs to be considered in this regard.</p></div></div></section><section id="przelewy-requirement"><h2><a name="przelewy-requirement"></a> Requirements</h2><div class="row"><div class="col-md-6"><p>The handling of PayPal payments with Saferpay requires:</p><ul>
+<li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
+<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
+<li>A valid ePrzelewy contract.</li>
+<li>The <strong>Payer.DeliveryAddress.Email</strong>-parameter is mandatory and needs to be set, with the initial request, or captured through the respective form.</li>
 </ul><div class="warning">
-  <p><strong>VERY IMPORTANT:</strong> The usage of <strong>the NotifyUrl</strong> is strongly recommended! Only leave it out, if your system cannot recieve external requests!</p>
-</div><ul>
-<li><p><strong>&quot;Payment&quot;=&gt;&quot;OrderId&quot;:</strong> This optinal parameter is important to keep track of all your transactions in later processes. This ID will be forwarded, so it will show up inside the Saferpay Backoffice (As the Reference number!) and on your reconciliation-files. This will help associate all the transactions for your accounting-department.</p>
-</li>
-<li><p><strong>BillingAddressForm and DeliveryAddressForm:</strong> The use of <strong>BillingAddressForm</strong> and/or <strong>DeliveryAddressForm</strong> allows card holders to fill in an address-form during payment. This enables merchants to capture their address-data without having to implement a form on their own. It can be freely decided which entry fields are mandatory to fill in and which are not. Upon completion of the payment, Saferpay returns the addresses via the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a> response.</p>
-</li>
-<li><p><strong>Card Verification Value:</strong> The Card Verification Value (CVC) is mandatory, when using the PaymentPage, except for card brand Maestro, which offers cards with and without CVC.</p>
-</li>
-<li><p><strong>Card Holder:</strong> This value is mandatory, however you may hide the input field. See the <strong>CardForm</strong> container inside the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a> request.</p>
-</li>
-<li><p><strong>RegisterAlias:</strong> Via the <strong>RegisterAlias</strong> container, card details from a payment can be stored safely and in conformity with PCI. For this, the alias for the card details is transmitted back to the merchant system with the authorisation response. It is then available for another purchase in the shop, without customers having to enter their card details again. See for example the <a href="https://saferpay.github.io/sndbx/Integration_trx.html#trx-ini">Initialize request above</a>. The parameter&nbsp;<strong>IdGenerator</strong>&nbsp;is used to determine how the alias is generated. If&nbsp;<strong>MANUAL</strong> is specified, the shop system passes an absolutely unique value. With&nbsp;<strong>RANDOM</strong>, a random alphanumeric value is generated by Saferpay. With&nbsp;<strong>RANDOM_UNIQUE</strong>, it will be additionally verified prior to generation of the alias, as to whether or not the card number/expiration date combination already exists as an alias entry in the database. If so, the already existing alias is returned and nothing new is generated.</p>
-</li>
-</ul><div class="info">
-  <p><strong>Note:</strong> A card will be registered only after a successful authorisation. Although the Payment Page Interface can be used to register (store) payment data, it is <strong>NOT</strong> possible to use it for future payments. Registered card data can only be used with the <a href="https://saferpay.github.io/sndbx/Integration_trx.html">Transaction Interface</a>.</p>
-</div></div></div></section><section id="pp-initialize-response"><h2><a name="pp-initialize-response"></a>PaymentPage Initialize Response</h2><div class="row"><div class="col-md-6"></div></div></section><section><h3>Inside the PaymentPage Initialize Response, the following parameters are important:</h3><div class="row"><div class="col-md-6"><ul>
-<li><p><strong>Token:</strong> The <strong>Token</strong> refers to the values temporarily stored regarding the Saferpay transaction and is mandatory during subsequent processing of the transaction (<a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert">for more information, see e.g. PaymentPage Assert</a>). The Token should be coupled to the http-GET parameters that were previously attached to the <strong>ReturnUrls</strong> and <strong>NotifyUr</strong>l for identification.</p>
-</li>
-<li><p><strong>RedirectUrl:</strong> The <strong>RedirectURL</strong> provides the address via which the buyer is redirected to the PaymentPage. This can be done automatically via calling up the Iframe or by embedding the URL in an HTML link that must be clicked on by the buyer.</p><div class="warning"><p></p>
-<p><strong>VERY IMPORTANT:</strong> The <strong>RedirectUrl</strong> can only be called one time, due to security restraints. Please make sure, that the <strong>RedirectUrl</strong> cannot be called twice. The second call will automatically trigger the <strong>FailUrl</strong> or <strong>AbortUrl</strong>, if the latter is defined!</p>
-</div></li>
-</ul></div></div></section><section id="pp-transaction"><h2><a name="pp-transaction"></a> 2 - Redirect and Transaction</h2><div class="row"><div class="col-md-6"><p>Redirect the buyer to the <strong>RedirectUrl</strong> from the  <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a> response, using your desired method.
-The transaction will be fully processed by the PaymentPage. The Payment Page handles all steps automatically, including <a href="https://saferpay.github.io/sndbx/index.html#3ds">3D Secure</a> and <a href="https://saferpay.github.io/sndbx/index.html#dcc">DCC</a>. No additional steps are necessary on the merchant website.</p></div></div></section><section id="pp-retshop"><h2><a name="pp-retshop"></a> 3 - Return to the Shop</h2><div class="row"><div class="col-md-6"><p>Once&nbsp;the transaction is complete, the card holder &#8211; depending on the outcome &#8211; is taken back to the shop, to one of the&nbsp;<strong>ReturnUrls</strong>. Here, the GET parameters can be read and the&nbsp;<strong>Token</strong>&nbsp;can be assigned to the transaction. With the&nbsp;<strong>Token</strong>, the payment can be continued to the next step.</p></div></div></section><section id="pp-assert"><h2><a name="pp-assert"></a> 4 - PaymentPage Assert</h2><div class="row"><div class="col-md-6"><p>With the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>, the results of a transaction are requested. The returned data may be stored on the merchant side.</p><div class="warning">
-  <p><strong>Important:</strong> The Assert does <strong>NOT</strong> do the transaction itself. The PaymentPage will do that automatically for you. The Assert only calls for the result! So, if you call the Assert, the transaction already happened!</p>
-</div><p>Based on the data obtained, it is to be decided whether or not a transaction is to be further processed. The following data is interesting in this regard:</p><ul>
-<li><p><strong>Transaction &gt; ID:</strong> The transaction identifier returned in the container <strong>Transaction</strong> with <strong>Id</strong> is a unique identifier for a transaction. The value is obligatory for further processing steps (Transaction Capture or Transaction Cancel) and should therefore be saved.</p>
-</li>
-<li><p><strong>ThreeDs:</strong> This container provides information about whether or notliability shift through <a href="https://saferpay.github.io/sndbx/index.html#3ds">3D Secure</a> is available or not. It is up to merchant whether or not he wants to accept transactions without liability shift. Evaluation of the parameter provides the opportunity for merchants to incorporate appropriate rules here.</p>
-</li>
-</ul><div class="warning">
-  <p><strong>Important:</strong> Accepting transaction without LiabilityShift happens at the merchants own risk.</p>
-</div><ul>
-<li><strong>Transaction &gt; Status:</strong> As already described <a href="https://saferpay.github.io/sndbx/index.html#capture-batch">here</a>, this status states whether or not a transaction has to be finalized via <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>. If this status is not <strong>CAPTURED</strong>, the capture must be executed in order to finalise the transaction.</li>
-</ul><div class="info">
-  <p><strong>Tip:</strong> You can also call the Assert, if the Fail-or AbortUrl has been called. It will then give you information about the failure!</p>
-</div><div class="info">
-  <p><strong>Info:</strong> Under certain circumstances a PaymentPage Session can be valid for about 1 hour -other sessions, like external redirections to 3D Secure and 3rd party providers can add up to this!-, but a normal session does not take longer, than 20 minutes!</p>
-</div></div></div></section><section id="pp-captcancel"><h2><a name="pp-captcancel"></a> 5 - Capture or Cancel</h2><div class="row"><div class="col-md-6"><p>Subsequently, the transaction will be finalised via <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture"><strong>Capture</strong></a> or aborted via <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel"><strong>Cancel</strong></a>.For this, the transaction identifier <strong>Id</strong> is required. Please refer to the notes <a href="index.html#pm-functions">in the payment methods chapter</a>, to check, if and when a <strong>Capture</strong> is necessary, and whether a <strong>Cancel</strong> can still be executed.</p><p>Once these steps are complete, the transaction is completed.</p><div class="warning">
-  <p><strong>VERY IMPORTANT:</strong> Keep in mind that you <strong>cannot cancel</strong> a transaction, once it is captured! At that point, a refund has to be executed, <a href="index.html#pm-functions">if available</a>! So please make sure, that you really want to finalize the transaction and initiate the money transfer, to avoid confusion with your customers!</p>
-</div></div></div></section><section id="pp-demo"><h2><a name="pp-demo"></a> Try it out!</h2><div class="row"><div class="col-md-6"><p><a class="demobtn" href="https://saferpay.github.io/sndbx/pp_demo.html">Click here for a live demo!</a></p></div></div></section>
+  <p><strong>Attention:</strong> For ePrzelewy activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your pRzelewy merchant account ID and the desired currency.</p>
+</div></div></div></section>
 
 			</main>
 
