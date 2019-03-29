@@ -3,7 +3,7 @@
 In this chapter you will find information about current and past Saferpay releases.
 
 # <a name="R79-1"></a> Release 79.1
-### Released: 13.11.2018
+### Released: 19.03.2019
 <div class="info">
   <p><strong>Note:</strong> Release 79 itself was released for internal use.</p>
 </div>
