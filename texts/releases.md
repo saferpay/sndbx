@@ -2,7 +2,46 @@
 
 In this chapter you will find information about current and past Saferpay releases.
 
-# <a name="R79"></a> Release 79
+# <a name="R79-1"></a> Release 79.1
+### Released: 13.11.2018
+<div class="info">
+  <p><strong>Note:</strong> Release 79 itself was released for internal use.</p>
+</div>
+
+## Diners as a means of payment at SIX Payment Services in Austria 
+SIX Payment Services can now process Diners as a means of payment in Austria. 
+
+## Support for TWINT payments in shopping apps 
+Saferpay provides merchants with support in integrating TWINT into their own apps. It is now easy for shoppers to switch directly from the shopping app to the TWINT app to pay and then switch back again once the payment has been made. 
+
+## Transaction identification reference in reconciliation files   
+Customers with acquiring contracts from SIX Payment Services can now easily identify transactions in the reconciliation files (for example as PDF or MRX files) by entering their own reference number (Parameter Transaction.OrderId in JSON API). 
+ 
+As it  is sometimes  impossible or too expensive to adapt the software used by merchants, Saferpay now transmits the transaction identification value (Parameter Transaction.OrderId in JSON API) to the acquiring system if no other reference number has been provided. 
+
+## Additional filters and search options in Secure PayGate Journal 
+The filtering of offers in the journal of the Pay-by-Link interface, Secure PayGate, has been further optimised. 
+ 
+If multiple Secure PayGate terminals are been used, the list can now be limited to a particular terminal in order to view the content and status of an offer more quickly. The terminal used and the terminal description are therefore now also included in the list. 
+ 
+The inclusion of the search fields “created by” and “changed by” makes it easier to search for a particular offer.  You can find all the details about the search fields in the Tooltip by moving the mouse over the information symbol. 
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Releases/R79/SPGOffers.PNG "Secure PayGate Filters")
+
+## E-mail reminder before account lockout when users are inactive 
+For security reasons, user accounts for accessing the Saferpay Backoffice are locked if the account is not used for 180 days. After this period, you need to contact the support team to have the user account unlocked having reviewed the individual case. 
+ 
+In some circumstances, for example when sales activities occur on a seasonal basis, this lockout creates unnecessary hassle, both for the merchant and SIX Payment Services. In order to prevent lockouts, SIX Payment Services will inform affected users by e-mail 10 days before their account is locked and remind them to log in. 
+ 
+Please note that passwords for user accounts must be changed after 90 days. 
+
+## JSON API test with an individual test account 
+For some time now, SIX Payment Services has been offering the option of creating an [individual test account](https://test.saferpay.com/BO/SignUp) to test the broad variety of functions provided by Saferpay in the Saferpay test environment. Therefore, the access data for the JSON API that is linked to the general test account will be deleted on 30 April 2019. Following this, it will only be possible to test the JSON API using an individual test account. 
+ 
+At this point, you will only be able to use the general test account for tests with the outdated interfaces, https Interface and Client Application Interface, and this account will be deleted  entirely at the end of 2020. In this regard please see the [FAQ page regarding the migration to the Saferpay JSON API.](https://www.six-payment-services.com/en/shared/campaigns/3-d-secure-2-0-saferpay-faq.html)
+
+
+
 
 # <a name="R78"></a> Release 78
 ### Released: 13.11.2018
