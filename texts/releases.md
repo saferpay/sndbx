@@ -41,8 +41,6 @@ For some time now, SIX Payment Services has been offering the option of creating
 At this point, you will only be able to use the general test account for tests with the outdated interfaces, https Interface and Client Application Interface, and this account will be deleted  entirely at the end of 2020. In this regard please see the [FAQ page regarding the migration to the Saferpay JSON API.](https://www.six-payment-services.com/en/shared/campaigns/3-d-secure-2-0-saferpay-faq.html)
 
 
-
-
 # <a name="R78"></a> Release 78
 ### Released: 13.11.2018
 
