@@ -205,7 +205,7 @@ If you plan on upgrading to a newer SpecVersion, you may have to keep the follow
       <td class="text-center"><strong>1.9+</strong></td>
       <td>
         <ul>
-          <li><strong>Shift of the ThreeDs-container: </strong>Due to the introduction of <a href="fraud_free.html">the Fraud Free Service</a>, the Liability can now be accepted by one of two entities. Thusly the old <strong>ThreeDs</strong> container has been mopved a level down, into the <strong>Liability</strong> container. <strong>This also applies for merchants, that do not use <a href="fraud_free.html">the Fraud Free Service</a>!</strong>. For more information, please consult the <a target="_blank" href="https://saferpay.github.io/jsonapi">API-Specification!</a></li>
+          <li><strong>Shift of the ThreeDs-container: </strong>Due to the introduction of <a href="fraud_free.html">the Fraud Free Service</a>, the Liability can now be accepted by one of two entities. Thusly the old <strong>ThreeDs</strong> container has been moved a level down, into the <strong>Liability</strong> container. <strong>This also applies for merchants, that do not use <a href="fraud_free.html">the Fraud Free Service</a>!</strong>. For more information, please consult the <a target="_blank" href="https://saferpay.github.io/jsonapi">API-Specification!</a></li>
         </ul>
       </td>
     </tr>
