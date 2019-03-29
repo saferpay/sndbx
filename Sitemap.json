@@ -334,5 +334,14 @@
   {
     "Title": "API Specification",
     "Target": "http://saferpay.github.io/jsonapi/"
+  },
+  {
+   "Title": "Release Notes",
+   "Source": "texts/releases.md",
+   "Target": "releases.html",
+   "Subsites": [
+       { "Source": "texts/releases.md", "Title": "R79.1", "Target": "releases.html#R79-1" },
+       { "Source": "texts/releases.md", "Title": "R78", "Target": "releases.html#R78" }
+   ] 
   }
 ]
