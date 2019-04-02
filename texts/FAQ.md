@@ -85,5 +85,4 @@ The following IPs may need to be whitelisted in order to accept outgoing and inc
 + 193.247.180.4
 + 153.46.254.150
 + 153.46.254.164
-+ 83.138.151.81
 + 153.46.254.209
