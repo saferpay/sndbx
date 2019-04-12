@@ -8,7 +8,7 @@ In this chapter you will find information about current and past Saferpay releas
   <p><strong>Note:</strong> Release 79 itself was released for internal use.</p>
 </div>
 
-## <a name="Rt9-1-Diners"></a> Diners as a means of payment at SIX Payment Services in Austria 
+## Diners as a means of payment at SIX Payment Services in Austria 
 SIX Payment Services can now process Diners as a means of payment in Austria. 
 
 ## Support for TWINT payments in shopping apps 
