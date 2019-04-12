@@ -343,7 +343,7 @@
        { 
          "Source": "texts/releases.md",
          "Title": "R79.1",
-         "Target": "releases.html#R79-1"
+         "Target": "releases.html#R79-1",
          "Subsites": [
            { "Source": "texts/releases.md", "Title": "Diners for Austria", "Target": "releases.html#R79-1-Diners" }
         ]
