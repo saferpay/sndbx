@@ -16,7 +16,7 @@
     <tr>
       <td class="text-center"><strong>CustomerId</strong></td>
       <td><p>This is your primary account-number! Everything else about your Account is directly linked to this ID e.g.: Terminals, Card Aliases, Backoffice-Accounts, JSON-API Credentials and more!</p></td>
-      <td><p>The CustomerId is part of many other things. For example your Backoffice userId: e<strong>123456</strong>001 . It also is contained within your JSON-API userId: API_<strong>123456</strong>_12345678. dditionally, it is displayed inside the Backoffice under <strong>Settings > JSON API Basic Authentication</strong> and <strong>Settings > JSON API Client Certificate</strong>.</p></td>
+      <td><p>The CustomerId is part of many other things. For example your Backoffice userId: e<strong>123456</strong>001 . It also is contained within your JSON-API userId: API_<strong>123456</strong>_12345678. additionally, it is displayed inside the Backoffice under <strong>Settings > JSON API Basic Authentication</strong> and <strong>Settings > JSON API Client Certificate</strong>.</p></td>
     </tr>
     <tr>
       <td class="text-center"><strong>TerminalId</strong></td>
