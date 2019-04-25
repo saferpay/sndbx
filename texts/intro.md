@@ -160,7 +160,7 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
 </table>
 
 <div class="warning">
-  <p><strong>Attention:</strong> If you intend on doing a dummy authrization, using 3D Secure as a card holder verification measure, we do not recommend an amount < 1,-! Small amounts often get rejected by issuing banks, thus causing issues, with amount 0 not being possible at all.</p>
+  <p><strong>Attention:</strong> If you intend on doing a dummy authorization, using 3D Secure as a card holder verification measure, we do not recommend an amount < 1,-! Small amounts often get rejected by issuing banks, thus causing issues, with amount 0 not being possible at all.</p>
 </div>
 
 
