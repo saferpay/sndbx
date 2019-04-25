@@ -57,7 +57,7 @@ The process begins with the [PaymentPage Initialize](https://saferpay.github.io/
 </div>
 
 <div class="info">
-  <p><strong>Tip:</strong> Don't like the style of the PaymentPage? Try our <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
+  <p><strong>Tip:</strong> Don't like the style of the PaymentPage? Try our <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
 </div>
 
 ## <a name="pp-initialize-response"></a>PaymentPage Initialize Response
