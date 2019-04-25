@@ -56,6 +56,10 @@ The process begins with the [PaymentPage Initialize](https://saferpay.github.io/
   <p><strong>Note:</strong> A card will be registered only after a successful authorisation. Although the Payment Page Interface can be used to register (store) payment data, it is <strong>NOT</strong> possible to use it for future payments. Registered card data can only be used with the <a href="https://saferpay.github.io/sndbx/Integration_trx.html">Transaction Interface</a>.</p>
 </div>
 
+<div class="info">
+  <p><strong>Tip:</strong> Don't like the style of the PaymentPage? Try our <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
+</div>
+
 ## <a name="pp-initialize-response"></a>PaymentPage Initialize Response
 
 ### Inside the PaymentPage Initialize Response, the following parameters are important:
