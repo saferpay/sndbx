@@ -656,7 +656,7 @@
 </ul><div class="info">
   <p><strong>Note:</strong> A card will be registered only after a successful authorisation. Although the Payment Page Interface can be used to register (store) payment data, it is <strong>NOT</strong> possible to use it for future payments. Registered card data can only be used with the <a href="https://saferpay.github.io/sndbx/Integration_trx.html">Transaction Interface</a>.</p>
 </div><div class="info">
-  <p><strong>Tip:</strong> Don't like the style of the PaymentPage? Try our <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
+  <p><strong>Tip:</strong> Don't like the style of the PaymentPage? Try our <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
 </div></div></div></section><section id="pp-initialize-response"><h2><a name="pp-initialize-response"></a>PaymentPage Initialize Response</h2><div class="row"><div class="col-md-6"></div></div></section><section><h3>Inside the PaymentPage Initialize Response, the following parameters are important:</h3><div class="row"><div class="col-md-6"><ul>
 <li><p><strong>Token:</strong> The <strong>Token</strong> refers to the values temporarily stored regarding the Saferpay transaction and is mandatory during subsequent processing of the transaction (<a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert">for more information, see e.g. PaymentPage Assert</a>). The Token should be coupled to the http-GET parameters that were previously attached to the <strong>ReturnUrls</strong> and <strong>NotifyUr</strong>l for identification.</p>
 </li>
