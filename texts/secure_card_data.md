@@ -215,6 +215,10 @@ However there are two major differnces:
 
 In order to open up the hosted Card Entry Form, you first need to execute the [Alias Insert Request](http://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert).
 
+<div class="info">
+  <p><strong>Tip:</strong> Don't like the style of the Hosted Form? Try our <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
+</div>
+
 ### Here are a few hints and tips about the options that are available for the merchant:
 
 + **ReturnUrls:** For security, Saferpay returns no data to return addresses of the shop. The identification of the payment or the returning customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the ReturnUrls. When a ReturnUrl is called, Saferpay returns the appended parameter, thus enabling identification of the customer.
