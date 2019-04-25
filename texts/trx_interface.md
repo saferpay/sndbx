@@ -62,6 +62,9 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
 <div class="info">
  <p><strong>Note:</strong> The CVC is <strong>NOT</strong> required, when doing a 3DS transaction with an alias!</p>
 </div>
+<div class="info">
+  <p><strong>Tip:</strong> Don't like the style of the Hosted Form? Try our <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
+</div>
 
 ### In the Response of the Initialize Request these parameters are import for further processing:
 
