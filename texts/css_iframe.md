@@ -149,7 +149,7 @@ As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported, dependi
 
 + The CSS file that is referenced by the CssUrl parameter must be stored on a web server that supports HTTPS.
 
-+ When aiming for the PCI DSS SAQ-A compliance, you must set the **ContentSecurityEnabled** parameter inside the **Styling**-container to **true**. Furthermore, you have to consider the following things:
++ When aiming for the <a href="https://saferpay.github.io/sndbx/#pci">PCI DSS SAQ-A compliance</a>, you must set the **ContentSecurityEnabled** parameter inside the **Styling**-container to **true**. Furthermore, you have to consider the following things:
 
   + Every bit of code must be contained within one CSS-file. Importing other files is not supported!
   + Image-files must be loaded via a Data-Url within the CSS file itself!
