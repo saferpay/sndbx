@@ -100,10 +100,13 @@ Based on the data obtained, it is to be decided whether or not a transaction is 
 + **Transaction > Status:** As already described [here](https://saferpay.github.io/sndbx/index.html#capture-batch), this status states whether or not a transaction has to be finalized via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture). If this status is not **CAPTURED**, the capture must be executed in order to finalise the transaction.
 
 <div class="info">
-  <p><strong>Tip:</strong> You can also call the Assert, if the Fail-or AbortUrl has been called. It will then give you information about the failure!</p>
+  <p><strong>Tip:</strong> You can also call the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, if the Fail-or AbortUrl has been called. It will then give you information about the failure!</p>
 </div>
 <div class="info">
   <p><strong>Info:</strong> Under certain circumstances a PaymentPage Session can be valid for about 1 hour -other sessions, like external redirections to 3D Secure and 3rd party providers can add up to this!-, but a normal session does not take longer, than 20 minutes!</p>
+</div>
+<div class="info">
+  <p><strong>Tip:</strong> The <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a> can be called up to 24 hours, after the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a>!</p>
 </div>
 
 ## <a name="pp-captcancel"></a> 5 - Capture or Cancel
