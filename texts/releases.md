@@ -2,6 +2,85 @@
 
 In this chapter you will find information about current and past Saferpay releases.
 
+# <a name="R80"></a> Release 80
+### Released: 21.05.2019
+
+## 1. 3-D Secure 2.0
+Saferpay now supports 3-D Secure 2.0. After a pilot phase, the new authentication process is available for all Saferpay customers of SIX Payment Services.
+
+<a href="https://www.six-payment-services.com/en/shared/campaigns/3-d-secure-2-0-saferpay.html#was-tun">What do you need to do as a Saferpay customer?</a>
+
+3-D Secure 2.0 is available for all versions with the JSON API interface we particularly recommend V1.11. For more information, please refer to the <a href="index.html">integration guide</a>.
+
+While you do not have to make any adjustments to take full advantage of 3-D Secure 2.0, the following changes will take effect:
+
+### 1.1	No return of the authentication verification value
+
+With the introduction of 3-D Secure 2.0, Saferpay had to meet the requirement of not storing authentication verification values after authentication. This has been implemented as follows:
+
+* up to JSON API Version 1.10: The attribute "VerificationValue" is available, but it contains a dummy value.
+* from JSON API Version 1.11: The attribute "VerificationValue" is omitted from the PaymentPage Assert.
+
+### 1.2	Display of authentication data in the Saferpay Backoffice (mySaferpay)
+
+The display of 3-D Secure authentication information in the Saferpay Backoffice (mySaferpay) has been limited to key data, which is now presented in a clearer and more user-friendly way.
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Releases/R80/3DSv2_BO.png "3DSv2 inside the Saferpay Backoffice")
+
+### 1.3	Authorisation with or without liability shift 
+
+Optionally, you can control whether authorisation should take place with or without liability shift by setting the "Condition" parameter for the payment page or the transaction interface integration.
+
+For more details, please refer to the <a href="https://saferpay.github.io/jsonapi/">JSON API documentation</a>.
+
+### 1.4	Important information about the 3-D Secure 2.0 process
+
+With 3-D Secure 2.0, your customers benefit from a positive shopping experience and you also benefit from fewer interruptions during the checkout process. Low-risk transactions are identified as so-called “Frictionless Flow” transactions and a genuine customer authentication is, therefore, not required. As a result, the checkout process is seamless from the cardholder's perspective. Whether or not “Frictionless Flow” is offered for a transaction will depend on the amount and quality of the information you provide. 
+
+Important information to increase the "Frictionless Flow" rate are the customer's name, e-mail address and billing address.
+
+## 2	New means of payment Alipay
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Releases/R80/Alipay_Logo.png "Alipay Logo")
+
+Saferpay offers Alipay as new means of payment. With more than 520 million users, 100 million transactions per day and a market share of over 50 percent in the Chinese online market, Alipay is the world's largest payment platform. The availability of Alipay as a means of payment will enhance the appeal of online shops to Chinese customers.
+Alipay is now available with the Payment Page integration.
+If you are interested in introducing Alipay as a means of payment on your online platforms, please contact your Saferpay Sales Manager at: <a href="mailto:e-commerce@six-payment-services.com">e-commerce@six-payment-services.com</a>
+
+## 3	Transaction details always at your fingertips
+
+### 3.1	Assert requests can be made within 24 hours
+
+To query the result of a payment or registration process, an Assert request can now be sent within 24 hours. This change affects the following methods: *PaymentPage/Assert* and *Alias/AssertInsert*.
+
+Note: All other transaction-related actions must still be performed within one hour (the attribute "Expiration" relates to this expiration date).
+
+### 3.2	New JSON API method for accessing transaction data
+
+Saferpay offers a new method for accessing transaction data. With Transaction/Inquire, you can retrieve transaction data at any time. 
+As usual, you can find all the details in our <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">JSON API documentation.</a>
+
+### Fair use
+The *Transaction/Inquire* method is not intended for large batches or monitoring of status changes (polling). In order to be able to answer all our customer requests quickly, we ask you to use this new functionality fairly. If we notice excessive use of the feature, we will contact you. In exceptional cases, we reserve the right to restrict your access to it.
+
+### Data freshness/topicality
+The result of a *Transaction/Inquire* request does not display the current status in real time because the requested data are updated with a few minutes delay.
+
+## 4	Further JSON API function enhancements aimed at streamlining your business processes
+
+### 4.1	Return of card type information when storing aliases
+
+If you store the card data as an alias for subsequent transactions, Saferpay will now return the card type, e.g. "consumer" or "corporate". This allows you to see whether the used card is a corporate card.
+
+## 5	Preparation for the switch-off of obsolete Saferpay interfaces
+
+In recent months we have informed you that the outdated Saferpay interfaces (HTTPS Interface (HI) or Saferpay Clients) will be switched off at the end of 2020.
+
+Are you not sure whether you are using the outdated Saferpay interfaces? A new page has been added to Saferpay Backoffice (mySaferpay), which offers more information on the topic. Under "Online Support" / "Interface Usage" you can see which interfaces you use and when you last accessed your systems.
+
+More information on the replacement of the old interfaces and migration to JSON API is available at the <a href="https://www.six-payment-services.com/en/shared/campaigns/3-d-secure-2-0-saferpay-faq.html">Saferpay FAQ page</a>.
+
+
 # <a name="R79-1"></a> Release 79.1
 ### Released: 19.03.2019
 <div class="info">
