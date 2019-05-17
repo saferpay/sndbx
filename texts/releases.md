@@ -40,8 +40,7 @@ With 3-D Secure 2.0, your customers benefit from a positive shopping experience 
 Important information to increase the "Frictionless Flow" rate are the customer's name, e-mail address and billing address.
 
 ## 2	New means of payment Alipay
-
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Releases/R80/Alipay_Logo.png "Alipay Logo")
+<a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/saferpay/sndbx/master/images/Releases/R80/Alipay_Logo.png"><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/Releases/R80/Alipay_Logo.png" alt="alt text" title="Alipay Logo" style="max-width:40%;"></a>
 
 Saferpay offers Alipay as new means of payment. With more than 520 million users, 100 million transactions per day and a market share of over 50 percent in the Chinese online market, Alipay is the world's largest payment platform. The availability of Alipay as a means of payment will enhance the appeal of online shops to Chinese customers.
 Alipay is now available with the Payment Page integration.
