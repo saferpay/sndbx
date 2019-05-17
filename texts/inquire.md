@@ -96,7 +96,7 @@ However the Inquiry Interface has some restrictions, that have to be considered,
 ```
 ### Example of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Transaction Inquire</a> response for a failed transaction:
 <div class="danger">
-  <p><strong>Important note:</strong> As mentioned before, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire Interface</a> only works with successful transactions! Therefore you'll get this response, if a transaction was either not completed by the payer, or was not successful.</p>
+  <p><strong>Important note:</strong> As mentioned before, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire Interface</a> only works with successful transactions. Therefore you'll get the following response, if a transaction was either not completed by the payer, or was not successful.</p>
 </div><br />
 
  ```json 
