@@ -103,6 +103,15 @@
     ]
   },
   {
+     "Title": "Inquire Interface",
+     "Source": "texts/inquire.md",
+     "Target": "Inquire.html",
+     "Subsites": [
+       { "Source": "texts/refund.md", "Title": "Rules and limitations", "Target": "Inquire.html#inquire-rules" },
+       { "Source": "texts/refund.md", "Title": "Examples", "Target": "Inquire.html#inquire-examples" }
+     ]
+   },
+  {
     "Title": "Mobile App integration",
     "Source": "texts/app_integration.md",
     "Target": "app-integration.html",
