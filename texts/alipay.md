@@ -10,6 +10,6 @@ Alipay transactions can also be processed via the Saferpay JSON API. However, as
 
 ## <a name="alipay-general"></a> General specifics
 
-+ **Cancel:** A cancel may only performed after the Batch Close on Alipay side, which happens around 0:00am Bejing-time.
-+ **Refunds:** A refund cannott be cancelled, so make sure, that you really want to execute it.
++ **Cancel:** A cancel may only be performed after the Batch Close on Alipay side, which happens around 0:00am Bejing-time.
++ **Refunds:** A refund cannot be cancelled, so make sure, that you really want to execute it.
 + **OrderId:** The OrderId is limited to 64 characters.
