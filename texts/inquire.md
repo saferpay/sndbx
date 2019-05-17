@@ -6,7 +6,7 @@ However the Inquiry Interface has some restrictions, that have to be considered,
 ## <a name="inquire-rules"></a> Rules and limitations
 1. **Use the standard means first:** the Inquire-Interface is not meant to replace other API-functions, like for example the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>. When implementing the <a href="Integration_PP.html">Payment Page</a>, or <a href="Integration_trx.html">Transaction Interface</a> flows, you should always use the standard means first and the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a>, if those cannot be executed anymore, e.g. due to the token being expired!
 2. **No polling:** In general, but in this case specifically, do not use polling to continuously ask for the transaction-data, especially when considering #1.
-3. **Only successful transactions:** As of now, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a> only works with successful transactions!
+3. **Only successful transactions:** As of now, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a> only works with successful transactions.
 4. **SpecVersion 1.11:** You must use SpecVersion 1.11 and up.
 5. **Update delay:** The result of a *Transaction/Inquire* request does not display the current status in real time because the requested data are updated with a few minutes delay.
 
@@ -96,7 +96,7 @@ However the Inquiry Interface has some restrictions, that have to be considered,
 ```
 ### Example of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Transaction Inquire</a> response for a failed transaction:
 <div class="danger">
-  <p><strong>Important note:</strong> As mentioned before, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire Interface</a> only works with successful transactions! Therefore you'll met with this response, if a transaction was either not performed, or not successful!</p>
+  <p><strong>Important note:</strong> As mentioned before, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire Interface</a> only works with successful transactions! Therefore you'll get this response, if a transaction was either not completed by the payer, or was not successful.</p>
 </div><br />
 
  ```json 
