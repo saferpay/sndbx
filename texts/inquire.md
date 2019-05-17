@@ -8,6 +8,7 @@ However the Inquiry Interface has some restrictions, that have to be considered,
 2. **No polling:** In general, but in this case specifically, do not use polling to continuously ask for the transaction-data, especially when considering #1.
 3. **Only successful transactions:** As of now, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a> only works with successful transactions!
 4. **SpecVersion 1.11:** You must use SpecVersion 1.11 and up.
+5. **Update delay:** The result of a *Transaction/Inquire* request does not display the current status in real time because the requested data are updated with a few minutes delay.
 
 <div class="danger">
   <p><strong>VERY IMPORTANT:</strong> Saferpay reserves the right to restrict, or outright deny access to the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a>, due to excessive use of the interface, or violation of these rules!</p>
