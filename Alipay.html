@@ -626,7 +626,16 @@
 				</div>
 
 				
-
+<section><h1>Alipay</h1><div class="row"><div class="col-md-6"><p>Alipay transactions can also be processed via the Saferpay JSON API. However, as a third party provider, there are a few things to consider, when offering Alipay to customers.</p></div></div></section><section id="alipay-requirement"><h2><a name="alipay-requirement"></a> Requirements</h2><div class="row"><div class="col-md-6"><ul>
+<li>A corresponding license and thus a valid identification with a username and password for the Saferpay system.</li>
+<li>At least one active Saferpay terminal via which payment can be carried out and the associated Saferpay TerminalId.</li>
+<li>A valid Alipay contract</li>
+<li>JSON API Version 1.11 or later</li>
+</ul></div></div></section><section id="alipay-general"><h2><a name="alipay-general"></a> General specifics</h2><div class="row"><div class="col-md-6"><ul>
+<li><strong>Cancel:</strong> A cancel may only performed after the Batch Close on Alipay side, which happens around 0:00am Bejing-time.</li>
+<li><strong>Refunds:</strong> A refund cannott be cancelled, so make sure, that you really want to execute it.</li>
+<li><strong>OrderId:</strong> The OrderId is limited to 64 characters.</li>
+</ul></div></div></section>
 
 			</main>
 
