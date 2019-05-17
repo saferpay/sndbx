@@ -323,7 +323,16 @@
   "Subsites": [
       { "Source": "texts/eprzelewy.md", "Title": "Requirements", "Target": "eprzelewy.html#przelewy-requirement" }
     ] 
-   }, 
+   },
+   {
+     "Title": "Alipay",
+     "Source": "texts/alipay.md",
+     "Target": "Alipay.html",
+     "Subsites": [
+       { "Source": "texts/alipay.md", "Title": "Requirements", "Target": "Alipay.html#alipay-requirement" },
+       { "Source": "texts/alipay.md", "Title": "General specifics", "Target": "Alipay.html#alipay-general" }
+     ]
+   },
    {
     "Title": "Additional Information"
   },
