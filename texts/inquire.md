@@ -13,7 +13,7 @@ However the Inquiry Interface has some restrictions, that have to be considered,
   <p><strong>VERY IMPORTANT:</strong> Saferpay reserves the right to restrict, or outright deny access to the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a>, due to excessive use of the interface, or violation of these rules!</p>
 </div>
 
-## <a name="inquire-examples"></a> Rules and limitations
+## <a name="inquire-examples"></a> Examples
 
 ### Example of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Transaction Inquire</a> request:
 
