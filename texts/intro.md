@@ -79,7 +79,7 @@ A transaction with the 3-D Secure process proceeds as follows:
 2.	Saferpay checks whether the CH uses the 3DS process or not. If yes, she or he will be required to authenticate her or himself to her or his bank. If not, the payment can be carried out without authentication.
 3.	The 3DS request will be forwarded to the card-issuing bank via the CH’s Internet browser. 
 4.  The Issuing bank, or its 3DS provider will then perform a so called scoring. This scoring will determine the fraud risk, which will lead to one of two outcomes:
-  1. <strong>Frictionless:</strong> The fraud risk is low and 3D Secure will proceed without user interaction. The bank will be the liable entity.
+  1. <strong>Frictionless:</strong> The fraud risk is low and 3D Secure will proceed without user interaction. The bank will be the liable entity. This also applies to all orders smaller, or equal to 30 Euro, or equivalent.
   2. <strong>Challanged:</strong> The fraud risk is high, thus the card holder needs to authenticate him/herself, by using a password and mTAN, an App, or even the fingerprint-sensor on his phone. If 3D Secure was successfull, the bank will still be the liable entity.
 5.	The result of this authentication is sent back to Saferpay.
 6.	Saferpay checks the result and ensures that no manipulation has occurred.
