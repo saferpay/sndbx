@@ -158,17 +158,6 @@
       { "Source": "texts/marketplace.md", "Title": "Applying Fees", "Target": "marketplace.html#mark-fee" }
     ]
  },
- {
-    "Title": "Fraud Free Service",
-    "Source": "texts/fraud_free.md",
-    "Target": "fraud_free.html",
-    "Subsites": [
-     { "Source": "texts/fraud_free.md", "Title": "API Response", "Target": "fraud_free.html#ff-response" },
-     { "Source": "texts/fraud_free.md", "Title": "Status Change", "Target": "fraud_free.html#ff-status" },
-     { "Source": "texts/fraud_free.md", "Title": "Mandatory Data Points", "Target": "fraud_free.html#ff-mandatory" }
-     
-    ]
-  },
   {
     "Title": "FAQ",
     "Source": "texts/FAQ.md",
