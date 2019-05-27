@@ -1,3 +1,17 @@
+#DEPRECATED! DO NOT USE FOR NEW IMPLEMENTATIONS! THIS IS ONLY INTENDED FOR EXISTING FRAUD FREE CUSTOMERS!
+
+<p>Sitemap JSON: <span style="display: hidden">{
+    "Title": "Fraud Free Service",
+    "Source": "texts/fraud_free.md",
+    "Target": "fraud_free.html",
+    "Subsites": [
+     { "Source": "texts/fraud_free.md", "Title": "API Response", "Target": "fraud_free.html#ff-response" },
+     { "Source": "texts/fraud_free.md", "Title": "Status Change", "Target": "fraud_free.html#ff-status" },
+     { "Source": "texts/fraud_free.md", "Title": "Mandatory Data Points", "Target": "fraud_free.html#ff-mandatory" }
+     
+    ]
+  },</span></p>
+
 # Fraud Free
 
 <div class="warning">
