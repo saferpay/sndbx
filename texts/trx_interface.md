@@ -209,14 +209,14 @@ The form-inputs need to be set up in a specific way, so Saferpay can parse the s
   <body>
     <h1>Credentials Form</h1>
     <form method="POST" action= "<%= RedirectUrl %>">
-      Karteninhabername
+      Card Holder
       <input type="text" name="HolderName" size="20"><br />
-      Kartennummer
+      Card Number
       <input type="text" name="CardNumber" size="16"><br />
-      G&uuml;ltig bis
+      Expiration Date
       <input type="text" name="ExpMonth" size="2">
       <input type="text" name="ExpYear" size="2"><br />
-      Kartenpr&uuml;fnummer
+      CVC
       <input type="text" name="VerificationCode" size="4"><br />
       <input type="submit" name="submit" value="purchase">
     </form>
