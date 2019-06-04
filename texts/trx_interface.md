@@ -157,43 +157,43 @@ The form-inputs need to be set up in a specific way, so Saferpay can parse the s
     <tr>
       <td style="width: 15%;">RedirectUrl</td>
       <td class="text-center" style="width: 10%;">URL</span></td>
-      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td class="text-center" style="width: 10%;">M</span></td>
       <td>The redirectUrl you get through <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a> or <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Alias_Insert">Alias Insert</a>. It has to be set as the form action. The form-method will be POST!</span></td>     
     </tr>
     <tr>
       <td style="width: 15%;">HolderName</td>
       <td class="text-center" style="width: 10%;">String</span></td>
-      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td class="text-center" style="width: 10%;">M</span></td>
       <td>Input for the card-holder name.</span></td>     
     </tr>
     <tr>
       <td style="width: 15%;">CardNumber</td>
       <td class="text-center" style="width: 10%;">String</span></td>
-      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td class="text-center" style="width: 10%;">M</span></td>
       <td>Input for the card-number (PAN).</span></td>     
     </tr>
     <tr>
       <td style="width: 15%;">ExpMonth</td>
       <td class="text-center" style="width: 10%;">String</span></td>
-      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td class="text-center" style="width: 10%;">M</span></td>
       <td>Input for the expiration-month.</span></td>     
     </tr>
     <tr>
       <td style="width: 15%;">ExpYear</td>
       <td class="text-center" style="width: 10%;">String</span></td>
-      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td class="text-center" style="width: 10%;">M</span></td>
       <td>Input for the expiration-year.</span></td>     
     </tr>
     <tr>
       <td style="width: 15%;">VerificationCode</td>
       <td class="text-center" style="width: 10%;">String</span></td>
-      <td class="text-center" style="width: 10%;">mandatory</span></td>
+      <td class="text-center" style="width: 10%;">M</span></td>
       <td>Input for the Card Verification Code (CVC).</span></td>     
     </tr>
     <tr>
       <td style="width: 15%;">FormAjax</td>
       <td class="text-center" style="width: 10%;">Boolean</span></td>
-      <td class="text-center" style="width: 10%;">optional</span></td>
+      <td class="text-center" style="width: 10%;">O</span></td>
       <td>Set to true, if the form-submission shall be done via AJAX. When used, Saferpay returns validation-messages through a JSON-response, which can be catched with JavaScript!</span></td>     
     </tr>
   </tbody>
