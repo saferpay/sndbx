@@ -11,6 +11,10 @@ Saferpay does offer the option to do [Partial Captures (Hereafter refered to as 
 5. [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) execute the money-flow (closing) with the execution of the capture itself! A [Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel) of a [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) therefore is not possible!
 6. MultipartCapture is only available for **SpecVersions 1.10 and higher!**
 
+<div class="warning">
+    <p><strong>Important Note:</strong> Note, that you cannot mix the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a> and the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Normal Capture</a> within one transaction. Either do one, or the other!</p>
+</div>
+
 ## <a name="pc-exec"></a> Executing a Multipart Capture
 
 Before you can even execute a [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), you, of course, need a transaction, that needs to be captured. This can be any normal authorization, either done by the [Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPage), or [Transaction Interface](https://saferpay.github.io/jsonapi/#ChapterTransaction). You don't have to consider anything special, up to this point!
