@@ -674,7 +674,9 @@ Like the name suggests, the liability gets shiftet!
 Shifted from the merchant, to the bank. So in case of fraud, the chargeback gets completely carried by the issuer.
 The card holder will get his money back, <strong>BUT</strong>, unlike before, the merchant can keep the charged money. The risk and the cost is carried by the issuer in this case, negating the costs on the merchant side.</li>
 </ol></div></div></section><section><h3>3D Secure on API-Level</h3><div class="row"><div class="col-md-6"><p>The Saferpay JSON-API does return all necessary information inside the Liability-Container, when using <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>.
-The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>. Furthermore <strong>LiableEntity</strong> will provide information about who will be liable in case of fraud.</p><pre><code class="language-json">&quot;Liability&quot;: {
+The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>. Furthermore <strong>LiableEntity</strong> will provide information about who will be liable in case of fraud.</p><div class="warning">
+  <p><strong>Attention:</strong> Only the <a href="Integration_trx.html">Transaction interface</a> and <a href="Integration_PP.html">Payment Page</a> processes do support 3D Secure! Please keep that in mind, when implementing Saferpay!</p>
+</div><pre><code class="language-json">&quot;Liability&quot;: {
     &quot;LiabilityShift&quot;: true,
     &quot;LiableEntity&quot;: &quot;ThreeDs&quot;,
     &quot;ThreeDs&quot;: {
