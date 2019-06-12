@@ -114,6 +114,10 @@ The card holder will get his money back, **BUT**, unlike before, the merchant ca
 The Saferpay JSON-API does return all necessary information inside the Liability-Container, when using [Transaction Authorize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize) or [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert).
 The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>. Furthermore <strong>LiableEntity</strong> will provide information about who will be liable in case of fraud.
 
+<div class="warning">
+  <p><strong>Attention:</strong> Only the <a href="Integration_trx.html">Transaction interface</a> and <a href="Integration_PP.html">Payment Page</a> processes do support 3D Secure! Please keep that in mind, when implementing Saferpay!</p>
+</div>
+
 ```json
 "Liability": {
     "LiabilityShift": true,
