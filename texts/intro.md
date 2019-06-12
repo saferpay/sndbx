@@ -187,7 +187,13 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
 
 ## <a name="psd2"></a> 3D Secure and PSD2
 
-As of September 14th 2019, all credit card transactions inside the European Union must be secured by some form of <strong>Strong Consumer Authentication (SCA)</strong>. In order to provide a compliant solution for our customers, Saferpay will automatically provide 3D Secure v2 to all transactions via the <a href="Integration_PP.html">Payment Page</a> or <a href="Integration_trx.html">Transaction Interface</a> flows. Therefore 3DS will be <strong>mandatory</strong> for all merchants doing business within the EU. That also applies to merchants, that have their company HQ outside the European Union!
+As of September 14th 2019, all credit card transactions inside the European Union must be secured by some form of <strong>Strong Consumer Authentication (SCA)</strong>, as defined inside the **Payment Services Directive**. In order to provide a compliant solution for our customers, Saferpay will automatically provide 3D Secure v2 to all transactions via the <a href="Integration_PP.html">Payment Page</a> or <a href="Integration_trx.html">Transaction Interface</a> flows. Therefore 3DS will be <strong>mandatory</strong> for all merchants doing business within the EU. That also applies to merchants, that have their company HQ outside the European Union!
+
+Exceptions being Recurring Transactions, where the first (initial) transaction has been executed with 3D Secure and Mail Phone Order transactions.
+
+<div class="info">
+  <p><strong>Tip:</strong> As a rule of thumb, ask yourself the following question: Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: Do 3D Secure!</p>
+</div>
 
 ## <a name="dcc"></a> Dynamic Currency Conversion
 
