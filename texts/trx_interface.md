@@ -51,7 +51,7 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
 
 + **Card Verification Value:** The Card Verification Value (CVC) is mandatory, when using the Card Entry Form, except for card brand Maestro, which offers cards with and without CVC. 
 
-+ **Secure Card Data:** With the Initialize Request, it is also possible within Saferpay Secure Card Data to forward saved cards in the form of an alias. For example, this can be the case if the customers card number has been already saved (tokenized), and you do not want her or him to re-enter this data. To use the alias value instead of the actual card data, use the container PaymentMeans.
++ **Secure Card Data:** With the Initialize Request, it is also possible within Saferpay Secure Card Data to forward saved cards in the form of an alias. For example, this can be the case if the customers card number has been already saved (tokenized), and you do not want her or him to re-enter this data. To use the alias value instead of the actual card data, use the container PaymentMeans. If used, the RedirectUrl directly links to the next step e.g. 3D Secure, thus skipping the Hosted Entry Form.
 ```json 
   "PaymentMeans": {
     "Alias": {
