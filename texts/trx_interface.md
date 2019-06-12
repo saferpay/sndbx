@@ -70,14 +70,14 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
 
 + **Token:** The Token is mandatory for further steps within the payment process and must therefore be cached. Preferably, it should be linked to the parameters attached to the ReturnUrls. It can thus be easily reassigned.
 
-+ **RedirectUrl:** Unlike with the Payment Page, this URL is not used for a redirect. Instead, it is embedded in an HTML Iframe. Within this, a form hosted by Saferpay is displayed. This form is also called the Hosted Entry Form. It can be used to capture sensitive card details in a PCI-compliant manner. You can find out more about the Iframe integration [in this chapter](https://saferpay.github.io/sndbx/CssiFrame.html).
++ **RedirectUrl:** Unlike with the Payment Page, this URL is not intended to be used for a redirect **(Though you may do so, if you want to!)**. Instead, it is embedded in an HTML Iframe. Within this, a form hosted by Saferpay is displayed. This form is also called the Hosted Entry Form. It can be used to capture sensitive card details in a PCI-compliant manner. You can find out more about the Iframe integration [in this chapter](https://saferpay.github.io/sndbx/CssiFrame.html).
 
 <div class="info">
   <p><strong>Note:</strong> If an alias is forwarded in the initalize request (See the step above!), the display of the form will be skipped.</p>
 </div>
 
 ### <a name="trx-iframe"></a>2 - Open RedirectUrl inside an HTML-iFrame
-The RedirectUrl should be opened inside an HTML-iFrame embeded in your webshop or application, to show the hosted card entry form. Please view the chapter [**Iframe Integration and CSS**](https://saferpay.github.io/sndbx/CssiFrame.html#chapter-css-iframe) for more information on the iframe integration and use of CSS to style the hosted entry form.
+The RedirectUrl should be opened inside an HTML-iFrame embeded in your webshop or application **-a fullsize redirect is technically possible, if desired-**, to show the hosted card entry form. Please view the chapter [**Iframe Integration and CSS**](https://saferpay.github.io/sndbx/CssiFrame.html#chapter-css-iframe) for more information on the iframe integration and use of CSS to style the hosted entry form.
 
 #### <a name="trx-3ds"></a> 3-D Secure and DCC
 If [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc) are activated on the terminal for the payment method being used, these services are automatically performed for the transaction as soon as the form has been sent. For this, no additional steps are necessary for the merchant. 
