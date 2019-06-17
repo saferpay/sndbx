@@ -9,6 +9,7 @@ The handling of eps payments with Saferpay requires:
 *	A corresponding licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 *	Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 *	A valid acceptance agreement for eps must be present.
+* eps is only available via the [PaymentPage flow](Integration_PP.html)!
 
  For eps activation Saferpay needs:
  
