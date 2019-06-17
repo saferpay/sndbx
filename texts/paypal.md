@@ -9,6 +9,7 @@ The handling of PayPal payments with Saferpay requires:
 * The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 * A valid PayPal merchant account.
+* PayPal is only available via the [PaymentPage flow](Integration_PP.html)!
 
 <div class="warning">
   <p><strong>Attention:</strong> For PayPal activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your PayPal merchant account ID and the desired currency.</p>
