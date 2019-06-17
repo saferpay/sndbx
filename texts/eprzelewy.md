@@ -10,6 +10,7 @@ The handling of PayPal payments with Saferpay requires:
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 * A valid ePrzelewy contract.
 * The <strong>Payer.DeliveryAddress.Email</strong>-parameter is mandatory and needs to be set, with the initial request, or captured through the respective form.
+* ePrzelewy is only available via the [PaymentPage flow](Integration_PP.html)!
 
 <div class="warning">
   <p><strong>Attention:</strong> For ePrzelewy activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your pRzelewy merchant account ID and the desired currency.</p>
