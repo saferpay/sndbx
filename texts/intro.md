@@ -66,7 +66,7 @@ Even with an SAQ-A EP certification, some processes are still not allowed. The f
 ## <a name="3ds"></a> 3-D Secure
 
 <div class="info">
-  <p><strong>New:</strong> Introducing 3D Secure 2 for Visa and Mastercard. Less hassle for customers, a higher conversion rate for you! Already have a Saferpay Integration with the JSON-API? Great! Saferpay will rollout 3DSv2 automatically for you starting in May 2019, with no changes needed!</p>
+  <p><strong>New:</strong> Introducing 3D Secure 2 for Visa and Mastercard. Less hassle for customers, a higher conversion rate for you! Already have a Saferpay Integration with the JSON-API <strong>and 3D Secure</strong>? Great! Saferpay will rollout 3DSv2 automatically for you starting in May 2019, with no changes needed!</p>
 </div>
 
 3-D Secure – 3DS for short – is supported by Visa (Visa Secure), Mastercard (Mastercard ID check), American Express (SafeKey), Diners Club (ProtectBuy) and others. Via liability shift, merchants that offer the 3-D Secure process benefit from fewer payment defaults and from increased security with respect to credit card acceptance. It does not matter whether the card holder (CH) participates in this process or not.
