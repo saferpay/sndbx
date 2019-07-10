@@ -19,7 +19,7 @@ It is extremely important to clarify before the implementation of Saferpay, whet
   <p><strong>Important Note:</strong> In case you are using Saferpay Business <strong>without</strong> the corresponding license, the API will throw an error (see below) in this case, you'll two options to proceed:</p>
   <ul>
     <li><p><strong>Option 1:</strong> Getting a Business license! You can contact your sales contact and ask for a change to Saferpay Business, so you have access to the needed functions!</p></li>
-    <li><p><strong>Option 2:</strong> Redo the integration! If you are not happy with option 1, the only other option would be to redo the whole integration, with the <a href="Integration_PP.html">Payment Page</a> in mind. <strong>Note:</strong> If you are using an official plug-in/integration from our partners, it may be only necessary to switch over to the Payment Page interface. A complete re-integration won't be necessary. When in doubt, please consult the user-manual, or contact the plug-in manufacturer directly!</p></li>
+    <li><p><strong>Option 2:</strong> Redo the integration! If you are not happy with option 1, the only other option would be to redo the whole integration, with the <a href="Integration_PP.html">Payment Page</a> in mind. <strong>Note:</strong> If you are using an official plug-in/integration from our partners, it may be only necessary to switch over to the Payment Page interface inside the shop-configuration. A complete re-integration won't be necessary. When in doubt, please consult the user-manual, or contact the plug-in manufacturer directly!</p></li>
   </ul>
 </div>
 
