@@ -199,6 +199,17 @@ Exceptions being Recurring Transactions, where the first (initial) transaction h
 
 Dynamic Currency Conversion (DCC) is a dynamic currency converter that allows international customers to pay the purchase price in the local currency or their home currency. DCC is available for SIX acceptance contracts with DCC expansion. For this, the terminal used for making the payment request receives a base currency in which all transactions are settled. Via DCC, international customers are shown the purchase price in the base currency and the current exchange rate in their national currency. The customer can then decide the currency in which the payment is to be made. Separate implementation by the merchant is not necessary for DCC. Saferpay automatically handles this step during the redirect. 
 
+### Example of the DCC response
+
+```json
+"Dcc": {
+    "PayerAmount": {
+      "Value": "352",
+      "CurrencyCode": "JPY"
+    }
+  }
+```
+
 ## <a name="version"></a>  Versioning
 
 If you are implementing new payment methods and/or features, please make sure to implement the correct **SpecVersion** of our API.
