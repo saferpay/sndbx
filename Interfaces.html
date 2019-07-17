@@ -633,13 +633,6 @@
   <p><strong>Note:</strong> Inside the <a href="https://saferpay.github.io/jsonapi/">API-Specification</a>, all Business-Requests are marked with the additional <strong>Business License</strong> tag, to indicate, that they may only be used with Saferpay Business!</p>
 </div><div class="info">
   <p><strong>Note:</strong> All Saferpay Test-Accounts do have Business activated by default, for evaluation purposes!</p>
-</div><div class="warning">
-  <p><strong>Important Note:</strong> In case you are using Saferpay Business <strong>without</strong> the corresponding license, the API will throw an error (see below) in this case, you'll two options to proceed:</p>
-  <ul>
-    <li><p><strong>Option 1:</strong> Getting a Business license! You can contact your sales contact and ask for a change to Saferpay Business, so you have access to the needed functions!</p></li>
-    <li><p><strong>Option 2:</strong> Redo the integration! If you are not happy with option 1, the only other option would be to redo the whole integration, with the <a href="Integration_PP.html">Payment Page</a> in mind. </p></li>
-    <li><p><strong>Option 3:</strong> If you are using an official plug-in/integration from our partners, it may be only necessary to switch over to the Payment Page interface inside the shop-configuration. <strong>A complete re-integration won't be necessary in this particular case.</strong> When in doubt, please consult the user-manual, or contact the plug-in manufacturer directly! </p></li>
-  </ul>
 </div></div></div></section><section><h2>Example of a &quot;missing Business license&quot;-API error</h2><div class="row"><div class="col-md-6"><pre><code class="language-json">{
  &quot;ResponseHeader&quot;: {
    &quot;SpecVersion&quot;: &quot;1.10&quot;,
@@ -652,7 +645,16 @@
    &quot;Invalid license&quot;
  ]
 }
-</code></pre><p>The following table shows an overview of which functions are included in the two licence models:</p><table class="table table-striped table-hover">
+</code></pre><div class="warning">
+  <p><strong>Important Note:</strong> In case you are using Saferpay Business <strong>without</strong> the corresponding license, the API will throw an error (see above) in this case, you'll have three options to proceed:</p>
+  <ul>
+    <li><p><strong>Option 1:</strong> Getting a Business license! You can contact your sales contact and ask for a change to Saferpay Business, so you have access to the needed functions!</p></li>
+    <li><p><strong>Option 2:</strong> Redo the integration! If you are not happy with option 1, another option would be to redo the whole integration, with the <a href="Integration_PP.html">Payment Page</a> in mind. </p></li>
+    <li><p><strong>Option 3:</strong> If you are using an official plug-in/integration from our partners, it may be only necessary to switch over to the Payment Page interface inside the shop-configuration. <strong>A complete re-integration won't be necessary in this particular case.</strong> When in doubt, please consult the user-manual, or contact the plug-in manufacturer directly! </p></li>
+  </ul>
+</div><div class="info">
+  <p><strong>Furthermore:</strong> If you have a Saferpay Business-contract, but still recieve this error, please contact your sales-contact on this issue!</p>
+</div><p>The following table shows an overview of which functions are included in the two licence models:</p><table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Interface</th>
