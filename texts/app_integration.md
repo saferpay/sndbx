@@ -11,7 +11,7 @@ The Integration centers around a client-server model (the app being the client),
 
 The general process is as follows:
 
-![alt text]("App-Integration Process")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/App-Integration2.png "App-Integration Process")
 
 1. The app calls the server to make a payment.
 2. The Server calls Saferpay, doing either a, [Transaction Initialize](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize), or [Alias Insert](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize).
