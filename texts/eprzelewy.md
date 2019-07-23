@@ -4,7 +4,7 @@ ePrzelewy payments can be processed with Saferpay without much effort. This chap
 
 ## <a name="przelewy-requirement"></a> Requirements
 
-The handling of PayPal payments with Saferpay requires:
+The handling of ePrzelewy payments with Saferpay requires:
 
 * The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
