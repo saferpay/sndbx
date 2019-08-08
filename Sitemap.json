@@ -196,11 +196,6 @@
    "Target": "trx_demo.html"
   },
   {
-   "Title": "Secure Card Data",
-   "Source": "texts/scd_demo.md",
-   "Target": "scd_demo.html"
-  },
-  {
    "Title": "Refunds",
    "Source": "texts/refund_demo.md",
    "Target": "refund_demo.html"
