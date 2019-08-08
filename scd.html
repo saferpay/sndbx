@@ -81,10 +81,7 @@
 								<li><a href="#scd-payment-methods">Supported Payment Methods</a></li>
 								<li><a href="#scd-pp">Secure Card Data and the Payment Page</a></li>
 								<li><a href="#scd-trx">Secure Card Data and the Transaction Interface</a></li>
-								<li><a href="#scd-sa">Standalone Secure Card Data registration</a></li>
-								<li><a href="#scd-demo">Try it!</a></li>
 								<li><a href="#scd-generator">The Id-generator</a></li>
-								<li><a href="#scd-check">The Check function</a></li>
 								<li><a href="#scd-use">How to use the obtained data</a></li>
 							</ul>
 							</li>
@@ -392,10 +389,7 @@
 								<li><a href="#scd-payment-methods">Supported Payment Methods</a></li>
 								<li><a href="#scd-pp">Secure Card Data and the Payment Page</a></li>
 								<li><a href="#scd-trx">Secure Card Data and the Transaction Interface</a></li>
-								<li><a href="#scd-sa">Standalone Secure Card Data registration</a></li>
-								<li><a href="#scd-demo">Try it!</a></li>
 								<li><a href="#scd-generator">The Id-generator</a></li>
-								<li><a href="#scd-check">The Check function</a></li>
 								<li><a href="#scd-use">How to use the obtained data</a></li>
 							</ul>
 							</li>
@@ -790,69 +784,11 @@ In order to request an Alias with the <a href="http://saferpay.github.io/jsonapi
     &quot;VerificationValue&quot;: &quot;AAABBIIFmAAAAAAAAAAAAAAAAAA=&quot;
   }
 }
-</code></pre><p>The obtained alias can then be used for subsequent payments, which will be explained later in this chapter!</p></div></div></section><section id="scd-sa"><h2><a name="scd-sa"></a> Standalone Secure Card Data registration</h2><div class="row"><div class="col-md-6"><p>All methods so far described, how a Secure Card Data alias can be obtained <strong>within the authorization process</strong>.
-If you just want to register the card, but not authorize it, you need to use <a href="http://saferpay.github.io/jsonapi/#ChapterAliasStore">the Secure Alias Store</a>.</p><p>The process itself is very similar to the one using <a href="http://saferpay.github.io/jsonapi/#ChapterTransaction">the Transaction Interface</a>. <a href="http://saferpay.github.io/jsonapi/#ChapterAliasStore">The Secure Alias Store</a> has its own hosted card registration form, which can also be <a href="https://saferpay.github.io/sndbx/CssiFrame.html">integrated within an iFrame and styled via CSS</a>.
-However there are two major differnces:</p><ul>
-<li>As already mentioned, the card will only be saved, but not authorized!</li>
-<li>Due to PCI restrictions, the CVC will not be obtained using this method!</li>
-</ul><p>In order to open up the hosted Card Entry Form, you first need to execute the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert Request</a>.</p><div class="info">
-  <p><strong>Tip:</strong> Don't like the style of the Hosted Form? Try our <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
-</div></div></div></section><section><h3>Here are a few hints and tips about the options that are available for the merchant:</h3><div class="row"><div class="col-md-6"><ul>
-<li><strong>ReturnUrls:</strong> For security, Saferpay returns no data to return addresses of the shop. The identification of the payment or the returning customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the ReturnUrls. When a ReturnUrl is called, Saferpay returns the appended parameter, thus enabling identification of the customer.</li>
-</ul></div></div></section><section><h3>In the Response of the Insert Request these parameters are import for further processing:</h3><div class="row"><div class="col-md-6"><ul>
-<li><p><strong>Token:</strong> The Token is mandatory for further steps within the payment process and must therefore be cached. Preferably, it should be linked to the parameters attached to the ReturnUrls. It can thus be easily reassigned.</p>
-</li>
-<li><p><strong>RedirectUrl:</strong> Unlike with the Payment Page, this URL is not used for a redirect. Instead, it is embedded in an HTML Iframe. Within this, a form hosted by Saferpay is displayed. This form is also called the Hosted Entry Form. It can be used to capture sensitive card details in a PCI-compliant manner. You can find out more about the Iframe integration <a href="https://saferpay.github.io/sndbx/CssiFrame.html">in this chapter</a>.</p>
-</li>
-</ul></div></div></section><section><h3>Return to the Shop</h3><div class="row"><div class="col-md-6"><p>Once the registration is completed, the card holder &#8211; depending on the outcome &#8211; is taken back to one of the <strong>ReturnUrls</strong> of the shop. Here, the GET parameters can be read and the <strong>Token</strong> can be assigned to the registration.</p></div></div></section><section><h3>Obtaining the alias</h3><div class="row"><div class="col-md-6"><p>With the <strong>Token</strong>, the can be obtained, by submitting it through the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert">Alias AssertInsert request</a>. The response will give you the alias itself and further information about the card itself, like the masked card number, or the holder name.</p></div></div></section><section id="scd-demo"><h2><a name="scd-demo"></a>Try it out!</h2><div class="row"><div class="col-md-6"><p><a class="demobtn" href="https://saferpay.github.io/sndbx/scd_demo.html">Click here for a live demo!</a></p></div></div></section><section id="scd-generator"><h2><a name="scd-generator"></a> The Id-generator</h2><div class="row"><div class="col-md-6"><p>The ID-generator is used to choose what kind of alias you want to recieve. Right now, there are three options to choose from:</p><ol>
+</code></pre><p>The obtained alias can then be used for subsequent payments, which will be explained later in this chapter!</p></div></div></section><section id="scd-generator"><h2><a name="scd-generator"></a> The Id-generator</h2><div class="row"><div class="col-md-6"><p>The ID-generator is used to choose what kind of alias you want to recieve. Right now, there are three options to choose from:</p><ol>
 <li><strong>MANUAL</strong>: Manual should be used, if you want to define an alias yourself. This is helpful, if the alias has to be in a specific format, like all numeric, or 16 characters long etc. You then have to supply the Id you want to use within the <strong>Id</strong> parameter. <div class="danger"><p><strong>Important:</strong>Make sure, that all your aliases are unique! Saferpay will only authorize the first card to come up inside the database, if there are multiple records with the same alias!</p></div></li>
 <li><strong>RANDOM</strong>: This value will generate a random alpha numerical hash, as your alias-id, for you! No need to supply an id yourself!</li>
 <li><strong>RANDOM_UNIQUE</strong>: Similar to <strong>RANDOM</strong>, it will create a random alpha numerical hash for you. The difference is, that it will check, if the card number (PAN) provided has already saved inside your alias store. If so, Saferpay will return the already existing alias, making sure, that no PAN can be saved twice or more!</li>
-</ol></div></div></section><section id="scd-check"><h2><a name="scd-check"></a> The check-Function</h2><div class="row"><div class="col-md-6"><p>The Check function is used, to check, if an entered card connects to a valid account, or not, before the authorization itself.
-However, you need to consider the following restrictions:</p><ol>
-<li>The check-function is only available with the standalone registration, since the other options do said authorization!</li>
-<li>The check-function <strong>does not</strong> check the solvency of the account. Only an authorization does!</li>
-<li>The check-function is only available for VISA and Mastercard, over SIX Payment Services Acquiring contracts!</li>
-</ol></div></div></section><section><h3>Request</h3><div class="row"><div class="col-md-6"><p>In order, to let a card get checked, you need to set the <strong>Check</strong>-container within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">initial registration-request</a>.
-You need to make sure, to provide a valid terminal Id, with activated acquiring-contracts for VISA and MasterCard.</p><pre><code class="language-json">{
-  &quot;RequestHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
-    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
-    &quot;RequestId&quot;: &quot;[your request id]&quot;,
-    &quot;RetryIndicator&quot;: 0,
-    &quot;ClientInfo&quot;: {
-      &quot;ShopInfo&quot;: &quot;My Shop&quot;,
-      &quot;OsInfo&quot;: &quot;Windows Server 2013&quot;
-    }
-  },
-  &quot;RegisterAlias&quot;: {
-    &quot;IdGenerator&quot;: &quot;RANDOM_UNIQUE&quot;
-  },
-  &quot;Type&quot;: &quot;CARD&quot;,
-  &quot;LanguageCode&quot;: &quot;en&quot;,
-  &quot;ReturnUrls&quot;: {
-    &quot;Success&quot;: &quot;[your shop payment success url]&quot;,
-    &quot;Fail&quot;: &quot;[your shop payment fail url]&quot;
-  },
-  &quot;Check&quot;: {
-    &quot;Type&quot;: &quot;ONLINE&quot;,
-    &quot;TerminalId&quot;: &quot;[your terminal id]&quot;
-  }
-}
-</code></pre></div></div></section><section><h3>Response</h3><div class="row"><div class="col-md-6"><p>If the check was successful, you will get a successful registration-response with the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert">Assert Insert</a>.
-If the chek failed, the registration too will fail and you'll get an error-response:</p><pre><code class="language-json">{
-    &quot;ResponseHeader&quot;: {
-        &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
-        &quot;RequestId&quot;: &quot;55&quot;
-    },
-    &quot;Behavior&quot;: &quot;ABORT&quot;,
-    &quot;ErrorName&quot;: &quot;CARD_CHECK_FAILED&quot;,
-    &quot;ErrorMessage&quot;: &quot;Online card check failed&quot;,
-    &quot;ErrorDetail&quot;: [
-        &quot;online card check failed&quot;
-    ]
-}
-</code></pre></div></div></section><section id="scd-use"><h2><a name="scd-use"></a> How to use the obtained data</h2><div class="row"><div class="col-md-6"><p>The obtained alias can be used in two basic ways, which boil down to one important question:</p><p><strong>Do you want to do a 3D Secure transaction?</strong></p><ul>
+</ol></div></div></section><section id="scd-use"><h2><a name="scd-use"></a> How to use the obtained data</h2><div class="row"><div class="col-md-6"><p>The obtained alias can be used in two basic ways, which boil down to one important question:</p><p><strong>Do you want to do a 3D Secure transaction?</strong></p><ul>
 <li>If yes, then you have to use the <a href="https://saferpay.github.io/sndbx/Integration_trx.html">Transaction Interface</a>. The Hosted Form used there will not open up and instead proceed with the 3D Secure process right away.</li>
 <li>If not, then you can use <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">AuthorizeDirect</a> to authorize the card directly. This is especially intersting, if you want to <a href="https://saferpay.github.io/sndbx/recurring.html#recurring-alias">implement recurring payments, which are described over here</a>.</li>
 </ul><div class="warning">
