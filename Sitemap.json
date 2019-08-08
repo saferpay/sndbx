@@ -69,10 +69,7 @@
       { "Source": "texts/secure_card_data.md", "Title": "Supported Payment Methods", "Target": "scd.html#scd-payment-methods" },
   	   { "Source": "texts/secure_card_data.md", "Title": "Secure Card Data and the Payment Page", "Target": "scd.html#scd-pp" },
       { "Source": "texts/secure_card_data.md", "Title": "Secure Card Data and the Transaction Interface", "Target": "scd.html#scd-trx" },
-      { "Source": "texts/secure_card_data.md", "Title": "Standalone Secure Card Data registration", "Target": "scd.html#scd-sa" },
-      { "Source": "texts/secure_card_data.md", "Title": "Try it!", "Target": "scd.html#scd-demo" },
       { "Source": "texts/secure_card_data.md", "Title": "The Id-generator", "Target": "scd.html#scd-generator" },
-      { "Source": "texts/secure_card_data.md", "Title": "The Check function", "Target": "scd.html#scd-check" },
       { "Source": "texts/secure_card_data.md", "Title": "How to use the obtained data", "Target": "scd.html#scd-use" }
     ]
   },
