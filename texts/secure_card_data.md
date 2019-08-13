@@ -27,6 +27,8 @@ Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive p
 * Bancontact
 * Credit Cards over Masterpass
 
+---
+
 ## <a name="scd-pp"></a> Secure Card Data and the Payment Page
 
 The Payment Page can be used to save a credit card, **after a successful authorization**!
@@ -325,5 +327,5 @@ The obtained alias can be used in two basic ways, which boil down to one importa
 </div>
 
 <div class="warning">
-  <p><strong>NOTE:</strong> Every alias is bound to the CustomerId you provide with the registration-request. All Terminals bound to that id can use the aliases, but not other CustomerIds! There is no way to share the aliases between different CustomerIds</p>
+  <p><strong>NOTE:</strong> Every alias is bound to the CustomerId you provide with the registration-request. All Terminals bound to that id can use the aliases, but not other CustomerIds! There is no way to share the aliases between different CustomerIds!</p>
 </div>
