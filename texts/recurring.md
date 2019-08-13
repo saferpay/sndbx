@@ -44,7 +44,7 @@ With this method, the initial transaction is performed with either the PaymentPa
 
 ### 1. Initial Transaction:
 
-The Initial Transaction can be performed with the [PaymentPage Interface](https://saferpay.github.io/jsonapi/index.html#ChapterPaymentPage) or via the [Transaction Interface](https://saferpay.github.io/jsonapi/index.html#ChapterTransaction), using **Transaction Initialize** and **Transaction Authorize** .
+The Initial Transaction can be performed with the [PaymentPage Interface](Integration_PP.html) or via the [Transaction Interface](Integration_trx.html), using **Transaction Initialize** and **Transaction Authorize** .
 
 This transaction basically captures the credit card details and sets a flag, to mark it as an initial transaction that can be used as a reference for recurring transactions.
 
