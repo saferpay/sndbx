@@ -639,7 +639,7 @@
 <li>SEPA ELV (Not via the Transaction Interface!)</li>
 <li>Bancontact</li>
 <li>Credit Cards over Masterpass</li>
-</ul></div></div></section><section id="scd-pp"><h2><a name="scd-pp"></a> Secure Card Data and the Payment Page</h2><div class="row"><div class="col-md-6"><p>The Payment Page can be used to save a credit card, <strong>after a successful authorization</strong>!
+</ul><hr></div></div></section><section id="scd-pp"><h2><a name="scd-pp"></a> Secure Card Data and the Payment Page</h2><div class="row"><div class="col-md-6"><p>The Payment Page can be used to save a credit card, <strong>after a successful authorization</strong>!
 In order to request an Alias with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>, you first need to set the <strong>RegisterAlias</strong> container within the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>.</p><pre><code class="language-json">{ 
 &quot;RequestHeader&quot;: {
    &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
@@ -852,7 +852,7 @@ If the chek failed, the registration too will fail and you'll get an error-respo
 </ul><div class="warning">
   <p><strong>NOTE:</strong> Bancontact only supports the former, while Maestro has some cards, that also are 3D Secure only!</p>
 </div><div class="warning">
-  <p><strong>NOTE:</strong> Every alias is bound to the CustomerId you provide with the registration-request. All Terminals bound to that id can use the aliases, but not other CustomerIds! There is no way to share the aliases between different CustomerIds</p>
+  <p><strong>NOTE:</strong> Every alias is bound to the CustomerId you provide with the registration-request. All Terminals bound to that id can use the aliases, but not other CustomerIds! There is no way to share the aliases between different CustomerIds!</p>
 </div></div></div></section>
 
 			</main>
