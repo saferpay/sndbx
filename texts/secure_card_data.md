@@ -235,14 +235,11 @@ Once the registration is completed, the card holder – depending on the outcome
 ### Obtaining the alias
 
 With the **Token**, the can be obtained, by submitting it through the [Alias AssertInsert request](http://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert). The response will give you the alias itself and further information about the card itself, like the masked card number, or the holder name.
-
-===================================================================================================================
  
 ## <a name="scd-demo"></a>Try it out!
 
 <a href="https://saferpay.github.io/sndbx/scd_demo.html" class="demobtn">Click here for a live demo!</a>
 
-===================================================================================================================
 
 ## <a name="scd-check"></a> The check-Function
 
