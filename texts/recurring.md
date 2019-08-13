@@ -40,6 +40,10 @@ Recurring payments are supported by the following payment means:
 
 With this method, the initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
 
+<div class="warning">
+  <p><strong>NOTE:</strong> Due to the PSD2, you must perform 3D Secure with the first (initial) transaction. However, if you do 3D Secure with the initial transaction, LiabilityShift is also granted for the recurring transactions.</p>
+</div>
+
 
 ### 1. Initial Transaction:
 
@@ -91,13 +95,9 @@ POST /Payment/v1/PaymentPage/Initialize
 }
 ```
 
-<div class="warning">
-  <p><strong>NOTE:</strong> You must perform the initial transaction with your normal eCommerce TerminalID. It is more secure if the cardholder goes through all security measures like, entering the CVC and performing the 3D Secure authentication process. These security measures are not applicable with the recurring transaction as the cardholder is not present. However, if you do 3D Secure with the initial transaction, LiabilityShift is also granted for the recurring transactions.</p>
-</div>
-
  
 <div class="info">
-  <p><strong>TIPP:</strong> If you want to validate the cardholder without charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)</p>
+  <p><strong>TIPP:</strong> If you want to validate the cardholder without charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)! However <strong>DO NOT</strong> cancel this transaction! It must persist, in order to reference it within the recurring transaction.</p>
 </div>
 
 
