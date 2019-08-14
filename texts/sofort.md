@@ -9,6 +9,7 @@ The handling of SOFORT payments with Saferpay requires:
 *	A corresponding licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 *	Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 *	A valid acceptance agreement for SOFORT must be present.
+* Sofort can only be used via the [Payment Page](Integration_PP.html). Please follow the general guide there!
 
  For SOFORT activation Saferpay needs:
  
