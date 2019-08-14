@@ -8,6 +8,7 @@ This chapter will handle all specifics involved with the integration of the paym
 * At least one active Saferpay terminal via which payment can be carried out and the associated Saferpay TerminalId.
 *	A valid TWINT contract
 *	JSON API Version 1.7 or later 
+* Twint can only be used via the [Payment Page](Integration_PP.html). Please follow the general guide there!
 
 ## <a name="twint-general"></a> General specifics
 
