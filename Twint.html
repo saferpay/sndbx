@@ -625,6 +625,7 @@
 <li>At least one active Saferpay terminal via which payment can be carried out and the associated Saferpay TerminalId.</li>
 <li>A valid TWINT contract</li>
 <li>JSON API Version 1.7 or later</li>
+<li>Twint can only be used via the <a href="Integration_PP.html">Payment Page</a>. Please follow the general guide there!</li>
 </ul></div></div></section><section id="twint-general"><h2><a name="twint-general"></a> General specifics</h2><div class="row"><div class="col-md-6"><ul>
 <li><strong>Reservation time</strong>: Unlike normal credit card transactions, where a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">capture</a> could be attempted after the normal reservation time, TWINT does only offer a maximum timeframe of 7 days! After that the transaction will be discarded and a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">capture</a> <strong>will not initiate the money-transfer with the next batch-close</strong>, so make sure, to <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">capture</a> your transactions within this time limit!</li>
 <li><strong>Refund times</strong>: Due to processing limitations, a refund can fail, if it is executed earlier than two hours after the initial transaction. The initial transaction needs to be processed first, until a refund can be executed, which happens within said two hours!</li>
