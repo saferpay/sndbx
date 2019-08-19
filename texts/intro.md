@@ -185,15 +185,71 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
   <p><strong>Tip:</strong> If you want to keep the amount of <strong>Challanged</strong> transactions as llow and thus your conversion-rate as high as possible, please make sure to submit a <strong>BillingAddress</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPgae Initialize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> requests. This information will then be used for the sccoring, as mentioned earlier, to ensure a frictionless transaction and thus a smooth experience for your customers!</p>
 </div>
 
-## <a name="psd2"></a> 3D Secure and PSD2
+## <a name="psd2"></a> PSD2 and 3D Secure
 
-As of September 14th 2019, all credit card transactions inside the European Union must be secured by some form of <strong>Strong Consumer Authentication (SCA)</strong>, as defined inside the **Payment Services Directive**. In order to provide a compliant solution for our customers, Saferpay will automatically provide 3D Secure v2 to all transactions via the <a href="Integration_PP.html">Payment Page</a> or <a href="Integration_trx.html">Transaction Interface</a> flows. Therefore 3DS will be <strong>mandatory</strong> for all merchants doing business within the EU. That also applies to merchants, that have their company HQ outside the European Union!
-
-Exceptions being Recurring Transactions, where the first (initial) transaction has been executed with 3D Secure and Mail Phone Order transactions.
+As of September 14th 2019, all credit card transactions inside the European Union must be secured by some form of <strong>Strong Consumer Authentication (SCA)</strong>, as defined inside the **Payment Services Directive**. In order to provide a compliant solution for our customers, Saferpay will automatically provide 3D Secure v2 to all transactions via the <a href="Integration_PP.html">Payment Page</a> or <a href="Integration_trx.html">Transaction Interface</a> flows. Therefore 3DS will be <strong>mandatory</strong> for all merchants doing business within the EU. 
 
 <div class="info">
   <p><strong>Tip:</strong> As a rule of thumb, ask yourself the following question: Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: Do 3D Secure!</p>
 </div>
+
+However, there are excemptions and to give you an overview of what flows need and what do need SC, please refer to the following tables:
+
+### Transactions and flows, that DO need SCA
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th class="text-center">Case</th>
+      <th class="text-center">Description</th>
+      <th class="text-center">Flows/Requests</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Customer Initiated Transactions</td>
+      <td>This is your standard transaction-type. The card holder comes to the shop and orders something. The card holer is present during these transactions and as mentioned above, they must be covered with SCA and thus 3D Secure!</td>
+      <td><a href="Integration_PP.html">Payment Page Integration</a>, <a href="Integration_trx.html">Transaction interface Integration</a></td>
+    </tr>
+    <tr>
+      <td>Initial Recurring Transaction</td>
+      <td>This is a special type of Customer Initiated Transaction. With PSD2 the first (initial) transaction within a recurring-chain needs to be covered by SCA. Each subsequent transaction then references this transaction. </td>
+      <td><a href="recurring.html">Recurring Integration</a>, <a href="Integration_PP.html">Payment Page Integration</a>, <a href="Integration_trx.html">Transaction Interface Integration</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> & <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> & <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### Transactions and flows, that DO NOT need SCA
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th class="text-center">Case</th>
+      <th class="text-center">Description</th>
+      <th class="text-center">Flows/Requests</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Merchant Initiated Transactions</td>
+      <td>Basically all transactions, that are triggered by Merchant, with the card holders consent, while not being present. <strong>MITs do not offer LiabilityShift!</strong></td>
+      <td><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a> e.g. using <a href="https://saferpay.github.io/sndbx/scd.html">an alias</a></td>
+    </tr>
+    <tr>
+      <td>Subsequent Recurring Transaction</td>
+      <td>
+        These are transactions, that follow the initial recurring transaction (see above) and are a special type of Merchant initiated Transaction (see above).. They must reference the initial transaction. Note, that due to that, they effectively also reference to the LiabilityShift of the initial transaction, giving an additional layer of protection for the merchant, by effectively granting subsequent LiabilityShift.
+        <div class="warning">
+          <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+          <p>
+            <strong>Important:</strong> The subsequent LiabilityShift may be rejected by the issuing bank. Also changing the amount may cause rejection of LiabilityShift, or even the denial of an authorization alltogether. A new initial transaction may be executed instead, starting a new recurring-chain!
+          </p>
+        </div>
+      </td>
+      <td><a href="recurring.html">Recurring Integration</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeReferenced">Authorize Referenced</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ## <a name="dcc"></a> Dynamic Currency Conversion
 
