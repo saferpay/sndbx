@@ -7,7 +7,7 @@
       { "Source": "texts/intro.md", "Title": "Requirements", "Target": "index.html#intro-requirement" },
       { "Source": "texts/intro.md", "Title": "Data Security and PCI DSS", "Target": "index.html#pci" },
       { "Source": "texts/intro.md", "Title": "3-D Secure", "Target": "index.html#3ds" },
-     { "Source": "texts/intro.md", "Title": "3D Secure and PSD2", "Target": "index.html#psd2" },
+     { "Source": "texts/intro.md", "Title": "PSD2 and 3D Secure", "Target": "index.html#psd2" },
       { "Source": "texts/intro.md", "Title": "Dynamic Currency Conversion", "Target": "index.html#dcc" },
       { "Source": "texts/intro.md", "Title": "Versioning", "Target": "index.html#version" },
       { "Source": "texts/intro.md", "Title": "Payment Method Features", "Target": "index.html#pm-functions" },
