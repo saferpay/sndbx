@@ -200,7 +200,7 @@ However, there are excemptions and to give you an overview of what flows need an
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th class="text-center">Case</th>
+      <th class="text-center" style="width: 140px;">Case</th>
       <th class="text-center">Description</th>
       <th class="text-center">Flows/Requests</th>
     </tr>
@@ -224,7 +224,7 @@ However, there are excemptions and to give you an overview of what flows need an
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th class="text-center">Case</th>
+      <th class="text-center" style="width: 140px;">Case</th>
       <th class="text-center">Description</th>
       <th class="text-center">Flows/Requests</th>
     </tr>
