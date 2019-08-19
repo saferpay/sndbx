@@ -207,12 +207,12 @@ However, there are excemptions and to give you an overview of what flows need an
   </thead>
   <tbody>
     <tr>
-      <td>Customer Initiated Transactions</td>
+      <td class="text-center">Customer Initiated Transactions</td>
       <td>This is your standard transaction-type. The card holder comes to the shop and orders something. The card holer is present during these transactions and as mentioned above, they must be covered with SCA and thus 3D Secure!</td>
       <td><a href="Integration_PP.html">Payment Page Integration</a>, <a href="Integration_trx.html">Transaction interface Integration</a></td>
     </tr>
     <tr>
-      <td>Initial Recurring Transaction</td>
+      <td class="text-center">Initial Recurring Transaction</td>
       <td>This is a special type of Customer Initiated Transaction. With PSD2 the first (initial) transaction within a recurring-chain needs to be covered by SCA. Each subsequent transaction then references this transaction. </td>
       <td><a href="recurring.html">Recurring Integration</a>, <a href="Integration_PP.html">Payment Page Integration</a>, <a href="Integration_trx.html">Transaction Interface Integration</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> & <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> & <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a></td>
     </tr>
@@ -231,12 +231,12 @@ However, there are excemptions and to give you an overview of what flows need an
   </thead>
   <tbody>
     <tr>
-      <td>Merchant Initiated Transactions</td>
+      <td class="text-center">Merchant Initiated Transactions</td>
       <td>Basically all transactions, that are triggered by Merchant, with the card holders consent, while not being present. <strong>MITs do not offer LiabilityShift!</strong></td>
       <td><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a> e.g. using <a href="https://saferpay.github.io/sndbx/scd.html">an alias</a></td>
     </tr>
     <tr>
-      <td>Subsequent Recurring Transaction</td>
+      <td class="text-center">Subsequent Recurring Transaction</td>
       <td>
         These are transactions, that follow the initial recurring transaction (see above) and are a special type of Merchant initiated Transaction (see above).. They must reference the initial transaction. Note, that due to that, they effectively also reference to the LiabilityShift of the initial transaction, giving an additional layer of protection for the merchant, by effectively granting subsequent LiabilityShift.
         <div class="warning">
@@ -247,6 +247,11 @@ However, there are excemptions and to give you an overview of what flows need an
         </div>
       </td>
       <td><a href="recurring.html">Recurring Integration</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeReferenced">Authorize Referenced</a></td>
+    </tr>
+    <tr>
+      <td class="text-center">Mail Phone Order</td>
+      <td>Transactions, where the payment means are provided to the merchant via phone, or mail. <strong>MPO transactions are out-of-scope of PSD2! SCA does not apply here!</strong></td>
+      <td>N/A</td>
     </tr>
   </tbody>
 </table>
