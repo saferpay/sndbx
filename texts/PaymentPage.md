@@ -39,7 +39,14 @@ The process begins with the [PaymentPage Initialize](https://saferpay.github.io/
 
 + **"Notification"=>"NotifyUrl":** Although it is entirely optional, we strongly recommend integrating the **NotifyUrl** (see Notification container). With **NotifyUrl**, a notification of the shop in the event of a successful payment is made via a http-GET, regardless of connection problems that may prevent the customer getting back to the **SuccessUrl**. Without **NotifyUrl**, such an authorisation would be present in Saferpay Backoffice, however the shop wouldn’t have received any feedback. Technically speaking, **NotifyUrl** notifies the merchant system, as a redundant measure. In contrast to the **Success URL**, **NotifyUrl** is called up directly via HTTP GET by the Saferpay servers upon successful payment and not the client. It should be noted that the notification via **NotifyUrl** takes place **in addition to the Success URL**. Moreover, Saferpay expects the merchant server to answer the call with a HTTP status code 200(OK). If no (e.g. a Timeout), or a different status code (e.g. http 500 ) is received, Saferpay will call the **NotifyUrl** up to two times more, for a total of three times, to ensure, that the previous error is not caused by a temporal problem. Note, that the merchants application needs to differentiate between the **SuccessUrl** and **NotifyUrl**, to prevent the application from processing the same transaction two, or more times. Finally, it should also be noted, that the **NotifyUrl** also does not return any data to the merchants application, except your own parameters (See **ReturnUrls** above!)!
 <div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> The usage of <strong>the NotifyUrl</strong> is strongly recommended! Only leave it out, if your system cannot recieve external requests!</p>
+</div>
+<div class="info">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Note:</strong> The NotifyUrl is only called, if the transaction us successful!
+  </p>
 </div>
 
 + **"Payment"=>"OrderId":** This optinal parameter is important to keep track of all your transactions in later processes. This ID will be forwarded, so it will show up inside the Saferpay Backoffice (As the Reference number!) and on your reconciliation-files. This will help associate all the transactions for your accounting-department.
