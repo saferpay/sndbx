@@ -23,6 +23,10 @@ In this Chapter you will find a list of payment means you can use for testing pu
         <td style="border-left: 1px solid #ddd;">Card <strong>"enrolled"</strong>. This card is subjected to the full 3D Secure authentication process! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> true</td>
       </tr>
       <tr>
+        <td style="word-break: unset;">9010101052000002</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br />    <strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
         <td style="word-break: unset;">9010100052101000</td>
         <td style="border-left: 1px solid #ddd;">Card <strong>"enrolled"</strong>. Bank rejects liability shift despite a successful authentication!<br /><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> true <br />
           <div class="warning">
@@ -523,10 +527,6 @@ In this Chapter you will find a list of payment means you can use for testing pu
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td style="word-break: unset;">9010101052000002</td>
-        <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br />    <strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
-      </tr>
       <tr>
         <td style="word-break: unset;">9030101052000008</td>
         <td style="border-left: 1px solid #ddd;">Card <strong>"not enrolled"</strong>. Bank grants liability shift! <br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
