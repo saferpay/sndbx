@@ -135,7 +135,7 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
 
 
 <div class="info">
-  <p><strong>Tip:</strong> Only want to accept transactions with LiabilityShift? Check out the <strong>Condition</strong>-flag, that can be set within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> requests, to control  whether an authorization should be performed, or not, in the first place.</p>
+  <p><strong>Tip:</strong> Only want to accept transactions with LiabilityShift? Check out the <strong>Condition</strong>-flag, that can be set within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> requests, to control  whether an authorization should be performed, or not, in the first place. <strong>Important Note:</strong> Issuers may reject the LiabilityShift with the authorization itself. The Condition-parameter does not cover such cases. Please still process the parameters accordingly!</p>
 </div>
 <div class="warning">
   <p><strong>Attention:</strong> These are <strong>only recommendations!</strong> Your credit card contract can dictate otherwise. Please contact your acquirer/card processor for further information!</p>
