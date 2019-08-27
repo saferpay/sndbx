@@ -118,7 +118,7 @@ Based on the data obtained, it is to be decided whether or not a transaction is 
 
 ## <a name="pp-captcancel"></a> 5 - Capture or Cancel
 
-Subsequently, the transaction will be finalised via [**Capture**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or aborted via [**Cancel**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel).For this, the transaction identifier **Id** is required. Please refer to the notes [in the payment methods chapter](index.html#pm-functions), to check, if and when a **Capture** is necessary, and whether a **Cancel** can still be executed.
+Subsequently, the transaction will be finalised via [**Capture**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or aborted via [**Cancel**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel).For this, the transaction identifier **Id** is required. Please refer to the notes [in the payment methods chapter](index.html#pm-functions), to check, if and when a **Capture** is necessary, and whether a **Cancel** can still be executed. Alternatively, you can also check the **Transaction.Status** parameter, within the [PaymentPage Assert Response](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert). If the status is **AUTHORIZED** a [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) needs to be performed. If the status is **CAPTURED** you do not need to finalize the payment.
 
 Once these steps are complete, the transaction is completed.
 
