@@ -193,7 +193,7 @@ As of September 14th 2019, all credit card transactions inside the European Unio
   <p><strong>Tip:</strong> As a rule of thumb, ask yourself the following question: Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: Do 3D Secure!</p>
 </div>
 
-However, there are excemptions and to give you an overview of what flows need and what do need SC, please refer to the following tables:
+However, there are excemptions and to give you an overview of what flows need and what do not need SC, please refer to the following tables:
 
 ### Transactions and flows, that DO need SCA
 
