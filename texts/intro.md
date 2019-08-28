@@ -216,6 +216,11 @@ However, there are excemptions and to give you an overview of what flows need an
       <td>This is a special type of Customer Initiated Transaction. With PSD2 the first (initial) transaction within a recurring-chain needs to be covered by SCA. Each subsequent transaction then references this transaction. </td>
       <td><a href="recurring.html">Recurring Integration</a>, <a href="Integration_PP.html">Payment Page Integration</a>, <a href="Integration_trx.html">Transaction Interface Integration</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> & <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> & <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a></td>
     </tr>
+    <tr>
+      <td class="text-center">Saved Cards</td>
+      <td>This is specifically for casxes, where the card itself has been saved, but not authorized, during the first user-interaction. While you are still allowed to just save cards, you have to make sure, that the first real transaction is covered by SCA! <strong>You are no longer allowed to just save cards and then do MIT (see below) transactions right away!</strong></td>
+      <td>a href="scd.html#scd-sa">Standalone Secure Card Data registration</a>, <a href="https://saferpay.github.io/jsonapi/#ChapterAliasStore">Secure Card Data Store</a></td>
+    </tr>
   </tbody>
 </table>
 
