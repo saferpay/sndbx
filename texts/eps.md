@@ -10,6 +10,7 @@ The handling of eps payments with Saferpay requires:
 *	Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 *	A valid acceptance agreement for eps must be present.
 * eps is only available via the [PaymentPage flow](Integration_PP.html)!
++ **NotifyUrl:** The NotifyUrl is **mandatory**, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!
 
  For eps activation Saferpay needs:
  
