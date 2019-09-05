@@ -274,6 +274,7 @@
 							<li class="active">
 							<a href="ideal.html">iDeal</a>
 							<ul class="nav">
+								<li><a href="#ideal-requirement">Requirements</a></li>
 								<li><a href="#ideal-timeout">Session Timeouts</a></li>
 							</ul>
 							</li>
@@ -582,6 +583,7 @@
 							<li class="active">
 							<a href="ideal.html">iDeal</a>
 							<ul class="nav">
+								<li><a href="#ideal-requirement">Requirements</a></li>
 								<li><a href="#ideal-timeout">Session Timeouts</a></li>
 							</ul>
 							</li>
@@ -620,7 +622,16 @@
 				</div>
 
 				
-<section><h1>iDeal</h1><div class="row"><div class="col-md-6"><p>iDeal transactions can also be processed via the Saferpay JSON API. However, as iDeal is a third party provider, there are a few things to consider.</p></div></div></section><section id="ideal-timeout"><h2><a name="ideal-timeout"></a> Session Timeouts</h2><div class="row"><div class="col-md-6"><p>Due to special technical restrictions by iDeal, you have to be very careful using it in time-sensitive scenarios.
+<section><h1>iDeal</h1><div class="row"><div class="col-md-6"><p>iDeal transactions can also be processed via the Saferpay JSON API. However, as iDeal is a third party provider, there are a few things to consider.</p></div></div></section><section id="ideal-requirement"><h2><a name="ideal-requirement"></a> Requirements</h2><div class="row"><div class="col-md-6"><p>The handling of iDeal payments with Saferpay requires:</p><ul>
+<li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
+<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
+<li>A valid iDeal merchant account.</li>
+<li>iDeal is only available via the <a href="Integration_PP.html">PaymentPage flow</a>!</li>
+</ul><ul>
+<li><strong>NotifyUrl:</strong> The NotifyUrl is <strong>mandatory</strong>, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!</li>
+</ul><div class="warning">
+  <p><strong>Attention:</strong> For iDeal activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your iDeal merchant account ID and the desired currency.</p>
+</div></div></div></section><section id="ideal-timeout"><h2><a name="ideal-timeout"></a> Session Timeouts</h2><div class="row"><div class="col-md-6"><p>Due to special technical restrictions by iDeal, you have to be very careful using it in time-sensitive scenarios.
 iDeal-transactions usually are finished within the Saferpay Payment Page timeout of 20 minutes.
 However, due to processing-limitations, iDeal response-times can be way higher than this time frame.
 So if your session runs into a timeout during this window, it could be, that the transaction is successful, even though your system does not recognize it as such!
