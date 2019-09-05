@@ -14,4 +14,5 @@ Alipay transactions can also be processed via the Saferpay JSON API. However, as
 + **Refunds:** A refund cannot be cancelled, so make sure, that you really want to execute it.
 + **Refunds #2:** Alipay does not need a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>! Thus the **CaptureId**, needed for a Refund, is returned within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>!
 + **OrderId:** The OrderId is limited to 64 characters.
++ **NotifyUrl:** The NotifyUrl is **mandatory**, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!
 
