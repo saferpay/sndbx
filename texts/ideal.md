@@ -12,7 +12,7 @@ The handling of iDeal payments with Saferpay requires:
 + **NotifyUrl:** The NotifyUrl is **mandatory**, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!
 
 <div class="warning">
-  <p><strong>Attention:</strong> For iDeal activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your iDeal merchant account ID and the desired currency.</p>
+  <p><strong>Attention:</strong> For iDeal activation on the Saferpay terminal, please contact your sales contact.</p>
 </div>
 
 ## <a name="ideal-timeout"></a> Session Timeouts
