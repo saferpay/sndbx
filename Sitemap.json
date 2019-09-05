@@ -308,6 +308,7 @@
   "Source": "texts/ideal.md",
   "Target": "ideal.html",
   "Subsites": [
+      { "Source": "texts/ideal.md", "Title": "Requirements", "Target": "ideal.html#ideal-requirement" },
       { "Source": "texts/ideal.md", "Title": "Session Timeouts", "Target": "ideal.html#ideal-timeout" }
     ] 
    },
