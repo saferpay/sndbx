@@ -11,6 +11,7 @@ The handling of ePrzelewy payments with Saferpay requires:
 * A valid ePrzelewy contract.
 * The <strong>Payer.DeliveryAddress.Email</strong>-parameter is mandatory and needs to be set, with the initial request, or captured through the respective form.
 * ePrzelewy is only available via the [PaymentPage flow](Integration_PP.html)!
++ **NotifyUrl:** The NotifyUrl is **mandatory**, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!
 
 <div class="warning">
   <p><strong>Attention:</strong> For ePrzelewy activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your pRzelewy merchant account ID and the desired currency.</p>
