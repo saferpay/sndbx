@@ -1,6 +1,20 @@
 # iDeal
 iDeal transactions can also be processed via the Saferpay JSON API. However, as iDeal is a third party provider, there are a few things to consider.
 
+## <a name="ideal-requirement"></a> Requirements
+
+The handling of iDeal payments with Saferpay requires:
+
+* The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
+* Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
+* A valid iDeal merchant account.
+* iDeal is only available via the [PaymentPage flow](Integration_PP.html)!
++ **NotifyUrl:** The NotifyUrl is **mandatory**, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!
+
+<div class="warning">
+  <p><strong>Attention:</strong> For iDeal activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your iDeal merchant account ID and the desired currency.</p>
+</div>
+
 ## <a name="ideal-timeout"></a> Session Timeouts
 
 Due to special technical restrictions by iDeal, you have to be very careful using it in time-sensitive scenarios.
