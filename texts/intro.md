@@ -219,7 +219,7 @@ However, there are excemptions and to give you an overview of what flows need an
     <tr>
       <td class="text-center">Saved Cards</td>
       <td>This is specifically for casxes, where the card itself has been saved, but not authorized, during the first user-interaction. While you are still allowed to just save cards, you have to make sure, that the first real transaction is covered by SCA! <strong>You are no longer allowed to just save cards and then do MIT (see below) transactions right away!</strong></td>
-      <td>a href="scd.html#scd-sa">Standalone Secure Card Data registration</a>, <a href="https://saferpay.github.io/jsonapi/#ChapterAliasStore">Secure Card Data Store</a></td>
+      <td><a href="scd.html#scd-sa">Standalone Secure Card Data registration</a>, <a href="https://saferpay.github.io/jsonapi/#ChapterAliasStore">Secure Card Data Store</a></td>
     </tr>
   </tbody>
 </table>
