@@ -66,7 +66,7 @@ Even with an SAQ-A EP certification, some processes are still not allowed. The f
 ## <a name="3ds"></a> 3-D Secure
 
 <div class="info">
-  <p><strong>New:</strong> Introducing 3D Secure 2 for Visa and Mastercard. Less hassle for customers, a higher conversion rate for you! Already have a Saferpay Integration with the JSON-API <strong>and 3D Secure</strong>? Great! Saferpay will rollout 3DSv2 automatically for you starting in May 2019, with no changes needed!</p>
+  <p><strong>New:</strong> Introducing 3-D Secure 2 for Visa and Mastercard. Less hassle for customers, a higher conversion rate for you! Already have a Saferpay Integration with the JSON-API <strong>and 3-D Secure</strong>? Great! Saferpay will rollout 3DSv2 automatically for you starting in May 2019, with no changes needed!</p>
 </div>
 
 3-D Secure – 3DS for short – is supported by Visa (Visa Secure), Mastercard (Mastercard ID check), American Express (SafeKey), Diners Club (ProtectBuy) and others. Via liability shift, merchants that offer the 3-D Secure process benefit from fewer payment defaults and from increased security with respect to credit card acceptance. It does not matter whether the card holder (CH) participates in this process or not.
@@ -79,8 +79,8 @@ A transaction with the 3-D Secure process proceeds as follows:
 2.	Saferpay checks whether the CH uses the 3DS process or not. If yes, she or he will be required to authenticate her or himself to her or his bank. If not, the payment can be carried out without authentication.
 3.	The 3DS request will be forwarded to the card-issuing bank via the CH’s Internet browser. 
 4.  The Issuing bank, or its 3DS provider will then perform a so called scoring. This scoring will determine the fraud risk, which will lead to one of two outcomes:
-  1. <strong>Frictionless:</strong> The fraud risk is low and 3D Secure will proceed without user interaction. The bank will be the liable entity. This also applies to all orders smaller, or equal to 30 Euro, or equivalent.
-  2. <strong>Challanged:</strong> The fraud risk is high, thus the card holder needs to authenticate him/herself, by using a password and mTAN, an App, or even the fingerprint-sensor on his phone. If 3D Secure was successfull, the bank will still be the liable entity.
+  1. <strong>Frictionless:</strong> The fraud risk is low and 3-D Secure will proceed without user interaction. The bank will be the liable entity. This also applies to all orders smaller, or equal to 30 Euro, or equivalent.
+  2. <strong>Challanged:</strong> The fraud risk is high, thus the card holder needs to authenticate him/herself, by using a password and mTAN, an App, or even the fingerprint-sensor on his phone. If 3-D Secure was successfull, the bank will still be the liable entity.
 5.	The result of this authentication is sent back to Saferpay.
 6.	Saferpay checks the result and ensures that no manipulation has occurred.
 7.	Saferpay links the 3DS data to the token used by the JSON API and uses this data automatically when authorising the card.
@@ -95,27 +95,27 @@ The merchant finalizes the order and the money gets charged from the card holder
 After he recieved his money, the merchant ships the goods to the given destination.
 
 After three weeks the merchant gets the information, that this transaction is a fraud-case and that the actual card holder initiated a chargeback.
-Here is what happens, either with, or without 3D Secure/LiabilityShift:
+Here is what happens, either with, or without 3-D Secure/LiabilityShift:
 
-1. **Without 3D Secure/Liabilityshift:** 
+1. **Without 3-D Secure/Liabilityshift:** 
 The Money gets transfered back, from the merchants bank account, to the original card holder. The merchant, in this case, is liable for the damage that has been caused and even though the goods already have been shipped (probably to a criminal subject), he has to pay the full amount back to the card holder. So he carries the whole risk and the cost in a fraud-case!
 
 <div class="danger">
-  <p><strong>Attention:</strong> A high amount of chargebacks can also cause penalties from the brands (E.g. VISA and MasterCard) directly! So it can be, that they will force you -the merchant- into using 3D Secure, if the fraud-rate is too high!</p>
+  <p><strong>Attention:</strong> A high amount of chargebacks can also cause penalties from the brands (E.g. VISA and MasterCard) directly! So it can be, that they will force you -the merchant- into using 3-D Secure, if the fraud-rate is too high!</p>
 </div>
 
-2. **With 3D Secure/LiabilityShift:**
+2. **With 3-D Secure/LiabilityShift:**
 Like the name suggests, the liability gets shiftet!
 Shifted from the merchant, to the bank. So in case of fraud, the chargeback gets completely carried by the issuer.
 The card holder will get his money back, **BUT**, unlike before, the merchant can keep the charged money. The risk and the cost is carried by the issuer in this case, negating the costs on the merchant side.
 
-### 3D Secure on API-Level
+### 3-D Secure on API-Level
 
 The Saferpay JSON-API does return all necessary information inside the Liability-Container, when using [Transaction Authorize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize) or [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert).
 The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>. Furthermore <strong>LiableEntity</strong> will provide information about who will be liable in case of fraud.
 
 <div class="warning">
-  <p><strong>Attention:</strong> Only the <a href="Integration_trx.html">Transaction interface</a> and <a href="Integration_PP.html">Payment Page</a> processes do support 3D Secure! Please keep that in mind, when implementing Saferpay!</p>
+  <p><strong>Attention:</strong> Only the <a href="Integration_trx.html">Transaction interface</a> and <a href="Integration_PP.html">Payment Page</a> processes do support 3-D Secure! Please keep that in mind, when implementing Saferpay!</p>
 </div>
 
 ```json
@@ -155,13 +155,13 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
       <td class="text-center"><strong>true</strong></td>
       <td class="text-center"><strong>true</strong></td>
       <td>Everything is okay. <strong>Continue transaction</strong></td>
-      <td>A full 3D Secure authentication has been performed by the card holder. This is the best case scenario</td>
+      <td>A full 3-D Secure authentication has been performed by the card holder. This is the best case scenario</td>
     </tr>
     <tr>
       <td class="text-center"><strong>false</strong></td>
       <td class="text-center"><strong>true</strong></td>
       <td><strong>Continue transaction</strong></td>
-      <td>In some cases, it can be, that the card holders bank grants the LiabilityShift. For instance, some banks only require one 3D Secure every 24 hours and the others will be approved, in order to speed up the payment process. The LiabilityShift is still granted, however high risk businesses (Jewelery, Electronics, ect.) may want to stick to the highest level of security. It is your (The merchant) decision, if you want to accept these transactions, or if you want a full authentication.</td>
+      <td>In some cases, it can be, that the card holders bank grants the LiabilityShift. For instance, some banks only require one 3-D Secure every 24 hours and the others will be approved, in order to speed up the payment process. The LiabilityShift is still granted, however high risk businesses (Jewelery, Electronics, ect.) may want to stick to the highest level of security. It is your (The merchant) decision, if you want to accept these transactions, or if you want a full authentication.</td>
     </tr>
     <tr>
       <td class="text-center"><strong>true</strong></td>
@@ -179,18 +179,18 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
 </table>
 
 <div class="warning">
-  <p><strong>Attention:</strong> If you intend on doing a dummy authorization, using 3D Secure as a card holder verification measure, we do not recommend an amount < 1,-! Small amounts often get rejected by issuing banks, thus causing issues, with amount 0 not being possible at all.</p>
+  <p><strong>Attention:</strong> If you intend on doing a dummy authorization, using 3-D Secure as a card holder verification measure, we do not recommend an amount < 1,-! Small amounts often get rejected by issuing banks, thus causing issues, with amount 0 not being possible at all.</p>
 </div>
 <div class="info">
   <p><strong>Tip:</strong> If you want to keep the amount of <strong>Challanged</strong> transactions as llow and thus your conversion-rate as high as possible, please make sure to submit a <strong>BillingAddress</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPgae Initialize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> requests. This information will then be used for the sccoring, as mentioned earlier, to ensure a frictionless transaction and thus a smooth experience for your customers!</p>
 </div>
 
-## <a name="psd2"></a> PSD2 and 3D Secure
+## <a name="psd2"></a> PSD2 and 3-D Secure
 
-As of September 14th 2019, all credit card transactions inside the European Union must be secured by some form of <strong>Strong Consumer Authentication (SCA)</strong>, as defined inside the **Payment Services Directive**. In order to provide a compliant solution for our customers, Saferpay will automatically provide 3D Secure v2 to all transactions via the <a href="Integration_PP.html">Payment Page</a> or <a href="Integration_trx.html">Transaction Interface</a> flows. Therefore 3DS will be <strong>mandatory</strong> for all merchants doing business within the EU. 
+As of September 14th 2019, all credit card transactions inside the European Union must be secured by some form of <strong>Strong Consumer Authentication (SCA)</strong>, as defined inside the **Payment Services Directive**. In order to provide a compliant solution for our customers, Saferpay will automatically provide 3-D Secure v2 to all transactions via the <a href="Integration_PP.html">Payment Page</a> or <a href="Integration_trx.html">Transaction Interface</a> flows. Therefore 3DS will be <strong>mandatory</strong> for all merchants doing business within the EU. 
 
 <div class="info">
-  <p><strong>Tip:</strong> As a rule of thumb, ask yourself the following question: Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: Do 3D Secure!</p>
+  <p><strong>Tip:</strong> As a rule of thumb, ask yourself the following question: Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: Do 3-D Secure!</p>
 </div>
 
 However, there are excemptions and to give you an overview of what flows need and what do not need SC, please refer to the following tables:
@@ -208,7 +208,7 @@ However, there are excemptions and to give you an overview of what flows need an
   <tbody>
     <tr>
       <td class="text-center">Customer Initiated Transactions</td>
-      <td>This is your standard transaction-type. The card holder comes to the shop and orders something. The card holer is present during these transactions and as mentioned above, they must be covered with SCA and thus 3D Secure!</td>
+      <td>This is your standard transaction-type. The card holder comes to the shop and orders something. The card holer is present during these transactions and as mentioned above, they must be covered with SCA and thus 3-D Secure!</td>
       <td><a href="Integration_PP.html">Payment Page Integration</a>, <a href="Integration_trx.html">Transaction interface Integration</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> & <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> & <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a></td>
     </tr>
     <tr>
