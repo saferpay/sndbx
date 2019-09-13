@@ -36,7 +36,7 @@ As mentioned before, SEPA does not offer direct refunds via the processing itsel
 
 These refunds need then to be exported into a special XML-File, which can be done right there inside the Backoffice.
 The created XML-file can then be uploaded into your online banking-portal, which executes these refunds in a batch, eliminating the need, of doing them all manually.
-You can <a href="https://raw.githubusercontent.com/saferpay/sndbx/master/assets/other/ManualBankRefund-2019-09-13-10-50-28-Example_File.xml" download>download an example-file here</a>.
+You can <a href="https://github.com/saferpay/sndbx/blob/master/assets/other/ManualBankRefund-2019-09-13-10-50-28-Example_File.xml" download>download an example-file here</a>.
 
 <div class="warning">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
