@@ -533,6 +533,26 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
+  </tbody>
+</table>   
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Payment method</th>
+      <th class="text-center">Capture|Cancel</th>
+      <th class="text-center">Multipart Captures</th>
+      <th class="text-center">Batch</th>
+      <th class="text-center">SCD</th>
+      <th class="text-center">Refund</th>
+      <th class="text-center">Recurring</th>
+      <th class="text-center">DCC</th>
+      <th class="text-center">3DS</th>
+      <th class="text-center">MOTO</th>
+      <th class="text-center">Testing</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>MyOne</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
