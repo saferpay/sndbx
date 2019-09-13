@@ -107,7 +107,7 @@
 								<li><a href="#refund-info">Additional information</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="Inquire.html">Inquire Interface</a>
 							<ul class="nav">
 								<li><a href="#inquire-rules">Rules and limitations</a></li>
@@ -280,7 +280,7 @@
 								<li><a href="#ideal-refund">SEPA manual Refunds for iDeal</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="sepa.html">SEPA</a>
 							<ul class="nav">
 								<li><a href="#sepa-requirement">Requirements</a></li>
@@ -420,7 +420,7 @@
 								<li><a href="#refund-info">Additional information</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="Inquire.html">Inquire Interface</a>
 							<ul class="nav">
 								<li><a href="#inquire-rules">Rules and limitations</a></li>
@@ -593,7 +593,7 @@
 								<li><a href="#ideal-refund">SEPA manual Refunds for iDeal</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="sepa.html">SEPA</a>
 							<ul class="nav">
 								<li><a href="#sepa-requirement">Requirements</a></li>
@@ -630,97 +630,30 @@
 				</div>
 
 				
-<section><h1>Transaction Inquire</h1><div class="row"><div class="col-md-6"><p>The <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a> allows you to acquire transaction-data, after all other means have been expired, or because of some technical issues, using the Saferpay TransactionId, or OrderId.
-However the Inquiry Interface has some restrictions, that have to be considered, when using this feature:</p></div></div></section><section id="inquire-rules"><h2><a name="inquire-rules"></a> Rules and limitations</h2><div class="row"><div class="col-md-6"><ol>
-<li><strong>Use the standard means first:</strong> the Inquire-Interface is not meant to replace other API-functions, like for example the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>. When implementing the <a href="Integration_PP.html">Payment Page</a>, or <a href="Integration_trx.html">Transaction Interface</a> flows, you should always use the standard means first and the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a>, if those cannot be executed anymore, e.g. due to the token being expired!</li>
-<li><strong>No polling:</strong> In general, but in this case specifically, do not use polling to continuously ask for the transaction-data, especially when considering #1.</li>
-<li><strong>Only successful transactions:</strong> As of now, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a> only works with successful transactions.</li>
-<li><strong>SpecVersion 1.11:</strong> You must use SpecVersion 1.11 and up.</li>
-<li><strong>Update delay:</strong> The result of a <em>Transaction/Inquire</em> request does not display the current status in real time because the requested data are updated with a few minutes delay.</li>
-</ol><div class="danger">
-  <p><strong>VERY IMPORTANT:</strong> Saferpay reserves the right to restrict, or outright deny access to the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a>, due to excessive use of the interface, or violation of these rules!</p>
-</div></div></div></section><section id="inquire-examples"><h2><a name="inquire-examples"></a> Examples</h2><div class="row"><div class="col-md-6"></div></div></section><section><h3>Example of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Transaction Inquire</a> request:</h3><div class="row"><div class="col-md-6"><pre><code class="language-json">{
- &quot;RequestHeader&quot;: {
-   &quot;SpecVersion&quot;: &quot;1.11&quot;,
-   &quot;CustomerId&quot;: &quot;[YOUR CUSTOMERID]&quot;,
-   &quot;RequestId&quot;: &quot;f7ca9af6c203c055ec50b6dcc2a40831&quot;,
-   &quot;RetryIndicator&quot;: 0,
-   &quot;ClientInfo&quot;: {
-     &quot;ShopInfo&quot;: &quot;My Shop&quot;,
-     &quot;OsInfo&quot;: &quot;Windows Server 2016&quot;
-   }
- },
- &quot;TransactionReference&quot;: {
-   &quot;TransactionId&quot;: &quot;fn7O7nAIQWKMSAbIdnC3A26SMUpA&quot;
- }
-}
-</code></pre></div></div></section><section><h3>Example of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Transaction Inquire</a> response:</h3><div class="row"><div class="col-md-6"><pre><code class="language-json">{
- &quot;ResponseHeader&quot;: {
-   &quot;SpecVersion&quot;: &quot;1.11&quot;,
-   &quot;RequestId&quot;: &quot;f7ca9af6c203c055ec50b6dcc2a40831&quot;
- },
- &quot;Transaction&quot;: {
-   &quot;Type&quot;: &quot;PAYMENT&quot;,
-   &quot;Status&quot;: &quot;CAPTURED&quot;,
-   &quot;Id&quot;: &quot;fn7O7nAIQWKMSAbIdnC3A26SMUpA&quot;,
-   &quot;CaptureId&quot;: &quot;fn7O7nAIQWKMSAbIdnC3A26SMUpA&quot;,
-   &quot;Date&quot;: &quot;2019-05-17T12:44:14.097+02:00&quot;,
-   &quot;Amount&quot;: {
-     &quot;Value&quot;: &quot;245&quot;,
-     &quot;CurrencyCode&quot;: &quot;EUR&quot;
-   },
-   &quot;OrderId&quot;: &quot;0&quot;,
-   &quot;AcquirerName&quot;: &quot;VISA Saferpay Test&quot;,
-   &quot;AcquirerReference&quot;: &quot;84050331349&quot;,
-   &quot;SixTransactionReference&quot;: &quot;0:0:3:fn7O7nAIQWKMSAbIdnC3A26SMUpA&quot;,
-   &quot;ApprovalCode&quot;: &quot;586216&quot;
- },
- &quot;PaymentMeans&quot;: {
-   &quot;Brand&quot;: {
-     &quot;PaymentMethod&quot;: &quot;VISA&quot;,
-     &quot;Name&quot;: &quot;VISA&quot;
-   },
-   &quot;DisplayText&quot;: &quot;xxxx xxxx xxxx 0004&quot;,
-   &quot;Card&quot;: {
-     &quot;MaskedNumber&quot;: &quot;xxxxxxxxxxxx0004&quot;,
-     &quot;ExpYear&quot;: 2019,
-     &quot;ExpMonth&quot;: 5,
-     &quot;HolderName&quot;: &quot;Yamada Taro&quot;,
-     &quot;CountryCode&quot;: &quot;JP&quot;
-   }
- },
- &quot;Payer&quot;: {
-   &quot;IpAddress&quot;: &quot;178.15.222.100&quot;,
-   &quot;IpLocation&quot;: &quot;DE&quot;
- },
- &quot;Liability&quot;: {
-   &quot;LiabilityShift&quot;: true,
-   &quot;LiableEntity&quot;: &quot;ThreeDs&quot;,
-   &quot;ThreeDs&quot;: {
-     &quot;Authenticated&quot;: true,
-     &quot;LiabilityShift&quot;: true,
-     &quot;Xid&quot;: &quot;HVQOUwEUJnYaBAM7BCQDNAofGgg=&quot;
-   }
- },
- &quot;Dcc&quot;: {
-   &quot;PayerAmount&quot;: {
-     &quot;Value&quot;: &quot;352&quot;,
-     &quot;CurrencyCode&quot;: &quot;JPY&quot;
-   }
- }
-}
-</code></pre></div></div></section><section><h3>Example of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Transaction Inquire</a> response for a failed transaction:</h3><div class="row"><div class="col-md-6"><div class="danger">
-  <p><strong>Important note:</strong> As mentioned before, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire Interface</a> only works with successful transactions. Therefore you'll get the following response, if a transaction was either not completed by the payer, or was not successful.</p>
-</div><br><pre><code class="language-json">{
- &quot;ResponseHeader&quot;: {
-   &quot;SpecVersion&quot;: &quot;1.11&quot;,
-   &quot;RequestId&quot;: &quot;fbe3bb5ba9984ce74dcd54089b0cc95a&quot;
- },
- &quot;Behavior&quot;: &quot;ABORT&quot;,
- &quot;ErrorName&quot;: &quot;TRANSACTION_NOT_FOUND&quot;,
- &quot;ErrorMessage&quot;: &quot;Transaction not found&quot;
-}
-</code></pre></div></div></section>
+<section><h1>SEPA ELV</h1><div class="row"><div class="col-md-6"><p>SEPA transactions can also be processed via the Saferpay JSON API, through a partnership with Intercard.</p></div></div></section><section id="sepa-requirement"><h2><a name="sepa-requirement"></a> Requirements</h2><div class="row"><div class="col-md-6"><p>The handling of SEPA payments with Saferpay requires:</p><ul>
+<li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
+<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
+<li>A valid SEPA contract with Intercard.</li>
+</ul><div class="warning">
+  <p><strong>Attention:</strong> For SEPA activation on the Saferpay terminal and the necessary contract, please contact your Saferpay sales contact.</p>
+</div></div></div></section><section id="sepa-refund"><h2><a name="sepa-refund"></a> SEPA manual Refunds</h2><div class="row"><div class="col-md-6"><p>Saferpay does offer the possibility to accept refunds for certain SEPA-based payment methods. However those need special attention.
+Reason being, that SEPA does not directly offer refunds, which is just in the nature of the payment-system itself.
+Due to this, Saferpay offers a workaround, to make manual SEPA-refunds easier for the merchant.</p></div></div></section><section><h3>Step 1: Activation</h3><div class="row"><div class="col-md-6"><p>Before you -the merchant- can start accepting refunds, they need to be activated inside the Saferpay Backoffice:
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund_Export.png" alt="alt text" title="Manual refund activation"></p></div></div></section><section><h3>Step 2: Executing refunds</h3><div class="row"><div class="col-md-6"><p>Once the activation has been done, you can execute refunds, like any other payment method. Either <a href="refund.html">via API</a>, or inside the Saferpay Backoffice.</p></div></div></section><section><h3>Step 3: Uploading the refunds into your online-banking</h3><div class="row"><div class="col-md-6"><p>This is, where SEPA-refunds deviate from other payment methods, like credit cards.
+As mentioned before, SEPA does not offer direct refunds via the processing itself. This is why Saferpay first collects all executed refunds inside the backoffice:
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund.png" alt="alt text" title="Manual refund activation"></p><p>These refunds need then to be exported into a special XML-File, which can be done right there inside the Backoffice.
+The created XML-file can then be uploaded into your online banking-portal, which executes these refunds in a batch, eliminating the need, of doing them all manually.
+You can <a href="https://github.com/saferpay/sndbx/blob/master/assets/other/ManualBankRefund-2019-09-13-10-50-28-Example_File.xml" download>download an example-file here</a>.</p><div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> It may be necessary to contact your bank, for this import-feature to be activated! Some also may not offer it at all!
+  </p>
+</div><div class="danger">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Caution:</strong> SEPA-refund-files can't be uploaded into online-banking portals, since they only contain test-data, thus non-valid IBANs!
+  </p>
+</div></div></div></section>
 
 			</main>
 
