@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
+    <CstmrCdtTrfInitn>
+        <GrpHdr>
+            <MsgId>d102db2e5fea42349a94f0ea3b1fb4bf</MsgId>
+            <CreDtTm>2019-09-13T10:50:28.1839353+02:00</CreDtTm>
+            <NbOfTxs>1</NbOfTxs>
+            <InitgPty>
+                <Id>
+                    <OrgId>
+                        <Othr>
+                            <Id>242225</Id>
+                        </Othr>
+                    </OrgId>
+                </Id>
+            </InitgPty>
+        </GrpHdr>
+        <PmtInf>
+            <PmtInfId>a6c61bc50b2148a9b0ad37cb133d5cce</PmtInfId>
+            <PmtMtd>TRF</PmtMtd>
+            <BtchBookg>false</BtchBookg>
+            <NbOfTxs>1</NbOfTxs>
+            <CtrlSum>2.45</CtrlSum>
+            <PmtTpInf>
+                <SvcLvl>
+                    <Cd>SEPA</Cd>
+                </SvcLvl>
+            </PmtTpInf>
+            <ReqdExctnDt>2019-09-13</ReqdExctnDt>
+            <Dbtr>
+                <Nm>Your Name</Nm>
+                <Id>
+                    <OrgId>
+                        <Othr>
+                            <Id>242225</Id>
+                        </Othr>
+                    </OrgId>
+                </Id>
+            </Dbtr>
+            <DbtrAcct>
+                <Id>
+                    <IBAN>DE17970000011234567890</IBAN>
+                </Id>
+                <Ccy>EUR</Ccy>
+            </DbtrAcct>
+            <DbtrAgt>
+                <FinInstnId>
+                    <BIC>XXXDEXXXXXX</BIC>
+                </FinInstnId>
+            </DbtrAgt>
+            <ChrgBr>SLEV</ChrgBr>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <EndToEndId>4SOdYhb45lGStAbMAYO4Abjfz01b</EndToEndId>
+                </PmtId>
+                <Amt>
+                    <InstdAmt Ccy="EUR">2.45</InstdAmt>
+                </Amt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BIC />
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>Karl Mustermann</Nm>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>DE17970000011234567890</IBAN>
+                    </Id>
+                </CdtrAcct>
+                <RmtInf>
+                    <Ustrd>Order_4</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+        </PmtInf>
+    </CstmrCdtTrfInitn>
+</Document>
