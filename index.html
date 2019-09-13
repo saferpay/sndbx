@@ -739,7 +739,7 @@ The important parameters are <strong>Authenticated</strong> and especially <stro
     <tr>
       <td class="text-center">Saved Cards</td>
       <td>This is specifically for casxes, where the card itself has been saved, but not authorized, during the first user-interaction. While you are still allowed to just save cards, you have to make sure, that the first real transaction is covered by SCA! <strong>You are no longer allowed to just save cards and then do MIT (see below) transactions right away!</strong></td>
-      <td>a href=&quot;scd.html#scd-sa&quot;&gt;Standalone Secure Card Data registration, <a href="https://saferpay.github.io/jsonapi/#ChapterAliasStore">Secure Card Data Store</a></td>
+      <td><a href="scd.html#scd-sa">Standalone Secure Card Data registration</a>, <a href="https://saferpay.github.io/jsonapi/#ChapterAliasStore">Secure Card Data Store</a></td>
     </tr>
   </tbody>
 </table></div></div></section><section><h3>Transactions and flows, that DO NOT need SCA</h3><div class="row"><div class="col-md-6"><table class="table table-striped table-hover">
@@ -1013,6 +1013,24 @@ For example, if you want to go back to the 1.4 specification, simply add the ver
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
+  </tbody>
+</table><table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Payment method</th>
+      <th class="text-center">Capture|Cancel</th>
+      <th class="text-center">Multipart Captures</th>
+      <th class="text-center">Batch</th>
+      <th class="text-center">SCD</th>
+      <th class="text-center">Refund</th>
+      <th class="text-center">Recurring</th>
+      <th class="text-center">DCC</th>
+      <th class="text-center">3DS</th>
+      <th class="text-center">MOTO</th>
+      <th class="text-center">Testing</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>MyOne</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
