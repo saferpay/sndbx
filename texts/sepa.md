@@ -22,7 +22,7 @@ Due to this, Saferpay offers a workaround, to make manual SEPA-refunds easier fo
 ### Step 1: Activation
 
 Before you -the merchant- can start accepting refunds, they need to be activated inside the Saferpay Backoffice:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund_Export.png "Manual refund activation")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund.png "Manual refund activation")
 
 ### Step 2: Executing refunds
 
@@ -32,7 +32,7 @@ Once the activation has been done, you can execute refunds, like any other payme
 
 This is, where SEPA-refunds deviate from other payment methods, like credit cards.
 As mentioned before, SEPA does not offer direct refunds via the processing itself. This is why Saferpay first collects all executed refunds inside the backoffice:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund.png "Manual refund activation")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund_Export.png "Manual refund activation")
 
 These refunds need then to be exported into a special XML-File, which can be done right there inside the Backoffice.
 The created XML-file can then be uploaded into your online banking-portal, which executes these refunds in a batch, eliminating the need, of doing them all manually.
