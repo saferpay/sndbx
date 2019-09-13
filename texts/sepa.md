@@ -31,11 +31,11 @@ Once the activation has been done, you can execute refunds, like any other payme
 ### Step 3: Uploading the refunds into your online-banking
 
 This is, where SEPA-refunds deviate from other payment methods, like credit cards.
-As mentioned before, SEPA does not offer direct refunds via the processing itself. This is why Saferpay first collects all executed Refuunds inside the backoffice:
+As mentioned before, SEPA does not offer direct refunds via the processing itself. This is why Saferpay first collects all executed refunds inside the backoffice:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund.png "Manual refund activation")
 
-These refunds need then to be exported into a special XML-File, which can be done right there inside the Backoffice automatically.
-The created XML-file can then be uploaded into your online banking-portal, which then executes these refunds in a batch eliminating the need, of doing them all manually.
+These refunds need then to be exported into a special XML-File, which can be done right there inside the Backoffice.
+The created XML-file can then be uploaded into your online banking-portal, which executes these refunds in a batch, eliminating the need, of doing them all manually.
 You can <a href="https://raw.githubusercontent.com/saferpay/sndbx/master/assets/other/ManualBankRefund-2019-09-13-10-50-28-Example_File.xml" download>download an example-file here</a>.
 
 <div class="warning">
