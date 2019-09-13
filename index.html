@@ -967,7 +967,7 @@ For example, if you want to go back to the 1.4 specification, simply add the ver
       <td> </td>
       <td> </td>
       <td> </td>
-      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #FFFF00"></span></td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -1102,7 +1102,7 @@ For example, if you want to go back to the 1.4 specification, simply add the ver
       <td> </td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #FFFF00"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
@@ -1115,7 +1115,7 @@ For example, if you want to go back to the 1.4 specification, simply add the ver
       <td> </td>
       <td> </td>
       <td> </td>
-      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #FFFF00"></span></td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -1217,6 +1217,8 @@ For example, if you want to go back to the 1.4 specification, simply add the ver
   <dd>Mail Phone Order available</dd>
   <dt><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></dt>
   <dd>This feature is mandatory, for this payment method to function!
+  </dd><dt><span class="glyphicon glyphicon-ok" style="color: #FFFF00"></span></dt>
+  <dd>This feature needs requirements to be met! Please refer to the specific payment method chapter!
   </dd><dt>Testing</dt>
   <dd>A Simulator/Sandbox is available</dd>
 </dl></div></div></section><section id="capture-batch"><h2><a name="capture-batch"></a> Capture and Daily Closing</h2><div class="row"><div class="col-md-6"><p>These two features are extremely important Saferpay features. Depending on the means of payment, the two can be directly associated with each other and they must be carried out for the cash flow to be initiated to the merchant&#8217;s account.</p></div></div></section><section id="capture"><h3><a name="capture"></a>Capture</h3><div class="row"><div class="col-md-6"><p><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> serves to book and thus to conclude/finalize a payment. As long as a transaction has not passed through the capture, the amount is merely reserved (&#8220;authorised&#8221;), but it will not be transfered to the merchant account. On the API side, you receive information about the transaction via the <strong>Transaction =&gt; Status</strong> parameter (note that this is only a part of the data), e.g. through the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>.
