@@ -487,7 +487,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
-      <td><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -624,7 +624,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
@@ -637,7 +637,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
-      <td><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></td>
       <td> </td>
       <td> </td>
       <td> </td>
