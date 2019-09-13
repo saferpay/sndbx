@@ -487,7 +487,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
-      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #FFFF00"></span></td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -624,7 +624,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #FFFF00"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td> </td>
       <td> </td>
@@ -637,7 +637,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
-      <td> </td>
+      <td><span class="glyphicon glyphicon-ok" style="color: #FFFF00"></span></td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -739,8 +739,10 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
   <dd>3-D Secure available</dd>
   <dt>MOTO</dt>
   <dd>Mail Phone Order available</dd>
-  <dt><span class="glyphicon glyphicon-ok" style="color: #ff0000"></dt>
+  <dt><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></dt>
   <dd>This feature is mandatory, for this payment method to function!</dt>
+  <dt><span class="glyphicon glyphicon-ok" style="color: #FFFF00"></span></dt>
+  <dd>This feature needs requirements to be met! Please refer to the specific payment method chapter!</dt>
   <dt>Testing</dt>
   <dd>A Simulator/Sandbox is available</dd>
 </dl>
