@@ -741,7 +741,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
   <dd>Mail Phone Order available</dd>
   <dt><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></dt>
   <dd>This feature is mandatory, for this payment method to function!</dt>
-  <dt><span class="glyphicon glyphicon-ok" style="color: #FFFF00"></span></dt>
+  <dt><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></dt>
   <dd>This feature needs requirements to be met! Please refer to the specific payment method chapter!</dt>
   <dt>Testing</dt>
   <dd>A Simulator/Sandbox is available</dd>
