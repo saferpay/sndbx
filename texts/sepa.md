@@ -47,7 +47,7 @@ You can <a href="https://github.com/saferpay/sndbx/blob/master/assets/other/Manu
 <div class="danger">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Caution:</strong> SEPA-refund-files can't be uploaded into online-banking portals, since they only contain test-data, thus non-valid IBANs!
+    <strong>Caution:</strong> SEPA-refund-files from the test-environment can't be uploaded into online-banking portals, since they only contain test-data, thus non-valid IBANs!
   </p>
 </div>
 
