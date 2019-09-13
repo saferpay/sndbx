@@ -278,7 +278,8 @@
   "Subsites": [
       { "Source": "texts/sofort.md", "Title": "Requirements", "Target": "sofort.html#sf-requirement" },
       { "Source": "texts/sofort.md", "Title": "Create a new project for SOFORT", "Target": "sofort.html#sf-newproject" },
-      { "Source": "texts/sofort.md", "Title": "Sofort iFrame integration", "Target": "sofort.html#sf-iFrame" }
+      { "Source": "texts/sofort.md", "Title": "Sofort iFrame integration", "Target": "sofort.html#sf-iFrame" },
+      { "Source": "texts/sofort.md", "Title": "SEPA manual Refunds for Sofort", "Target": "sofort.html#sf-refund" }
     ] 
    }, 
  {
@@ -309,7 +310,17 @@
   "Target": "ideal.html",
   "Subsites": [
       { "Source": "texts/ideal.md", "Title": "Requirements", "Target": "ideal.html#ideal-requirement" },
-      { "Source": "texts/ideal.md", "Title": "Session Timeouts", "Target": "ideal.html#ideal-timeout" }
+      { "Source": "texts/ideal.md", "Title": "Session Timeouts", "Target": "ideal.html#ideal-timeout" },
+      { "Source": "texts/ideal.md", "Title": "SEPA manual Refunds for iDeal", "Target": "ideal.html#ideal-refund" }
+    ] 
+   },
+ {
+  "Title": "SEPA",
+  "Source": "texts/sepa.md",
+  "Target": "sepa.html",
+  "Subsites": [
+      { "Source": "texts/sepa.md", "Title": "Requirements", "Target": "sepa.html#sepa-requirement" },
+      { "Source": "texts/sepa.md", "Title": "SEPA manual Refunds", "Target": "sepa.html#sepa-refund" }
     ] 
    },
   {
