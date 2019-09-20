@@ -26,7 +26,7 @@ The general money-flow may look like this:
 Now in order for this to work, the following requirements have to be met:
 
 1. Each Submerchant you want to cover, needs an acquiring-contract with SIX, so the money can be directly transfered to their bank-account! **Make sure to specifically request these contracts for the marketplace-solution, since those need a special setup!**
-2. Each submerchant will get their own Id, which has to be submitted with each [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), to define the merchant, who is getting the money!
+2. Each submerchant will get their own Id (Sometimes also refered to as **Contract-Number** or **VP-Number**!), which has to be submitted with each [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture), to define the merchant, who is getting the money!
 
 ### Executing a Multipart Capture with a Submerchant
 
