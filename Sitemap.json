@@ -341,6 +341,15 @@
      ]
    },
    {
+     "Title": "Bancontact",
+     "Source": "texts/bancontact.md",
+     "Target": "bancontact.html",
+     "Subsites": [
+       { "Source": "texts/bancontact.md", "Title": "Requirements", "Target": "bancontact.html#bancontact-requirement" },
+       { "Source": "texts/bancontact.md", "Title": "Bancontact Direct Mode", "Target": "bancontact.html#bancontact-directmode" }
+     ] 
+   },
+   {
     "Title": "Additional Information"
   },
   {
