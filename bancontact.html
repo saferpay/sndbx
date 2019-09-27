@@ -86,7 +86,7 @@
 								<li><a href="#scd-use">How to use the obtained data</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="recurring.html">Recurring Payments</a>
 							<ul class="nav">
 								<li><a href="#recurring-req">Requirements</a></li>
@@ -300,7 +300,7 @@
 								<li><a href="#alipay-general">General specifics</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="bancontact.html">Bancontact</a>
 							<ul class="nav">
 								<li><a href="#bancontact-requirement">Requirements</a></li>
@@ -406,7 +406,7 @@
 								<li><a href="#scd-use">How to use the obtained data</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="recurring.html">Recurring Payments</a>
 							<ul class="nav">
 								<li><a href="#recurring-req">Requirements</a></li>
@@ -620,7 +620,7 @@
 								<li><a href="#alipay-general">General specifics</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="bancontact.html">Bancontact</a>
 							<ul class="nav">
 								<li><a href="#bancontact-requirement">Requirements</a></li>
@@ -644,160 +644,33 @@
 				</div>
 
 				
-<section><h1>Recurring Payments</h1><div class="row"><div class="col-md-6"><p>Recurring payments are transactions processed on a regular basis under a pre-authorized agreement. They are particularly interesting for subscription or instalment business models. This chapter describes the main concept on how the perform recurring payments.</p><div class="warning">
-      <p><strong>NOTE: </strong>Before you start, you have to consider the following: Each transaction has to be triggered by you your system. Please see <strong>Automating the Recurring Payments</strong> further down in this chapter!</p>
-</div><ul>
-<li>Transaction Referenced Method -  <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced">AuthorizeReferenced Function</a> with the TransactionId of the initial transaction</li>
-</ul></div></div></section><section id="recurring-req"><h2><a name="recurring-req"></a> Requirements:</h2><div class="row"><div class="col-md-6"><ul>
-<li>a Saferpay Business License</li>
-<li>a valid login access with a username and password for the Saferpay Backoffice.</li>
-<li>one active Saferpay ecommerce terminal and an additional MOTO terminal via which payment can be carried out and the associated</li>
-<li>Saferpay terminal number (TerminalId parameter) and Saferpay customer number (CustomerId parameter).</li>
-<li>valid acceptance agreement for credit cards or other payment methods</li>
-<li>Secure Card Data Module (if recurring payments are performed with using Aliases)</li>
-</ul><hr></div></div></section><section id="recurring-payment-methods"><h2><a name="recurring-payment-methods"></a> Supported Payment Methods:</h2><div class="row"><div class="col-md-6"><p>Recurring payments are supported by the following payment means:</p><ul>
-<li>American Express</li>
-<li>Bancontact (SCD method only)</li>
-<li>Postcard (SCD method only)</li>
-<li>Bonus Card</li>
-<li>Diners Club</li>
-<li>Discover</li>
-<li>JCB</li>
-<li>Maestro International (SCD method only)</li>
-<li>MasterCard</li>
-<li>Myone</li>
-<li>Sepa Direct Debit</li>
-<li>Visa</li>
-<li>VPAY</li>
-</ul><hr></div></div></section><section id="recurring-referenced"><h2><a name="recurring-referenced"></a> Recurring Payments with the Referenced Transactions Method</h2><div class="row"><div class="col-md-6"><p>With this method, the initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.</p><div class="warning">
-  <p><strong>NOTE:</strong> Due to the PSD2, you must perform 3D Secure with the first (initial) transaction. However, if you do 3D Secure with the initial transaction, LiabilityShift is also granted for the recurring transactions.</p>
-</div></div></div></section><section><h3>1. Initial Transaction:</h3><div class="row"><div class="col-md-6"><p>The Initial Transaction can be performed with the <a href="Integration_PP.html">PaymentPage Interface</a> or via the <a href="Integration_trx.html">Transaction Interface</a>, using <strong>Transaction Initialize</strong> and <strong>Transaction Authorize</strong> .</p><p>This transaction basically captures the credit card details and sets a flag, to mark it as an initial transaction that can be used as a reference for recurring transactions.</p><p>To define a transaction as the initial transaction, you need to set a special flag with either the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize" title="PaymentPage Initialize">PaymentPage Initialize Request</a> or <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize" title="Transaction Initialize">Transaction Initialize Request</a> by defining the Container</p><pre><code class="language-json">Recurring&quot;: {
-      &quot;Initial&quot;: true
-</code></pre><p>Here is an example of a PaymentPage Request with the Container <strong>Recurring</strong>:</p><p><strong>Request URL</strong></p><pre><code class="language-http">POST /Payment/v1/PaymentPage/Initialize
-</code></pre><pre><code class="language-json">{ 
-&quot;RequestHeader&quot;: {
-   &quot;SpecVersion&quot;: &quot;1.7&quot;,
-   &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
-   &quot;RequestId&quot;: &quot;[unique request id]&quot;,
-   &quot;RetryIndicator&quot;: 0
- },
- &quot;TerminalId&quot;: &quot;[your terminal id]&quot;,
- &quot;Payment&quot;: {
-   &quot;Amount&quot;: {
-     &quot;Value&quot;: &quot;100&quot;,
-     &quot;CurrencyCode&quot;: &quot;CHF&quot;
-   },
-   &quot;Recurring&quot;: {
-     &quot;Initial&quot;: true
-   }
- },
- &quot;Payer&quot;: {
-   &quot;LanguageCode&quot;: &quot;en&quot;
- },
- &quot;ReturnUrls&quot;: {
-   &quot;Success&quot;: &quot;[your shop payment success url]&quot;,
-   &quot;Fail&quot;: &quot;[your shop payment fail url]&quot;
- },
- &quot;Styling&quot;: {
-   &quot;CssUrl&quot;: &quot;[your shop css url]&quot;
- }
-}
-</code></pre><div class="info">
-  <p><strong>TIPP:</strong> If you want to validate the cardholder without charging his bank account, you can trigger a &#8220;dummy&#8221; authorization with a small amount value (e.g. 1 Euro; Amount value &#8220;100&#8221;). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)! However <strong>DO NOT</strong> cancel this transaction! It must persist, in order to reference it within the recurring transaction.</p>
-</div></div></div></section><section><h3>2. Validating the transaction</h3><div class="row"><div class="col-md-6"><p>Depending on the Interface used to initialize the transaction, you can validate the payment and assess transaction based information with either:</p><ul>
-<li><a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a> or</li>
-<li><a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize">Transaction Authorize</a> function.</li>
-</ul><p>Both request will provide you with information about the Transaction including the 3D Secure response:</p><p>Here is an example of a <strong>PaymentPage Assert Response</strong>:</p><pre><code class="language-json">{
-  &quot;ResponseHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;1.7&quot;,
-    &quot;RequestId&quot;: &quot;[your request id]&quot;
-  },
-  &quot;Transaction&quot;: {
-    &quot;Type&quot;: &quot;PAYMENT&quot;,
-    &quot;Status&quot;: &quot;AUTHORIZED&quot;,
-    &quot;Id&quot;: &quot;MUOGAWA9pKr6rAv5dUKIbAjrCGYA&quot;,
-    &quot;Date&quot;: &quot;2017-06-18T09:19:27.078Z&quot;,
-    &quot;Amount&quot;: {
-      &quot;Value&quot;: &quot;100&quot;,
-      &quot;CurrencyCode&quot;: &quot;CHF&quot;
-    },
-    &quot;AcquirerName&quot;: &quot;AcquirerName&quot;,
-    &quot;AcquirerReference&quot;: &quot;Reference&quot;
-  },
-  &quot;PaymentMeans&quot;: {
-    &quot;Brand&quot;: {
-      &quot;PaymentMethod&quot;: &quot;SAFERPAYTEST&quot;,
-      &quot;Name&quot;: &quot;SaferpayTestCard&quot;
-    },
-    &quot;DisplayText&quot;: &quot;9123 45xx xxxx 1234&quot;,
-    &quot;Card&quot;: {
-      &quot;MaskedNumber&quot;: &quot;912345xxxxxx1234&quot;,
-      &quot;ExpYear&quot;: 2021,
-      &quot;ExpMonth&quot;: 9,
-      &quot;HolderName&quot;: &quot;Max Mustermann&quot;,
-      &quot;CountryCode&quot;: &quot;CH&quot;
-    }
-  },
-  &quot;Payer&quot;: {
-    &quot;IpAddress&quot;: &quot;1.2.3.4&quot;,
-    &quot;IpLocation&quot;: &quot;CH&quot;
-  },
-  &quot;ThreeDs&quot;: {
-    &quot;Authenticated&quot;: true,
-    &quot;LiabilityShift&quot;: true,
-    &quot;Xid&quot;: &quot;ARkvCgk5Y1t/BDFFXkUPGX9DUgs=&quot;,
-    &quot;VerificationValue&quot;: &quot;AAABBIIFmAAAAAAAAAAAAAAAAAA=&quot;
-  }
-}
-</code></pre><p>You must save the <strong>TransactionId</strong> (Container: &quot;Transaction&quot;&gt;&quot;ID&quot;), returned in the Paymentpage Assert or Transaction Authorize response as this value will be used to reference recurring payments.</p><div class="warning">
-  <p><strong>NOTE:</strong>We recommend only to proceed, if the parameter &#8220;Authenticated&#8221; is true. This value indicates that the card holder has performed a full successful authentication (3D Secure process) at his bank. This option provides the highest level of security against fraud. Please take notice that some banks will skip the 3Dsecure process if they consider the transaction to have a low risk thus will still grant Liabilityshift although the cardholder did not have to authenticate him or herself. In that case the values returned for &#8221;LiabilityShift&#8221; will be &#8220;true&#8221; and  &#8220;Authenticated&#8221; will be &#8220;false&#8221;. You should assess which level of security suits best to your business model and target group before deciding how to handle these two parameters.</p>
-</div></div></div></section><section><h3>3. Recurring Transaction:</h3><div class="row"><div class="col-md-6"><p>The next step is to perform the actual recurring transaction(s).
-The API-Function that is required is <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced">Authorize Referenced</a>.
-You have to simply submit the <strong>TransactionId</strong> from your initial transaction (discussed in step 2) to perform the recurring transaction(s)</p></div></div></section><section><h3>Flowchart</h3><div class="row"><div class="col-md-6"><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/Recurring_Referenced_FlowChart.PNG" alt="alt text" title="Recurring with initial transaction"></p><ol>
-<li>Gather the TransactionId from the previous, initial, transaction</li>
-<li>Aquire the necessary payment-data e.g. Amount, Currency, OrderId etc.</li>
-<li>Initialize and Execute Payment with <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeReferenced">Transaction Authorize Referenced</a>
-<ul>
-<li>You will get the authorization-response right away</li>
-</ul>
-</li>
-<li>Validate the request response</li>
-<li>Depending on the outcome of step 4 you may
-<ul>
-<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture/Finalize the Transaction</a></li>
-<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">Cancel/Abort the Transaction</a></li>
-</ul>
-</li>
-<li>Transaction is finished!</li>
-</ol><p>Here is an example of a <strong>Authorize Referenced Request</strong>:</p><p><strong>Request URL</strong></p><pre><code class="language-http">POST /Payment/v1/Transaction/AuthorizeReferenced
-</code></pre><pre><code class="language-json">{
-  &quot;RequestHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;1.7&quot;,
-    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
-    &quot;RequestId&quot;: &quot;[unique request id]&quot;,
-    &quot;RetryIndicator&quot;: 0
-  },
-  &quot;TerminalId&quot;: &quot;[your terminal id]&quot;,
-  &quot;Payment&quot;: {
-    &quot;Amount&quot;: {
-      &quot;Value&quot;: &quot;100&quot;,
-      &quot;CurrencyCode&quot;: &quot;CHF&quot;
-    },
-    &quot;Description&quot;: &quot;Test123&quot;,
-    &quot;PayerNote&quot;: &quot;Order123_Testshop&quot;
-  },
-  &quot;TransactionReference&quot;: {
-    &quot;TransactionId&quot;: &quot;MUOGAWA9pKr6rAv5dUKIbAjrCGYA&quot;
-  }
-}
-</code></pre><div class="warning">
-  <p><strong>NOTE:</strong>  The Amount is a mandatory value which can vary from the Amount of the initial transaction. A change of amount has to be communicated with the card holder and you <strong>must</strong> re-do this process, to start the recurring-chain over again!</p>
-</div><div class="danger">
-  <p><strong>IMPORTANT:</strong> Each Transaction with the Status **Authorized** has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual money transfer.</p>
-</div><hr></div></div></section><section id="recurring-auto"><h2><a name="recurring-auto"></a>  Automating the Recurring Payments</h2><div class="row"><div class="col-md-6"><p>Automated recurring payments have to be triggered by the merchant's system. There are multiple ways to setup up the automated triggering of payments. The easiest way is to setup a Cronjob (Linux) or a Task (Windows).
-With cronjobs you can schedule a command or script on your server to run automatically at a specified time and date (e.g. every minute, every 15 Minutes, every hour, or every day at 10pm or even every Sunday.)</p><p>The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will be executed, every time the cronjob is triggered to automatically perform transactions. You should decide when and how often the payments have to be triggered depending on your business model and the prearranged scheduling of payments.</p><div class="warning">
-  <p><strong>NOTE: </strong>Please note that each transaction has to be finalized by calling the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">capture function</a> including the automated recurring transactions.</p>
-</div></div></div></section>
+<section><h1>Bancontact</h1><div class="row"><div class="col-md-6"><p>Bancontact transactions can also be processed via the Saferpay JSON API. However, as Bancontact is a third party provider, there are a few things to consider.</p></div></div></section><section id="bancontact-requirement"><h2><a name="bancontact-requirement"></a> Requirements</h2><div class="row"><div class="col-md-6"><p>The handling of Bancontact payments with Saferpay requires:</p><ul>
+<li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
+<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
+<li>A valid Bancontact contract.</li>
+</ul><div class="warning">
+  <p><strong>Attention:</strong> For Bancontact activation on the Saferpay terminal, please contact your sales contact.</p>
+</div></div></div></section><section id="bancontact-directmode"><h2><a name="bancontact-directmode"></a> Bancontact Direct Mode</h2><div class="row"><div class="col-md-6"><p>The Bancontact Direct Mode allows the merchant to directly integrate Bancontact into their site, or even mobile app.
+This chapter handles the technical details and flow of this type of integration.</p></div></div></section><section><h3>Flow Diagram</h3><div class="row"><div class="col-md-6"><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/BancontactDirectModeFlow.png" alt="alt text" title="Bancontact Direct Mode Flow Chart"></p></div></div></section><section><h3>Flow description</h3><div class="row"><div class="col-md-6"><ul style="list-style: none;">
+  <li><strong>1:</strong> First, the merchants application initiates the payment via the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AlternativePayment">Transaction AlternativePayment Request</a>. Note, that this should always a centralized server, even if the payer/shopper interacts with the merchant system via an app!</li>
+  <li><strong>2:</strong> Saferpay forwards the merchant request to the Bancontact-system, where the <strong>IntentUrl</strong> and <strong>QR-Code data</strong> is generated.</li>
+  <li><strong>3:</strong> The generated data is vorwarded towards the merchant application through the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AlternativePayment">Transaction AlternativePayment Response</a>.</li>
+  <li><strong>4:</strong> The merchant then has multiple options, how to proceed, also depending on the application:
+    <ul style="list-style: none;">
+      <li><strong>a)</strong> The  merchant displays the QR-Code data, so his customer may scan it via the bancontact app!</li>
+      <li><strong>b)</strong>  The <strong>IntentUrl</strong> is used to perform a direct switch towards the Bancontact payment-app!</li>
+    </ul>
+  </li>
+  <li><strong>5:</strong> The payer then performs the payment itself. Bancontact authorizes his card and pushes the necessary data towards Saferpay.</li>
+  <li><strong>6:</strong> Oncethe payment is finished, two things happen in parallel:
+    <ul style="list-style: none;">
+      <li><strong>A.1:</strong> The Payment-data is forwarded to the Saferpay system, which saves the data. Once a definitive transaction status has been determined, Saferpay will then call the <strong>StateNotificationUrl</strong>, which has been defined with the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AlternativePayment">Transaction AlternativePayment Request</a>, to notify the merchant application, that the data for this transaction is ready to be pulled.</li>
+      <li><strong>A.2:</strong> The merchant application performs ther <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_QueryAlternativePayment">Transaction QueryAlternativePayment Request</a>, to ask for the outcome of the transaction.</li>
+      <li><strong>A.3:</strong> The merchant application validates the payment and should the transaction not have been declined, either captures, or cancels the transaction.</li>
+      <li><strong>B:</strong> While the merchant-application is notified of the transaction, in the background, the Bancontact-app will redirect the payer towards the respective App-RedirectUrl, defined within <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AlternativePayment">Transaction AlternativePayment Request</a>, depending on the outcome.</li>
+    </ul>
+  </li>
+</ul></div></div></section>
 
 			</main>
 
