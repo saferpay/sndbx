@@ -218,6 +218,126 @@ In this Chapter you will find a list of payment means you can use for testing pu
 
 <a name="pm-mc"></a><div id="master-cards" class="dropdown">Mastercard &dArr;</div>
 <div id="master-cards-hider" style="display:none;">
+  <h2>For 3D Secure 2</h2>
+  <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Card Number</th>
+          <th class="text-center">Test-case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="word-break: unset;">9030003150000007</td>
+          <td style="border-left: 1px solid #ddd;">Frictionless Y. Card simulates a fully successful Frictionless Flow!<br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9030003750000001</td>
+          <td style="border-left: 1px solid #ddd;">3DS Failure, authorization will be attempted. This card fails the 3DS authentication. Interesting for testing the <strong>Condition</strong> parameter, to stop authorizations without LiabilityShift!<br /><strong>Liability shift:</strong> false, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9030004950000007</td>
+          <td style="border-left: 1px solid #ddd;">Challenged Y. This card simulates a successful challenged flow.<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9030004250000004</td>
+          <td style="border-left: 1px solid #ddd;">Challenged A. The authentication was not successful, but LiabilityShift is still granted.<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9030004350000003</td>
+          <td style="border-left: 1px solid #ddd;">Challanged N. The 3DS authentication failed. An authorization will not be attempted. The transaction fails in this case!<br /><strong>Liability shift:</strong> N/A, <strong>Authenticated:</strong> N/A</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9030004150000005</td>
+          <td style="border-left: 1px solid #ddd;">3DS Failure, authorization will be attempted. This card fails the 3DS authentication. Interesting for testing the <strong>Condition</strong> parameter, to stop authorizations without LiabilityShift! Crd goes through a Challanged flow beforehand!<br /><strong>Liability shift:</strong> false, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9030403104000006</td>
+          <td style="border-left: 1px solid #ddd;">Frictionless Y with DCC. This card additionally will perform DCC. Card currency is USD!<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9030503104000003</td>
+          <td style="border-left: 1px solid #ddd;">Frictionless Y with DCC. This card additionally will perform DCC. Card currency is JPY!<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9030403153150009</td>
+          <td style="border-left: 1px solid #ddd;">General Decline. This card fails the authorization and also the card check!<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9030403153900007</td>
+          <td style="border-left: 1px solid #ddd;">Card for simulating response codes via the amount. The last two digits inside the amount are important. Down below you'll find some examples for return-codes/amounts. <strong>Important Note:</strong> These are the most common codes! However some Issuers may return codes not on this list!<br />
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th class="text-center">Processor Message</th>
+              </tr>
+            </thead>
+              <tr>
+                <td style="word-break: unset;">00</td>
+                <td style="border-left: 1px solid #ddd;">See Frictionless Y.<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> true</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">01</td>
+                <td style="border-left: 1px solid #ddd;">Successful Authorization without LiabilityShift<br /><strong>Liability shift:</strong> false <strong>Authenticated:</strong> true</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">62</td>
+                <td style="border-left: 1px solid #ddd;">Restricted Card</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">51</td>
+                <td style="border-left: 1px solid #ddd;">Insufficient Funds</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">43</td>
+                <td style="border-left: 1px solid #ddd;">Stolen Card</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">34</td>
+                <td style="border-left: 1px solid #ddd;">Suspicion of manipulation</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">33</td>
+                <td style="border-left: 1px solid #ddd;">Card Expired</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">30</td>
+                <td style="border-left: 1px solid #ddd;">Format Error</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">14</td>
+                <td style="border-left: 1px solid #ddd;">Invalid Card</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">12</td>
+                <td style="border-left: 1px solid #ddd;">Invalid Transaction</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">09</td>
+                <td style="border-left: 1px solid #ddd;">Processing temporarily not possible</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">05</td>
+                <td style="border-left: 1px solid #ddd;">Authorization declined</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">04</td>
+                <td style="border-left: 1px solid #ddd;">Card Invalid</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">03</td>
+                <td style="border-left: 1px solid #ddd;">Invalid Merchant Number</td>
+              </tr>
+            <tbody>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2>For 3D Secure 1</h2>
   <table class="table table-striped table-hover">
     <thead>
       <tr>
