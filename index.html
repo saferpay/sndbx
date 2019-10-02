@@ -705,9 +705,20 @@ The important parameters are <strong>Authenticated</strong> and especially <stro
     }
   }
 </code></pre><p>It depends on the merchant, how to proceed further, however Saferpay does recommend the following behaviors:</p><div class="info">
-  <p><strong>Tip:</strong> Only want to accept transactions with LiabilityShift? Check out the <strong>Condition</strong>-flag, that can be set within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> requests, to control  whether an authorization should be performed, or not, in the first place. <strong>Important Note:</strong> Issuers may reject the LiabilityShift with the authorization itself. The Condition-parameter does not cover such cases. Please still process the parameters accordingly!</p>
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Tip:</strong> Only want to accept transactions with LiabilityShift? Check out the <strong>Condition</strong>-flag, that can be set within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> requests, to control  whether an authorization should be performed, or not, in the first place. <strong>Important Note:</strong> Issuers may reject the LiabilityShift with the authorization itself. The Condition-parameter does not cover such cases. Please still process the parameters accordingly!
+  </p>
 </div><div class="warning">
-  <p><strong>Attention:</strong> These are <strong>only recommendations!</strong> Your credit card contract can dictate otherwise. Please contact your acquirer/card processor for further information!</p>
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Attention:</strong> These are <strong>only recommendations!</strong> Your credit card contract can dictate otherwise. Please contact your acquirer/card processor for further information!
+  </p>
+</div><div class="danger">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Caution:</strong> Saferpay also returns <strong>LiabilityShift: false</strong>, if the used payment method does not support 3D Secure at! Please also check the used payment method! Information, about whether, or not a payment method does support 3DS, <a href="index.html#pm-functions">can be found over here!</a>
+  </p>
 </div><table class="table table-striped table-hover">
   <thead>
     <tr>
