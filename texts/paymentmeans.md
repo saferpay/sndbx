@@ -80,7 +80,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
               </tr>
               <tr>
                 <td style="word-break: unset;">01</td>
-                <td style="border-left: 1px solid #ddd;">Successful Authorization without LiabilityShift<br /><strong>Liability shift:</strong> false <strong>Authenticated:</strong> true</td>
+                <td style="border-left: 1px solid #ddd;">Successful Authorization and 3DS process. However LiabilityShift will be rejected during authorization<br /><strong>Liability shift:</strong> false (<strong>ThreeDs will be true!</strong>) <strong>Authenticated:</strong> true</td>
               </tr>
               <tr>
                 <td style="word-break: unset;">62</td>
@@ -279,7 +279,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
               </tr>
               <tr>
                 <td style="word-break: unset;">01</td>
-                <td style="border-left: 1px solid #ddd;">Successful Authorization without LiabilityShift<br /><strong>Liability shift:</strong> false <strong>Authenticated:</strong> true</td>
+                <td style="border-left: 1px solid #ddd;">Successful Authorization and 3DS process. However LiabilityShift will be rejected during authorization<br /><strong>Liability shift:</strong> false (<strong>ThreeDs will be true!</strong>) <strong>Authenticated:</strong> true</td>
               </tr>
               <tr>
                 <td style="word-break: unset;">62</td>
