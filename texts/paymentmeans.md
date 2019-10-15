@@ -46,7 +46,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
       </tr>
       <tr>
           <td style="word-break: unset;">9010004350000007</td>
-          <td style="border-left: 1px solid #ddd;">Challanged N. The 3DS authentication failed. An authorization will not be attempted. The transaction fails in this case!<br /><strong>Liability shift:</strong> N/A, <strong>Authenticated:</strong> N/A</td>
+          <td style="border-left: 1px solid #ddd;">Challenged N. The 3DS authentication failed. An authorization will not be attempted. The transaction fails in this case!<br /><strong>Liability shift:</strong> N/A, <strong>Authenticated:</strong> N/A</td>
       </tr>
       <tr>
           <td style="word-break: unset;">9010004150000009</td>
@@ -245,7 +245,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
       </tr>
       <tr>
           <td style="word-break: unset;">9030004350000003</td>
-          <td style="border-left: 1px solid #ddd;">Challanged N. The 3DS authentication failed. An authorization will not be attempted. The transaction fails in this case!<br /><strong>Liability shift:</strong> N/A, <strong>Authenticated:</strong> N/A</td>
+          <td style="border-left: 1px solid #ddd;">Challenged N. The 3DS authentication failed. An authorization will not be attempted. The transaction fails in this case!<br /><strong>Liability shift:</strong> N/A, <strong>Authenticated:</strong> N/A</td>
       </tr>
       <tr>
           <td style="word-break: unset;">9030004150000005</td>
