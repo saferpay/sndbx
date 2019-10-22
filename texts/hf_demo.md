@@ -145,9 +145,9 @@ onBlur will also trigger the input-validation on Saferpay side, which returns da
 Example, of JSON message:
 ```json
 { 
-	id: "hosted-fields-holder-name",
-	fieldType: "holdername",
-	isValid: true
+	"id": "hosted-fields-holder-name",
+	"fieldType": "holdername",
+	"isValid": true
 }
 ```
 
