@@ -127,7 +127,7 @@ This event occurs after HostedFields.submit(); is called, but only, if the submi
 When called, the event will return a Hosted-Fields token, which is later used to start the transaction itself on serverside.
 However it is up to you, how you deliver said token from client- to server-side. Methods, like AJAX for example are possible.
 
-Example, of JSON message:
+Example, of returned message:
 ```json
 {
 	"token": "d292f72e-5220-440d-88ea-c4cc1252a5da"
@@ -142,7 +142,7 @@ Saferpay does not return any data on this event!
 Execute a JavaScript when a user leaves an input field.
 onBlur will also trigger the input-validation on Saferpay side, which returns data, on the given field and whether, or not it has been validated successfully. This enables you to trigger messages or CSS-events on your side, to signal your customer, that he/she needs to take action.
 
-Example, of JSON message:
+Example, of returned message:
 ```json
 { 
 	"id": "hosted-fields-holder-name",
@@ -155,10 +155,10 @@ Example, of JSON message:
 Execute a JavaScript when an input field gets into focus.
 Saferpay will return the id of the current field in focus!
 
-Example, of JSON message:
+Example, of returned message:
 ```json
 { 
-	fieldType: "holdername"
+	"fieldType": "holdername"
 }
 ```
 
