@@ -676,18 +676,29 @@
 <li>Obtain authorization for pre-approved payments and initiate pre-approved transactions.</li>
 <li>Accept or deny a pending transaction.</li>
 <li>Issue a refund for any prior transaction.</li>
-</ul></div></div></section><section id="ppal-merchant-protection"><h2><a name="ppal-merchant-protection"></a> Seller Protection</h2><div class="row"><div class="col-md-6"><p>PayPal Seller Protection protects you against payment default when your customer pays for your goods or services with PayPal. Occasionally, an expected payment does not arrive because the customer has insufficient account funds or there is a delivery fault. Your buyer may revoke any payment &#8211; for example, when credit card fraud occurs.</p><p>Seller protection occurs in the following cases:</p><ul>
+</ul><div style="display: none;">
+## <a name="ppal-merchant-protection"></a> Seller Protection
+<p>PayPal Seller Protection protects you against payment default when your customer pays for your goods or services with PayPal. Occasionally, an expected payment does not arrive because the customer has insufficient account funds or there is a delivery fault. Your buyer may revoke any payment &#8211; for example, when credit card fraud occurs.</p>
+<p>Seller protection occurs in the following cases:</p>
+<ul>
 <li>Your buyer revokes a debit or credit card payment</li>
 <li>The buyer&#8217;s account has insufficient funds</li>
 <li>Your buyer has complained unjustly and sought Buyer Protection</li>
 <li>Credit Card Fraud</li>
-</ul><p>If a credit card payment or direct debit is revoked (chargeback), the sum will automatically be returned to the bank or to the customer&#8217;s card issuer. In these cases, PayPal will deduct the credited amount from your PayPal account. If Seller Protection then enters into force, PayPal will refund the amount to you after the case is closed.</p><p>To benefit from PayPal seller protection, the following conditions must be met:</p><ul>
+</ul>
+<p>If a credit card payment or direct debit is revoked (chargeback), the sum will automatically be returned to the bank or to the customer&#8217;s card issuer. In these cases, PayPal will deduct the credited amount from your PayPal account. If Seller Protection then enters into force, PayPal will refund the amount to you after the case is closed.</p>
+<p>To benefit from PayPal seller protection, the following conditions must be met:</p>
+<ul>
 <li>The goods are sent insured and with a sales slip</li>
 <li>The article is sent, where possible, within seven days</li>
 <li>The goods will then be sent to the buyer address as appears in the transaction details and the PayPal account.</li>
-</ul><p>For PayPal Seller Protection to be valid when your customer uses PayPal to pay via Saferpay, it is imperative that the address details are forwarded to Saferpay.</p><p>The <a href="https://saferpay.github.io/jsonapi/#ChapterPaymentPage">Saferpay Payment Page</a> can help in forwarding the address parameters in the <strong>Payer</strong> container with the delivery address, or you can use the Saferpay Payment Page&#8217;s own address form.</p><div class="info">
+</ul>
+<p>For PayPal Seller Protection to be valid when your customer uses PayPal to pay via Saferpay, it is imperative that the address details are forwarded to Saferpay.</p>
+<p>The <a href="https://saferpay.github.io/jsonapi/#ChapterPaymentPage">Saferpay Payment Page</a> can help in forwarding the address parameters in the <strong>Payer</strong> container with the delivery address, or you can use the Saferpay Payment Page&#8217;s own address form.</p>
+<div class="info">
   <p>Request with address forwarding:</p>
-</div><pre><code class="language-json">{
+</div>
+<pre><code class="language-json">{
   &quot;RequestHeader&quot;: {
     &quot;SpecVersion&quot;: &quot;1.3&quot;, 
     &quot;CustomerId&quot;: &quot;123123&quot;, 
@@ -735,9 +746,11 @@
     &quot;NotifyUrl&quot;: &quot;https://merchanthost/notify&quot;
   }
 }
-</code></pre><div class="info">
+</code></pre>
+<div class="info">
   <p> Request for the use of the form:</p>
-</div><pre><code class="language-json">{
+</div>
+<pre><code class="language-json">{
   &quot;RequestHeader&quot;: {
     &quot;SpecVersion&quot;: &quot;1.3&quot;, 
     &quot;CustomerId&quot;: &quot;123123&quot;, 
@@ -777,8 +790,10 @@
     &quot;NotifyUrl&quot;: &quot;https://merchanthost/notify&quot;
   }
 }
-</code></pre><p>For Canada, USA and Mexico, specification of the province or the state with the parameter <strong>CountrySubdivisionCode</strong> is required. The abbreviation which must be forwarded corresponds to the two-digit code of the province or the federal state per ISO 3166-2.</p><p>As soon as these attributes have been forwarded, Seller Protection comes into effect. PayPal verifies the supplied address details with the data filed by the buyer and refuses payment if the registered address does not concur with the specified address.</p></div></div></section><section id="ppal-partial-capture"><h2><a name="ppal-partial-capture"></a> Partial Capture</h2><div class="row"><div class="col-md-6"><p>With Partial Capture, it is possible to book a PayPal authorisation in several individual steps. For this, additional parameters must be forwarded with <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Transaction Capture</a> in the <strong>Partial</strong> container.</p><p>With Partial Capture, the booking of an authorised amount is possible in up to ten partial steps. The total number of individual bookings may not exceed the authorised amount.</p><p>The <strong>OrderPartId</strong> parameter must be unique for a partial booking, so as to be able to refer to it later in follow-up actions, such as a credit note payment.
-With the parameter Type, it is determined whether the amount that is to be booked is a partial step or a final booking.</p></div></div></section><section id="ppal-capture"><h2><a name="ppal-capture"></a> Capture and the solvency of the customer</h2><div class="row"><div class="col-md-6"><p>Unlike credit cards, that give the merchant a certain guarantee for the authorized money, PayPal reserves the right to deny the payout of a transaction, if the solvency of the account holder changes negatively after the authorization.</p><p>Therefore Saferpay claims the money directly, once the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> of the transaction has been successfully executed. If the money cannot be claimed, the capture then returns an error.
+</code></pre>
+<p>For Canada, USA and Mexico, specification of the province or the state with the parameter <strong>CountrySubdivisionCode</strong> is required. The abbreviation which must be forwarded corresponds to the two-digit code of the province or the federal state per ISO 3166-2.</p>
+<p>As soon as these attributes have been forwarded, Seller Protection comes into effect. PayPal verifies the supplied address details with the data filed by the buyer and refuses payment if the registered address does not concur with the specified address.</p>
+</div></div></div></section><section id="ppal-capture"><h2><a name="ppal-capture"></a> Capture and the solvency of the customer</h2><div class="row"><div class="col-md-6"><p>Unlike credit cards, that give the merchant a certain guarantee for the authorized money, PayPal reserves the right to deny the payout of a transaction, if the solvency of the account holder changes negatively after the authorization.</p><p>Therefore Saferpay claims the money directly, once the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> of the transaction has been successfully executed. If the money cannot be claimed, the capture then returns an error.
 We generally recommend to execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> as soon as possible, to avoid any issues.</p></div></div></section><section id="ppal-iframe"><h2><a name="ppal-iframe"></a> PayPal iFrame integration</h2><div class="row"><div class="col-md-6"><div class="danger">
   <p><strong>Warning:</strong> PayPal does not support the iFrame Integration!</p>
 </div><p>PayPal actively blocks the iFrame-Integration.
