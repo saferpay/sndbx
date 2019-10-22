@@ -243,8 +243,6 @@
     "Subsites": [
       { "Source": "texts/paypal.md", "Title": "Requirements", "Target": "PayPal.html#ppal-requirement" },
       { "Source": "texts/paypal.md", "Title": "Grant API Approval for Saferpay", "Target": "PayPal.html#ppal-api-access" },
-      { "Source": "texts/paypal.md", "Title": "Seller Protection", "Target": "PayPal.html#ppal-merchant-protection" },
-      { "Source": "texts/paypal.md", "Title": "Partial Capture", "Target": "PayPal.html#ppal-partial-capture" },
       { "Source": "texts/paypal.md", "Title": "Capture and the solvency of the customer", "Target": "PayPal.html#ppal-capture" },
       { "Source": "texts/paypal.md", "Title": "PayPal iFrame integration", "Target": "PayPal.html#ppal-iframe" },
       { "Source": "texts/paypal.md", "Title": "Other special cases", "Target": "PayPal.html#ppal-special" }
