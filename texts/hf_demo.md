@@ -1,4 +1,62 @@
-## Hosted Fields Example Page
+# Saferpay Hosted Fields
+
+The Saferpay Hosted Fields grant you the flexibility of your own HTML-form, whilst being 100% PCI SAQ-A compliant. This chapter will cover the integration and preperations necessary, to work with the Saferpay Hosted Fields.
+
+# <a name="hf-cc"></a> Preperation
+
+## Step 1 - Create your API Key
+
+Before you can start integrating the Hosted Fields, you need to create an API Token.
+To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Settings > HostedFields API Key</strong>. There, please click on <strong>New HostedFields API Key</strong>. The following window will pop-up:
+
+#REPLACE ON RELEASE
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/hosted-fields-create-api-key.png "New API Key mask")
+
+<div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Very Important:</strong> Saferpay will indeed validate the used Source-URL and the used TerminalId! It is enough to just enter the base-url, of your shop here. If you use multiple terminals, you have to generate more API-Keys for each terminal.
+  </p>
+</div>
+
+#REPLACE 
+Once created, you will be presented with a basic integration-example:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/hosted-fields-api-key.png "API Key")
+
+## Step 2 - Integration and Initialization
+
+### Include the Saferpay Hosted Fields Javascript library into your site
+```html
+<script src="https://test.saferpay.com/HostedFields/Public/[CURRENT VERSION]/saferpay-hosted-fields-[CURRENT VERSION].js"></script>
+```
+
+### Hosted Fields Initialization
+```javascript
+HostedFields.init(
+	// api key
+	[YOUR API-TOKEN],
+	// api url
+	'https://test.saferpay.com/hostedfields/[YOUR CUSTOMERID]',
+	{
+		onSuccess: function (evt) {
+			//See further down in this chapter for a description
+		},
+		onReady: function () {
+			//See further down in this chapter for a description
+		},
+		onFocus: function (evt) {
+			//See further down in this chapter for a description
+		},
+		onBlur: function (evt) {
+			//See further down in this chapter for a description
+		},
+	}
+);
+
+// submit hosted fields data
+HostedFields.submit();
+```
+This Javascript-Example 
 
 <div class="info">
   <p><strong>Note:</strong> If you want to test Saferpay Hosted Fields, you can eddit all examples in JSFiddle. Please click on the link on the upper right side of the examples: <i>Edit in JSFiddle</i></p>
