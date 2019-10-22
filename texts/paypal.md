@@ -43,6 +43,7 @@ To enable processing of PayPal payments via Saferpay a few settings must be firs
 * Accept or deny a pending transaction.
 * Issue a refund for any prior transaction.
 
+<div style="display: none;">
 ## <a name="ppal-merchant-protection"></a> Seller Protection
 
 PayPal Seller Protection protects you against payment default when your customer pays for your goods or services with PayPal. Occasionally, an expected payment does not arrive because the customer has insufficient account funds or there is a delivery fault. Your buyer may revoke any payment – for example, when credit card fraud occurs.
@@ -169,15 +170,7 @@ The [Saferpay Payment Page](https://saferpay.github.io/jsonapi/#ChapterPaymentPa
 For Canada, USA and Mexico, specification of the province or the state with the parameter **CountrySubdivisionCode** is required. The abbreviation which must be forwarded corresponds to the two-digit code of the province or the federal state per ISO 3166-2.
 
 As soon as these attributes have been forwarded, Seller Protection comes into effect. PayPal verifies the supplied address details with the data filed by the buyer and refuses payment if the registered address does not concur with the specified address.
-
-## <a name="ppal-partial-capture"></a> Partial Capture
-
-With Partial Capture, it is possible to book a PayPal authorisation in several individual steps. For this, additional parameters must be forwarded with [Transaction Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) in the **Partial** container.
-
-With Partial Capture, the booking of an authorised amount is possible in up to ten partial steps. The total number of individual bookings may not exceed the authorised amount.
-
-The **OrderPartId** parameter must be unique for a partial booking, so as to be able to refer to it later in follow-up actions, such as a credit note payment. 
-With the parameter Type, it is determined whether the amount that is to be booked is a partial step or a final booking. 
+</div>
 
 ## <a name="ppal-capture"></a> Capture and the solvency of the customer
 
