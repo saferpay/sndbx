@@ -137,7 +137,7 @@ HostedFields.submit();
 ```
 #### Events
 Events are called, if certain criteria are met.
-They give you options for input validation and more. You can attach a callback-function (As shown above!) to a certain event, to trigger custom behavior. If available, Saferpay will return a JSON-message (evt), which contains information about the event, like validation information. 
+They give you options for input validation and more. You can attach a callback-function (As shown above!) to a certain event, to trigger custom behavior. If available, Saferpay will return a message (evt), which contains information about the event, like validation information. 
 The following events are available:
 
 ##### onSuccess
