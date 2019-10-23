@@ -140,7 +140,7 @@ Events are called, if certain criteria are met.
 They give you options for input validation and more. You can attach a callback-function (As shown above!) to a certain event, to trigger custom behavior. If available, Saferpay will return a message (evt), which contains information about the event, like validation information. 
 The following events are available:
 
-##### onSuccess
+#### onSuccess
 This event occurs after HostedFields.submit(); is called, but only, if the submit was successful!
 When called, the event will return a Hosted-Fields token, which is later used to start the transaction itself on serverside.
 However it is up to you, how you deliver said token from client- to server-side. Methods, like AJAX for example are possible.
@@ -152,11 +152,11 @@ Example, of returned message:
 }
 ```
 
-##### onReady
+#### onReady
 This event occurs after the onLoaded event, when the page is ready and the iFrames are fully loaded.
 Saferpay does not return any data on this event!
 
-##### onBlur
+#### onBlur
 Execute a JavaScript when a user leaves an input field.
 onBlur will also trigger the input-validation on Saferpay side, which returns data, on the given field and whether, or not it has been validated successfully. This enables you to trigger messages or CSS-events on your side, to signal your customer, that he/she needs to take action.
 
@@ -169,7 +169,7 @@ Example, of returned message:
 }
 ```
 
-##### onFocus
+#### onFocus
 Execute a JavaScript when an input field gets into focus.
 Saferpay will return the id of the current field in focus!
 
