@@ -31,7 +31,6 @@ This is the basic Hosted Fields flow.
 Before you can start integrating the Hosted Fields, you need to create an API Token.
 To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Settings > HostedFields API Key</strong>. There, please click on <strong>New HostedFields API Key</strong>. The following window will pop-up:
 
-# REPLACE ON RELEASE
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/hosted-fields-create-api-key.png "New API Key mask")
 
 <div class="warning">
