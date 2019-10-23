@@ -80,7 +80,6 @@ However you must make sure, that you define the placeholder inputs with the foll
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>Authenticated</th>
       <th class="text-center">Input-Field</th>
       <th class="text-center">id-Value</th>
     </tr>
