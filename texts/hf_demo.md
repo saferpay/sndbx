@@ -1,10 +1,30 @@
 # Saferpay Hosted Fields
 
+<div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant!</p>
+</div>
+
 The Saferpay Hosted Fields grant you the flexibility of your own HTML-form, whilst being 100% PCI SAQ-A compliant. 
 
 The main idea is, to split the classic card entry form into its components, namely the inputs for the PAN, CVC, Expiration and Holder Name. These fields will be hosted on Saferpay-side, making sure, that the data is captured by a fully PCI-certified system, while offering you a level of flexibility and the possibilities, similar to using your own form.
 
 This chapter will cover the integration and preperations necessary, to work with the Saferpay Hosted Fields.
+
+# <a name="hf-flow"></a> Basic Flow
+
+This is the basic Hosted Fields flow.
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/hosted-fields-flow.new.png "Hosted Fields flow")
+1. The card holder navigates to the checkout
+2. The shop frontend calls **HostedFields.Init()** (See Integration and Initialization > Hosted Fields Initialization) and the Hosted Fields Javascript library initializes the iFrames.
+3. Once initialized, the library will replace the placeholders with the correct iFrame inputs, which then are presented to the card holder.
+4. The card holder enters his card details and clicks "Submit", on which the Webshop executes the <strong>HostedFields.submit()</strong> function.
+5. The Hosted Fields Javascript library then submits the iFrames, which sends the card details towards Saferpay.
+6. Saferpay caches the card details **for a maximum of 20 minutes** and generates a token, which is then used to reference said means of payment. 
+7. The token is forwarded and the onSuccess event (See Integration and Initialization > Events) is called, so the token may be captured and processed further.
+8. The token then has to be forwarded to serverside. How you do that, is up to you. Methods like for example a redirect or AJAX are possible. Once on serverside, the token is then used to initialize the transaction itself, <a href="Integration_trx.html"> following the normal Transaction Interface flow.</a> Please refer to that chapter on further information, about how to submit the token through the JSON-API and execute the transaction itself.
+
 
 # <a name="hf-prep"></a> Preperation
 
@@ -171,7 +191,7 @@ Saferpay Hosted Fields are supported by the following Browsers:
   <li>Safari latest</li>
 </ul>
 
-# <a name="hf-prep"></a> Examples
+# <a name="hf-example"></a> Examples
 
 Here you can see some examples of how the Hosted Fields may be integrated. Feel free to use this code, if you have trouble integrating.
 
@@ -195,3 +215,16 @@ Here you can see some examples of how the Hosted Fields may be integrated. Feel 
 #### Styling
 # MISSING INFO
 
+# <a name="hf-transaction"></a> Executing the Transaction
+
+It is important to understand, that the Hosted Fields are just a way to capture the card details, but not to execute the transaction itself. That is done via the <a href="Integration_trx.html">Transaction Interface</a>.
+Once the **onSuccess** event is called, you need to forward the Hosted Fields token to your server-backend, in order to initialize the transaction itself and also gather the **RedirectUrl**, to perform things like 3D Secure and DCC. How you move the token to the backend is completely up to you.
+You can provide the onSuccess event with an AJAX-method to execute the initialize in the background on a successful submit and forward the **RedirectUrl** to the fronent for a redirect this way, which you then can open in an iFrame, Lightbox, or as a full redirect.
+However a redirect via GET, or POST, towards your initialize-script, is also an option, of course.
+Refer to the above mentioned chapter, to learn, how to initialize a transaction, using a Hosted Fields token.
+<div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> This process has to be finished within 20 minutes, after the submission of the card details. Saferpay will discard the card details afterwards and the Hosted Fields token becomes invalid!
+  </p>
+</div>
