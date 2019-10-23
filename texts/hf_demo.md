@@ -141,9 +141,9 @@ They give you options for input validation and more. You can attach a callback-f
 The following events are available:
 
 #### onSuccess
-This event occurs after HostedFields.submit(); is called, but only, if the submit was successful!
-When called, the event will return a Hosted-Fields token, which is later used to start the transaction itself on serverside.
-However it is up to you, how you deliver said token from client- to server-side. Methods, like AJAX for example are possible.
+This event occurs after **HostedFields.submit();** is called, but only, if the submit was successful!
+When called, the event will return a Hosted-Fields token (evt.token), which is later used to start the transaction itself on serverside.
+However it is up to you, how you deliver said token from client- to server-side. Methods, like AJAX for example are possible, if you provide onSuccess with a respective callback-function.
 
 Example, of returned message:
 ```json
