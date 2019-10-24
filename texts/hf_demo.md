@@ -76,7 +76,7 @@ After you have created your API-Toke, you can start integrating the Hosted Field
     </div>
 ```
 This example uses Bootstrap for formatting purposes, which isn't mandatory. You also can define these fields wherever and however you want. 
-However you must make sure, that you define the placeholder inputs with the following id-values:
+However you must make sure, that you define the placeholders -which also can be things like a normal <div>-container- with the following id-values:
 <table class="table table-striped table-hover">
   <thead>
     <tr>
