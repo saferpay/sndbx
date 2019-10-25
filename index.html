@@ -778,7 +778,7 @@ The important parameters are <strong>Authenticated</strong> and especially <stro
       <td><a href="Integration_PP.html">Payment Page Integration</a>, <a href="Integration_trx.html">Transaction interface Integration</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> &amp; <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> &amp; <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a></td>
     </tr>
     <tr>
-      <td class="text-center">Initial Recurring Transaction</td>
+      <td class="text-center">Initial Recurring/Installment Transaction</td>
       <td>This is a special type of Customer Initiated Transaction. With PSD2 the first (initial) transaction within a recurring-chain needs to be covered by SCA. Each subsequent transaction then references this transaction. </td>
       <td><a href="recurring.html">Recurring Integration</a>, <a href="Integration_PP.html">Payment Page Integration</a>, <a href="Integration_trx.html">Transaction Interface Integration</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> &amp; <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> &amp; <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a></td>
     </tr>
@@ -799,11 +799,11 @@ The important parameters are <strong>Authenticated</strong> and especially <stro
   <tbody>
     <tr>
       <td class="text-center">Merchant Initiated Transactions</td>
-      <td>Basically all transactions, that are triggered by Merchant, with the card holders consent, while not being present, e.g. Installments. <strong>MITs do not offer LiabilityShift!</strong></td>
+      <td>Basically all transactions, that are triggered by Merchant, with the card holders consent, while not being present. <strong>MITs do not offer LiabilityShift!</strong></td>
       <td><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a> e.g. using <a href="https://saferpay.github.io/sndbx/scd.html">an alias</a></td>
     </tr>
     <tr>
-      <td class="text-center">Subsequent Recurring Transaction</td>
+      <td class="text-center">Subsequent Recurring/installment Transaction</td>
       <td>
         These are transactions, that follow the initial recurring transaction (see above) and are a special type of Merchant initiated Transaction (see above).. They must reference the initial transaction. Note, that due to that, they effectively also reference to the LiabilityShift of the initial transaction, giving an additional layer of protection for the merchant, by effectively granting subsequent LiabilityShift.
         <div class="warning">
