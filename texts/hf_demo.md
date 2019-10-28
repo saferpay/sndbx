@@ -51,28 +51,28 @@ After you have created your API-Toke, you can start integrating the Hosted Field
 ### Include the Saferpay Hosted Fields Javascript library into your site
 # REPLACE ON RELEASE
 ```html
-<script src="https://test.saferpay.com/HostedFields/Public/[CURRENT VERSION]/saferpay-hosted-fields-[CURRENT VERSION].js"></script>
+<script src="https://qa.saferpay.com/HostedFields/lib/1.0/saferpay-hosted-fields.js"></script>
 ```
 ### Define, where Saferpay should load the Hosted Fields
 
 ```html
     <div class="row">
-        <div class="col-md-10 field">
-		<input id="hosted-fields-holder-name">
+	<div class="col-md-12 field">
+	    <div id="hosted-fields-holder-name"></div>
 	</div>
     </div>
     <div class="row">
-        <div class="col-md-10 field">
-		<input id="hosted-fields-card-number">
-        </div>
+	<div class="col-md-12 field">
+	    <div id="hosted-fields-card-number"></div>
+	</div>
     </div>
     <div class="row">
-        <div class="col-md-4 field">
-		<input id="hosted-fields-expiration">
+	<div class="col-md-7 field">
+	    <div id="hosted-fields-expiration"></div>
 	</div>
-        <div class="col-md-3 field">
-		<input id="hosted-fields-cvc">
-        </div>
+	<div class="col-md-5 field">
+	    <div id="hosted-fields-cvc"></div>
+	</div>
     </div>
 ```
 This example uses Bootstrap for formatting purposes, which isn't mandatory. You also can define these fields wherever and however you want. 
