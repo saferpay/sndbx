@@ -182,6 +182,7 @@ Callback function, that is executed, every time, the initialization of the Safer
 
 <strong>style</strong> *Object* :
 Object, that defines CSS rules, to be applied to all elements.
+
 **Example:**
 ```javascript
 style: {
