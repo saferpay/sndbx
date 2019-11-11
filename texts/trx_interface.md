@@ -150,7 +150,7 @@ Because there are no PCI requirements for direct debits, bank details data can b
 	
 ## <a name="trx-demo"></a> Try it out!
 
-<a href="https://saferpay.github.io/sndbx/trx_demo.html" class="demobtn">Click here for a live demo!</a>
+<a href="https://shop.saferpay.eu/saferpayintegration" class="demobtn">Click here for a live demo!</a>
 
 
 ## <a name="trx-post"></a> Using your own HTML-Form
