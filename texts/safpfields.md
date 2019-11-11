@@ -206,7 +206,7 @@ placeholders: {
 },
 ```
 
-## submit({options})
+## .submit({options})
 Submits the Saferpay Fields.
 
 ### Available options
