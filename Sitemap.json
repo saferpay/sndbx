@@ -200,24 +200,8 @@
    "Title": "Demo"
   },
   {
-   "Title": "Payment Page",
-   "Source": "texts/pp_demo.md",
-   "Target": "pp_demo.html"
-  },
-  {
-   "Title": "Transaction interface",
-   "Source": "texts/trx_demo.md",
-   "Target": "trx_demo.html"
-  },
- {
-   "Title": "Secure Card Data",
-   "Source": "texts/scd_demo.md",
-   "Target": "scd_demo.html"
-  },
-  {
-   "Title": "Refunds",
-   "Source": "texts/refund_demo.md",
-   "Target": "refund_demo.html"
+   "Title": "Saferpay Demo Environment",
+   "Target": "https://shop.saferpay.eu/saferpayintegration"
   },
   {
     "Title": "Payment Method specifics"
