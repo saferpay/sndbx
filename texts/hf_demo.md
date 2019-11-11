@@ -76,7 +76,7 @@ After you have created your API-Token, you can start integrating the Saferpay Fi
     </div>
 ```
 This example uses Bootstrap for formatting purposes, which isn't mandatory. You also can define these fields wherever and however you want. 
-However you must make sure, that you define the placeholders -can be ```html <div>```, ```html <span>```, or ```html <input readonly>```- with the following id-values:
+However you must make sure, that you define the placeholders -can be ```<div>```, ```<span>```, or ```<input readonly>```- with the following id-values:
 <table class="table table-striped table-hover">
   <thead>
     <tr>
