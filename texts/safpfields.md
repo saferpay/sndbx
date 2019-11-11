@@ -26,7 +26,7 @@ This is the basic Hosted Fields flow.
 8. The token then has to be forwarded to serverside. How you do that, is up to you. Methods like for example a redirect or AJAX are possible. Once on serverside, the token is then used to initialize the transaction itself, <a href="Integration_trx.html"> following the normal Transaction Interface flow.</a> Please refer to that chapter on further information, about how to submit the token through the JSON-API and execute the transaction itself.
 
 
-# <a name="hf-prep"></a> Preperation
+# <a name="hf-prep"></a> Preparation
 
 Before you can start integrating the Saferpay Fields, you need to create an API Token.
 To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Settings > Saferpay Fields Access Tokens</strong>. There, please click on <strong>Create Saferpay Fields Access Token</strong>. The following window will pop-up:
@@ -178,7 +178,7 @@ Callback function, that is executed, should the customer enter the field. The ev
 Callback function, that is executed, every time, the Saferpay Fields have been loaded successfully.
 
 #### onError *eventCallback*
-Callback function, that is executed, every time, the initialization of the Saferpay Fields has not been successful. The event returns a **Error Callback Message**.
+Callback function, that is executed, every time, the initialization of the Saferpay Fields has not been successful. The event returns an **Error Callback Message**.
 
 #### style *Object*
 Object, that defines CSS rules, to be applied to all elements.
@@ -215,7 +215,7 @@ Submits the Saferpay Fields.
 Callback function, that is executed, if the Saferpay Fields have been submitted successfully. The event returns a **Submit Success Callback Message**.
 
 #### onError *eventCallback*
-Callback function, that is executed, if the Saferpay Fields have not been successfully submitted. The event returns a **Error Callback Message**.
+Callback function, that is executed, if the Saferpay Fields have not been successfully submitted. The event returns an **Error Callback Message**.
 
 ## Callback Messages
 Saferpay returns certain data to the application, in case of certain **eventCallback**s.
