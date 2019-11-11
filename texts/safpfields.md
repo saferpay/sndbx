@@ -167,19 +167,19 @@ Contains the API-Url, to define, where to post the data and initialize the Safer
 // Live Environment
 	url: 'https://www.saferpay.com/Fields/[YOUR CUSTOMERID]',
 ```
-
+<br />
 <strong>onBlur</strong> *eventCallback* :
 Callback function, that is executed, should the customer leave the field. The event returns a **Callback message**.
-
+<br />
 <strong>onFocus</strong> *eventCallback* :
 Callback function, that is executed, should the customer enter the field. The event returns a **Callback message**.
-
+<br />
 <strong>onSuccess</strong> *eventCallback* :
 Callback function, that is executed, every time, the Saferpay Fields have been loaded successfully.
-
+<br />
 <strong>onError</strong> *eventCallback* :
 Callback function, that is executed, every time, the initialization of the Saferpay Fields has not been successful. The event returns an **Error Callback Message**.
-
+<br />
 <strong>style</strong> *Object* :
 Object, that defines CSS rules, to be applied to all elements.
 
@@ -189,10 +189,10 @@ style: {
 	'.form-control': 'border: none; border-bottom: solid 1px #ccc; border-radius: unset;'
 }
 ```
-
+<br />
 <strong>cssUrl</strong> *String* :
 Url to an external CSS, to be applied to all elements.
-
+<br />
 <strong>placeholders</strong> *Object* :
 Object, that contains custom placeholder text, to be applied to the inputs.
 
@@ -211,10 +211,10 @@ placeholders: {
 Submits the Saferpay Fields.
 
 ### Available options
-
+<br />
 <strong>onSuccess</strong> *eventCallback* :
 Callback function, that is executed, if the Saferpay Fields have been submitted successfully. The event returns a **Submit Success Callback Message**.
-
+<br />
 <strong>onError</strong> *eventCallback* :
 Callback function, that is executed, if the Saferpay Fields have not been successfully submitted. The event returns an **Error Callback Message**.
 
