@@ -43,6 +43,19 @@
      { "Source": "texts/PaymentPage.md", "Title": "Try it!", "Target": "Integration_PP.html#pp-demo" }
     ]
   },
+ {
+    "Title": "Saferpay Fields",
+    "Source": "texts/safpfields.md",
+    "Target": "SaferpayFields.html",
+    "Subsites": [
+      { "Source": "texts/safpfields.md", "Title": "Basic Flow", "Target": "SaferpayFields.html#hf-flow" },
+      { "Source": "texts/safpfields.md", "Title": "Preparation", "Target": "SaferpayFields.html#hf-prep" },
+      { "Source": "texts/safpfields.md", "Title": "Integration and Initialization", "Target": "SaferpayFields.html#hf-integration" },
+  	   { "Source": "texts/safpfields.md", "Title": "SaferpayFields - Class functions", "Target": "SaferpayFields.html#hf-class" },
+      { "Source": "texts/safpfields.md", "Title": "Examples", "Target": "SaferpayFields.html#hf-example" },
+      { "Source": "texts/safpfields.md", "Title": "Executing the Transaction", "Target": "SaferpayFields.html#hf-transaction" }
+    ]
+  },
   {
     "Title": "Transaction Interface",
     "Source": "texts/trx_interface.md",
