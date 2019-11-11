@@ -32,7 +32,7 @@ Before you can start integrating the Saferpay Fields, you need to create an API 
 To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Settings > Saferpay Fields Access Tokens</strong>. There, please click on <strong>Create Saferpay Fields Access Token</strong>. The following window will pop-up:
 
 # REPLACE ON RELEASE
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/hosted-fields-create-api-key.png "New API Key mask")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-create-api-key.png "New API Key mask")
 
 <div class="warning">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
@@ -43,7 +43,7 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
 
 # REPLACE ON RELEASE
 Once created, you will be presented with a basic integration-example:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/hosted-fields-api-key.png "API Key")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-api-key.png "API Key")
 
 # <a name="hf-integration"></a> Integration and Initialization
 
