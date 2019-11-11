@@ -156,10 +156,10 @@ Initializes the Saferpay Fields and replaces the placeholders, as defined before
 
 ### Available options
 
-<strong>apiKey</strong> *string*
+<strong>apiKey</strong> *string* :
 Contains the API-Key, you have defined inside the Saferpay Backoffice earlier.
 
-<strong>url</strong> *string*
+<strong>url</strong> *string* :
 Contains the API-Url, to define, where to post the data and initialize the Saferpay Fields.
 ```javascript
 // Test Environment
@@ -168,19 +168,19 @@ Contains the API-Url, to define, where to post the data and initialize the Safer
 	url: 'https://www.saferpay.com/Fields/[YOUR CUSTOMERID]',
 ```
 
-<strong>onBlur</strong> *eventCallback*
+<strong>onBlur</strong> *eventCallback* :
 Callback function, that is executed, should the customer leave the field. The event returns a **Callback message**.
 
-<strong>onFocus</strong> *eventCallback*
+<strong>onFocus</strong> *eventCallback* :
 Callback function, that is executed, should the customer enter the field. The event returns a **Callback message**.
 
-<strong>onSuccess</strong> *eventCallback*
+<strong>onSuccess</strong> *eventCallback* :
 Callback function, that is executed, every time, the Saferpay Fields have been loaded successfully.
 
-<strong>onError</strong> *eventCallback*
+<strong>onError</strong> *eventCallback* :
 Callback function, that is executed, every time, the initialization of the Saferpay Fields has not been successful. The event returns an **Error Callback Message**.
 
-<strong>style</strong> *Object*
+<strong>style</strong> *Object* :
 Object, that defines CSS rules, to be applied to all elements.
 **Example:**
 ```javascript
@@ -189,10 +189,10 @@ style: {
 }
 ```
 
-<strong>cssUrl</strong> *String*
+<strong>cssUrl</strong> *String* :
 Url to an external CSS, to be applied to all elements.
 
-<strong>placeholders</strong> *Object*
+<strong>placeholders</strong> *Object* :
 Object, that contains custom placeholder text, to be applied to the inputs.
 
 **Example:**
@@ -211,16 +211,16 @@ Submits the Saferpay Fields.
 
 ### Available options
 
-<strong>onSuccess</strong> *eventCallback*
+<strong>onSuccess</strong> *eventCallback* :
 Callback function, that is executed, if the Saferpay Fields have been submitted successfully. The event returns a **Submit Success Callback Message**.
 
-<strong>onError</strong> *eventCallback*
+<strong>onError</strong> *eventCallback* :
 Callback function, that is executed, if the Saferpay Fields have not been successfully submitted. The event returns an **Error Callback Message**.
 
 ## Callback Messages
 Saferpay returns certain data to the application, in case of certain **eventCallback**s.
 
-<strong>Callback Message</strong> *Object* 
+<strong>Callback Message</strong> *Object* :
 Callback message on normal event, containing the following data:
 <table class="table table-striped table-hover">
   <thead>
@@ -254,7 +254,7 @@ Callback message on normal event, containing the following data:
   </tbody>
 </table>
 
-<strong>Error Callback Message</strong> *Object*
+<strong>Error Callback Message</strong> *Object* :
 Callback message on error event, containing the following data:
 <table class="table table-striped table-hover">
   <thead>
@@ -273,7 +273,7 @@ Callback message on error event, containing the following data:
   </tbody>
 </table>
 
-<strong>Submit Success Callback Message</strong> *Object* 
+<strong>Submit Success Callback Message</strong> *Object* :
 Callback message on a successful submit, containing the following data:
 <table class="table table-striped table-hover">
   <thead>
