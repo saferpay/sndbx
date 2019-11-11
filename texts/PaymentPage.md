@@ -128,4 +128,4 @@ Once these steps are complete, the transaction is completed.
 
 ## <a name="pp-demo"></a> Try it out!
 
-<a href="https://saferpay.github.io/sndbx/pp_demo.html" class="demobtn">Click here for a live demo!</a>
+<a href="https://shop.saferpay.eu/saferpayintegration" class="demobtn">Click here for a live demo!</a>
