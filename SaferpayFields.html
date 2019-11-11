@@ -756,26 +756,17 @@ Contains the API-Url, to define, where to post the data and initialize the Safer
 	url: 'https://test.saferpay.com/Fields/[YOUR CUSTOMERID]',
 // Live Environment
 	url: 'https://www.saferpay.com/Fields/[YOUR CUSTOMERID]',
-</code></pre><p><strong>onBlur</strong> <em>eventCallback</em> :
-Callback function, that is executed, should the customer leave the field. The event returns a <strong>Callback message</strong>.</p><p><strong>onFocus</strong> <em>eventCallback</em> :
-Callback function, that is executed, should the customer enter the field. The event returns a <strong>Callback message</strong>.</p><p><strong>onSuccess</strong> <em>eventCallback</em> :
-Callback function, that is executed, every time, the Saferpay Fields have been loaded successfully.</p><p><strong>onError</strong> <em>eventCallback</em> :
-Callback function, that is executed, every time, the initialization of the Saferpay Fields has not been successful. The event returns an <strong>Error Callback Message</strong>.</p><p><strong>style</strong> <em>Object</em> :
-Object, that defines CSS rules, to be applied to all elements.</p><p><strong>Example:</strong></p><pre><code class="language-javascript">style: {
+</code></pre><br><strong>onBlur</strong><br><strong>onFocus</strong><br><strong>onSuccess</strong><br><strong>onError</strong><br><strong>style</strong><p><strong>Example:</strong></p><pre><code class="language-javascript">style: {
 	'.form-control': 'border: none; border-bottom: solid 1px #ccc; border-radius: unset;'
 }
-</code></pre><p><strong>cssUrl</strong> <em>String</em> :
-Url to an external CSS, to be applied to all elements.</p><p><strong>placeholders</strong> <em>Object</em> :
-Object, that contains custom placeholder text, to be applied to the inputs.</p><p><strong>Example:</strong></p><pre><code class="language-javascript">placeholders: {
+</code></pre><br><strong>cssUrl</strong><br><strong>placeholders</strong><p><strong>Example:</strong></p><pre><code class="language-javascript">placeholders: {
     //Custom Text for Input placeholders
     holdername: 'Card holder',
     cardnumber: '0000 0000 0000 0000',
     expiration: 'MM/YY',
     cvc: 'CVC'
 },
-</code></pre><p></p></div></div></section><section><h2>.submit({options})</h2><div class="row"><div class="col-md-6"><p></p></div></div></section><section><h3>Available options</h3><div class="row"><div class="col-md-6"><p><strong>onSuccess</strong> <em>eventCallback</em> :
-Callback function, that is executed, if the Saferpay Fields have been submitted successfully. The event returns a <strong>Submit Success Callback Message</strong>.</p><p><strong>onError</strong> <em>eventCallback</em> :
-Callback function, that is executed, if the Saferpay Fields have not been successfully submitted. The event returns an <strong>Error Callback Message</strong>.</p></div></div></section><section><h2>Callback Messages</h2><div class="row"><div class="col-md-6"><p>Saferpay returns certain data to the application, in case of certain <strong>eventCallback</strong>s.</p><p><strong>Callback Message</strong> <em>Object</em> :
+</code></pre><p></p></div></div></section><section><h2>.submit({options})</h2><div class="row"><div class="col-md-6"><p></p></div></div></section><section><h3>Available options</h3><div class="row"><div class="col-md-6"><br><strong>onSuccess</strong><br><strong>onError</strong></div></div></section><section><h2>Callback Messages</h2><div class="row"><div class="col-md-6"><p>Saferpay returns certain data to the application, in case of certain <strong>eventCallback</strong>s.</p><p><strong>Callback Message</strong> <em>Object</em> :
 Callback message on normal event, containing the following data:</p><table class="table table-striped table-hover">
   <thead>
     <tr>
