@@ -240,7 +240,7 @@ With the **Token**, the can be obtained, by submitting it through the [Alias Ass
  
 ## <a name="scd-demo"></a>Try it out!
 
-<a href="https://saferpay.github.io/sndbx/scd_demo.html" class="demobtn">Click here for a live demo!</a>
+<a href="https://shop.saferpay.eu/saferpayintegration" class="demobtn">Click here for a live demo!</a>
 
 
 ## <a name="scd-check"></a> The check-Function
