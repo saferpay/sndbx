@@ -750,22 +750,34 @@ HostedFields.submit({
 	    //Callback on unsuccessful Submit
 	}
 });
-</code></pre></div></div></section><section id="hf-class"><h1><a name="hf-class"></a> SaferpayFields - Class functions</h1><div class="row"><div class="col-md-6"></div></div></section><section><h2>.version()</h2><div class="row"><div class="col-md-6"><p>Returns a <strong>string</strong> containing the current library-version.</p></div></div></section><section><h2>.init({options})</h2><div class="row"><div class="col-md-6"><p>Initializes the Saferpay Fields and replaces the placeholders, as defined before.</p></div></div></section><section><h3>Available options</h3><div class="row"><div class="col-md-6"><h4>apiKey <em>string</em></h4><p>Contains the API-Key, you have defined inside the Saferpay Backoffice earlier.</p><h4>url <em>string</em></h4><p>Contains the API-Url, to define, where to post the data and initialize the Saferpay Fields.</p><pre><code class="language-javascript">// Test Environment
+</code></pre></div></div></section><section id="hf-class"><h1><a name="hf-class"></a> SaferpayFields - Class functions</h1><div class="row"><div class="col-md-6"><p></p></div></div></section><section><h2>.version()</h2><div class="row"><div class="col-md-6"><strong>string</strong><p></p><p></p></div></div></section><section><h2>.init({options})</h2><div class="row"><div class="col-md-6"><p></p></div></div></section><section><h3>Available options</h3><div class="row"><div class="col-md-6"><p><strong>apiKey</strong> <em>string</em>
+Contains the API-Key, you have defined inside the Saferpay Backoffice earlier.</p><p><strong>url</strong> <em>string</em>
+Contains the API-Url, to define, where to post the data and initialize the Saferpay Fields.</p><pre><code class="language-javascript">// Test Environment
 	url: 'https://test.saferpay.com/Fields/[YOUR CUSTOMERID]',
 // Live Environment
 	url: 'https://www.saferpay.com/Fields/[YOUR CUSTOMERID]',
-</code></pre><h4>onBlur <em>eventCallback</em></h4><p>Callback function, that is executed, should the customer leave the field. The event returns a <strong>Callback message</strong>.</p><h4>onFocus <em>eventCallback</em></h4><p>Callback function, that is executed, should the customer enter the field. The event returns a <strong>Callback message</strong>.</p><h4>onSuccess <em>eventCallback</em></h4><p>Callback function, that is executed, every time, the Saferpay Fields have been loaded successfully.</p><h4>onError <em>eventCallback</em></h4><p>Callback function, that is executed, every time, the initialization of the Saferpay Fields has not been successful. The event returns an <strong>Error Callback Message</strong>.</p><h4>style <em>Object</em></h4><p>Object, that defines CSS rules, to be applied to all elements.
+</code></pre><p><strong>onBlur</strong> <em>eventCallback</em>
+Callback function, that is executed, should the customer leave the field. The event returns a <strong>Callback message</strong>.</p><p><strong>onFocus</strong> <em>eventCallback</em>
+Callback function, that is executed, should the customer enter the field. The event returns a <strong>Callback message</strong>.</p><p><strong>onSuccess</strong> <em>eventCallback</em>
+Callback function, that is executed, every time, the Saferpay Fields have been loaded successfully.</p><p><strong>onError</strong> <em>eventCallback</em>
+Callback function, that is executed, every time, the initialization of the Saferpay Fields has not been successful. The event returns an <strong>Error Callback Message</strong>.</p><p><strong>style</strong> <em>Object</em>
+Object, that defines CSS rules, to be applied to all elements.
 <strong>Example:</strong></p><pre><code class="language-javascript">style: {
 	'.form-control': 'border: none; border-bottom: solid 1px #ccc; border-radius: unset;'
 }
-</code></pre><h4>cssUrl <em>String</em></h4><p>Url to an external CSS, to be applied to all elements.</p><h4>placeholders <em>Object</em></h4><p>Object, that contains custom placeholder text, to be applied to the inputs.</p><p><strong>Example:</strong></p><pre><code class="language-javascript">placeholders: {
+</code></pre><p><strong>cssUrl</strong> <em>String</em>
+Url to an external CSS, to be applied to all elements.</p><p><strong>placeholders</strong> <em>Object</em>
+Object, that contains custom placeholder text, to be applied to the inputs.</p><p><strong>Example:</strong></p><pre><code class="language-javascript">placeholders: {
     //Custom Text for Input placeholders
     holdername: 'Card holder',
     cardnumber: '0000 0000 0000 0000',
     expiration: 'MM/YY',
     cvc: 'CVC'
 },
-</code></pre></div></div></section><section><h2>.submit({options})</h2><div class="row"><div class="col-md-6"><p>Submits the Saferpay Fields.</p></div></div></section><section><h3>Available options</h3><div class="row"><div class="col-md-6"><h4>onSuccess <em>eventCallback</em></h4><p>Callback function, that is executed, if the Saferpay Fields have been submitted successfully. The event returns a <strong>Submit Success Callback Message</strong>.</p><h4>onError <em>eventCallback</em></h4><p>Callback function, that is executed, if the Saferpay Fields have not been successfully submitted. The event returns an <strong>Error Callback Message</strong>.</p></div></div></section><section><h2>Callback Messages</h2><div class="row"><div class="col-md-6"><p>Saferpay returns certain data to the application, in case of certain <strong>eventCallback</strong>s.</p></div></div></section><section><h3>Callback Message <em>Object</em></h3><div class="row"><div class="col-md-6"><p>Callback message on normal event, containing the following data:</p><table class="table table-striped table-hover">
+</code></pre><p></p></div></div></section><section><h2>.submit({options})</h2><div class="row"><div class="col-md-6"><p></p></div></div></section><section><h3>Available options</h3><div class="row"><div class="col-md-6"><p><strong>onSuccess</strong> <em>eventCallback</em>
+Callback function, that is executed, if the Saferpay Fields have been submitted successfully. The event returns a <strong>Submit Success Callback Message</strong>.</p><p><strong>onError</strong> <em>eventCallback</em>
+Callback function, that is executed, if the Saferpay Fields have not been successfully submitted. The event returns an <strong>Error Callback Message</strong>.</p></div></div></section><section><h2>Callback Messages</h2><div class="row"><div class="col-md-6"><p>Saferpay returns certain data to the application, in case of certain <strong>eventCallback</strong>s.</p><p><strong>Callback Message</strong> <em>Object</em>
+Callback message on normal event, containing the following data:</p><table class="table table-striped table-hover">
   <thead>
     <tr>
       <th class="text-center">Parameter</th>
@@ -795,7 +807,8 @@ HostedFields.submit({
       <td>Validity of the field affected.</td>
     </tr>
   </tbody>
-</table></div></div></section><section><h3>Error Callback Message <em>Object</em></h3><div class="row"><div class="col-md-6"><p>Callback message on error event, containing the following data:</p><table class="table table-striped table-hover">
+</table><p><strong>Error Callback Message</strong> <em>Object</em>
+Callback message on error event, containing the following data:</p><table class="table table-striped table-hover">
   <thead>
     <tr>
       <th class="text-center">Parameter</th>
@@ -810,7 +823,8 @@ HostedFields.submit({
       <td>A human-readable explanation specific to this occurrence of the problem.</td>
     </tr>
   </tbody>
-</table></div></div></section><section><h3>Submit Success Callback Message <em>Object</em></h3><div class="row"><div class="col-md-6"><p>Callback message on a successful submit, containing the following data:</p><table class="table table-striped table-hover">
+</table><p><strong>Submit Success Callback Message</strong> <em>Object</em>
+Callback message on a successful submit, containing the following data:</p><table class="table table-striped table-hover">
   <thead>
     <tr>
       <th class="text-center">Parameter</th>
