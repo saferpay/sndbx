@@ -148,18 +148,18 @@ HostedFields.submit({
 
 # <a name="hf-class"></a> SaferpayFields - Class functions
 
-## .version()
+<h2>.version()</h2>
 Returns a **string** containing the current library-version.
 
-## .init({options})
+<h2>.init({options})</h2>
 Initializes the Saferpay Fields and replaces the placeholders, as defined before.
 
 ### Available options
 
-#### apiKey *string*
+<strong>apiKey</strong> *string*
 Contains the API-Key, you have defined inside the Saferpay Backoffice earlier.
 
-#### url *string*
+<strong>url</strong> *string*
 Contains the API-Url, to define, where to post the data and initialize the Saferpay Fields.
 ```javascript
 // Test Environment
@@ -168,19 +168,19 @@ Contains the API-Url, to define, where to post the data and initialize the Safer
 	url: 'https://www.saferpay.com/Fields/[YOUR CUSTOMERID]',
 ```
 
-#### onBlur *eventCallback*
+<strong>onBlur</strong> *eventCallback*
 Callback function, that is executed, should the customer leave the field. The event returns a **Callback message**.
 
-#### onFocus *eventCallback*
+<strong>onFocus</strong> *eventCallback*
 Callback function, that is executed, should the customer enter the field. The event returns a **Callback message**.
 
-#### onSuccess *eventCallback*
+<strong>onSuccess</strong> *eventCallback*
 Callback function, that is executed, every time, the Saferpay Fields have been loaded successfully.
 
-#### onError *eventCallback*
+<strong>onError</strong> *eventCallback*
 Callback function, that is executed, every time, the initialization of the Saferpay Fields has not been successful. The event returns an **Error Callback Message**.
 
-#### style *Object*
+<strong>style</strong> *Object*
 Object, that defines CSS rules, to be applied to all elements.
 **Example:**
 ```javascript
@@ -189,10 +189,10 @@ style: {
 }
 ```
 
-#### cssUrl *String*
+<strong>cssUrl</strong> *String*
 Url to an external CSS, to be applied to all elements.
 
-#### placeholders *Object*
+<strong>placeholders</strong> *Object*
 Object, that contains custom placeholder text, to be applied to the inputs.
 
 **Example:**
@@ -206,21 +206,21 @@ placeholders: {
 },
 ```
 
-## .submit({options})
+<h2>.submit({options})</h2>
 Submits the Saferpay Fields.
 
 ### Available options
 
-#### onSuccess *eventCallback*
+<strong>onSuccess</strong> *eventCallback*
 Callback function, that is executed, if the Saferpay Fields have been submitted successfully. The event returns a **Submit Success Callback Message**.
 
-#### onError *eventCallback*
+<strong>onError</strong> *eventCallback*
 Callback function, that is executed, if the Saferpay Fields have not been successfully submitted. The event returns an **Error Callback Message**.
 
 ## Callback Messages
 Saferpay returns certain data to the application, in case of certain **eventCallback**s.
 
-### Callback Message *Object*
+<strong>Callback Message</strong> *Object* 
 Callback message on normal event, containing the following data:
 <table class="table table-striped table-hover">
   <thead>
@@ -254,7 +254,7 @@ Callback message on normal event, containing the following data:
   </tbody>
 </table>
 
-### Error Callback Message *Object*
+<strong>Error Callback Message</strong> *Object*
 Callback message on error event, containing the following data:
 <table class="table table-striped table-hover">
   <thead>
@@ -273,7 +273,7 @@ Callback message on error event, containing the following data:
   </tbody>
 </table>
 
-### Submit Success Callback Message *Object*
+<strong>Submit Success Callback Message</strong> *Object* 
 Callback message on a successful submit, containing the following data:
 <table class="table table-striped table-hover">
   <thead>
