@@ -43,6 +43,13 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
 Once created, you will be presented with a basic integration-example:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-api-key.png "API Key")
 
+<div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Very Important:</strong> Once you move from the Test-Environment to the Live-Environment, you need to create a new Access Token on your live account!
+  </p>
+</div>
+
 # <a name="hf-integration"></a> Integration and Initialization
 
 After you have created your API-Token, you can start integrating the Saferpay Fields into your site.
