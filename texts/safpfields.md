@@ -13,16 +13,16 @@ This chapter will cover the integration and preperations necessary, to work with
 
 # <a name="hf-flow"></a> Basic Flow
 
-This is the basic Hosted Fields flow.
+This is the basic Saferpay Fields flow.
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/hosted-fields-flow.new.png "Hosted Fields flow")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/saferpay-fields-flow.png "Saferpay Fields flow")
 1. The card holder navigates to the checkout
 2. The shop frontend calls **SaferpayFields.Init()** (See Integration and Initialization > Hosted Fields Initialization) and the Hosted Fields Javascript library initializes the iFrames.
 3. Once initialized, the library will replace the placeholders with the correct iFrame inputs, which then are presented to the card holder.
-4. The card holder enters his card details and clicks "Submit", on which the Webshop executes the <strong>HostedFields.submit()</strong> function.
-5. The Hosted Fields Javascript library then submits the iFrames, which sends the card details towards Saferpay.
+4. The card holder enters his card details and clicks "Submit", on which the Webshop executes the <strong>SaferpayFields.submit()</strong> function.
+5. The Saferpay Fields Javascript library then submits the iFrames, which sends the card details towards Saferpay.
 6. Saferpay caches the card details **for a maximum of 20 minutes** and generates a token, which is then used to reference said means of payment. 
-7. The token is forwarded and the SaferpayFields.submit(); onSuccess callback is called, so the token may be captured and processed further.
+7. The token is forwarded and the <strong>SaferpayFields.submit(); onSuccess callback</strong> is called, so the token may be captured and processed further.
 8. The token then has to be forwarded to serverside. How you do that, is up to you. Methods like for example a redirect or AJAX are possible. Once on serverside, the token is then used to initialize the transaction itself, <a href="Integration_trx.html"> following the normal Transaction Interface flow.</a> Please refer to that chapter on further information, about how to submit the token through the JSON-API and execute the transaction itself.
 
 
