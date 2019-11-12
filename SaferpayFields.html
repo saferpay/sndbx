@@ -665,7 +665,12 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
     <strong>Very Important:</strong> Saferpay will indeed validate the used Source-URL and the used TerminalId! It is enough to just enter the base-url, of your shop here. If you use multiple terminals, you have to generate more API-Keys for each terminal. <strong>HTTPS IS MANDATORY</strong> and will be checked!
   </p>
 </div><p>Once created, you will be presented with a basic integration-example:
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-api-key.png" alt="alt text" title="API Key"></p></div></div></section><section id="hf-integration"><h1><a name="hf-integration"></a> Integration and Initialization</h1><div class="row"><div class="col-md-6"><p>After you have created your API-Token, you can start integrating the Saferpay Fields into your site.</p></div></div></section><section><h3>Include the Saferpay Fields Javascript library into your site</h3><div class="row"><div class="col-md-6"><pre><code class="language-html">&lt;script src=&quot;'https://test.saferpay.com/Fields/lib/1.0/saferpay-fields.js'&quot;&gt;&lt;/script&gt; &lt;!-- For Test-Environment--&gt;
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-api-key.png" alt="alt text" title="API Key"></p><div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Very Important:</strong> Once you move from the Test-Environment to the Live-Environment, you need to create a new Access Token on your live account!
+  </p>
+</div></div></div></section><section id="hf-integration"><h1><a name="hf-integration"></a> Integration and Initialization</h1><div class="row"><div class="col-md-6"><p>After you have created your API-Token, you can start integrating the Saferpay Fields into your site.</p></div></div></section><section><h3>Include the Saferpay Fields Javascript library into your site</h3><div class="row"><div class="col-md-6"><pre><code class="language-html">&lt;script src=&quot;'https://test.saferpay.com/Fields/lib/1.0/saferpay-fields.js'&quot;&gt;&lt;/script&gt; &lt;!-- For Test-Environment--&gt;
 &lt;!-- OR --&gt;
 &lt;script src=&quot;'https://www.saferpay.com/Fields/lib/1.0/saferpay-fields.js'&quot;&gt;&lt;/script&gt; &lt;!-- For Live-Environment--&gt;
 </code></pre></div></div></section><section><h3>Define, where Saferpay should load the Hosted Fields</h3><div class="row"><div class="col-md-6"><pre><code class="language-html">    &lt;div class=&quot;row&quot;&gt;
