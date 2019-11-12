@@ -741,6 +741,9 @@ However you must make sure, that you define the placeholders -can be <code>&lt;d
 	onBlur: function (evt) {
 	    //Callback on blur (Card Holder leaves field)
 	},
+	onValidated: function(evt) {
+	    //Callback similar to on blur (Card Holder leaves field), but explicitly delivers validation data
+	},
 	onFocus: function (evt) {
 	    //Callback on focus (Card Holder clicks into field)
 	}
@@ -766,6 +769,7 @@ HostedFields.submit({
 	url: 'https://www.saferpay.com/Fields/[YOUR CUSTOMERID]',
 </code></pre><ul>
 <li><strong>onBlur</strong> <em>eventCallback</em> : Callback function, that is executed, should the customer leave the field. The event returns a <strong>Callback message</strong>.</li>
+<li><strong>onValidated</strong> <em>eventCallback</em> : Callback function, that is executed, should the customer leave the field. The event returns a <strong>Callback message</strong>, also containing field validation-data.</li>
 <li><strong>onFocus</strong> <em>eventCallback</em> : Callback function, that is executed, should the customer enter the field. The event returns a <strong>Callback message</strong>.</li>
 <li><strong>onSuccess</strong> <em>eventCallback</em> : Callback function, that is executed, every time, the Saferpay Fields have been loaded successfully.</li>
 <li><strong>onError</strong> <em>eventCallback</em> : Callback function, that is executed, every time, the initialization of the Saferpay Fields has not been successful. The event returns an <strong>Error Callback Message</strong>.</li>
@@ -818,7 +822,7 @@ Callback message on normal event, containing the following data:</p><table class
     <tr>
       <td>isValid</td>
       <td>Boolean</td>
-      <td>Validity of the field affected.</td>
+	    <td>Validity of the field affected. (<strong>onValidated</strong> callback only!)</td>
     </tr>
   </tbody>
 </table><p><strong>Error Callback Message</strong> <em>Object</em> :
