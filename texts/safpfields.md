@@ -241,7 +241,7 @@ Callback message on error event, containing the following data:
   <thead>
     <tr>
       <th class="text-center">Parameter</th>
-      <th class="text-center">Type</th>
+      <th class="text-center" style="width: 60px;">Type</th>
       <th class="text-center">Description</th>
     </tr>
   </thead>
