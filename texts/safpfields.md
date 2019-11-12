@@ -179,7 +179,6 @@ style: {
 
 * <strong>cssUrl</strong> *String* : Url to an external CSS, to be applied to all elements.
 * <strong>placeholders</strong> *Object* : Object, that contains custom placeholder text, to be applied to the inputs.
-
 **Example:**
 ```javascript
 placeholders: {
