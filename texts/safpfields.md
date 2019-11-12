@@ -255,7 +255,7 @@ Callback message on error event, containing the following data:
 </table>
 
 <strong>Submit Success Callback Message</strong> *Object* :
-Callback message on a successful submit, containing the following data:
+<p>Callback message on a successful submit, containing the following data:</p>
 <table class="table table-striped table-hover">
   <thead>
     <tr>
