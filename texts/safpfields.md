@@ -325,5 +325,5 @@ Refer to the above mentioned chapter, to learn, how to initialize a transaction,
   </p>
 </div>
 
-#### Want to see a fully working example?
+<h2> Want to see a fully working example?</h2>
 <a href="https://shop.saferpay.eu/saferpayintegration" class="demobtn">Click here for a live demo!</a>
