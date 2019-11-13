@@ -324,3 +324,6 @@ Refer to the above mentioned chapter, to learn, how to initialize a transaction,
     <strong>Important:</strong> This process has to be finished within 20 minutes, after the submission of the card details. Saferpay will discard the card details afterwards and the Saferpay Fields token becomes invalid!
   </p>
 </div>
+
+#### Want to see a fully working example?
+<a href="https://shop.saferpay.eu/saferpayintegration" class="demobtn">Click here for a live demo!</a>
