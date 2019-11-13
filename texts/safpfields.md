@@ -202,7 +202,7 @@ placeholders: {
 ```
 
 <h2>.submit({options})</h2>
-Submits the Saferpay Fields.
+<p>Submits the Saferpay Fields.</p>
 
 ### Available options
 * <strong>onSuccess</strong> *eventCallback* : Callback function, that is executed, if the Saferpay Fields have been submitted successfully. The event returns a **Submit Success Callback Message**.
