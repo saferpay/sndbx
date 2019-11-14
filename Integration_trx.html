@@ -685,10 +685,10 @@
 </li>
 <li><p><strong>Card Verification Value:</strong> The Card Verification Value (CVC) is mandatory, when using the Card Entry Form, except for card brand Maestro, which offers cards with and without CVC.</p>
 </li>
-<li><p><strong>Hosted Fields:</strong> When using the <a href="HostedFields.html">Saferpay Hosted Fields</a>, you will be provided with a Hosted Fields token. This token then has to be submitted through transaction/initialize, within the <strong>PaymentMeans.HostedFields</strong> in order to trigger a transaction. If used, the RedirectUrl directly links to the next step e.g. 3D Secure, thus skipping the Hosted Card Entry Form. Think of it as a different method to capture the card data for initialization.</p>
+<li><p><strong>Saferpay Fields:</strong> When using the <a href="HostedFields.html">Saferpay Fields</a>, you will be provided with a Saferpay Fields token. This token then has to be submitted through transaction/initialize, within the <strong>PaymentMeans.SaferpayFields</strong> in order to trigger a transaction. If used, the RedirectUrl directly links to the next step e.g. 3D Secure, thus skipping the Hosted Card Entry Form. Think of it as a different method to capture the card data for initialization.</p>
 </li>
 </ul><pre><code class="language-json">  &quot;PaymentMeans&quot;: {
-    &quot;HostedFields&quot;: {
+    &quot;SaferpayFields&quot;: {
       &quot;Token&quot;: &quot;[YOUR TOKEN]&quot;
     },
 </code></pre><ul>
