@@ -55,10 +55,10 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
 
 + **Card Verification Value:** The Card Verification Value (CVC) is mandatory, when using the Card Entry Form, except for card brand Maestro, which offers cards with and without CVC. 
 
-+ **Hosted Fields:** When using the <a href ="HostedFields.html">Saferpay Hosted Fields</a>, you will be provided with a Hosted Fields token. This token then has to be submitted through transaction/initialize, within the <strong>PaymentMeans.HostedFields</strong> in order to trigger a transaction. If used, the RedirectUrl directly links to the next step e.g. 3D Secure, thus skipping the Hosted Card Entry Form. Think of it as a different method to capture the card data for initialization.
++ **Saferpay Fields:** When using the <a href ="HostedFields.html">Saferpay Fields</a>, you will be provided with a Saferpay Fields token. This token then has to be submitted through transaction/initialize, within the <strong>PaymentMeans.SaferpayFields</strong> in order to trigger a transaction. If used, the RedirectUrl directly links to the next step e.g. 3D Secure, thus skipping the Hosted Card Entry Form. Think of it as a different method to capture the card data for initialization.
 ```json 
   "PaymentMeans": {
-    "HostedFields": {
+    "SaferpayFields": {
       "Token": "[YOUR TOKEN]"
     },
 ```
