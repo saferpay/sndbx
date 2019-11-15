@@ -29,18 +29,12 @@ By clicking on the transaction ID you'll be redirected to the original transacti
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/refund_trx.PNG "Refunded Transaction")
 
-<div style="display: none;">
-  
 ## <a name="refund-demo"></a> Try it out
 
 You can try it out, by first doing a complete (including the Capture!) transaction, by using the PaymentPage, or Transaction Interface.
 The refund-option will be displayed, after the Capture has been executed!
 
-
-<a href="https://saferpay.github.io/sndbx/pp_demo.html" class="demobtn">Start with the Payment Page</a><br />
-<a href="https://saferpay.github.io/sndbx/trx_demo.html" class="demobtn">Start with the Transaction Interface</a><br />
-
-</div>
+<a href="https://shop.saferpay.eu/saferpayintegration/" class="demobtn">Click here for a demo</a><br />
 
 ## <a name="refund-alias"></a> Method 2: Refunds using an alias
 
