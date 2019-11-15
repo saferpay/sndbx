@@ -35,7 +35,7 @@ Furthermore, Saferpay can also trigger a server-to-server notification, in case 
 <div class="warning">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important:</strong> In order to gather said payment-data, after these events, you need a payment page token, to initialize the next steps. Saferpay can vorward this token, if you insert the placeholder {{{PAYMENTPAGETOKEN}}} into the defined URLs. Saferpay will replace it with the token and call the URLs with it, via HTTP GET. You then can etract the token and proceed to the chapter <strong>Connecting the JSON API</strong>.
+    <strong>Important:</strong> In order to gather said payment-data, after these events, you need a payment page token, to initialize the next steps. Saferpay can vorward this token, if you insert the placeholder <strong>{{{PAYMENTPAGETOKEN}}}</strong> into the defined URLs. Saferpay will replace it with the token and call the URLs with it, via HTTP GET. You then can etract the token and proceed to the chapter <strong>Connecting the JSON API</strong>.
   </p>
 </div>
 
@@ -64,5 +64,21 @@ All the offers will be displayed inside the Saferpay Backoffice and marked as **
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/SPG_Backend.png "SPG Offers")
 
+<div class="danger">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>However:</strong> Saferpay <strong>will NOT send the usual Secure PayGate E-Mail</strong> to your customer, like within the Saferpay Backoffice! The usage of the Secure PayGate REST API instead relies on you -the merchant- using your own web-mailer, which are supported by most common application-environments. PHP for example brings this functionality out of the box. However this also gives you full control over the design and text of the E-Mail, allowing for a great deal of flexibility!
+  </p>
+</div>
 
 # <a name="spg-json"></a> Connecting the JSON API
+
+As described before, you can gather the payment data from a Secure PayGate transaction via the Saferpay JSON API. For that, you must define the <strong>{{{PAYMENTPAGETOKEN}}}</strong> (see above), otherwise you do not have the necessary data to execute the next step.
+
+Once the redirect and/or the notification call arrives at your webserver, you can extract the <strong>{{{PAYMENTPAGETOKEN}}}</strong> and simply execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>. That will return the payment data of the Secure PayGate transaction to your system.
+This transaction is like a normal <a href="">Payment Page</a> transaction and further steps may be applied to it, for example the <a href="index.html#capture">Capture</a>, <a href="partialcaptures.html">Partial Capture</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">Cancel</a>, if you didn't select the **Normal (final) authorization with automatic capturing**-option, as described above. <a href="refund.html">Refunds via the API</a> may also be executed, if you wish.
+
+# <a name="spg-demo"></a> Try it
+Want to try out the Secure PayGate API for yourself?
+
+<a href="https://shop.saferpay.eu/saferpayintegration/" class="demobtn">Click here for a demo</a><br />
