@@ -98,7 +98,7 @@
 								<li><a href="#scd-use">How to use the obtained data</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="recurring.html">Recurring Payments</a>
 							<ul class="nav">
 								<li><a href="#recurring-req">Requirements</a></li>
@@ -165,7 +165,7 @@
 								<li><a href="#mark-fee">Applying Fees</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="spg.html">Secure PayGate REST API</a>
 							<ul class="nav">
 								<li><a href="#spg-req">Requirements</a></li>
@@ -429,7 +429,7 @@
 								<li><a href="#scd-use">How to use the obtained data</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="recurring.html">Recurring Payments</a>
 							<ul class="nav">
 								<li><a href="#recurring-req">Requirements</a></li>
@@ -496,7 +496,7 @@
 								<li><a href="#mark-fee">Applying Fees</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="spg.html">Secure PayGate REST API</a>
 							<ul class="nav">
 								<li><a href="#spg-req">Requirements</a></li>
@@ -666,160 +666,45 @@
 				</div>
 
 				
-<section><h1>Recurring Payments</h1><div class="row"><div class="col-md-6"><p>Recurring payments are transactions processed on a regular basis under a pre-authorized agreement. They are particularly interesting for subscription or instalment business models. This chapter describes the main concept on how the perform recurring payments.</p><div class="warning">
-      <p><strong>NOTE: </strong>Before you start, you have to consider the following: Each transaction has to be triggered by you your system. Please see <strong>Automating the Recurring Payments</strong> further down in this chapter!</p>
-</div><ul>
-<li>Transaction Referenced Method -  <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced">AuthorizeReferenced Function</a> with the TransactionId of the initial transaction</li>
-</ul></div></div></section><section id="recurring-req"><h2><a name="recurring-req"></a> Requirements:</h2><div class="row"><div class="col-md-6"><ul>
-<li>a Saferpay Business License</li>
-<li>a valid login access with a username and password for the Saferpay Backoffice.</li>
-<li>one active Saferpay ecommerce terminal and an additional MOTO terminal via which payment can be carried out and the associated</li>
-<li>Saferpay terminal number (TerminalId parameter) and Saferpay customer number (CustomerId parameter).</li>
-<li>valid acceptance agreement for credit cards or other payment methods</li>
-<li>Secure Card Data Module (if recurring payments are performed with using Aliases)</li>
-</ul><hr></div></div></section><section id="recurring-payment-methods"><h2><a name="recurring-payment-methods"></a> Supported Payment Methods:</h2><div class="row"><div class="col-md-6"><p>Recurring payments are supported by the following payment means:</p><ul>
-<li>American Express</li>
-<li>Bancontact (SCD method only)</li>
-<li>Postcard (SCD method only)</li>
-<li>Bonus Card</li>
-<li>Diners Club</li>
-<li>Discover</li>
-<li>JCB</li>
-<li>Maestro International (SCD method only)</li>
-<li>MasterCard</li>
-<li>Myone</li>
-<li>Sepa Direct Debit</li>
-<li>Visa</li>
-<li>VPAY</li>
-</ul><hr></div></div></section><section id="recurring-referenced"><h2><a name="recurring-referenced"></a> Recurring Payments with the Referenced Transactions Method</h2><div class="row"><div class="col-md-6"><p>With this method, the initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.</p><div class="warning">
-  <p><strong>NOTE:</strong> Due to the PSD2, you must perform 3D Secure with the first (initial) transaction. However, if you do 3D Secure with the initial transaction, LiabilityShift is also granted for the recurring transactions.</p>
-</div></div></div></section><section><h3>1. Initial Transaction:</h3><div class="row"><div class="col-md-6"><p>The Initial Transaction can be performed with the <a href="Integration_PP.html">PaymentPage Interface</a> or via the <a href="Integration_trx.html">Transaction Interface</a>, using <strong>Transaction Initialize</strong> and <strong>Transaction Authorize</strong> .</p><p>This transaction basically captures the credit card details and sets a flag, to mark it as an initial transaction that can be used as a reference for recurring transactions.</p><p>To define a transaction as the initial transaction, you need to set a special flag with either the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize" title="PaymentPage Initialize">PaymentPage Initialize Request</a> or <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize" title="Transaction Initialize">Transaction Initialize Request</a> by defining the Container</p><pre><code class="language-json">Recurring&quot;: {
-      &quot;Initial&quot;: true
-</code></pre><p>Here is an example of a PaymentPage Request with the Container <strong>Recurring</strong>:</p><p><strong>Request URL</strong></p><pre><code class="language-http">POST /Payment/v1/PaymentPage/Initialize
-</code></pre><pre><code class="language-json">{ 
-&quot;RequestHeader&quot;: {
-   &quot;SpecVersion&quot;: &quot;1.7&quot;,
-   &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
-   &quot;RequestId&quot;: &quot;[unique request id]&quot;,
-   &quot;RetryIndicator&quot;: 0
- },
- &quot;TerminalId&quot;: &quot;[your terminal id]&quot;,
- &quot;Payment&quot;: {
-   &quot;Amount&quot;: {
-     &quot;Value&quot;: &quot;100&quot;,
-     &quot;CurrencyCode&quot;: &quot;CHF&quot;
-   },
-   &quot;Recurring&quot;: {
-     &quot;Initial&quot;: true
-   }
- },
- &quot;Payer&quot;: {
-   &quot;LanguageCode&quot;: &quot;en&quot;
- },
- &quot;ReturnUrls&quot;: {
-   &quot;Success&quot;: &quot;[your shop payment success url]&quot;,
-   &quot;Fail&quot;: &quot;[your shop payment fail url]&quot;
- },
- &quot;Styling&quot;: {
-   &quot;CssUrl&quot;: &quot;[your shop css url]&quot;
- }
-}
-</code></pre><div class="info">
-  <p><strong>TIPP:</strong> If you want to validate the cardholder without charging his bank account, you can trigger a &#8220;dummy&#8221; authorization with a small amount value (e.g. 1 Euro; Amount value &#8220;100&#8221;). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)! However <strong>DO NOT</strong> cancel this transaction! It must persist, in order to reference it within the recurring transaction.</p>
-</div></div></div></section><section><h3>2. Validating the transaction</h3><div class="row"><div class="col-md-6"><p>Depending on the Interface used to initialize the transaction, you can validate the payment and assess transaction based information with either:</p><ul>
-<li><a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a> or</li>
-<li><a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize">Transaction Authorize</a> function.</li>
-</ul><p>Both request will provide you with information about the Transaction including the 3D Secure response:</p><p>Here is an example of a <strong>PaymentPage Assert Response</strong>:</p><pre><code class="language-json">{
-  &quot;ResponseHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;1.7&quot;,
-    &quot;RequestId&quot;: &quot;[your request id]&quot;
-  },
-  &quot;Transaction&quot;: {
-    &quot;Type&quot;: &quot;PAYMENT&quot;,
-    &quot;Status&quot;: &quot;AUTHORIZED&quot;,
-    &quot;Id&quot;: &quot;MUOGAWA9pKr6rAv5dUKIbAjrCGYA&quot;,
-    &quot;Date&quot;: &quot;2017-06-18T09:19:27.078Z&quot;,
-    &quot;Amount&quot;: {
-      &quot;Value&quot;: &quot;100&quot;,
-      &quot;CurrencyCode&quot;: &quot;CHF&quot;
-    },
-    &quot;AcquirerName&quot;: &quot;AcquirerName&quot;,
-    &quot;AcquirerReference&quot;: &quot;Reference&quot;
-  },
-  &quot;PaymentMeans&quot;: {
-    &quot;Brand&quot;: {
-      &quot;PaymentMethod&quot;: &quot;SAFERPAYTEST&quot;,
-      &quot;Name&quot;: &quot;SaferpayTestCard&quot;
-    },
-    &quot;DisplayText&quot;: &quot;9123 45xx xxxx 1234&quot;,
-    &quot;Card&quot;: {
-      &quot;MaskedNumber&quot;: &quot;912345xxxxxx1234&quot;,
-      &quot;ExpYear&quot;: 2021,
-      &quot;ExpMonth&quot;: 9,
-      &quot;HolderName&quot;: &quot;Max Mustermann&quot;,
-      &quot;CountryCode&quot;: &quot;CH&quot;
-    }
-  },
-  &quot;Payer&quot;: {
-    &quot;IpAddress&quot;: &quot;1.2.3.4&quot;,
-    &quot;IpLocation&quot;: &quot;CH&quot;
-  },
-  &quot;ThreeDs&quot;: {
-    &quot;Authenticated&quot;: true,
-    &quot;LiabilityShift&quot;: true,
-    &quot;Xid&quot;: &quot;ARkvCgk5Y1t/BDFFXkUPGX9DUgs=&quot;,
-    &quot;VerificationValue&quot;: &quot;AAABBIIFmAAAAAAAAAAAAAAAAAA=&quot;
-  }
-}
-</code></pre><p>You must save the <strong>TransactionId</strong> (Container: &quot;Transaction&quot;&gt;&quot;ID&quot;), returned in the Paymentpage Assert or Transaction Authorize response as this value will be used to reference recurring payments.</p><div class="warning">
-  <p><strong>NOTE:</strong>We recommend only to proceed, if the parameter &#8220;Authenticated&#8221; is true. This value indicates that the card holder has performed a full successful authentication (3D Secure process) at his bank. This option provides the highest level of security against fraud. Please take notice that some banks will skip the 3Dsecure process if they consider the transaction to have a low risk thus will still grant Liabilityshift although the cardholder did not have to authenticate him or herself. In that case the values returned for &#8221;LiabilityShift&#8221; will be &#8220;true&#8221; and  &#8220;Authenticated&#8221; will be &#8220;false&#8221;. You should assess which level of security suits best to your business model and target group before deciding how to handle these two parameters.</p>
-</div></div></div></section><section><h3>3. Recurring Transaction:</h3><div class="row"><div class="col-md-6"><p>The next step is to perform the actual recurring transaction(s).
-The API-Function that is required is <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeReferenced">Authorize Referenced</a>.
-You have to simply submit the <strong>TransactionId</strong> from your initial transaction (discussed in step 2) to perform the recurring transaction(s)</p></div></div></section><section><h3>Flowchart</h3><div class="row"><div class="col-md-6"><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/Recurring_Referenced_FlowChart.PNG" alt="alt text" title="Recurring with initial transaction"></p><ol>
-<li>Gather the TransactionId from the previous, initial, transaction</li>
-<li>Aquire the necessary payment-data e.g. Amount, Currency, OrderId etc.</li>
-<li>Initialize and Execute Payment with <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeReferenced">Transaction Authorize Referenced</a>
+<section><h1>Secure PayGate REST API</h1><div class="row"><div class="col-md-6"><div class="warning">
+  <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the Secure PayGate REST API, but also for you, the merchant!</p>
+</div><p>The <a href="https://saferpay.github.io/jsonapi/#ChapterRestApi">Secure PayGate REST API</a> allows a merchants to use the Saferpay Secure PayGate through their own Systems, thus allowing them to create offers and corresponding offer URLs automatically. This allows a high grade of automatation.
+This chapter will guide you through the necessary steps to use this API.</p></div></div></section><section id="spg-req"><h1><a name="spg-req"></a> Requirements</h1><div class="row"><div class="col-md-6"><p>The following requirements have to be met, in order to use the Secure PayGate REST API:</p><ul>
+<li>You need a Saferpay Secure PayGate contract, in order to use the Secure PayGate in the first place
 <ul>
-<li>You will get the authorization-response right away</li>
+<li>In conjunction with that, you need at least one Secure PayGate terminal, with attached payment methods of your choice.</li>
 </ul>
 </li>
-<li>Validate the request response</li>
-<li>Depending on the outcome of step 4 you may
-<ul>
-<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture/Finalize the Transaction</a></li>
-<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">Cancel/Abort the Transaction</a></li>
-</ul>
-</li>
-<li>Transaction is finished!</li>
-</ol><p>Here is an example of a <strong>Authorize Referenced Request</strong>:</p><p><strong>Request URL</strong></p><pre><code class="language-http">POST /Payment/v1/Transaction/AuthorizeReferenced
-</code></pre><pre><code class="language-json">{
-  &quot;RequestHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;1.7&quot;,
-    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
-    &quot;RequestId&quot;: &quot;[unique request id]&quot;,
-    &quot;RetryIndicator&quot;: 0
-  },
-  &quot;TerminalId&quot;: &quot;[your terminal id]&quot;,
-  &quot;Payment&quot;: {
-    &quot;Amount&quot;: {
-      &quot;Value&quot;: &quot;100&quot;,
-      &quot;CurrencyCode&quot;: &quot;CHF&quot;
-    },
-    &quot;Description&quot;: &quot;Test123&quot;,
-    &quot;PayerNote&quot;: &quot;Order123_Testshop&quot;
-  },
-  &quot;TransactionReference&quot;: {
-    &quot;TransactionId&quot;: &quot;MUOGAWA9pKr6rAv5dUKIbAjrCGYA&quot;
-  }
-}
-</code></pre><div class="warning">
-  <p><strong>NOTE:</strong>  The Amount is a mandatory value which can vary from the Amount of the initial transaction. A change of amount has to be communicated with the card holder and you <strong>must</strong> re-do this process, to start the recurring-chain over again!</p>
-</div><div class="danger">
-  <p><strong>IMPORTANT:</strong> Each Transaction with the Status **Authorized** has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual money transfer.</p>
-</div><hr></div></div></section><section id="recurring-auto"><h2><a name="recurring-auto"></a>  Automating the Recurring Payments</h2><div class="row"><div class="col-md-6"><p>Automated recurring payments have to be triggered by the merchant's system. There are multiple ways to setup up the automated triggering of payments. The easiest way is to setup a Cronjob (Linux) or a Task (Windows).
-With cronjobs you can schedule a command or script on your server to run automatically at a specified time and date (e.g. every minute, every 15 Minutes, every hour, or every day at 10pm or even every Sunday.)</p><p>The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will be executed, every time the cronjob is triggered to automatically perform transactions. You should decide when and how often the payments have to be triggered depending on your business model and the prearranged scheduling of payments.</p><div class="warning">
-  <p><strong>NOTE: </strong>Please note that each transaction has to be finalized by calling the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">capture function</a> including the automated recurring transactions.</p>
-</div></div></div></section>
+<li>A Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system, to access the necessary API-functions.</li>
+</ul></div></div></section><section id="spg-config"><h1><a name="spg-config"></a> Secure PayGate configuration</h1><div class="row"><div class="col-md-6"><p>Before you can begin using the Secure PayGate, you need to configure it inside the Backoffice under <strong>Secure PayGate &gt; Settings</strong>.</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/SPG_Settings_1.png" alt="alt text" title="SPG Settings">
+First you need to set your Notification email(s). Saferpay will send a payment confirmation mail to these email(s).
+Next is the Authorization method you want to apply to your Secure PayGate orders, with the following options available:</p><ul>
+<li><strong>Normal (final) authorization</strong>: Your normal authorization. Each payment will be authorized and then needs to be captured, either inside the Backoffice itself, or by using the <a href="index.html#capture">JSON API</a></li>
+<li><strong>Preauthorization</strong>: Similarto the first option, however preauthorizations extend the validity of the authorized payment from a guaranteed 10, to a guaranteed 30 days, which is helpful, if you want to capture a payment on a later delivery.</li>
+<li><strong>Normal (final) authorization with automatic capturing</strong>: Triggers an automatic <a href="index.html#capture">capture</a>, after a successful authorization.</li>
+</ul><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/SPG_Settings_2.png" alt="alt text" title="SPG Settings">
+These settings are important, if you intend on using the Secure PayGate in conjunction with the JSON API (more on that later).
+Here you can define, where the Payment Page should send your customer to, after a successful, failed, or aborted payment. This way, you can send the customer towards your website, or even a specifically tailored return-site.</p><p>Furthermore, Saferpay can also trigger a server-to-server notification, in case of a successful payment, which is helpful, to avoid redirect-problems with the former URLs, or in cases, where you do not want to use returnUrls and just the payment notification, to gather the payment-details into your system.</p><div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> In order to gather said payment-data, after these events, you need a payment page token, to initialize the next steps. Saferpay can vorward this token, if you insert the placeholder <strong>{{{PAYMENTPAGETOKEN}}}</strong> into the defined URLs. Saferpay will replace it with the token and call the URLs with it, via HTTP GET. You then can etract the token and proceed to the chapter <strong>Connecting the JSON API</strong>.
+  </p>
+</div><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/SPG_Settings_3.png" alt="alt text" title="SPG Settings">
+Here you can pre-define certain mail-addresses, that will be presented to the payer, aswell as a BCC-address, where Saferpay will send each offer towards, for archiving purposes.</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/SPG_Settings_4.PNG" alt="alt text" title="SPG Settings">
+Finally, you can upload your terms and conditions via a PDF, in the languages you desire.</p><div class="info">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Note:</strong> These AGBs are only available, should you use the Secure PayGate inside the Backoffice and not via API!
+  </p>
+</div></div></div></section><section id="spg-api"><h1><a name="spg-api"></a> The REST API</h1><div class="row"><div class="col-md-6"><p>After the configuration has been completed, you can finally move towards using the Secure PayGate REST API. The specification itself can be <a href="https://saferpay.github.io/jsonapi/#ChapterRestApi">found over here</a>.</p><p>The first thing to consider, is the fact, that the Secure PayGate REST API, is <strong>not</strong> the same, as the Saferpay JSON-API, even though both can work hand in hand (more on that later). It can be integrated in a similar way and if you already have the Saferpay JSON API integrated, the effort to use the Secure PayGate REST API is rather low.
+However there are still some technical differences, which are described inside the <a href="https://saferpay.github.io/jsonapi/#ChapterRestApi">specification</a></p></div></div></section><section><h2>Sending the Offer</h2><div class="row"><div class="col-md-6"><p>The execution of the <strong>SecurePayGateOffer CreateOffer</strong> request will create a Secure PayGate offer and the corresponding Link to the payment gateway, like it would inside the Saferpay Backoffice.
+All the offers will be displayed inside the Saferpay Backoffice and marked as <strong>RestApi</strong> under the <strong>Application</strong>column, so you can differentiate between manual and automatical created offers.</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/SPG_Backend.png" alt="alt text" title="SPG Offers"></p><div class="danger">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>However:</strong> Saferpay <strong>will NOT send the usual Secure PayGate E-Mail</strong> to your customer, like within the Saferpay Backoffice! The usage of the Secure PayGate REST API instead relies on you -the merchant- using your own web-mailer, which are supported by most common application-environments. PHP for example brings this functionality out of the box. However this also gives you full control over the design and text of the E-Mail, allowing for a great deal of flexibility!
+  </p>
+</div></div></div></section><section id="spg-json"><h1><a name="spg-json"></a> Connecting the JSON API</h1><div class="row"><div class="col-md-6"><p>As described before, you can gather the payment data from a Secure PayGate transaction via the Saferpay JSON API. For that, you must define the <strong>{{{PAYMENTPAGETOKEN}}}</strong> (see above), otherwise you do not have the necessary data to execute the next step.</p><p>Once the redirect and/or the notification call arrives at your webserver, you can extract the <strong>{{{PAYMENTPAGETOKEN}}}</strong> and simply execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>. That will return the payment data of the Secure PayGate transaction to your system.
+This transaction is like a normal <a href>Payment Page</a> transaction and further steps may be applied to it, for example the <a href="index.html#capture">Capture</a>, <a href="partialcaptures.html">Partial Capture</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">Cancel</a>, if you didn't select the <strong>Normal (final) authorization with automatic capturing</strong>-option, as described above. <a href="refund.html">Refunds via the API</a> may also be executed, if you wish.</p></div></div></section><section id="spg-demo"><h1><a name="spg-demo"></a> Try it!</h1><div class="row"><div class="col-md-6"><p>Want to try out the Secure PayGate API for yourself?</p><p><a class="demobtn" href="https://shop.saferpay.eu/saferpayintegration/">Click here for a demo</a><br></p></div></div></section>
 
 			</main>
 
