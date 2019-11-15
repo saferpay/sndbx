@@ -94,7 +94,7 @@ Once this process is done, the user gets redirected towards oneof the previously
 
 ### Alias Assert Insert Request
 
-The merchant system then needs to execute the <a href="<a href="">Alias Assert Insert Request</a>">Alias Assert Insert Request</a>, in order to gather the alias and other important payment means details.
+The merchant system then needs to execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Assert Insert Request</a>, in order to gather the alias and other important payment means details.
 
 #### Example
 ```json
@@ -114,7 +114,7 @@ The merchant system then needs to execute the <a href="<a href="">Alias Assert I
 
 ### Alias Assert Insert Response
 
-The <a href="<a href="">Alias Assert Insert Request</a>">Alias Assert Insert Response</a> will return the alias itself, for further payments, which can be executed via <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a>, by simply setting the **PaymentMeans.Alias** container!
+The <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Assert Insert Response</a> will return the alias itself, for further payments, which can be executed via <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a>, by simply setting the **PaymentMeans.Alias** container!
 
 #### Example
 ```json
