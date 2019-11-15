@@ -169,6 +169,18 @@
       { "Source": "texts/marketplace.md", "Title": "Applying Fees", "Target": "marketplace.html#mark-fee" }
     ]
  },
+ {
+    "Title": "Secure PayGate REST API",
+    "Source": "texts/spg.md",
+    "Target": "spg.html",
+    "Subsites": [
+      { "Source": "texts/spg.md", "Title": "Requirements", "Target": "spg.html#spg-req" },
+      { "Source": "texts/spg.md", "Title": "Secure PayGate configuration", "Target": "spg.html#spg-config" },
+      { "Source": "texts/spg.md", "Title": "The REST API", "Target": "spg.html#spg-api" },
+      { "Source": "texts/spg.md", "Title": "Connecting the JSON API", "Target": "spg.html#spg-json" },
+      { "Source": "texts/spg.md", "Title": "Try it!", "Target": "spg.html#spg-demo" }
+    ]
+  },
   {
     "Title": "FAQ",
     "Source": "texts/FAQ.md",
