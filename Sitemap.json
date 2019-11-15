@@ -242,7 +242,8 @@
     "Target": "Twint.html",
     "Subsites": [
       { "Source": "texts/twint.md", "Title": "Requirements", "Target": "Twint.html#twint-requirement" },
-      { "Source": "texts/twint.md", "Title": "General specifics", "Target": "Twint.html#twint-general" }
+      { "Source": "texts/twint.md", "Title": "General specifics", "Target": "Twint.html#twint-general" },
+      { "Source": "texts/twint.md", "Title": "Twint User on File", "Target": "Twint.html#twint-uof" }
     ]
   },
  {
