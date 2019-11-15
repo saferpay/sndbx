@@ -57,7 +57,7 @@ The registration is done via the <a href="https://saferpay.github.io/jsonapi/#Ch
     }
   },
   "ReturnUrls": {
-    "Success": "https://www.myshop.com/success,
+    "Success": "https://www.myshop.com/success",
     "Fail": "https://www.myshop.com/fail",
     "Abort": "https://www.myshop.com/abort"
   }
