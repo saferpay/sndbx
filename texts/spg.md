@@ -51,7 +51,7 @@ Finally, you can upload your terms and conditions via a PDF, in the languages yo
   </p>
 </div>
 
-# <a name="spg-api"></a> The Rest API
+# <a name="spg-api"></a> The REST API
 
 After the configuration has been completed, you can finally move towards using the Secure PayGate REST API. The specification itself can be <a href="https://saferpay.github.io/jsonapi/#ChapterRestApi">found over here</a>.
 
@@ -78,7 +78,7 @@ As described before, you can gather the payment data from a Secure PayGate trans
 Once the redirect and/or the notification call arrives at your webserver, you can extract the <strong>{{{PAYMENTPAGETOKEN}}}</strong> and simply execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>. That will return the payment data of the Secure PayGate transaction to your system.
 This transaction is like a normal <a href="">Payment Page</a> transaction and further steps may be applied to it, for example the <a href="index.html#capture">Capture</a>, <a href="partialcaptures.html">Partial Capture</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">Cancel</a>, if you didn't select the **Normal (final) authorization with automatic capturing**-option, as described above. <a href="refund.html">Refunds via the API</a> may also be executed, if you wish.
 
-# <a name="spg-demo"></a> Try it
+# <a name="spg-demo"></a> Try it!
 Want to try out the Secure PayGate API for yourself?
 
 <a href="https://shop.saferpay.eu/saferpayintegration/" class="demobtn">Click here for a demo</a><br />
