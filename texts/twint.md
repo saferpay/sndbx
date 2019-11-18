@@ -90,11 +90,11 @@ There he needs to confirm the registration.
 
 ### Redirect to Shop
 
-Once this process is done, the user gets redirected towards oneof the previously defined ReturnUrls, depending on the outcome.
+Once this process is done, the user gets redirected towards one of the previously defined ReturnUrls, depending on the outcome.
 
 ### Alias Assert Insert Request
 
-The merchant system then needs to execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Assert Insert Request</a>, in order to gather the alias and other important payment means details.
+The merchant system then needs to execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Assert Insert Request</a>, in order to gather the alias and other important payment mean details.
 
 #### Example
 ```json
