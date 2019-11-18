@@ -36,7 +36,7 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
 <div class="warning">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Very Important:</strong> Saferpay will indeed validate the used Source-URL and the used TerminalId! It is enough to just enter the base-url, of your shop here. If you use multiple terminals, you have to generate more API-Keys for each terminal. <strong>HTTPS IS MANDATORY</strong> and will be checked!<br /> Should you hhave misconfigured the access-token, the <strong>.init({options}) - onError</strong> callback will be triggered, returning an <strong>"Access forbidden!"</strong> message, so make sure, you set the correct URL, for the system you are currently running on, especially during integration and then later deployment!
+    <strong>Very Important:</strong> Saferpay will indeed validate the used Source-URL and the used TerminalId! It is enough to just enter the base-url, of your shop here. If you use multiple terminals, you have to generate more API-Keys for each terminal. <strong>HTTPS IS MANDATORY</strong> and will be checked!<br /> Should you have misconfigured the access-token, the <strong>.init({options}) - onError</strong> callback will be triggered, returning an <strong>"Access forbidden!"</strong> message. Make sure, you've set the correct URL, for the system you are currently running on, especially during integration and then later deployment!
   </p>
 </div>
 
