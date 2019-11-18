@@ -142,7 +142,7 @@ The <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias 
 <div class="warning">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important:</strong> One speciality with Twint User on File, is the <strong>Twint.CertificateExpirationDate</strong> parameter. Each registered Twint payment means, will have their own expiration date within the Twint system, <strong>which does not correspond with the Saferpay Alias Lifetime</strong>! The parameter will return the expiration date of this registration certificate. Once it has passed, the Twint alias becomes invalid!
+    <strong>Important:</strong> One speciality with Twint User on File is, the <strong>Twint.CertificateExpirationDate</strong> parameter. Each registered Twint payment mean, will have its own expiration date within the Twint system, <strong>which does not correspond with the Saferpay Alias Lifetime</strong>! The parameter will return the expiration date of this registration certificate. Once it has passed, the Twint alias becomes invalid, after a <strong>maximum of 13 months</strong>!
   </p>
 </div>
 
