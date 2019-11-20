@@ -13,8 +13,8 @@ Acceptance of Swiss Postcard requires:
 
 If you intend on saving Postcard-data for later use, Saferpay provides the possibility of storing PostFinance’s Postcard inside the Saferpay Secure Card store. For this, the following requirements must be met:
 
-*	Activation of Saferpay Secure Card Data in the merchant account
-* The activation of the PostFinance Alias System for PostFinance and Saferpay.
+*	Activation of Saferpay Secure Card Data in the Saferpay merchant account
+* The feature must also be activated on Postfinance side!
 
 <div class="info">
   <p><strong>Note:</strong> The registration of a Swiss Postcard is only possible with the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert</a> method. For that, you have to set the parameter "TYPE" to the value "POSTFINANCE".</p>
