@@ -70,6 +70,12 @@ All the offers will be displayed inside the Saferpay Backoffice and marked as **
     <strong>However:</strong> Saferpay <strong>will NOT send the usual Secure PayGate E-Mail</strong> to your customer, like within the Saferpay Backoffice! The usage of the Secure PayGate REST API instead relies on you -the merchant- using your own web-mailer, which are supported by most common application-environments. PHP for example brings this functionality out of the box. However this also gives you full control over the design and text of the E-Mail, allowing for a great deal of flexibility!
   </p>
 </div>
+<div class="info">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Note:</strong> Offers created with the Secure PayGate REST API cannot be edited inside the Saferpay Backoffice!
+  </p>
+</div>
 
 # <a name="spg-json"></a> Connecting the JSON API
 
