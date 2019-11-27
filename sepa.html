@@ -674,7 +674,13 @@
 <li>A valid SEPA contract with Intercard.</li>
 </ul><div class="warning">
   <p><strong>Attention:</strong> For SEPA activation on the Saferpay terminal and the necessary contract, please contact your Saferpay sales contact.</p>
-</div></div></div></section><section id="sepa-refund"><h2><a name="sepa-refund"></a> SEPA manual Refunds</h2><div class="row"><div class="col-md-6"><p>Saferpay does offer the possibility to accept refunds for certain SEPA-based payment methods. However those need special attention.
+</div><div class="info">
+  <p><strong>Info:</strong> SEPA makes it necessary to define a unique SEPA MandateId for each transaction. You -the merchant- have two options to deal with this requirement:</p>
+  <ul>
+    <li>You can define your own MandateId and submit it inside the <strong>Payment.MandateId</strong> parameter! <strong>Make sure it is unique!</strong></li>
+    <li>If <strong>Payment.MandateId</strong> is not used, Saferpay will use the Saferpay TransactionId as its replacement, which is unique. You can find this value inside the authorization response as <strong>Transaction.Id</strong>!</li>
+  <ul>
+</ul></ul></div></div></div></section><section id="sepa-refund"><h2><a name="sepa-refund"></a> SEPA manual Refunds</h2><div class="row"><div class="col-md-6"><p>Saferpay does offer the possibility to accept refunds for certain SEPA-based payment methods. However those need special attention.
 Reason being, that SEPA does not directly offer refunds, which is just in the nature of the payment-system itself.
 Due to this, Saferpay offers a workaround, to make manual SEPA-refunds easier for the merchant.</p></div></div></section><section><h3>Step 1: Activation</h3><div class="row"><div class="col-md-6"><p>Before you -the merchant- can start accepting refunds, they need to be activated inside the Saferpay Backoffice:
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund.png" alt="alt text" title="Manual refund activation"></p></div></div></section><section><h3>Step 2: Executing refunds</h3><div class="row"><div class="col-md-6"><p>Once the activation has been done, you can execute refunds, like any other payment method. Either <a href="refund.html">via API</a>, or inside the Saferpay Backoffice.</p></div></div></section><section><h3>Step 3: Uploading the refunds into your online-banking</h3><div class="row"><div class="col-md-6"><p>This is, where SEPA-refunds deviate from other payment methods, like credit cards.
