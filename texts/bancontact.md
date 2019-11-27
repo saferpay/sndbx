@@ -39,7 +39,7 @@ This chapter handles the technical details and flow of this type of integration.
     <ul style="list-style: none;">
       <li><strong>A.1:</strong> The Payment-data is forwarded to the Saferpay system, which saves the data. Once a definitive transaction status has been determined, Saferpay will then call the <strong>StateNotificationUrl</strong>, which has been defined with the <a  href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AlternativePayment">Transaction AlternativePayment Request</a>, to notify the merchant application, that the data for this transaction is ready to be pulled.</li>
       <li><strong>A.2:</strong> The merchant application performs ther <a  href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_QueryAlternativePayment">Transaction QueryAlternativePayment Request</a>, to ask for the outcome of the transaction.</li>
-      <li><strong>A.3:</strong> The merchant application validates the payment and should the transaction not have been declined, either captures, or cancels the transaction.</li>
+      <li><strong>A.3:</strong> The merchant application validates the payment.</li>
       <li><strong>B:</strong> While the merchant-application is notified of the transaction, in the background, the Bancontact-app will redirect the payer towards the respective App-RedirectUrl, defined within <a  href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AlternativePayment">Transaction AlternativePayment Request</a>, depending on the outcome.</li>
     </ul>
   </li>
