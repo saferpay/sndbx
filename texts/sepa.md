@@ -13,6 +13,14 @@ The handling of SEPA payments with Saferpay requires:
   <p><strong>Attention:</strong> For SEPA activation on the Saferpay terminal and the necessary contract, please contact your Saferpay sales contact.</p>
 </div>
 
+<div class="info">
+  <p><strong>Info:</strong> SEPA makes it necessary to define a unique SEPA MandateId for each transaction. You -the merchant- have two options to deal with this requirement:</p>
+  <ul>
+    <li>You can define your own MandateId and submit it inside the <strong>Payment.MandateId</strong> parameter! <strong>Make sure it is unique!</strong></li>
+    <li>If <strong>Payment.MandateId</strong> is not used, Saferpay will use the Saferpay TransactionId as its replacement, which is unique. You can find this value inside the authorization response as <strong>Transaction.Id</strong>!</li>
+  <ul>
+</div>
+
 ## <a name="sepa-refund"></a> SEPA manual Refunds
 
 Saferpay does offer the possibility to accept refunds for certain SEPA-based payment methods. However those need special attention.
