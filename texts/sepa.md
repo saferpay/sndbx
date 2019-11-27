@@ -16,7 +16,7 @@ The handling of SEPA payments with Saferpay requires:
 <div class="info">
   <p><strong>Info:</strong> SEPA makes it necessary to define a unique SEPA MandateId for each transaction. You -the merchant- have two options to deal with this requirement:</p>
   <ul>
-    <li>You can define your own MandateId and submit it inside the <strong>Payment.MandateId</strong> parameter! <strong>Make sure it is unique!</strong></li>
+    <li>You can define your own MandateId and submit it inside the <strong>Payment.MandateId</strong> parameter within the initialize request! <strong>Make sure it is unique!</strong></li>
     <li>If <strong>Payment.MandateId</strong> is not used, Saferpay will use the Saferpay TransactionId as its replacement, which is unique. You can find this value inside the authorization response as <strong>Transaction.Id</strong>!</li>
   <ul>
 </div>
