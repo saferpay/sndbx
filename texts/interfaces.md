@@ -358,7 +358,7 @@ Before implementing, it is important to clarify, which functions are important f
 
 ### Use the PaymentPage/ E Commerce, if...
 
-- **You only want to do transactions:** Do you have a small and simple webshop? Are [refunds over the API](refund.html), or [recurring payments](recurring.html) not important for you? The Payment Page and thus a normal E Commerce contract is more, than sufficient for you!
+- **You only want to do transactions:** Do you have a small and simple webshop? Are [refunds over the API](refund.html), or [recurring payments](recurring.html) not important for you? The Payment Page and thus a normal E Commerce contract is more than sufficient for you!
 - **You want to have one solution for every payment method:** [The PaymentPage](Integration_PP.html) does support every payment method Saferpay has to offer. Once integrated, it is a simple matter of activating the payment methods you need and they will show up on the page.
 
 ### Use the Transaction Interface/Saferpay Business, if...
