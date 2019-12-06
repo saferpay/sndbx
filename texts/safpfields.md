@@ -111,6 +111,13 @@ However you must make sure, that you define the placeholders -can be ```<div>```
   </tbody>
 </table>
 
+<div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> The placeholder must have a height > 0, or the iframe will inherit this height!
+  </p>
+</div>
+
 ### Saferpay Fields Initialization
 ```javascript
 SaferpayFields.init({
