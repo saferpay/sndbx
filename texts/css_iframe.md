@@ -87,6 +87,13 @@ $(window).bind("message", function (e) {
 
 ## <a name="css-usecss"></a> Using CSS
 
+<div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> The CSS-feature cannot be used in conjunction with the styling options of a Saferpay Payment Page configuration!
+  </p>
+</div>
+
 The use of Cascading Style Sheets is available via the following methods:
 
 + [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize)
