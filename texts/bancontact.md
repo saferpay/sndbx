@@ -44,3 +44,7 @@ This chapter handles the technical details and flow of this type of integration.
     </ul>
   </li>
 </ul>
+
+## <a name="bancontact-refund"></a> Bancontact Refunds
+
+Refunds for Bancontact are limited to <a href="refund.html#refund-reference"><strong>Referenced Refunds only!y/strong></a> Bancontact Secure Card Data aliases may only be used for card on file transactions!
