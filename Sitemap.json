@@ -356,7 +356,7 @@
      "Subsites": [
        { "Source": "texts/bancontact.md", "Title": "Requirements", "Target": "bancontact.html#bancontact-requirement" },
        { "Source": "texts/bancontact.md", "Title": "Bancontact Direct Mode", "Target": "bancontact.html#bancontact-directmode" },
-       { "Source": "texts/bancontact.md", "Title": "Bancontact Refunds", "Target": "bancontact.html#bancontact-refunds" }
+       { "Source": "texts/bancontact.md", "Title": "Bancontact Refunds", "Target": "bancontact.html#bancontact-refund" }
      ] 
    },
    {
