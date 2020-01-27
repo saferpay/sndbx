@@ -11,6 +11,18 @@ The main idea is, to split the classic card entry form into its components, name
 
 This chapter will cover the integration and preperations necessary, to work with the Saferpay Fields.
 
+## Supported Payment Methods
+
++ Visa/VPay
++ Mastercard
++ Maestro
++ American Express
++ Bancontact
++ Diners Club
++ JCB
++ Bonus Card
++ MyOne
+
 # <a name="hf-flow"></a> Basic Flow
 
 This is the basic Saferpay Fields flow.
