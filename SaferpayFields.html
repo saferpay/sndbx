@@ -673,7 +673,17 @@
 <section><h1>Saferpay Fields</h1><div class="row"><div class="col-md-6"><div class="warning">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant!</p>
-</div><p>The Saferpay Fields grant you the flexibility of your own HTML-form, whilst being 100% PCI SAQ-A compliant.</p><p>The main idea is, to split the classic card entry form into its components, namely the inputs for the PAN, CVC, Expiration and Holder Name. These fields will be hosted on Saferpay-side, making sure, that the data is captured by a fully PCI-certified system, while offering you a level of flexibility and the possibilities, similar to using your own form.</p><p>This chapter will cover the integration and preperations necessary, to work with the Saferpay Fields.</p></div></div></section><section id="hf-flow"><h1><a name="hf-flow"></a> Basic Flow</h1><div class="row"><div class="col-md-6"><p>This is the basic Saferpay Fields flow.</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/saferpay-fields-flow.png" alt="alt text" title="Saferpay Fields flow"></p><ol>
+</div><p>The Saferpay Fields grant you the flexibility of your own HTML-form, whilst being 100% PCI SAQ-A compliant.</p><p>The main idea is, to split the classic card entry form into its components, namely the inputs for the PAN, CVC, Expiration and Holder Name. These fields will be hosted on Saferpay-side, making sure, that the data is captured by a fully PCI-certified system, while offering you a level of flexibility and the possibilities, similar to using your own form.</p><p>This chapter will cover the integration and preperations necessary, to work with the Saferpay Fields.</p></div></div></section><section><h2>Supported Payment Methods</h2><div class="row"><div class="col-md-6"><ul>
+<li>Visa/VPay</li>
+<li>Mastercard</li>
+<li>Maestro</li>
+<li>American Express</li>
+<li>Bancontact</li>
+<li>Diners Club</li>
+<li>JCB</li>
+<li>Bonus Card</li>
+<li>MyOne</li>
+</ul></div></div></section><section id="hf-flow"><h1><a name="hf-flow"></a> Basic Flow</h1><div class="row"><div class="col-md-6"><p>This is the basic Saferpay Fields flow.</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/saferpay-fields-flow.png" alt="alt text" title="Saferpay Fields flow"></p><ol>
 <li>The card holder navigates to the checkout</li>
 <li>The shop frontend calls <strong>SaferpayFields.Init()</strong> (See Integration and Initialization &gt; Hosted Fields Initialization) and the Hosted Fields Javascript library initializes the iFrames.</li>
 <li>Once initialized, the library will replace the placeholders with the correct iFrame inputs, which then are presented to the card holder.</li>
