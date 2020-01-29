@@ -676,8 +676,8 @@
 <li>A valid Alipay contract</li>
 <li>JSON API Version 1.11 or later</li>
 </ul></div></div></section><section id="alipay-general"><h2><a name="alipay-general"></a> General specifics</h2><div class="row"><div class="col-md-6"><ul>
-<li><strong>Cancel:</strong> A cancel may only be performed after the Batch Close on Alipay side, which happens around 0:00am Bejing-time.</li>
-<li><strong>Refunds:</strong> A refund cannot be cancelled, so make sure, that you really want to execute it.</li>
+<li><strong>Cancel:</strong> A cancel may only be performed before the Batch Close on Alipay side, which happens around 0:00am Bejing-time.</li>
+<li><strong>Refunds:</strong> A refund cannot be cancelled, so make sure, that you really want to execute it. Furthermore, in order to execute a refund, you must have made more, or equal that amount on that very day! The refunded amount won't be taken from your bank account, instead it will be subtracted from the overall money, you already made, since the last batch-close, on Alipay side. <strong>If no, or not enough money was made, you cannot execute said refund!</strong></li>
 <li><strong>Refunds #2:</strong> Alipay does not need a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>! Thus the <strong>CaptureId</strong>, needed for a Refund, is returned within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>!</li>
 <li><strong>OrderId:</strong> The OrderId is limited to 64 characters.</li>
 <li><strong>NotifyUrl:</strong> The NotifyUrl is <strong>mandatory</strong>, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!</li>
