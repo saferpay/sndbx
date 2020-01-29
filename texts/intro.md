@@ -794,7 +794,7 @@ Transactions which have not yet been booked are visible in Saferpay Backoffice a
 }
 ```
 
- If a transaction has already passed through the capture, the status is changed to **“CAPTURED”**:
+ If a transaction has already passed through, or does not need the capture, the status is changed to **“CAPTURED”**:
 
 ```json
 "Transaction": {
@@ -812,7 +812,19 @@ Transactions which have not yet been booked are visible in Saferpay Backoffice a
 
 
 ```
-Executing the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) is not needed in this case!
+A [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) may only be executed once! Should a second [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) be attempted, the API will throw an error, informing you, that the [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) already happened:
+
+```json
+{
+  "ResponseHeader": {
+    "SpecVersion": "1.14",
+    "RequestId": "93388d85dc4519ea37595121dd8bd4ae"
+  },
+  "Behavior": "ABORT",
+  "ErrorName": "TRANSACTION_ALREADY_CAPTURED",
+  "ErrorMessage": "Transaction already captured"
+}
+```
 
 Not all payment methods need a separate capture to trigger the cash flow. You can find an overview of which payment methods must be captured [under Payment Method Features](https://saferpay.github.io/sndbx/index.html#pm-functions). Methods, that do not need the capture, will return the status **"CAPTURED"** right away.
 
@@ -821,6 +833,16 @@ Not all payment methods need a separate capture to trigger the cash flow. You ca
 becomes available to the card holder again. This may have the result that the amount can no longer be claimed. We recommend to <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> an authorization as soon as possible. Either by direct API call, or manually via Saferpay Backoffice. If this is not possible, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> nonetheless must be done as soon as possible. With PayPal, this must happen within 48 hours. 
 Otherwise, it may be that the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> -and thus the money-transfer- will be refused. For other payment methods, a later <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> is sometimes possible. If necessary, please speak to your processor about guaranteed reservation times.</p>
 </div>
+
+### Why do a Capture in the first place and not finalize the payment right away?
+
+There are multiple reasons, why a capture is the better option:
+
+- Some countries require the merchant to only capture the money, if the goods get delivered and not beforehand! A <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> together, with the authorization, would be illegal in this case!
+- In rare cases, the processor may not respond to the autocapture. In these cases, it may be successfull, or not. You, the merchant, wouldn't know the final status in this case, which would make these cases rather complicated. In case of a seperate <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>, you can simply execute the request again, with the API gifing you the final status!
+- Error and exception-handling would be way more costly and complex, with an autocapture. A simple <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">reversal/Cancel</a>, in case something went wrong (For example rejected LiabilityShift), wouldn't be possible, requiring you, to do a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund</a>, which will cost you money!
+- Fullfilling orders on store side would actually be more complex. What if you cannot deliver? An autocapture, as mentioned before, would lead to a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund</a>, instead of a simple <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">reversal/Cancel</a>.
+- Features like <a href="partialcaptures.html">partial Captures</a> and <a href="marketplace.html">the Marketplace</a> wouldn't be possible in the first place.
 
 ### <a name="closing"></a>Daily Closing
 
