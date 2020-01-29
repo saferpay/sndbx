@@ -679,7 +679,7 @@
 <section><h1>Glossary</h1><div class="row"><div class="col-md-6"><table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th class="text-center">Term</th>
+      <th class="text-center" style="width: 20%;">Term</th>
       <th class="text-center">Explanation</th>
       <th class="text-center">Where to find it</th>
     </tr>
@@ -738,13 +738,18 @@
     </tr>
     <tr>
       <td class="text-center"><strong>Token</strong></td>
-      <td><p>First and foremost, one important thing: <strong>Do not confuse this with tokenization</strong>. Tokenization is essentially, what <a href="scd.html">Secure Card Data</a> is for. However the token is not meant to reference card details in any way. That is, what the alias (See Card Alias) is meant for. It is important to seperate these two values, in order to avoid confusion. The Token is a value returned by the Saferpay API, to enable further actions on a transaction, not a card! So it references a specific transaction in a way and by submitting it via the Saferpay API, we know what transaction you want to do an action with. For example with the <a href>Payment Page Assert</a>, Saferpay knows, that you want the transaction details for the transaction behind said token!</p></td>
+      <td><p>First and foremost, one important thing: <strong>Do not confuse this with tokenization</strong>. Tokenization is essentially, what <a href="scd.html">Secure Card Data</a> is for. However the token is not meant to reference card details. That is, what the alias (See Card Alias) is meant for. It is important to seperate these two values, in order to avoid confusion. The Token is a value returned by the Saferpay API, to enable further actions on a transaction, not a card! So it actually references a specific transaction -and thus indirectly the card details- and by submitting it via the API, Saferpay knows what transaction you want to do an action with. For example with the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, Saferpay knows, that you want the transaction details for the transaction behind said token!</p></td>
       <td><p>The token is only returned via the API. Either through <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert</a>.</p></td>
     </tr>
     <tr>
       <td class="text-center"><strong>TransactionId</strong></td>
-      <td><p>Each Saferpay transaction gets assigned a unique transactionId. This Id can be used to search for said transaction inside the Saferpay Backoffice, do captures, refunds and more. It can also help the Saferpay Support, if you need help with a certain transaction. If available, always submit the transactionId, this way the support can easily find the transaction and help you!</p></td>
+      <td><p>Each Saferpay transaction gets assigned a unique transactionId. This Id can be used to search for said transaction inside the Saferpay Backoffice, do captures and more. It can also help the Saferpay Support, if you need help with a certain transaction. If available, always submit the transactionId, this way the support can easily find the transaction and help you!</p></td>
       <td><p>The transactionId is returned via the API. Either through <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Transaction AuthorizeDirect</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeReferenced">Transaction AuthorizeReferenced</a>, inside <strong>Transaction.Id</strong>. Furthermore, you can also find it inside the Saferpay Backoffice, when checking the details for a given transaction.</p></td>
+    </tr>
+    <tr>
+      <td class="text-center"><strong>CaptureId</strong></td>
+      <td><p>With the introduction of <a href="partialcaptures.html">Partial Captures</a>, it became possible to split one transaction into multiple parts, allowing to gather multiple parts of the transaction amount and even transfer it to different bank accounts! However that also made it necessary to give each part its own Id, in order to do <a href="refund.html">Refunds</a> on an individual part! In order to not confuse it with the transactionId, the captureId has the suffix <strong>&quot;_c&quot;</strong>!</p></td>
+      <td><p>The captureId is returned via the API. Either through <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Transaction Capture</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Transaction MultipartCapture</a>.</p></td>
     </tr>
     <tr>
       <td class="text-center"><strong>OrderId</strong></td>
