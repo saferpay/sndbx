@@ -7,7 +7,7 @@
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th class="text-center">Term</th>
+      <th class="text-center" style="width: 20%;">Term</th>
       <th class="text-center">Explanation</th>
       <th class="text-center">Where to find it</th>
     </tr>
