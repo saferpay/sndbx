@@ -374,5 +374,10 @@
   {
    "Title": "Changelog",
    "Target": "https://saferpay.github.io/changelog/"
+  },
+  {
+    "Title": "Glossary",
+    "Source": "texts/glossary.md",
+    "Target": "glossary.html"
   }
 ]
