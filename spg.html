@@ -693,6 +693,7 @@ Next is the Authorization method you want to apply to your Secure PayGate orders
 <li><strong>Preauthorization</strong>: Similarto the first option, however preauthorizations extend the validity of the authorized payment from a guaranteed 10, to a guaranteed 30 days, which is helpful, if you want to capture a payment on a later delivery.</li>
 <li><strong>Normal (final) authorization with automatic capturing</strong>: Triggers an automatic <a href="index.html#capture">capture</a>, after a successful authorization.</li>
 </ul><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/SPG_Settings_2.png" alt="alt text" title="SPG Settings">
+<br>
 These settings are important, if you intend on using the Secure PayGate in conjunction with the JSON API (more on that later).
 Here you can define, where the Payment Page should send your customer to, after a successful, failed, or aborted payment. This way, you can send the customer towards your website, or even a specifically tailored return-site.</p><p>Furthermore, Saferpay can also trigger a server-to-server notification, in case of a successful payment, which is helpful, to avoid redirect-problems with the former URLs, or in cases, where you do not want to use returnUrls and just the payment notification, to gather the payment-details into your system.</p><div class="warning">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
