@@ -27,6 +27,7 @@ Next is the Authorization method you want to apply to your Secure PayGate orders
 + **Normal (final) authorization with automatic capturing**: Triggers an automatic <a href="index.html#capture">capture</a>, after a successful authorization.
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/SPG_Settings_2.png "SPG Settings")
+<br />
 These settings are important, if you intend on using the Secure PayGate in conjunction with the JSON API (more on that later).
 Here you can define, where the Payment Page should send your customer to, after a successful, failed, or aborted payment. This way, you can send the customer towards your website, or even a specifically tailored return-site.
 
