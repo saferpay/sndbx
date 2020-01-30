@@ -165,7 +165,7 @@ SaferpayFields.init({
 });
 
 // submit(); sends the entered hosted fields data to Saferpay.
-HostedFields.submit({
+SaferpayFields.submit({
 	onSuccess: function(evt) {
 	    //Callback on successful Submit
 	},
