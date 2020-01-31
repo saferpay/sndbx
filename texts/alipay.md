@@ -7,6 +7,7 @@ Alipay transactions can also be processed via the Saferpay JSON API. However, as
 * At least one active Saferpay terminal via which payment can be carried out and the associated Saferpay TerminalId.
 *	A valid Alipay contract
 *	JSON API Version 1.11 or later 
+* Alipay is only available via the [Payment Page](Integration_PP.html)
 
 ## <a name="alipay-general"></a> General specifics
 
