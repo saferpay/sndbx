@@ -360,6 +360,16 @@
      ] 
    },
    {
+     "Title": "ApplePay",
+     "Source": "texts/applepay.md",
+     "Target": "applepay.html"
+     "Subsites": [
+       { "Source": "texts/applepay.md", "Title": "Requirements", "Target": "applepay.html#apple-requirement" },
+       { "Source": "texts/applepay.md", "Title": "Activation", "Target": "applepay.html#apple-activation" },
+       { "Source": "texts/applepay.md", "Title": "Direct redirect", "Target": "applepay.html#apple-redirect" }
+     ] 
+   },
+   {
     "Title": "Additional Information"
   },
   {
