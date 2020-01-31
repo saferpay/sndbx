@@ -10,6 +10,7 @@ The handling of PayPal payments with Saferpay requires:
 * The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 * ApplePay is only available via the [PaymentPage flow](Integration_PP.html)!
+* ApplePay is only available with **SpecVersion 1.15**, or higher.
 * **NotifyUrl:** The NotifyUrl is **mandatory**, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!
 * ApplePay can only be used with Apple devices, like iPhones and iPads.
 * Furthermore, only Apples own browser, Safari, is supported.
@@ -33,7 +34,6 @@ The activation of ApplePay for your Saferpay account, be it live, or on the test
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO3.png "ApplePay inside the Saferpay Backoffice")
 6. And you are done! ApplePay is now available for you on your Saferpay Terminal.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO4.png "ApplePay inside the Saferpay Backoffice")
-7. ApplePay is only available with **SpecVersion 1.15**, or higher.
 
 ## <a name="apple-redirect"></a> Direct redirect
 
