@@ -64,6 +64,9 @@ If you want to perform a direct redirect to ApplePay, you have to use the parame
     "Wallets": [
         "APPLEPAY"
     ],
+    "PaymentMethods": [
+        "VISA"
+    ],
     "ReturnUrls": {
         "Success": "[YOUR URL]",
         "Fail": "[YOUR URL]",
@@ -74,5 +77,5 @@ If you want to perform a direct redirect to ApplePay, you have to use the parame
 ```
 
 <div class="info">
-  <p><strong>IMPORTANT:</strong> If you are using <strong>"Wallets"</strong> alongside <strong>"PaymentMethods"</strong>, you can limit the Brands, your customer may use!</p>
+  <p><strong>Tip:</strong> If you are using <strong>"Wallets"</strong> alongside <strong>"PaymentMethods"</strong>, you can limit the Brands, your customer may use!</p>
 </div>
