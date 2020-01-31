@@ -24,7 +24,7 @@ The handling of PayPal payments with Saferpay requires:
 The activation of ApplePay for your Saferpay account, be it live, or on the test-environment, requires next to no effort and can be done in a matter of seconds.
 
 1. First step is to **log into the Saferpay Backoffice**, there you have to navigate to the **Settings** tab and click on **Payment Means / Terminals**.
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO1.png "ApplePay inside the Saferpay Backoffice")
+<br />![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO1.png "ApplePay inside the Saferpay Backoffice")
 2. Next, select the e-commerce, or Secure PayGate terminal, you want to activate ApplePay on. 
 3. Navigate to the **Wallets** section, there you will find ApplePay.
 4. Click on the **Activate** Button.
