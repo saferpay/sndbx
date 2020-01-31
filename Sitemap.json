@@ -362,7 +362,7 @@
    {
      "Title": "ApplePay",
      "Source": "texts/applepay.md",
-     "Target": "applepay.html"
+     "Target": "applepay.html",
      "Subsites": [
        { "Source": "texts/applepay.md", "Title": "Requirements", "Target": "applepay.html#apple-requirement" },
        { "Source": "texts/applepay.md", "Title": "Activation", "Target": "applepay.html#apple-activation" },
