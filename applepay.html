@@ -257,7 +257,7 @@
 								<li><a href="#pf-regdial">Registration Dialogue</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="sofort.html">SOFORT by Klarna</a>
 							<ul class="nav">
 								<li><a href="#sf-requirement">Requirements</a></li>
@@ -320,7 +320,7 @@
 								<li><a href="#bancontact-refund">Bancontact Refunds</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="applepay.html">ApplePay</a>
 							<ul class="nav">
 								<li><a href="#apple-requirement">Requirements</a></li>
@@ -601,7 +601,7 @@
 								<li><a href="#pf-regdial">Registration Dialogue</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="sofort.html">SOFORT by Klarna</a>
 							<ul class="nav">
 								<li><a href="#sf-requirement">Requirements</a></li>
@@ -664,7 +664,7 @@
 								<li><a href="#bancontact-refund">Bancontact Refunds</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="applepay.html">ApplePay</a>
 							<ul class="nav">
 								<li><a href="#apple-requirement">Requirements</a></li>
@@ -692,92 +692,61 @@
 				</div>
 
 				
-<section><h1>SOFORT by Klarna</h1><div class="row"><div class="col-md-6"><p>SOFORT is a third party means of payment by Klarna Group. To process SOFORT via the Saferpay JSON API a few things must be observed.</p></div></div></section><section id="sf-requirement"><h2><a name="sf-requirement"></a> Requirements</h2><div class="row"><div class="col-md-6"><p>The handling of SOFORT payments with Saferpay requires:</p><ul>
-<li>A corresponding licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
+<section><h1>ApplePay</h1><div class="row"><div class="col-md-6"><p>ApplePay-transactions can be processed via the Saferpay Payment Page, without much effort. Note, that ApplePay is not a classic means of payment, but rather a digital Wallet. Your customers will still pay with Visa, Mastercard, or whatever credit card has been saved inside the Wallet, thus the payment method will correspond to this. However Saferpay will also return information, that this transaction has been performed, through ApplePay. Furthermore, due to this nature, all options and limitations of the saved means of payment do apply <a href="index.html#pm-functions">as stated here, if not mentioned otherwise in this chapter!</a>
+The following chapter will guide you through the steps required, in order to activate and use ApplePay.</p></div></div></section><section id="ppal-requirement"><h2><a name="ppal-requirement"></a> Requirements</h2><div class="row"><div class="col-md-6"><p>The handling of PayPal payments with Saferpay requires:</p><ul>
+<li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
 <li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
-<li>A valid acceptance agreement for SOFORT must be present.</li>
-<li>Sofort can only be used via the <a href="Integration_PP.html">Payment Page</a>. Please follow the general guide there!</li>
+<li>ApplePay is only available via the <a href="Integration_PP.html">PaymentPage flow</a>!</li>
 <li><strong>NotifyUrl:</strong> The NotifyUrl is <strong>mandatory</strong>, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!</li>
-</ul><p>For SOFORT activation Saferpay needs:</p><ul>
-<li>Your SOFORT Customer ID.</li>
-<li>The SOFORT Project ID.</li>
-<li>The SOFORT Project password (NOT the account password!).</li>
-<li>The Currency your customers will purchase with SOFORT.</li>
-<li>Your Saferpay Customer ID.</li>
-<li>The ID of the Saferpay eCommerce Terminal SOFORT is to be added.</li>
-</ul><div class="warning">
-  <p><strong>Attention:</strong> For Sofort activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your Sofort credentials and the desired currency.</p>
-</div></div></div></section><section id="sf-newproject"><h2><a name="sf-newproject"></a> Create a new project for SOFORT</h2><div class="row"><div class="col-md-6"><ol>
-<li><p>Log-in to your SOFORT member area. Choose &#8222;New project&#8220; and click &#8222;Create project&#8220;. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_create_project.png" alt="alt text" title="Create project"></p>
-</li>
-<li><p>Set the radio button for &#8222;Classic project&#8220; and click again &#8222;Create project&#8220;. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_classic_project.png" alt="alt text" title="Classic project"></p>
-</li>
-<li><p>In the next step specify general settings for the project. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_general.png" alt="alt text" title="General settings"><br>
-<i class="glyphicon glyphicon-hand-right"></i> <b><u>Don't forget to deactivate the Test mode before going live!</u></b></p>
-</li>
-<li><p>Then enter <b><u>your address</u></b>. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_address.png" alt="alt text" title="Address"></p>
-</li>
-<li><p>Specify the currency for your customer&#8217;s payments. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_currency.png" alt="alt text" title="Currency"></p>
-</li>
-<li><p>Enter your IBAN for receiving your customer&#8217;s payments. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_iban.png" alt="alt text" title="Bank account"></p>
-</li>
-<li><p>For processsing SOFORT payments via Saferpay enter the redirect links. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_interface.png" alt="alt text" title="Interface"><br><i class="glyphicon glyphicon-hand-right"></i> Success link:<br>
-<em>https://-USER_VARIABLE_0-paymentStatus=ok-USER_VARIABLE_2--USER_VARIABLE_3--USER_VARIABLE_4--USER_VARIABLE_5--SENDER_IBAN-</em><br><i class="glyphicon glyphicon-hand-right"></i> Abort link:<br>
-<em>https://-USER_VARIABLE_0-paymentStatus=cancel</em></p>
-</li>
-<li><p>Scroll downn and click on &quot;Save&quot; to save your general project settings. Click on the tab &#8222;Extended settings&#8220; to configure additional project settings. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_extended.png" alt="alt text" title="Extended settings"></p>
-</li>
-<li><p>Go to &#8222;Shop interface settings&#8220; in the &quot;Extended settings&quot; tab and enter the timeout value and link. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_timeout.png" alt="alt text" title="Timeout"><br><i class="glyphicon glyphicon-hand-right"></i> Timeout in seconds:<br>
-<em>900</em><br><i class="glyphicon glyphicon-hand-right"></i> Timeout link:<br><em>https://-USER_VARIABLE_0-paymentStatus=timeout</em></p>
-</li>
-<li><p>Again click the tab &#8222;Extended Settings&#8220; and choose &#8222;Notifications&#8220;. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_notification.png" alt="alt text" title="Notifications"></p>
-</li>
-<li><p>Click &#8222;Add new notification&#8220; and add your email address to receive notification messages. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_email.png" alt="alt text" title="Email notification"></p>
-</li>
-<li><p>Save and complete with adding the notification URL. As method choose &#8222;POST&#8220;. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_noturl.png" alt="alt text" title="Notification URL"><br><i class="glyphicon glyphicon-hand-right"></i> HTTPS URL:<br><em>https://-USER_VARIABLE_1-</em></p>
-</li>
-<li><p>Finally create a project password. <strong>Please make sure, that you check the &quot;Don't use special characters&quot;-box!</strong> Click the tab &#8222;Extended settings&#8220; again and there &#8222;Passwords and hash algorithm&#8220;. Select SHA-1. <br>
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_password.png" alt="alt text" title="Project password"></p>
-</li>
-</ol><div class="danger" style="height: 65px;">
-  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p>
-    <strong>Caution: DO NOT</strong> create a notification-password, otherwise Sofort via Saferpay will not work! 
-  </p>
-</div><p>The settings for processing SOFORT via Saferpay are completed!</p><hr></div></div></section><section id="sf-iframe"><h2><a name="sf-iframe"></a> Sofort iFrame integration</h2><div class="row"><div class="col-md-6"><div class="danger" style="height: 65px;">
-  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Warning:</strong> Sofort does not support the iFrame Integration!</p>
-</div><p>Sofort/Klarna actively blocks the iFrame-Integration.
-In order to circumvent this issue, the Saferpay Payment Page will break out of the iFrame and display the Sofort website full-size, in order to make a payment possible.
-However, please keep in mind, that the ReturnUrls will also be displayed full-size!</p></div></div></section><section id="sf-refund"><h2><a name="sf-refund"></a> SEPA manual Refunds for Sofort</h2><div class="row"><div class="col-md-6"><p>Saferpay does offer the possibility to accept refunds for certain SEPA-based payment methods. However those need special attention.
-Reason being, that SEPA does not directly offer refunds, which is just in the nature of the payment-system itself.
-Due to this, Saferpay offers a workaround, to make manual SEPA-refunds easier for the merchant.</p></div></div></section><section><h3>Step 1: Activation</h3><div class="row"><div class="col-md-6"><p>Before you -the merchant- can start accepting refunds, they need to be activated inside the Saferpay Backoffice:
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund.png" alt="alt text" title="Manual refund activation"></p></div></div></section><section><h3>Step 2: Executing refunds</h3><div class="row"><div class="col-md-6"><p>Once the activation has been done, you can execute refunds, like any other payment method. Either <a href="refund.html">via API</a>, or inside the Saferpay Backoffice.</p></div></div></section><section><h3>Step 3: Uploading the refunds into your online-banking</h3><div class="row"><div class="col-md-6"><p>This is, where SEPA-refunds deviate from other payment methods, like credit cards.
-As mentioned before, SEPA does not offer direct refunds via the processing itself. This is why Saferpay first collects all executed refunds inside the backoffice:
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund_Export.png" alt="alt text" title="Manual refund activation"></p><p>These refunds need then to be exported into a special XML-File, which can be done right there inside the Backoffice.
-The created XML-file can then be uploaded into your online banking-portal, which executes these refunds in a batch, eliminating the need, of doing them all manually.
-You can <a href="https://github.com/saferpay/sndbx/blob/master/assets/other/ManualBankRefund-2019-09-13-10-50-28-Example_File.xml" download>download an example-file here</a>.</p><div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p>
-    <strong>Important:</strong> It may be necessary to contact your bank, for this import-feature to be activated! Some also may not offer it at all!
-  </p>
-</div><div class="danger">
-  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p>
-    <strong>Caution:</strong> SEPA-refund-files from the test-environment can't be uploaded into online-banking portals, since they only contain test-data, thus non-valid IBANs!
-  </p>
+<li>ApplePay can only be used with Apple devices, like iPhones and iPads.</li>
+<li>Furthermore, only Apples own browser, Safari, is supported.</li>
+<li>ApplePay does not support <a href="scd.html">Secure Card Data</a>, even though the means of payment may support it! However <a href="recurring.html">Recurring Payments</a> can be executed, if supported by the payment mean!</li>
+</ul><div class="danger">
+  <p><strong>Warning:</strong> ApplePay does not support the iFrame Integration! The PaymentPage will actively break out of an iFrame, to avoid this issue!</p>
+</div></div></div></section><section id="apple-activation"><h2><a name="apple-activation"></a> Activation</h2><div class="row"><div class="col-md-6"><p>The activation of ApplePay for your Saferpay account, be it live, or on the test-environment, requires next to no effort and can be done in a matter of seconds.</p><ol>
+<li>First step is to <strong>log into the Saferpay Backoffice</strong>, there you have to navigate to the <strong>Settings</strong> tab and click on <strong>Payment Means / Terminals</strong>.
+<br><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO1.png" alt="alt text" title="ApplePay inside the Saferpay Backoffice"></li>
+<li>Next, select the e-commerce, or Secure PayGate terminal, you want to activate ApplePay on.</li>
+<li>Navigate to the <strong>Wallets</strong> section, there you will find ApplePay.</li>
+<li>Click on the <strong>Activate</strong> Button.
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO2.png" alt="alt text" title="ApplePay inside the Saferpay Backoffice"></li>
+<li>You will be prompted with another window, that asks you to accept the Terms and Conditions from Apple, so you may use ApplePay. Mark the checkbox and click <strong>Activate</strong>.
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO3.png" alt="alt text" title="ApplePay inside the Saferpay Backoffice"></li>
+<li>And you are done! ApplePay is now available for you on your Saferpay Terminal.
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO4.png" alt="alt text" title="ApplePay inside the Saferpay Backoffice"></li>
+<li>ApplePay is only available with <strong>SpecVersion 1.15</strong>, or higher.</li>
+</ol></div></div></section><section id="apple-redirect"><h2><a name="apple-redirect"></a> Direct redirect</h2><div class="row"><div class="col-md-6"><p>If you want to perform a direct redirect to ApplePay, you have to use the parameter <strong>Wallets</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>!</p><p><strong>Example Request:</strong></p><pre><code class="language-json">{
+    &quot;RequestHeader&quot;: {
+        &quot;SpecVersion&quot;: &quot;[CURRENT SPECVERSION]&quot;,
+        &quot;CustomerId&quot;: &quot;[YOUR CUSTOMERID]&quot;,
+        &quot;RequestId&quot;: &quot;[YOUR REQUESTID]&quot;,
+        &quot;RetryIndicator&quot;: 0,
+        &quot;ClientInfo&quot;: {
+            &quot;ShopInfo&quot;: &quot;My Shop&quot;,
+            &quot;OsInfo&quot;: &quot;Windows Server 2016&quot;
+        }
+    },
+    &quot;TerminalId&quot;: &quot;[YOUR TERMINAL]&quot;,
+    &quot;Payment&quot;: {
+        &quot;Amount&quot;: {
+            &quot;Value&quot;: &quot;12345&quot;,
+            &quot;CurrencyCode&quot;: &quot;EUR&quot;
+        },
+        &quot;OrderId&quot;: 123,
+        &quot;Description&quot;: &quot;Test Order #123&quot;
+    },
+    &quot;Wallets&quot;: [
+        &quot;APPLEPAY&quot;
+    ],
+    &quot;ReturnUrls&quot;: {
+        &quot;Success&quot;: &quot;[YOUR URL]&quot;,
+        &quot;Fail&quot;: &quot;[YOUR URL]&quot;,
+        &quot;Abort&quot;: &quot;[YOUR URL]&quot;
+    },
+}
+
+</code></pre><div class="info">
+  <p><strong>IMPORTANT:</strong> If you are using <strong>&quot;Wallets&quot;</strong> alongside <strong>&quot;PaymentMethods&quot;</strong>, you can limit the Brands, your customer may use!</p>
 </div></div></div></section>
 
 			</main>
