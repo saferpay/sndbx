@@ -40,7 +40,7 @@ Recurring payments are supported by the following payment means:
 With this method, the initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
 
 <div class="warning">
-  <p><strong>NOTE:</strong> Due to the PSD2, you must perform 3D Secure with the first (initial) transaction. However, if you do 3D Secure with the initial transaction, LiabilityShift is also granted for the recurring transactions.</p>
+  <p><strong>NOTE:</strong> Due to the PSD2, you must perform 3D Secure with the first (initial) transaction. However, if you do 3D Secure with the initial transaction, LiabilityShift <strong>may</strong> also granted for the recurring transactions. More information about <a href="index.html#psd2">can be found here</a>.
 </div>
 
 
