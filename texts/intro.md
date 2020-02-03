@@ -200,7 +200,7 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
   <p><strong>Attention:</strong> If you intend on doing a dummy authorization, using 3-D Secure as a card holder verification measure, we do not recommend an amount < 1,-! Small amounts often get rejected by issuing banks, thus causing issues, with amount 0 not being possible at all.</p>
 </div>
 <div class="info">
-  <p><strong>Tip:</strong> If you want to keep the amount of <strong>Challenged</strong> transactions as low and thus your conversion-rate as high as possible, please make sure to submit a <strong>BillingAddress</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> requests. This information will then be used for the scoring, as mentioned earlier, to increase the possibility of a frictionless transaction and thus a smooth experience for your customers!</p>
+  <p><strong>Tip:</strong> If you want to keep the amount of <strong>Challenged</strong> transactions as low and thus your conversion-rate as high as possible, please make sure to submit a <strong>BillingAddress</strong> and <strong>DeliveryAddress</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> requests. This information will then be used for the scoring, as mentioned earlier, to increase the possibility of a frictionless transaction and thus a smooth experience for your customers!</p>
 </div>
 
 ## <a name="psd2"></a> PSD2 and 3-D Secure
