@@ -13,10 +13,9 @@ Recurring payments are transactions processed on a regular basis under a pre-aut
 
 *	a Saferpay Business License
 *	a valid login access with a username and password for the Saferpay Backoffice.
-*	one active Saferpay ecommerce terminal and an additional MOTO terminal via which payment can be carried out and the associated
+*	one active Saferpay ecommerce terminal via which payment can be carried out and the associated
 *	Saferpay terminal number (TerminalId parameter) and Saferpay customer number (CustomerId parameter).
 *	valid acceptance agreement for credit cards or other payment methods
-*	Secure Card Data Module (if recurring payments are performed with using Aliases)
 ---
 
 ## <a name="recurring-payment-methods"></a> Supported Payment Methods: 
