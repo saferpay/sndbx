@@ -751,7 +751,7 @@
  }
 }
 </code></pre><div class="info">
-  <p><strong>TIPP:</strong> If you want to validate the cardholder without charging his bank account, you can trigger a &#8220;dummy&#8221; authorization with a small amount value (e.g. 1 Euro; Amount value &#8220;100&#8221;). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)! However <strong>DO NOT</strong> cancel this transaction! It must persist, in order to reference it within the recurring transaction.</p>
+  <p><strong>TIPP:</strong> If you want to validate the cardholder without charging his bank account, you can trigger a &#8220;dummy&#8221; authorization with a small amount value (e.g. 1 Euro; Amount value &#8220;100&#8221;). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)!</p>
 </div></div></div></section><section><h3>2. Validating the transaction</h3><div class="row"><div class="col-md-6"><p>Depending on the Interface used to initialize the transaction, you can validate the payment and assess transaction based information with either:</p><ul>
 <li><a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a> or</li>
 <li><a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize">Transaction Authorize</a> function.</li>
