@@ -97,7 +97,7 @@ POST /Payment/v1/PaymentPage/Initialize
 
  
 <div class="info">
-  <p><strong>TIPP:</strong> If you want to validate the cardholder without charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)! However <strong>DO NOT</strong> cancel this transaction! It must persist, in order to reference it within the recurring transaction.</p>
+  <p><strong>TIPP:</strong> If you want to validate the cardholder without charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)!</p>
 </div>
 
 
