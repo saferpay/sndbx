@@ -26,6 +26,103 @@ If you are running a time-sensitive process, that requires your session to be lo
 Furthermore, we highly recommend [using the NotifyUrl for the Saferpay Payment Page](https://saferpay.github.io/sndbx/Integration_PP.html#pp-initialize), which will be called, once we (Saferpay) get a successful response from iDeal!
 This way your shop does get the necessary information in case of a success, even after 12 hours and can initiate further processing.
 
+## <a name="ideal-pre"></a> Bank Pre-Selection
+
+You may want to implement the Bank selection for iDeal payments into your shop, or just pre-select the bank for your customer, so they do not have to. Saferpay offers an option, to skip the selection page and jump right to yyour customers online banking site, so he/she may perform the payment.
+
+<div class="warning">
+  <p><strong>Attention:</strong> This feature is only available with <strong>SpecVersion 1.15</strong> and up!</p>
+</div>
+
+In order to pre-select the bank, you have to set the parameter <strong>PaymentMethods</strong> with the value <strong>IDEAL</strong>, in order to pre-select iDeal in general and then you have to fill in the parameter <strong>PaymentMethodsOptions.Ideal.IssuerId</strong> with one of the following values, depending on which bank you want to pre-select:
+
+
+<div class="warning">
+  <p><strong>Attention:</strong> These Values are issued, by iDeal and underly changes, as they seem necessary!</p>
+</div>
+
+### Test Environment Values
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Bank</th>
+      <th class="text-center">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td">Test Bank 1</td>
+      <td class="text-center">0091</td>
+    </tr>
+    <tr>
+      <td">Test Bank 2</td>
+      <td class="text-center">0092</td>
+    </tr>
+  </tbody>
+</table>
+
+### Production Values
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Bank</th>
+      <th class="text-center">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td">ABN AMRO</td>
+      <td class="text-center">ABNANL2A</td>
+    </tr>
+    <tr>
+      <td">ASN Bank</td>
+      <td class="text-center">ASNBNL21</td>
+    </tr>
+    <tr>
+      <td">bunq</td>
+      <td class="text-center">BUNQNL2A</td>
+    </tr>
+    <tr>
+      <td">Handelsbanken</td>
+      <td class="text-center">HANDNL2A</td>
+    </tr>
+    <tr>
+      <td">ING</td>
+      <td class="text-center">INGBNL2A</td>
+    </tr>
+    <tr>
+      <td">Knab</td>
+      <td class="text-center">KNABNL2H</td>
+    </tr>
+    <tr>
+      <td">Moneyou</td>
+      <td class="text-center">MOYONL21</td>
+    </tr>
+    <tr>
+      <td">Rabobank</td>
+      <td class="text-center">RABONL2U</td>
+    </tr>
+    <tr>
+      <td">RegioBank</td>
+      <td class="text-center">RBRBNL21</td>
+    </tr>
+    <tr>
+      <td">SNS</td>
+      <td class="text-center">SNSBNL2A</td>
+    </tr>
+    <tr>
+      <td">Triodos Bank</td>
+      <td class="text-center">TRIONL2U</td>
+    </tr>
+    <tr>
+      <td">Van Lanschot</td>
+      <td class="text-center">FVLBNL22</td>
+    </tr>
+  </tbody>
+</table>
+
 ## <a name="ideal-refund"></a> SEPA manual Refunds for iDeal
 
 Saferpay does offer the possibility to accept refunds for certain SEPA-based payment methods. However those need special attention.
