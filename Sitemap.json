@@ -320,6 +320,7 @@
   "Subsites": [
       { "Source": "texts/ideal.md", "Title": "Requirements", "Target": "ideal.html#ideal-requirement" },
       { "Source": "texts/ideal.md", "Title": "Session Timeouts", "Target": "ideal.html#ideal-timeout" },
+      { "Source": "texts/ideal.md", "Title": "Bank Pre-Selection", "Target": "ideal.html#ideal-pre" },
       { "Source": "texts/ideal.md", "Title": "SEPA manual Refunds for iDeal", "Target": "ideal.html#ideal-refund" }
     ] 
    },
