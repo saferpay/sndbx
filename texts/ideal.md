@@ -52,11 +52,11 @@ In order to pre-select the bank, you have to set the parameter <strong>PaymentMe
   </thead>
   <tbody>
     <tr>
-      <td">Test Bank 1</td>
+      <td>Test Bank 1</td>
       <td class="text-center">0091</td>
     </tr>
     <tr>
-      <td">Test Bank 2</td>
+      <td>Test Bank 2</td>
       <td class="text-center">0092</td>
     </tr>
   </tbody>
@@ -73,51 +73,51 @@ In order to pre-select the bank, you have to set the parameter <strong>PaymentMe
   </thead>
   <tbody>
     <tr>
-      <td">ABN AMRO</td>
+      <td>ABN AMRO</td>
       <td class="text-center">ABNANL2A</td>
     </tr>
     <tr>
-      <td">ASN Bank</td>
+      <td>ASN Bank</td>
       <td class="text-center">ASNBNL21</td>
     </tr>
     <tr>
-      <td">bunq</td>
+      <td>bunq</td>
       <td class="text-center">BUNQNL2A</td>
     </tr>
     <tr>
-      <td">Handelsbanken</td>
+      <td>Handelsbanken</td>
       <td class="text-center">HANDNL2A</td>
     </tr>
     <tr>
-      <td">ING</td>
+      <td>ING</td>
       <td class="text-center">INGBNL2A</td>
     </tr>
     <tr>
-      <td">Knab</td>
+      <td>Knab</td>
       <td class="text-center">KNABNL2H</td>
     </tr>
     <tr>
-      <td">Moneyou</td>
+      <td>Moneyou</td>
       <td class="text-center">MOYONL21</td>
     </tr>
     <tr>
-      <td">Rabobank</td>
+      <td>Rabobank</td>
       <td class="text-center">RABONL2U</td>
     </tr>
     <tr>
-      <td">RegioBank</td>
+      <td>RegioBank</td>
       <td class="text-center">RBRBNL21</td>
     </tr>
     <tr>
-      <td">SNS</td>
+      <td>SNS</td>
       <td class="text-center">SNSBNL2A</td>
     </tr>
     <tr>
-      <td">Triodos Bank</td>
+      <td>Triodos Bank</td>
       <td class="text-center">TRIONL2U</td>
     </tr>
     <tr>
-      <td">Van Lanschot</td>
+      <td>Van Lanschot</td>
       <td class="text-center">FVLBNL22</td>
     </tr>
   </tbody>
