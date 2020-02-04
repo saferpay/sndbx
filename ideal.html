@@ -709,7 +709,85 @@ So if your session runs into a timeout during this window, it could be, that the
 <strong>We generally recommend setting the timeout to 35 minutes, however the processing can take up to 12 hours on iDeal-side!</strong>
 If you are running a time-sensitive process, that requires your session to be lower, than this timne frame, we recommend not using iDeal!
 Furthermore, we highly recommend <a href="https://saferpay.github.io/sndbx/Integration_PP.html#pp-initialize">using the NotifyUrl for the Saferpay Payment Page</a>, which will be called, once we (Saferpay) get a successful response from iDeal!
-This way your shop does get the necessary information in case of a success, even after 12 hours and can initiate further processing.</p></div></div></section><section id="ideal-refund"><h2><a name="ideal-refund"></a> SEPA manual Refunds for iDeal</h2><div class="row"><div class="col-md-6"><p>Saferpay does offer the possibility to accept refunds for certain SEPA-based payment methods. However those need special attention.
+This way your shop does get the necessary information in case of a success, even after 12 hours and can initiate further processing.</p></div></div></section><section id="ideal-pre"><h2><a name="ideal-pre"></a> Bank Pre-Selection</h2><div class="row"><div class="col-md-6"><p>You may want to implement the Bank selection for iDeal payments into your shop, or just pre-select the bank for your customer, so they do not have to. Saferpay offers an option, to skip the selection page and jump right to yyour customers online banking site, so he/she may perform the payment.</p><div class="warning">
+  <p><strong>Attention:</strong> This feature is only available with <strong>SpecVersion 1.15</strong> and up!</p>
+</div><p>In order to pre-select the bank, you have to set the parameter <strong>PaymentMethods</strong> with the value <strong>IDEAL</strong>, in order to pre-select iDeal in general and then you have to fill in the parameter <strong>PaymentMethodsOptions.Ideal.IssuerId</strong> with one of the following values, depending on which bank you want to pre-select:</p><div class="warning">
+  <p><strong>Attention:</strong> These Values are issued, by iDeal and underly changes, as they seem necessary!</p>
+</div></div></div></section><section><h3>Test Environment Values</h3><div class="row"><div class="col-md-6"><td">Test Bank 1
+      </td"><td">Test Bank 2
+      </td"><table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Bank</th>
+      <th class="text-center">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">0091</td>
+    </tr>
+    <tr>
+      <td class="text-center">0092</td>
+    </tr>
+  </tbody>
+</table></div></div></section><section><h3>Production Values</h3><div class="row"><div class="col-md-6"><td">ABN AMRO
+      </td"><td">ASN Bank
+      </td"><td">bunq
+      </td"><td">Handelsbanken
+      </td"><td">ING
+      </td"><td">Knab
+      </td"><td">Moneyou
+      </td"><td">Rabobank
+      </td"><td">RegioBank
+      </td"><td">SNS
+      </td"><td">Triodos Bank
+      </td"><td">Van Lanschot
+      </td"><table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Bank</th>
+      <th class="text-center">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">ABNANL2A</td>
+    </tr>
+    <tr>
+      <td class="text-center">ASNBNL21</td>
+    </tr>
+    <tr>
+      <td class="text-center">BUNQNL2A</td>
+    </tr>
+    <tr>
+      <td class="text-center">HANDNL2A</td>
+    </tr>
+    <tr>
+      <td class="text-center">INGBNL2A</td>
+    </tr>
+    <tr>
+      <td class="text-center">KNABNL2H</td>
+    </tr>
+    <tr>
+      <td class="text-center">MOYONL21</td>
+    </tr>
+    <tr>
+      <td class="text-center">RABONL2U</td>
+    </tr>
+    <tr>
+      <td class="text-center">RBRBNL21</td>
+    </tr>
+    <tr>
+      <td class="text-center">SNSBNL2A</td>
+    </tr>
+    <tr>
+      <td class="text-center">TRIONL2U</td>
+    </tr>
+    <tr>
+      <td class="text-center">FVLBNL22</td>
+    </tr>
+  </tbody>
+</table></div></div></section><section id="ideal-refund"><h2><a name="ideal-refund"></a> SEPA manual Refunds for iDeal</h2><div class="row"><div class="col-md-6"><p>Saferpay does offer the possibility to accept refunds for certain SEPA-based payment methods. However those need special attention.
 Reason being, that SEPA does not directly offer refunds, which is just in the nature of the payment-system itself.
 Due to this, Saferpay offers a workaround, to make manual SEPA-refunds easier for the merchant.</p></div></div></section><section><h3>Step 1: Activation</h3><div class="row"><div class="col-md-6"><p>Before you -the merchant- can start accepting refunds, they need to be activated inside the Saferpay Backoffice:
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund.png" alt="alt text" title="Manual refund activation"></p></div></div></section><section><h3>Step 2: Executing refunds</h3><div class="row"><div class="col-md-6"><p>Once the activation has been done, you can execute refunds, like any other payment method. Either <a href="refund.html">via API</a>, or inside the Saferpay Backoffice.</p></div></div></section><section><h3>Step 3: Uploading the refunds into your online-banking</h3><div class="row"><div class="col-md-6"><p>This is, where SEPA-refunds deviate from other payment methods, like credit cards.
