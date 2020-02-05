@@ -28,7 +28,7 @@ This way your shop does get the necessary information in case of a success, even
 
 ## <a name="ideal-pre"></a> Bank Pre-Selection
 
-You may want to implement the Bank selection for iDeal payments into your shop, or just pre-select the bank for your customer, so they do not have to. Saferpay offers an option, to skip the selection page and jump right to yyour customers online banking site, so he/she may perform the payment.
+You may want to implement the Bank selection for iDeal payments into your shop, or just pre-select the bank for your customer, so they do not have to. Saferpay offers an option, to skip the selection page and jump right to your customers online banking site, so he/she may perform the payment.
 
 <div class="warning">
   <p><strong>Attention:</strong> This feature is only available with <strong>SpecVersion 1.15</strong> and up!</p>
