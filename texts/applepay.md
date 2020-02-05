@@ -12,8 +12,8 @@ The handling of PayPal payments with Saferpay requires:
 * ApplePay is only available via the [PaymentPage flow](Integration_PP.html)!
 * ApplePay is only available with **SpecVersion 1.15**, or higher.
 * **NotifyUrl:** The NotifyUrl is **mandatory**, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!
-* ApplePay can only be used with Apple devices, like iPhones and iPads.
-* Furthermore, only Apples own browser, Safari, is supported.
+* ApplePay can only be used with Apple devices, like iPhones and iPads. <strong>Exception being the test environment, so you may test it on other devices!</strong>
+* Furthermore, only Apples own browser, Safari, is supported. <strong>Exception being the test environment, so you may test it in other browsers!</strong>
 * ApplePay does not support [Secure Card Data](scd.html), even though the means of payment may support it! However [Recurring Payments](recurring.html) can be executed, if supported by the payment mean!
 
 <div class="danger">
