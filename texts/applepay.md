@@ -17,7 +17,7 @@ The handling of PayPal payments with Saferpay requires:
 * ApplePay does not support [Secure Card Data](scd.html), even though the means of payment may support it! However [Recurring Payments](recurring.html) can be executed, if supported by the payment mean!
 
 <div class="danger">
-  <p><strong>Warning:</strong> ApplePay does not support the iFrame Integration! The PaymentPage will actively break out of an iFrame, to avoid this issue!</p>
+  <p><strong>Warning:</strong> ApplePay does not support the iFrame Integration!</p>
 </div>
 
 ## <a name="apple-activation"></a> Activation
