@@ -701,8 +701,8 @@ The following chapter will guide you through the steps required, in order to act
 <li>ApplePay is only available via the <a href="Integration_PP.html">PaymentPage flow</a>!</li>
 <li>ApplePay is only available with <strong>SpecVersion 1.15</strong>, or higher.</li>
 <li><strong>NotifyUrl:</strong> The NotifyUrl is <strong>mandatory</strong>, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!</li>
-<li>ApplePay can only be used with Apple devices, like iPhones and iPads.</li>
-<li>Furthermore, only Apples own browser, Safari, is supported.</li>
+<li>ApplePay can only be used with Apple devices, like iPhones and iPads. <strong>Exception being the test environment, so you may test it on other devices!</strong></li>
+<li>Furthermore, only Apples own browser, Safari, is supported. <strong>Exception being the test environment, so you may test it in other browsers!</strong></li>
 <li>ApplePay does not support <a href="scd.html">Secure Card Data</a>, even though the means of payment may support it! However <a href="recurring.html">Recurring Payments</a> can be executed, if supported by the payment mean!</li>
 </ul><div class="danger">
   <p><strong>Warning:</strong> ApplePay does not support the iFrame Integration! If a Direct Redirect (see below) is performed, Saferpay will break out of the iFrame!</p>
