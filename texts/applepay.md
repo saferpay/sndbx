@@ -5,7 +5,7 @@ The following chapter will guide you through the steps required, in order to act
 
 ## <a name="ppal-requirement"></a> Requirements
 
-The handling of PayPal payments with Saferpay requires:
+The handling of ApplePay payments with Saferpay requires:
 
 * The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
