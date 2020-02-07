@@ -82,7 +82,8 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
 
 ### In the Response of the Initialize Request these parameters are import for further processing:
 
-+ **Token:** The Token is mandatory for further steps within the payment process and must therefore be cached. Preferably, it should be linked to the parameters attached to the ReturnUrls. It can thus be easily reassigned.
++ **Token:** The **Token** refers to the values temporarily stored regarding the Saferpay transaction and is mandatory during subsequent processing of the transaction ([for more information, see e.g. Transaction Authorize](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize)). The Token should be coupled to the http-GET parameters that were previously attached to the **ReturnUrls** for identification and then stored inside a database, for further actions to come!
+
 
 + **RedirectUrl:** Unlike with the Payment Page, this URL is not intended to be used for a redirect **(Though you may do so, if you want to!)**. Instead, it is embedded in an HTML Iframe. Within this, a form hosted by Saferpay is displayed. This form is also called the Hosted Entry Form. It can be used to capture sensitive card details in a PCI-compliant manner. You can find out more about the Iframe integration [in this chapter](https://saferpay.github.io/sndbx/CssiFrame.html).
 
