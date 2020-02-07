@@ -25,6 +25,7 @@ The following requirements are to be met, if Twint User on File is to be used, a
 
 + A <a href="Interfaces.html">Saferpay Business License</a>.
   + A license for Saferpay Secure Card Data, which is usually included in Saferpay Business!
++ The activation of User on File for your contract. Please as your contractual manager, if you want this feature enabled!
 + JSON API Version 1.14 or later 
 
 <div class="warning">
