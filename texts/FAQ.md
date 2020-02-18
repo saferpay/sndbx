@@ -20,23 +20,7 @@ Only test cards may be used on the test-environment, which you can [find here](p
 
 ## Which functions are available in the test system?
 
-On the test system, all Saferpay functions are available. Saferpay Business is usually switched off for **live** accounts. For this reason, it is important that you decide in advance whether or not you will also be using the business features in live operations later on.
-
-## Which payment methods can I test?
-
-Currently, the following payment methods are available:
-
-+ SEPA Direct Debit (Currency EUR only)
-+	PayPal
-+	American Express
-+	Diners Club
-+	JCB
-+	Mastercard
-+	myOne
-+	Shopping Bonus Card
-+	VISA
-+	Masterpass Wallet 
-+ Additional payment methods can be made available on demand. For this, please contact the [Saferpay Integration Team](mailto:integration.saferpay@six-payment-services.com?subject=Additional%20payment%20methods).
+On the test system, all Saferpay functions are available, including Saferpay Business. However, for your live account, you need to specifically request Business to be activated!
 
 ## What currencies are available in the test system?
 
@@ -86,3 +70,7 @@ The following IPs may need to be whitelisted in order to accept outgoing and inc
 + 153.46.254.150
 + 153.46.254.164
 + 153.46.254.209
+
+## I have heard of the possibility to scan your credit card, using your mobile devices camera! How do i implement this feature?
+
+Saferpay does support this feature, however on Saferpay Side, nothing is needed! This is more of a feature, that is directly built into Android 8Chrome only) and iOS (Safari only). If you are using an app, you may have to enable your app to use this native feature. For more information, please consult the iOS/Android developer documentation!
