@@ -698,19 +698,7 @@
 Due to that, you need to apply seperate base-urls for test and live, when doing requests, as <a href="https://saferpay.github.io/jsonapi/index.html#intro">mentioned here (see right side)</a>.</p></div></div></section><section><h2>Can I use my test account on the live system?</h2><div class="row"><div class="col-md-6"><p>No, the test and live systems are completely separate from each other. No data exchange takes place.</p></div></div></section><section><h2>Can I use real card details in the test environment? <br>When i use my Card on the Test environment i get an error. What is the cause?</h2><div class="row"><div class="col-md-6"><p>The test-environment does <strong>NOT</strong> accept real credit cards, to avoid confusion between live and test.
 Only test cards may be used on the test-environment, which you can <a href="paymentmeans.html">find here</a>.</p><div class="danger">
   <p><strong>Warning: DO NOT</strong> use real credit card details, when testing on the Saferpay test-environment! Even though the test accounts cannot process real payment means, it is also important to not share them in the first place on the test-system, for security reasons!</p>
-</div></div></div></section><section><h2>Which functions are available in the test system?</h2><div class="row"><div class="col-md-6"><p>On the test system, all Saferpay functions are available. Saferpay Business is usually switched off for <strong>live</strong> accounts. For this reason, it is important that you decide in advance whether or not you will also be using the business features in live operations later on.</p></div></div></section><section><h2>Which payment methods can I test?</h2><div class="row"><div class="col-md-6"><p>Currently, the following payment methods are available:</p><ul>
-<li>SEPA Direct Debit (Currency EUR only)</li>
-<li>PayPal</li>
-<li>American Express</li>
-<li>Diners Club</li>
-<li>JCB</li>
-<li>Mastercard</li>
-<li>myOne</li>
-<li>Shopping Bonus Card</li>
-<li>VISA</li>
-<li>Masterpass Wallet</li>
-<li>Additional payment methods can be made available on demand. For this, please contact the <a href="mailto:integration.saferpay@six-payment-services.com?subject=Additional%20payment%20methods">Saferpay Integration Team</a>.</li>
-</ul></div></div></section><section><h2>What currencies are available in the test system?</h2><div class="row"><div class="col-md-6"><p>By default, EUR and CHF are enabled on test accounts. Other currencies can be activated on demand. For this, please contact the <a href="mailto:integration.saferpay@six-payment-services.com?subject=Test%20Account%20Currencies">Saferpay Integration Team</a>.</p></div></div></section><section><h2>Can i combine Saferpay with my ERP-system?</h2><div class="row"><div class="col-md-6"><p>Generally yes!
+</div></div></div></section><section><h2>Which functions are available in the test system?</h2><div class="row"><div class="col-md-6"><p>On the test system, all Saferpay functions are available, including Saferpay Business. However, for your live account, you need to specifically request Business to be activated!</p></div></div></section><section><h2>What currencies are available in the test system?</h2><div class="row"><div class="col-md-6"><p>By default, EUR and CHF are enabled on test accounts. Other currencies can be activated on demand. For this, please contact the <a href="mailto:integration.saferpay@six-payment-services.com?subject=Test%20Account%20Currencies">Saferpay Integration Team</a>.</p></div></div></section><section><h2>Can i combine Saferpay with my ERP-system?</h2><div class="row"><div class="col-md-6"><p>Generally yes!
 There are multiple options to do this however.
 Two scenarios may be:</p><p>1.) The shop does the transaction, but the ERP does the <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">Capture</a> only at a point, when the goods can be shipped!
 You simply need to set up a connection between the shop and ERP-system, so the transaction-data can be shared between them, and the ERP can execute the <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">Capture</a> using the transaction id the shop recieves from Saferpay.
@@ -731,7 +719,7 @@ The following IPs may need to be whitelisted in order to accept outgoing and inc
 <li>153.46.254.150</li>
 <li>153.46.254.164</li>
 <li>153.46.254.209</li>
-</ul></div></div></section>
+</ul></div></div></section><section><h2>I have heard of the possibility to scan your credit card, using your mobile devices camera! How do i implement this feature?</h2><div class="row"><div class="col-md-6"><p>Saferpay does support this feature, however on Saferpay Side, nothing is needed! This is more of a feature, that is directly built into Android 8Chrome only) and iOS (Safari only). If you are using an app, you may have to enable your app to use this native feature. For more information, please consult the iOS/Android developer documentation!</p></div></div></section>
 
 			</main>
 
