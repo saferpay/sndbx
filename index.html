@@ -744,14 +744,15 @@ The card holder will get his money back, <strong>BUT</strong>, unlike before, th
 </ol></div></div></section><section><h3>3-D Secure on API-Level</h3><div class="row"><div class="col-md-6"><p>The Saferpay JSON-API does return all necessary information inside the Liability-Container, when using <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>.
 The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>. Furthermore <strong>LiableEntity</strong> will provide information about who will be liable in case of fraud.</p><div class="warning">
   <p><strong>Attention:</strong> Only the <a href="Integration_trx.html">Transaction interface</a> and <a href="Integration_PP.html">Payment Page</a> processes do support 3-D Secure! Please keep that in mind, when implementing Saferpay!</p>
+</div><div class="info">
+  <p><strong>Attention:</strong> With 3DSv2 the XID value format changes (see Respective request specification and below), while the VerificationValue is no longer returned!</p>
 </div><pre><code class="language-json">&quot;Liability&quot;: {
     &quot;LiabilityShift&quot;: true,
     &quot;LiableEntity&quot;: &quot;ThreeDs&quot;,
     &quot;ThreeDs&quot;: {
       &quot;Authenticated&quot;: true,
       &quot;LiabilityShift&quot;: true,
-      &quot;Xid&quot;: &quot;63b1c8e6-2f51-4bb8-bd7b-32bb107f9d1b&quot;,
-      &quot;VerificationValue&quot;: &quot;unavailable&quot;
+      &quot;Xid&quot;: &quot;63b1c8e6-2f51-4bb8-bd7b-32bb107f9d1b&quot;
     }
   }
 </code></pre><p>It depends on the merchant, how to proceed further, however Saferpay does recommend the following behaviors:</p><div class="info">
