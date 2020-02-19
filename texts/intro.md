@@ -118,6 +118,10 @@ The important parameters are <strong>Authenticated</strong> and especially <stro
   <p><strong>Attention:</strong> Only the <a href="Integration_trx.html">Transaction interface</a> and <a href="Integration_PP.html">Payment Page</a> processes do support 3-D Secure! Please keep that in mind, when implementing Saferpay!</p>
 </div>
 
+<div class="info">
+  <p><strong>Attention:</strong> With 3DSv2 the XID value format changes (see Respective request specification and below), while the VerificationValue is no longer returned!</p>
+</div>
+
 ```json
 "Liability": {
     "LiabilityShift": true,
@@ -125,8 +129,7 @@ The important parameters are <strong>Authenticated</strong> and especially <stro
     "ThreeDs": {
       "Authenticated": true,
       "LiabilityShift": true,
-      "Xid": "63b1c8e6-2f51-4bb8-bd7b-32bb107f9d1b",
-      "VerificationValue": "unavailable"
+      "Xid": "63b1c8e6-2f51-4bb8-bd7b-32bb107f9d1b"
     }
   }
 ```
