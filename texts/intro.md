@@ -119,7 +119,7 @@ The important parameters are <strong>Authenticated</strong> and especially <stro
 </div>
 
 <div class="info">
-  <p><strong>Attention:</strong> With 3DSv2 the XID value format changes (see Respective request specification and below), while the VerificationValue is no longer returned!</p>
+  <p><strong>Attention:</strong> With 3DSv2 the XID value format changes (see respective request specification and below), while the VerificationValue is no longer returned!</p>
 </div>
 
 ```json
