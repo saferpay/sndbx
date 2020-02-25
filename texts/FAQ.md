@@ -73,4 +73,4 @@ The following IPs may need to be whitelisted in order to accept outgoing and inc
 
 ## I have heard of the possibility to scan your credit card, using your mobile devices camera! How do i implement this feature?
 
-Saferpay does support this feature, however on Saferpay Side, nothing is needed! This is more of a feature, that is directly built into Android 8Chrome only) and iOS (Safari only). If you are using an app, you may have to enable your app to use this native feature. For more information, please consult the iOS/Android developer documentation!
+Saferpay does support this feature, however on Saferpay Side, nothing is needed! This is more of a feature, that is directly built into Android (Chrome only) and iOS (Safari only). If you are using an app, you may have to enable your app to use this native feature. For more information, please consult the iOS/Android developer documentation!
