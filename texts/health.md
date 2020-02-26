@@ -8,8 +8,8 @@
 The API Health check is used to determine, whether, or not the Saferpay-Environments are generally available.
 This function is available for test and production respectively and involves a simple POST call to the following URL:
 
-<code>https://www.saferpay.com/api/health/[YOUR CUSTOMERID]</code>
-<code>https://test.saferpay.com/api/health/[YOUR CUSTOMERID]</code>
++ **Live:** <code>https://www.saferpay.com/api/health/[YOUR CUSTOMERID]</code>
++ **Test:** <code>https://test.saferpay.com/api/health/[YOUR CUSTOMERID]</code>
 
 This may be expanded on, in the future, but for now the API responds in two ways:
 
