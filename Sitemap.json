@@ -181,6 +181,11 @@
       { "Source": "texts/spg.md", "Title": "Try it!", "Target": "spg.html#spg-demo" }
     ]
   },
+ {
+    "Title": "API Health Check",
+    "Source": "texts/health.md",
+    "Target": "health.html",
+  },
   {
     "Title": "FAQ",
     "Source": "texts/FAQ.md",
