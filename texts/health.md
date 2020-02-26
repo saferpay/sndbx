@@ -1,15 +1,20 @@
-# Payment Page Interface
-
-
-<div class="danger">
-  <p><strong>IMPORTANT NOTE:</strong> You may not use this function to poll the status, or otherwise overuse it! Saferpay reserves the right to revoke your right to do any further requests towards the health-check API!</p>
-</div>
+# api hEALTH cHECK
 
 The API Health check is used to determine, whether, or not the Saferpay-Environments are generally available.
 This function is available for test and production respectively and involves a simple POST call to the following URL:
 
 + **Live:** <code>https://www.saferpay.com/api/health/[YOUR CUSTOMERID]</code>
 + **Test:** <code>https://test.saferpay.com/api/health/[YOUR CUSTOMERID]</code>
+
+<div class="danger">
+  <p><strong>IMPORTANT NOTE:</strong> When using the Health-Check, you agree to the following rules:</p>
+  <ul>
+    <li>Do not poll the API status, without any limiter (see below!).</li>
+    <li>Restrict yourself to 1 request every 5 minutes!</li>
+    <li>Do not check the API status befor every transaction!</li>
+  </ul>
+  <p>Saferpay reserves the right to limit access to this part of the API, in case of violation!</p>
+</div>
 
 This may be expanded on, in the future, but for now the API responds in two ways:
 
