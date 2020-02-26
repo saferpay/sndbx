@@ -374,6 +374,10 @@
     "Title": "Additional Information"
   },
   {
+    "Title": "Saferpay Blog",
+    "Target": "https://www.six-payment-services.com/de/site/e-commerce/learn-more/saferpay-blog.html"
+  },
+  {
     "Title": "Contact",
     "Source": "texts/contact.md",
     "Target": "contact.html"
