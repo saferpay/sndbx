@@ -1,4 +1,4 @@
-# api hEALTH cHECK
+# API Health Check
 
 The API Health check is used to determine, whether, or not the Saferpay-Environments are generally available.
 This function is available for test and production respectively and involves a simple POST call to the following URL:
