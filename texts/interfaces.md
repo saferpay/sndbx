@@ -10,9 +10,11 @@ It is extremely important to clarify before the implementation of Saferpay, whet
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/LicenseOptions.png "License Options")
 
 <div class="info">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> Inside the <a href="https://saferpay.github.io/jsonapi/">API-Specification</a>, all Business-Requests are marked with the additional <strong>Business License</strong> tag, to indicate, that they may only be used with Saferpay Business!</p>
-</div>
+</div><br />
 <div class="info">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> All Saferpay Test-Accounts do have Business activated by default, for evaluation purposes!</p>
 </div>
 
@@ -33,15 +35,18 @@ It is extremely important to clarify before the implementation of Saferpay, whet
 }
  ```
  
- <div class="warning">
+
+<div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important Note:</strong> In case you are using Saferpay Business <strong>without</strong> the corresponding license, the API will throw an error (see above) in this case, you'll have three options to proceed:</p>
   <ul>
     <li><p><strong>Option 1:</strong> Getting a Business license! You can contact your sales contact and ask for a change to Saferpay Business, so you have access to the needed functions!</p></li>
     <li><p><strong>Option 2:</strong> Redo the integration! If you are not happy with option 1, another option would be to redo the whole integration, with the <a href="Integration_PP.html">Payment Page</a> in mind. </p></li>
     <li><p><strong>Option 3:</strong> If you are using an official plug-in/integration from our partners, it may be only necessary to switch over to the Payment Page interface inside the shop-configuration. <strong>A complete re-integration won't be necessary in this particular case.</strong> When in doubt, please consult the user-manual, or contact the plug-in manufacturer directly! </p></li>
   </ul>
-</div>
+</div><br />
 <div class="info">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Furthermore:</strong> If you have a Saferpay Business-contract, but still recieve this error, please contact your sales-contact on this issue!</p>
 </div>
 
@@ -206,6 +211,7 @@ The main components of the Saferpay JSON API are:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Interfaces.png "The Interfaces")
 
 <div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important:</strong> It is important to understand the different intended uses and functionalities of each component to decide which Interface is best suited for your business and desired payment flows.</p>
 </div>
 
@@ -349,6 +355,7 @@ The main components of the Saferpay JSON API are:
 </table>
 
 <div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>*<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment">Transaction Interface - Redirect Payment</a></strong> is deprecated and replaced by the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page!</a>. Please use the parameter <strong>PaymentMethods</strong> to directly select your desired provider!</p>
 </div>
 
