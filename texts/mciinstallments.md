@@ -22,7 +22,7 @@ The acceptance of Issuer Installments requires the following
 First and foremost, it is important to know, that the availability of an installment plan, is up to the issuing bank and not the merchant, or the card holder.
 Though, generally, all Mastercard transactions are potentially open for Issuer Installments, the issuer decides, whether, or not to potentially accept installments for a given transaction in the first place.
 
-The result of such an application is only returned on authorization, meaning, that the card holder has to go through a standard transaction first, either by using <a href="">the Saferpay Payment Page</a> or <a href="">Transaction Interface</a>.
+The result of such an application is only returned on authorization, meaning, that the card holder has to go through a standard transaction first, either by using <a href="Integration_PP.html">the Saferpay Payment Page</a> or <a href="Integration_trx.html">Transaction Interface</a>.
 
 If the Issuer decides to accept Installments, he will propose one, or more of two types of installment plans to the merchant. The necessary Information will be returned by Saferpay through the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> responses respectively, inside the <strong>MciInstallments</strong> container.
 
