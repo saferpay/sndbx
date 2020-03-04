@@ -27,6 +27,13 @@ Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive p
 * Bancontact
 * Credit Cards over Masterpass
 
+<div class="danger">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+   <strong>Caution:</strong> Please also consider the <a href="psd2.html">PSD 2 chapter</a>, to check, if your flow falls under certain PSD2 rules, especially, if you intend on using the Alias for Recurring Payments!
+  </p>
+</div>
+
 ---
 
 ## <a name="scd-pp"></a> Secure Card Data and the Payment Page
@@ -145,6 +152,7 @@ Once a successful transaction has been made through the PaymentPage, you will ge
 ```
 
 <div class="info">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong>The IdGenerator has multiple options to choose from. All of them will be explained later in this chapter!</p>
 </div>
 
@@ -218,6 +226,7 @@ However there are two major differnces:
 In order to open up the hosted Card Entry Form, you first need to execute the [Alias Insert Request](http://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert).
 
 <div class="info">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> Don't like the style of the Hosted Form? Try our <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
 </div>
 
@@ -257,6 +266,17 @@ However, you need to consider the following restrictions:
 In order, to let a card get checked, you need to set the **Check**-container within the [initial registration-request](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert).
 You need to make sure, to provide a valid terminal Id, with activated acquiring-contracts for VISA and MasterCard.
 
+<div class="info">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+   <strong>Important:</strong> The <strong>Type</strong> parameter has two values: 
+  </p>
+ <ul>
+  <li><strong>ONLINE</strong> will only do a basic account-verification, checking the validity of the bank account!</li>
+  <li><strong>ONLINE_STRONG</strong> is <strong>very important for PSD2 MITs</strong>. This option will do an account verification and also execute Strong Consumer Authentication (SCA), via a 3D Secure challenge!</li>
+ </ul>
+</div>
+
 ```json
 {
   "RequestHeader": {
@@ -287,7 +307,44 @@ You need to make sure, to provide a valid terminal Id, with activated acquiring-
 
 ### Response
 
-If the check was successful, you will get a successful registration-response with the [Assert Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert).
+If the check was successful, you will get a successful registration-response with the [Assert Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert). Should you have done a Check, or a Check with SCA (see above), you may also recieve a result message on the check and the outcome of the SCA.
+
+```json
+{
+    "ResponseHeader": {
+        "SpecVersion": "[CURRENT-SPEC-VERSION]",
+        "RequestId": "55"
+    },
+    "Alias": {
+      "Id": "alias35nfd9mkzfw0x57iwx",
+      "Lifetime": 1000
+    },
+    "PaymentMeans": {
+      "Brand": {
+        "PaymentMethod": "VISA",
+        "Name": "VISA Saferpay Test"
+      },
+      "DisplayText": "9123 45xx xxxx 1234",
+      "Card": {
+        "MaskedNumber": "912345xxxxxx1234",
+        "ExpYear": 2015,
+        "ExpMonth": 9,
+        "HolderName": "Max Mustermann",
+        "CountryCode": "CH"
+      }
+    },
+    "CheckResult":{
+      "Result": "OK_AUTHENTICATED",
+      "Message": "Online card check was successful.",
+      "Authentication":{
+        "Result": "OK",
+        "Message": "Card holder authentication with 3DSv2 successful.",
+        "Xid": "1ef5b3db-3b97-47df-8272-320d0bd18ab5"
+      }
+    }
+}
+```
+
 If the chek failed, the registration too will fail and you'll get an error-response:
 
 ```json
@@ -305,6 +362,8 @@ If the chek failed, the registration too will fail and you'll get an error-respo
 }
 ```
 
+
+
 ## <a name="scd-generator"></a> The Id-generator
 
 The ID-generator is used to choose what kind of alias you want to recieve. Right now, there are three options to choose from:
@@ -320,7 +379,7 @@ The obtained alias can be used in two basic ways, which boil down to one importa
 **Do you want to do a 3D Secure transaction?**
 
 + If yes, then you have to use the [Transaction Interface](https://saferpay.github.io/sndbx/Integration_trx.html). The Hosted Form used there will not open up and instead proceed with the 3D Secure process right away.
-+ If not, then you can use [AuthorizeDirect](http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect) to authorize the card directly. You <strong>must not</strong> [implement recurring payments this way, which are described over here](https://saferpay.github.io/sndbx/recurring.html#recurring-alias).
++ If not, then you can use [AuthorizeDirect](http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect) to authorize the card directly. 
 
 <div class="warning">
   <p><strong>NOTE:</strong> Bancontact only supports the former, while Maestro has some cards, that also are 3D Secure only!</p>
