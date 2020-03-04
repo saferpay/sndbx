@@ -1,14 +1,13 @@
 # PSD2
 
- 
+With the introduction of PSD2 within the EU, the ruleset for doing card transactions, has been changed in many ways.
+This chapter contains information and best practices, when dealing with card transactions under PSD2!
 
 <div class="info">
   <p><strong>Tip:</strong> As a rule of thumb, ask yourself the following question: Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: Do 3-D Secure!</p>
 </div>
 
 However, there are excemptions and to give you an overview of what flows need and what do not need SC, please refer to the following tables:
-
-### E
 
 <table class="table table-striped table-hover">
   <thead>
@@ -89,7 +88,7 @@ Saferpay offers the option to force SCA during a transaction and you -the mercha
   + <strong>Forcing SCA during a standalone registration:</strong> In some cases, it may be viable to save a card first, but charge it way later down the line. However, those transactions are usually MIT, with the card holder not being present! Due to that, SCA has to be performed during registration, requiring an <a href="">Online Check with SCA</a>!
 
  <div class="info">
-  <p><strong>Important:</strong> This only applies, if you intend on doing MITs right after the registration! However if you plan on using the Alias for CITs with 3DS beforehand, or only that, then you do not have to consider this!</p>
+  <p><strong>Important:</strong> This only applies, if you intend on doing MITs right after the registration! However if you plan on using the Alias for CITs with 3DS -and thus SCA- beforehand, or only that, then you do not have to consider this!</p>
 </div><br />
 <div class="info">
   <p><strong>Tip:</strong> If you have a high risk business, or generally want a higher level of protection against fraud, you can, of course, force SCA too!</p>
@@ -97,11 +96,9 @@ Saferpay offers the option to force SCA during a transaction and you -the mercha
 <div class="danger">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Caution:</strong> Forcing SCA during the first transaction/registration, does NOT excuse you from doing SCA/3D Secure afterwards, if you intend on doing CITs with a saved card!
+    <strong>Caution:</strong> Forcing SCA during the first transaction/registration, does NOT excuse you from doing SCA/3D Secure afterwards, if you intend on doing CITs with a saved card! There are exemptions (see below), but those also have their own set of rules to follow!
   </p>
 </div>
-
-
 
 ## <a name="psd2-exemptions"></a> SCA Exemptions
 
@@ -151,3 +148,9 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
     </tr>
   </tbody>
 </table>
+
+## <a name="psd2-decline"></a> Soft Decline
+
+**!!!INFORMATION NEEDED!!!
+Apparently we return a special code, if a transaction is declined, due to a lack of SCA!
+Would be great, but has too be confirmed!**
