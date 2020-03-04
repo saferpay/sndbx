@@ -153,4 +153,4 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
 
 **!!!INFORMATION NEEDED!!!
 Apparently we return a special code, if a transaction is declined, due to a lack of SCA!
-Would be great, but has too be confirmed!**
+Would be great, but has to be confirmed!**
