@@ -2,6 +2,11 @@
 
 Recurring payments are transactions processed on a regular basis under a pre-authorized agreement. They are particularly interesting for subscription or instalment business models. This chapter describes the main concept on how the perform recurring payments.
 
+<div class="danger">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+      <p><strong>Very Important:</strong> Please also consider the <a href="psd2.html">PSD2 chapter</a>, when executing recurring payments!
+      </p>
+</div><br />
 <div class="warning">
       <p><strong>NOTE: </strong>Before you start, you have to consider the following: Each transaction has to be triggered by you your system. Please see <strong>Automating the Recurring Payments</strong> further down in this chapter!</p>
 </div>
@@ -38,10 +43,6 @@ Recurring payments are supported by the following payment means:
 ## <a name="recurring-referenced"></a> Recurring Payments with the Referenced Transactions Method
 
 With this method, the initial transaction is performed with either the PaymentPage Interface or with the Transaction Interface leading the cardholder through a normal ecommerce payment process, including entering the CVC and 3DSecure authentication. The first transaction is flagged as initial transaction. The Transaction ID of the initial transaction can then be used for referenced/recurring transactions.
-
-<div class="warning">
-  <p><strong>NOTE:</strong> Due to the PSD2, you must perform 3D Secure with the first (initial) transaction. However, if you do 3D Secure with the initial transaction, LiabilityShift <strong>may</strong> also granted for the recurring transactions. More information about <a href="index.html#psd2">can be found here</a>.
-</div>
 
 
 ### 1. Initial Transaction:
@@ -95,8 +96,11 @@ POST /Payment/v1/PaymentPage/Initialize
 ```
 
  
-<div class="info">
-  <p><strong>TIPP:</strong> If you want to validate the cardholder without charging his bank account, you can trigger a “dummy” authorization with a small amount value (e.g. 1 Euro; Amount value “100”). If the transaction is not captured the customer will not be charged and therefore the cardholder will not notice this authorization. Please note that some banks do not support authorization of amounts smaller than 1 Euro (1 Dollar; 1 CHF etc.)!</p>
+<div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Due to laws, defined within PSD2, Saferpay will force a 3DS Challenge, if a transaction is labeled as <strong>recurring.initial = true</strong>!
+  </p>
 </div>
 
 
@@ -213,12 +217,53 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 ```
 
 <div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong>  The Amount is a mandatory value which can vary from the Amount of the initial transaction. A change of amount has to be communicated with the card holder and you <strong>must</strong> re-do this process, to start the recurring-chain over again!</p>
+</div><br />
+<div class="danger">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>IMPORTANT:</strong> Each Transaction with the Status **Authorized** has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual money transfer.</p>
+</div><br />
+
+## <a name="recurring-alias"></a> Recurring Payments using an alias
+
+A second method is to use the Saferpay Secure Alias Store in conjunction with the [AuthorizeDirect Request](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeDirect) with previously registered Aliases.
+
+### 1. Obtaining the Alias
+
+The alias can be obtained in multiple ways, using the Saferpay Secure Card Data store. [All of those options are described over here](https://saferpay.github.io/sndbx/scd.html).
+By using the [Payment Page](https://saferpay.github.io/sndbx/Integration_PP.html) or [Transaction Interface](https://saferpay.github.io/sndbx/Integration_trx.html), it is possible to do an initial transaction, to validate the card (e.g. through 3D Secure), similar to the referenced transaction-process above! The initial payment, unlike with a referenced authorization, can then be discarded, once the alias has been obtained, using [Transaction Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel). This way the card holder doesn't get charged for the dummy-amount!
+
+<div class="warning">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+      <p><strong>Important:</strong> Amount values that undercut a certain value, can cause problems during the 3D Secure-process, thus we recommend a value of 500 (5,00 €). As mentioned above, this transaction can be discarded. It is only, to prevend the mentioned issues with 3D Secure!</p>
+</div><br />
+
+### 2. Recurring Transaction
+
+Once tha alias has been obtained, you can execute the subsequent transactions using [AuthorizeDirect Request](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeDirect). The alias has to be filled into the **PaymentMeans => Alias** container.
+
+<div class="warning">
+      <p><strong>Important:</strong> Please <strong>DO NOT</strong> save the CVC value inside your database and submit it yourself, unless you are certified to do so.</p>
 </div>
 
+### Flowchart
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Recurring_Alias_FlowChart.PNG "Recurring with initial transaction")
+
+1. Gather the AliasId from the previous, initial, transaction
+2. Aquire the necessary payment-data e.g. Amount, Currency, OrderId etc.
+3. Initialize and Execute Payment with [Transaction Authorize Direct](http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect)
+      * You will get the authorization-response right away
+4. Validate the request response
+5. Depending on the outcome of step 4 you may
+    * [Capture/Finalize the Transaction](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture)
+    * [Cancel/Abort the Transaction](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel)
+6. Transaction is finished! 
 
 <div class="danger">
-  <p><strong>IMPORTANT:</strong> Each Transaction with the Status **Authorized** has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual money transfer.</p>
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+      <p><strong>Important:</strong> Each Transaction with the Status <strong>Authorized</strong> has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual transfer of money.</p>
 </div>
 
 ---
