@@ -47,7 +47,7 @@ Saferpay just returns the necessary information.
 
 Should the card hiolder choose an installment plan, the merchant has to relay this information back to Saferpay, from where the information is routed back to the issuer, so the installment plan may take effect.
 
-This has to be done, through the <a href"index.html#capture">finalization/capture of the transaction</a>, by submitting the information of the chosen plan, through <strong>the MciInstallments.ChosenPlan</strong> container. With the capture of the transaction, the plan has been chosen and the process is handled automatically by the card holders issuing bank.
+This has to be done, through the <a href="index.html#capture">finalization/capture of the transaction</a>, by submitting the information of the chosen plan, through <strong>the MciInstallments.ChosenPlan</strong> container. With the capture of the transaction, the plan has been chosen and the process is handled automatically by the card holders issuing bank.
 
 <div class="info">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
