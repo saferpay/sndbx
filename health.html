@@ -175,7 +175,7 @@
 								<li><a href="#spg-demo">Try it!</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="health.html">API Health Check</a>
 							</li>
 							<li>
@@ -324,7 +324,7 @@
 								<li><a href="#bancontact-refund">Bancontact Refunds</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="applepay.html">ApplePay</a>
 							<ul class="nav">
 								<li><a href="#apple-requirement">Requirements</a></li>
@@ -526,7 +526,7 @@
 								<li><a href="#spg-demo">Try it!</a></li>
 							</ul>
 							</li>
-							<li>
+							<li class="active">
 							<a href="health.html">API Health Check</a>
 							</li>
 							<li>
@@ -675,7 +675,7 @@
 								<li><a href="#bancontact-refund">Bancontact Refunds</a></li>
 							</ul>
 							</li>
-							<li class="active">
+							<li>
 							<a href="applepay.html">ApplePay</a>
 							<ul class="nav">
 								<li><a href="#apple-requirement">Requirements</a></li>
@@ -706,65 +706,23 @@
 				</div>
 
 				
-<section><h1>ApplePay</h1><div class="row"><div class="col-md-6"><p>ApplePay-transactions can be processed via the Saferpay Payment Page, without much effort. Note, that ApplePay is not a classic means of payment, but rather a digital Wallet. Your customers will still pay with Visa, Mastercard, or whatever credit card has been saved inside the Wallet, thus the payment method will correspond to this. However Saferpay will also return information, that this transaction has been performed, through ApplePay. Furthermore, due to this nature, all options and limitations of the saved means of payment do apply <a href="index.html#pm-functions">as stated here, if not mentioned otherwise in this chapter!</a>
-The following chapter will guide you through the steps required, in order to activate and use ApplePay.</p></div></div></section><section id="ppal-requirement"><h2><a name="ppal-requirement"></a> Requirements</h2><div class="row"><div class="col-md-6"><p>The handling of ApplePay payments with Saferpay requires:</p><ul>
-<li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
-<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
-<li>ApplePay is only available via the <a href="Integration_PP.html">PaymentPage flow</a>!</li>
-<li>ApplePay is only available with <strong>SpecVersion 1.15</strong>, or higher.</li>
-<li><strong>NotifyUrl:</strong> The NotifyUrl is <strong>mandatory</strong>, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!</li>
-<li>ApplePay can only be used with Apple devices, like iPhones and iPads. <strong>Exception being the test environment, so you may test it on other devices!</strong></li>
-<li>Furthermore, only Apples own browser, Safari, is supported. <strong>Exception being the test environment, so you may test it in other browsers!</strong></li>
-<li>ApplePay does not support <a href="scd.html">Secure Card Data</a>, even though the means of payment may support it! However <a href="recurring.html">Recurring Payments</a> can be executed, if supported by the payment mean!</li>
+<section><h1>API Health Check</h1><div class="row"><div class="col-md-6"><p>The API Health check is used to determine, whether, or not the Saferpay-Environments are generally available.
+This function is available for test and production respectively and involves a simple POST call to the following URL:</p><ul>
+<li><strong>Live:</strong> <code>https://www.saferpay.com/api/health/[YOUR CUSTOMERID]</code></li>
+<li><strong>Test:</strong> <code>https://test.saferpay.com/api/health/[YOUR CUSTOMERID]</code></li>
 </ul><div class="danger">
-  <p><strong>Warning:</strong> ApplePay does not support the iFrame Integration! If a Direct Redirect (see below) is performed, Saferpay will break out of the iFrame!</p>
-</div></div></div></section><section id="apple-activation"><h2><a name="apple-activation"></a> Activation</h2><div class="row"><div class="col-md-6"><p>The activation of ApplePay for your Saferpay account, be it live, or on the test-environment, requires next to no effort and can be done in a matter of seconds.</p><ol>
-<li>First step is to <strong>log into the Saferpay Backoffice</strong>, there you have to navigate to the <strong>Settings</strong> tab and click on <strong>Payment Means / Terminals</strong>.
-<br><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO1.png" alt="alt text" title="ApplePay inside the Saferpay Backoffice"></li>
-<li>Next, select the e-commerce, or Secure PayGate terminal, you want to activate ApplePay on.</li>
-<li>Navigate to the <strong>Wallets</strong> section, there you will find ApplePay.</li>
-<li>Click on the <strong>Activate</strong> Button.
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO2.png" alt="alt text" title="ApplePay inside the Saferpay Backoffice"></li>
-<li>You will be prompted with another window, that asks you to accept the Terms and Conditions from Apple, so you may use ApplePay. Mark the checkbox and click <strong>Activate</strong>.
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO3.png" alt="alt text" title="ApplePay inside the Saferpay Backoffice"></li>
-<li>And you are done! ApplePay is now available for you on your Saferpay Terminal.
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO4.png" alt="alt text" title="ApplePay inside the Saferpay Backoffice"></li>
-</ol></div></div></section><section id="apple-redirect"><h2><a name="apple-redirect"></a> Direct redirect</h2><div class="row"><div class="col-md-6"><p>If you want to perform a direct redirect to ApplePay, you have to use the parameter <strong>Wallets</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>!</p><p><strong>Example Request:</strong></p><pre><code class="language-json">{
-    &quot;RequestHeader&quot;: {
-        &quot;SpecVersion&quot;: &quot;[CURRENT SPECVERSION]&quot;,
-        &quot;CustomerId&quot;: &quot;[YOUR CUSTOMERID]&quot;,
-        &quot;RequestId&quot;: &quot;[YOUR REQUESTID]&quot;,
-        &quot;RetryIndicator&quot;: 0,
-        &quot;ClientInfo&quot;: {
-            &quot;ShopInfo&quot;: &quot;My Shop&quot;,
-            &quot;OsInfo&quot;: &quot;Windows Server 2016&quot;
-        }
-    },
-    &quot;TerminalId&quot;: &quot;[YOUR TERMINAL]&quot;,
-    &quot;Payment&quot;: {
-        &quot;Amount&quot;: {
-            &quot;Value&quot;: &quot;12345&quot;,
-            &quot;CurrencyCode&quot;: &quot;EUR&quot;
-        },
-        &quot;OrderId&quot;: 123,
-        &quot;Description&quot;: &quot;Test Order #123&quot;
-    },
-    &quot;Wallets&quot;: [
-        &quot;APPLEPAY&quot;
-    ],
-    &quot;PaymentMethods&quot;: [
-        &quot;VISA&quot;
-    ],
-    &quot;ReturnUrls&quot;: {
-        &quot;Success&quot;: &quot;[YOUR URL]&quot;,
-        &quot;Fail&quot;: &quot;[YOUR URL]&quot;,
-        &quot;Abort&quot;: &quot;[YOUR URL]&quot;
-    },
+  <p><strong>IMPORTANT NOTE:</strong> When using the Health-Check, you agree to the following rules:</p>
+  <ul>
+    <li>Do not poll the API status, without any limiter (see below!).</li>
+    <li>Restrict yourself to 1 request every 5 minutes!</li>
+    <li>Do not check the API status befor every transaction!</li>
+  </ul>
+  <p>Saferpay reserves the right to limit access to this part of the API, in case of violation!</p>
+</div><p>This may be expanded on, in the future, but for now the API responds in two ways:</p></div></div></section><section><h2>Success</h2><div class="row"><div class="col-md-6"><p>In case of a success, the API resonds the following way:
+<code> 200 (OK)</code></p><pre><code class="language-json">{
+  &quot;Status&quot;: &quot;PASS&quot;
 }
-
-</code></pre><div class="info">
-  <p><strong>Tip:</strong> If you are using <strong>&quot;Wallets&quot;</strong> alongside <strong>&quot;PaymentMethods&quot;</strong>, you can limit the Brands, your customer may use!</p>
-</div></div></div></section>
+</code></pre></div></div></section><section><h2>Success</h2><div class="row"><div class="col-md-6"><p>The failure-case depends on what is happening, but in case of an unavailability of the Saferpay Service, the response-code would simply be != <code>200(OK)</code>!</p></div></div></section>
 
 			</main>
 

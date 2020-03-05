@@ -176,6 +176,9 @@
 							</ul>
 							</li>
 							<li>
+							<a href="health.html">API Health Check</a>
+							</li>
+							<li>
 							<a href="faq.html">FAQ</a>
 							</li>
 							<li>
@@ -524,6 +527,9 @@
 							</ul>
 							</li>
 							<li>
+							<a href="health.html">API Health Check</a>
+							</li>
+							<li>
 							<a href="faq.html">FAQ</a>
 							</li>
 							<li>
@@ -719,7 +725,12 @@
 <li>SEPA ELV (Not via the Transaction Interface!)</li>
 <li>Bancontact</li>
 <li>Credit Cards over Masterpass</li>
-</ul><hr></div></div></section><section id="scd-pp"><h2><a name="scd-pp"></a> Secure Card Data and the Payment Page</h2><div class="row"><div class="col-md-6"><p>The Payment Page can be used to save a credit card, <strong>after a successful authorization</strong>!
+</ul><div class="danger">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+   <strong>Caution:</strong> Please also consider the <a href="psd2.html">PSD 2 chapter</a>, to check, if your flow falls under certain PSD2 rules, especially, if you intend on using the Alias for Recurring Payments!
+  </p>
+</div><hr></div></div></section><section id="scd-pp"><h2><a name="scd-pp"></a> Secure Card Data and the Payment Page</h2><div class="row"><div class="col-md-6"><p>The Payment Page can be used to save a credit card, <strong>after a successful authorization</strong>!
 In order to request an Alias with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>, you first need to set the <strong>RegisterAlias</strong> container within the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>.</p><pre><code class="language-json">{ 
 &quot;RequestHeader&quot;: {
    &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
@@ -814,6 +825,7 @@ In order to request an Alias with the <a href="http://saferpay.github.io/jsonapi
  }
 }
 </code></pre><div class="info">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong>The IdGenerator has multiple options to choose from. All of them will be explained later in this chapter!</p>
 </div><p>Once a successful transaction has been made, you will get the result of the registration with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize response</a> (See <strong>&quot;RegistrationResult&quot;</strong>!):</p><pre><code class="language-json">{
   &quot;ResponseHeader&quot;: {
@@ -870,6 +882,7 @@ However there are two major differnces:</p><ul>
 <li>As already mentioned, the card will only be saved, but not authorized!</li>
 <li>Due to PCI restrictions, the CVC will not be obtained using this method!</li>
 </ul><p>In order to open up the hosted Card Entry Form, you first need to execute the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert Request</a>.</p><div class="info">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> Don't like the style of the Hosted Form? Try our <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
 </div></div></div></section><section><h3>Here are a few hints and tips about the options that are available for the merchant:</h3><div class="row"><div class="col-md-6"><ul>
 <li><strong>ReturnUrls:</strong> For security, Saferpay returns no data to return addresses of the shop. The identification of the payment or the returning customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the ReturnUrls. When a ReturnUrl is called, Saferpay returns the appended parameter, thus enabling identification of the customer.</li>
@@ -884,7 +897,16 @@ However, you need to consider the following restrictions:</p><ol>
 <li>The check-function <strong>does not</strong> check the solvency of the account. Only an authorization does!</li>
 <li>The check-function is only available for VISA and Mastercard, over SIX Payment Services Acquiring contracts!</li>
 </ol></div></div></section><section><h3>Request</h3><div class="row"><div class="col-md-6"><p>In order, to let a card get checked, you need to set the <strong>Check</strong>-container within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">initial registration-request</a>.
-You need to make sure, to provide a valid terminal Id, with activated acquiring-contracts for VISA and MasterCard.</p><pre><code class="language-json">{
+You need to make sure, to provide a valid terminal Id, with activated acquiring-contracts for VISA and MasterCard.</p><div class="info">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+   <strong>Important:</strong> The <strong>Type</strong> parameter has two values: 
+  </p>
+ <ul>
+  <li><strong>ONLINE</strong> will only do a basic account-verification, checking the validity of the bank account!</li>
+  <li><strong>ONLINE_STRONG</strong> is <strong>very important for PSD2 MITs</strong>. This option will do an account verification and also execute Strong Consumer Authentication (SCA), via a 3D Secure challenge!</li>
+ </ul>
+</div><pre><code class="language-json">{
   &quot;RequestHeader&quot;: {
     &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
     &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
@@ -909,8 +931,40 @@ You need to make sure, to provide a valid terminal Id, with activated acquiring-
     &quot;TerminalId&quot;: &quot;[your terminal id]&quot;
   }
 }
-</code></pre></div></div></section><section><h3>Response</h3><div class="row"><div class="col-md-6"><p>If the check was successful, you will get a successful registration-response with the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert">Assert Insert</a>.
-If the chek failed, the registration too will fail and you'll get an error-response:</p><pre><code class="language-json">{
+</code></pre></div></div></section><section><h3>Response</h3><div class="row"><div class="col-md-6"><p>If the check was successful, you will get a successful registration-response with the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert">Assert Insert</a>. Should you have done a Check, or a Check with SCA (see above), you may also recieve a result message on the check and the outcome of the SCA.</p><pre><code class="language-json">{
+    &quot;ResponseHeader&quot;: {
+        &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
+        &quot;RequestId&quot;: &quot;55&quot;
+    },
+    &quot;Alias&quot;: {
+      &quot;Id&quot;: &quot;alias35nfd9mkzfw0x57iwx&quot;,
+      &quot;Lifetime&quot;: 1000
+    },
+    &quot;PaymentMeans&quot;: {
+      &quot;Brand&quot;: {
+        &quot;PaymentMethod&quot;: &quot;VISA&quot;,
+        &quot;Name&quot;: &quot;VISA Saferpay Test&quot;
+      },
+      &quot;DisplayText&quot;: &quot;9123 45xx xxxx 1234&quot;,
+      &quot;Card&quot;: {
+        &quot;MaskedNumber&quot;: &quot;912345xxxxxx1234&quot;,
+        &quot;ExpYear&quot;: 2015,
+        &quot;ExpMonth&quot;: 9,
+        &quot;HolderName&quot;: &quot;Max Mustermann&quot;,
+        &quot;CountryCode&quot;: &quot;CH&quot;
+      }
+    },
+    &quot;CheckResult&quot;:{
+      &quot;Result&quot;: &quot;OK_AUTHENTICATED&quot;,
+      &quot;Message&quot;: &quot;Online card check was successful.&quot;,
+      &quot;Authentication&quot;:{
+        &quot;Result&quot;: &quot;OK&quot;,
+        &quot;Message&quot;: &quot;Card holder authentication with 3DSv2 successful.&quot;,
+        &quot;Xid&quot;: &quot;1ef5b3db-3b97-47df-8272-320d0bd18ab5&quot;
+      }
+    }
+}
+</code></pre><p>If the chek failed, the registration too will fail and you'll get an error-response:</p><pre><code class="language-json">{
     &quot;ResponseHeader&quot;: {
         &quot;SpecVersion&quot;: &quot;[CURRENT-SPEC-VERSION]&quot;,
         &quot;RequestId&quot;: &quot;55&quot;
@@ -928,7 +982,7 @@ If the chek failed, the registration too will fail and you'll get an error-respo
 <li><strong>RANDOM_UNIQUE</strong>: Similar to <strong>RANDOM</strong>, it will create a random alpha numerical hash for you. The difference is, that it will check, if the card number (PAN) provided has already saved inside your alias store. If so, Saferpay will return the already existing alias, making sure, that no PAN can be saved twice or more!</li>
 </ol></div></div></section><section id="scd-use"><h2><a name="scd-use"></a> How to use the obtained data</h2><div class="row"><div class="col-md-6"><p>The obtained alias can be used in two basic ways, which boil down to one important question:</p><p><strong>Do you want to do a 3D Secure transaction?</strong></p><ul>
 <li>If yes, then you have to use the <a href="https://saferpay.github.io/sndbx/Integration_trx.html">Transaction Interface</a>. The Hosted Form used there will not open up and instead proceed with the 3D Secure process right away.</li>
-<li>If not, then you can use <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">AuthorizeDirect</a> to authorize the card directly. You <strong>must not</strong> <a href="https://saferpay.github.io/sndbx/recurring.html#recurring-alias">implement recurring payments this way, which are described over here</a>.</li>
+<li>If not, then you can use <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">AuthorizeDirect</a> to authorize the card directly.</li>
 </ul><div class="warning">
   <p><strong>NOTE:</strong> Bancontact only supports the former, while Maestro has some cards, that also are 3D Secure only!</p>
 </div><div class="warning">
