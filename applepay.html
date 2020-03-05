@@ -706,8 +706,8 @@
 				</div>
 
 				
-<section><h1>ApplePay</h1><div class="row"><div class="col-md-6"><p>ApplePay-transactions can be processed via the Saferpay Payment Page, without much effort. Note, that ApplePay is not a classic means of payment, but rather a digital Wallet. Your customers will still pay with Visa, Mastercard, or whatever credit card has been saved inside the Wallet, thus the payment method will correspond to this. However Saferpay will also return information, that this transaction has been performed, through ApplePay. Furthermore, due to this nature, all options and limitations of the saved means of payment do apply <a href="index.html#pm-functions">as stated here, if not mentioned otherwise in this chapter!</a>
-The following chapter will guide you through the steps required, in order to activate and use ApplePay.</p></div></div></section><section id="ppal-requirement"><h2><a name="ppal-requirement"></a> Requirements</h2><div class="row"><div class="col-md-6"><p>The handling of ApplePay payments with Saferpay requires:</p><ul>
+<section><h1>ApplePay</h1><div class="row"><div class="col-sm-6"><p>ApplePay-transactions can be processed via the Saferpay Payment Page, without much effort. Note, that ApplePay is not a classic means of payment, but rather a digital Wallet. Your customers will still pay with Visa, Mastercard, or whatever credit card has been saved inside the Wallet, thus the payment method will correspond to this. However Saferpay will also return information, that this transaction has been performed, through ApplePay. Furthermore, due to this nature, all options and limitations of the saved means of payment do apply <a href="index.html#pm-functions">as stated here, if not mentioned otherwise in this chapter!</a>
+The following chapter will guide you through the steps required, in order to activate and use ApplePay.</p></div></div></section><section id="ppal-requirement"><h2><a name="ppal-requirement"></a> Requirements</h2><div class="row"><div class="col-sm-6"><p>The handling of ApplePay payments with Saferpay requires:</p><ul>
 <li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
 <li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
 <li>ApplePay is only available via the <a href="Integration_PP.html">PaymentPage flow</a>!</li>
@@ -718,7 +718,7 @@ The following chapter will guide you through the steps required, in order to act
 <li>ApplePay does not support <a href="scd.html">Secure Card Data</a>, even though the means of payment may support it! However <a href="recurring.html">Recurring Payments</a> can be executed, if supported by the payment mean!</li>
 </ul><div class="danger">
   <p><strong>Warning:</strong> ApplePay does not support the iFrame Integration! If a Direct Redirect (see below) is performed, Saferpay will break out of the iFrame!</p>
-</div></div></div></section><section id="apple-activation"><h2><a name="apple-activation"></a> Activation</h2><div class="row"><div class="col-md-6"><p>The activation of ApplePay for your Saferpay account, be it live, or on the test-environment, requires next to no effort and can be done in a matter of seconds.</p><ol>
+</div></div></div></section><section id="apple-activation"><h2><a name="apple-activation"></a> Activation</h2><div class="row"><div class="col-sm-6"><p>The activation of ApplePay for your Saferpay account, be it live, or on the test-environment, requires next to no effort and can be done in a matter of seconds.</p><ol>
 <li>First step is to <strong>log into the Saferpay Backoffice</strong>, there you have to navigate to the <strong>Settings</strong> tab and click on <strong>Payment Means / Terminals</strong>.
 <br><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO1.png" alt="alt text" title="ApplePay inside the Saferpay Backoffice"></li>
 <li>Next, select the e-commerce, or Secure PayGate terminal, you want to activate ApplePay on.</li>
@@ -729,7 +729,7 @@ The following chapter will guide you through the steps required, in order to act
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO3.png" alt="alt text" title="ApplePay inside the Saferpay Backoffice"></li>
 <li>And you are done! ApplePay is now available for you on your Saferpay Terminal.
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO4.png" alt="alt text" title="ApplePay inside the Saferpay Backoffice"></li>
-</ol></div></div></section><section id="apple-redirect"><h2><a name="apple-redirect"></a> Direct redirect</h2><div class="row"><div class="col-md-6"><p>If you want to perform a direct redirect to ApplePay, you have to use the parameter <strong>Wallets</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>!</p><p><strong>Example Request:</strong></p><pre><code class="language-json">{
+</ol></div></div></section><section id="apple-redirect"><h2><a name="apple-redirect"></a> Direct redirect</h2><div class="row"><div class="col-sm-6"><p>If you want to perform a direct redirect to ApplePay, you have to use the parameter <strong>Wallets</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>!</p><p><strong>Example Request:</strong></p><pre><code class="language-json">{
     &quot;RequestHeader&quot;: {
         &quot;SpecVersion&quot;: &quot;[CURRENT SPECVERSION]&quot;,
         &quot;CustomerId&quot;: &quot;[YOUR CUSTOMERID]&quot;,

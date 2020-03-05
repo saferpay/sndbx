@@ -706,7 +706,7 @@
 				</div>
 
 				
-<section><h1>Licences and Interfaces</h1><div class="row"><div class="col-md-6"><p>Saferpay distinguishes between two licences:</p><ul>
+<section><h1>Licences and Interfaces</h1><div class="row"><div class="col-sm-6"><p>Saferpay distinguishes between two licences:</p><ul>
 <li>Saferpay eCommerce</li>
 <li>Saferpay Business</li>
 </ul><p>It is extremely important to clarify before the implementation of Saferpay, whether an eCommerce licence or a business license is to be used, as they provide different functions. The Saferpay Business licence is an extension of the eCommerce licence. If you have any queries, please contact your relevant contractually appointed person.</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/LicenseOptions.png" alt="alt text" title="License Options"></p><div class="info">
@@ -715,7 +715,7 @@
 </div><br><div class="info">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> All Saferpay Test-Accounts do have Business activated by default, for evaluation purposes!</p>
-</div></div></div></section><section><h2>Example of a &quot;missing Business license&quot;-API error</h2><div class="row"><div class="col-md-6"><pre><code class="language-json">{
+</div></div></div></section><section><h2>Example of a &quot;missing Business license&quot;-API error</h2><div class="row"><div class="col-sm-6"><pre><code class="language-json">{
  &quot;ResponseHeader&quot;: {
    &quot;SpecVersion&quot;: &quot;1.10&quot;,
    &quot;RequestId&quot;: &quot;[your request id]&quot;
@@ -883,14 +883,14 @@
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
   </tbody>
-</table></div></div></section><section id="interfaces"><h2><a name="interfaces"></a> The Interfaces</h2><div class="row"><div class="col-md-6"><p>Saferpay consist of two main interfaces and a set of different additional modules that can be added to each interface depending on the business requriements and desired payment flow.</p><p>The main components of the Saferpay JSON API are:</p><ul>
+</table></div></div></section><section id="interfaces"><h2><a name="interfaces"></a> The Interfaces</h2><div class="row"><div class="col-sm-6"><p>Saferpay consist of two main interfaces and a set of different additional modules that can be added to each interface depending on the business requriements and desired payment flow.</p><p>The main components of the Saferpay JSON API are:</p><ul>
 <li><strong>Payment Page Interface</strong></li>
 <li><strong>Transaction Interface</strong></li>
 <li>and the additional <strong>Secure Card Data</strong> module</li>
 </ul><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/Interfaces.png" alt="alt text" title="The Interfaces"></p><div class="warning">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important:</strong> It is important to understand the different intended uses and functionalities of each component to decide which Interface is best suited for your business and desired payment flows.</p>
-</div></div></div></section><section id="int-paymentmethods"><h2><a name="int-paymentmethods"></a> Supported Payment Methods</h2><div class="row"><div class="col-md-6"><table class="table table-striped table-hover">
+</div></div></div></section><section id="int-paymentmethods"><h2><a name="int-paymentmethods"></a> Supported Payment Methods</h2><div class="row"><div class="col-sm-6"><table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Payment method</th>
@@ -1028,18 +1028,18 @@
 </table><div class="warning">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>*<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_RedirectPayment">Transaction Interface - Redirect Payment</a></strong> is deprecated and replaced by the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page!</a>. Please use the parameter <strong>PaymentMethods</strong> to directly select your desired provider!</p>
-</div></div></div></section><section id="int-what"><h2><a name="int-what"></a> What should i use?</h2><div class="row"><div class="col-md-6"><p>Before implementing, it is important to clarify, which functions are important for you!</p></div></div></section><section><h3>Use the PaymentPage/ E Commerce, if...</h3><div class="row"><div class="col-md-6"><ul>
+</div></div></div></section><section id="int-what"><h2><a name="int-what"></a> What should i use?</h2><div class="row"><div class="col-sm-6"><p>Before implementing, it is important to clarify, which functions are important for you!</p></div></div></section><section><h3>Use the PaymentPage/ E Commerce, if...</h3><div class="row"><div class="col-sm-6"><ul>
 <li><strong>You only want to do transactions:</strong> Do you have a small and simple webshop? Are <a href="refund.html">refunds over the API</a>, or <a href="recurring.html">recurring payments</a> not important for you? The Payment Page and thus a normal E Commerce contract is more than sufficient for you!</li>
 <li><strong>You want to have one solution for every payment method:</strong> <a href="Integration_PP.html">The PaymentPage</a> does support every payment method Saferpay has to offer. Once integrated, it is a simple matter of activating the payment methods you need and they will show up on the page.</li>
-</ul></div></div></section><section><h3>Use the Transaction Interface/Saferpay Business, if...</h3><div class="row"><div class="col-md-6"><ul>
+</ul></div></div></section><section><h3>Use the Transaction Interface/Saferpay Business, if...</h3><div class="row"><div class="col-sm-6"><ul>
 <li><strong>You want a more embedded/integrated solution:</strong> <a href="Integration_trx.html">The Transaction Interface</a> does offer a more integrated and personalized payment flow for credit cards, via <a href="CssiFrame.html">iFrame integration</a>. Think of it as <a href="Integration_PP.html">the Payment Page</a> reduced down to the card entry form, which can be embedded into every HTML-based application!</li>
 <li><strong>You want to do recurring payments:</strong> <a href="recurring.html">Recurring Payments</a> need special API-functions, that are only available over Saferpay Business!</li>
 <li><strong>You want to execute refunds via the API:</strong> <a href="refund.html">Refunds via API</a> (Note, that refunds are also possible via the Saferpay Backoffice!), are only possible with the transaction interface and a Saferpay Business license.</li>
 <li><strong>You want to save and use card data in our Secure Card Data store:</strong> Similar to <a href="recurring.html">recurring payments</a>, but Secure Card Data can do more, that just that. You could also spare your customer from entering his card data over and over again, even for 3D Secure payments!</li>
-</ul></div></div></section><section><h3>Why not both?</h3><div class="row"><div class="col-md-6"><p>If you have access to Saferpay Business, you also have access to all API-functions Saferpay has to offer. You don't have to stick to one interface, or the other, you can also mix both interfaces.
+</ul></div></div></section><section><h3>Why not both?</h3><div class="row"><div class="col-sm-6"><p>If you have access to Saferpay Business, you also have access to all API-functions Saferpay has to offer. You don't have to stick to one interface, or the other, you can also mix both interfaces.
 In some cases, you <strong>have</strong> to use the <a href="Integration_PP.html">PaymentPage</a>, for example, if you want to use <a href="PayPal.html">PayPal</a>, or any other 3rd party provider.
 Another use case could be, that you do all your normal authorizations over the <a href="Integration_PP.html">PaymentPage</a>, but then you use the <a href="refund.html">Transaction Interface for Refunds</a>.
-This is also helpful, if you decide to upgrade from E Commerce to Business (For example for executing said refunds via API!) and already have a <a href="Integration_PP.html">PaymentPage Integration</a>. You can simply extend your Integration for the functions you need, without changing the whole existing implementation.</p></div></div></section><section id="int-questions"><h2><a name="int-questions"></a> Questions?</h2><div class="row"><div class="col-md-6"><p>Still unsure what you need?
+This is also helpful, if you decide to upgrade from E Commerce to Business (For example for executing said refunds via API!) and already have a <a href="Integration_PP.html">PaymentPage Integration</a>. You can simply extend your Integration for the functions you need, without changing the whole existing implementation.</p></div></div></section><section id="int-questions"><h2><a name="int-questions"></a> Questions?</h2><div class="row"><div class="col-sm-6"><p>Still unsure what you need?
 <a href="https://saferpay.github.io/sndbx/contact.html">Contact the Saferpay Integration Support</a> and we will help you deciding!</p></div></div></section>
 
 			</main>

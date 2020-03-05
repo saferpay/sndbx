@@ -706,16 +706,16 @@
 				</div>
 
 				
-<section><h1>TWINT</h1><div class="row"><div class="col-md-6"><p>This chapter will handle all specifics involved with the integration of the payment method TWINT.</p></div></div></section><section id="twint-requirement"><h2><a name="twint-requirement"></a> Requirements</h2><div class="row"><div class="col-md-6"><ul>
+<section><h1>TWINT</h1><div class="row"><div class="col-sm-6"><p>This chapter will handle all specifics involved with the integration of the payment method TWINT.</p></div></div></section><section id="twint-requirement"><h2><a name="twint-requirement"></a> Requirements</h2><div class="row"><div class="col-sm-6"><ul>
 <li>A corresponding license and thus a valid identification with a username and password for the Saferpay system.</li>
 <li>At least one active Saferpay terminal via which payment can be carried out and the associated Saferpay TerminalId.</li>
 <li>A valid TWINT contract</li>
 <li>JSON API Version 1.7 or later</li>
 <li>Twint can only be used via the <a href="Integration_PP.html">Payment Page</a>. Please follow the general guide there!</li>
-</ul></div></div></section><section id="twint-general"><h2><a name="twint-general"></a> General specifics</h2><div class="row"><div class="col-md-6"><ul>
+</ul></div></div></section><section id="twint-general"><h2><a name="twint-general"></a> General specifics</h2><div class="row"><div class="col-sm-6"><ul>
 <li><strong>Reservation time</strong>: Unlike normal credit card transactions, where a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">capture</a> could be attempted after the normal reservation time, TWINT does only offer a maximum timeframe of 7 days! After that the transaction will be discarded and a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">capture</a> <strong>will not initiate the money-transfer with the next batch-close</strong>, so make sure, to <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">capture</a> your transactions within this time limit!</li>
 <li><strong>Refund times</strong>: Due to processing limitations, a refund can fail, if it is executed earlier than two hours after the initial transaction. The initial transaction needs to be processed first, until a refund can be executed, which happens within said two hours!</li>
-</ul></div></div></section><section id="twint-uof"><h2><a name="twint-uof"></a> User on File</h2><div class="row"><div class="col-md-6"><p>Twint User on File saves Twint payment means inside the <a href="scd.html">Saferpay Secure Card Data Store</a>, allowing you to execute subsequent transactions on a users Twint account.</p></div></div></section><section><h3>Requirements</h3><div class="row"><div class="col-md-6"><p>The following requirements are to be met, if Twint User on File is to be used, aside the normal requirements:</p><ul>
+</ul></div></div></section><section id="twint-uof"><h2><a name="twint-uof"></a> User on File</h2><div class="row"><div class="col-sm-6"><p>Twint User on File saves Twint payment means inside the <a href="scd.html">Saferpay Secure Card Data Store</a>, allowing you to execute subsequent transactions on a users Twint account.</p></div></div></section><section><h3>Requirements</h3><div class="row"><div class="col-sm-6"><p>The following requirements are to be met, if Twint User on File is to be used, aside the normal requirements:</p><ul>
 <li>A <a href="Interfaces.html">Saferpay Business License</a>.
 <ul>
 <li>A license for Saferpay Secure Card Data, which is usually included in Saferpay Business!</li>
@@ -728,7 +728,7 @@
   <p>
     <strong>Important:</strong> Twint User on File is only available via the <a href="scd.html#scd-sa">Standalone Secure Card Data registration</a>!
   </p>
-</div></div></div></section><section><h3>Alias Insert Request</h3><div class="row"><div class="col-md-6"><p>The registration is done via the <a href="https://saferpay.github.io/jsonapi/#ChapterAliasStore">Saferpay Alias Store</a>. Within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert Request</a>, you need to specify the parameter <strong>Type</strong> with the value <strong>TWINT</strong>, which signals, that you want to save Twint payment means.</p><h4>Eample</h4><pre><code class="language-JSON">{
+</div></div></div></section><section><h3>Alias Insert Request</h3><div class="row"><div class="col-sm-6"><p>The registration is done via the <a href="https://saferpay.github.io/jsonapi/#ChapterAliasStore">Saferpay Alias Store</a>. Within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert Request</a>, you need to specify the parameter <strong>Type</strong> with the value <strong>TWINT</strong>, which signals, that you want to save Twint payment means.</p><h4>Eample</h4><pre><code class="language-JSON">{
   &quot;RegisterAlias&quot;: {
     &quot;IdGenerator&quot;: &quot;RANDOM_UNIQUE&quot;
   },
@@ -750,7 +750,7 @@
     &quot;Abort&quot;: &quot;https://www.myshop.com/abort&quot;
   }
 }
-</code></pre></div></div></section><section><h3>Alias Insert Response</h3><div class="row"><div class="col-md-6"><p>Saferpay will then respond with a normal Alias Insert Response, giving you the Token for further actions and a RedirectUrl.</p><h4>Example</h4><pre><code class="language-JSON">{
+</code></pre></div></div></section><section><h3>Alias Insert Response</h3><div class="row"><div class="col-sm-6"><p>Saferpay will then respond with a normal Alias Insert Response, giving you the Token for further actions and a RedirectUrl.</p><h4>Example</h4><pre><code class="language-JSON">{
   &quot;ResponseHeader&quot;: {
     &quot;SpecVersion&quot;: &quot;1.14&quot;,
     &quot;RequestId&quot;: &quot;5f543be575b3f3ecff3214257ac6978a&quot;
@@ -761,7 +761,7 @@
 }
 </code></pre><p>The RedirectUrl then needs to be opened inside an iFrame, as a redirect, or lightbox.
 Saferpay will then present the following screen.</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/Twint_uof.png" alt="alt text" title="Twint User on File"></p><p>Here the User can either scan the QR-Code, or manually enter the PIN-Code inside his Twint App.
-There he needs to confirm the registration.</p></div></div></section><section><h3>Redirect to Shop</h3><div class="row"><div class="col-md-6"><p>Once this process is done, the user gets redirected towards one of the previously defined ReturnUrls, depending on the outcome.</p></div></div></section><section><h3>Alias Assert Insert Request</h3><div class="row"><div class="col-md-6"><p>The merchant system then needs to execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Assert Insert Request</a>, in order to gather the alias and other important payment mean details.</p><h4>Example</h4><pre><code class="language-json">{
+There he needs to confirm the registration.</p></div></div></section><section><h3>Redirect to Shop</h3><div class="row"><div class="col-sm-6"><p>Once this process is done, the user gets redirected towards one of the previously defined ReturnUrls, depending on the outcome.</p></div></div></section><section><h3>Alias Assert Insert Request</h3><div class="row"><div class="col-sm-6"><p>The merchant system then needs to execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Assert Insert Request</a>, in order to gather the alias and other important payment mean details.</p><h4>Example</h4><pre><code class="language-json">{
   &quot;Token&quot;: &quot;67tdpr8keb3ky3y6728kqv4gk&quot;,
   &quot;RequestHeader&quot;: {
     &quot;SpecVersion&quot;: &quot;1.14&quot;,
@@ -773,7 +773,7 @@ There he needs to confirm the registration.</p></div></div></section><section><h
       &quot;OsInfo&quot;: &quot;Windows Server 2013&quot;
     }
   }
-</code></pre></div></div></section><section><h3>Alias Assert Insert Response</h3><div class="row"><div class="col-md-6"><p>The <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Assert Insert Response</a> will return the alias itself, for further payments, which can be executed via <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a>, by simply setting the <strong>PaymentMeans.Alias</strong> container!</p><h4>Example</h4><pre><code class="language-json">{
+</code></pre></div></div></section><section><h3>Alias Assert Insert Response</h3><div class="row"><div class="col-sm-6"><p>The <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Assert Insert Response</a> will return the alias itself, for further payments, which can be executed via <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a>, by simply setting the <strong>PaymentMeans.Alias</strong> container!</p><h4>Example</h4><pre><code class="language-json">{
   &quot;ResponseHeader&quot;: {
     &quot;SpecVersion&quot;: &quot;1.14&quot;,
     &quot;RequestId&quot;: &quot;22c449e9cb06a227491c0f18532d9ef1&quot;

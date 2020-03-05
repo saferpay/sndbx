@@ -706,19 +706,19 @@
 				</div>
 
 				
-<section id="chapter-css-iframe"><h1><a name="chapter-css-iframe"></a> Iframe Integration and CSS</h1><div class="row"><div class="col-md-6"><p>The Saferpay Payment Page, the Transaction Interface and Secure Card Data offer the options for Iframe integration and custom design using Cascading Style Sheets (CSS). The following describes how these features can be used and what needs to be adhered to.</p></div></div></section><section id="css-iframe"><h2><a name="css-iframe"></a> Iframe Integration</h2><div class="row"><div class="col-md-6"><p>Iframe integration is supported for these methods:</p><ul>
+<section id="chapter-css-iframe"><h1><a name="chapter-css-iframe"></a> Iframe Integration and CSS</h1><div class="row"><div class="col-sm-6"><p>The Saferpay Payment Page, the Transaction Interface and Secure Card Data offer the options for Iframe integration and custom design using Cascading Style Sheets (CSS). The following describes how these features can be used and what needs to be adhered to.</p></div></div></section><section id="css-iframe"><h2><a name="css-iframe"></a> Iframe Integration</h2><div class="row"><div class="col-sm-6"><p>Iframe integration is supported for these methods:</p><ul>
 <li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a></li>
 <li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a></li>
 <li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert</a></li>
-</ul><p>The Response Message includes a respective <strong>RedirectURL</strong>, if successful executed. This URL needs to be embedded in the Iframe.</p></div></div></section><section id="css-pp"><h3><a name="css-pp"></a> Payment Page Initialize</h3><div class="row"><div class="col-md-6"><p>The Payment Page (payment form) has a responsive design and automatically adapts to the size of the Iframe. Here is an example. Simply drag the window at the bottom right corner and see the the Payment Page adapt:</p><div style="resize: both; overflow: auto; min-height: 800px; height: 820px; width: 1000px;">
+</ul><p>The Response Message includes a respective <strong>RedirectURL</strong>, if successful executed. This URL needs to be embedded in the Iframe.</p></div></div></section><section id="css-pp"><h3><a name="css-pp"></a> Payment Page Initialize</h3><div class="row"><div class="col-sm-6"><p>The Payment Page (payment form) has a responsive design and automatically adapts to the size of the Iframe. Here is an example. Simply drag the window at the bottom right corner and see the the Payment Page adapt:</p><div style="resize: both; overflow: auto; min-height: 800px; height: 820px; width: 1000px;">
 	<iframe style="height: 100%; width: 100%; overflow: hidden;" src="https://shop.saferpay.eu/saferpayintegration/ppauto_initialize_submit.php"></iframe>
-</div></div></div></section><section id="css-trxini"><h3><a name="css-trxini"></a> Transaction Initialize</h3><div class="row"><div class="col-md-6"><p>Here, an example of the Saferpay Card Entry Form (<strong>Hosted Entry Form</strong>) for capturing card details. Simply drag the window at the bottom right corner and see the the form adapt:</p><div style="resize: both; overflow: auto; min-height: 500px; mon-width: 285px; height: 480px; width: 290px;">
+</div></div></div></section><section id="css-trxini"><h3><a name="css-trxini"></a> Transaction Initialize</h3><div class="row"><div class="col-sm-6"><p>Here, an example of the Saferpay Card Entry Form (<strong>Hosted Entry Form</strong>) for capturing card details. Simply drag the window at the bottom right corner and see the the form adapt:</p><div style="resize: both; overflow: auto; min-height: 500px; mon-width: 285px; height: 480px; width: 290px;">
 	<iframe style="height: 100%; width: 100%; overflow: hidden;" src="https://shop.saferpay.eu/saferpayintegration/auto_initialize_submit.php"></iframe>
-</div></div></div></section><section id="css-aliasins"><h3><a name="css-aliasins"></a> Alias Insert</h3><div class="row"><div class="col-md-6"><p>Here, an example of the Saferpay Card Registration Form (<strong>Hosted Register Form</strong>). Simply drag the window at the bottom right corner and see the the form adapt:</p><div style="resize: both; overflow: auto; min-height: 500x; mon-width: 285px; height: 480px; width: 290px;">
+</div></div></div></section><section id="css-aliasins"><h3><a name="css-aliasins"></a> Alias Insert</h3><div class="row"><div class="col-sm-6"><p>Here, an example of the Saferpay Card Registration Form (<strong>Hosted Register Form</strong>). Simply drag the window at the bottom right corner and see the the form adapt:</p><div style="resize: both; overflow: auto; min-height: 500x; mon-width: 285px; height: 480px; width: 290px;">
 	<iframe style="height: 100%; width: 100%; overflow: hidden;" src="https://shop.saferpay.eu/saferpayintegration/auto_insert_submit.php"></iframe>
 </div><div class="warning">
   <p><strong>Attention:</strong> For registration, the capture of the card verification code (CVC) is not enabled, because it can only be saved by Saferpay on a temporary, 20-minute basis. PCI specifications prohibit permanent storage. For payments with the CVC, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Inintialize</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> shall be used.</p>
-</div></div></div></section><section id="css-iframe_size"><h2><a name="css-iframe_size"></a> Size of the Iframe</h2><div class="row"><div class="col-md-6"><p>The size of the Iframe is communicated to the merchants via an HTML5-POST message, which can be captured using JavaScript. The Iframe can thus be dynamically adapted to the content.</p></div></div></section><section id="html-form"><h3><a name="html-form"></a> Example of HTML Form</h3><div class="row"><div class="col-md-6"><pre><code class="language-HTML">&lt;HTML&gt;
+</div></div></div></section><section id="css-iframe_size"><h2><a name="css-iframe_size"></a> Size of the Iframe</h2><div class="row"><div class="col-sm-6"><p>The size of the Iframe is communicated to the merchants via an HTML5-POST message, which can be captured using JavaScript. The Iframe can thus be dynamically adapted to the content.</p></div></div></section><section id="html-form"><h3><a name="html-form"></a> Example of HTML Form</h3><div class="row"><div class="col-sm-6"><pre><code class="language-HTML">&lt;HTML&gt;
    &lt;head&gt;
       &lt;title&gt;Payment Form&lt;/title&gt;
    &lt;/head&gt;
@@ -742,7 +742,7 @@
 });
 </code></pre><div class="warning">
   <p><strong>Attention:</strong> Not every page reports its size to the merchant&#8217;s system. However, Saferpay has to forward users to third parties during the payment process (Like with the 3D Secure procedure), thus we recommend a&nbsp;minimum size of 450x450 pixels.</p>
-</div></div></div></section><section id="css-usecss"><h2><a name="css-usecss"></a> Using CSS</h2><div class="row"><div class="col-md-6"><div class="warning">
+</div></div></div></section><section id="css-usecss"><h2><a name="css-usecss"></a> Using CSS</h2><div class="row"><div class="col-sm-6"><div class="warning">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> The CSS-feature cannot be used in conjunction with the styling options of a Saferpay Payment Page configuration!
@@ -751,7 +751,7 @@
 <li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a></li>
 <li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a></li>
 <li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert</a></li>
-</ul><p>With a request using the <strong>Styling</strong> container, the <strong>CssUrl</strong> parameter must be forwarded, alongside a reference to the CSS file which is to be used.</p></div></div></section><section id="css-element"><h2><a name="css-element"></a> CSS Elements</h2><div class="row"><div class="col-md-6"><p><strong>Element Name</strong></p><pre><code>h1{
+</ul><p>With a request using the <strong>Styling</strong> container, the <strong>CssUrl</strong> parameter must be forwarded, alongside a reference to the CSS file which is to be used.</p></div></div></section><section id="css-element"><h2><a name="css-element"></a> CSS Elements</h2><div class="row"><div class="col-sm-6"><p><strong>Element Name</strong></p><pre><code>h1{
   text-decoration:&nbsp;underline;
 }
 </code></pre><p><strong>Class Name</strong></p><pre><code>h1{
@@ -766,7 +766,7 @@
 </li>
 <li><p><strong>Element Attribute:</strong> Element attributes should not be used, because attributes (name, value, data-*, etc.) can change without notice.</p>
 </li>
-</ul></div></div></section><section id="css-selector"><h2><a name="css-selector"></a> CSS Selectors</h2><div class="row"><div class="col-md-6"><p>As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported, depending on the used browser.</p></div></div></section><section id="css-info"><h2><a name="css-info"></a> More Information</h2><div class="row"><div class="col-md-6"><ul>
+</ul></div></div></section><section id="css-selector"><h2><a name="css-selector"></a> CSS Selectors</h2><div class="row"><div class="col-sm-6"><p>As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported, depending on the used browser.</p></div></div></section><section id="css-info"><h2><a name="css-info"></a> More Information</h2><div class="row"><div class="col-sm-6"><ul>
 <li><p>The CSS file that is referenced by the CssUrl parameter must be stored on a web server that supports HTTPS.</p>
 </li>
 <li><p>When aiming for the <a href="https://saferpay.github.io/sndbx/#pci">PCI DSS SAQ-A compliance</a>, you must set the <strong>ContentSecurityEnabled</strong> parameter inside the <strong>Styling</strong>-container to <strong>true</strong>. Furthermore, you have to consider the following things:</p>
