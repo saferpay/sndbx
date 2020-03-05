@@ -7,7 +7,7 @@
       { "Source": "texts/intro.md", "Title": "Requirements", "Target": "index.html#intro-requirement" },
       { "Source": "texts/intro.md", "Title": "Data Security and PCI DSS", "Target": "index.html#pci" },
       { "Source": "texts/intro.md", "Title": "3-D Secure", "Target": "index.html#3ds" },
-     { "Source": "texts/intro.md", "Title": "PSD2 and 3-D Secure", "Target": "index.html#psd2" },
+      { "Source": "texts/intro.md", "Title": "PSD2 and 3-D Secure", "Target": "index.html#psd2" },
       { "Source": "texts/intro.md", "Title": "Dynamic Currency Conversion", "Target": "index.html#dcc" },
       { "Source": "texts/intro.md", "Title": "Versioning", "Target": "index.html#version" },
       { "Source": "texts/intro.md", "Title": "Payment Method Features", "Target": "index.html#pm-functions" },
@@ -22,7 +22,7 @@
     "Title": "Licenses and Interfaces",
     "Source": "texts/interfaces.md",
     "Target": "Interfaces.html",
-   "Subsites": [
+    "Subsites": [
       { "Source": "texts/interfaces.md", "Title": "The Interfaces", "Target": "Interfaces.html#interfaces" },
       { "Source": "texts/interfaces.md", "Title": "Supported Payment Methods", "Target": "Interfaces.html#int-paymentmethods" },
       { "Source": "texts/interfaces.md", "Title": "What should i use?", "Target": "Interfaces.html#int-what" },
@@ -153,7 +153,7 @@
     "Target": "partialcaptures.html",
     "Subsites": [
       { "Source": "texts/partialcaptures.md", "Title": "Requirements", "Target": "partialcaptures.html#pc-req" },
-     { "Source": "texts/partialcaptures.md", "Title": "Executing a Multipart Capture", "Target": "partialcaptures.html#pc-exec" },
+      { "Source": "texts/partialcaptures.md", "Title": "Executing a Multipart Capture", "Target": "partialcaptures.html#pc-exec" },
       { "Source": "texts/partialcaptures.md", "Title": "Finalizing a Capture-Chain", "Target": "partialcaptures.html#pc-final" },
       { "Source": "texts/partialcaptures.md", "Title": "Why do you need to finalize a transaction?", "Target": "partialcaptures#pc-final-why" },
       { "Source": "texts/partialcaptures.md", "Title": "Handling Refunds", "Target": "partialcaptures.html#pc-refund" }
@@ -184,7 +184,7 @@
  {
     "Title": "API Health Check",
     "Source": "texts/health.md",
-    "Target": "health.html",
+    "Target": "health.html"
   },
   {
     "Title": "FAQ",
