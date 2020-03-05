@@ -130,12 +130,22 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     #content main {
         background: white;
     }
+    #content.full-width main {
+        background: none;
+    }
 }
+
 .text-primary {
     color: #de3919;
 }
+
 .text-mandatory {
     color: #d46900;
+    font-weight: 600;
+}
+
+.text-recommended {
+    color: #6EC7D7;
     font-weight: 600;
 }
 
@@ -179,7 +189,7 @@ td {
     word-break: break-word;
 }
 
-.anchor-link span { 
+.anchor-link span {
     display: none;
     margin: 0 0 0 0.5em;
     color: #ccc;
@@ -193,6 +203,10 @@ a[target='_blank'] {
     background-position: right center;
     background-repeat: no-repeat;
     padding-right: 13px;
+}
+
+code {
+    white-space: pre-line;
 }
 
 @media print {
