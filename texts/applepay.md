@@ -77,5 +77,5 @@ If you want to perform a direct redirect to ApplePay, you have to use the parame
 ```
 
 <div class="info">
-  <p><strong>Tip:</strong> If you are using <strong>"Wallets"</strong> alongside <strong>"PaymentMethods"</strong>, you can limit the Brands, your customer may use!</p>
+  <p><strong>Tip:</strong> If you are using <strong>"Wallets"</strong> alongside <strong>"PaymentMethods"</strong>, you can limit the Brands, your customer may use! However note, that the Payment Page then also will display the given Brands as dedicated Payment Methods, so the customer may pay this way!</p>
 </div>
