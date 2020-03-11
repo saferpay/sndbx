@@ -764,8 +764,14 @@ In this Chapter you will find a list of payment means you can use for testing pu
 <div id="unionpay-cards-hider" style="display:none;">
   <p>Saferpay does offer an extensive unionpay simulator. All test-cases are controlled through the simulator-ui, when opening up the Payment Page. However, you need to use the following test-card, in order to activate it: <strong>9100100052000005</strong></p>
 </div>
-
-
+<a name="pm-postfinance"></a><div id="postfinance-cards" class="dropdown">Postfinance&dArr;</div>
+<div id="postfinance-cards-hider" style="display:none;">
+  <p>Saferpay does offer an extensive Postfinance simulator, for Postfinance E-Finance and Postfinance Card. All test-cases are controlled through the simulator-ui. <a href="PostFinance.html#pf-alias">The Secure Card Data feature</a> is also supported!</p>
+</div>
+<a name="pm-applepay"></a><div id="applepay-cards" class="dropdown">Apple Pay&dArr;</div>
+<div id="applepay-cards-hider" style="display:none;">
+  <p>Saferpay does offer an extensive Apple Pay simulator. All test-cases are controlled through the simulator-ui. Unlike production, you do not need an Apple device, or browser, to test Apple Pay!</p>
+</div>
 
 
 <table class="table table-striped table-hover" style="display: none;">
