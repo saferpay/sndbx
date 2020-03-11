@@ -273,6 +273,7 @@ Callback message on normal event, containing the following data:
 		<li><strong>empty:</strong> The input is empty!</li>
 		<li><strong>unsupported:</strong> Thrown, when <strong>paymentMethods</strong> is used and a not listed brand is entered!</li>
 		<li><strong>expired:</strong> The given card is expired!</li>
+		<li><strong>undefined:</strong> If the field is valid, or hasn't been validated yet, the reason will be "undefined"!</li>
 	</ul>
       </td>
     </tr>
