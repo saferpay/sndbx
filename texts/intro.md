@@ -380,77 +380,77 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <tr>
       <td>American Express</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Bancontact</td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>   
     <tr>
       <td>BillPay Direct Debit</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
     </tr>
     <tr>
       <td>BillPay Purchase on Receipt</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
     </tr>
     <tr>
       <td>Bonus Card</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Diners Club</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -458,12 +458,12 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
         <tr>
       <td>Discover</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"> (See Diners)</span></td>
@@ -471,65 +471,65 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     <tr>
       <td>ePrzelewy</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"> <span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"> <span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>eps</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
     </tr>
     <tr>
       <td>giropay</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
     </tr>
     <tr>
       <td>iDEAL</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>  
     <tr>
       <td>JCB</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
@@ -540,10 +540,10 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>    
     <tr>
@@ -582,92 +582,92 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
     <tr>
       <td>MyOne</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>paydirekt</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>PayPal</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>PostFinance Card</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>PostFinance eFinance</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>SEPA Direct Debit</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>SOFORT</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
@@ -683,8 +683,8 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
-        <tr>
-          <td>VPay <strong>(Processed via Visa!)</strong></td>
+     <tr>
+      <td>VPay <strong>(Processed via Visa!)</strong></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
@@ -694,51 +694,74 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
     </tr>
     <tr>
       <td>TWINT</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Unionpay</td>
-      <td></td>
-      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>Alipay</td>
-      <td></td>
-      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>  
+    <tr>
+      <td>Apple Pay</td>
+      <td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></td>
+      <td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></td>
+      <td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></td>
+      <td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></td>
+      <td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></td>
+      <td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></td>
+      <td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></td>
+      <td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></td>
+    </tr> 
   </tbody>
 </table>
 
 <dl class="dl-horizontal">
+  <dt><td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td></dt>
+  <dd>This feature is available for the given Payment Method!</dd>
+  <dt><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></dt>
+  <dd>This feature is mandatory, for this payment method to function!</dt>
+  <dt><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></dt>
+  <dd>This feature needs requirements to be met! Please refer to the specific payment method chapter!</dt>
+  <dt><td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></dt>
+  <dd>This feature is not available for the given Payment Method!</dd>
+  <dt><td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></dt>
+  <dd>This feature depends on certain factors! For instance with wallets, it depends on the given means of payment, saved inside the wallet!</dd>
   <dt>Capture|Cancel</dt>
   <dd>
     Capture required, Cancel possible.
@@ -765,10 +788,6 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
   <dd>3-D Secure available</dd>
   <dt>MOTO</dt>
   <dd>Mail Phone Order available</dd>
-  <dt><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></dt>
-  <dd>This feature is mandatory, for this payment method to function!</dt>
-  <dt><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></dt>
-  <dd>This feature needs requirements to be met! Please refer to the specific payment method chapter!</dt>
   <dt>Testing</dt>
   <dd>A Simulator/Sandbox is available</dd>
 </dl>
