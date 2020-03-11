@@ -127,7 +127,12 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
     <strong>Caution:</strong> Do not submit exemptions on your own, without the consent of your Acquirer! The Acquirer otherwise has the right to deny these transsactions at any time!
   </p>
 </div>
-
+<div class="danger">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Very Important:</strong> Even if you are allowed to submit exemptions, you have to make sure, that your implementation generally follows the PSD2 rules!
+  </p>
+</div>
 
 <table class="table table-striped table-hover">
   <thead>
@@ -153,7 +158,6 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
      <td class="text-center"><strong>TRANSACTION_RISK_ANALYSIS</strong></td>
      <td>
        External Fraud Risk Analysis has been done and the transaction has been deemed at low risk.
-      <strong>Very important:</strong> This value may not be submitted at will. An external risk analysis and the maximum transaction value allowed, must be discussed with your acquirer first!
      </td>
      <td><a href="Integration_PP.html">Payment Page Flow</a>, <a href="Integration_trx.html">Transaction Interface Flow</a></td>
     </tr>
