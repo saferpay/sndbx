@@ -744,9 +744,9 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
   <p>
     <strong>Very Important:</strong> Once you move from the Test-Environment to the Live-Environment, you need to create a new Access Token on your live account!
   </p>
-</div></div></div></section><section id="hf-integration"><h1><a name="hf-integration"></a> Integration and Initialization</h1><div class="row"><div class="col-sm-6"><p>After you have created your API-Token, you can start integrating the Saferpay Fields into your site.</p></div></div></section><section><h3>Include the Saferpay Fields Javascript library into your site</h3><div class="row"><div class="col-sm-6"><pre><code class="language-html">&lt;script src=&quot;'https://test.saferpay.com/Fields/lib/1.0/saferpay-fields.js'&quot;&gt;&lt;/script&gt; &lt;!-- For Test-Environment--&gt;
+</div></div></div></section><section id="hf-integration"><h1><a name="hf-integration"></a> Integration and Initialization</h1><div class="row"><div class="col-sm-6"><p>After you have created your API-Token, you can start integrating the Saferpay Fields into your site.</p></div></div></section><section><h3>Include the Saferpay Fields Javascript library into your site</h3><div class="row"><div class="col-sm-6"><pre><code class="language-html">&lt;script src=&quot;'https://test.saferpay.com/Fields/lib/1.2/saferpay-fields.js'&quot;&gt;&lt;/script&gt; &lt;!-- For Test-Environment--&gt;
 &lt;!-- OR --&gt;
-&lt;script src=&quot;'https://www.saferpay.com/Fields/lib/1.0/saferpay-fields.js'&quot;&gt;&lt;/script&gt; &lt;!-- For Live-Environment--&gt;
+&lt;script src=&quot;'https://www.saferpay.com/Fields/lib/1.2/saferpay-fields.js'&quot;&gt;&lt;/script&gt; &lt;!-- For Live-Environment--&gt;
 </code></pre></div></div></section><section><h3>Define, where Saferpay should load the Hosted Fields</h3><div class="row"><div class="col-sm-6"><pre><code class="language-html">    &lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;col-md-12 field&quot;&gt;
 	    &lt;div id=&quot;fields-holder-name&quot;&gt;&lt;/div&gt;
@@ -804,6 +804,7 @@ However you must make sure, that you define the placeholders -can be <code>&lt;d
 	style: {
 	    '.form-control': 'border: none; border-bottom: solid 1px #ccc; border-radius: unset;'
 	},
+	paymentMethods: [&quot;visa&quot;, &quot;mastercard&quot;],
 	onSuccess: function() {
 	    //Callback on successful Init
 	},
@@ -858,6 +859,7 @@ SaferpayFields.submit({
 	'.form-control': 'border: none; border-bottom: solid 1px #ccc; border-radius: unset;'
 }
 </code></pre><ul>
+<li><strong>paymentMethods</strong> <em>String[]</em> : A String-Array, containing a list of brands to be accepted! Currently accepted brands/values: mastercard, maestro, visa, jcb, diners, bancontact, amex</li>
 <li><strong>cssUrl</strong> <em>String</em> : Url to an external CSS, to be applied to all elements.</li>
 <li><strong>placeholders</strong> <em>Object</em> : Object, that contains custom placeholder text, to be applied to the inputs.
 <strong>Example:</strong></li>
@@ -902,6 +904,19 @@ Callback message on normal event, containing the following data:</p><table class
       <td>isValid</td>
       <td>Boolean</td>
 	    <td>Validity of the field affected. (<strong>onValidated</strong> callback only!)</td>
+    </tr>
+    <tr>
+      <td>reason</td>
+      <td>String</td>
+      <td>
+	<p>Reason, why a field is not valid! The following reasons can be returned:</p>
+	<ul>
+		<li><strong>invalid:</strong> The input given, is generally invalid!</li>
+		<li><strong>empty:</strong> The input is empty!</li>
+		<li><strong>unsupported:</strong> Thrown, when <strong>paymentMethods</strong> is used and a not listed brand is entered!</li>
+		<li><strong>expired:</strong> The given card is expired!</li>
+	</ul>
+      </td>
     </tr>
   </tbody>
 </table><p><strong>Error Callback Message</strong> <em>Object</em> :
