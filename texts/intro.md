@@ -629,7 +629,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>PostFinance eFinance</td>
@@ -642,7 +642,7 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td> </td>
       <td> </td>
       <td> </td>
-      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
       <td>SEPA Direct Debit</td>
