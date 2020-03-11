@@ -1,7 +1,7 @@
 # Payment Page Interface
 
 <div class="warning">
-  <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant!</p>
+  <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant! Furthermore, also make make sure, whether, or not <a href="psd2.html">PSD2</a> does apply to you!</p>
 </div>
 
 The Saferpay [Payment Page Interface](https://saferpay.github.io/jsonapi/#ChapterPaymentPage)<sup>1</sup> is intended for a simplified and universal integration of the payment process by using the PaymentPage payment form<sup>2</sup>. The Saferpay Payment Page can be used both with a Saferpay eCommerce license and with a Saferpay business license. All Saferpay supported payment methods can be processes with the Payment Page Interface; credit cards and third-party payment methods like “PayPal, iDEAL, SOFORT/Klarna and more. Once integrated, more payment methods can be added at any time without major adjustments.
@@ -34,6 +34,8 @@ The process begins with the [PaymentPage Initialize](https://saferpay.github.io/
 ### Information on the Use and Significance of the Available Parameters
 
 + **PaymentMethods:** By default, the PaymentPage will always show all payment methods approved for the terminal in question. Limiting the display to a single item or preselection of the payment methods in the shop can be achieved via the **PaymentMethods** parameter. When using this parameter, the only payment methods displayed are those whose values are forwarded.  When forwarding multiple values, the PaymentPage opens with a page which offers the option to select the appropriate payment method. If only one value is passed, the PaymentPage skips the selection window. Invalid values or values from payment methods which are not available on the terminal or not available with the specified currency are ignored by the PaymentPage. For example, if only one value is forwarded and this is invalid, the PaymentPage will display the same options as if **PaymentMethods** had not been used.
+
++ **Strong Consumer Authentication (SCA):** If a certain transaction needs SCA (please refer to the <a href="psd2.html">PSD2 chapter</a>), you can force SCA, by setting **Authentication.ThreeDsChallenge** to **"FORCE"**.
 
 + **ReturnUrls:** Via the **ReturnUrls**, the customer is returned to the shop after the transaction. For security reasons, Saferpay returns no data to return addresses. The identification of the payment or the returning customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the **ReturnUrls**. When a ReturnUrl is called, Saferpay returns the appended parameter, thus enabling identification of the customer/transaction. The ReturnUrls are **ALWAYS** called through the clients Browser. 
 
