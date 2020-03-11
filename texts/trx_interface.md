@@ -2,7 +2,7 @@
 
 <div class="warning">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant!</p>
+  <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant! Furthermore, also make make sure, whether, or not <a href="psd2.html">PSD2</a> does apply to you!</p>
 </div>
 
 The Transaction Interface is an extension to Payment Page Interface intended for a more modular und seamless integration of the payment process and thus offers a wide variety of functions to process and handle payments. It can be operated in parallel with the Payment Page Interface or alone. It offers the **Hosted Entry Form** (HEF) to process **card payments** seamlessly. Please read chapter [**Iframe Integration and CSS**](https://saferpay.github.io/sndbx/CssiFrame.html#chapter-css-iframe) for examples of the different payment forms. This interface can also be used in combination with Secure Card Data to store/tokenize payment data during the payment process.
@@ -54,6 +54,8 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
 + **Payment.OrderId:** This optinal parameter is important to keep track of all your transactions in later processes. This ID will be forwarded, so it will show up inside the Saferpay Backoffice (As the Reference number!) and on your reconciliation-files. This will help associate all the transactions for your accounting-department.
 
 + **Card Verification Value:** The Card Verification Value (CVC) is mandatory, when using the Card Entry Form, except for card brand Maestro, which offers cards with and without CVC. 
+
++ **Strong Consumer Authentication (SCA):** If a certain transaction needs SCA (please refer to the <a href="psd2.html">PSD2 chapter</a>), you can force SCA, by setting **Authentication.ThreeDsChallenge** to **"FORCE"**.
 
 + **Saferpay Fields:** When using the <a href ="HostedFields.html">Saferpay Fields</a>, you will be provided with a Saferpay Fields token. This token then has to be submitted through transaction/initialize, within the <strong>PaymentMeans.SaferpayFields</strong> in order to trigger a transaction. If used, the RedirectUrl directly links to the next step e.g. 3D Secure, thus skipping the Hosted Card Entry Form. Think of it as a different method to capture the card data for initialization.
 ```json 
