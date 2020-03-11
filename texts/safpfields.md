@@ -68,9 +68,9 @@ After you have created your API-Token, you can start integrating the Saferpay Fi
 
 ### Include the Saferpay Fields Javascript library into your site
 ```html
-<script src="'https://test.saferpay.com/Fields/lib/1.0/saferpay-fields.js'"></script> <!-- For Test-Environment-->
+<script src="'https://test.saferpay.com/Fields/lib/1.2/saferpay-fields.js'"></script> <!-- For Test-Environment-->
 <!-- OR -->
-<script src="'https://www.saferpay.com/Fields/lib/1.0/saferpay-fields.js'"></script> <!-- For Live-Environment-->
+<script src="'https://www.saferpay.com/Fields/lib/1.2/saferpay-fields.js'"></script> <!-- For Live-Environment-->
 ```
 ### Define, where Saferpay should load the Hosted Fields
 
@@ -140,6 +140,7 @@ SaferpayFields.init({
 	style: {
 	    '.form-control': 'border: none; border-bottom: solid 1px #ccc; border-radius: unset;'
 	},
+	paymentMethods: ["visa", "mastercard"],
 	onSuccess: function() {
 	    //Callback on successful Init
 	},
@@ -206,7 +207,7 @@ style: {
 	'.form-control': 'border: none; border-bottom: solid 1px #ccc; border-radius: unset;'
 }
 ```
-
+* <strong>paymentMethods</strong> *String[]* : A String-Array, containing a list of brands to be accepted! Currently accepted brands/values: mastercard, maestro, visa, jcb, diners, bancontact, amex 
 * <strong>cssUrl</strong> *String* : Url to an external CSS, to be applied to all elements.
 * <strong>placeholders</strong> *Object* : Object, that contains custom placeholder text, to be applied to the inputs.
 **Example:**
@@ -261,6 +262,19 @@ Callback message on normal event, containing the following data:
       <td>isValid</td>
       <td>Boolean</td>
 	    <td>Validity of the field affected. (<strong>onValidated</strong> callback only!)</td>
+    </tr>
+    <tr>
+      <td>reason</td>
+      <td>String</td>
+      <td>
+	<p>Reason, why a field is not valid! The following reasons can be returned:</p>
+	<ul>
+		<li><strong>invalid:</strong> The input given, is generally invalid!</li>
+		<li><strong>empty:</strong> The input is empty!</li>
+		<li><strong>unsupported:</strong> Thrown, when <strong>paymentMethods</strong> is used and a not listed brand is entered!</li>
+		<li><strong>expired:</strong> The given card is expired!</li>
+	</ul>
+      </td>
     </tr>
   </tbody>
 </table>
