@@ -3,11 +3,26 @@
 With the introduction of PSD2 within the EU, the ruleset for doing card transactions, has been changed in many ways.
 This chapter contains information and best practices, when dealing with card transactions under PSD2!
 
-<div class="info">
-  <p><strong>Tip:</strong> As a rule of thumb, ask yourself the following question: Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: Do 3-D Secure!</p>
-</div>
+## <a name="psd2-apply"></a> Does PSD2 apply to me?
 
-However, there are excemptions and to give you an overview of what flows need and what do not need SC, please refer to the following tables:
+The first step, is to figure out, if PSD2 applies to you -the merchant- in the first place.
+Important to know is, that PSD2 is valid for all countries inside the EEA (European Economic Area), which is **NOT the same as the European Union!** However the important part is, where you have signed your acquiring contract! When signing a card acceptance contract with an Acquirer, you have to pay attention to the country in which the contract is signed! Should this country be inside the EEA, then PSD2 does apply to you! **This is also applies, if you -the merchant- have your company headquarters outside the EEA!**
+
+## <a name="psd2-apply"></a> When to do SCA?
+
+As a rule of thumb, ask yourself the following question: 
+
+**Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: SCA hast to be performed, in any case!**
+
+This also applies to card registrations, if the card holder is not present during the next, real, transaction!
+
+Also make sure, that you use a flow, that can do SCA -in form of <a href="/sndbx/#3ds">3D Secure</a>- in the first Place! Be it the <a href="Integration_PP.html">Payment Page</a> or the <a href="Integration_trx.html">Transaction Interface</a>. Saferpay will always attempt 3D Secure and thus SCA!
+
+**Your acquiring contract also has to support 3D Secure!** However most acquirers do not offer contracts without 3D Secure in the first place, without being explicitly asked for one. When in doubt: Ask your acquirer, if your contract is set up for 3D Secure, or not!
+
+## <a name="psd2-overview"></a> Overview
+
+PSD2 is very complex. So to give you an overview of what flows need and what do not need SCA, please refer to the following tables:
 
 <table class="table table-striped table-hover">
   <thead>
@@ -25,13 +40,12 @@ However, there are excemptions and to give you an overview of what flows need an
     </tr>
     <tr>
       <td class="text-center">Initial Recurring/Installment Transaction</td>
-      <td>This is a special type of Customer Initiated Transaction. With PSD2 the first (initial) transaction within a recurring-chain needs to be covered by SCA. Each subsequent transaction then references this transaction. </td>
+      <td>This is a special type of Customer Initiated Transaction. With PSD2 the first (initial) transaction within a recurring-chain needs to be covered by SCA! Thus, we highly recommend forcing SCA (see further down in this chapter). Each subsequent transaction then references this transaction. </td>
       <td><a href="recurring.html">Recurring Integration</a>, <a href="Integration_PP.html">Payment Page Integration</a>, <a href="Integration_trx.html">Transaction Interface Integration</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> & <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> & <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a></td>
     </tr>
     <tr>
       <td class="text-center">Saving Cards</td>
-      <td>When saving cards inside the Saferpay Secure Alias Store, with the intent of doing any kind of MITs with said saved card afterwards, you must force Strong Consumer Authentication! This will be handled further down in this very chapter!</td>
-      <td><a href="scd.html">Secure Card Data registration</a>, <a href="https://saferpay.github.io/jsonapi/#ChapterAliasStore">Secure Card Data Store</a></td>
+      <td>If you intend on saving cards with the intent of doing MITs (see below), with no card holder presence, you must make sure, that SCA is performed during registration! You should force SCA. More information, on how to force SCA, can be found, further down in this chapter! However, if you simply intend on just saving the card, so the card holder doesn't have to enter his card details again, during the next transaction, you do not have to do SCA during</td>
     </tr>
   </tbody>
 </table>
@@ -55,13 +69,7 @@ However, there are excemptions and to give you an overview of what flows need an
     <tr>
       <td class="text-center">Subsequent Recurring/installment Transaction</td>
       <td>
-        These are transactions, that follow the initial recurring transaction (see above) and are a special type of Merchant initiated Transaction (see above). They must reference the initial transaction. Note, that due to that, they effectively also reference to the LiabilityShift of the initial transaction, giving an additional layer of protection for the merchant, by effectively granting subsequent LiabilityShift.
-        <div class="warning">
-          <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-          <p>
-            <strong>Important:</strong> The subsequent LiabilityShift may be rejected by the issuing bank. Also changing the amount may cause rejection of LiabilityShift, or even the denial of an authorization alltogether. A new initial transaction may be executed instead, starting a new recurring-chain!
-          </p>
-        </div>
+        These are transactions, that follow the initial recurring transaction (see above) and are a special type of Merchant initiated Transaction (see above). They must reference the initial transaction.
       </td>
       <td><a href="recurring.html">Recurring Integration</a>, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeReferenced">Authorize Referenced</a></td>
     </tr>
@@ -72,20 +80,21 @@ However, there are excemptions and to give you an overview of what flows need an
     </tr>
     <tr>
       <td class="text-center">One legged CIT transactions</td>
-      <td>Generally, we always recommend doing 3D Secure. However there are CITs, that do not need SCA. Cases are, if one side of the transaction (Merchant|Card Holder) is not part of the EU! So if you and/or your customer are outside of the EU, PSD2 does not apply!</strong></td>
+      <td>Generally, we always recommend doing 3D Secure. However there are CITs, that do not need SCA. Cases are, if either the card issuer (bank of the card holder), or the Acquirer of the Merchant, are outside the EEA (European Economic Area)! However, what is important here for the latter, is, in which country the acquiring contract has been signed. For instance: If a swiss merchant signs a contract within germany and a german card holder comes to his shop, PSD2 does indeed apply, even though the merchant is not inside the EEA! However the card issuer and the acquirer are!</td>
       <td>N/A</td>
     </tr>
   </tbody>
 </table>
 
-## <a name="psd2-force"></a> When to force SCA?
+## <a name="psd2-force"></a> When and how to force SCA?
 
 There are certain Cases, where SCA must be made, with no exception!
 Saferpay offers the option to force SCA during a transaction and you -the merchant- has to make sure, that the transaction (or registration) is covered by SCA in the following cases:
 
 + <strong>MITs via Card Alias:</strong> If you intend on doing any kind of MIT, like <a href="recurring.html#recurring-alias">Recurring Payments</a>, via an alias, you must force SCA during the registration.
   + <strong>Forcing SCA during a transaction:</strong> When registering a card, during a transaction, be it via the <a href="scd.html#scd-trx">Transaction interface</a> or the <a href="scd.html#scd-pp">Payment Page</a>, you must force a 3D Secure Challanged flow, by also setting the <strong>Authentication.ThreeDsChallenge</strong> parameter to <strong>FORCE</strong>, within the respective Initialization request. 
-  + <strong>Forcing SCA during a standalone registration:</strong> In some cases, it may be viable to save a card first, but charge it way later down the line. However, those transactions are usually MIT, with the card holder not being present! Due to that, SCA has to be performed during registration, requiring an <a href="scd.html#scd-check">Online Check with SCA</a>!
+  + <strong>Forcing SCA during a standalone registration:</strong> In some cases, it may be viable to save a card first, but charge it way later down the line. However, those transactions are usually MIT, with the card holder not being present! Due to that, SCA has to be performed during registration, requiring a <a href="scd.html#scd-check">Strong Online Check with SCA</a>!
++ <strong>Initial Recurring Transactions:</strong> We highly recommend you also force SCA during an initial transaction, for <a href="recurring.html">Recurring Payments</a>. When doing the initial transaction, be it through the <a href="Integration_PP.html">Payment Page</a> or the <a href="Integration_trx.html">Transaction Interface</a>, you should also set the <strong>Authentication.ThreeDsChallenge</strong> parameter to <strong>FORCE</strong>. 
 
  <div class="info">
   <p><strong>Important:</strong> This only applies, if you intend on doing MITs right after the registration! However if you plan on using the Alias for CITs with 3DS -and thus SCA- beforehand, or only that, then you do not have to consider this!</p>
@@ -109,7 +118,13 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
 <div class="warning">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important:</strong> The issuing bank always has the right to reject a transaction and ask for a full transaction, with SCA! This also applies to Recurring Transactions!
+    <strong>Important:</strong> The issuing bank always has the right to reject a transaction and ask for a full transaction, with SCA! This also applies to Recurring Transactions! In these cases, the transaction will run into a <strong>Soft decline (see below).</strong>
+  </p>
+</div>
+<div class="danger">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Caution:</strong> Do not submit exemptions on your own, without the consent of your Acquirer! The Acquirer otherwise has the right to deny these transsactions at any time!
   </p>
 </div>
 
@@ -151,6 +166,23 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
 
 ## <a name="psd2-decline"></a> Soft Decline
 
-**!!!INFORMATION NEEDED!!!
-Apparently we return a special code, if a transaction is declined, due to a lack of SCA!
-Would be great, but has to be confirmed!**
+A Soft decline is thrown, if a transaction without SCA is attempted, but the card issuer wants SCA to be performed. This usually happens during any kind of MIT, like <a href="recurring.html">Recurring Payments</a>. 
+In these cases, you have to contact your customer, so he/she may initiate another recurring chain, with SCA.
+So in case of <a href="recurring.html">Recurring Payments</a>, a new initial transaction has to be made.
+
+### Example of a Soft Decline Error message
+
+ ```json 
+ { 
+ "ResponseHeader": {
+    "SpecVersion": "[current SpecVersion]",
+    "RequestId": "[unique request id]"
+  },
+  "Behavior": "ABORT",
+  "ErrorName": "PAYER_AUTHENTICATION_REQUIRED",
+  "ErrorMessage": "Transaction declined by acquirer",
+  "TransactionId": "llOKnfAEW57QSAErGdIYbAtAQ1fb",
+  "ProcessorResult": "1A",
+  "ProcessorMessage": "Additional customer authentication required"
+}
+```
