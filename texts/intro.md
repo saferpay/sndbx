@@ -752,12 +752,12 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
 </table>
 
 <dl class="dl-horizontal">
-  <dt><td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td></dt>
+  <dt><td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></dt>
   <dd>This feature is available for the given Payment Method!</dd>
   <dt><span class="glyphicon glyphicon-ok" style="color: #ff0000"></span></dt>
-  <dd>This feature is mandatory, for this payment method to function!</dt>
+  <dd>This feature is mandatory, for this payment method to function!</dd>
   <dt><span class="glyphicon glyphicon-ok" style="color: #FFBF00"></span></dt>
-  <dd>This feature needs requirements to be met! Please refer to the specific payment method chapter!</dt>
+  <dd>This feature needs requirements to be met! Please refer to the specific payment method chapter!</dd>
   <dt><td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></dt>
   <dd>This feature is not available for the given Payment Method!</dd>
   <dt><td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></dt>
