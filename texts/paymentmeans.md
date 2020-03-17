@@ -240,7 +240,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
           <td style="border-left: 1px solid #ddd;">Challenged Y. This card simulates a successful challenged flow.<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> true</td>
       </tr>
       <tr>
-          <td style="word-break: unset;">9030004250000004</td>
+          <td style="word-break: unset;">9030003204000003
           <td style="border-left: 1px solid #ddd;">Challenged A. The authentication was not successful, but LiabilityShift is still granted.<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> false</td>
       </tr>
       <tr>
