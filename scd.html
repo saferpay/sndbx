@@ -986,7 +986,7 @@ You need to make sure, to provide a valid terminal Id, with activated acquiring-
 <li><strong>RANDOM_UNIQUE</strong>: Similar to <strong>RANDOM</strong>, it will create a random alpha numerical hash for you. The difference is, that it will check, if the card number (PAN) provided has already saved inside your alias store. If so, Saferpay will return the already existing alias, making sure, that no PAN can be saved twice or more!</li>
 </ol></div></div></section><section id="scd-use"><h2><a name="scd-use"></a> How to use the obtained data</h2><div class="row"><div class="col-sm-6"><p>The obtained alias can be used in two basic ways, which boil down to one important question:</p><p><strong>Do you want to do a 3D Secure transaction?</strong></p><ul>
 <li>If yes, then you have to use the <a href="https://saferpay.github.io/sndbx/Integration_trx.html">Transaction Interface</a>. The Hosted Form used there will not open up and instead proceed with the 3D Secure process right away.</li>
-<li>If not, then you can use <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">AuthorizeDirect</a> to authorize the card directly.</li>
+<li>If not, then you can use <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">AuthorizeDirect</a> to authorize the card directly. <strong>Do not forget to also <a href="index.html#capture">Capture/Finalize</a> the transaction.</strong></li>
 </ul><div class="warning">
   <p><strong>NOTE:</strong> Bancontact only supports the former, while Maestro has some cards, that also are 3D Secure only!</p>
 </div><div class="warning">
