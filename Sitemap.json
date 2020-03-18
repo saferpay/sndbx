@@ -7,7 +7,6 @@
       { "Source": "texts/intro.md", "Title": "Requirements", "Target": "index.html#intro-requirement" },
       { "Source": "texts/intro.md", "Title": "Data Security and PCI DSS", "Target": "index.html#pci" },
       { "Source": "texts/intro.md", "Title": "3-D Secure", "Target": "index.html#3ds" },
-      { "Source": "texts/intro.md", "Title": "PSD2 and 3-D Secure", "Target": "index.html#psd2" },
       { "Source": "texts/intro.md", "Title": "Dynamic Currency Conversion", "Target": "index.html#dcc" },
       { "Source": "texts/intro.md", "Title": "Versioning", "Target": "index.html#version" },
       { "Source": "texts/intro.md", "Title": "Payment Method Features", "Target": "index.html#pm-functions" },
@@ -27,6 +26,19 @@
       { "Source": "texts/interfaces.md", "Title": "Supported Payment Methods", "Target": "Interfaces.html#int-paymentmethods" },
       { "Source": "texts/interfaces.md", "Title": "What should i use?", "Target": "Interfaces.html#int-what" },
       { "Source": "texts/interfaces.md", "Title": "Questions?", "Target": "Interfaces.html#int-questions" }
+    ]
+},
+ {
+    "Title": "PSD2",
+    "Source": "texts/psd2.md",
+    "Target": "psd2.html",
+    "Subsites": [
+      { "Source": "texts/psd2.md", "Title": "Does PSD2 apply to me?", "Target": "psd2.html#psd2-apply" },
+      { "Source": "texts/psd2.md", "Title": "When to do SCA", "Target": "psd2.html#psd2-when" },
+      { "Source": "texts/psd2.md", "Title": "Overview", "Target": "psd2.html#psd2-overview" },
+      { "Source": "texts/psd2.md", "Title": "Whenand how to force SCA", "Target": "psd2.html#psd2-force" },
+     { "Source": "texts/psd2.md", "Title": "Exemptions", "Target": "psd2.html#psd2-exemptions" },
+     { "Source": "texts/psd2.md", "Title": "Soft Decline", "Target": "psd2.html#psd2-decline" },
     ]
 },
     {
