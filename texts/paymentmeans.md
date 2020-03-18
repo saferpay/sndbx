@@ -34,7 +34,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
       </tr>
       <tr>
           <td style="word-break: unset;">9010003750000005</td>
-          <td style="border-left: 1px solid #ddd;">3DS Failure, authorization will be attempted. This card fails the 3DS authentication. Interesting for testing the <strong>Condition</strong> parameter, to stop authorizations without LiabilityShift!<br /><strong>Liability shift:</strong> false, <strong>Authenticated:</strong> false</td>
+          <td style="border-left: 1px solid #ddd;">LiabilityShift can't be granted, due to technical reasons. Interesting for testing the <strong>Condition</strong> parameter, to stop authorizations without LiabilityShift!<br /><strong>Liability shift:</strong> false, <strong>Authenticated:</strong> N/A</td>
       </tr>
       <tr>
           <td style="word-break: unset;">9010004950000001</td>
@@ -233,7 +233,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
       </tr>
       <tr>
           <td style="word-break: unset;">9030003750000001</td>
-          <td style="border-left: 1px solid #ddd;">3DS Failure, authorization will be attempted. This card fails the 3DS authentication. Interesting for testing the <strong>Condition</strong> parameter, to stop authorizations without LiabilityShift!<br /><strong>Liability shift:</strong> false, <strong>Authenticated:</strong> false</td>
+          <td style="border-left: 1px solid #ddd;">LiabilityShift can't be granted, due to technical reasons. Interesting for testing the <strong>Condition</strong> parameter, to stop authorizations without LiabilityShift!<br /><strong>Liability shift:</strong> false, <strong>Authenticated:</strong> N/A</td>
       </tr>
       <tr>
           <td style="word-break: unset;">9030004950000007</td>
