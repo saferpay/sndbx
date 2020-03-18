@@ -1,14 +1,15 @@
 # PSD2
 
 With the introduction of PSD2 within the EU, the ruleset for doing card transactions, has been changed in many ways.
-This chapter contains information and best practices, when dealing with card transactions under PSD2!
+Specifically the need for <strong>S</strong>trong <strong>C</strong>onsumer <strong>A</strong>uthentication needsspecial attention from merchants.
+This chapter will contain important information on PSD2 and SCA specifically.
 
 ## <a name="psd2-apply"></a> Does PSD2 apply to me?
 
 The first step, is to figure out, if PSD2 applies to you -the merchant- in the first place.
 Important to know is, that PSD2 is valid for all countries inside the EEA (European Economic Area), which is **NOT the same as the European Union!** However the important part is, where you have signed your acquiring contract! When signing a card acceptance contract with an Acquirer, you have to pay attention to the country in which the contract is signed! Should this country be inside the EEA, then PSD2 does apply to you! **This is also applies, if you -the merchant- have your company headquarters outside the EEA!**
 
-## <a name="psd2-apply"></a> When to do SCA?
+## <a name="psd2-when"></a> When to do SCA?
 
 As a rule of thumb, ask yourself the following question: 
 
@@ -86,7 +87,7 @@ PSD2 is very complex. So to give you an overview of what flows need and what do 
   </tbody>
 </table>
 
-## <a name="psd2-force"></a> When and how to force SCA?
+## <a name="psd2-force"></a> When and how to force SCA
 
 There are certain Cases, where SCA must be made, with no exception!
 Saferpay offers the option to force SCA during a transaction and you -the merchant- has to make sure, that the transaction (or registration) is covered by SCA in the following cases:
