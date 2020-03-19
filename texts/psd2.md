@@ -166,7 +166,8 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
     </tr>
     <tr>
      <td class="text-center"><strong>Authentication.Exemption: "RECURRING"</strong></td>
-     <td>This transaction is a <a href="recurring.html">subsequent, recurring transaction</a>, which does not need SCA!</td>
+     <td>This transaction is a subsequent, recurring transaction, which does not need SCA!</td>
+      <td><a href="recurring.html">Recurring Flow</a></td>
     </tr>
     <tr>
      <td class="text-center"><strong>Authentication.ThreeDsChallenge: "AVOID"</strong></td>
@@ -179,6 +180,7 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
           </p>
         </div>
      </td>
+     <td><a href="Integration_PP.html">Payment Page Flow</a>, <a href="Integration_trx.html">Transaction Interface Flow</a></td>
     </tr>
   </tbody>
 </table>
