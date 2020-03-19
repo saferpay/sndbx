@@ -9,6 +9,8 @@ This chapter will contain important information on PSD2 and SCA specifically.
 The first step, is to figure out, if PSD2 applies to you -the merchant- in the first place.
 Important to know is, that PSD2 is valid for all countries inside the EEA (European Economic Area), which is **NOT the same as the European Union!** However the important part is, where you have signed your acquiring contract! When signing a card acceptance contract with an Acquirer, you have to pay attention to the country in which the contract is signed! Should this country be inside the EEA, then PSD2 does apply to you! **This is also applies, if you -the merchant- have your company headquarters outside the EEA!**
 
+However should PSD2 not apply to you, then you do not have to follow the rules for SCA. Even though we highly recommend doing 3D Secure, since it is also an anti-fraud measure, you can request an exemption, to avoid 3DS (see further below).
+
 ## <a name="psd2-when"></a> When to do SCA?
 
 As a rule of thumb, ask yourself the following question: 
@@ -145,7 +147,7 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
   </thead>
   <tbody>
     <tr>
-      <td class="text-center"><strong>LOW_VALUE</strong></td>
+      <td class="text-center"><strong>Authentication.Exemption: "LOW_VALUE"</strong></td>
       <td>
         <p>This transaction has an overall value of 30 Euros, or lower and thus does not fall under SCA by PSD2! However, that falls under certain rules:</p>
         <ul>
@@ -156,15 +158,27 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
      <td><a href="Integration_PP.html">Payment Page Flow</a>, <a href="Integration_trx.html">Transaction Interface Flow</a></td>
     </tr>
     <tr>
-     <td class="text-center"><strong>TRANSACTION_RISK_ANALYSIS</strong></td>
+     <td class="text-center"><strong>Authentication.Exemption: "TRANSACTION_RISK_ANALYSIS"</strong></td>
      <td>
        External Fraud Risk Analysis has been done and the transaction has been deemed at low risk.
      </td>
      <td><a href="Integration_PP.html">Payment Page Flow</a>, <a href="Integration_trx.html">Transaction Interface Flow</a></td>
     </tr>
     <tr>
-     <td class="text-center"><strong>RECURRING</strong></td>
+     <td class="text-center"><strong>Authentication.Exemption: "RECURRING"</strong></td>
      <td>This transaction is a <a href="recurring.html">subsequent, recurring transaction</a>, which does not need SCA!</td>
+    </tr>
+    <tr>
+     <td class="text-center"><strong>Authentication.ThreeDsChallenge: "AVOID"</strong></td>
+     <td>
+       <p>A 3D Secure challanged flow should  be avoided for this transaction!</p>
+        <div class="danger">
+          <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+          <p>
+            <strong>CAUTION:</strong> This value may only be used by merchants and transactions outside  the PSD2 scope. <strong>Do not</strong> use this value, without evaluating, if PSD2 applies to you/the transaction, or not! Attempting a transaction inside the PSD2 scope, with avoidance, will lead to a soft decline (see below)!
+          </p>
+        </div>
+     </td>
     </tr>
   </tbody>
 </table>
