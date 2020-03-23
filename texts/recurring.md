@@ -67,7 +67,7 @@ POST /Payment/v1/PaymentPage/Initialize
  ```json 
  { 
  "RequestHeader": {
-    "SpecVersion": "1.7",
+    "SpecVersion": "[CURRENT_SPEC-VERSION]",
     "CustomerId": "[your customer id]",
     "RequestId": "[unique request id]",
     "RetryIndicator": 0
@@ -117,7 +117,7 @@ Here is an example of a **PaymentPage Assert Response**:
 ```json
 {
   "ResponseHeader": {
-    "SpecVersion": "1.7",
+    "SpecVersion": "[CURRENT_SPEC-VERSION]",
     "RequestId": "[your request id]"
   },
   "Transaction": {
@@ -196,7 +196,7 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 ```json
 {
   "RequestHeader": {
-    "SpecVersion": "1.7",
+    "SpecVersion": "[CURRENT_SPEC-VERSION]",
     "CustomerId": "[your customer id]",
     "RequestId": "[unique request id]",
     "RetryIndicator": 0
