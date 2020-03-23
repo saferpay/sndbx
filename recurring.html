@@ -763,7 +763,7 @@
 </code></pre><p>Here is an example of a PaymentPage Request with the Container <strong>Recurring</strong>:</p><p><strong>Request URL</strong></p><pre><code class="language-http">POST /Payment/v1/PaymentPage/Initialize
 </code></pre><pre><code class="language-json">{ 
 &quot;RequestHeader&quot;: {
-   &quot;SpecVersion&quot;: &quot;[CURRENT_SPEC-VERSION]&quot;,
+   &quot;SpecVersion&quot;: &quot;[CURRENT SPEC-VERSION]&quot;,
    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
    &quot;RequestId&quot;: &quot;[unique request id]&quot;,
    &quot;RetryIndicator&quot;: 0
@@ -799,7 +799,7 @@
 <li><a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize">Transaction Authorize</a> function.</li>
 </ul><p>Both request will provide you with information about the Transaction including the 3D Secure response:</p><p>Here is an example of a <strong>PaymentPage Assert Response</strong>:</p><pre><code class="language-json">{
   &quot;ResponseHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;[CURRENT_SPEC-VERSION]&quot;,
+    &quot;SpecVersion&quot;: &quot;[CURRENT SPEC-VERSION]&quot;,
     &quot;RequestId&quot;: &quot;[your request id]&quot;
   },
   &quot;Transaction&quot;: {
@@ -862,7 +862,7 @@ You have to simply submit the <strong>TransactionId</strong> from your initial t
 </ol><p>Here is an example of a <strong>Authorize Referenced Request</strong>:</p><p><strong>Request URL</strong></p><pre><code class="language-http">POST /Payment/v1/Transaction/AuthorizeReferenced
 </code></pre><pre><code class="language-json">{
   &quot;RequestHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;[CURRENT_SPEC-VERSION]&quot;,
+    &quot;SpecVersion&quot;: &quot;[CURRENT SPEC-VERSION]&quot;,
     &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
     &quot;RequestId&quot;: &quot;[unique request id]&quot;,
     &quot;RetryIndicator&quot;: 0
