@@ -349,7 +349,7 @@ Here you can see some examples of how the Hosted Fields may be integrated. Feel 
 
 It is important to understand, that the Saferpay Fields are just a way to capture the card details, but not to execute the transaction itself. That is done via the <a href="Integration_trx.html">Transaction Interface</a>.
 Once the **onSuccess** event is called, you need to forward the Hosted Fields token to your server-backend, in order to initialize the transaction itself and also gather the **RedirectUrl**, to perform things like 3D Secure and DCC. How you move the token to the backend is completely up to you.
-You can provide the onSuccess event with an AJAX-method to execute the initialize in the background on a successful submit and forward the **RedirectUrl** to the fronent for a redirect this way, which you then can open in an iFrame, Lightbox, or as a full redirect.
+You can provide the onSuccess event with an AJAX-method to execute the initialize in the background on a successful submit and forward the **RedirectUrl** to the fronend for a redirect this way, which you then can open in an iFrame, Lightbox, or as a full redirect.
 However a redirect via GET, or POST, towards your initialize-script, is also an option, of course.
 Refer to the above mentioned chapter, to learn, how to initialize a transaction, using a Hosted Fields token.
 <div class="warning">
