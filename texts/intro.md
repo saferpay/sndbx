@@ -684,12 +684,6 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
   <dt>Capture|Cancel</dt>
   <dd>
     Capture required, Cancel possible.
-    <div class="info">
-      <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-      <p>
-        <strong>Important:</strong> A <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">Cancel</a> cannot be performed, after the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>! A Capture immediately initiates the money-flow from the card holders bank account. At this point, a refund has to be issued instead!
-      </p>
-    </div>
   </dd>
   <dt>Multipart Captures</dt>
   <dd>Multipart Captures can be performed! <strong>SIX ACQUIRING ONLY!</strong></dd>
