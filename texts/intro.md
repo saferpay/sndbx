@@ -37,8 +37,8 @@ The following tips, tricks and also "don't"s should help to build a fully PCI-co
 The PCI-DSS certification is devided into multiple compliance levels, called SAQ (Self Assigned Questionary). Each SAQ has its own set of questions and requirements to meet in order to be certified. **Every** party involved with the processing of credit card information has to be PCI-compliant. That includes you -the merchant-, your Payment Service Processor -in this case Saferpay- your Acquirer -for example SIX Payment Services- and the card holders bank -also called Issuer-. Each certification is valid for a year at most and has then to be renewed.
 
 The two PCI levels most relevant for the majority of merchants integrating Saferpay into their webhsop are; SAQ-A and SAQ-A EP.
-
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> Saferpay is capable of covering multiple levels of PCI-compliance besides SAQ-A and EP. Please contact your acquirer/processor or a specialized company, should you have any questions regarding PCI compliancy. You can also find more information as well as sample SAQ-questionnaires <a href="https://www.pcisecuritystandards.org/document_library?category=saqs#results">on the official PCI DSS website</a> to get a better understanding and overview about the requirements you have to meet as a merchant, or ask your Acquirer/Credit Card Processor (e.g. SIX Payment Services) for help!</p>
 </div>
 
@@ -48,8 +48,8 @@ The two PCI levels most relevant for the majority of merchants integrating Safer
 2. **SAQ-A EP** <br /> If the SAQ-A level does not suite your requirements or demands, you can certify for SAQ-A EP. This level is more advanced as it enables you to use your own (HTML-)form, however it also requires more effort to be certified. The certification process involves matters like intruder and virus scans and certain firewall configurations.
 
 3. **SAQ-C (VT)** <br /> This is a special certification for merchants, who want to do Mail Phone Order Transactions and card registrations through their own systems. While the JSON-API can be used to capture cards by a merchant employee through the phone, on the merchant system, further tasks and requirements have to be met by the merchant and his system, in order to be allowed to do this. Even the usage of the Saferpay Hosted Form is not enough in this case, because the card details are captured by the merchants employee. Due to that, a higher certification-level is required!
-
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> The Saferpay Backoffice itself offers tools to capture card details in a PCI-compliant manner, for Mail Phone Order Transactions, or just register them inside the Secure Alias Store! However the Backoffice does not offer an interface, to be integrated into a merchant-system. If that is required, a SAQ-C certification is inevitable!</p>
 </div>
 
@@ -59,13 +59,15 @@ Even with an SAQ-A EP certification, some processes are still not allowed. The f
 
 1. **Credit Card Information**: It is not allowed to process credit card data through the merchants server. This includes, among others posting credit card data from an HTML-form to the merchant-server to perform a Saferpay request. It is especially forbidden to save credit card data. It doesn't just involve saving! It is enough, if the card details run through your system and be it for just a second! **All credit card information involving the Card Verification Code (CVC/CVV) and the card number (PAN), must be processed through Saferpay, if you aren't explicitly allowed to do otherwise!** Saferpay does offer the option, to post the collected data directly, however this can only be used by merchants that are fully PCI-certified and allowed to process/save credit card data accordingly.
 
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Warning: DO NOT</strong> use real credit card details, when testing on the Saferpay test-environment! Even though the test accounts cannot process real payment means, it is also important to not share them in the first place on the test-system, for security reasons!</p>
 </div>
 
 ## <a name="3ds"></a> 3-D Secure
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>New:</strong> Introducing 3-D Secure 2 for Visa and Mastercard. Less hassle for customers, a higher conversion rate for you! Already have a Saferpay Integration with the JSON-API <strong>and 3-D Secure</strong>? Great! Saferpay will rollout 3DSv2 automatically for you starting in May 2019, with no changes needed!</p>
 </div>
 
@@ -99,8 +101,8 @@ Here is what happens, either with, or without 3-D Secure/LiabilityShift:
 
 1. **Without 3-D Secure/Liabilityshift:** 
 The Money gets transfered back, from the merchants bank account, to the original card holder. The merchant, in this case, is liable for the damage that has been caused and even though the goods already have been shipped (probably to a criminal subject), he has to pay the full amount back to the card holder. So he carries the whole risk and the cost in a fraud-case!
-
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> A high amount of chargebacks can also cause penalties from the brands (E.g. VISA and MasterCard) directly! So it can be, that they will force you -the merchant- into using 3-D Secure, if the fraud-rate is too high!</p>
 </div>
 
@@ -114,11 +116,13 @@ The card holder will get his money back, **BUT**, unlike before, the merchant ca
 The Saferpay JSON-API does return all necessary information inside the Liability-Container, when using [Transaction Authorize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize) or [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert).
 The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>. Furthermore <strong>LiableEntity</strong> will provide information about who will be liable in case of fraud.
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> Only the <a href="Integration_trx.html">Transaction interface</a> and <a href="Integration_PP.html">Payment Page</a> processes do support 3-D Secure! Please keep that in mind, when implementing Saferpay!</p>
 </div>
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> With 3DSv2 the XID value format changes (see respective request specification and below), while the VerificationValue is no longer returned!</p>
 </div>
 
@@ -135,22 +139,21 @@ The important parameters are <strong>Authenticated</strong> and especially <stro
 ```
 
 It depends on the merchant, how to proceed further, however Saferpay does recommend the following behaviors:
-
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Tip:</strong> Only want to accept transactions with LiabilityShift? Check out the <strong>Condition</strong>-flag, that can be set within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> requests, to control  whether an authorization should be performed, or not, in the first place. <strong>Important Note:</strong> Issuers may reject the LiabilityShift with the authorization itself. The Condition-parameter does not cover such cases. Please still process the parameters accordingly!
   </p>
 </div>
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Attention:</strong> These are <strong>only recommendations!</strong> Your credit card contract can dictate otherwise. Please contact your acquirer/card processor for further information!
   </p>
 </div>
 
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Caution:</strong> Saferpay also returns <strong>LiabilityShift: false</strong>, if the used payment method does not support 3D Secure at all! Please also check the used payment method! Information, about whether, or not a payment method does support 3DS, <a href="index.html#pm-functions">can be found over here!</a>
@@ -199,10 +202,12 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
   </tbody>
 </table>
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> If you intend on doing a dummy authorization, using 3-D Secure as a card holder verification measure, we do not recommend an amount < 1,-! Small amounts often get rejected by issuing banks, thus causing issues, with amount 0 not being possible at all.</p>
 </div>
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> If you want to keep the amount of <strong>Challenged</strong> transactions as low and thus your conversion-rate as high as possible, please make sure to submit a <strong>BillingAddress</strong> and <strong>DeliveryAddress</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> requests. This information will then be used for the scoring, as mentioned earlier, to increase the possibility of a frictionless transaction and thus a smooth experience for your customers!</p>
 </div>
 
@@ -234,7 +239,8 @@ For example, if you want to go back to the 1.4 specification, simply add the ver
 https://saferpay.github.io/jsonapi/1.4
 ```
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> SpecVersion 1.1 and lower are not available, since those were only released for internal use</p>
 </div>
 
@@ -269,7 +275,8 @@ If you plan on upgrading to a newer SpecVersion, you may have to keep the follow
   </tbody>
 </table>
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> You should also keep an eye on <a target="_blank" href="https://saferpay.github.io/jsonapi/#changelog">our API Changelog</a>, where we keep a record of API changes!</p>
 </div>
 
@@ -763,7 +770,8 @@ A [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) 
 
 Not all payment methods need a separate capture to trigger the cash flow. You can find an overview of which payment methods must be captured [under Payment Method Features](https://saferpay.github.io/sndbx/index.html#pm-functions). Methods, that do not need the capture, will return the status **"CAPTURED"** right away.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important:</strong> A reservation made through a certain payment processor, may only last for a limited time only. If this timeframe is exceeded, the authorised amount is released and 
 becomes available to the card holder again. This may have the result that the amount can no longer be claimed. We recommend to <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> an authorization as soon as possible. Either by direct API call, or manually via Saferpay Backoffice. If this is not possible, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> nonetheless must be done as soon as possible. With PayPal, this must happen within 48 hours. 
 Otherwise, it may be that the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> -and thus the money-transfer- will be refused. For other payment methods, a later <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> is sometimes possible. If necessary, please speak to your processor about guaranteed reservation times.</p>
@@ -788,7 +796,8 @@ If desired, this step can also be triggered via the Saferpay API. The request ne
 However, before you can use the API, you need to disable the daily closing in the Saferpay 
 Backoffice via "Administration -> Terminals" for the respective terminal. Closing should be carried out only once a day.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important:</strong> Once the closing is complete, a transaction cannot be <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">cancelled</a></p> anymore! You have to execute a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund</a> instead!
 </div>
 
