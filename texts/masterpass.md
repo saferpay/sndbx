@@ -12,7 +12,8 @@ The handling of Masterpass payments with Saferpay requires:
 * The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> In order for Masterpass to be activated, please contact your contract manager. He/She can guide you and will initiate all the necessary steps, so you can start accepting Masterpass.</p>
 </div>
 
@@ -62,7 +63,8 @@ If you want to perform a direct redirect to Masterpass, you have to use the para
 
 ```
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>IMPORTANT:</strong> If you are using <strong>"Wallets"</strong> alongside <strong>"PaymentMethods"</strong>, both parameters will be treated equally and a selection-screen will be displayed!</p>
 </div>
 
@@ -177,7 +179,8 @@ The address will then be delivered via the [PaymentPage Assert](https://saferpay
 
 ```
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>IMPORTANT:</strong> Saferpay can capture the billing address in multiple ways. Either the merchant does capture it himself and submits the data through the respective request. If you request the DeliveryAddress through Masterpass, using above example, it will be overwritten by the wallet-address!</p>
 </div>
 
