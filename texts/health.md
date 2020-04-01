@@ -6,7 +6,9 @@ This function is available for test and production respectively and involves a s
 + **Live:** <code>https://www.saferpay.com/api/health/[YOUR CUSTOMERID]</code>
 + **Test:** <code>https://test.saferpay.com/api/health/[YOUR CUSTOMERID]</code>
 
-<div class="danger">
+
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>IMPORTANT NOTE:</strong> When using the Health-Check, you agree to the following rules:</p>
   <ul>
     <li>Do not poll the API status, without any limiter (see below!).</li>
