@@ -736,7 +736,8 @@
 <li>A valid iDeal merchant account.</li>
 <li>iDeal is only available via the <a href="Integration_PP.html">PaymentPage flow</a>!</li>
 <li><strong>NotifyUrl:</strong> The NotifyUrl is <strong>mandatory</strong>, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!</li>
-</ul><div class="warning">
+</ul><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> For iDeal activation on the Saferpay terminal, please contact your sales contact.</p>
 </div></div></div></section><section id="ideal-timeout"><h2><a name="ideal-timeout"></a> Session Timeouts</h2><div class="row"><div class="col-sm-6"><p>Due to special technical restrictions by iDeal, you have to be very careful using it in time-sensitive scenarios.
 iDeal-transactions usually are finished within the Saferpay Payment Page timeout of 20 minutes.
@@ -745,9 +746,11 @@ So if your session runs into a timeout during this window, it could be, that the
 <strong>We generally recommend setting the timeout to 35 minutes, however the processing can take up to 12 hours on iDeal-side!</strong>
 If you are running a time-sensitive process, that requires your session to be lower, than this timne frame, we recommend not using iDeal!
 Furthermore, we highly recommend <a href="https://saferpay.github.io/sndbx/Integration_PP.html#pp-initialize">using the NotifyUrl for the Saferpay Payment Page</a>, which will be called, once we (Saferpay) get a successful response from iDeal!
-This way your shop does get the necessary information in case of a success, even after 12 hours and can initiate further processing.</p></div></div></section><section id="ideal-pre"><h2><a name="ideal-pre"></a> Bank Pre-Selection</h2><div class="row"><div class="col-sm-6"><p>You may want to implement the Bank selection for iDeal payments into your shop, or just pre-select the bank for your customer, so they do not have to. Saferpay offers an option, to skip the selection page and jump right to your customers online banking site, so he/she may perform the payment.</p><div class="warning">
+This way your shop does get the necessary information in case of a success, even after 12 hours and can initiate further processing.</p></div></div></section><section id="ideal-pre"><h2><a name="ideal-pre"></a> Bank Pre-Selection</h2><div class="row"><div class="col-sm-6"><p>You may want to implement the Bank selection for iDeal payments into your shop, or just pre-select the bank for your customer, so they do not have to. Saferpay offers an option, to skip the selection page and jump right to your customers online banking site, so he/she may perform the payment.</p><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> This feature is only available with <strong>SpecVersion 1.15</strong> and up!</p>
-</div><p>In order to pre-select the bank, you have to set the parameter <strong>PaymentMethods</strong> with the value <strong>IDEAL</strong>, in order to pre-select iDeal in general and then you have to fill in the parameter <strong>PaymentMethodsOptions.Ideal.IssuerId</strong> with one of the following values, depending on which bank you want to pre-select:</p><div class="warning">
+</div><p>In order to pre-select the bank, you have to set the parameter <strong>PaymentMethods</strong> with the value <strong>IDEAL</strong>, in order to pre-select iDeal in general and then you have to fill in the parameter <strong>PaymentMethodsOptions.Ideal.IssuerId</strong> with one of the following values, depending on which bank you want to pre-select:</p><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> These Values are issued, by iDeal and underly changes, as they seem necessary!</p>
 </div></div></div></section><section><h3>Test Environment Values</h3><div class="row"><div class="col-sm-6"><table class="table table-striped table-hover">
   <thead>
@@ -830,13 +833,13 @@ Due to this, Saferpay offers a workaround, to make manual SEPA-refunds easier fo
 As mentioned before, SEPA does not offer direct refunds via the processing itself. This is why Saferpay first collects all executed refunds inside the backoffice:
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund_Export.png" alt="alt text" title="Manual refund activation"></p><p>These refunds need then to be exported into a special XML-File, which can be done right there inside the Backoffice.
 The created XML-file can then be uploaded into your online banking-portal, which executes these refunds in a batch, eliminating the need, of doing them all manually.
-You can <a href="https://github.com/saferpay/sndbx/blob/master/assets/other/ManualBankRefund-2019-09-13-10-50-28-Example_File.xml" download>download an example-file here</a>.</p><div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+You can <a href="https://github.com/saferpay/sndbx/blob/master/assets/other/ManualBankRefund-2019-09-13-10-50-28-Example_File.xml" download>download an example-file here</a>.</p><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> It may be necessary to contact your bank, for this import-feature to be activated! Some also may not offer it at all!
   </p>
-</div><div class="danger">
-  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+</div><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Caution:</strong> SEPA-refund-files from the test-environment can't be uploaded into online-banking portals, since they only contain test-data, thus non-valid IBANs!
   </p>
