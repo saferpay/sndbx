@@ -6,13 +6,14 @@ In order to understand the Saferpay marketplace-solution, one must first grasp t
 
 1. If you want to use the Submerchant and Fee-features, your live merchant-account needs to be configured, in order to support Multipart Captures, or the request will fail!
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
  <p><strong>Important:</strong> As mentioned in the beginning, a special setup is necessary to acces the following features. Once this setup has been done, you will be unable to execute normal <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Captures</a> <strong>(Exception being Refunds!)</strong> and Captures inside the Saferpay Backoffice won't be possible anymore! Please keep that in mind, during implementation!</p>
 </div>
 
 ## <a name="mark-submerchants"></a> Submerchants
-
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
  <p><strong>IMPORTANT:</strong> Please read this chapter completely, <strong>INCLUDING</strong> the chapter about <strong>Applying Fees</strong>!</p>
 </div>
 
@@ -59,7 +60,8 @@ This request will transfer 10 CHF to the merchant with the Id 17312345!
 
 ## <a name="mark-fee"></a> Applying Fees
 
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
  <p><strong>IMPORTANT:</strong> If you are using the submerchant-feature, you <strong>must</strong> set either <strong>Fee</strong> or <strong>FeeRefund</strong> (Depending on the request!). If you do not intend on applying a fee, you musst still set it, with an amount set to 0!</p>
 </div>
 
