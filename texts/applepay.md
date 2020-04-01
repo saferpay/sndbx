@@ -16,7 +16,8 @@ The handling of ApplePay payments with Saferpay requires:
 * Furthermore, only Apples own browser, Safari, is supported. <strong>Exception being the test environment, so you may test it in other browsers!</strong>
 * ApplePay does not support [Secure Card Data](scd.html), even though the means of payment may support it! However [Recurring Payments](recurring.html) can be executed, if supported by the payment mean!
 
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Warning:</strong> ApplePay does not support the iFrame Integration! If a Direct Redirect (see below) is performed, Saferpay will break out of the iFrame!</p>
 </div>
 
@@ -76,6 +77,7 @@ If you want to perform a direct redirect to ApplePay, you have to use the parame
 
 ```
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> If you are using <strong>"Wallets"</strong> alongside <strong>"PaymentMethods"</strong>, you can limit the Brands, your customer may use! However note, that the Payment Page then also will display the given Brands as dedicated Payment Methods, so the customer may pay this way!</p>
 </div>
