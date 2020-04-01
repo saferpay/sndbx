@@ -1,7 +1,7 @@
 # Saferpay Fields
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant!</p>
 </div>
 
@@ -45,8 +45,8 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-create-api-key.png "New API Key mask")
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Very Important:</strong> Saferpay will indeed validate the used Source-URL and the used TerminalId! It is enough to just enter the base-url, of your shop here. If you use multiple terminals, you have to generate more API-Keys for each terminal. <strong>HTTPS IS MANDATORY</strong> and will be checked!<br /> Should you have misconfigured the access-token, the <strong>.init({options}) - onError</strong> callback will be triggered, returning an <strong>"Access forbidden!"</strong> message. Make sure, you've set the correct URL, for the system you are currently running on, especially during integration and then later deployment!
   </p>
@@ -55,8 +55,8 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
 Once created, you will be presented with a basic integration-example:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-api-key.png "API Key")
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Very Important:</strong> Once you move from the Test-Environment to the Live-Environment, you need to create a new Access Token on your live account!
   </p>
@@ -123,8 +123,8 @@ However you must make sure, that you define the placeholders -can be ```<div>```
   </tbody>
 </table>
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> The placeholder must have a height > 0, or the iframe will inherit this height!
   </p>
@@ -332,7 +332,8 @@ Saferpay Hosted Fields are supported by the following Browsers:
 
 Here you can see some examples of how the Hosted Fields may be integrated. Feel free to use this code, if you have trouble integrating.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> If you want to test Saferpay Hosted Fields, you can eddit all examples in JSFiddle. Please click on the link on the upper right side of the examples: <i>Edit in JSFiddle</i></p>
 </div>
 
@@ -352,8 +353,8 @@ Once the **onSuccess** event is called, you need to forward the Hosted Fields to
 You can provide the onSuccess event with an AJAX-method to execute the initialize in the background on a successful submit and forward the **RedirectUrl** to the fronend for a redirect this way, which you then can open in an iFrame, Lightbox, or as a full redirect.
 However a redirect via GET, or POST, towards your initialize-script, is also an option, of course.
 Refer to the above mentioned chapter, to learn, how to initialize a transaction, using a Hosted Fields token.
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> This process has to be finished within 20 minutes, after the submission of the card details. Saferpay will discard the card details afterwards and the Saferpay Fields token becomes invalid!
   </p>
