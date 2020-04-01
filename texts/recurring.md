@@ -2,12 +2,13 @@
 
 Recurring payments are transactions processed on a regular basis under a pre-authorized agreement. They are particularly interesting for subscription or instalment business models. This chapter describes the main concept on how the perform recurring payments.
 
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
       <p><strong>Very Important:</strong> Please also consider the <a href="psd2.html">PSD2 chapter</a>, when executing recurring payments!
       </p>
 </div><br />
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
       <p><strong>NOTE: </strong>Before you start, you have to consider the following: Each transaction has to be triggered by you your system. Please see <strong>Automating the Recurring Payments</strong> further down in this chapter!</p>
 </div>
 
@@ -96,8 +97,8 @@ POST /Payment/v1/PaymentPage/Initialize
 ```
 
  
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> Due to laws, defined within PSD2, Saferpay will force a 3DS Challenge, if a transaction is labeled as <strong>recurring.initial = true</strong>!
   </p>
@@ -162,7 +163,8 @@ Here is an example of a **PaymentPage Assert Response**:
 
 You must save the **TransactionId** (Container: "Transaction">"ID"), returned in the Paymentpage Assert or Transaction Authorize response as this value will be used to reference recurring payments.
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong>We recommend only to proceed, if the parameter “Authenticated” is true. This value indicates that the card holder has performed a full successful authentication (3D Secure process) at his bank. This option provides the highest level of security against fraud. Please take notice that some banks will skip the 3Dsecure process if they consider the transaction to have a low risk thus will still grant Liabilityshift although the cardholder did not have to authenticate him or herself. In that case the values returned for ”LiabilityShift” will be “true” and  “Authenticated” will be “false”. You should assess which level of security suits best to your business model and target group before deciding how to handle these two parameters.</p>
 </div>
 
@@ -216,11 +218,11 @@ POST /Payment/v1/Transaction/AuthorizeReferenced
 }
 ```
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong>  The Amount is a mandatory value which can vary from the Amount of the initial transaction. A change of amount has to be communicated with the card holder and you <strong>must</strong> re-do this process, to start the recurring-chain over again!</p>
 </div><br />
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>IMPORTANT:</strong> Each Transaction with the Status **Authorized** has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual money transfer.</p>
 </div><br />
@@ -234,8 +236,8 @@ A second method is to use the Saferpay Secure Alias Store in conjunction with th
 The alias can be obtained in multiple ways, using the Saferpay Secure Card Data store. [All of those options are described over here](https://saferpay.github.io/sndbx/scd.html).
 By using the [Payment Page](https://saferpay.github.io/sndbx/Integration_PP.html) or [Transaction Interface](https://saferpay.github.io/sndbx/Integration_trx.html), it is possible to do an initial transaction, to validate the card (e.g. through 3D Secure), similar to the referenced transaction-process above! The initial payment, unlike with a referenced authorization, can then be discarded, once the alias has been obtained, using [Transaction Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel). This way the card holder doesn't get charged for the dummy-amount!
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
       <p><strong>Important:</strong> Amount values that undercut a certain value, can cause problems during the 3D Secure-process, thus we recommend a value of 500 (5,00 €). As mentioned above, this transaction can be discarded. It is only, to prevend the mentioned issues with 3D Secure!</p>
 </div><br />
 
@@ -243,7 +245,8 @@ By using the [Payment Page](https://saferpay.github.io/sndbx/Integration_PP.html
 
 Once tha alias has been obtained, you can execute the subsequent transactions using [AuthorizeDirect Request](http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeDirect). The alias has to be filled into the **PaymentMeans => Alias** container.
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
       <p><strong>Important:</strong> Please <strong>DO NOT</strong> save the CVC value inside your database and submit it yourself, unless you are certified to do so.</p>
 </div>
 
@@ -261,7 +264,7 @@ Once tha alias has been obtained, you can execute the subsequent transactions us
     * [Cancel/Abort the Transaction](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel)
 6. Transaction is finished! 
 
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
       <p><strong>Important:</strong> Each Transaction with the Status <strong>Authorized</strong> has to be <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">captured</a> to initiate the actual transfer of money.</p>
 </div>
@@ -274,7 +277,8 @@ With cronjobs you can schedule a command or script on your server to run automat
 
 The cronjob can be linked with a script (e.g. PHP, or a Bash script) that will be executed, every time the cronjob is triggered to automatically perform transactions. You should decide when and how often the payments have to be triggered depending on your business model and the prearranged scheduling of payments. 
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE: </strong>Please note that each transaction has to be finalized by calling the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">capture function</a> including the automated recurring transactions.</p>
 </div>
 
