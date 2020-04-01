@@ -28,8 +28,8 @@ The following requirements are to be met, if Twint User on File is to be used, a
 + The activation of User on File for your contract. Please as your contractual manager, if you want this feature enabled!
 + JSON API Version 1.14 or later 
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> Twint User on File is only available via the <a href="scd.html#scd-sa">Standalone Secure Card Data registration</a>!
   </p>
@@ -140,8 +140,8 @@ The <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias 
 }
 ```
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> One speciality with Twint User on File is, the <strong>Twint.CertificateExpirationDate</strong> parameter. Each registered Twint payment mean, will have its own expiration date within the Twint system, <strong>which does not correspond with the Saferpay Alias Lifetime</strong>! The parameter will return the expiration date of this registration certificate. Once it has passed, the Twint alias becomes invalid, after a <strong>maximum of 13 months</strong>!
   </p>
