@@ -99,13 +99,15 @@ Saferpay offers the option to force SCA during a transaction and you -the mercha
   + <strong>Forcing SCA during a standalone registration:</strong> In some cases, it may be viable to save a card first, but charge it way later down the line. However, those transactions are usually MIT, with the card holder not being present! Due to that, SCA has to be performed during registration, requiring a <a href="scd.html#scd-check">Strong Online Check with SCA</a>!
 + <strong>Initial Recurring Transactions:</strong> We highly recommend you also force SCA during an initial transaction, for <a href="recurring.html">Recurring Payments</a>. When doing the initial transaction, be it through the <a href="Integration_PP.html">Payment Page</a> or the <a href="Integration_trx.html">Transaction Interface</a>, you should also set the <strong>Authentication.ThreeDsChallenge</strong> parameter to <strong>FORCE</strong>. 
 
- <div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important:</strong> This only applies, if you intend on doing MITs right after the registration! However if you plan on using the Alias for CITs with 3DS -and thus SCA- beforehand, or only that, then you do not have to consider this!</p>
 </div><br />
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> If you have a high risk business, or generally want a higher level of protection against fraud, you can, of course, force SCA too!</p>
 </div><br />
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Caution:</strong> Forcing SCA during the first transaction/registration, does NOT excuse you from doing SCA/3D Secure afterwards, if you intend on doing CITs with a saved card! There are exemptions (see below), but those also have their own set of rules to follow!
@@ -118,19 +120,19 @@ SCA Exemptions are certain cases, where SCA either doesn't havve to be applied, 
 Transactions in these cases must be flagged accordingly, or they may be refused. Also, in any case, the merchant would perform transactions against the PSD2!
 The Exemption value may be submitted via the <strong>Authentication.Exemption</strong> parameter, within the respective initial request (see flows and requests column).
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> The issuing bank always has the right to reject a transaction and ask for a full transaction, with SCA! This also applies to Recurring Transactions! In these cases, the transaction will run into a <strong>Soft decline (see below).</strong>
   </p>
 </div>
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Caution:</strong> Do not submit exemptions on your own, without the consent of your Acquirer! The Acquirer otherwise has the right to deny these transsactions at any time!
   </p>
 </div>
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Very Important:</strong> Even if you are allowed to submit exemptions, you have to make sure, that your implementation generally follows the PSD2 rules!
@@ -173,8 +175,8 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
      <td class="text-center"><strong>Authentication.ThreeDsChallenge: "AVOID"</strong></td>
      <td>
        <p>A 3D Secure challanged flow should  be avoided for this transaction!</p>
-        <div class="danger">
-          <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+        <div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
           <p>
             <strong>CAUTION:</strong> This value may only be used by merchants and transactions outside  the PSD2 scope. <strong>Do not</strong> use this value, without evaluating, if PSD2 applies to you/the transaction, or not! Attempting a transaction inside the PSD2 scope, with avoidance, will lead to a soft decline (see below)!
           </p>
