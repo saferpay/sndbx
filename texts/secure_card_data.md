@@ -27,7 +27,7 @@ Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive p
 * Bancontact
 * Credit Cards over Masterpass
 
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
    <strong>Caution:</strong> Please also consider the <a href="psd2.html">PSD 2 chapter</a>, to check, if your flow falls under certain PSD2 rules, especially, if you intend on using the Alias for Recurring Payments!
@@ -71,7 +71,8 @@ In order to request an Alias with the [PaymentPage Assert](http://saferpay.githu
   }
 }
 ```
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong>The IdGenerator has multiple options to choose from. All of them will be explained later in this chapter!</p>
 </div>
 
@@ -128,7 +129,8 @@ Once a successful transaction has been made through the PaymentPage, you will ge
   }
 }
 ```
-<div class="warning">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important:</strong>The Payment Page <strong>CAN NOT</strong> be used to authorize the obtained Alias! It can only register cards!</p>
 </div>
 
@@ -151,7 +153,7 @@ Once a successful transaction has been made through the PaymentPage, you will ge
 }
 ```
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong>The IdGenerator has multiple options to choose from. All of them will be explained later in this chapter!</p>
 </div>
@@ -225,7 +227,7 @@ However there are two major differnces:
 
 In order to open up the hosted Card Entry Form, you first need to execute the [Alias Insert Request](http://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert).
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> Don't like the style of the Hosted Form? Try our <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
 </div>
@@ -266,7 +268,7 @@ However, you need to consider the following restrictions:
 In order, to let a card get checked, you need to set the **Check**-container within the [initial registration-request](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert).
 You need to make sure, to provide a valid terminal Id, with activated acquiring-contracts for VISA and MasterCard.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
    <strong>Important:</strong> The <strong>Type</strong> parameter has two values: 
@@ -381,10 +383,12 @@ The obtained alias can be used in two basic ways, which boil down to one importa
 + If yes, then you have to use the [Transaction Interface](https://saferpay.github.io/sndbx/Integration_trx.html). The Hosted Form used there will not open up and instead proceed with the 3D Secure process right away.
 + If not, then you can use [AuthorizeDirect](http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect) to authorize the card directly. <strong>Do not forget to also <a href="index.html#capture">Capture/Finalize</a> the transaction.</strong>
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong> Bancontact only supports the former, while Maestro has some cards, that also are 3D Secure only!</p>
 </div>
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong> Every alias is bound to the CustomerId you provide with the registration-request. All Terminals bound to that id can use the aliases, but not other CustomerIds! There is no way to share the aliases between different CustomerIds!</p>
 </div>
