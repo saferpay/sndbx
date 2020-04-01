@@ -1,5 +1,6 @@
 # Contact
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong><i class="glyphicon glyphicon-hand-right"></i> Tips for contacting us:</strong>
   Our technicians here at SIX are glad to assist you with any kind of technical problems. To make this process even faster, here are a few point you should consider, when contacting us.
   </p>
@@ -12,8 +13,9 @@
   </ul>
 </div>
 
-<div class="danger">
-  <p><strong>VERY IMPORTANT:</strong> Make sure that you <strong>NEVER</strong> accidently submit your real Card Details via E-Mail -Be it by Text or Screenshot-, when contacting us! If the mail is intercepted, or your mail service provder is hacked, then your card details will be leaked to the public! You can submit the last four numbers of your PAN however, which -in most cases- is sufficient, to identify it, but not to do harmful actions to you and your bank-account!</p>
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>VERY IMPORTANT:</strong> Make sure that you <strong>NEVER</strong> accidently submit your real Card Details via E-Mail -Be it by Text or Screenshot-, when contacting us! If the mail is intercepted, or your mail service provder is hacked, then your card details will be leaked to the public! You can submit the last four numbers of your PAN however, which -in most cases- is sufficient, to identify it, but not to do harmful actions to you and your bank-account! However still, you should keep even those to a minimum, or avoid it alltogether, if possible!</p>
 </div>
 
 ## Saferpay Integration Team
