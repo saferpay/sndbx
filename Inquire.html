@@ -737,7 +737,8 @@ However the Inquiry Interface has some restrictions, that have to be considered,
 <li><strong>Only successful transactions:</strong> As of now, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a> only works with successful transactions.</li>
 <li><strong>SpecVersion 1.11:</strong> You must use SpecVersion 1.11 and up.</li>
 <li><strong>Update delay:</strong> The result of a <em>Transaction/Inquire</em> request does not display the current status in real time because the requested data are updated with a few minutes delay.</li>
-</ol><div class="danger">
+</ol><div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> Saferpay reserves the right to restrict, or outright deny access to the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a>, due to excessive use of the interface, or violation of these rules!</p>
 </div></div></div></section><section id="inquire-examples"><h2><a name="inquire-examples"></a> Examples</h2><div class="row"><div class="col-sm-6"></div></div></section><section><h3>Example of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Transaction Inquire</a> request:</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{
  &quot;RequestHeader&quot;: {
@@ -809,7 +810,8 @@ However the Inquiry Interface has some restrictions, that have to be considered,
    }
  }
 }
-</code></pre></div></div></section><section><h3>Example of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Transaction Inquire</a> response for a failed transaction:</h3><div class="row"><div class="col-sm-6"><div class="danger">
+</code></pre></div></div></section><section><h3>Example of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Transaction Inquire</a> response for a failed transaction:</h3><div class="row"><div class="col-sm-6"><div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important note:</strong> As mentioned before, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire Interface</a> only works with successful transactions. Therefore you'll get the following response, if a transaction was either not completed by the payer, or was not successful.</p>
 </div><br><pre><code class="language-json">{
  &quot;ResponseHeader&quot;: {
