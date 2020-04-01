@@ -16,7 +16,8 @@ If you intend on saving Postcard-data for later use, Saferpay provides the possi
 *	Activation of Saferpay Secure Card Data in the Saferpay merchant account
 * The feature must also be activated on Postfinance side!
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> The registration of a Swiss Postcard is only possible with the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert</a> method. For that, you have to set the parameter "TYPE" to the value "POSTFINANCE".</p>
 </div>
 
@@ -36,6 +37,7 @@ The result of the registration can then be called up using the [Alias AssertInse
 
 The gathered alias can then be used for further authorizations, using [AuthorizeDirect](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeDirect).
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Info:</strong> Note, that Postfinance does not know the, for credit cards known and used, Mail Phone Order-Contracts. Simply use your normal eCommerce Terminal with Postfinance/Card activated!</p>
 </div>
