@@ -9,7 +9,8 @@ The handling of Bancontact payments with Saferpay requires:
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 * A valid Bancontact contract.
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> For Bancontact activation on the Saferpay terminal, please contact your sales contact.</p>
 </div>
 
