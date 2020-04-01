@@ -736,7 +736,8 @@
 <li>A valid PayPal merchant account.</li>
 <li>PayPal is only available via the <a href="Integration_PP.html">PaymentPage flow</a>!</li>
 <li><strong>NotifyUrl:</strong> The NotifyUrl is <strong>mandatory</strong>, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!</li>
-</ul><div class="warning">
+</ul><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> For PayPal activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your PayPal merchant account ID and the desired currency.</p>
 </div></div></div></section><section id="ppal-api-access"><h2><a name="ppal-api-access"></a> Grant API Approval for Saferpay</h2><div class="row"><div class="col-sm-6"><p>To enable processing of PayPal payments via Saferpay a few settings must be first specified in the PayPal Mercahnt account.</p><ol>
 <li>Log in to your PayPal business account at <a href="http://www.paypal.com/">www.paypal.com</a>.</li>
@@ -878,7 +879,8 @@
 <p>For Canada, USA and Mexico, specification of the province or the state with the parameter <strong>CountrySubdivisionCode</strong> is required. The abbreviation which must be forwarded corresponds to the two-digit code of the province or the federal state per ISO 3166-2.</p>
 <p>As soon as these attributes have been forwarded, Seller Protection comes into effect. PayPal verifies the supplied address details with the data filed by the buyer and refuses payment if the registered address does not concur with the specified address.</p>
 </div></div></div></section><section id="ppal-capture"><h2><a name="ppal-capture"></a> Capture and the solvency of the customer</h2><div class="row"><div class="col-sm-6"><p>Unlike credit cards, that give the merchant a certain guarantee for the authorized money, PayPal reserves the right to deny the payout of a transaction, if the solvency of the account holder changes negatively after the authorization.</p><p>Therefore Saferpay claims the money directly, once the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> of the transaction has been successfully executed. If the money cannot be claimed, the capture then returns an error.
-We generally recommend to execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> as soon as possible, to avoid any issues.</p></div></div></section><section id="ppal-iframe"><h2><a name="ppal-iframe"></a> PayPal iFrame integration</h2><div class="row"><div class="col-sm-6"><div class="danger">
+We generally recommend to execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> as soon as possible, to avoid any issues.</p></div></div></section><section id="ppal-iframe"><h2><a name="ppal-iframe"></a> PayPal iFrame integration</h2><div class="row"><div class="col-sm-6"><div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Warning:</strong> PayPal does not support the iFrame Integration!</p>
 </div><p>PayPal actively blocks the iFrame-Integration.
 In order to circumvent this issue, the Saferpay Payment Page will break out of the iFrame and display the PayPal website full-size, in order to make a payment possible.
