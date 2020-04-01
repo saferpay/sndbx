@@ -10,7 +10,8 @@ However, as BillPay is a third party provider, there are a few things which must
 *	A valid acceptance agreement for BillPay must be present.
 *	The address of the purchaser is present and is forwarded to BillPay.
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> For BillPay activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your BillPay credentials and the desired currency.</p>
 </div>
 ---
@@ -26,7 +27,8 @@ For certification, a simple transaction on the [Payment Page](https://saferpay.g
 
 If address data have already been captured in the shop, they can be forwarded to Saferpay via the corresponding parameter.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> Request with address forwarding. See the <strong>Payer => DeliveryAddress</strong> container. <Strong>Important:</strong> DeliveryAddress <strong>must</strong> be used!</p>
 </div>
 
@@ -86,7 +88,8 @@ If address data have already been captured in the shop, they can be forwarded to
 
 Alternatively, an address form, in which the customer must enter their address details, can be displayed in the Saferpay Payment Page. Make sure that all the address details needed for BillPay payment are requested in the address form.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> Request for form usage. See the <strong>DeliveryAddressForm</strong> container. <Strong>Important: DeliveryAddressForm must</strong> be used!</p>
 </div>
 
@@ -138,7 +141,8 @@ Alternatively, an address form, in which the customer must enter their address d
 
 With [Payment Page Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert), all the necessary information is sent back to the merchant. This includes the transfer of purchase-on-invoice credit transfer data that must be forwarded to the buyer.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> Example Payment Page Assert Response</p>
 </div>
 
@@ -207,7 +211,8 @@ Like other means of payment, BillPay transactions must also be booked. For this 
 
 Some of the key information, such as the invoice data, are returned by Saferpay via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture).
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> Example for Capture Response</p>
 </div>
 
@@ -237,7 +242,8 @@ Some of the key information, such as the invoice data, are returned by Saferpay 
 
 Because it is not always possible to conduct certification in every shop without interrupting live operations, Saferpay Backoffice offers the option of creating a payment URL for a BillPay test payment via the Payment Page. This can be used to perform the acceptance test.
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> Because this is not loaded via the shop, the shop is not informed about the purchase. It is therefore necessary to manually create the invoice required by BillPay. You can find the necessary data for this in the Saferpay Backoffice via <strong>Transactions > Journal</strong>. Here you can find a list of all transactions, which you can then view in detail.</p>
 </div>
 
