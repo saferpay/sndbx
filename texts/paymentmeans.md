@@ -2,17 +2,18 @@
 
 In this Chapter you will find a list of payment means you can use for testing purposes!
 
-<div class="danger">
+
+<div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Warning: DO NOT</strong> use real credit card details, when testing on the Saferpay test-environment! Even though the test accounts cannot process real payment means, it is also important to not share them in the first place on the test-system, for security reasons!</p>
 </div>
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Note:</strong> Some testing-methods may not be activated by default. In these cases, you can contact the <a href="mailto:integration.saferpay@six-payment-services.com">Saferpay Integration Support</a>, if you want a specific payment method for testing on a specific terminal.
   </p>
 </div>
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
     <p><strong>Note:</strong> The CVC can be any value you want, same goes for the Expiration-date. However, the latter needs to be valid. If you enter a date set in the past, the card will be rejected, because it is expired!</p>
 </div>
