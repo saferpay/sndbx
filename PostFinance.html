@@ -736,7 +736,8 @@
 </ul></div></div></section><section id="pf-alias"><h2><a name="pf-alias"></a> Storage in the Secure Card Data Store</h2><div class="row"><div class="col-sm-6"><p>If you intend on saving Postcard-data for later use, Saferpay provides the possibility of storing PostFinance&#8217;s Postcard inside the Saferpay Secure Card store. For this, the following requirements must be met:</p><ul>
 <li>Activation of Saferpay Secure Card Data in the Saferpay merchant account</li>
 <li>The feature must also be activated on Postfinance side!</li>
-</ul><div class="info">
+</ul><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> The registration of a Swiss Postcard is only possible with the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert</a> method. For that, you have to set the parameter &quot;TYPE&quot; to the value &quot;POSTFINANCE&quot;.</p>
 </div></div></div></section><section id="pf-regdial"><h3><a name="pf-regdial"></a> Registration Dialogue</h3><div class="row"><div class="col-sm-6"><p>Unlike with credit cards, PostFinance requires the card holder to agree to registration on its site, so a redirect will be done!</p><ol>
 <li>Confirmation dialogue on PostFinance:<br>
@@ -748,7 +749,8 @@
 <li>After registration, the result is displayed to the customer, who is then returned to the shop:<br>
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/post_reg_completed.png" alt="alt text" title="Registration complete"><br>
 The result of the registration can then be called up using the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert">Alias AssertInsert</a> feature.</li>
-</ol><p>The gathered alias can then be used for further authorizations, using <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeDirect">AuthorizeDirect</a>.</p><div class="info">
+</ol><p>The gathered alias can then be used for further authorizations, using <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AuthorizeDirect">AuthorizeDirect</a>.</p><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Info:</strong> Note, that Postfinance does not know the, for credit cards known and used, Mail Phone Order-Contracts. Simply use your normal eCommerce Terminal with Postfinance/Card activated!</p>
 </div></div></div></section>
 
