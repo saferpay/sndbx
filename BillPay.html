@@ -736,9 +736,11 @@ However, as BillPay is a third party provider, there are a few things which must
 <li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
 <li>A valid acceptance agreement for BillPay must be present.</li>
 <li>The address of the purchaser is present and is forwarded to BillPay.</li>
-</ul><div class="warning">
+</ul><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> For BillPay activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your BillPay credentials and the desired currency.</p>
-</div></div></div></section><section id="bp-approval-api"><h2><a name="bp-approval-api"></a> BillPay Certification via API</h2><div class="row"><div class="col-sm-6"><p>Before they can conclude a transaction via BillPay, all BillPay customers have to be entered into a so-called &#8220;Certification Provider&#8221;. Prior to the going-live, BillPay expects each merchant to trigger a transaction via this provider. As proof, BillPay requires a complete invoice from the merchant system. After examination, information on the live account data is provided. In contracts for <strong>BillPay Purchase on Receipt</strong> and <strong>BillPay Direct Debit</strong>, the operation must be performed for each payment method.</p><p>For certification, a simple transaction on the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page</a> is performed using the JSON API. For this, the means of payment (<strong>BillPay Purchase on Receipt</strong> or <strong>BillPay Direct Debit</strong>) must always be specified explicitly via the <strong>Payment Methods</strong> parameter. Otherwise, the payment method will not be shown on the Payment Page. In addition, it is generally the case &#8211; even in live operations &#8211; that the transfer of address details to BillPay is not necessary. This can be mapped in two different ways:</p></div></div></section><section><h3>1. Delivery via parameters</h3><div class="row"><div class="col-sm-6"><p>If address data have already been captured in the shop, they can be forwarded to Saferpay via the corresponding parameter.</p><div class="info">
+</div></div></div></section><section id="bp-approval-api"><h2><a name="bp-approval-api"></a> BillPay Certification via API</h2><div class="row"><div class="col-sm-6"><p>Before they can conclude a transaction via BillPay, all BillPay customers have to be entered into a so-called &#8220;Certification Provider&#8221;. Prior to the going-live, BillPay expects each merchant to trigger a transaction via this provider. As proof, BillPay requires a complete invoice from the merchant system. After examination, information on the live account data is provided. In contracts for <strong>BillPay Purchase on Receipt</strong> and <strong>BillPay Direct Debit</strong>, the operation must be performed for each payment method.</p><p>For certification, a simple transaction on the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page</a> is performed using the JSON API. For this, the means of payment (<strong>BillPay Purchase on Receipt</strong> or <strong>BillPay Direct Debit</strong>) must always be specified explicitly via the <strong>Payment Methods</strong> parameter. Otherwise, the payment method will not be shown on the Payment Page. In addition, it is generally the case &#8211; even in live operations &#8211; that the transfer of address details to BillPay is not necessary. This can be mapped in two different ways:</p></div></div></section><section><h3>1. Delivery via parameters</h3><div class="row"><div class="col-sm-6"><p>If address data have already been captured in the shop, they can be forwarded to Saferpay via the corresponding parameter.</p><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> Request with address forwarding. See the <strong>Payer =&gt; DeliveryAddress</strong> container. <strong>Important:</strong> DeliveryAddress <strong>must</strong> be used!</p>
 </div><pre><code class="language-json">{
   &quot;RequestHeader&quot;: {
@@ -788,7 +790,8 @@ However, as BillPay is a third party provider, there are a few things which must
     &quot;NotifyUrl&quot;: &quot;https://merchanthost/notify&quot;
   }
 }
-</code></pre></div></div></section><section><h3>2. Data capture via a form</h3><div class="row"><div class="col-sm-6"><p>Alternatively, an address form, in which the customer must enter their address details, can be displayed in the Saferpay Payment Page. Make sure that all the address details needed for BillPay payment are requested in the address form.</p><div class="info">
+</code></pre></div></div></section><section><h3>2. Data capture via a form</h3><div class="row"><div class="col-sm-6"><p>Alternatively, an address form, in which the customer must enter their address details, can be displayed in the Saferpay Payment Page. Make sure that all the address details needed for BillPay payment are requested in the address form.</p><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> Request for form usage. See the <strong>DeliveryAddressForm</strong> container. <strong>Important: DeliveryAddressForm must</strong> be used!</p>
 </div><pre><code class="language-json">{
   &quot;RequestHeader&quot;: {
@@ -830,7 +833,8 @@ However, as BillPay is a third party provider, there are a few things which must
     &quot;NotifyUrl&quot;: &quot;https://merchanthost/notify&quot;
   }
 }
-</code></pre></div></div></section><section id="bp-assert"><h3><a name="bp-assert"></a> Assert</h3><div class="row"><div class="col-sm-6"><p>With <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, all the necessary information is sent back to the merchant. This includes the transfer of purchase-on-invoice credit transfer data that must be forwarded to the buyer.</p><div class="info">
+</code></pre></div></div></section><section id="bp-assert"><h3><a name="bp-assert"></a> Assert</h3><div class="row"><div class="col-sm-6"><p>With <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, all the necessary information is sent back to the merchant. This includes the transfer of purchase-on-invoice credit transfer data that must be forwarded to the buyer.</p><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> Example Payment Page Assert Response</p>
 </div><pre><code class="language-json">{
   &quot;ResponseHeader&quot;: {
@@ -881,7 +885,8 @@ However, as BillPay is a third party provider, there are a few things which must
     &quot;DelayInDays&quot;: 5
   }
 }
-</code></pre><p>Some of the key information, such as the invoice data, are returned by Saferpay via <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>.</p><div class="info">
+</code></pre><p>Some of the key information, such as the invoice data, are returned by Saferpay via <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>.</p><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> Example for Capture Response</p>
 </div><pre><code class="language-json">{
   &quot;ResponseHeader&quot;: {
@@ -901,7 +906,8 @@ However, as BillPay is a third party provider, there are a few things which must
     &quot;DueDate&quot;: &quot;2015-10-15T10:01:42.527+02:00&quot;
   }
 }
-</code></pre><hr></div></div></section><section id="bp-approval-bo"><h2><a name="bp-approval-bo"></a> BillPay Certification via Saferpay Backoffice</h2><div class="row"><div class="col-sm-6"><p>Because it is not always possible to conduct certification in every shop without interrupting live operations, Saferpay Backoffice offers the option of creating a payment URL for a BillPay test payment via the Payment Page. This can be used to perform the acceptance test.</p><div class="warning">
+</code></pre><hr></div></div></section><section id="bp-approval-bo"><h2><a name="bp-approval-bo"></a> BillPay Certification via Saferpay Backoffice</h2><div class="row"><div class="col-sm-6"><p>Because it is not always possible to conduct certification in every shop without interrupting live operations, Saferpay Backoffice offers the option of creating a payment URL for a BillPay test payment via the Payment Page. This can be used to perform the acceptance test.</p><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> Because this is not loaded via the shop, the shop is not informed about the purchase. It is therefore necessary to manually create the invoice required by BillPay. You can find the necessary data for this in the Saferpay Backoffice via <strong>Transactions &gt; Journal</strong>. Here you can find a list of all transactions, which you can then view in detail.</p>
 </div><p>In your Saferpay Backoffice go to the <strong>Webshop</strong> heading and select the option <strong>All Offers</strong>:<br>
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_all_offers.png" alt="alt text" title="Webshop > All Offers"></p><p>Then click on &#8220;Add new offer&#8221;:<br>
