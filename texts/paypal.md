@@ -12,7 +12,8 @@ The handling of PayPal payments with Saferpay requires:
 * PayPal is only available via the [PaymentPage flow](Integration_PP.html)!
 * **NotifyUrl:** The NotifyUrl is **mandatory**, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> For PayPal activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your PayPal merchant account ID and the desired currency.</p>
 </div>
 
@@ -181,7 +182,8 @@ We generally recommend to execute the [Capture](https://saferpay.github.io/jsona
 
 ## <a name="ppal-iframe"></a> PayPal iFrame integration
 
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Warning:</strong> PayPal does not support the iFrame Integration!</p>
 </div>
 
