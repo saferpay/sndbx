@@ -736,7 +736,8 @@ Masterpass can indeed contain Mastercard, as well as Visa and other payment mean
 This chapter will cover all things worth to know about Masterpass!</p></div></div></section><section id="mp-req"><h2><a name="mp-req"></a> Requirements</h2><div class="row"><div class="col-sm-6"><p>The handling of Masterpass payments with Saferpay requires:</p><ul>
 <li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
 <li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
-</ul><div class="info">
+</ul><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> In order for Masterpass to be activated, please contact your contract manager. He/She can guide you and will initiate all the necessary steps, so you can start accepting Masterpass.</p>
 </div></div></div></section><section id="mp-pp"><h2><a name="mp-pp"></a> Masterpass via Payment Page</h2><div class="row"><div class="col-sm-6"><p>The Integration of Masterpass via the Payment Page may be the easiest way to integrate Masterpass.
 Simply follow the basic <a href="Integration_PP.html">Payment Page integration steps</a>. If you already have a Payment Page integration, you can, of course, skip this step. After you have contacted your contract manager and Masterpass has been activated, Masterpass will show up on the Payment Page, just like any other payment method:
@@ -771,7 +772,8 @@ Simply follow the basic <a href="Integration_PP.html">Payment Page integration s
     },
 }
 
-</code></pre><div class="info">
+</code></pre><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>IMPORTANT:</strong> If you are using <strong>&quot;Wallets&quot;</strong> alongside <strong>&quot;PaymentMethods&quot;</strong>, both parameters will be treated equally and a selection-screen will be displayed!</p>
 </div></div></div></section><section><h3>Forcing the Delivery Address</h3><div class="row"><div class="col-sm-6"><p>If you want to <strong>force</strong> the user into selecting a delivery address, within his Masterpass Wallet, you can do so, via the <strong>DeliveryAddressForm</strong> parameter, within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>:</p><pre><code class="language-json">{
     &quot;RequestHeader&quot;: {
@@ -870,7 +872,8 @@ Simply follow the basic <a href="Integration_PP.html">Payment Page integration s
 }
 
 
-</code></pre><div class="warning">
+</code></pre><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>IMPORTANT:</strong> Saferpay can capture the billing address in multiple ways. Either the merchant does capture it himself and submits the data through the respective request. If you request the DeliveryAddress through Masterpass, using above example, it will be overwritten by the wallet-address!</p>
 </div></div></div></section>
 
