@@ -743,7 +743,8 @@
 <li>The Currency your customers will purchase with SOFORT.</li>
 <li>Your Saferpay Customer ID.</li>
 <li>The ID of the Saferpay eCommerce Terminal SOFORT is to be added.</li>
-</ul><div class="warning">
+</ul><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> For Sofort activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your Sofort credentials and the desired currency.</p>
 </div></div></div></section><section id="sf-newproject"><h2><a name="sf-newproject"></a> Create a new project for SOFORT</h2><div class="row"><div class="col-sm-6"><ol>
 <li><p>Log-in to your SOFORT member area. Choose &#8222;New project&#8220; and click &#8222;Create project&#8220;. <br>
@@ -789,12 +790,12 @@
 <li><p>Finally create a project password. <strong>Please make sure, that you check the &quot;Don't use special characters&quot;-box!</strong> Click the tab &#8222;Extended settings&#8220; again and there &#8222;Passwords and hash algorithm&#8220;. Select SHA-1. <br>
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_password.png" alt="alt text" title="Project password"></p>
 </li>
-</ol><div class="danger" style="height: 65px;">
+</ol><div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Caution: DO NOT</strong> create a notification-password, otherwise Sofort via Saferpay will not work! 
   </p>
-</div><p>The settings for processing SOFORT via Saferpay are completed!</p><hr></div></div></section><section id="sf-iframe"><h2><a name="sf-iframe"></a> Sofort iFrame integration</h2><div class="row"><div class="col-sm-6"><div class="danger" style="height: 65px;">
+</div><p>The settings for processing SOFORT via Saferpay are completed!</p><hr></div></div></section><section id="sf-iframe"><h2><a name="sf-iframe"></a> Sofort iFrame integration</h2><div class="row"><div class="col-sm-6"><div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Warning:</strong> Sofort does not support the iFrame Integration!</p>
 </div><p>Sofort/Klarna actively blocks the iFrame-Integration.
@@ -806,12 +807,12 @@ Due to this, Saferpay offers a workaround, to make manual SEPA-refunds easier fo
 As mentioned before, SEPA does not offer direct refunds via the processing itself. This is why Saferpay first collects all executed refunds inside the backoffice:
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/BO_Manual_Refund_Export.png" alt="alt text" title="Manual refund activation"></p><p>These refunds need then to be exported into a special XML-File, which can be done right there inside the Backoffice.
 The created XML-file can then be uploaded into your online banking-portal, which executes these refunds in a batch, eliminating the need, of doing them all manually.
-You can <a href="https://github.com/saferpay/sndbx/blob/master/assets/other/ManualBankRefund-2019-09-13-10-50-28-Example_File.xml" download>download an example-file here</a>.</p><div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+You can <a href="https://github.com/saferpay/sndbx/blob/master/assets/other/ManualBankRefund-2019-09-13-10-50-28-Example_File.xml" download>download an example-file here</a>.</p><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> It may be necessary to contact your bank, for this import-feature to be activated! Some also may not offer it at all!
   </p>
-</div><div class="danger">
+</div><div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Caution:</strong> SEPA-refund-files from the test-environment can't be uploaded into online-banking portals, since they only contain test-data, thus non-valid IBANs!
