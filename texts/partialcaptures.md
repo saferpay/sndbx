@@ -11,7 +11,8 @@ Saferpay does offer the option to do [Partial Captures (Hereafter refered to as 
 5. [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) execute the money-flow (closing) with the execution of the capture itself! A [Cancel](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel) of a [Multipart Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) therefore is not possible!
 6. MultipartCapture is only available for **SpecVersions 1.10 and higher!**
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
     <p><strong>Important Note:</strong> Note, that you cannot mix the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Capture</a> and the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Normal Capture</a> within one transaction. Either do one, or the other!</p>
 </div>
 
@@ -63,7 +64,8 @@ The response may look like this:
 
 Each capture is identified by a **CaptureId** (Marked with the suffix **"\_c"**) , which should be saved, since this Id is used for further actions, like refunds. More on the latter later in this very chapter.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
  <p><strong>Note:</strong> The basic reservation times <a href="https://saferpay.github.io/sndbx/#reservation">mentioned here</a> do still aplly for <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures!</a> If this time is exceeded, the reservation could void and the money flow will be rejected by the card holders bank!</p>
 </div>
 
@@ -74,12 +76,14 @@ There are two different ways to finalize a [Multipart Capture](https://saferpay.
 
 **Does the merchant intend to capture a final amount, or not?**
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important:</strong> Once finalized, a transaction cannot be opened again. Make sure, that you really want to finalize the transaction. Other captures won't be possible!</p>
 </div>
 
 ### Finalizing, while also capturing a certain amount
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Remember:</strong> Like mentioned previously, make sure to not exceed the initially authorized amount, or the capture will fail!</p>
 </div>
 
@@ -147,7 +151,8 @@ A [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Re
 
 ### Capturing a Refund
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important:</strong> Like every other <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund</a>, these too need to be captured.
 However <strong>please make sure to use the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">normal Capture request</a> in this case and NOT MultipartCapture!</strong> Refunds cannot be split into multiple parts, like authorizations!</p>
 </div>
