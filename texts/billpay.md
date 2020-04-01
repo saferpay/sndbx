@@ -260,8 +260,8 @@ Fill out the fields for the description and the amount and, if necessary, select
 
 The stored offer will appear with the test payment URL for BillPay acceptance:<br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_offer_url.png "Offer URL")
-
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> Make sure that the checkbox marked “Caution: only use for test transactions!” has been ticked. When creating an acceptance invoice, ensure that the test URL created contains a random OrderId allocated by Saferpay. When using a test URL, the customer address must be entered manually in the Payment Page.</p>
 </div>
 
