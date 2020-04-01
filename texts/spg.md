@@ -1,6 +1,7 @@
 # Secure PayGate REST API
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the Secure PayGate REST API, but also for you, the merchant!</p>
 </div>
 
@@ -33,7 +34,8 @@ Here you can define, where the Payment Page should send your customer to, after 
 
 Furthermore, Saferpay can also trigger a server-to-server notification, in case of a successful payment, which is helpful, to avoid redirect-problems with the former URLs, or in cases, where you do not want to use returnUrls and just the payment notification, to gather the payment-details into your system.
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> In order to gather said payment-data, after these events, you need a payment page token, to initialize the next steps. Saferpay can vorward this token, if you insert the placeholder <strong>{{{PAYMENTPAGETOKEN}}}</strong> into the defined URLs. Saferpay will replace it with the token and call the URLs with it, via HTTP GET. You then can etract the token and proceed to the chapter <strong>Connecting the JSON API</strong>.
@@ -45,7 +47,7 @@ Here you can pre-define certain mail-addresses, that will be presented to the pa
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/SPG_Settings_4.PNG "SPG Settings")
 Finally, you can upload your terms and conditions via a PDF, in the languages you desire. 
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Note:</strong> These AGBs are only available, should you use the Secure PayGate inside the Backoffice and not via API!
@@ -65,14 +67,14 @@ All the offers will be displayed inside the Saferpay Backoffice and marked as **
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/SPG_Backend.png "SPG Offers")
 
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>However:</strong> Saferpay <strong>will NOT send the usual Secure PayGate E-Mail</strong> to your customer, like within the Saferpay Backoffice! The usage of the Secure PayGate REST API instead relies on you -the merchant- using your own web-mailer, which are supported by most common application-environments. PHP for example brings this functionality out of the box. However this also gives you full control over the design and text of the E-Mail, allowing for a great deal of flexibility!
   </p>
 </div>
-<div class="info">
-  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Note:</strong> Offers created with the Secure PayGate REST API cannot be edited inside the Saferpay Backoffice!
   </p>
