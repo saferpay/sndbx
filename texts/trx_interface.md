@@ -1,7 +1,7 @@
 # Transaction Interface
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant! Furthermore, also make make sure, whether, or not <a href="psd2.html">PSD2</a> does apply to you!</p>
 </div>
 
@@ -9,21 +9,21 @@ The Transaction Interface is an extension to Payment Page Interface intended for
 
 Apart from the processing of payments via the Hosted Entry from, it also offers various functions to process payments without payer interaction which is for example required when performing recurring payments or one click checkouts. The Transaction Interface can also be used to process payments with PCI certification of the levels SAQ-A EP and higher during which the payment data are collected directly be the merchant’s systems and forwarded to Saferpay.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> The JSON API can be used in various ways to cover the most diverse processes. For this reason, only the standard processes are discussed below. For other possible uses, or for questions about the standard procedures, please contact the <a href="https://saferpay.github.io/sndbx/contact.html">Saferpay Integration Team</a></p>
 </div>
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> The Transaction Interface is only for holders of a business licence on the live system. For the eCommerce licence, the advanced features are not available. The test accounts have business activated by default, for evaluation purposes.</p>
 </div>
 
 ## Description of the general process for using the Transaction Interface
 
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
 	<p><strong>Important Note:</strong> The Transaction Interface offers various options to perform transactions. This flow only describes the general flow.</p>
 </div>
 
@@ -73,11 +73,11 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
     },
 ```
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
  <p><strong>Note:</strong> The CVC is <strong>NOT</strong> required, when doing a 3DS transaction with an alias!</p>
 </div>
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> Don't like the style of the Hosted Form? Try our <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
 </div>
@@ -89,11 +89,11 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
 
 + **RedirectUrl:** Unlike with the Payment Page, this URL is not intended to be used for a redirect **(Though you may do so, if you want to!)**. Instead, it is embedded in an HTML Iframe. Within this, a form hosted by Saferpay is displayed. This form is also called the Hosted Entry Form. It can be used to capture sensitive card details in a PCI-compliant manner. You can find out more about the Iframe integration [in this chapter](https://saferpay.github.io/sndbx/CssiFrame.html).
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> If an alias, or Hosted Fields token is forwarded in the initalize request (See the step above!), the display of the form will be skipped. Furthermore, the parameter <strong>Redirect.PaymentmeansRequired</strong> will be false, indicating, that the necessary means of payment already have been provided</p>
 </div>
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> In cases, where a redirect is not necessary, the parameter <strong>RedirectRequired</strong> will be false and no RedirectUrl will be provided. In this case, you can go ahead and proceed with Step #4 - Transaction Authorize.</p>
 </div>
@@ -115,7 +115,7 @@ With the Payment Page Interface, the authorization of payment is triggered autom
 
 + **RegisterAlias:** Via the **RegisterAlias** container, card details from a payment can be stored safely and in conformity with PCI.  [See the Secure Card Data chapter](scd.html#scd-trx) for more information. 
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> A card will be registered only after a successful authorization.</p>
 </div>
@@ -127,14 +127,14 @@ In case of success the authorization data is returned with the Transaction Autho
 
 + **ThreeDs:** This container provides information about whether or not transaction liability shift via [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) is available or not. It is up to merchants whether or not they want to accept transactions without liability shift. Evaluation of the parameter provides the opportunity for merchants to incorporate appropriate rules here.
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important:</strong> Accepting transaction without LiabilityShift happens at the merchants own risk.</p>
 </div>
 
 + **Transaction > Status:** As already described [here](https://saferpay.github.io/sndbx/index.html#capture-batch), this status states whether or not a transaction has to be finalized via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture). If the status is not **CAPTURED**, the capture must be run in order to finalize the transaction.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> You can also call Authorize, if the FailUrl has been called. It will then give you information about the error! Note, that the http-status will be != 200, indicating a failed transaction!</p>
 </div>
@@ -142,8 +142,8 @@ In case of success the authorization data is returned with the Transaction Autho
 ### <a name="trx-captcancel"></a>5 - Capture or Cancel
 Subsequently, the transaction will be finalised via [**Capture**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or aborted via [**Cancel**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel).For this, the transaction identifier **Id** is required. Please refer to the notes [in the payment methods chapter](index.html#pm-functions), to check, if and when a **Capture** is necessary, and whether a **Cancel** can still be executed. Once these steps have been executed, the transaction is complete. Alternatively, you can also check the **Transaction.Status** parameter, within the [Authorize Response](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize). If the status is **AUTHORIZED** a [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) needs to be performed. If the status is **CAPTURED** you do not need to finalize the payment.
 
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> Keep in mind that you <strong>cannot cancel</strong> a transaction, once it is captured! At that point, a refund has to be executed, <a href="index.html#pm-functions">if available</a>! So please make sure, that you really want to finalize the transaction and initiate the money transfer, to avoid confusion with your customers!</p>
 </div>
 
@@ -160,7 +160,7 @@ Because there are no PCI requirements for direct debits, bank details data can b
 
 Saferpay also offers the possibility to use a custom HTML-form for merchants with the required PCI certification. The basic transaction-flow stays the same.
 
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Warning:</strong> As mentioned before: <strong>DO NOT PROCEED</strong>, if you do not have the necessary PCI certification (SAQ-A EP) in order to use your own form! <strong>SIX Payment Services will not take any kind of responsibility in case of a noncompliance! We highly urge you, to use the <a href="HostedFields.html"> Saferpay Hosted Fields</a> instead!</strong></p>
 </div>
