@@ -36,7 +36,8 @@ As soon as Saferpay receives a response from paydirekt that a booking or refund 
 The merchant email address is configurable via the JSON API or the Backoffice.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/paydirekt_email.PNG "paydirekt email Backoffice")
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important Note:</strong> The "PENDING" status can only occur with <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">Transaction/Capture</a> and <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Refund">Transaction/Refund</a>. <strong>The status-change can take up to several days, however, refunds may always be "PENDING" for at least one day!</strong></p>
 </div>
 
