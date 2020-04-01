@@ -1,6 +1,7 @@
 # Payment Page Interface
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant! Furthermore, also make make sure, whether, or not <a href="psd2.html">PSD2</a> does apply to you!</p>
 </div>
 
@@ -40,11 +41,11 @@ The process begins with the [PaymentPage Initialize](https://saferpay.github.io/
 + **ReturnUrls:** Via the **ReturnUrls**, the customer is returned to the shop after the transaction. For security reasons, Saferpay returns no data to return addresses. The identification of the payment or the returning customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the **ReturnUrls**. When a ReturnUrl is called, Saferpay returns the appended parameter, thus enabling identification of the customer/transaction. The ReturnUrls are **ALWAYS** called through the clients Browser. 
 
 + **"Notification"=>"NotifyUrl":** Although it is entirely optional, we strongly recommend integrating the **NotifyUrl** (see Notification container). With **NotifyUrl**, a notification of the shop in the event of a successful payment is made via a http-GET, regardless of connection problems that may prevent the customer getting back to the **SuccessUrl**. Without **NotifyUrl**, such an authorisation would be present in Saferpay Backoffice, however the shop wouldn’t have received any feedback. Technically speaking, **NotifyUrl** notifies the merchant system, as a redundant measure. In contrast to the **Success URL**, **NotifyUrl** is called up directly via HTTP GET by the Saferpay servers upon successful payment and not the client. It should be noted that the notification via **NotifyUrl** takes place **in addition to the Success URL**. Moreover, Saferpay expects the merchant server to answer the call with a HTTP status code 200(OK). If no (e.g. a Timeout **after 10 seconds**), or a different status code (e.g. http 500 ) is received, Saferpay will call the **NotifyUrl** up to two times more, for a total of three times, to ensure, that the previous error is not caused by a temporal problem. Note, that the merchants application needs to differentiate between the **SuccessUrl** and **NotifyUrl**, to prevent the application from processing the same transaction two, or more times. Finally, it should also be noted, that the **NotifyUrl** also does not return any data to the merchants application, except your own parameters (See **ReturnUrls** above!)!
-<div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> The usage of <strong>the NotifyUrl</strong> is strongly recommended! Only leave it out, if your system cannot recieve external requests!</p>
 </div>
-<div class="info">
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Note:</strong> The NotifyUrl is only called, if the transaction is successful!
@@ -60,12 +61,13 @@ The process begins with the [PaymentPage Initialize](https://saferpay.github.io/
 + **Card Holder:** This value is mandatory, however you may hide the input field. See the **CardForm** container inside the [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize) request.
 
 + **RegisterAlias:** Via the **RegisterAlias** container, card details from a payment can be stored safely and in conformity with PCI.  [See the Secure Card Data chapter](scd.html#scd-pp) for more information. 
-
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> A card will be registered only after a successful authorisation. Although the Payment Page Interface can be used to register (store) payment data, it is <strong>NOT</strong> possible to use it for future payments. Registered card data can only be used with the <a href="https://saferpay.github.io/sndbx/Integration_trx.html">Transaction Interface</a>.</p>
 </div>
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> Don't like the style of the PaymentPage? Try our <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
 </div>
 
@@ -75,7 +77,8 @@ The process begins with the [PaymentPage Initialize](https://saferpay.github.io/
 
 + **Token:** The **Token** refers to the values temporarily stored regarding the Saferpay transaction and is mandatory during subsequent processing of the transaction ([for more information, see e.g. PaymentPage Assert](http://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert)). The Token should be coupled to the http-GET parameters that were previously attached to the **ReturnUrls** and **NotifyUrl** for identification and then stored inside a database, for further actions to come!
 
-+ **RedirectUrl:** The **RedirectURL** provides the address via which the buyer is redirected to the PaymentPage. This can be done automatically via calling up the Iframe or by embedding the URL in an HTML link that must be clicked on by the buyer.<div class="warning">
++ **RedirectUrl:** The **RedirectURL** provides the address via which the buyer is redirected to the PaymentPage. This can be done automatically via calling up the Iframe or by embedding the URL in an HTML link that must be clicked on by the buyer.<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> The <strong>RedirectUrl</strong> can only be called one time, due to security restraints. Please make sure, that the <strong>RedirectUrl</strong> cannot be called twice. The second call will automatically trigger the <strong>FailUrl</strong> or <strong>AbortUrl</strong>, if the latter is defined!</p>
 </div>
 
@@ -91,8 +94,8 @@ Once the transaction is complete, the card holder – depending on the outcome 
 ## <a name="pp-assert"></a> 4 - PaymentPage Assert
 
 With the [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert), the results of a transaction are requested. The returned data may be stored on the merchant side.
-
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important:</strong> The Assert does <strong>NOT</strong> do the transaction itself. The PaymentPage will do that automatically for you. The Assert only calls for the result! So, if you call the Assert, the transaction already happened!</p>
 </div>
 
@@ -102,19 +105,23 @@ Based on the data obtained, it is to be decided whether or not a transaction is 
 
 + **ThreeDs:** This container provides information about whether or notliability shift through [3D Secure](https://saferpay.github.io/sndbx/index.html#3ds) is available or not. It is up to merchant whether or not he wants to accept transactions without liability shift. Evaluation of the parameter provides the opportunity for merchants to incorporate appropriate rules here.
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important:</strong> Accepting transaction without LiabilityShift happens at the merchants own risk.</p>
 </div>
 
 + **Transaction > Status:** As already described [here](https://saferpay.github.io/sndbx/index.html#capture-batch), this status states whether or not a transaction has to be finalized via [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture). If this status is not **CAPTURED**, the capture must be executed in order to finalise the transaction.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> You can also call the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, if the Fail-or AbortUrl has been called. It will then give you information about the failure! Note, that the http-status will be != 200, indicating a failed transaction!</p>
 </div>
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Info:</strong> Under certain circumstances a PaymentPage Session can be valid for about 1 hour -other sessions, like external redirections to 3D Secure and 3rd party providers can add up to this!-, but a normal session does not take longer, than 20 minutes!</p>
 </div>
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> The <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a> can be called up to 24 hours, after the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a>!</p>
 </div>
 
@@ -123,8 +130,8 @@ Based on the data obtained, it is to be decided whether or not a transaction is 
 Subsequently, the transaction will be finalised via [**Capture**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) or aborted via [**Cancel**](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel).For this, the transaction identifier **Id** is required. Please refer to the notes [in the payment methods chapter](index.html#pm-functions), to check, if and when a **Capture** is necessary, and whether a **Cancel** can still be executed. Alternatively, you can also check the **Transaction.Status** parameter, within the [PaymentPage Assert Response](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert). If the status is **AUTHORIZED** a [Capture](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) needs to be performed. If the status is **CAPTURED** you do not need to finalize the payment.
 
 Once these steps are complete, the transaction is completed.
-
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> Keep in mind that you <strong>cannot cancel</strong> a transaction, once it is captured! At that point, a refund has to be executed, <a href="index.html#pm-functions">if available</a>! So please make sure, that you really want to finalize the transaction and initiate the money transfer, to avoid confusion with your customers!</p>
 </div>
 
