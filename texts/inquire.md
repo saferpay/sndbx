@@ -10,7 +10,8 @@ However the Inquiry Interface has some restrictions, that have to be considered,
 4. **SpecVersion 1.11:** You must use SpecVersion 1.11 and up.
 5. **Update delay:** The result of a *Transaction/Inquire* request does not display the current status in real time because the requested data are updated with a few minutes delay.
 
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> Saferpay reserves the right to restrict, or outright deny access to the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a>, due to excessive use of the interface, or violation of these rules!</p>
 </div>
 
@@ -95,7 +96,8 @@ However the Inquiry Interface has some restrictions, that have to be considered,
 }
 ```
 ### Example of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Transaction Inquire</a> response for a failed transaction:
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important note:</strong> As mentioned before, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire Interface</a> only works with successful transactions. Therefore you'll get the following response, if a transaction was either not completed by the payer, or was not successful.</p>
 </div><br />
 
