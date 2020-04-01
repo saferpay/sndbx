@@ -2,11 +2,13 @@
 Saferpay generally offers a refund functionality from the start through the Saferpay Backoffice.
 However, if automated, or more integrated processes are needed, the JSON-API can be used to execute refunds from the merchants webshop, or ERP-system. This part of the guide covers the process of how to execute refunds through the Saferpay JSON-API, which can be performed in two ways.
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> Not all payment methods to support a refund functionality. Especially online banking payment methods do not provide refund functionality due to how the money is processed. You can find a complete overview of the supported functionalities in the <a href="https://saferpay.github.io/sndbx/#pm-functions">Payment Method Features Matrix</a></p>.
 </div>
 
-<div class="warning">
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> The refund functionality is part of the Transaction Interface, which is only available for holders of a business license on the live system. For the eCommerce license, these features are not available and a refund has to be executed through the Backoffice. The test accounts have business activated by default for evaluation purposes.</p>
 </div>
 
@@ -42,11 +44,13 @@ A different method is using an alias obtained through Secure Card Data, which [c
 
 This request is different from the that of the referenced refunds. When using an alias, the [Refund Direct request](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_RefundDirect) has to be used.
 
-<div class="danger">
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> While <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_RefundDirect">Refund Direct</a> does offer the possibilities to submit the card number (PAN) directly, it is not allowed to do this without a full PCI-DSS certification. More on that topic can be found in the<a href="https://saferpay.github.io/sndbx/index.html#pci">Data Security and PCI DSS chapter</a>. </p>
 </div>
 
-<div class="info">
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> Due to the fact, that the original transaction ID is not submitted, like with referenced refunds, the refund will not be linked to the original transaction inside the Saferpay Backoffice!</p>. 
 </div>
 
