@@ -740,7 +740,8 @@
 	<iframe style="height: 100%; width: 100%; overflow: hidden;" src="https://shop.saferpay.eu/saferpayintegration/auto_initialize_submit.php"></iframe>
 </div></div></div></section><section id="css-aliasins"><h3><a name="css-aliasins"></a> Alias Insert</h3><div class="row"><div class="col-sm-6"><p>Here, an example of the Saferpay Card Registration Form (<strong>Hosted Register Form</strong>). Simply drag the window at the bottom right corner and see the the form adapt:</p><div style="resize: both; overflow: auto; min-height: 500x; mon-width: 285px; height: 480px; width: 290px;">
 	<iframe style="height: 100%; width: 100%; overflow: hidden;" src="https://shop.saferpay.eu/saferpayintegration/auto_insert_submit.php"></iframe>
-</div><div class="warning">
+</div><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> For registration, the capture of the card verification code (CVC) is not enabled, because it can only be saved by Saferpay on a temporary, 20-minute basis. PCI specifications prohibit permanent storage. For payments with the CVC, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Inintialize</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> shall be used.</p>
 </div></div></div></section><section id="css-iframe_size"><h2><a name="css-iframe_size"></a> Size of the Iframe</h2><div class="row"><div class="col-sm-6"><p>The size of the Iframe is communicated to the merchants via an HTML5-POST message, which can be captured using JavaScript. The Iframe can thus be dynamically adapted to the content.</p></div></div></section><section id="html-form"><h3><a name="html-form"></a> Example of HTML Form</h3><div class="row"><div class="col-sm-6"><pre><code class="language-HTML">&lt;HTML&gt;
    &lt;head&gt;
@@ -764,10 +765,11 @@
 	if (e.originalEvent.data.height &lt;= 450) return;
 	$(&quot;#iframe&quot;).css(&quot;height&quot;, e.originalEvent.data.height + &quot;px&quot;);
 });
-</code></pre><div class="warning">
+</code></pre><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> Not every page reports its size to the merchant&#8217;s system. However, Saferpay has to forward users to third parties during the payment process (Like with the 3D Secure procedure), thus we recommend a&nbsp;minimum size of 450x450 pixels.</p>
-</div></div></div></section><section id="css-usecss"><h2><a name="css-usecss"></a> Using CSS</h2><div class="row"><div class="col-sm-6"><div class="warning">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+</div></div></div></section><section id="css-usecss"><h2><a name="css-usecss"></a> Using CSS</h2><div class="row"><div class="col-sm-6"><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> The CSS-feature cannot be used in conjunction with the styling options of a Saferpay Payment Page configuration!
   </p>
@@ -781,7 +783,8 @@
 </code></pre><p><strong>Class Name</strong></p><pre><code>h1{
   text-decoration:&nbsp;underline;
 }
-</code></pre><div class="info">
+</code></pre><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> Most modern browsers include tools that simplify designing with CSS. CSS can thus be edited directly in the browser, and the results can be observed.</p>
 </div><ul>
 <li>Example for Chrome browser:</li>
@@ -828,7 +831,8 @@
 	
     &lt;/body&gt;
 &lt;/HTML&gt;
-</code></pre><div class="warning">
+</code></pre><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> Executing this code, will re-load the return-page, resulting in it being called twice. Please consider this while implementing!</p>
 </div></div></div></section>
 
