@@ -749,7 +749,7 @@
 <li>SEPA ELV (Not via the Transaction Interface!)</li>
 <li>Bancontact</li>
 <li>Credit Cards over Masterpass</li>
-</ul><div class="danger">
+</ul><div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
    <strong>Caution:</strong> Please also consider the <a href="psd2.html">PSD 2 chapter</a>, to check, if your flow falls under certain PSD2 rules, especially, if you intend on using the Alias for Recurring Payments!
@@ -783,7 +783,8 @@ In order to request an Alias with the <a href="http://saferpay.github.io/jsonapi
    &quot;CssUrl&quot;: &quot;[your shop css url]&quot;
  }
 }
-</code></pre><div class="info">
+</code></pre><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong>The IdGenerator has multiple options to choose from. All of them will be explained later in this chapter!</p>
 </div><p>Once a successful transaction has been made through the PaymentPage, you will get the result of the registration with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>(See <strong>&quot;RegistrationResult&quot;</strong>!):</p><pre><code class="language-json">{
   &quot;ResponseHeader&quot;: {
@@ -834,7 +835,8 @@ In order to request an Alias with the <a href="http://saferpay.github.io/jsonapi
     &quot;VerificationValue&quot;: &quot;AAABBIIFmAAAAAAAAAAAAAAAAAA=&quot;
   }
 }
-</code></pre><div class="warning">
+</code></pre><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important:</strong>The Payment Page <strong>CAN NOT</strong> be used to authorize the obtained Alias! It can only register cards!</p>
 </div></div></div></section><section id="scd-trx"><h2><a name="scd-trx"></a> Secure Card Data and the Transaction Interface</h2><div class="row"><div class="col-sm-6"><p><a href="http://saferpay.github.io/jsonapi/#ChapterTransaction">The Transaction Interface</a> can also be used to obtain a Secure Card Data alias <strong>also after a successful authorization</strong>! The submitted Data is the same, as with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>, but with <a href="http://saferpay.github.io/jsonapi/#ChapterTransaction">the Transaction Interface</a> you <strong>MUST NOT USE</strong> the <strong>RegisterAlias</strong> container within <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a>. Here the registration actually is made with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize request</a> (<strong>Remember:</strong> A registration is only made, if the Authorization is successful!), thus you have to submit the necessary data here:</p><pre><code class="language-json">{ 
 &quot;RequestHeader&quot;: {
@@ -848,7 +850,7 @@ In order to request an Alias with the <a href="http://saferpay.github.io/jsonapi
    &quot;IdGenerator&quot;: &quot;RANDOM&quot;
  }
 }
-</code></pre><div class="info">
+</code></pre><div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong>The IdGenerator has multiple options to choose from. All of them will be explained later in this chapter!</p>
 </div><p>Once a successful transaction has been made, you will get the result of the registration with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize response</a> (See <strong>&quot;RegistrationResult&quot;</strong>!):</p><pre><code class="language-json">{
@@ -905,7 +907,7 @@ If you just want to register the card, but not authorize it, you need to use <a 
 However there are two major differnces:</p><ul>
 <li>As already mentioned, the card will only be saved, but not authorized!</li>
 <li>Due to PCI restrictions, the CVC will not be obtained using this method!</li>
-</ul><p>In order to open up the hosted Card Entry Form, you first need to execute the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert Request</a>.</p><div class="info">
+</ul><p>In order to open up the hosted Card Entry Form, you first need to execute the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert Request</a>.</p><div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> Don't like the style of the Hosted Form? Try our <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
 </div></div></div></section><section><h3>Here are a few hints and tips about the options that are available for the merchant:</h3><div class="row"><div class="col-sm-6"><ul>
@@ -921,7 +923,7 @@ However, you need to consider the following restrictions:</p><ol>
 <li>The check-function <strong>does not</strong> check the solvency of the account. Only an authorization does!</li>
 <li>The check-function is only available for VISA and Mastercard, over SIX Payment Services Acquiring contracts!</li>
 </ol></div></div></section><section><h3>Request</h3><div class="row"><div class="col-sm-6"><p>In order, to let a card get checked, you need to set the <strong>Check</strong>-container within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">initial registration-request</a>.
-You need to make sure, to provide a valid terminal Id, with activated acquiring-contracts for VISA and MasterCard.</p><div class="info">
+You need to make sure, to provide a valid terminal Id, with activated acquiring-contracts for VISA and MasterCard.</p><div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
    <strong>Important:</strong> The <strong>Type</strong> parameter has two values: 
@@ -1007,9 +1009,11 @@ You need to make sure, to provide a valid terminal Id, with activated acquiring-
 </ol></div></div></section><section id="scd-use"><h2><a name="scd-use"></a> How to use the obtained data</h2><div class="row"><div class="col-sm-6"><p>The obtained alias can be used in two basic ways, which boil down to one important question:</p><p><strong>Do you want to do a 3D Secure transaction?</strong></p><ul>
 <li>If yes, then you have to use the <a href="https://saferpay.github.io/sndbx/Integration_trx.html">Transaction Interface</a>. The Hosted Form used there will not open up and instead proceed with the 3D Secure process right away.</li>
 <li>If not, then you can use <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">AuthorizeDirect</a> to authorize the card directly. <strong>Do not forget to also <a href="index.html#capture">Capture/Finalize</a> the transaction.</strong></li>
-</ul><div class="warning">
+</ul><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong> Bancontact only supports the former, while Maestro has some cards, that also are 3D Secure only!</p>
-</div><div class="warning">
+</div><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong> Every alias is bound to the CustomerId you provide with the registration-request. All Terminals bound to that id can use the aliases, but not other CustomerIds! There is no way to share the aliases between different CustomerIds!</p>
 </div></div></div></section>
 
