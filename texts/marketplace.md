@@ -101,24 +101,22 @@ This request will transfer 10 CHF to the merchant account 17312345, but will als
 ### Refund fees
 
 But, what if you want to refund said transaction, including the transaction fee?
-For that, the [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund) also offers the option, to submit a fee, but note, that the container is named **FeeRefund** this time. A request then may look like this:
+For that, the [Capture request](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture) also offers the option, to submit a fee, but note, that the container is named **FeeRefund** this time. A request then may look like this:
 
 ```JSON
 {
   "RequestHeader": {
-    "SpecVersion": "1.10",
+    "SpecVersion": "[CURRENT SPEC_VERSION]",
     "CustomerId": "[your customer id]",
     "RequestId": "[your request id]",
     "RetryIndicator": 0
   },
-  "Refund": {
-    "Amount": {
-      "Value": 1000,
-      "CurrencyCode": "CHF"
-    }
+  "Amount": {
+    "Value": 1000,
+    "CurrencyCode": "CHF"
   },
-  "CaptureReference": {
-    "CaptureId": "723n4MAjMdhjSAhAKEUdA8jtl9jb_c"
+  "TransactionReference": {
+    "TransactionId": "723n4MAjMdhjSAhAKEUdA8jtl9jb_c"
   },
   "Marketplace": {
     "SubmerchantId": "17312345",
@@ -129,4 +127,4 @@ For that, the [Refund request](https://saferpay.github.io/jsonapi/#Payment_v1_Tr
   }
 }
 ```
-This request will refund 10 CHF (Please keep track of this!) from the merchant account 17312345, to the card holder! The fee then will be taken from the marketplace and transfered to the submerchant. So the full amount will be refunded first from the submerchant-account and then they will recieve the fee back from the marketplace!
+This request will capture a refund and transfer 10 CHF (Please keep track of this!) from the merchant account 17312345, to the card holder! The fee then will be taken from the marketplace and transfered to the submerchant. So the full amount will be refunded first from the submerchant-account and then they will recieve the fee back from the marketplace!
