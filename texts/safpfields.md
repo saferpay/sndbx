@@ -52,6 +52,13 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
   </p>
 </div>
 
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Tip:</strong> On the Test-Environment you can use a self-signed SSL-certificate, if you wish. This is helpful, if you are coding and testing on a small, local machine, instead of a server. Furthermore, as a Source-URL, you can enter you Computer-/Host-name. Example <strong>https://hostname</strong>. This works with local PCs, that do not have a public domain attached to them!
+  </p>
+</div>
+
 Once created, you will be presented with a basic integration-example:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-api-key.png "API Key")
 
