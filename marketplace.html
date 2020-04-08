@@ -789,21 +789,19 @@
    }
 }
 </code></pre><p>This request will transfer 10 CHF to the merchant account 17312345, but will also charge a 1 CHF for said transaction. So effectively the merchant will get 9 CHF transferred, <strong>not including the acquiring-costs</strong>, since that can vary from merchant to merchant and even contract!</p></div></div></section><section><h3>Refund fees</h3><div class="row"><div class="col-sm-6"><p>But, what if you want to refund said transaction, including the transaction fee?
-For that, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Refund">Refund request</a> also offers the option, to submit a fee, but note, that the container is named <strong>FeeRefund</strong> this time. A request then may look like this:</p><pre><code class="language-JSON">{
+For that, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture request</a> also offers the option, to submit a fee, but note, that the container is named <strong>FeeRefund</strong> this time. A request then may look like this:</p><pre><code class="language-JSON">{
   &quot;RequestHeader&quot;: {
-    &quot;SpecVersion&quot;: &quot;1.10&quot;,
+    &quot;SpecVersion&quot;: &quot;[CURRENT SPEC_VERSION]&quot;,
     &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
     &quot;RequestId&quot;: &quot;[your request id]&quot;,
     &quot;RetryIndicator&quot;: 0
   },
-  &quot;Refund&quot;: {
-    &quot;Amount&quot;: {
-      &quot;Value&quot;: 1000,
-      &quot;CurrencyCode&quot;: &quot;CHF&quot;
-    }
+  &quot;Amount&quot;: {
+    &quot;Value&quot;: 1000,
+    &quot;CurrencyCode&quot;: &quot;CHF&quot;
   },
-  &quot;CaptureReference&quot;: {
-    &quot;CaptureId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb_c&quot;
+  &quot;TransactionReference&quot;: {
+    &quot;TransactionId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb_c&quot;
   },
   &quot;Marketplace&quot;: {
     &quot;SubmerchantId&quot;: &quot;17312345&quot;,
@@ -813,7 +811,7 @@ For that, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transactio
     }
   }
 }
-</code></pre><p>This request will refund 10 CHF (Please keep track of this!) from the merchant account 17312345, to the card holder! The fee then will be taken from the marketplace and transfered to the submerchant. So the full amount will be refunded first from the submerchant-account and then they will recieve the fee back from the marketplace!</p></div></div></section>
+</code></pre><p>This request will capture a refund and transfer 10 CHF (Please keep track of this!) from the merchant account 17312345, to the card holder! The fee then will be taken from the marketplace and transfered to the submerchant. So the full amount will be refunded first from the submerchant-account and then they will recieve the fee back from the marketplace!</p></div></div></section>
 
 			</main>
 
