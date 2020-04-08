@@ -758,6 +758,11 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
   <p>
     <strong>Very Important:</strong> Saferpay will indeed validate the used Source-URL and the used TerminalId! It is enough to just enter the base-url, of your shop here. If you use multiple terminals, you have to generate more API-Keys for each terminal. <strong>HTTPS IS MANDATORY</strong> and will be checked!<br> Should you have misconfigured the access-token, the <strong>.init({options}) - onError</strong> callback will be triggered, returning an <strong>&quot;Access forbidden!&quot;</strong> message. Make sure, you've set the correct URL, for the system you are currently running on, especially during integration and then later deployment!
   </p>
+</div><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Tip:</strong> On the Test-Environment you can use a self-signed SSL-certificate, if you wish. This is helpful, if you are coding and testing on a small, local machine, instead of a server. Furthermore, as a Source-URL, you can enter you Computer-/Host-name. Example <strong>https://hostname</strong>. This works with local PCs, that do not have a public domain attached to them!
+  </p>
 </div><p>Once created, you will be presented with a basic integration-example:
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-api-key.png" alt="alt text" title="API Key"></p><div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
