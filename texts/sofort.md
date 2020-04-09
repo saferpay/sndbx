@@ -23,7 +23,7 @@ The handling of SOFORT payments with Saferpay requires:
 
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Attention:</strong> For Sofort activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your Sofort credentials and the desired currency.</p>
+  <p><strong>Attention:</strong> For Sofort activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your Sofort credentials (see list above) and the desired currencies.</p>
 </div>
 
 ## <a name="sf-newproject"></a> Create a new project for SOFORT
