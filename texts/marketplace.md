@@ -85,7 +85,7 @@ For that, it is necessary to correctly set the **Marketplace => Fee** container,
         "CurrencyCode": "CHF"
     },
     "Type": "PARTIAL",
-    "OderPartId": "123456789",
+    "OrderPartId": "123456789",
     "Marketplace": {
         "SubmerchantId": "17312345",
         "Fee": {
