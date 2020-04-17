@@ -23,9 +23,6 @@ The Integration of Masterpass via the Payment Page may be the easiest way to int
 Simply follow the basic [Payment Page integration steps](Integration_PP.html). If you already have a Payment Page integration, you can, of course, skip this step. After you have contacted your contract manager and Masterpass has been activated, Masterpass will show up on the Payment Page, just like any other payment method:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/MasterpassPPage.PNG "Masterpass Payment Page")
 
-Furthermore, Masterpass will also show up, once a credit card brand has been selected, as an alternative:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/MasterpassPPageCEF.PNG "Masterpass Payment Page Card Entry Form")
-
 ### Direct redirect to Masterpass
 
 If you want to perform a direct redirect to Masterpass, you have to use the parameter **Wallets** within the [PaymentPage Initialize request](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize)!
