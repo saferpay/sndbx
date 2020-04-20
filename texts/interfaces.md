@@ -237,7 +237,7 @@ The main components of the Saferpay JSON API are:
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
     <tr>
-      <td>MasterCard</td>
+      <td>Mastercard</td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
