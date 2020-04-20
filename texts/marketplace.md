@@ -116,7 +116,7 @@ For that, the [Capture request](https://saferpay.github.io/jsonapi/#Payment_v1_T
     "CurrencyCode": "CHF"
   },
   "TransactionReference": {
-    "TransactionId": "723n4MAjMdhjSAhAKEUdA8jtl9jb_c"
+    "TransactionId": "723n4MAjMdhjSAhAKEUdA8jtl9jb"
   },
   "Marketplace": {
     "SubmerchantId": "17312345",
