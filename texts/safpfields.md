@@ -327,11 +327,12 @@ Callback message on error event, containing the following data:
 
 
 ### Browser Support
-Saferpay Hosted Fields are supported by the following Browsers:
+Saferpay Fields are supported by the following Browsers:
 <ul>
   <li>Chrome latest</li>
   <li>Firefox latest</li>
-  <li>Internet Explorer XXX</li>
+  <li>Internet Explorer latest</li>
+  <li>Microsoft Edge latest</li>
   <li>Safari latest</li>
 </ul>
 
