@@ -18,7 +18,7 @@ The handling of Applepay payments with Saferpay requires:
 
 <div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Warning:</strong> Applepay does not support the iFrame Integration! If a Direct Redirect (see below) is performed, Saferpay will break out of the iFrame!</p>
+  <p><strong>Warning:</strong> Applepay does not support the iFrame Integration!</p>
 </div>
 
 ## <a name="apple-activation"></a> Activation
