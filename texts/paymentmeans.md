@@ -63,7 +63,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
       </tr>
       <tr>
           <td style="word-break: unset;">9010403153150003</td>
-          <td style="border-left: 1px solid #ddd;">General Decline. This card fails the authorization and also the card check!<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> true</td>
+          <td style="border-left: 1px solid #ddd;">General Decline. This card fails the card check!<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> true</td>
       </tr>
       <tr>
           <td style="word-break: unset;">9010403153900001</td>
