@@ -354,13 +354,19 @@ Here you can see some examples of how the Hosted Fields may be integrated. Feel 
 #### Sample 2
 <iframe width="1000px" height="470" src="https://jsfiddle.net/saferpay/xt83g4r2/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
-# <a name="hf-transaction"></a> Executing the Transaction
+# <a name="hf-steps"></a> Further steps
 
-It is important to understand, that the Saferpay Fields are just a way to capture the card details, but not to execute the transaction itself. That is done via the <a href="Integration_trx.html">Transaction Interface</a>.
-Once the **onSuccess** event is called, you need to forward the Hosted Fields token to your server-backend, in order to initialize the transaction itself and also gather the **RedirectUrl**, to perform things like 3D Secure and DCC. How you move the token to the backend is completely up to you.
-You can provide the onSuccess event with an AJAX-method to execute the initialize in the background on a successful submit and forward the **RedirectUrl** to the fronend for a redirect this way, which you then can open in an iFrame, Lightbox, or as a full redirect.
+It is important to understand, that the Saferpay Fields are just a way to capture the card details. 
+Now, you have to decide, what to do, with this information. You have two options now:
+
+1. Execute a transaction. If you want to use the captured card data for a normal transaction, then you have to refer to the <a href="Integration_trx.html">Transaction Interface Process</a>. By simply submitting the Fields Token via this API-Method, you can generate an API Token to trigger an Authorization and a Redirecturl, for performing other steps, like DCC, or 3D Secure.
+
+2. Save the card. If you want to just save the card for now, you can do that via the <a href="scd.html">Saferpay Secure Alias Store via standalone registration</a>. This allows you to optain a card alias, to perform other actions, like recurring payments, or just enable your customers to save new payment means inside their shop account, for further use. The choice is yours.
+
+Once the **onSuccess** event is called, you need to forward the Hosted Fields token to your server-backend, in order to initialize the next step (see above) and also gather the **RedirectUrl**, to perform things like 3D Secure and/or DCC. How you move the token to the backend is completely up to you.
+You can provide the onSuccess event with an AJAX-method to execute the initialization in the background on a successful submit and forward the **RedirectUrl** to the fronend for a redirect this way, which you then can open in an iFrame, Lightbox, or as a full redirect.
 However a redirect via GET, or POST, towards your initialize-script, is also an option, of course.
-Refer to the above mentioned chapter, to learn, how to initialize a transaction, using a Hosted Fields token.
+Refer to the above mentioned chapters, to learn, how to initialize a transaction, or just save a card, using a Hosted Fields token.
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
