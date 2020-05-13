@@ -1,5 +1,10 @@
 # Secure Card Data
 
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>VERY IMPORTANT:</strong> Before you start integrating these flows, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant! Furthermore, also make make sure, whether, or not <a href="psd2.html">PSD2</a> does apply to you!</p>
+</div>
+
 Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive payment data in the certified Saferpay data center. By using SCD, the payment data is separated from the merchant's application and thus no longer comes into contact with it. Secure Card Data is suitable for shop systems, call center solutions, inventory management, ERP and CRM systems in which stored payment data is required for future/deferred or recurring/instalments payments.
 
  It provides the Hosted Register Form (HRF) to simply store/tokenize payment data regardless of any actual payment been made. For example, if a customer wants to add different payment options to his account so that he/she can decide which one to use during the actual payment process. Please read chapter [**Iframe Integration and CSS**](https://saferpay.github.io/sndbx/CssiFrame.html#chapter-css-iframe) for examples of the different payment forms.
@@ -219,11 +224,8 @@ The obtained alias can then be used for subsequent payments, which will be expla
 All methods so far described, how a Secure Card Data alias can be obtained **within the authorization process**.
 If you just want to register the card, but not authorize it, you need to use [the Secure Alias Store](http://saferpay.github.io/jsonapi/#ChapterAliasStore).
 
-The process itself is very similar to the one using [the Transaction Interface](http://saferpay.github.io/jsonapi/#ChapterTransaction). [The Secure Alias Store](http://saferpay.github.io/jsonapi/#ChapterAliasStore) has its own hosted card registration form, which can also be [integrated within an iFrame and styled via CSS](https://saferpay.github.io/sndbx/CssiFrame.html).
-However there are two major differnces:
-
-+ As already mentioned, the card will only be saved, but not authorized!
-+ Due to PCI restrictions, the CVC will not be obtained using this method!
+The process itself is very similar to the one using [the Transaction Interface](Integration_trx.html). [The Secure Alias Store](http://saferpay.github.io/jsonapi/#ChapterAliasStore) has its own hosted card registration form, which can also be [integrated within an iFrame and styled via CSS](CssiFrame.html) and it can also be combined with the [Saferpay Fields](SaferpayFields.html), if you want a more stylish and flexible option.
+However, it will not execute a transaction, just simply save a card, so you may use it for later.
 
 In order to open up the hosted Card Entry Form, you first need to execute the [Alias Insert Request](http://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert).
 
@@ -235,6 +237,14 @@ In order to open up the hosted Card Entry Form, you first need to execute the [A
 ### Here are a few hints and tips about the options that are available for the merchant:
 
 + **ReturnUrls:** For security, Saferpay returns no data to return addresses of the shop. The identification of the payment or the returning customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the ReturnUrls. When a ReturnUrl is called, Saferpay returns the appended parameter, thus enabling identification of the customer.
+
++ **Saferpay Fields:** When using the <a href ="HostedFields.html">Saferpay Fields</a>, you will be provided with a Saferpay Fields token. This token then has to be submitted through alias/insert, within the <strong>PaymentMeans.SaferpayFields</strong> container in order to save the card. If used, the RedirectUrl directly links to the next step e.g. 3D Secure, thus skipping the Hosted Card Register Form. Think of it as a different method to capture the card data for initialization.
+```json 
+  "PaymentMeans": {
+    "SaferpayFields": {
+      "Token": "[YOUR TOKEN]"
+    },
+```
 
 ### In the Response of the Insert Request these parameters are import for further processing:
 
