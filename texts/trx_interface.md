@@ -72,11 +72,15 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
       "Id": "[YOUR ALIAS]"
     },
 ```
+Do you want to capture the CVC for an already saved card?
+You can eneble this, by submitting:
+```json 
+  "CardForm": {
+    "VerificationCode": "MANDATORY"
+  },
+```
+With this option set, Saferpay will open up the Hosted Entry Form, while displaying the masked card-number. The card holder can then enter his/her CVC, fully secure and PCI compliant.
 
-<div class="info" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
- <p><strong>Note:</strong> The CVC is <strong>NOT</strong> required, when doing a 3DS transaction with an alias!</p>
-</div>
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> Don't like the style of the Hosted Form? Try our <a target="_blank" href="CssiFrame.html#css-usecss">CSS-Styling feature!</a></p>
