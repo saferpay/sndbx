@@ -65,7 +65,7 @@
       { "Source": "texts/safpfields.md", "Title": "Integration and Initialization", "Target": "SaferpayFields.html#hf-integration" },
   	   { "Source": "texts/safpfields.md", "Title": "SaferpayFields - Class functions", "Target": "SaferpayFields.html#hf-class" },
       { "Source": "texts/safpfields.md", "Title": "Examples", "Target": "SaferpayFields.html#hf-example" },
-      { "Source": "texts/safpfields.md", "Title": "Executing the Transaction", "Target": "SaferpayFields.html#hf-transaction" }
+      { "Source": "texts/safpfields.md", "Title": "Further steps", "Target": "SaferpayFields.html#hf-steps" }
     ]
   },
   {
