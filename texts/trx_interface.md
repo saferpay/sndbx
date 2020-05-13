@@ -57,7 +57,7 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
 
 + **Strong Consumer Authentication (SCA):** If a certain transaction needs SCA (please refer to the <a href="psd2.html">PSD2 chapter</a>), you can force SCA, by setting **Authentication.ThreeDsChallenge** to **"FORCE"**.
 
-+ **Saferpay Fields:** When using the <a href ="HostedFields.html">Saferpay Fields</a>, you will be provided with a Saferpay Fields token. This token then has to be submitted through transaction/initialize, within the <strong>PaymentMeans.SaferpayFields</strong> in order to trigger a transaction. If used, the RedirectUrl directly links to the next step e.g. 3D Secure, thus skipping the Hosted Card Entry Form. Think of it as a different method to capture the card data for initialization.
++ **Saferpay Fields:** When using the <a href ="HostedFields.html">Saferpay Fields</a>, you will be provided with a Saferpay Fields token. This token then has to be submitted through transaction/initialize, within the <strong>PaymentMeans.SaferpayFields</strong> container in order to trigger a transaction. If used, the RedirectUrl directly links to the next step e.g. 3D Secure, thus skipping the Hosted Card Entry Form. Think of it as a different method to capture the card data for initialization.
 ```json 
   "PaymentMeans": {
     "SaferpayFields": {
