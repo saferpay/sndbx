@@ -10,7 +10,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Note:</strong> Some testing-methods may not be activated by default. In these cases, you can contact the <a href="mailto:integration.saferpay@six-payment-services.com">Saferpay Integration Support</a>, if you want a specific payment method for testing on a specific terminal.
+    <strong>Note:</strong> Some testing-methods may not be activated by default. In these cases, you can contact the <a href="mailto:integration.saferpay@six-payment-services.com">Saferpay Integration Support</a>, if you want a specific payment method for testing on a specific terminal. Furthermore, please also refer to <a href="index.html#pm-functions">this matrix</a> to see, whether or not testing will be available for a given payment method!
   </p>
 </div>
 <div class="info" style="min-height: 75px;">
