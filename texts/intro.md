@@ -822,5 +822,33 @@ Capturing more than initially authorized however, may result in an error and is 
 The time, in which a reservation can be successfully captured, highly depends on the respective processor and sometimes even the contract. Due to that, we cannot provide exact information, on when exactly to execute the capture of a specific transaction.
 Please contact your contract manager, or the processor, in order to get more information on the reservation-times.
 
+### <a name="liventesting"><a/> Testing and Go Live
 
+Saferpay offers an extensive Sandbox, that allows you to simulate transactions, flows and other things. When integrating Saferpay, it is very benefitial, to create your own test-account. 
+You can get your own test-account [over here](https://test.saferpay.com).
 
+Everything you need will be sent to you via E-Mail, ncluding things like your test CustomerId, TerminalIds, API user andpassword etc.
+
+#### Difference between the Test and Live environments
+
+- First and foremost, test and live are completely seperated systems. So everything you do on one, or the other, cannot be transferred to the other system, like your transactions, or your saved cards. Due to this, it is very important, that you also seperate your data accordingly and keep an eye on which system the data belongs to. If actions are performed, with data, that does not belong to the respective system, the action will fail. This is so merchants may not confuse one system, with the other. For example by running on the test environment, whilst thinking they're live.
+- To reinforce this philosophy, Saferpay will not accept real credit cards on the test environment and vice versa!
+- Furthermore, the test environment only runs simulators, that will emulate the behavior of the given payment method. However, no real money will be transferred, of course.
+- The test environment will behave as closely to the live environment, as possible -aside the above mentioned differences-. To ensure this, every function and every URL is mirrored onto the test environment. For example the live backoffice can be found under <a href="https://www.saferpay.com/bo/login">https://www.saferpay.com/bo/login</a>, whereas the test backoffice can be found under <a href="https://test.saferpay.com/bo/login">https://test.saferpay.com/bo/login</a>. You can access any URL, by simply changing the **www** to **test** and vice versa. This also applies to API URLs. For example 
+`https://test.saferpay.com/api/Payment/v1/PaymentPage/Initialize` and 
+`https://www.saferpay.com/api/Payment/v1/PaymentPage/Initialize`. The JSON-Object structure is the same on both systems, making a switch as easy, as possible.
+
+### Go live
+
+You have completed your testing and are now ready to go live, but do not know how?
+
+Well, if you haven't already, you need to contact our [Sales](https://www.six-payment-services.com/en/home/contacts.html) in order to sign a live contract. Please mention the payment methods and currencies you may want to be activated. Some 3rd party payment methods may also require you to configure certain things, like a UserId, or a password. Those are also necessary for our activation-team to know, so you can process the given method, through Saferpay.
+
+We will then activate everything necessary for you and send you the respective logins and Ids (Customer-and TerminalId), you need  to go live.
+However, there are things you need to change on your end, with the Go-Live, before you can start accepting payments:
+
+* As mentioned, you will get new Logins and IDs with your live account. Those have to be changed inside your application.
+* The JSON-API user and password need to be set. Once you have recieved your live Backoffice user, you need to log into [the Saferpay Backoffice](https://www.saferpay.com/BO/Login). There you need to create your own credentials under **Settings > JSON API basic authentication** or  **JSON API client certificate**. Those credentials have to be entered inside your application, so your system may authenticate itself towards our gateway. It is exactly the same, as with the credentials, you have recieved with the e-mail for your test account. However, due to security constraints, we will not generate these for you for the live environment. That is, why you have to do it yourself.
+* Lastly, you need to change the request-gateway URL from **https://test.saferpay.com/api/[...]** to **https://www.saferpay.com/api/[...]** in order  to send your requests to the Saferpay live-system, instead of the test-system. Some pre-made modules (Like our own) however offer a live-mode, or a possibility to set the gateway-URL! Please look inside the admin backend of your shop. As mentioned above, all functions, URLs etc. can also be found on the test environment, by just changing this small detail.
+
+After that, we recommend, trying out the payment methods, for example by using your own credit card for a test-order. You can always refund yourself inside the Saferpay Backoffice (Ff available for the given payment method! [More over here](index.html#pm-functions)), or inside your shop directly, should you have access to [refunds via API](refund.html). This ensures, that everything works as smoothly, as possible. If you encounter any problems during this, do not hesitate to contact us, so we may help you fix it as soon, as possible!
