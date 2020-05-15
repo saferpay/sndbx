@@ -47,19 +47,6 @@ If you have some detailed questions, feel free to ask the [Integration Support T
 
 Ready-to-use Saferpay payment extensions for several shop systems are offered by our partner [Customweb](https://www.sellxed.com/shop/en/eur/extensions/module/payment-service-provider/saferpay.html). You get 1 year support and, if wanted, an installation service! Your SIX-contract partner may provide you with a voucher to purchase the extension free of charge.
 
-## I have finished my testing. What are the next steps? How do i go live?
-
-If you haven't already, you need to contact our [Sales](https://www.six-payment-services.com/classic/en/shared/contacts.html#ch) in order to sign a live contract.
-
-We will activate the things necessary for you and then send you the respective logins and Ids (Customer-and TerminalId), you need  to go live.
-However, there are things you need to change with the Go-Live, before you can start accepting payments:
-
-* As mentioned, you will get new Logins and IDs with your live account. Those have to be changed inside your application.
-* The JSON-API user and password need to be set. Once you have recieved your live Backoffice user, you need to log into [this site here](https://www.saferpay.com/BO/Login). Then you need to create your own credentials under **Settings > JSON API basic authentication** or  **JSON API client certificate**. Those credentials have to be entered inside your application.
-
-* Lastly, you need to change the request-gateway URL from **https://test.saferpay.com/api/[...]** to **https://www.saferpay.com/api/[...]** in order  to send your requests to the Saferpay live-system, instead of the test-system. Some pre-made modules (Like the ones by our partner Customweb!) however offer a live-mode, which does this step for you! You simply have to activate it!
-
-
 ## My company uses a Firewall and therefore has to whitelist the IPs/Ports for the Saferpay test-system/production. Where can i find them?
 
 Saferpay uses the standard http-ports, which means 80 and 443!
