@@ -257,6 +257,22 @@ If you plan on upgrading to a newer SpecVersion, you may have to keep the follow
   </thead>
   <tbody>
     <tr>
+      <td class="text-center"><strong>1.17+</strong></td>
+      <td>
+        <ul>
+          <li><strong>Alias Insert Redirect: </strong> The <strong>redirectUrl</strong> has been moved into the new <strong>Redirect</strong> container and out of the root-object.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-center"><strong>1.12+</strong></td>
+      <td>
+        <ul>
+          <li><strong>Notification E-Mail: MerchantEmail</strong> has been replaced with <strong>MerchantEmails</strong>, a string array, that now accepts up to 10 e-mails, instead of the one, with SpecVersion 1.11 and lower!</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td class="text-center"><strong>1.10+</strong></td>
       <td>
         <ul>
