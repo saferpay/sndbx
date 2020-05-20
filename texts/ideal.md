@@ -40,7 +40,8 @@ In order to pre-select the bank, you have to set the parameter <strong>PaymentMe
 
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Attention:</strong> These Values are issued, by iDeal and underly changes, as they seem necessary!</p>
+  <p><strong>Attention:</strong> These Values are issued, by iDeal and underly changes, as they seem necessary! Further information, may be acquired <a href="https://www.ideal.nl/en/partners/issuers/">over here</a>. </p>
+  <p><strong>Last update: 20.05.2020</strong></p>
 </div>
 
 ### Test Environment Values
