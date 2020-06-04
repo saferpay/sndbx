@@ -873,7 +873,7 @@ After that, we recommend, trying out the payment methods, for example by using y
 ### <a name="terms"><a/> Understanding common Saferpay Terms
   
 If you start with Saferpay, you'll often encounter certain terms and phrases, that are important to understand, when using Saferpay. What is a Customer, or Terminal ID? What is the difference between a Token and Tokenization?
-This part of the introduction aims to understand these terms and also their relationship to one another.
+This part of the introduction aims to help you understand these terms and also their relationship to one another.
 
 <table class="table table-striped table-hover">
   <thead>
