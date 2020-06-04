@@ -910,7 +910,7 @@ This part of the introduction aims to help you understand these terms and also t
     </tr>
     <tr>
       <td class="text-center"><strong><a name="mpoterminal"></a> Mail Phone Order (MOTO) Terminal</strong></td>
-      <td><p>This terminal is used in cases, where the card holder itself is not present. For example, like the name suggests, Mail Phone Order transactions within the Saferpay Backoffice. The background is, that the card holder is unable to perform a 3D Secure Authentication, or enter his/her CVC. Please note, that these security-measures also do not apply with transactions made over this type of terminal! MOTO terminals usually have the following format: 19xxxxxx</p></td>
+      <td><p>This terminal is used, like the name suggests, for Mail Phone Order transactions within the Saferpay Backoffice. The background is, that the card holder is unable to perform a 3D Secure Authentication, or enter his/her CVC. Please note, that these security-measures also do not apply with transactions made over this type of terminal! MOTO terminals usually have the following format: 19xxxxxx</p></td>
       <td><p>You can differentiate between all your terminal types inside the Saferpay Backoffice under <strong>Settings > Terminals</strong>:</p>
         <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/MPOTrm.jpg" alt="Backoffice Terminals">
       </td>
