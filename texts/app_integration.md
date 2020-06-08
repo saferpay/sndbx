@@ -83,7 +83,7 @@ The following parameters need to be posted from the app to the RedirectUrl (See 
       <td>Input for the Card Verification Code (CVC).</span></td>     
     </tr>
     <tr>
-      <td style="width: 15%;">FormAjax</td>
+      <td style="width: 15%;">FromAjax</td>
       <td class="text-center" style="width: 10%;">Boolean</span></td>
       <td class="text-center" style="width: 10%;">O</span></td>
       <td>Must be set to "true", in order to recieve a JSON-response!</span></td>     
