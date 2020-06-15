@@ -21,7 +21,7 @@ The general process is as follows:
 6. The card holder enters his card details and submits the form.
 7. The card details are posted to saferpay directly, using the RedirectUrl as the endpoint.
 8. Saferpay responds with a new RedirectUrl for 3D Secure and DCC, if applicable.
-9. The App either opens the Url inside a Webview. 
+9. The App either opens the Url inside a Webview, or opens the phone browser. 
 10. The user may authenticate him/herself through 3DS and perform DCC.
 11. Once the external process is completed, the card holder gets redirected to the ReturnUrls
 12. The App intercepts the Redirect, through the Webview-handler 
