@@ -3,6 +3,13 @@
 Applepay-transactions can be processed via the Saferpay Payment Page, without much effort. Note, that Applepay is not a classic means of payment, but rather a digital Wallet. Your customers will still pay with Visa, Mastercard, or whatever credit card has been saved inside the Wallet, thus the payment method will correspond to this. However Saferpay will also return information, that this transaction has been performed, through Applepay. Furthermore, due to this nature, all options and limitations of the saved means of payment do apply [as stated here, if not mentioned otherwise in this chapter!](index.html#pm-functions)
 The following chapter will guide you through the steps required, in order to activate and use Applepay.
 
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Caution:</strong> As of now, LiabilityShift for Visa cards oveer Applepay is denied on authorization, due to an ongoing issue between Apple and Visa.
+  </p>
+</div>
+
 ## <a name="ppal-requirement"></a> Requirements
 
 The handling of Applepay payments with Saferpay requires:
