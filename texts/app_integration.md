@@ -1,5 +1,10 @@
 # Mobile App integration
 
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant! Furthermore, also make make sure, whether, or not <a href="psd2.html">PSD2</a> does apply to you!</p>
+</div>
+
 Payments done via a smartphone through a mobile app, are becoming more and more important.
 Saferpay offers the tools needed to be integrated via a mobile app.
 The following guide is an extension, to the standard integration methods for the [Transaction interface](https://saferpay.github.io/sndbx/Integration_trx.html) and [Secure Alias Store](https://saferpay.github.io/sndbx/scd.html#scd-sa).
