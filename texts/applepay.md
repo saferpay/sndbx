@@ -6,7 +6,7 @@ The following chapter will guide you through the steps required, in order to act
 <div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Caution:</strong> As of now, LiabilityShift for Visa cards oveer Applepay is denied on authorization, due to an ongoing issue between Apple and Visa.
+    <strong>Caution:</strong> As of now, LiabilityShift for Visa cards over Applepay is denied on authorization, due to an ongoing issue between Apple and Visa.
   </p>
 </div>
 
