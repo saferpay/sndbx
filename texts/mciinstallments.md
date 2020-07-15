@@ -22,12 +22,78 @@ Inside this container you will find one of two types of installment plans:
 1. A Fixed plan: The issuer may propose one or more fixed installment plans. Saferpay will in this case return an array of JSON-Objects, containing the information about the proposed plans within the  array: MastercardIssuerInstallments.InstallmentPlans
 
 ```json
-{  "MastercardIssuerInstallments": {    "InstallmentPlans": [      {        "NumberOfInstallments": 12,        "InterestRate": "1000",        "InstallmentFee": {          "Value": "1000",          "CurrencyCode": "CHF"        },        "AnnualPercentageRate": "500",        "FirstInstallmentAmount": {          "Value": "100000",          "CurrencyCode": "CHF"        },        "SubsequentInstallmentAmount": {          "Value": "180000",          "CurrencyCode": "CHF"        },        "TotalAmountDue": {          "Value": "1180000",          "CurrencyCode": "CHF"        }      },       {        "NumberOfInstallments": 6,        "InterestRate": "1000",        "InstallmentFee": {          "Value": "1000",          "CurrencyCode": "CHF"        },        "AnnualPercentageRate": "500",        "FirstInstallmentAmount": {          "Value": "100000",          "CurrencyCode": "CHF"        },        "SubsequentInstallmentAmount": {          "Value": "360000",          "CurrencyCode": "CHF"        },        "TotalAmountDue": {          "Value": "1180000",          "CurrencyCode": "CHF"        }      }    ],    "ReceiptFreeText": "Some dummy receipt free text"  } }
+{
+  "MastercardIssuerInstallments": {
+    "InstallmentPlans": [
+      {
+        "NumberOfInstallments": 12,
+        "InterestRate": "1000",
+        "InstallmentFee": {
+          "Value": "1000",
+          "CurrencyCode": "CHF"
+        },
+        "AnnualPercentageRate": "500",
+        "FirstInstallmentAmount": {
+          "Value": "100000",
+          "CurrencyCode": "CHF"
+        },
+        "SubsequentInstallmentAmount": {
+          "Value": "180000",
+          "CurrencyCode": "CHF"
+        },
+        "TotalAmountDue": {
+          "Value": "1180000",
+          "CurrencyCode": "CHF"
+        }
+      },
+      {
+        "NumberOfInstallments": 6,
+        "InterestRate": "1000",
+        "InstallmentFee": {
+          "Value": "1000",
+          "CurrencyCode": "CHF"
+        },
+        "AnnualPercentageRate": "500",
+        "FirstInstallmentAmount": {
+          "Value": "100000",
+          "CurrencyCode": "CHF"
+        },
+        "SubsequentInstallmentAmount": {
+          "Value": "360000",
+          "CurrencyCode": "CHF"
+        },
+        "TotalAmountDue": {
+          "Value": "1180000",
+          "CurrencyCode": "CHF"
+        }
+      }
+    ],
+    "ReceiptFreeText": "Some dummy receipt free text"
+  }
+}
 ```
 
 2. A custom plan: The card holder can choose the number of installments within the boundaries given by the issuer. In this case, the MastercardIssuerInstallments.CustomPlan container is returned:
 ```json
-{  "MastercardIssuerInstallments": {    "CustomPlan": {      "MinimumNumberOfInstallments": 3,      "MaximumNumberOfInstallments": 37,      "InterestRate": "1100",      "InstallmentFee": {        "Value": "1200",        "CurrencyCode": "CHF"      },      "AnnualPercentageRate": "600",      "TotalAmountDue": {        "Value": "1190000",        "CurrencyCode": "CHF"      }    },    "ReceiptFreeText": "Some dummy receipt free text"  } }
+{  
+  "MastercardIssuerInstallments": {    
+    "CustomPlan": {      
+      "MinimumNumberOfInstallments": 3,
+      "MaximumNumberOfInstallments": 37,
+      "InterestRate": "1100",
+      "InstallmentFee": {
+        "Value": "1200",
+        "CurrencyCode": "CHF"
+      },
+      "AnnualPercentageRate": "600",
+      "TotalAmountDue": {
+        "Value": "1190000",
+        "CurrencyCode": "CHF"
+      }
+    },
+    "ReceiptFreeText": "Some dummy receipt free text"  
+  } 
+}
 ```
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
@@ -40,7 +106,23 @@ The card holder must be able to choose whether to accept one of the proposed pla
 If the card holder chooses an installment plan, the data must be sent back to Saferpay through the  by submitting the finalization/capture of the transaction information of the chosen plan through  container. With the capture of the transaction, the plan has been the MastercardIssuerInstallments.ChosenPlan chosen and the process is handled automatically by the card holder's issuing bank.
 Example:
 ```json
-{  "MastercardIssuerInstallments": {    "ChosenPlan": {      "NumberOfInstallments": 12,      "InterestRate": "1100",      "InstallmentFee": {        "Value": "1200",        "CurrencyCode": "CHF"      },      "AnnualPercentageRate": "600",      "TotalAmountDue": {        "Value": "1190000",        "CurrencyCode": "CHF"      }    }  } }
+{  
+  "MastercardIssuerInstallments": {
+    "ChosenPlan": {
+      "NumberOfInstallments": 12,
+      "InterestRate": "1100",
+      "InstallmentFee": {
+        "Value": "1200",
+        "CurrencyCode": "CHF"
+      },
+      "AnnualPercentageRate": "600",
+      "TotalAmountDue": {
+        "Value": "1190000",
+        "CurrencyCode": "CHF"
+      }
+    }
+  }
+}
 ```
 ##<a name="mcii-test"></a>Test cards
 
