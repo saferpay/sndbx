@@ -751,14 +751,14 @@
 <section><h1>Mastercard Issuer Installment Integration Guide</h1><div class="row"><div class="col-sm-6"><p>##<a name="mcii-intro"></a>Introduction
 Mastercard offers together with participating issuers an installment solution where the merchant will immediately receive the full amount of the payment, and the card holder pays back the transaction amount to his issuing bank in installments according to the chosen installment plan.
 Installment options will only be available if the merchant has implemented the functionality as described below and the issuing bank supports Mastercard Installments, and decides to offer them for the transaction at hand.
-The functionality is available upon request for merchants active in the mandated countries Romania, Hungary, UK, Slovenia, Czech Republic or Poland.</p><p>##<a name="mcii-req"></a> Prerequisites
+The functionality is available upon request for merchants active in the mandated countries Romania, Hungary, UK, Slovenia, Czech Republic or Poland.</p><p>##<a name="mcii-req"></a>Prerequisites
 For a merchant to enable Mastercard Issuer Installments, the following prerequisites are required:</p><ul>
 <li>Saferpay E-Commerce licence.</li>
 <li>Saferpay E-Commerce terminal.</li>
 <li>Acquiring contract with SIX Payment Services.</li>
 <li>Mastercard Issuer Installments are activated on the terminal.
 Please contact your local Sales contact to activate a terminal for Mastercard Issuer Installments.</li>
-</ul><p>##<a name="mcii-opt"></a> Receiving installment options
+</ul><p>##<a name="mcii-opt"></a>Receiving installment options
 It is important to know that the availability of installment options is up to the issuing bank and not the merchant or the card holder. All Mastercard transactions potentially offer Issuer Installments. However, it's the issuer who decides whether or not to offer installment options for a given transaction.
 Installment options are only returned as a result of the the authorization. This means that the card holder has to go through a standard transaction flow first, either by using  or . the Saferpay Payment Page Transaction Interface
 If the Issuer decides to offer installment options, he can do so in two different ways. The necessary information will be returned by Saferpay through the Pa or  responses respectively, inside the MastercardIssuerInstallments container.yment Page Assert Transaction Authorize
@@ -836,11 +836,12 @@ Inside this container you will find one of two types of installment plans:</p><o
 }
 </code></pre><div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Important:</strong> Either the first or the second option will be available, but not both.
+  <p><strong>VERY IMPORTANT:</strong> Either the first or the second option will be available, but not both.
 Once the installment options are returned, the merchant has to present the options to the card holder in a way compliant with the relevant Mastercard guidelines.    
 The card holder must be able to choose whether to accept one of the proposed plans, or not.</p>
 </div><p>##<a name="mcii-plan"></a>Choosing an installment plan
-If the card holder chooses an installment plan, the data must be sent back to Saferpay through the  by submitting the finalization/capture of the transaction information of the chosen plan through  container. With the capture of the transaction, the plan has been the MastercardIssuerInstallments.ChosenPlan chosen and the process is handled automatically by the card holder's issuing bank.</p><p>Example:</p><pre><code class="language-json">{  
+If the card holder chooses an installment plan, the data must be sent back to Saferpay through the  by submitting the finalization/capture of the transaction information of the chosen plan through  container. With the capture of the transaction, the plan has been the MastercardIssuerInstallments.ChosenPlan chosen and the process is handled automatically by the card holder's issuing bank.
+Example:</p><pre><code class="language-json">{  
   &quot;MastercardIssuerInstallments&quot;: {
     &quot;ChosenPlan&quot;: {
       &quot;NumberOfInstallments&quot;: 12,
