@@ -201,6 +201,18 @@
     "Target": "health.html"
   },
   {
+    "Title": "Mastercard Issuer Installments",
+    "Source": "texts/mciinstallments.md",
+    "Target": "mciinstallments.html",
+    "Subsites": [
+      { "Source": "texts/mciinstallments.md", "Title": "Introduction", "Target": "mciinstallments.html#mcii-intro" },
+      { "Source": "texts/mciinstallments.md", "Title": "Prerequisites", "Target": "mciinstallments.html#mcii-req" },
+      { "Source": "texts/mciinstallments.md", "Title": "Receiving installment options", "Target": "mciinstallments.html#mcii-opt" },
+      { "Source": "texts/mciinstallments.md", "Title": "Choosing an installment plan", "Target": "mciinstallments.html#mcii-plan" },
+      { "Source": "texts/mciinstallments.md", "Title": "Test Cards", "Target": "mciinstallments.html#mcii-test" }
+    ] 
+  },
+  {
     "Title": "FAQ",
     "Source": "texts/FAQ.md",
     "Target": "faq.html"
