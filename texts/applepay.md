@@ -73,7 +73,8 @@ If you want to perform a direct redirect to Applepay, you have to use the parame
         "APPLEPAY"
     ],
     "PaymentMethods": [
-        "VISA"
+        "VISA",
+        "MASTERCARD"
     ],
     "ReturnUrls": {
         "Success": "[YOUR URL]",
@@ -87,4 +88,11 @@ If you want to perform a direct redirect to Applepay, you have to use the parame
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> If you are using <strong>"Wallets"</strong> alongside <strong>"PaymentMethods"</strong>, you can limit the Brands, your customer may use! However note, that the Payment Page then also will display the given Brands as dedicated Payment Methods, so the customer may pay this way!</p>
+</div>
+
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> If you are using PaymentMethods, you <strong>must</strong> also submit Wallets, if you want Applepay to be displayed! Also, if you are just submitting one Payment Method, the Payment Page will still directly jump to the card entry form, skipping Applepay!
+  </p>
 </div>
