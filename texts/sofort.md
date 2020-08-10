@@ -68,8 +68,15 @@ The handling of SOFORT payments with Saferpay requires:
 12. Save and complete with adding the notification URL. As method choose „POST“. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_noturl.png "Notification URL")<br /><i class="glyphicon glyphicon-hand-right"></i> HTTPS URL:<br />*https://-USER_VARIABLE_1-*
 
-13. Finally create a project password. <strong>Please make sure, that you check the "Don't use special characters"-box!</strong> Click the tab „Extended settings“ again and there „Passwords and hash algorithm“. Select SHA-1. <br>
+13. Finally create a project password. Click the tab „Extended settings“ again and there „Passwords and hash algorithm“. Select SHA-1. <br>
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_password.png "Project password") 
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important: </strong>Please make sure to check the <strong>Don't use special characters</strong>-box! Otherwise it can cause major issues! 
+  </p>
+</div>
+
 <div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
