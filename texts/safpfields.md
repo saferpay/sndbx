@@ -75,9 +75,9 @@ After you have created your API-Token, you can start integrating the Saferpay Fi
 
 ### Include the Saferpay Fields Javascript library into your site
 ```html
-<script src="'https://test.saferpay.com/Fields/lib/1.2/saferpay-fields.js'"></script> <!-- For Test-Environment-->
+<script src="'https://test.saferpay.com/Fields/lib/1.3/saferpay-fields.js'"></script> <!-- For Test-Environment-->
 <!-- OR -->
-<script src="'https://www.saferpay.com/Fields/lib/1.2/saferpay-fields.js'"></script> <!-- For Live-Environment-->
+<script src="'https://www.saferpay.com/Fields/lib/1.3/saferpay-fields.js'"></script> <!-- For Live-Environment-->
 ```
 ### Define, where Saferpay should load the Hosted Fields
 
