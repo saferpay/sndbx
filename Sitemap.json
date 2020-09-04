@@ -323,7 +323,12 @@
       { "Source": "texts/sofort.md", "Title": "Sofort iFrame integration", "Target": "sofort.html#sf-iFrame" },
       { "Source": "texts/sofort.md", "Title": "SEPA manual Refunds for Sofort", "Target": "sofort.html#sf-refund" }
     ] 
-   }, 
+   },
+  {
+    "Title": "Klarna Payments",
+    "Source": "texts/klarnapayments.md",
+    "Target": "KlarnaPayments.html",
+  },
  {
   "Title": "eps",
   "Source": "texts/eps.md",
