@@ -9,6 +9,11 @@ This chapter will cover the technical aspects of a Fire integration into your sh
 
 ### Licenses
 
+Fire will be devided into 3 categories:
++ 
++ 
++ 
+
 ## <a name="fire-activation"></a> Activation
 
 ## <a name="fire-training"></a> Training
@@ -136,5 +141,191 @@ The following data points need to be set via the JSON-API:
     </tr>
   </tbody>
 </table>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th class="text-center">Fire Datapoint</th>
+      <th class="text-center">JSON API</th>
+      <th class="text-center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">bill_ad_city</td>
+      <td class="text-center"><strong>Payer.BillingAddress.City</strong></td>
+      <td>Billing address city</td>
+    </tr>
+    <tr>
+      <td class="text-center">bill_ad_ctry</td>
+      <td class="text-center"><strong>Payer.BillingAddress.Country</strong></td>
+      <td>Billing address country</td>
+    </tr>
+    <tr>
+      <td class="text-center">bill_ad_first_name</td>
+      <td class="text-center"><strong>Payer.BillingAddress.FirstName</strong></td>
+      <td>Billing address first name</td>
+    </tr>
+    <tr>
+      <td class="text-center">bill_ad_last_name</td>
+      <td class="text-center"><strong>Payer.BillingAddress.LastName</strong></td>
+      <td>Billing address last name</td>
+    </tr>
+    <tr>
+      <td class="text-center">bill_ad_line1</td>
+      <td class="text-center"><strong>Payer.BillingAddress.Street</strong></td>
+      <td>Billing address street</td>
+    </tr>
+    <tr>
+      <td class="text-center">bill_ad_line2</td>
+      <td class="text-center"><strong>Payer.BillingAddress.Street2</strong></td>
+      <td>Additional billing address street information (e.g. PO Box)</td>
+    </tr>
+    <tr>
+      <td class="text-center">bill_ad_zip</td>
+      <td class="text-center"><strong>Payer.BillingAddress.Zip</strong></td>
+      <td>Billing address zip code</td>
+    </tr>
+    <tr>
+      <td class="text-center">phone</td>
+      <td class="text-center"><strong>Payer.BillingAddress.Phone</strong></td>
+      <td>Billing address phone number</td>
+    </tr>
+    <tr>
+      <td class="text-center">ship_ad_city</td>
+      <td class="text-center"><strong>Payer.DeliveryAddress.City</strong></td>
+      <td>Shipping address city</td>
+    </tr>
+    <tr>
+      <td class="text-center">ship_ad_ctry</td>
+      <td class="text-center"><strong>Payer.DeliveryAddress.Country</strong></td>
+      <td>Shipping address country</td>
+    </tr>
+    <tr>
+      <td class="text-center">ship_ad_first_name</td>
+      <td class="text-center"><strong>Payer.DeliveryAddress.FirstName</strong></td>
+      <td>Shipping address first name</td>
+    </tr>
+    <tr>
+      <td class="text-center">ship_ad_last_name</td>
+      <td class="text-center"><strong>Payer.DeliveryAddress.LastName</strong></td>
+      <td>Shipping address last name</td>
+    </tr>
+    <tr>
+      <td class="text-center">ship_ad_line1</td>
+      <td class="text-center"><strong>Payer.DeliveryAddress.Street</strong></td>
+      <td>Shipping address street</td>
+    </tr>
+    <tr>
+      <td class="text-center">ship_ad_line2</td>
+      <td class="text-center"><strong>Payer.DeliveryAddress.Street2</strong></td>
+      <td>Additional shipping address street information (e.g. PO Box)</td>
+    </tr>
+    <tr>
+      <td class="text-center">ship_ad_zip</td>
+      <td class="text-center"><strong>Payer.DeliveryAddress.Zip</strong></td>
+      <td>Delivery address zip code</td>
+    </tr>
+    <tr>
+      <td class="text-center">phone</td>
+      <td class="text-center"><strong>Payer.DeliveryAddress.Phone</strong></td>
+      <td>Delivery address phone number</td>
+    </tr>
+    <tr>
+      <td class="text-center">ship_ad_email</td>
+      <td class="text-center"><strong>Payer.DeliveryAddress.Email</strong></td>
+      <td>Delivery address email address</td>
+    </tr>
+  </tbody>
+</table> 
+
+### Example
+Here you can see an example <a href="">Payment Page Initialize</a> request. Note, that the containers and parameters are, of course, consistent throughout the whole API:
+
+```json
+{
+  "RequestHeader": {
+    "SpecVersion": "<insert current spec-version here>",
+    "CustomerId": "<insert your customer id here>",
+    "RequestId": "798b38f3176f4eb1bc6ce36e946d10ba",
+    "RetryIndicator": 0
+  },
+  "TerminalId": "<insert your terminal id here>",
+  "Payment": {
+    "Amount": {
+    "Value": "55000",
+    "CurrencyCode": "EUR"
+  },
+  "OrderId": "AB-12345.xyz",
+  "Description": "Your order #AB-12345.xyz"
+  },
+  "Payer": {
+    "IpAddress": "127.0.0.1",
+    "DeliveryAddress": {
+      "FirstName": "John",
+      "LastName": "Doe",
+      "Company": "123 T-hee hee hee Ltd.",
+      "Gender": "MALE",
+      "Street": "Fakestreet 42",
+      "Zip": "12346",
+      "City": "Gotham",
+      "CountryCode": "US",
+      "DateOfBirth": "1939-27-05",
+      "Phone": "555707422666701"
+    }
+  },
+  "ReturnUrls": {
+    "Success": "https://yourshop/payment-success",
+    "Fail": "https://yourshop/payment-failed",
+    "Abort": "https://yourshop/payment-aborted"
+  },
+  "Notification": {
+    "NotifyUrl": "https://yourshop/payment-notify"
+  },
+  "Order": {
+    "Items": [
+      {
+        "Type": "PHYSICAL",
+        "Id": "BAAA-BPTENT",
+        "VariantId": "BAAA-BPTENT-RED",
+        "Name": "Awesome Tent",
+        "Description": "Backpacking Tent with room for 3 people, in red.",
+        "Quantity": 1,
+        "UnitPrice": "25000",
+        "IsPreOrder": false
+      },
+      {
+        "Type": "GIFTCARD",
+        "Id": "EVCHR-HIKE",
+        "VariantId": "EVCHR-HIKE-300",
+        "Name": "Hiking vacation voucher",
+        "Description": "Enjoy the vacation with your new girlfriend!!",
+        "Quantity": 2,
+        "UnitPrice": "30000",
+        "IsPreOrder": false
+      }
+    ]
+  },
+  "RiskFactors": {
+    "DeliveryType": "SHOP",
+    "AccountCreationDate": "2019-02-21T12:04:43Z",
+    "PasswordLastChangeDate": "2019-12-23T16:36:43Z"
+  }
+}
+```
+
 
 ## <a name=""></a> Decline
+
+In case of a decline, Saferpay will throw a corresponding error
+
+```json
+{
+    "ResponseHeader": {
+        "SpecVersion": "<current spec-version>",
+        "RequestId": "1"
+    },
+    "Behavior": "ABORT",
+    "ErrorName": "BLOCKED_BY_RISK_MANAGEMENT",
+    "ErrorMessage": "Blocked by fraud detection"
+}
+```
