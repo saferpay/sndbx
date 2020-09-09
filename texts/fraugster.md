@@ -6,28 +6,36 @@ This chapter will cover the technical aspects of a Fire integration into your sh
 
 
 ## <a name="fire-req"></a> Requirements
-
-### Licenses
-
-Fire will be devided into 3 categories:
-+ 
-+ 
-+ 
+* The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
+* Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
+* A contract with Fraugster and its activation in the Saferpay System.
 
 ## <a name="fire-activation"></a> Activation
 
+After Fraugster Fire has been activated on your account, you will have access to the options under **Risk & Fraud > Fraud Prevention Settings**. There you can find a list of all the currently supported Payment Methods, for which you can either fully activate the fraud prevention:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_fraud_activation1.png "Fraud Prevention fully activated")
+Or you can select the payment methods you want to be covered by Fraugster Fire:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_fraud_activation1.png "Fraud Prevention partially activated")
+
 ## <a name="fire-training"></a> Training
 
-Fire uses AI-Algorithms and ap re-defined set of rules, in order to provide fraud protection. While the latter can directly be influenced by the merchant and is fixed,
-the former requires a so called training period.
-As every merchant is different and also has varying needs, the AI needs to be trained do consider these needs, to correctly detect mailicious transactions, while also preventing false alerts.
+Fire uses AI-Algorithms and a pre-defined set of rules, in order to provide fraud protection. While the latter can directly be influenced by the merchant and is fixed, the former requires a so called training period, in order to dynamically react to the merchants needs.
 
-This period usually takes **TIME HERE**.
+While Fire is ready to use, right after activation, the system will take a little while to fit itself to the merchants needs.
+
 
 ## <a name="fire-training"></a> Datapoints
 
-In order for the training and also later the detection to work properly, the system needs to be provided with a set of datapoints with each transaction.
-Some are provided automatically, while others need to be submitted by the merchant-system, with the initial request, when starting the transaction, like the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a>.
+In order for the training and also the detection to work properly, the system needs to be provided with a set of datapoints with each transaction.
+Some are provided automatically by Saferpay, while others need to be submitted by the merchant-system, with the initial request, when starting the transaction, like the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a>.
+
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Note:</strong> All of these datapoints are generally optional. However the detection will work better, the more data it has, to do its risk evaluation!
+  </p>
+</div>
+
 The following data points need to be set via the JSON-API:
 
 <table class="table table-striped table-hover">
@@ -314,7 +322,69 @@ Here you can see an example <a href="">Payment Page Initialize</a> request. Note
 ```
 
 
-## <a name=""></a> Decline
+## <a name=""></a> Responses
+
+### Success
+
+In case of a success, the transaction response will aslo carry additional information inside the **FraudPrevention.Result** parameter. 
+This can have one of two values **APPROVED** and **MANUAL_REVIEW**.
+In both cases, the transaction was indeed successful, however the latter indicates, that there may be issues with this transaction, which need to be reviewed manually, inside the Fraugster Fire backoffice.
+It is then up to you -the merchant-, to either accept, or decline this transaction.
+
+```json
+ "ResponseHeader": {
+    "SpecVersion": "[current Spec-Version]",
+    "RequestId": "[your request id]"
+  },
+  "Transaction": {
+    "Type": "PAYMENT",
+    "Status": "AUTHORIZED",
+    "Id": "MUOGAWA9pKr6rAv5dUKIbAjrCGYA",
+    "Date": "2015-09-18T09:19:27.078Z",
+    "Amount": {
+      "Value": "100",
+      "CurrencyCode": "CHF"
+    },
+    "AcquirerName": "AcquirerName",
+    "AcquirerReference": "Reference",
+    "SixTransactionReference": "0:0:3:MUOGAWA9pKr6rAv5dUKIbAjrCGYA",
+    "ApprovalCode": "012345"
+  },
+  "PaymentMeans": {
+    "Brand": {
+      "PaymentMethod": "VISA",
+      "Name": "VISA Saferpay Test"
+    }
+  },
+  "DisplayText": "9123 45xx xxxx 1234",
+  "Card": {
+    "MaskedNumber": "912345xxxxxx1234",
+    "ExpYear": 2015,
+    "ExpMonth": 9,
+    "HolderName": "Max Mustermann",
+    "CountryCode": "CH"
+  },
+  "Payer": {
+    "IpAddress": "1.2.3.4",
+    "IpLocation": "DE"
+  },
+  "Liability": {
+    "LiabilityShift": true,
+    "LiableEntity": "ThreeDs",
+    "ThreeDs": {
+      "Authenticated": true,
+      "LiabilityShift": true,
+      "Xid": "ARkvCgk5Y1t/BDFFXkUPGX9DUgs=",
+      "VerificationValue": "AAABBIIFmAAAAAAAAAAAAAAAAAA="
+    }
+  },
+  "FraudPrevention": {
+    "Result": "MANUAL_REVIEW"
+  }
+}
+```
+
+### Failure
 
 In case of a decline, Saferpay will throw a corresponding error
 
