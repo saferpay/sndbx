@@ -14,6 +14,7 @@ This chapter will cover the technical aspects of a Fire integration into your sh
 
 After Fraugster Fire has been activated on your account, you will have access to the options under **Risk & Fraud > Fraud Prevention Settings**. There you can find a list of all the currently supported Payment Methods, for which you can either fully activate the fraud prevention:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_fraud_activation1.png "Fraud Prevention fully activated")
+
 Or you can select the payment methods you want to be covered by Fraugster Fire:
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_fraud_activation1.png "Fraud Prevention partially activated")
 
