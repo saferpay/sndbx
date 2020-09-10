@@ -20,12 +20,9 @@ Or you can select the payment methods you want to be covered by Fraugster Fire:
 
 ## <a name="fire-training"></a> Training
 
-Fire uses AI-Algorithms and a pre-defined set of rules, in order to provide fraud protection. While the latter can directly be influenced by the merchant and is fixed, the former requires a so called training period, in order to dynamically react to the merchants needs.
+Fire uses AI-Algorithms and a pre-defined set of rules, in order to provide fraud protection. This means, that the fraud-prevention will better itself over time, as it adapts itself to the merchants needs.
 
-While Fire is ready to use, right after activation, the system will take a little while to fit itself to the merchants needs.
-
-
-## <a name="fire-training"></a> Datapoints
+## <a name="fire-data"></a> Datapoints
 
 In order for the training and also the detection to work properly, the system needs to be provided with a set of datapoints with each transaction.
 Some are provided automatically by Saferpay, while others need to be submitted by the merchant-system, with the initial request, when starting the transaction, like the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a>.
@@ -322,6 +319,14 @@ Here you can see an example <a href="">Payment Page Initialize</a> request. Note
 }
 ```
 
+
+## <a name="fire-rules"></a> Rules
+
+Aside its AI-Algorithms, Fire also offers the option for the merchant, to write his own set of rules, which are then incorporated into the evaluation process.
+For this purpose, Fraugster offers its own Backend, where you, the merchant, can directly influence Fire, to fit your needs.
+
+The <a href="">LINK NEEDED Fire Backend can be found here. LINK NEEDED</a>
+Furthermore, you can also find <a href="">LINK NEEDED documentation on how to write and use custom rules here. LINK NEEDED</a>
 
 ## <a name=""></a> Responses
 
