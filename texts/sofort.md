@@ -1,6 +1,13 @@
 # SOFORT by Klarna
 
-SOFORT is a third party means of payment by Klarna Group. To process SOFORT via the Saferpay JSON API a few things must be observed.
+SOFORT is a third party means of payment by Klarna Group. To process SOFORT via the Saferpay JSON API a few things must be considered.
+
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Sofort by Klarna/Sofortüberweisung is <strong>NOT</strong> the same as Klarna Payments! Please refer to <a href="KlarnaPayments.html">this chapter</a>, if you want to use Klarna Payments!
+  </p>
+</div>
 
 ## <a name="sf-requirement"></a> Requirements
 
