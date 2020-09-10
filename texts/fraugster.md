@@ -10,6 +10,22 @@ This chapter will cover the technical aspects of a Fire integration into your sh
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 * A contract with Fraugster and its activation in the Saferpay System.
 
+### Supported Payment Methods and Flows
+Currently, the following payment methods are supported:
+
++ Mastercard
++ Maestro
++ Visa/Vpay
++ American Express
++ Bancxontact
++ PayPal
+
+Currently, the following flows are supported:
+
++ [Payment Page](Integration_PP.html)
++ [Transaction Interface](Integration_trx.html), including the [Saferpay Fields](SaferpayFields.html)
++ [Direct Mode for Bancontact](bancontact.html#bancontact-directmode)
+
 ## <a name="fire-activation"></a> Activation
 
 After Fraugster Fire has been activated on your account, you will have access to the options under **Risk & Fraud > Fraud Prevention Settings**. There you can find a list of all the currently supported Payment Methods, for which you can either fully activate the fraud prevention:
