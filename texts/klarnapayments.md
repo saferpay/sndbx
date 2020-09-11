@@ -212,3 +212,29 @@ Furthermore, for merchants in the European Union, Klarna highly recommends to al
     ]
   },
 ```
+
+### Address 
+
+Klarna requires the Billing Address to be set. There are two options you have, on how this is done.
+
+1. The address is captured during the payment process, where the customer has to enter it him/herself:
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/klarna_address_form.png "Address entry form")
+2. If you already have the address stored in your shop, you can also submit it, with the <a href="">Payment Page Initialize Request</a>, inside the <strong>Payer.BillingAddress</strong> container. In this case the address-form will be skipped.
+
+### Example
+```json
+"Payer": {
+    "BillingAddress": {
+        "FirstName": "John",
+        "LastName": "Doe",
+        "Email": "john.doe@provider.com",
+        "CountryCode": "de",
+        "Gender": "MALE",
+        "Street": "Fakestreet 1",
+        "Zip":"12345",
+        "City":"Notown",
+        "DateOfBirth": "1989-03-17",
+        "Phone": "+49152567125390"
+    }
+},
+```
