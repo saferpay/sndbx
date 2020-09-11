@@ -8,7 +8,7 @@ This chapter will cover the technical aspects of a Fire integration into your sh
 ## <a name="fire-req"></a> Requirements
 * The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
-* A contract with Fraugster and its activation in the Saferpay System.
+* A contract with Fraugster and its activation in the Saferpay System. **<= HOW TO? INFORMATION NEEDED!**
 
 ### Supported Payment Methods and Flows
 Currently, the following payment methods are supported:
