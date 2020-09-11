@@ -754,7 +754,12 @@
 				</div>
 
 				
-<section><h1>Klarna Payments</h1><div class="row"><div class="col-sm-6"><div class="warning" style="min-height: 75px;">
+<section><h1>Klarna Payments</h1><div class="row"><div class="col-sm-6"><div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Caution: THIS IS A WORK IN PROGRESS! KLARNA IS CURRENTLY IN ITS PILOT PHASE! ONCE IT IS BROADLY AVAILABLE, THIS NOTE WILL BE REMOVED!</strong>
+  </p>
+</div><div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> Klarna Payments is <strong>NOT</strong> the same as Sofort&#252;berweisung! Please refer to <a href="sofort.html">this chapter</a>, if you want to use Sofort&#252;berweisung!
@@ -763,26 +768,41 @@
 <li>Pay Now: The order is payed now, via Direct Debit, or Bank Transfer.</li>
 <li>Pay Later: The order is payed after 14 days.</li>
 <li>Slice it: The order is payed in installment rates, with an interest.</li>
-</ul><p>This chapter details the technical implementation of Klarna Payments, through Saferpay.</p><p><a name="klarna-req"></a> Requirements</p><ul>
-<li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
-<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
-<li>A valid contract with Klarna.</li>
-<li>Klarna Payments is only available via the <a href="Integration_PP.html">PaymentPage flow</a>!</li>
-</ul><p><a name="klarna-activation"></a> Activation</p><p>Unlike other payment methods, Klarna payments offers a self-onboarding service, which you can access inside the Backoffice under <strong>Settings &gt; Terminals</strong>. Please select the terminal you want Klarna and scroll down to <strong>Self Service</strong>.</p><p>This service handles differently, depending on the environment (test|live) you are on, so please pay close attention.</p><p>Lastly: As mentioned, Klarna Payments is seperated into three different categories; .
-These, together with the currencies, are defined in the Klarna contract and not on Saferpay side. With each start of a new transaction, Saferpay will ask Klarna for this information. If a currency was submitted with the <a href>Payment Page Initialize Request</a>, that isn't supported, or a certain payment category is not supported by the Klarna account, Saferpay will not show said option.</p><div class="warning" style="min-height: 75px;">
+</ul><p>These, together with the currencies, are defined in the Klarna contract and not on Saferpay side. With each start of a new transaction, Saferpay will ask Klarna for this information. If a currency was submitted with the <a href>Payment Page Initialize Request</a>, that isn't supported, or a certain payment category is not activated on the Klarna account, Saferpay will not show said option.</p><div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important: This can also lead to Klarna Payments not being displayed altogether.</strong> So please make sure, that your Klarna account is set up correctly and that you use the correct currency!
   </p>
-</div><p><a name="klarna-integration"></a> Integration</p><p><a name="klarna-testing"></a> Testing period</p><p>Before you can accept live payments, Klarna requires a testing period.
+</div><p>This chapter details the technical implementation of Klarna Payments, through Saferpay.</p></div></div></section><section id="klarna-req"><h2><a name="klarna-req"></a> Requirements</h2><div class="row"><div class="col-sm-6"><p>The following requirements have to be met, in order to accept Klarna Payments via Saferpay:</p><ul>
+<li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
+<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
+<li>A valid contract with Klarna.</li>
+<li>Klarna Payments is only available via the <a href="Integration_PP.html">PaymentPage flow</a>!</li>
+</ul></div></div></section><section id="klarna-activation"><h2><a name="klarna-activation"></a> Activation</h2><div class="row"><div class="col-sm-6"><p>Unlike other payment methods, Klarna payments offers a self-onboarding service, which you can access inside the Backoffice under <strong>Settings &gt; Terminals</strong>. Please select the terminal you want Klarna activated on and scroll down to <strong>Self Service</strong>.</p><p><strong>This service handles differently, depending on the Saferpay environment (test|live) you are on, so please pay close attention.</strong></p><p>You'll have two options <strong>Klarna</strong> and additionally, on the Saferpay test-environment, <strong>Klarna Simulator</strong>.</p><p><img src alt="alt text"></p></div></div></section><section><h3>Klarna Simulator</h3><div class="row"><div class="col-sm-6"><p>The Klarna Simulator is a Sandbox provided by Saferpay, which provides an extensive GUI for testing Klarna.
+In order to activate it, you first need to click on <strong>Configure</strong>. There you have to set user and password, which can be anything for the simulator.
+However should you enter nothing, the simulator will simulate an error, as if no, or the wrong credentials have been entered. So if you want to test that case, you can do so. Then the <strong>Environment</strong> slider will simulate live and sandbox (Test) behavior, if you want, though the differences are slim.
+Lastly, you have to activate the countries, you want to support Klarna in. More on that later.</p><p><img src alt="alt text"></p><p>Once this is done, click on <strong>Save</strong>, however you also need to <strong>activate the Simulator</strong>, by clicking on the activation-slider:
+<img src alt="alt text"></p><p>That is it! You can now use the Saferpay Klarna Simulator.
+And this is the Simulator on the Payment Page. Note the indicator at the top, telling you, that you are using the Saferpay Simulator:</p><p><img src alt="alte text"></p></div></div></section><section><h3>Klarna</h3><div class="row"><div class="col-sm-6"><p>Similar to the Klarna Simulator, it also requires the same level of configuration, like the countries, with the difference, that the user and password accept your real Klarna credentials.
+Enter your user and password and configure your countries.</p><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Very Important:</strong> On the Saferpay Test Environment, the Klarna configuration exclusively works on the Klarna Sandbox! If you want to test on the Klarna Sandbox, you have to navigate to <a href="https://developers.klarna.com/">Klarna Developers</a> to create your Sandbox account.
+  </p>
+</div><p>Additionally, you also have the <strong>Test|Live</strong> slider, which does different things, depending on which Saferpay Environment you are currently on:</p><ul>
+<li><strong>Test:</strong> On the Saferpay Test Environment, this option will <strong>always</strong> point towards the Klarna Sandbox!</li>
+<li><strong>Production:</strong> On the Saferpay Production-Environment, this slider will switch between the Klarna Production and Sandbox. See the next sub-chapter on why this is necessary!</li>
+</ul><p><img src alt="alt text"></p><p>Once you have entered your credentials, configured your country and, if necessary, the environment enpoint, click on <strong>Save</strong>.
+Lastly, make sure to <strong>activate Klarna</strong>, by clicking on the activation slider.</p><p><img src alt="alt text"></p></div></div></section><section id="klarna-testing"><h2><a name="klarna-testing"></a> Testing period</h2><div class="row"><div class="col-sm-6"><p>Before you can accept live payments, Klarna requires a testing period.
 During this period, Klarna will evaluate your business and integration, before they fully activate your account.
-During this time, the <strong>Environment Slider</strong> inside the Klarna configuration under <strong>Settings &gt; Terminals</strong> inside the backoffice, has to be turned to <strong>Testing</strong>.
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_klarna_settings_testing.png" alt="alt text" title="Klarna Testing"></p><p>Furthermore, you have to <strong>enter your credentials for the Klarna Sandbox not your live credentials, as these testing-transactions are running on the Klarna Sandbox!</strong></p><div class="warning" style="min-height: 75px;">
+During this time, the <strong>Environment Slider</strong> inside the Klarna configuration under <strong>Settings &gt; Terminals</strong> inside the Saferpay Backoffice, has to be turned to <strong>Testing</strong>.
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_klarna_settings_testing.png" alt="alt text" title="Klarna Testing"></p><div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important:</strong> Also remember to turn this slider back to <strong>Live</strong> and change the credentials to your live-credentials, once the testing-period is over!
+    <strong>Important: Enter your credentials for the Klarna Sandbox not your live credentials, as these testing-transactions are running on the Klarna Sandbox!</strong> Also remember to turn this slider back to <strong>Live</strong> and change the credentials to your live-credentials, once the testing-period is over!
   </p>
-</div></div></div></section>
+</div></div></div></section><section id="klarna-integration"><h2><a name="klarna-integration"></a> Integration</h2><div class="row"><div class="col-sm-6"><p>Klarna requires certain datapoints to be submitted, in order for the processing to work.
+Here is a list of all the mandatory parameters, that need to be submitted:</p><p>Furthermore, for merchants in the European Union, Klarna highly recommends to also set the following parameters:</p></div></div></section>
 
 			</main>
 
