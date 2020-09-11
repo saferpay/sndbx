@@ -50,7 +50,7 @@ Some are provided automatically by Saferpay, while others need to be submitted b
   </p>
 </div>
 
-The following data points need to be set via the JSON-API:
+The following data points can be set via the JSON-API:
 
 <table class="table table-striped table-hover">
   <thead>
