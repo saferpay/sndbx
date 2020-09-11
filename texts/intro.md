@@ -690,6 +690,19 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></td>
       <td class="text-center"><span style="color: #1400ff; font-size: 20px" class="glyphicon glyphicon-unchecked"></span></td>
     </tr> 
+    <tr>
+      <td>Klarna Payments</td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr> 
   </tbody>
 </table>
 
