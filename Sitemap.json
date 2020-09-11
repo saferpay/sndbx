@@ -239,6 +239,7 @@
        { "Source": "texts/paymentmeans.md", "Title": "UnionPay", "Target": "paymentmeans.html#unionpay-cards" },
        { "Source": "texts/paymentmeans.md", "Title": "Postfinance", "Target": "paymentmeans.html#postfinance-cards" },
        { "Source": "texts/paymentmeans.md", "Title": "Apple Pay", "Target": "paymentmeans.html#applepay-cards" }
+       { "Source": "texts/paymentmeans.md", "Title": "Klarna Payments", "Target": "paymentmeans.html#klarna-cards" }
    ] 
   },
   {
@@ -328,6 +329,12 @@
     "Title": "Klarna Payments",
     "Source": "texts/klarnapayments.md",
     "Target": "KlarnaPayments.html"
+    "Subsites": [
+      { "Source": "texts/KlarnaPayments.md" "Title": "Requirements", "Target": "KlarnaPayments.html#klarna-req" },
+      { "Source": "texts/KlarnaPayments.md" "Title": "Activation", "Target": "KlarnaPayments.html#klarna-activation" },
+      { "Source": "texts/KlarnaPayments.md" "Title": "Testing Period", "Target": "KlarnaPayments.html#klarna-testing" },
+      { "Source": "texts/KlarnaPayments.md" "Title": "Integration", "Target": "KlarnaPayments.html#klarna-integration" },
+    ]
   },
  {
   "Title": "eps",
