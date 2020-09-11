@@ -99,7 +99,7 @@ This is the Klarna Sandbox on the Payment Page:
 Before you can accept live payments, Klarna requires a testing period.
 During this period, Klarna will evaluate your business and integration, before they fully activate your account.
 During this time, the **Environment Slider** inside the Klarna configuration under **Settings > Terminals** inside the Saferpay Backoffice, has to be turned to **Testing**.
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_klarna_settings_testing.png "Klarna Testing")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_klarna_settings_SliderTest.png "Klarna Testing")
 
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
