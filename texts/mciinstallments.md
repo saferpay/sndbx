@@ -3,7 +3,7 @@
 ## <a name="mcii-intro"></a>Introduction
 Mastercard offers together with participating issuers an installment solution where the merchant will immediately receive the full amount of the payment, and the card holder pays back the transaction amount to his issuing bank in installments according to the chosen installment plan.
 Installment options will only be available if the merchant has implemented the functionality as described below and the issuing bank supports Mastercard Installments, and decides to offer them for the transaction at hand. 
-The functionality can be enabled upon request. Interested merchants can contact the [Mastercard Global Customer Service](mailto: customer_support@mastercard.com) to verify that the local issuers support this feature in the countries where the merchant is active.
+The functionality can be enabled upon request. Interested merchants can contact the <a href="mailto: customer_support@mastercard.com">Mastercard Global Customer Service</a> to verify that the local issuers support this feature in the countries where the merchant is active.
 
 ## <a name="mcii-req"></a>Prerequisites
 For a merchant to enable Mastercard Issuer Installments, the following prerequisites are required:
