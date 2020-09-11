@@ -330,10 +330,10 @@
     "Source": "texts/klarnapayments.md",
     "Target": "KlarnaPayments.html",
     "Subsites": [
-      { "Source": "texts/KlarnaPayments.md" "Title": "Requirements", "Target": "KlarnaPayments.html#klarna-req" },
-      { "Source": "texts/KlarnaPayments.md" "Title": "Activation", "Target": "KlarnaPayments.html#klarna-activation" },
-      { "Source": "texts/KlarnaPayments.md" "Title": "Testing Period", "Target": "KlarnaPayments.html#klarna-testing" },
-      { "Source": "texts/KlarnaPayments.md" "Title": "Integration", "Target": "KlarnaPayments.html#klarna-integration" }
+      { "Source": "texts/KlarnaPayments.md", "Title": "Requirements", "Target": "KlarnaPayments.html#klarna-req" },
+      { "Source": "texts/KlarnaPayments.md", "Title": "Activation", "Target": "KlarnaPayments.html#klarna-activation" },
+      { "Source": "texts/KlarnaPayments.md", "Title": "Testing Period", "Target": "KlarnaPayments.html#klarna-testing" },
+      { "Source": "texts/KlarnaPayments.md", "Title": "Integration", "Target": "KlarnaPayments.html#klarna-integration" }
     ]
   },
  {
