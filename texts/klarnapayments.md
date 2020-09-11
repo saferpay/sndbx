@@ -111,7 +111,104 @@ During this time, the **Environment Slider** inside the Klarna configuration und
 ## <a name="klarna-integration"></a> Integration
 
 Klarna requires certain datapoints to be submitted, in order for the processing to work.
+Most importantly, you must submit the order cart, via the **Order.Items[]** array. 
 Here is a list of all the mandatory parameters, that need to be submitted:
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Info:</strong> Please also refer to the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize"> Payment Page Initialize request-specification</a> for more detailed information!
+  </p>
+</div>
 
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th class="text-center">Parameter</th>
+      <th class="text-center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center"><strong>Payer.BillingAddress.FirstName</strong></td>
+      <td>The first name of your customer.</td>
+    </tr>
+    <tr>
+      <td class="text-center"><strong>Payer.BillingAddress.LastName</strong></td>
+      <td>The last name of your customer.</td>
+    </tr>
+    <tr>
+      <td class="text-center"><strong>Payer.BillingAddress.Email</strong></td>
+      <td>The provided Email address of your customer.</td>
+    </tr>
+    <tr>
+      <td class="text-center"><strong>Payer.BillingAddress.CountryCode</strong></td>
+      <td>The provided Email address of your customer. <strong>Make sure, that this country is activated in your Klarna settings (see above), or otherwise Klarna will not be displayed, as an option!</strong></td>
+    </tr>
+    <tr>
+      <td class="text-center"><strong>Order.Items[].Type</strong></td>
+      <td>Type of the Order Item.</td>
+    </tr>
+    <tr>
+      <td class="text-center"><strong>Order.Items[].Quantity</strong></td>
+      <td>Number of this specific item, sold to the customer.</td>
+    </tr>
+    <tr>
+      <td class="text-center"><strong>Order.Items[].Name</strong></td>
+      <td>Name of the product, defined by the merchant.</td>
+    </tr>
+    <tr>
+      <td class="text-center"><strong>Order.Items[].UnitPrice</strong></td>
+      <td>Single unit price of this specific item.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Make sure, that all the order cart items are included and that all the unit-prices add up with the total amount set in <strong>Payment.Amount.Value</strong>. Otherwise Klarna may reject the payment. Additionally, make also sure, that <strong>Payment.Amount.CurrencyCode</strong> also  is in-line with <strong>Payer.BillingAddress.CountryCode</strong>! For instance: Submitting "CH" for Swizerland as your CountryCode, but selecting EUR as your currency, will cause Klarna to not be displayed!
+  </p>
+</div>
 
 Furthermore, for merchants in the European Union, Klarna highly recommends to also set the following parameters:
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th class="text-center">Parameter</th>
+      <th class="text-center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center"><strong>Order.Items[].TaxRate</strong></td>
+      <td>Tax rate, applied to this order-item, depending on the country.</td>
+    </tr>
+    <tr>
+      <td class="text-center"><strong>Order.Items[].TaxAmount</strong></td>
+      <td>Tax amount for a single item.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Example
+```json
+  "Payer": {
+    "BillingAddress": {
+      "FirstName": "John",
+      "LastName": "Doe",
+      "Email": "john.doe@provider.com",
+      "CountryCode": "de"
+    }
+  },
+  "Order": {
+    "Items": [
+      {
+        "Type": "DIGITAL",
+        "Quantity": 1,
+        "Name": "Test product",
+        "UnitPrice": 245
+      }
+    ]
+  },
+```
