@@ -47,7 +47,7 @@ Unlike other payment methods, Klarna payments offers a self-onboarding service, 
 
 You'll have two options **Klarna** and additionally, on the Saferpay test-environment, **Klarna Simulator**. 
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_klarna_self_service.png)
 
 ### Klarna Simulator
 
@@ -56,15 +56,15 @@ In order to activate it, you first need to click on **Configure**. There you hav
 However should you enter nothing, the simulator will simulate an error, as if no, or the wrong credentials have been entered. So if you want to test that case, you can do so. Then the **Environment** slider will simulate live and sandbox (Test) behavior, if you want, though the differences are slim.
 Lastly, you have to activate the countries, you want to support Klarna in. More on that later.
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_klarna_settings_testing.png "Klarna Simulator Configuration")
 
 Once this is done, click on **Save**, however you also need to **activate the Simulator**, by clicking on the activation-slider:
-![alt text]()
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_klarna_self_service_simulator_on.png "Klarna Simulator activated")
 
 That is it! You can now use the Saferpay Klarna Simulator.
 And this is the Simulator on the Payment Page. Note the indicator at the top, telling you, that you are using the Saferpay Simulator:
 
-![alte text]()
+![alte text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/klarna_saferpay_simulator.png "Saferpay Klarna Simulator")
 
 ### Klarna
 
@@ -83,12 +83,16 @@ Additionally, you also have the **Test|Live** slider, which does different thing
 + **Test:** On the Saferpay Test Environment, this option will **always** point towards the Klarna Sandbox!
 + **Production:** On the Saferpay Production-Environment, this slider will switch between the Klarna Production and Sandbox. See the next sub-chapter on why this is necessary!
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_klarna_settings.png "Klarna Sandbox Configuration")
 
 Once you have entered your credentials, configured your country and, if necessary, the environment enpoint, click on **Save**.
 Lastly, make sure to **activate Klarna**, by clicking on the activation slider.
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_klarna_self_service_sandbox_on.png "Klarna Sandbox activated")
+
+This is the Klarna Sandbox on the Payment Page:
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/klarna_sandbox.png "Klarna Sandbox running on Saferpay Payment Page")
 
 ## <a name="klarna-testing"></a> Testing period
 
