@@ -233,8 +233,8 @@ Klarna requires the Billing Address to be set. There are two options you have, o
         "Street": "Fakestreet 1",
         "Zip":"12345",
         "City":"Notown",
-        "DateOfBirth": "1989-03-17",
-        "Phone": "+49152567125390"
+        "DateOfBirth": "1990-03-17",
+        "Phone": "+491234659870"
     }
 },
 ```
