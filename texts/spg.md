@@ -76,6 +76,12 @@ All the offers will be displayed inside the Saferpay Backoffice and marked as **
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
+    <strong>Tip:</strong> The Secure PayGate API also supports saving cards inside the <a href="scd.html#scd-spg">Saferpay Secure Card Data</a> storage!
+  </p>
+</div>
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
     <strong>Note:</strong> Offers created with the Secure PayGate REST API cannot be edited inside the Saferpay Backoffice!
   </p>
 </div>
