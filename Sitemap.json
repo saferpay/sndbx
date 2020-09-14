@@ -238,7 +238,7 @@
        { "Source": "texts/paymentmeans.md", "Title": "paydirekt", "Target": "paymentmeans.html#paydirekt-cards" },
        { "Source": "texts/paymentmeans.md", "Title": "UnionPay", "Target": "paymentmeans.html#unionpay-cards" },
        { "Source": "texts/paymentmeans.md", "Title": "Postfinance", "Target": "paymentmeans.html#postfinance-cards" },
-       { "Source": "texts/paymentmeans.md", "Title": "Apple Pay", "Target": "paymentmeans.html#applepay-cards" }
+       { "Source": "texts/paymentmeans.md", "Title": "Apple Pay", "Target": "paymentmeans.html#applepay-cards" },
        { "Source": "texts/paymentmeans.md", "Title": "Klarna Payments", "Target": "paymentmeans.html#klarna-cards" }
    ] 
   },
