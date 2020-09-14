@@ -153,9 +153,9 @@ The Response will be a JSON-Object.
   </tbody>
 </table>
 
-## <a name="mobile-alterprocess"></a>3rd Party Payment Methods
+## <a name="mobile-alterprocess"></a> 3rd Party Payment Methods
 
-All 3rd party payment methods are exclusively provided via the <a hre="">Payment Page</a>, since they mostly require web-based redirects, to be processed.
+All 3rd party payment methods are exclusively provided via the <a hre="Integration_PP.html">Payment Page</a>, since they mostly require web-based redirects, to be processed.
 The general process stays the same, however here you have an overview over how this is generally supposed to be done in an app:
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/mobile_3rd_party.png "App-Integration Process")
@@ -174,4 +174,9 @@ The general process stays the same, however here you have an overview over how t
 12. The app displays a success, or failure, while the server finalizes (Capture etc.) the payment.
 
 
-
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> An exception from this is the payment method Bancontact, which offers an <a href="bancontact.html#bancontact-directmode">alternative payment process</a>.
+  </p>
+</div>
