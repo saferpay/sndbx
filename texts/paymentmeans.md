@@ -798,6 +798,6 @@ In this Chapter you will find a list of payment means you can use for testing pu
     </tbody>
 </table>
 <a name="pm-klarna"></a><div id="klarna-cards" class="dropdown">Klarna Payments &dArr;</div>
-<div id="unionpay-cards-hider" style="display:none;">
+<div id="klarna-cards-hider" style="display:none;">
   <p>Saferpay does offer multiple options to test Klarna. Please refer to the <a href="KlarnaPayments.html#klarna-activation">Klarna Payments chapter</a>, for more information.</p>
 </div>
