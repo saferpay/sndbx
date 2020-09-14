@@ -141,8 +141,8 @@
     "Source": "texts/app_integration.md",
     "Target": "app-integration.html",
     "Subsites": [
-      { "Source": "texts/app_integration.md", "Title": "Process", "Target": "app-integration.html#mobile-process" },
-      { "Source": "texts/app_integration.md", "Title": "FAQ", "Target": "app-integration.html#mobile-faq" }
+      { "Source": "texts/app_integration.md", "Title": "Process", "Target": "app-integration.html#mobile-cardprocess" },
+      { "Source": "texts/app_integration.md", "Title": "3rd Party Payment Methods", "Target": "app-integration.html#mobile-alterprocess" }
     ]
   },
   {
