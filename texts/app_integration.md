@@ -12,14 +12,14 @@ The following guide is an extension, to the standard integration methods for the
 The Integration centers around a client-server model (the app being the client), in which a merchant server hosts all the necessary data, to do the requests itself and store any vital data, the app and therefore the customer/card holder, does not need to know.
 
 
-## <a name="mobile-process"></a>Process
+## <a name="mobile-cardprocess"></a>Credit Card Process
 
 The general process is as follows:
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/App-Integration2.png "App-Integration Process")
 
 1. The app calls the server to make a payment.
-2. The Server calls Saferpay, doing either a, [Transaction Initialize](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize), or [Alias Insert](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize).
+2. The Server calls Saferpay, doing either a [Transaction Initialize](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize), or [Alias Insert](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize).
 3. Saferpay responds with a Token and the RedirectUrl.
 4. The server saves the Token and forwards the RedirectUrl to the app.
 5. The app opens up a native card-form.
@@ -152,3 +152,26 @@ The Response will be a JSON-Object.
     </tr>
   </tbody>
 </table>
+
+## <a name="mobile-alterprocess"></a>3rd Party Payment Methods
+
+All 3rd party payment methods are exclusively provided via the <a hre="">Payment Page</a>, since they mostly require web-based redirects, to be processed.
+The general process stays the same, however here you have an overview over how this is generally supposed to be done in an app:
+
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/mobile_3rd_party.png "App-Integration Process")
+
+1. The app calls the server to make a payment.
+2. The Server calls Saferpay, doing a [Payment Page Initialize](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize) request.
+3. Saferpay responds with a Token and the RedirectUrl.
+4. The server saves the Token and forwards the RedirectUrl to the app.
+5. The app opens up the URL in a web-view.
+6. The customer performs the payment.
+7. Afterwards, Saferpay will redirect the customer back to one of the corresponding Return URLs (see #11), while also notifying the server.
+8. The server executes the [Payment Page Assert](https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert) request, to gather the payment data.
+9. Saferpay responds with the payment data, which then gets saved on the server.
+10. The server forwards the result and any additional data to the app
+11. It may also feasable to intercept the redirect, so the app may berform a web-to-app switch.
+12. The app displays a success, or failure, while the server finalizes (Capture etc.) the payment.
+
+
+
