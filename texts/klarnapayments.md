@@ -36,7 +36,7 @@ The following requirements have to be met, in order to accept Klarna Payments vi
 
 * The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
-* A valid contract with Klarna.
+* A valid contract with Klarna. Please contact <a href="mailto:worldline.sps@klarna.com">worldline.sps@klarna.com</a>
 * Klarna Payments is only available via the [PaymentPage flow](Integration_PP.html)!
 
 ## <a name="klarna-activation"></a> Activation
@@ -129,20 +129,8 @@ Here is a list of all the mandatory parameters, that need to be submitted:
   </thead>
   <tbody>
     <tr>
-      <td class="text-center"><strong>Payer.BillingAddress.FirstName</strong></td>
-      <td>The first name of your customer.</td>
-    </tr>
-    <tr>
-      <td class="text-center"><strong>Payer.BillingAddress.LastName</strong></td>
-      <td>The last name of your customer.</td>
-    </tr>
-    <tr>
-      <td class="text-center"><strong>Payer.BillingAddress.Email</strong></td>
-      <td>The provided Email address of your customer.</td>
-    </tr>
-    <tr>
       <td class="text-center"><strong>Payer.BillingAddress.CountryCode</strong></td>
-      <td>The provided Email address of your customer. <strong>Make sure, that this country is activated in your Klarna settings (see above), or otherwise Klarna will not be displayed, as an option!</strong></td>
+      <td>The country your customer resides in. <strong>Make sure, that this country is activated in your Klarna settings (see above), or otherwise Klarna will not be displayed, as an option!</strong></td>
     </tr>
     <tr>
       <td class="text-center"><strong>Order.Items[].Type</strong></td>
