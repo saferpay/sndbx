@@ -16,7 +16,7 @@
 
 Klarna Payments is a 3rd party payment method, that is split into three ways of payment:
 + Pay Now: The order is payed now, via Direct Debit, or Bank Transfer.
-+ Pay Later: The order is payed after 14 days.
++ Pay Later: The order is payed on invoice.
 + Slice it: The order is payed in installment rates, with an interest.
 
 These, together with the currencies, are defined in the Klarna contract and not on Saferpay side. With each start of a new transaction, Saferpay will ask Klarna for this information. If a currency was submitted with the <a href="">Payment Page Initialize Request</a>, that isn't supported, or a certain payment category is not activated on the Klarna account, Saferpay will not show said option.
@@ -104,7 +104,7 @@ During this time, the **Environment Slider** inside the Klarna configuration und
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important: Enter your credentials for the Klarna Sandbox not your live credentials, as these testing-transactions are running on the Klarna Sandbox!</strong> Also remember to turn this slider back to <strong>Live</strong> and change the credentials to your live-credentials, once the testing-period is over!
+    <strong>Important: On the live environment, always enter your live Klarna credentials, though these testing-transactions are running on the Klarna Sandbox!</strong> 
   </p>
 </div>
 
