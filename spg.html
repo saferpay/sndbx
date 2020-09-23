@@ -54,7 +54,7 @@
 								<li><a href="#psd2-apply">Does PSD2 apply to me?</a></li>
 								<li><a href="#psd2-when">When to do SCA</a></li>
 								<li><a href="#psd2-overview">Overview</a></li>
-								<li><a href="#psd2-force">Whenand how to force SCA</a></li>
+								<li><a href="#psd2-force">When and how to force SCA</a></li>
 								<li><a href="#psd2-exemptions">Exemptions</a></li>
 								<li><a href="#psd2-decline">Soft Decline</a></li>
 							</ul>
@@ -105,6 +105,7 @@
 								<li><a href="#scd-pp">Secure Card Data and the Payment Page</a></li>
 								<li><a href="#scd-trx">Secure Card Data and the Transaction Interface</a></li>
 								<li><a href="#scd-sa">Standalone Secure Card Data registration</a></li>
+								<li><a href="#scd-spg">Secure Card Data and the Secure PayGate</a></li>
 								<li><a href="#scd-check">The Check function</a></li>
 								<li><a href="#scd-generator">The Id-generator</a></li>
 								<li><a href="#scd-use">How to use the obtained data</a></li>
@@ -141,8 +142,8 @@
 							<li>
 							<a href="app-integration.html">Mobile App integration</a>
 							<ul class="nav">
-								<li><a href="#mobile-process">Process</a></li>
-								<li><a href="#mobile-faq">FAQ</a></li>
+								<li><a href="#mobile-cardprocess">Process</a></li>
+								<li><a href="#mobile-alterprocess">3rd Party Payment Methods</a></li>
 							</ul>
 							</li>
 							<li>
@@ -223,6 +224,7 @@
 								<li><a href="#unionpay-cards">UnionPay</a></li>
 								<li><a href="#postfinance-cards">Postfinance</a></li>
 								<li><a href="#applepay-cards">Apple Pay</a></li>
+								<li><a href="#klarna-cards">Klarna Payments</a></li>
 							</ul>
 							</li>
 							<li>
@@ -295,6 +297,12 @@
 							</li>
 							<li>
 							<a href="KlarnaPayments.html">Klarna Payments</a>
+							<ul class="nav">
+								<li><a href="#klarna-req">Requirements</a></li>
+								<li><a href="#klarna-activation">Activation</a></li>
+								<li><a href="#klarna-testing">Testing Period</a></li>
+								<li><a href="#klarna-integration">Integration</a></li>
+							</ul>
 							</li>
 							<li>
 							<a href="eps.html">eps</a>
@@ -429,7 +437,7 @@
 								<li><a href="#psd2-apply">Does PSD2 apply to me?</a></li>
 								<li><a href="#psd2-when">When to do SCA</a></li>
 								<li><a href="#psd2-overview">Overview</a></li>
-								<li><a href="#psd2-force">Whenand how to force SCA</a></li>
+								<li><a href="#psd2-force">When and how to force SCA</a></li>
 								<li><a href="#psd2-exemptions">Exemptions</a></li>
 								<li><a href="#psd2-decline">Soft Decline</a></li>
 							</ul>
@@ -480,6 +488,7 @@
 								<li><a href="#scd-pp">Secure Card Data and the Payment Page</a></li>
 								<li><a href="#scd-trx">Secure Card Data and the Transaction Interface</a></li>
 								<li><a href="#scd-sa">Standalone Secure Card Data registration</a></li>
+								<li><a href="#scd-spg">Secure Card Data and the Secure PayGate</a></li>
 								<li><a href="#scd-check">The Check function</a></li>
 								<li><a href="#scd-generator">The Id-generator</a></li>
 								<li><a href="#scd-use">How to use the obtained data</a></li>
@@ -516,8 +525,8 @@
 							<li>
 							<a href="app-integration.html">Mobile App integration</a>
 							<ul class="nav">
-								<li><a href="#mobile-process">Process</a></li>
-								<li><a href="#mobile-faq">FAQ</a></li>
+								<li><a href="#mobile-cardprocess">Process</a></li>
+								<li><a href="#mobile-alterprocess">3rd Party Payment Methods</a></li>
 							</ul>
 							</li>
 							<li>
@@ -598,6 +607,7 @@
 								<li><a href="#unionpay-cards">UnionPay</a></li>
 								<li><a href="#postfinance-cards">Postfinance</a></li>
 								<li><a href="#applepay-cards">Apple Pay</a></li>
+								<li><a href="#klarna-cards">Klarna Payments</a></li>
 							</ul>
 							</li>
 							<li>
@@ -670,6 +680,12 @@
 							</li>
 							<li>
 							<a href="KlarnaPayments.html">Klarna Payments</a>
+							<ul class="nav">
+								<li><a href="#klarna-req">Requirements</a></li>
+								<li><a href="#klarna-activation">Activation</a></li>
+								<li><a href="#klarna-testing">Testing Period</a></li>
+								<li><a href="#klarna-integration">Integration</a></li>
+							</ul>
 							</li>
 							<li>
 							<a href="eps.html">eps</a>
@@ -793,6 +809,11 @@ All the offers will be displayed inside the Saferpay Backoffice and marked as <s
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>However:</strong> Saferpay <strong>will NOT send the usual Secure PayGate E-Mail</strong> to your customer, like within the Saferpay Backoffice! The usage of the Secure PayGate REST API instead relies on you -the merchant- using your own web-mailer, which are supported by most common application-environments. PHP for example brings this functionality out of the box. However this also gives you full control over the design and text of the E-Mail, allowing for a great deal of flexibility!
+  </p>
+</div><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Tip:</strong> The Secure PayGate API also supports saving cards inside the <a href="scd.html#scd-spg">Saferpay Secure Card Data</a> storage!
   </p>
 </div><div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>

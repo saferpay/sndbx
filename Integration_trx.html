@@ -54,7 +54,7 @@
 								<li><a href="#psd2-apply">Does PSD2 apply to me?</a></li>
 								<li><a href="#psd2-when">When to do SCA</a></li>
 								<li><a href="#psd2-overview">Overview</a></li>
-								<li><a href="#psd2-force">Whenand how to force SCA</a></li>
+								<li><a href="#psd2-force">When and how to force SCA</a></li>
 								<li><a href="#psd2-exemptions">Exemptions</a></li>
 								<li><a href="#psd2-decline">Soft Decline</a></li>
 							</ul>
@@ -105,6 +105,7 @@
 								<li><a href="#scd-pp">Secure Card Data and the Payment Page</a></li>
 								<li><a href="#scd-trx">Secure Card Data and the Transaction Interface</a></li>
 								<li><a href="#scd-sa">Standalone Secure Card Data registration</a></li>
+								<li><a href="#scd-spg">Secure Card Data and the Secure PayGate</a></li>
 								<li><a href="#scd-check">The Check function</a></li>
 								<li><a href="#scd-generator">The Id-generator</a></li>
 								<li><a href="#scd-use">How to use the obtained data</a></li>
@@ -141,8 +142,8 @@
 							<li>
 							<a href="app-integration.html">Mobile App integration</a>
 							<ul class="nav">
-								<li><a href="#mobile-process">Process</a></li>
-								<li><a href="#mobile-faq">FAQ</a></li>
+								<li><a href="#mobile-cardprocess">Process</a></li>
+								<li><a href="#mobile-alterprocess">3rd Party Payment Methods</a></li>
 							</ul>
 							</li>
 							<li>
@@ -223,6 +224,7 @@
 								<li><a href="#unionpay-cards">UnionPay</a></li>
 								<li><a href="#postfinance-cards">Postfinance</a></li>
 								<li><a href="#applepay-cards">Apple Pay</a></li>
+								<li><a href="#klarna-cards">Klarna Payments</a></li>
 							</ul>
 							</li>
 							<li>
@@ -295,6 +297,12 @@
 							</li>
 							<li>
 							<a href="KlarnaPayments.html">Klarna Payments</a>
+							<ul class="nav">
+								<li><a href="#klarna-req">Requirements</a></li>
+								<li><a href="#klarna-activation">Activation</a></li>
+								<li><a href="#klarna-testing">Testing Period</a></li>
+								<li><a href="#klarna-integration">Integration</a></li>
+							</ul>
 							</li>
 							<li>
 							<a href="eps.html">eps</a>
@@ -429,7 +437,7 @@
 								<li><a href="#psd2-apply">Does PSD2 apply to me?</a></li>
 								<li><a href="#psd2-when">When to do SCA</a></li>
 								<li><a href="#psd2-overview">Overview</a></li>
-								<li><a href="#psd2-force">Whenand how to force SCA</a></li>
+								<li><a href="#psd2-force">When and how to force SCA</a></li>
 								<li><a href="#psd2-exemptions">Exemptions</a></li>
 								<li><a href="#psd2-decline">Soft Decline</a></li>
 							</ul>
@@ -480,6 +488,7 @@
 								<li><a href="#scd-pp">Secure Card Data and the Payment Page</a></li>
 								<li><a href="#scd-trx">Secure Card Data and the Transaction Interface</a></li>
 								<li><a href="#scd-sa">Standalone Secure Card Data registration</a></li>
+								<li><a href="#scd-spg">Secure Card Data and the Secure PayGate</a></li>
 								<li><a href="#scd-check">The Check function</a></li>
 								<li><a href="#scd-generator">The Id-generator</a></li>
 								<li><a href="#scd-use">How to use the obtained data</a></li>
@@ -516,8 +525,8 @@
 							<li>
 							<a href="app-integration.html">Mobile App integration</a>
 							<ul class="nav">
-								<li><a href="#mobile-process">Process</a></li>
-								<li><a href="#mobile-faq">FAQ</a></li>
+								<li><a href="#mobile-cardprocess">Process</a></li>
+								<li><a href="#mobile-alterprocess">3rd Party Payment Methods</a></li>
 							</ul>
 							</li>
 							<li>
@@ -598,6 +607,7 @@
 								<li><a href="#unionpay-cards">UnionPay</a></li>
 								<li><a href="#postfinance-cards">Postfinance</a></li>
 								<li><a href="#applepay-cards">Apple Pay</a></li>
+								<li><a href="#klarna-cards">Klarna Payments</a></li>
 							</ul>
 							</li>
 							<li>
@@ -670,6 +680,12 @@
 							</li>
 							<li>
 							<a href="KlarnaPayments.html">Klarna Payments</a>
+							<ul class="nav">
+								<li><a href="#klarna-req">Requirements</a></li>
+								<li><a href="#klarna-activation">Activation</a></li>
+								<li><a href="#klarna-testing">Testing Period</a></li>
+								<li><a href="#klarna-integration">Integration</a></li>
+							</ul>
 							</li>
 							<li>
 							<a href="eps.html">eps</a>
@@ -787,8 +803,13 @@
 </li>
 <li>Transaction is finished.</li>
 </ol></div></div></section><section id="trx-cc"><h2><a name="trx-cc"></a> Credit Cards</h2><div class="row"><div class="col-sm-6"><p>In contrast to the payment page, credit card payments can be seamlessly integrated into the merchant's shop with the Transaction Interface. The procedure will be described in the following.</p></div></div></section><section id="trx-ini"><h3><a name="trx-ini"></a>1 - Transaction Initialize</h3><div class="row"><div class="col-sm-6"><p>The process begins with <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a>. With this request, you forward all data necessary for the payment to Saferpay. Such as your customer number (CustomerId), the terminal number (Terminal Id), the currency (CurrencyCode), the amount (Value), the internal reference number of the merchant system (OrderId), and the return addresses (ReturnUrls) to which the customer will return, depending on the outcome of the payment.</p></div></div></section><section><h3>Here are a few hints and tips about the options that are available for the merchant:</h3><div class="row"><div class="col-sm-6"><ul>
-<li><p><strong>ReturnUrls:</strong> For security, Saferpay returns no data to return addresses of the shop. The identification of the payment or the returning customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the ReturnUrls. When a ReturnUrl is called, Saferpay returns the appended parameter, thus enabling identification of the customer.</p>
-</li>
+<li><strong>ReturnUrls:</strong> For security, Saferpay returns no data to return addresses of the shop. The identification of the payment or the returning customers is up to the merchant. We recommend using your own parameters. These can be attached via HTTP GET to the ReturnUrls. When a ReturnUrl is called, Saferpay returns the appended parameter, thus enabling identification of the customer.</li>
+</ul><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> If you intent on using <a href="index.html#dcc">Dynamic Currency Conversion (DCC)</a>, it is highly recommended to set the Abort Url, even though optional!
+  </p>
+</div><ul>
 <li><p><strong>Payment.OrderId:</strong> This optinal parameter is important to keep track of all your transactions in later processes. This ID will be forwarded, so it will show up inside the Saferpay Backoffice (As the Reference number!) and on your reconciliation-files. This will help associate all the transactions for your accounting-department.</p>
 </li>
 <li><p><strong>Card Verification Value:</strong> The Card Verification Value (CVC) is mandatory, when using the Card Entry Form, except for card brand Maestro, which offers cards with and without CVC.</p>

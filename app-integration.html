@@ -54,7 +54,7 @@
 								<li><a href="#psd2-apply">Does PSD2 apply to me?</a></li>
 								<li><a href="#psd2-when">When to do SCA</a></li>
 								<li><a href="#psd2-overview">Overview</a></li>
-								<li><a href="#psd2-force">Whenand how to force SCA</a></li>
+								<li><a href="#psd2-force">When and how to force SCA</a></li>
 								<li><a href="#psd2-exemptions">Exemptions</a></li>
 								<li><a href="#psd2-decline">Soft Decline</a></li>
 							</ul>
@@ -105,6 +105,7 @@
 								<li><a href="#scd-pp">Secure Card Data and the Payment Page</a></li>
 								<li><a href="#scd-trx">Secure Card Data and the Transaction Interface</a></li>
 								<li><a href="#scd-sa">Standalone Secure Card Data registration</a></li>
+								<li><a href="#scd-spg">Secure Card Data and the Secure PayGate</a></li>
 								<li><a href="#scd-check">The Check function</a></li>
 								<li><a href="#scd-generator">The Id-generator</a></li>
 								<li><a href="#scd-use">How to use the obtained data</a></li>
@@ -141,8 +142,8 @@
 							<li class="active">
 							<a href="app-integration.html">Mobile App integration</a>
 							<ul class="nav">
-								<li><a href="#mobile-process">Process</a></li>
-								<li><a href="#mobile-faq">FAQ</a></li>
+								<li><a href="#mobile-cardprocess">Process</a></li>
+								<li><a href="#mobile-alterprocess">3rd Party Payment Methods</a></li>
 							</ul>
 							</li>
 							<li>
@@ -223,6 +224,7 @@
 								<li><a href="#unionpay-cards">UnionPay</a></li>
 								<li><a href="#postfinance-cards">Postfinance</a></li>
 								<li><a href="#applepay-cards">Apple Pay</a></li>
+								<li><a href="#klarna-cards">Klarna Payments</a></li>
 							</ul>
 							</li>
 							<li>
@@ -295,6 +297,12 @@
 							</li>
 							<li>
 							<a href="KlarnaPayments.html">Klarna Payments</a>
+							<ul class="nav">
+								<li><a href="#klarna-req">Requirements</a></li>
+								<li><a href="#klarna-activation">Activation</a></li>
+								<li><a href="#klarna-testing">Testing Period</a></li>
+								<li><a href="#klarna-integration">Integration</a></li>
+							</ul>
 							</li>
 							<li>
 							<a href="eps.html">eps</a>
@@ -429,7 +437,7 @@
 								<li><a href="#psd2-apply">Does PSD2 apply to me?</a></li>
 								<li><a href="#psd2-when">When to do SCA</a></li>
 								<li><a href="#psd2-overview">Overview</a></li>
-								<li><a href="#psd2-force">Whenand how to force SCA</a></li>
+								<li><a href="#psd2-force">When and how to force SCA</a></li>
 								<li><a href="#psd2-exemptions">Exemptions</a></li>
 								<li><a href="#psd2-decline">Soft Decline</a></li>
 							</ul>
@@ -480,6 +488,7 @@
 								<li><a href="#scd-pp">Secure Card Data and the Payment Page</a></li>
 								<li><a href="#scd-trx">Secure Card Data and the Transaction Interface</a></li>
 								<li><a href="#scd-sa">Standalone Secure Card Data registration</a></li>
+								<li><a href="#scd-spg">Secure Card Data and the Secure PayGate</a></li>
 								<li><a href="#scd-check">The Check function</a></li>
 								<li><a href="#scd-generator">The Id-generator</a></li>
 								<li><a href="#scd-use">How to use the obtained data</a></li>
@@ -516,8 +525,8 @@
 							<li class="active">
 							<a href="app-integration.html">Mobile App integration</a>
 							<ul class="nav">
-								<li><a href="#mobile-process">Process</a></li>
-								<li><a href="#mobile-faq">FAQ</a></li>
+								<li><a href="#mobile-cardprocess">Process</a></li>
+								<li><a href="#mobile-alterprocess">3rd Party Payment Methods</a></li>
 							</ul>
 							</li>
 							<li>
@@ -598,6 +607,7 @@
 								<li><a href="#unionpay-cards">UnionPay</a></li>
 								<li><a href="#postfinance-cards">Postfinance</a></li>
 								<li><a href="#applepay-cards">Apple Pay</a></li>
+								<li><a href="#klarna-cards">Klarna Payments</a></li>
 							</ul>
 							</li>
 							<li>
@@ -670,6 +680,12 @@
 							</li>
 							<li>
 							<a href="KlarnaPayments.html">Klarna Payments</a>
+							<ul class="nav">
+								<li><a href="#klarna-req">Requirements</a></li>
+								<li><a href="#klarna-activation">Activation</a></li>
+								<li><a href="#klarna-testing">Testing Period</a></li>
+								<li><a href="#klarna-integration">Integration</a></li>
+							</ul>
 							</li>
 							<li>
 							<a href="eps.html">eps</a>
@@ -759,9 +775,9 @@
   <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant! Furthermore, also make make sure, whether, or not <a href="psd2.html">PSD2</a> does apply to you!</p>
 </div><p>Payments done via a smartphone through a mobile app, are becoming more and more important.
 Saferpay offers the tools needed to be integrated via a mobile app.
-The following guide is an extension, to the standard integration methods for the <a href="https://saferpay.github.io/sndbx/Integration_trx.html">Transaction interface</a> and <a href="https://saferpay.github.io/sndbx/scd.html#scd-sa">Secure Alias Store</a>.</p><p>The Integration centers around a client-server model (the app being the client), in which a merchant server hosts all the necessary data, to do the requests itself and store any vital data, the app and therefore the customer/card holder, does not need to know.</p></div></div></section><section id="mobile-process"><h2><a name="mobile-process"></a>Process</h2><div class="row"><div class="col-sm-6"><p>The general process is as follows:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/App-Integration2.png" alt="alt text" title="App-Integration Process"></p><ol>
+The following guide is an extension, to the standard integration methods for the <a href="https://saferpay.github.io/sndbx/Integration_trx.html">Transaction interface</a> and <a href="https://saferpay.github.io/sndbx/scd.html#scd-sa">Secure Alias Store</a>.</p><p>The Integration centers around a client-server model (the app being the client), in which a merchant server hosts all the necessary data, to do the requests itself and store any vital data, the app and therefore the customer/card holder, does not need to know.</p></div></div></section><section id="mobile-cardprocess"><h2><a name="mobile-cardprocess"></a>Credit Card Process</h2><div class="row"><div class="col-sm-6"><p>The general process is as follows:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/App-Integration2.png" alt="alt text" title="App-Integration Process"></p><ol>
 <li>The app calls the server to make a payment.</li>
-<li>The Server calls Saferpay, doing either a, <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a>, or <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Alias Insert</a>.</li>
+<li>The Server calls Saferpay, doing either a <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a>, or <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Alias Insert</a>.</li>
 <li>Saferpay responds with a Token and the RedirectUrl.</li>
 <li>The server saves the Token and forwards the RedirectUrl to the app.</li>
 <li>The app opens up a native card-form.</li>
@@ -874,7 +890,26 @@ The following guide is an extension, to the standard integration methods for the
       <td>Further details on the error itself, if available. For example, if the ErrorName=VALIDATION_FAILED, the ErrorDetail contains a list of the invalid input-fields (&#8220;CardNumber&#8221;, &#8220;ExpYear&#8221;, &#8220;Ex-pMonth&#8221;, etc.)</td>     
     </tr>
   </tbody>
-</table></div></div></section>
+</table></div></div></section><section id="mobile-alterprocess"><h2><a name="mobile-alterprocess"></a> 3rd Party Payment Methods</h2><div class="row"><div class="col-sm-6"><p>All 3rd party payment methods are exclusively provided via the <a hre="Integration_PP.html">Payment Page</a>, since they mostly require web-based redirects, to be processed.
+The general process stays the same, however here you have an overview over how this is generally supposed to be done in an app:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/mobile_3rd_party.png" alt="alt text" title="App-Integration Process"></p><ol>
+<li>The app calls the server to make a payment.</li>
+<li>The Server calls Saferpay, doing a <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> request.</li>
+<li>Saferpay responds with a Token and the RedirectUrl.</li>
+<li>The server saves the Token and forwards the RedirectUrl to the app.</li>
+<li>The app opens up the URL in a web-view.</li>
+<li>The customer performs the payment.</li>
+<li>Afterwards, Saferpay will redirect the customer back to one of the corresponding Return URLs (see #11), while also notifying the server.</li>
+<li>The server executes the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert">Payment Page Assert</a> request, to gather the payment data.</li>
+<li>Saferpay responds with the payment data, which then gets saved on the server.</li>
+<li>The server forwards the result and any additional data to the app</li>
+<li>It may also feasable to intercept the redirect, so the app may berform a web-to-app switch.</li>
+<li>The app displays a success, or failure, while the server finalizes (Capture etc.) the payment.</li>
+</ol><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> An exception from this is the payment method Bancontact, which offers an <a href="bancontact.html#bancontact-directmode">alternative payment process</a>.
+  </p>
+</div></div></div></section>
 
 			</main>
 

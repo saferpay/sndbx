@@ -54,7 +54,7 @@
 								<li><a href="#psd2-apply">Does PSD2 apply to me?</a></li>
 								<li><a href="#psd2-when">When to do SCA</a></li>
 								<li><a href="#psd2-overview">Overview</a></li>
-								<li><a href="#psd2-force">Whenand how to force SCA</a></li>
+								<li><a href="#psd2-force">When and how to force SCA</a></li>
 								<li><a href="#psd2-exemptions">Exemptions</a></li>
 								<li><a href="#psd2-decline">Soft Decline</a></li>
 							</ul>
@@ -105,6 +105,7 @@
 								<li><a href="#scd-pp">Secure Card Data and the Payment Page</a></li>
 								<li><a href="#scd-trx">Secure Card Data and the Transaction Interface</a></li>
 								<li><a href="#scd-sa">Standalone Secure Card Data registration</a></li>
+								<li><a href="#scd-spg">Secure Card Data and the Secure PayGate</a></li>
 								<li><a href="#scd-check">The Check function</a></li>
 								<li><a href="#scd-generator">The Id-generator</a></li>
 								<li><a href="#scd-use">How to use the obtained data</a></li>
@@ -141,8 +142,8 @@
 							<li>
 							<a href="app-integration.html">Mobile App integration</a>
 							<ul class="nav">
-								<li><a href="#mobile-process">Process</a></li>
-								<li><a href="#mobile-faq">FAQ</a></li>
+								<li><a href="#mobile-cardprocess">Process</a></li>
+								<li><a href="#mobile-alterprocess">3rd Party Payment Methods</a></li>
 							</ul>
 							</li>
 							<li>
@@ -223,6 +224,7 @@
 								<li><a href="#unionpay-cards">UnionPay</a></li>
 								<li><a href="#postfinance-cards">Postfinance</a></li>
 								<li><a href="#applepay-cards">Apple Pay</a></li>
+								<li><a href="#klarna-cards">Klarna Payments</a></li>
 							</ul>
 							</li>
 							<li>
@@ -295,6 +297,12 @@
 							</li>
 							<li class="active">
 							<a href="KlarnaPayments.html">Klarna Payments</a>
+							<ul class="nav">
+								<li><a href="#klarna-req">Requirements</a></li>
+								<li><a href="#klarna-activation">Activation</a></li>
+								<li><a href="#klarna-testing">Testing Period</a></li>
+								<li><a href="#klarna-integration">Integration</a></li>
+							</ul>
 							</li>
 							<li>
 							<a href="eps.html">eps</a>
@@ -429,7 +437,7 @@
 								<li><a href="#psd2-apply">Does PSD2 apply to me?</a></li>
 								<li><a href="#psd2-when">When to do SCA</a></li>
 								<li><a href="#psd2-overview">Overview</a></li>
-								<li><a href="#psd2-force">Whenand how to force SCA</a></li>
+								<li><a href="#psd2-force">When and how to force SCA</a></li>
 								<li><a href="#psd2-exemptions">Exemptions</a></li>
 								<li><a href="#psd2-decline">Soft Decline</a></li>
 							</ul>
@@ -480,6 +488,7 @@
 								<li><a href="#scd-pp">Secure Card Data and the Payment Page</a></li>
 								<li><a href="#scd-trx">Secure Card Data and the Transaction Interface</a></li>
 								<li><a href="#scd-sa">Standalone Secure Card Data registration</a></li>
+								<li><a href="#scd-spg">Secure Card Data and the Secure PayGate</a></li>
 								<li><a href="#scd-check">The Check function</a></li>
 								<li><a href="#scd-generator">The Id-generator</a></li>
 								<li><a href="#scd-use">How to use the obtained data</a></li>
@@ -516,8 +525,8 @@
 							<li>
 							<a href="app-integration.html">Mobile App integration</a>
 							<ul class="nav">
-								<li><a href="#mobile-process">Process</a></li>
-								<li><a href="#mobile-faq">FAQ</a></li>
+								<li><a href="#mobile-cardprocess">Process</a></li>
+								<li><a href="#mobile-alterprocess">3rd Party Payment Methods</a></li>
 							</ul>
 							</li>
 							<li>
@@ -598,6 +607,7 @@
 								<li><a href="#unionpay-cards">UnionPay</a></li>
 								<li><a href="#postfinance-cards">Postfinance</a></li>
 								<li><a href="#applepay-cards">Apple Pay</a></li>
+								<li><a href="#klarna-cards">Klarna Payments</a></li>
 							</ul>
 							</li>
 							<li>
@@ -670,6 +680,12 @@
 							</li>
 							<li class="active">
 							<a href="KlarnaPayments.html">Klarna Payments</a>
+							<ul class="nav">
+								<li><a href="#klarna-req">Requirements</a></li>
+								<li><a href="#klarna-activation">Activation</a></li>
+								<li><a href="#klarna-testing">Testing Period</a></li>
+								<li><a href="#klarna-integration">Integration</a></li>
+							</ul>
 							</li>
 							<li>
 							<a href="eps.html">eps</a>
@@ -766,7 +782,7 @@
   </p>
 </div><p>Klarna Payments is a 3rd party payment method, that is split into three ways of payment:</p><ul>
 <li>Pay Now: The order is payed now, via Direct Debit, or Bank Transfer.</li>
-<li>Pay Later: The order is payed after 14 days.</li>
+<li>Pay Later: The order is payed on invoice.</li>
 <li>Slice it: The order is payed in installment rates, with an interest.</li>
 </ul><p>These, together with the currencies, are defined in the Klarna contract and not on Saferpay side. With each start of a new transaction, Saferpay will ask Klarna for this information. If a currency was submitted with the <a href>Payment Page Initialize Request</a>, that isn't supported, or a certain payment category is not activated on the Klarna account, Saferpay will not show said option.</p><div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
@@ -776,7 +792,7 @@
 </div><p>This chapter details the technical implementation of Klarna Payments, through Saferpay.</p></div></div></section><section id="klarna-req"><h2><a name="klarna-req"></a> Requirements</h2><div class="row"><div class="col-sm-6"><p>The following requirements have to be met, in order to accept Klarna Payments via Saferpay:</p><ul>
 <li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
 <li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
-<li>A valid contract with Klarna.</li>
+<li>A valid contract with Klarna. Please contact <a href="mailto:worldline.sps@klarna.com">worldline.sps@klarna.com</a></li>
 <li>Klarna Payments is only available via the <a href="Integration_PP.html">PaymentPage flow</a>!</li>
 </ul></div></div></section><section id="klarna-activation"><h2><a name="klarna-activation"></a> Activation</h2><div class="row"><div class="col-sm-6"><p>Unlike other payment methods, Klarna payments offers a self-onboarding service, which you can access inside the Backoffice under <strong>Settings &gt; Terminals</strong>. Please select the terminal you want Klarna activated on and scroll down to <strong>Self Service</strong>.</p><p><strong>This service handles differently, depending on the Saferpay environment (test|live) you are on, so please pay close attention.</strong></p><p>You'll have two options <strong>Klarna</strong> and additionally, on the Saferpay test-environment, <strong>Klarna Simulator</strong>.</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_klarna_self_service.png" alt="alt text"></p></div></div></section><section><h3>Klarna Simulator</h3><div class="row"><div class="col-sm-6"><p>The Klarna Simulator is a Sandbox provided by Saferpay, which provides an extensive GUI for testing Klarna.
 In order to activate it, you first need to click on <strong>Configure</strong>. There you have to set user and password, which can be anything for the simulator.
@@ -799,7 +815,7 @@ During this time, the <strong>Environment Slider</strong> inside the Klarna conf
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_klarna_settings_SliderTest.png" alt="alt text" title="Klarna Testing"></p><div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important: Enter your credentials for the Klarna Sandbox not your live credentials, as these testing-transactions are running on the Klarna Sandbox!</strong> Also remember to turn this slider back to <strong>Live</strong> and change the credentials to your live-credentials, once the testing-period is over!
+    <strong>Important: On the live environment, always enter your live Klarna credentials, though these testing-transactions are running on the Klarna Sandbox!</strong> 
   </p>
 </div></div></div></section><section id="klarna-integration"><h2><a name="klarna-integration"></a> Integration</h2><div class="row"><div class="col-sm-6"><p>Klarna requires certain datapoints to be submitted, in order for the processing to work.
 Most importantly, you must submit the order cart, via the <strong>Order.Items[]</strong> array.
@@ -817,20 +833,8 @@ Here is a list of all the mandatory parameters, that need to be submitted:</p><d
   </thead>
   <tbody>
     <tr>
-      <td class="text-center"><strong>Payer.BillingAddress.FirstName</strong></td>
-      <td>The first name of your customer.</td>
-    </tr>
-    <tr>
-      <td class="text-center"><strong>Payer.BillingAddress.LastName</strong></td>
-      <td>The last name of your customer.</td>
-    </tr>
-    <tr>
-      <td class="text-center"><strong>Payer.BillingAddress.Email</strong></td>
-      <td>The provided Email address of your customer.</td>
-    </tr>
-    <tr>
       <td class="text-center"><strong>Payer.BillingAddress.CountryCode</strong></td>
-      <td>The provided Email address of your customer. <strong>Make sure, that this country is activated in your Klarna settings (see above), or otherwise Klarna will not be displayed, as an option!</strong></td>
+      <td>The country your customer resides in. <strong>Make sure, that this country is activated in your Klarna settings (see above), or otherwise Klarna will not be displayed, as an option!</strong></td>
     </tr>
     <tr>
       <td class="text-center"><strong>Order.Items[].Type</strong></td>
@@ -889,6 +893,24 @@ Here is a list of all the mandatory parameters, that need to be submitted:</p><d
       }
     ]
   },
+</code></pre></div></div></section><section><h3>Address</h3><div class="row"><div class="col-sm-6"><p>Klarna requires the Billing Address to be set. There are two options you have, on how this is done.</p><ol>
+<li>The address is captured during the payment process, where the customer has to enter it him/herself:
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/klarna_address_form.png" alt="alt text" title="Address entry form"></li>
+<li>If you already have the address stored in your shop, you can also submit it, with the <a href>Payment Page Initialize Request</a>, inside the <strong>Payer.BillingAddress</strong> container. In this case the address-form will be skipped.</li>
+</ol></div></div></section><section><h3>Example</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">&quot;Payer&quot;: {
+    &quot;BillingAddress&quot;: {
+        &quot;FirstName&quot;: &quot;John&quot;,
+        &quot;LastName&quot;: &quot;Doe&quot;,
+        &quot;Email&quot;: &quot;john.doe@provider.com&quot;,
+        &quot;CountryCode&quot;: &quot;de&quot;,
+        &quot;Gender&quot;: &quot;MALE&quot;,
+        &quot;Street&quot;: &quot;Fakestreet 1&quot;,
+        &quot;Zip&quot;:&quot;12345&quot;,
+        &quot;City&quot;:&quot;Notown&quot;,
+        &quot;DateOfBirth&quot;: &quot;1990-03-17&quot;,
+        &quot;Phone&quot;: &quot;+491234659870&quot;
+    }
+},
 </code></pre></div></div></section>
 
 			</main>
