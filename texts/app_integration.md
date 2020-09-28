@@ -34,7 +34,12 @@ The general process is as follows:
 14. The Server executes the [Authorization](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize) and forwards the result to the app.
 15. The app confirms the recipience, so the server may finalize and [capture](https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture) the payment, while the app either displays a success, or a failure.
 
-
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Caution: Do NOT</strong> implement Saferpay directly into your app! While technically possible, this would mean, that you put the authentication credentials (User, Password, or certificate) into the app itself. Those credentials can be extracted and then used for mailicious actions on your account. <strong>ALWAYS</strong> implement Saferpay via this server-client model. 
+  </p>
+</div>
 
 ## Request and response of Card-Post
 
