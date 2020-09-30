@@ -964,46 +964,7 @@ However, it will not execute a transaction, just simply save a card, so you may 
 </li>
 <li><p><strong>RedirectUrl:</strong> Unlike with the Payment Page, this URL is not used for a redirect. Instead, it is embedded in an HTML Iframe. Within this, a form hosted by Saferpay is displayed. This form is also called the Hosted Entry Form. It can be used to capture sensitive card details in a PCI-compliant manner. You can find out more about the Iframe integration <a href="https://saferpay.github.io/sndbx/CssiFrame.html">in this chapter</a>.</p>
 </li>
-</ul></div></div></section><section><h3>Return to the Shop</h3><div class="row"><div class="col-sm-6"><p>Once the registration is completed, the card holder &#8211; depending on the outcome &#8211; is taken back to one of the <strong>ReturnUrls</strong> of the shop. Here, the GET parameters can be read and the <strong>Token</strong> can be assigned to the registration.</p></div></div></section><section><h3>Obtaining the alias</h3><div class="row"><div class="col-sm-6"><p>With the <strong>Token</strong>, the can be obtained, by submitting it through the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert">Alias AssertInsert request</a>. The response will give you the alias itself and further information about the card itself, like the masked card number, or the holder name.</p></div></div></section><section id="scd-demo"><h2><a name="scd-demo"></a>Try it out!</h2><div class="row"><div class="col-sm-6"><p><a class="demobtn" href="https://shop.saferpay.eu/saferpayintegration">Click here for a live demo!</a></p></div></div></section><section id="scd-spg"><h2><a name="scd-spg"></a> Secure Card Data and the Secure PayGate</h2><div class="row"><div class="col-sm-6"><p>Similar to the Payment Page, the <a href="spg.html">Secure PayGate API</a> also has the ability to save a card, during a transaction.
-Simply add the <strong>RegisterAlias</strong> container to your request, as described in the request specification:</p></div></div></section><section><h3>Example</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{
-  &quot;Payment&quot;: {
-    &quot;Amount&quot;: {
-      &quot;Value&quot;: &quot;404&quot;,
-      &quot;CurrencyCode&quot;: &quot;CHF&quot;
-    },
-    &quot;OrderId&quot;: &quot;094c2a7ce1374f7ca184591f123b154d&quot;,
-    &quot;Options&quot;: {
-      &quot;PreAuth&quot;: true
-    }
-  },
-  &quot;ExpirationDate&quot;: &quot;2020-04-23&quot;,
-  &quot;Payer&quot;: {
-    &quot;LanguageCode&quot;: &quot;de&quot;,
-    &quot;BillingAddress&quot;: {
-      &quot;FirstName&quot;: &quot;John&quot;,
-      &quot;LastName&quot;: &quot;Doe&quot;,
-      &quot;Company&quot;: &quot;Worldline&quot;,
-      &quot;Gender&quot;: &quot;MALE&quot;,
-      &quot;Street&quot;: &quot;Mustergasse 123&quot;,
-      &quot;Zip&quot;: &quot;8008&quot;,
-      &quot;City&quot;: &quot;Zurich&quot;,
-      &quot;CountryCode&quot;: &quot;CH&quot;,
-      &quot;Email&quot;: &quot;payer@provider.com&quot;
-    }
-  },
-  &quot;BillingAddressForm&quot;: {
-    &quot;Display&quot;: true
-  },
-  &quot;RegisterAlias&quot;: {
-    &quot;IdGenerator&quot;: &quot;RANDOM&quot;
-  }
-}
-</code></pre><div class="info" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p>
-    <strong>Important:</strong> At this moment, only the IdGenerator value <strong>RANDOM</strong> is supported!
-  </p>
-</div></div></div></section><section id="scd-check"><h2><a name="scd-check"></a> The check-Function</h2><div class="row"><div class="col-sm-6"><p>The Check function is used, to check, if an entered card connects to a valid account, or not, before the authorization itself.
+</ul></div></div></section><section><h3>Return to the Shop</h3><div class="row"><div class="col-sm-6"><p>Once the registration is completed, the card holder &#8211; depending on the outcome &#8211; is taken back to one of the <strong>ReturnUrls</strong> of the shop. Here, the GET parameters can be read and the <strong>Token</strong> can be assigned to the registration.</p></div></div></section><section><h3>Obtaining the alias</h3><div class="row"><div class="col-sm-6"><p>With the <strong>Token</strong>, the can be obtained, by submitting it through the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert">Alias AssertInsert request</a>. The response will give you the alias itself and further information about the card itself, like the masked card number, or the holder name.</p></div></div></section><section id="scd-check"><h2><a name="scd-check"></a> The check-Function</h2><div class="row"><div class="col-sm-6"><p>The Check function is used, to check, if an entered card connects to a valid account, or not, before the authorization itself.
 However, you need to consider the following restrictions:</p><ol>
 <li>The check-function is only available with the standalone registration, since the other options do said authorization!</li>
 <li>The check-function <strong>does not</strong> check the solvency of the account. Only an authorization does!</li>
@@ -1088,7 +1049,46 @@ You need to make sure, to provide a valid terminal Id, with activated acquiring-
         &quot;online card check failed&quot;
     ]
 }
-</code></pre></div></div></section><section id="scd-generator"><h2><a name="scd-generator"></a> The Id-generator</h2><div class="row"><div class="col-sm-6"><p>The ID-generator is used to choose what kind of alias you want to recieve. Right now, there are three options to choose from:</p><ol>
+</code></pre></div></div></section><section id="scd-demo"><h2><a name="scd-demo"></a>Try it out!</h2><div class="row"><div class="col-sm-6"><p><a class="demobtn" href="https://shop.saferpay.eu/saferpayintegration">Click here for a live demo!</a></p></div></div></section><section id="scd-spg"><h2><a name="scd-spg"></a> Secure Card Data and the Secure PayGate</h2><div class="row"><div class="col-sm-6"><p>Similar to the Payment Page, the <a href="spg.html">Secure PayGate API</a> also has the ability to save a card, during a transaction.
+Simply add the <strong>RegisterAlias</strong> container to your request, as described in the request specification:</p></div></div></section><section><h3>Example</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{
+  &quot;Payment&quot;: {
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: &quot;404&quot;,
+      &quot;CurrencyCode&quot;: &quot;CHF&quot;
+    },
+    &quot;OrderId&quot;: &quot;094c2a7ce1374f7ca184591f123b154d&quot;,
+    &quot;Options&quot;: {
+      &quot;PreAuth&quot;: true
+    }
+  },
+  &quot;ExpirationDate&quot;: &quot;2020-04-23&quot;,
+  &quot;Payer&quot;: {
+    &quot;LanguageCode&quot;: &quot;de&quot;,
+    &quot;BillingAddress&quot;: {
+      &quot;FirstName&quot;: &quot;John&quot;,
+      &quot;LastName&quot;: &quot;Doe&quot;,
+      &quot;Company&quot;: &quot;Worldline&quot;,
+      &quot;Gender&quot;: &quot;MALE&quot;,
+      &quot;Street&quot;: &quot;Mustergasse 123&quot;,
+      &quot;Zip&quot;: &quot;8008&quot;,
+      &quot;City&quot;: &quot;Zurich&quot;,
+      &quot;CountryCode&quot;: &quot;CH&quot;,
+      &quot;Email&quot;: &quot;payer@provider.com&quot;
+    }
+  },
+  &quot;BillingAddressForm&quot;: {
+    &quot;Display&quot;: true
+  },
+  &quot;RegisterAlias&quot;: {
+    &quot;IdGenerator&quot;: &quot;RANDOM&quot;
+  }
+}
+</code></pre><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> At this moment, only the IdGenerator value <strong>RANDOM</strong> is supported!
+  </p>
+</div></div></div></section><section id="scd-generator"><h2><a name="scd-generator"></a> The Id-generator</h2><div class="row"><div class="col-sm-6"><p>The ID-generator is used to choose what kind of alias you want to recieve. Right now, there are three options to choose from:</p><ol>
 <li><strong>MANUAL</strong>: Manual should be used, if you want to define an alias yourself. This is helpful, if the alias has to be in a specific format, like all numeric, or 16 characters long etc. You then have to supply the Id you want to use within the <strong>Id</strong> parameter. <div class="danger"><p><strong>Important:</strong>Make sure, that all your aliases are unique! Saferpay will only authorize the first card to come up inside the database, if there are multiple records with the same alias!</p></div></li>
 <li><strong>RANDOM</strong>: This value will generate a random alpha numerical hash, as your alias-id, for you! No need to supply an id yourself!</li>
 <li><strong>RANDOM_UNIQUE</strong>: Similar to <strong>RANDOM</strong>, it will create a random alpha numerical hash for you. The difference is, that it will check, if the card number (PAN) provided has already saved inside your alias store. If so, Saferpay will return the already existing alias, making sure, that no PAN can be saved twice or more!</li>
