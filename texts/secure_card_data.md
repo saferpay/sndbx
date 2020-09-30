@@ -258,60 +258,6 @@ Once the registration is completed, the card holder – depending on the outcome
 ### Obtaining the alias
 
 With the **Token**, the can be obtained, by submitting it through the [Alias AssertInsert request](http://saferpay.github.io/jsonapi/#Payment_v1_Alias_AssertInsert). The response will give you the alias itself and further information about the card itself, like the masked card number, or the holder name.
- 
-## <a name="scd-demo"></a>Try it out!
-
-<a href="https://shop.saferpay.eu/saferpayintegration" class="demobtn">Click here for a live demo!</a>
-
-
-## <a name="scd-spg"></a> Secure Card Data and the Secure PayGate
-
-Similar to the Payment Page, the <a href="spg.html">Secure PayGate API</a> also has the ability to save a card, during a transaction.
-Simply add the **RegisterAlias** container to your request, as described in the request specification:
-
-### Example
-```json
-{
-  "Payment": {
-    "Amount": {
-      "Value": "404",
-      "CurrencyCode": "CHF"
-    },
-    "OrderId": "094c2a7ce1374f7ca184591f123b154d",
-    "Options": {
-      "PreAuth": true
-    }
-  },
-  "ExpirationDate": "2020-04-23",
-  "Payer": {
-    "LanguageCode": "de",
-    "BillingAddress": {
-      "FirstName": "John",
-      "LastName": "Doe",
-      "Company": "Worldline",
-      "Gender": "MALE",
-      "Street": "Mustergasse 123",
-      "Zip": "8008",
-      "City": "Zurich",
-      "CountryCode": "CH",
-      "Email": "payer@provider.com"
-    }
-  },
-  "BillingAddressForm": {
-    "Display": true
-  },
-  "RegisterAlias": {
-    "IdGenerator": "RANDOM"
-  }
-}
-```
-
-<div class="info" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p>
-    <strong>Important:</strong> At this moment, only the IdGenerator value <strong>RANDOM</strong> is supported!
-  </p>
-</div>
 
 ## <a name="scd-check"></a> The check-Function
 
@@ -422,7 +368,60 @@ If the chek failed, the registration too will fail and you'll get an error-respo
     ]
 }
 ```
+ 
+## <a name="scd-demo"></a>Try it out!
 
+<a href="https://shop.saferpay.eu/saferpayintegration" class="demobtn">Click here for a live demo!</a>
+
+
+## <a name="scd-spg"></a> Secure Card Data and the Secure PayGate
+
+Similar to the Payment Page, the <a href="spg.html">Secure PayGate API</a> also has the ability to save a card, during a transaction.
+Simply add the **RegisterAlias** container to your request, as described in the request specification:
+
+### Example
+```json
+{
+  "Payment": {
+    "Amount": {
+      "Value": "404",
+      "CurrencyCode": "CHF"
+    },
+    "OrderId": "094c2a7ce1374f7ca184591f123b154d",
+    "Options": {
+      "PreAuth": true
+    }
+  },
+  "ExpirationDate": "2020-04-23",
+  "Payer": {
+    "LanguageCode": "de",
+    "BillingAddress": {
+      "FirstName": "John",
+      "LastName": "Doe",
+      "Company": "Worldline",
+      "Gender": "MALE",
+      "Street": "Mustergasse 123",
+      "Zip": "8008",
+      "City": "Zurich",
+      "CountryCode": "CH",
+      "Email": "payer@provider.com"
+    }
+  },
+  "BillingAddressForm": {
+    "Display": true
+  },
+  "RegisterAlias": {
+    "IdGenerator": "RANDOM"
+  }
+}
+```
+
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> At this moment, only the IdGenerator value <strong>RANDOM</strong> is supported!
+  </p>
+</div>
 
 
 ## <a name="scd-generator"></a> The Id-generator
