@@ -346,7 +346,7 @@ Here you can see some examples of how the Hosted Fields may be integrated. Feel 
 </div>
 
 #### Init Sample
-<iframe width="1000px" height="400" src="https://jsfiddle.net/saferpay/gnr0k1o9/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<iframe width="1000px" height="400" src="https://jsfiddle.net/saferpay/k8pncmwq/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
 #### Sample 1
 <iframe width="1000px" height="620" src="https://jsfiddle.net/saferpay/o8qb0ghv/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
