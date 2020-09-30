@@ -29,7 +29,7 @@ This is the basic Saferpay Fields flow.
 
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/saferpay-fields-flow.png "Saferpay Fields flow")
 1. The card holder navigates to the checkout
-2. The shop frontend calls **SaferpayFields.Init()** (See Integration and Initialization > Hosted Fields Initialization) and the Hosted Fields Javascript library initializes the iFrames.
+2. The shop frontend calls **SaferpayFields.Init()** (See Integration and Initialization > Hosted Fields Initialization) and the Saferpay Fields Javascript library initializes the iFrames.
 3. Once initialized, the library will replace the placeholders with the correct iFrame inputs, which then are presented to the card holder.
 4. The card holder enters his card details and clicks "Submit", on which the Webshop executes the <strong>SaferpayFields.submit()</strong> function.
 5. The Saferpay Fields Javascript library then submits the iFrames, which sends the card details towards Saferpay.
@@ -73,13 +73,13 @@ Once created, you will be presented with a basic integration-example:
 
 After you have created your API-Token, you can start integrating the Saferpay Fields into your site.
 
-### Include the Saferpay Fields Javascript library into your site
+### Include the Saferpay Fields JavaScript library into your site
 ```html
-<script src="'https://test.saferpay.com/Fields/lib/1.3/saferpay-fields.js'"></script> <!-- For Test-Environment-->
+<script src="'https://test.saferpay.com/Fields/lib/1/saferpay-fields.js'"></script> <!-- For Test-Environment-->
 <!-- OR -->
-<script src="'https://www.saferpay.com/Fields/lib/1.3/saferpay-fields.js'"></script> <!-- For Live-Environment-->
+<script src="'https://www.saferpay.com/Fields/lib/1/saferpay-fields.js'"></script> <!-- For Live-Environment-->
 ```
-### Define, where Saferpay should load the Hosted Fields
+### Define, where Saferpay should insert the Hosted Fields
 
 ```html
     <div class="row">
@@ -338,11 +338,11 @@ Saferpay Fields are supported by the following Browsers:
 
 # <a name="hf-example"></a> Examples
 
-Here you can see some examples of how the Hosted Fields may be integrated. Feel free to use this code, if you have trouble integrating.
+Here you can see some examples of how the Saferpay Fields may be integrated. Feel free to use this code, if you have trouble integrating.
 
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Note:</strong> If you want to test Saferpay Hosted Fields, you can eddit all examples in JSFiddle. Please click on the link on the upper right side of the examples: <i>Edit in JSFiddle</i></p>
+  <p><strong>Note:</strong> If you want to test Saferpay Fields, you can edit all examples in JSFiddle. Please click on the link on the upper right side of the examples: <i>Edit in JSFiddle</i></p>
 </div>
 
 #### Init Sample
@@ -359,14 +359,14 @@ Here you can see some examples of how the Hosted Fields may be integrated. Feel 
 It is important to understand, that the Saferpay Fields are just a way to capture the card details. 
 Now, you have to decide, what to do, with this information. You have two options now:
 
-1. Execute a transaction. If you want to use the captured card data for a normal transaction, then you have to refer to the <a href="Integration_trx.html">Transaction Interface Process</a>. By simply submitting the Fields Token via this API-Method, you can generate an API Token to trigger an Authorization and a Redirecturl, for performing other steps, like DCC, or 3D Secure.
+1. Execute a transaction. If you want to use the captured card data for a normal transaction, then you have to refer to the <a href="Integration_trx.html">Transaction Interface Process</a>. By simply submitting the Fields Token via this API-Method, you can generate an API Token to trigger an Authorization and a RedirectUrl, for performing other steps, like DCC, or 3D Secure.
 
-2. Save the card. If you want to just save the card for now, you can do that via the <a href="scd.html">Saferpay Secure Alias Store via standalone registration</a>. This allows you to optain a card alias, to perform other actions, like recurring payments, or just enable your customers to save new payment means inside their shop account, for further use. The choice is yours.
+2. Save the card. If you want to just save the card for now, you can do that via the <a href="scd.html">Saferpay Secure Alias Store via standalone registration</a>. This allows you to obtain a card alias, to perform other actions, like recurring payments, or just enable your customers to save new payment means inside their shop account, for further use. The choice is yours.
 
-Once the **onSuccess** event is called, you need to forward the Hosted Fields token to your server-backend, in order to initialize the next step (see above) and also gather the **RedirectUrl**, to perform things like 3D Secure and/or DCC. How you move the token to the backend is completely up to you.
-You can provide the onSuccess event with an AJAX-method to execute the initialization in the background on a successful submit and forward the **RedirectUrl** to the fronend for a redirect this way, which you then can open in an iFrame, Lightbox, or as a full redirect.
+Once the **onSuccess** event is called, you need to forward the Saferpay Fields token to your server-backend, in order to initialize the next step (see above) and also gather the **RedirectUrl**, to perform things like 3D Secure and/or DCC. How you move the token to the backend is completely up to you.
+You can provide the onSuccess event with an AJAX-method to execute the initialization in the background on a successful submit and forward the **RedirectUrl** to the fronend for a redirect this way, which you then can open in an iframe, Lightbox, or as a full redirect.
 However a redirect via GET, or POST, towards your initialize-script, is also an option, of course.
-Refer to the above mentioned chapters, to learn, how to initialize a transaction, or just save a card, using a Hosted Fields token.
+Refer to the above mentioned chapters, to learn, how to initialize a transaction, or just save a card, using a Saferpay Fields token.
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
