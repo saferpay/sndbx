@@ -20,7 +20,12 @@
       { "Source": "texts/intro.md", "Title": "Understanding common Saferpay Terms", "Target": "index.html#terms" }
     ]
   },
-  {
+ {
+    "Title": "TLS Security and Communication Settings",
+    "Source": "texts/TLS.md",
+    "Target": "tls.html"
+  },
+ {
     "Title": "Licenses and Interfaces",
     "Source": "texts/interfaces.md",
     "Target": "Interfaces.html",
