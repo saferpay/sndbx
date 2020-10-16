@@ -8,13 +8,13 @@ The sequential steps of the general integration process are described in our [St
 
 ## <a name="intro-requirement"></a> Requirements
 
-Use of the JA requires the following:
+Using the JSON API requires the following:
 
-*	A corresponding licence for the Saferpay module.
-*	The existence of a valid identification with a username and password for the Saferpay Backoffice.
-*	Availability of at least one active Saferpay terminal via which payment can be carried out and the associated
-*	Availability of Saferpay terminal number (TerminalId parameter) and Saferpay customer number (CustomerId parameter).
-*	Availability of valid acceptance agreement for credit cards or other payment methods.
+* a valid [JSON API Basic Authentication credential or JSON API client certificate](//saferpay.github.io/jsonapi/#authentication)
+* a web client which complies with the [TLS requirements to communicate with the Saferpay servers](//saferpay.github.io/sndbx/tls.html)
+*	at least one active Saferpay terminal via which payments can be carried out
+*	a Saferpay terminal number (TerminalId parameter) and your Saferpay customer number (CustomerId parameter).
+*	a valid acceptance agreement for credit cards or other payment methods.
 
 ## <a name="pci"></a>  Data Security and PCI DSS
 
@@ -24,7 +24,7 @@ Please pay attention to the PCI DSS guidelines when setting up payment processes
 
 When using the Saferpay Hosted Register Form together with the optional Saferpay Secure Card Data (SCD), you can set up and handle the payment process safely. No credit card numbers are processed, transferred or stored on your (web) servers.
 
-To use the Saferpay Payment Page, card holders enter their credit card number and expiry date not within the merchant’s e-commerce application, but instead within the Saferpay Payment Page. As the e-commerce application and Saferpay operate on physically separate platforms, there is no risk that the credit card information could be stored in the database of the merchant’s system.
+To use the Saferpay Payment Page, card holders enter their credit card number and expiry date not within the merchant's e-commerce application, but instead within the Saferpay Payment Page. As the e-commerce application and Saferpay operate on physically separate platforms, there is no risk that the credit card information could be stored in the database of the merchant’s system.
 
 The risk of misuse of credit card details is significantly reduced via the use of Saferpay Secure Card Data or the Saferpay Payment Page and the expenditure required for PCI DSS merchant certification is reduced significantly.
 
