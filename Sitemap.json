@@ -5,7 +5,6 @@
     "Target": "index.html",
     "Subsites": [
       { "Source": "texts/intro.md", "Title": "Requirements", "Target": "index.html#intro-requirement" },
-      { "Source": "texts/TLS.md", "Title": "TLS Security and Communication Settings", "Target": "tls.html" },
       { "Source": "texts/intro.md", "Title": "Data Security and PCI DSS", "Target": "index.html#pci" },
       { "Source": "texts/intro.md", "Title": "3-D Secure", "Target": "index.html#3ds" },
       { "Source": "texts/intro.md", "Title": "Dynamic Currency Conversion", "Target": "index.html#dcc" },
