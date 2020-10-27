@@ -39,6 +39,13 @@ Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive p
   </p>
 </div>
 
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Please note, that the saved card details, all belong to one and only one CustomerId and thus Saferpay account! They can not be shared between accounts! If you have multiple Saferpay accounts/CustomerIds, you must register each card multiple times, for each account/CustomerId!
+  </p>
+</div>
+
 ---
 
 ## <a name="scd-pp"></a> Secure Card Data and the Payment Page
