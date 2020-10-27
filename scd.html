@@ -803,6 +803,11 @@
   <p>
    <strong>Caution:</strong> Please also consider the <a href="psd2.html">PSD 2 chapter</a>, to check, if your flow falls under certain PSD2 rules, especially, if you intend on using the Alias for Recurring Payments!
   </p>
+</div><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Please note, that the saved card details, all belong to one and only one CustomerId and thus Saferpay account! They can not be shared between accounts! If you have multiple Saferpay accounts/CustomerIds, you must register each card multiple times, for each account/CustomerId!
+  </p>
 </div><hr></div></div></section><section id="scd-pp"><h2><a name="scd-pp"></a> Secure Card Data and the Payment Page</h2><div class="row"><div class="col-sm-6"><p>The Payment Page can be used to save a credit card, <strong>after a successful authorization</strong>!
 In order to request an Alias with the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>, you first need to set the <strong>RegisterAlias</strong> container within the <a href="http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>.</p><pre><code class="language-json">{ 
 &quot;RequestHeader&quot;: {
