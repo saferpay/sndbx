@@ -136,6 +136,13 @@ However you must make sure, that you define the placeholders -can be ```<div>```
     <strong>Important:</strong> The placeholder must have a height > 0, or the iframe will inherit this height!
   </p>
 </div>
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Note:</strong> The CVC is always mandatory, except on cards, that do not have a CVC! In these cases, Saferpay will deactivate the field!
+  </p>
+</div>
+
 
 ### Saferpay Fields Initialization
 ```javascript
@@ -214,7 +221,7 @@ style: {
 	'.form-control': 'border: none; border-bottom: solid 1px #ccc; border-radius: unset;'
 }
 ```
-* <strong>paymentMethods</strong> *String[]* : A String-Array, containing a list of brands to be accepted! Currently accepted brands/values: mastercard, maestro, visa, jcb, diners, bancontact, amex 
+* <strong>paymentMethods</strong> *String[]* : A String-Array, containing a list of brands to be accepted! Currently accepted brands/values: mastercard, maestro, visa, jcb, diners, bancontact, amex, bonus, myone
 * <strong>cssUrl</strong> *String* : Url to an external CSS, to be applied to all elements.
 * <strong>placeholders</strong> *Object* : Object, that contains custom placeholder text, to be applied to the inputs.
 **Example:**
