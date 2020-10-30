@@ -13,14 +13,15 @@ This chapter will cover the technical aspects of a Fire integration into your sh
 ### Supported Payment Methods and Flows
 Currently, the following payment methods are supported:
 
++ Visa/VPay
 + Mastercard
 + Maestro
-+ Visa/Vpay
 + American Express
 + Bancontact
++ Diners Club
++ JCB
 + Bonus Card
 + MyOne
-+ JCB
 + PayPal
 
 Currently, the following flows are supported:
