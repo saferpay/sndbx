@@ -17,7 +17,10 @@ Currently, the following payment methods are supported:
 + Maestro
 + Visa/Vpay
 + American Express
-+ Bancxontact
++ Bancontact
++ Bonus Card
++ MyOne
++ JCB
 + PayPal
 
 Currently, the following flows are supported:
@@ -25,6 +28,7 @@ Currently, the following flows are supported:
 + [Payment Page](Integration_PP.html)
 + [Transaction Interface](Integration_trx.html), including the [Saferpay Fields](SaferpayFields.html)
 + [Direct Mode for Bancontact](bancontact.html#bancontact-directmode)
++ [Recurring Transactions](recurring.html)
 
 ## <a name="fire-activation"></a> Activation
 
