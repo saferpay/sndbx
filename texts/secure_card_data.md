@@ -457,3 +457,10 @@ The obtained alias can be used in two basic ways, which boil down to one importa
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>NOTE:</strong> Every alias is bound to the CustomerId you provide with the registration-request. All Terminals bound to that id can use the aliases, but not other CustomerIds! There is no way to share the aliases between different CustomerIds!</p>
 </div>
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> If an Alias is created during a transaction (See Payment Page and Transaction Interface above!), the used Payment Method is saved and will be used for further transactions.
+    For example, if a Bancontact/Maestro dual-branded card is used and the card-holder selects Bancontact, Saferpay will use the card as a Bancontact card, even if Maestro is activated on that terminal. Furthermore, if the alias is then used on a terminalId, that does not have Bancontact activated, the transaction won't be possible, even if Maestro is activated! The alias must be processed via the brand, the user first payed with!
+  </p>
+</div>
