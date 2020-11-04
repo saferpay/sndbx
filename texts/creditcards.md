@@ -9,7 +9,7 @@ A partial approval is best explained with an example:
 A customer comes to your shop and orders goods worth 100 Euros.
 He/She enters the card details and Saferpay authorizes the card. During authorization, the card holders bank checks the solvency of the card holder and sees, that only maximum of 80 Euros can be authorized. Under normal circumstances, the transaction would fail. However, if the merchant requests a partial approval, the card can be authorized for as much, as possible.
 
-This sort of authorization-type is best suited for goods, that are sold in bulk, like for example screws, food, or petrol at a gas station.
+This sort of authorization-type is best suited for goods, that are sold in bulk, like for example screws, certain food-items, or petrol at a gas station.
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
