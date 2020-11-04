@@ -778,8 +778,99 @@
 				</div>
 
 				
-<section><h1>Credit Cards - Special Cases</h1><div class="row"><div class="col-sm-6"><p>Though we at SIX Payment Services do offer the possibility to process credit cards, it sometimes is necessary to involve third parties in order to process credit cards in certain countries and regions.
-This chapter will cover the special characteristics you need to consider, if you want to use Saferpay with these processors.</p></div></div></section><section id="cc-chase"><h3><a name="cc-chase"></a> Chase Paymentech</h3><div class="row"><div class="col-sm-6"><p>Chase Paymentech is a US credit card processor with office in Dallas, Texas.
+<section><h1>Credit Cards</h1><div class="row"><div class="col-sm-6"><p>This chapter will cover special cases and some additional features, that are available with credit card processing.</p></div></div></section><section id="cc-pappoval"><h2><a name="cc-pappoval"></a> Partial approvals</h2><div class="row"><div class="col-sm-6"><p>A partial approval is best explained with an example:</p><p>A customer comes to your shop and orders goods worth 100 Euros.
+He/She enters the card details and Saferpay authorizes the card. During authorization, the card holders bank checks the solvency of the card holder and sees, that only maximum of 80 Euros can be authorized. Under normal circumstances, the transaction would fail. However, if the merchant requests a partial approval, the card can be authorized for as much, as possible.</p><p>This sort of authorization-type is best suited for goods, that are sold in bulk, like for example screws, food, or petrol at a gas station.</p><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Not all Issuers may support this feature. If no partial approval can be granted, the transaction will fail!
+  </p>
+</div></div></div></section><section><h3>Requirements</h3><div class="row"><div class="col-sm-6"><ul>
+<li>Partial approvals can only be requested with <strong>SpecVersion 1.20</strong>, or higher!</li>
+<li>Partial approvals are only available for Visa and Mastercard!</li>
+</ul></div></div></section><section><h3>How to request a partial approval</h3><div class="row"><div class="col-sm-6"><p>A partial approval can only be requested, when using the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct Request</a>. With this request, the parameter <strong>Payment.Options.AllowPartialAuthorization</strong> must be set to true.</p><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Please make sure, that you also have read the <a href="psd2.html">PSD2 Chapter</a>, since <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a> is classified as a Merchant Initiated Transaction (MIT)!
+  </p>
+</div></div></div></section><section><h3>Example request</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{
+  &quot;RequestHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.20&quot;,
+    &quot;CustomerId&quot;: &quot;242225&quot;,
+    &quot;RequestId&quot;: &quot;8cf6d15a041ba515d90ee191257d9f77&quot;,
+    &quot;RetryIndicator&quot;: 0,
+    &quot;ClientInfo&quot;: {
+      &quot;ShopInfo&quot;: &quot;My Shop&quot;,
+      &quot;OsInfo&quot;: &quot;Windows Server 2013&quot;
+    }
+  },
+  &quot;TerminalId&quot;: &quot;17869305&quot;,
+  &quot;Payment&quot;: {
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: &quot;10000&quot;,
+      &quot;CurrencyCode&quot;: &quot;EUR&quot;
+    },
+    &quot;OrderId&quot;: &quot;Order_2&quot;,
+    &quot;Description&quot;: &quot;Test Order #2&quot;,
+    &quot;Options&quot;: {
+      &quot;AllowPartialAuthorization&quot;: true
+    }
+  },
+  &quot;Payer&quot;: {
+    &quot;IpAddress&quot;: &quot;192.168.178.55&quot;,
+    &quot;LanguageCode&quot;: &quot;en&quot;
+  },
+  &quot;PaymentMeans&quot;: {
+    &quot;Alias&quot;: {
+      &quot;Id&quot;: &quot;77b828c0975498e986e1663489ceacdc&quot;
+    }
+  }
+}
+</code></pre></div></div></section><section><h3>Example response</h3><div class="row"><div class="col-sm-6"><p>Saferpay will respond with the maximum amount, that can be authorized:</p><pre><code class="language-json">{
+  &quot;ResponseHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.20&quot;,
+    &quot;RequestId&quot;: &quot;8cf6d15a041ba515d90ee191257d9f77&quot;
+  },
+  &quot;Transaction&quot;: {
+    &quot;Type&quot;: &quot;PAYMENT&quot;,
+    &quot;Status&quot;: &quot;AUTHORIZED&quot;,
+    &quot;Id&quot;: &quot;69W8jSbjbhA2vASMbxUUAl3Q4OKA&quot;,
+    &quot;Date&quot;: &quot;2020-11-04T12:29:07.646+01:00&quot;,
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: &quot;5000&quot;,
+      &quot;CurrencyCode&quot;: &quot;EUR&quot;
+    },
+    &quot;OrderId&quot;: &quot;Order_2&quot;,
+    &quot;AcquirerName&quot;: &quot;VISA Saferpay Test&quot;,
+    &quot;AcquirerReference&quot;: &quot;05718468252&quot;,
+    &quot;SixTransactionReference&quot;: &quot;0:0:3:69W8jSbjbhA2vASMbxUUAl3Q4OKA&quot;,
+    &quot;ApprovalCode&quot;: &quot;715453&quot;
+  },
+  &quot;PaymentMeans&quot;: {
+    &quot;Brand&quot;: {
+      &quot;PaymentMethod&quot;: &quot;VISA&quot;,
+      &quot;Name&quot;: &quot;VISA&quot;
+    },
+    &quot;DisplayText&quot;: &quot;xxxx xxxx xxxx 0013&quot;,
+    &quot;Card&quot;: {
+      &quot;MaskedNumber&quot;: &quot;xxxxxxxxxxxx0013&quot;,
+      &quot;ExpYear&quot;: 2022,
+      &quot;ExpMonth&quot;: 2,
+      &quot;HolderName&quot;: &quot;test&quot;,
+      &quot;CountryCode&quot;: &quot;DE&quot;,
+      &quot;HashValue&quot;: &quot;E1DB6CE1CC017DCB651E7256650023698E58E158&quot;
+    }
+  },
+  &quot;Payer&quot;: {
+    &quot;IpAddress&quot;: &quot;192.168.178.55&quot;
+  }
+}
+</code></pre><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> The merchant must make sure, that his inventory is adjusted accordingly, since less will be payed, than initially requested, which is the point behind partial approvals.
+  </p>
+</div></div></div></section><section><h3>Test cards</h3><div class="row"><div class="col-sm-6"><p>Test cards can be found <a href="paymentmeans.html">over here</a>.</p></div></div></section><section id="cc-scase"><h2><a name="cc-scase"></a> Special Cases</h2><div class="row"><div class="col-sm-6"><p>Though we at SIX Payment Services do offer the possibility to process credit cards, it sometimes is necessary to involve third parties in order to process credit cards in certain countries and regions.
+This chapter will cover the special characteristics you need to consider, if you want to use Saferpay with these processors.</p></div></div></section><section><h3>Chase Paymentech</h3><div class="row"><div class="col-sm-6"><p>Chase Paymentech is a US credit card processor with office in Dallas, Texas.
 SIX Payment Services offers the pssibility to process credit cards over this processor, directly in the US.
 However please take note to the following restrictions and characteristics.</p><ul>
 <li><strong>OrderId:</strong> Due to technical restrictions, the <strong>OrderId</strong> will not be forwarded to Chase to be shown on your reconciliation-files from chase. Saferpay will instead fill it with a unique, increasing, numeric value, to meet Chase Paymentechs requirements. Therefore a later identification through the <strong>OrderId</strong> will not be possible!</li>
