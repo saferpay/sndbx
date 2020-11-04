@@ -263,7 +263,8 @@
     "Source": "texts/creditcards.md",
     "Target": "creditcards.html",
     "Subsites": [
-      { "Source": "texts/creditcards.md", "Title": "Chase Paymentech", "Target": "creditcards.html#cc-chase" }
+      { "Source": "texts/creditcards.md", "Title": "Partial approvals", "Target": "creditcards.html#cc-pappoval" },
+      { "Source": "texts/creditcards.md", "Title": "Special Cases", "Target": "creditcards.html#cc-scase" }
     ]
   },
  {
