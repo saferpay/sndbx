@@ -75,6 +75,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
                 <th class="text-center">Processor Message</th>
               </tr>
             </thead>
+            <tbody>
               <tr>
                 <td style="word-break: unset;">00</td>
                 <td style="border-left: 1px solid #ddd;">See Frictionless Y.<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> true</td>
@@ -131,11 +132,14 @@ In this Chapter you will find a list of payment means you can use for testing pu
                 <td style="word-break: unset;">03</td>
                 <td style="border-left: 1px solid #ddd;">Invalid Merchant Number</td>
               </tr>
-            <tbody>
             </tbody>
           </table>
         </td>
-      </tr>
+        </tr>
+        <tr>
+          <td style="word-break: unset;">9010100000020013</td>
+          <td style="border-left: 1px solid #ddd;">Card, to simulate a <a href="creditcards.html#cc-pappoval">partial approval</a>.</td>
+        </tr>
     </tbody>
   </table>
   
@@ -274,6 +278,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
                 <th class="text-center">Processor Message</th>
               </tr>
             </thead>
+            <tbody>
               <tr>
                 <td style="word-break: unset;">00</td>
                 <td style="border-left: 1px solid #ddd;">See Frictionless Y.<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> true</td>
@@ -330,10 +335,13 @@ In this Chapter you will find a list of payment means you can use for testing pu
                 <td style="word-break: unset;">03</td>
                 <td style="border-left: 1px solid #ddd;">Invalid Merchant Number</td>
               </tr>
-            <tbody>
             </tbody>
           </table>
         </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9030100000021017</td>
+        <td style="border-left: 1px solid #ddd;">Card, to simulate a <a href="creditcards.html#cc-pappoval">partial approval</a>.</td>
       </tr>
     </tbody>
   </table>
