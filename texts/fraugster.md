@@ -9,15 +9,14 @@ This chapter will cover the technical aspects on how to integrate Fraud Preventi
 + The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay
 system.
 + Availability of at least one active Saferpay terminal via which payments can be carried out and availability of the associated Saferpay TerminalId.
-+ A contract to use the Fraud Prevention module in Saferpay.
++ A contract to use the Fraud Prevention module in Saferpay. Please contact your contractual sales-contact on that matter.
 
 
 ### Supported Payment Methods and Flows
 Currently, the following payment methods are supported:
 
 + Visa/VPay
-+ Mastercard
-+ Maestro
++ Mastercard/Maestro
 + American Express
 + Bancontact
 + Diners Club
