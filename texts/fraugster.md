@@ -1,14 +1,16 @@
-# Fraugster Fire
+# Fraud Prevention
 
-Fraugster Fire (Henceforth just Fire) is a fraud protection module provided by *NAME HERE* and supported by Saferpay. 
-It allows a merchant to dynamically react on suspicious behavior and even  prevent transactions with mailicious intent, during runtime.
-This chapter will cover the technical aspects of a Fire integration into your shop-system.
+Fraud Prevention is a Saferpay module that protects merchants from fraudulent online transactions. It relies on Fraugster's industry-leading AI technology
+and allows merchants to dynamically react on suspicious behavior and even prevent transactions with malicious intent, during runtime.
+This chapter will cover the technical aspects on how to integrate Fraud Prevention in your application.
 
 
 ## <a name="fire-req"></a> Requirements
-* The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
-* Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
-* A contract with Fraugster and its activation in the Saferpay System. **<= HOW TO? INFORMATION NEEDED!**
++ The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay
+system.
++ Availability of at least one active Saferpay terminal via which payments can be carried out and availability of the associated Saferpay TerminalId.
++ A contract to use the Fraud Prevention module in Saferpay.
+
 
 ### Supported Payment Methods and Flows
 Currently, the following payment methods are supported:
@@ -33,15 +35,14 @@ Currently, the following flows are supported:
 
 ## <a name="fire-activation"></a> Activation
 
-After Fraugster Fire has been activated on your account, you will have access to the options under **Risk & Fraud > Fraud Prevention Settings**. There you can find a list of all the currently supported Payment Methods, for which you can either fully activate the fraud prevention:
+After the activation of the Fraud Prevention module on your account, you will have access to the options under Risk & Fraud > Fraud Prevention settings
+. There you can find a list of all supported payment methods, for which you can either fully activate the fraud prevention, or select the payment methods
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_fraud_activation1.png "Fraud Prevention fully activated")
-
-Or you can select the payment methods you want to be covered by Fraugster Fire:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_fraud_activation1.png "Fraud Prevention partially activated")
 
 ## <a name="fire-training"></a> Training
 
-Fire uses AI-Algorithms and a pre-defined set of rules, in order to provide fraud protection. This means, that the fraud-prevention will better itself over time, as it adapts itself to the merchants needs.
+The Fraud Prevention module uses artificial intelligence algorithms and a pre-defined set of rules in order to provide protection against fraud. This means,
+that the detection quality will improve itself over time, as it adapts itself to the merchant's needs.
 
 ## <a name="fire-data"></a> Datapoints
 
@@ -290,13 +291,13 @@ Here you can see an example <a href="">Payment Page Initialize</a> request. Note
     "DeliveryAddress": {
       "FirstName": "John",
       "LastName": "Doe",
-      "Company": "123 T-hee hee hee Ltd.",
+      "Company": "Test Ltd.",
       "Gender": "MALE",
-      "Street": "Fakestreet 42",
+      "Street": "Notreal road 42",
       "Zip": "12346",
-      "City": "Gotham",
+      "City": "Sometown",
       "CountryCode": "US",
-      "DateOfBirth": "1939-27-05",
+      "DateOfBirth": "2001-01-01",
       "Phone": "555707422666701"
     }
   },
@@ -325,7 +326,7 @@ Here you can see an example <a href="">Payment Page Initialize</a> request. Note
         "Id": "EVCHR-HIKE",
         "VariantId": "EVCHR-HIKE-300",
         "Name": "Hiking vacation voucher",
-        "Description": "Enjoy the vacation with your new girlfriend!!",
+        "Description": "Enjoy the vacation with your friends!",
         "Quantity": 2,
         "UnitPrice": "30000",
         "IsPreOrder": false
@@ -343,11 +344,10 @@ Here you can see an example <a href="">Payment Page Initialize</a> request. Note
 
 ## <a name="fire-rules"></a> Rules
 
-Aside its AI-Algorithms, Fire also offers the option for the merchant, to write his own set of rules, which are then incorporated into the evaluation process.
-For this purpose, Fraugster offers its own Backend, where you, the merchant, can directly influence Fire, to fit your needs.
+Aside its AI algorithms, Fraugster also offers the option for merchants, to write their own set of rules, which are then incorporated into the evaluation
+process. For this purpose Fraugster offers its own portal (the <a href="https://dashboard.fraugsterapi.com/">Fraugster Dashboard</a>) where merchants can adapt the rules to fit their needs.
 
-The <a href="">LINK NEEDED Fire Backend can be found here. LINK NEEDED</a>
-Furthermore, you can also find <a href="">LINK NEEDED documentation on how to write and use custom rules here. LINK NEEDED</a>
+Documentation on how to create and manage custom rules can be found in the <a href="https://dashboard.fraugsterapi.com/docs/index.html">Fraugster User Guide</a> (you need to log in to the Frauster Dashboard with your own credentials that you received after signing the contract for Saferpay Fraud Prevention).
 
 ## <a name=""></a> Responses
 
@@ -355,7 +355,7 @@ Furthermore, you can also find <a href="">LINK NEEDED documentation on how to wr
 
 In case of a success, the transaction response will aslo carry additional information inside the **FraudPrevention.Result** parameter. 
 This can have one of two values **APPROVED** and **MANUAL_REVIEW**.
-In both cases, the transaction was indeed successful, however the latter indicates, that there may be issues with this transaction, which need to be reviewed manually, inside the Fraugster Fire backoffice.
+In both cases, the transaction was indeed successful, however the latter indicates, that there may be issues with this transaction, which need to be reviewed manually, inside the <a href="https://dashboard.fraugsterapi.com/">Fraugster Dashboard</a>.
 It is then up to you -the merchant-, to either accept, or decline this transaction.
 
 ```json
@@ -413,7 +413,7 @@ It is then up to you -the merchant-, to either accept, or decline this transacti
 
 ### Failure
 
-In case of a decline, Saferpay will throw a corresponding error
+In case of a decline, Saferpay will throw a appropriate error.
 
 ```json
 {
