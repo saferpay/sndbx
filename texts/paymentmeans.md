@@ -15,7 +15,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
 </div>
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-    <p><strong>Note:</strong> The CVC can be any value you want, same goes for the Holder-Name and Expiration-date. However, the latter needs to be valid. If you enter a date set in the past, the card will be rejected, because it is expired!</p>
+    <p><strong>Note:</strong> The CVC can be any value you want, same goes for the Holder-Name and Expiration-date.</p>
 </div>
 
 <a name="pm-visa"></a><div class="dropdown" id="visa-cards">VISA &dArr;</div>
