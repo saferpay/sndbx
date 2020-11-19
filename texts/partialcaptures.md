@@ -71,7 +71,7 @@ Each capture is identified by a **CaptureId** (Marked with the suffix **"\_c"**)
 
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
- <p><strong>Important Note:</strong> The overall amount you submit is not checked on the test-environment!</p>
+ <p><strong>Important Note:</strong> The overall amount you submit is not checked on the test-environment, as it is rejected by the processor/acquirer!</p>
 </div>
 
 ## <a name="pc-final"></a> Finalizing a Capture-Chain
