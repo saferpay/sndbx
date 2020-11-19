@@ -89,13 +89,6 @@ $(window).bind("message", function (e) {
 
 ## <a name="css-usecss"></a> Using CSS
 
-<div class="warning" style="min-height: 75px; display: none;">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
-  <p>
-    <strong>Warning:</strong> The CSS styling feature is deprecated and should not be used, if not already being used. Please use the <a href="https://test.saferpay.com/BO/Settings/PaymentPageConfig">Payment Page Configuration</a> instead!
-  </p>
-</div>
-
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
