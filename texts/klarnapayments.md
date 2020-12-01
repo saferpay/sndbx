@@ -1,12 +1,5 @@
 # Klarna Payments
 
-<div class="danger" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p>
-    <strong>Caution: THIS IS A WORK IN PROGRESS! KLARNA IS CURRENTLY IN ITS PILOT PHASE! ONCE IT IS BROADLY AVAILABLE, THIS NOTE WILL BE REMOVED!</strong>
-  </p>
-</div>
-
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
