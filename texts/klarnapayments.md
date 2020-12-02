@@ -28,7 +28,7 @@ This chapter details the technical implementation of Klarna Payments, through Sa
 The following requirements have to be met, in order to accept Klarna Payments via Saferpay:
 
 * The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
-* Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
+* Availability of at least one active Saferpay E Commerce terminal, via which payment can be carried out and availability of the associated Saferpay TerminalId.
 * A valid contract with Klarna. Please contact <a href="mailto:worldline.sps@klarna.com">worldline.sps@klarna.com</a>
 * Klarna Payments is only available via the [PaymentPage flow](Integration_PP.html)!
 
