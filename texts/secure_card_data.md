@@ -53,6 +53,11 @@ Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive p
 The Payment Page can be used to save a credit card, **after a successful authorization**!
 In order to request an Alias with the [PaymentPage Assert](http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert), you first need to set the **RegisterAlias** container within the [PaymentPage Initialize request](http://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize).
 
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>Important:</strong>The Payment Page <strong>CAN NOT</strong> be used to authorize/use the obtained card-alias! It can only register cards! Please refer to the last part of this chapter, <strong>How to use the obtained data</strong>, on how to actually use it!</p>
+</div>
+
  ```json 
  { 
  "RequestHeader": {
@@ -141,10 +146,6 @@ Once a successful transaction has been made through the PaymentPage, you will ge
   }
 }
 ```
-<div class="info" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Important:</strong>The Payment Page <strong>CAN NOT</strong> be used to authorize the obtained Alias! It can only register cards!</p>
-</div>
 
 ## <a name="scd-trx"></a> Secure Card Data and the Transaction Interface
 
@@ -445,12 +446,12 @@ The obtained alias can be used in two basic ways, which boil down to one importa
 
 **Do you want to do a 3D Secure transaction?**
 
-+ If yes, then you have to use the [Transaction Interface](https://saferpay.github.io/sndbx/Integration_trx.html). The Hosted Form used there will not open up and instead proceed with the 3D Secure process right away.
++ If yes, then you have to use the [Transaction Interface](https://saferpay.github.io/sndbx/Integration_trx.html#trx-hook-scd) (See Secure Card Data). <strong>This is also known as Card on File (CoF).</strong>
 + If not, then you can use [AuthorizeDirect](http://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect) to authorize the card directly. <strong>Do not forget to also <a href="index.html#capture">Capture/Finalize</a> the transaction.</strong>
 
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>NOTE:</strong> Bancontact only supports the former, while Maestro has some cards, that also are 3D Secure only!</p>
+  <p><strong>NOTE:</strong> Bancontact and Maestro only support the former!</p>
 </div>
 
 <div class="warning" style="min-height: 75px;">
