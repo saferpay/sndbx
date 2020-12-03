@@ -72,7 +72,7 @@ The process begins with [Transaction Initialize](https://saferpay.github.io/json
     },
 ```
 
-+ **Secure Card Data:** With the Initialize Request, it is also possible within Saferpay Secure Card Data to forward saved cards in the form of an alias. For example, this can be the case if the customers card number has been already saved (tokenized), and you do not want her or him to re-enter this data. To use the alias value instead of the actual card data, use the container PaymentMeans. If used, the RedirectUrl directly links to the next step e.g. 3D Secure, thus skipping the Hosted Card Entry Form.
++ <a name="trx-hook-scd"></a> **Secure Card Data:** With the Initialize Request, it is also possible within Saferpay Secure Card Data to forward saved cards in the form of an alias. For example, this can be the case if the customers card number has been already saved (tokenized), and you do not want her or him to re-enter this data. To use the alias value instead of the actual card data, use the container PaymentMeans. If used, the RedirectUrl directly links to the next step e.g. 3D Secure, thus skipping the Hosted Card Entry Form.
 ```json 
   "PaymentMeans": {
     "Alias": {
