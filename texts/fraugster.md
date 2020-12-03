@@ -348,7 +348,7 @@ process. For this purpose Fraugster offers its own portal (the <a href="https://
 
 Documentation on how to create and manage custom rules can be found in the <a href="https://dashboard.fraugsterapi.com/docs/index.html">Fraugster User Guide</a> (you need to log in to the Frauster Dashboard with your own credentials that you received after signing the contract for Saferpay Fraud Prevention).
 
-## <a name=""></a> Responses
+## <a name="fire-responses"></a> Responses
 
 ### Success
 
