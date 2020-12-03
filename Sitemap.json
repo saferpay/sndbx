@@ -201,6 +201,19 @@
       { "Source": "texts/spg.md", "Title": "Try it!", "Target": "spg.html#spg-demo" }
     ]
   },
+  {
+   "Title": "Fraud Prevention",
+   "Source": "texts/fraugster.md",
+   "Target": "fraugster.html",
+   "Subsites": [
+     { "Source": "texts/fraugster.md", "Title": "Requirements", "Target": "texts/fraugster.html#fire-req" },
+    { "Source": "texts/fraugster.md", "Title": "Activation", "Target": "texts/fraugster.html#fire-activation" },
+    { "Source": "texts/fraugster.md", "Title": "Training", "Target": "texts/fraugster.html#fire-training" },
+    { "Source": "texts/fraugster.md", "Title": "Datapoints", "Target": "texts/fraugster.html#fire-data" },
+    { "Source": "texts/fraugster.md", "Title": "Rules", "Target": "texts/fraugster.html#fire-rules" },
+    { "Source": "texts/fraugster.md", "Title": "Responses", "Target": "texts/fraugster.html#fire-responses" }
+   ] 
+ },
  {
     "Title": "API Health Check",
     "Source": "texts/health.md",
