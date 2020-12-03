@@ -10,6 +10,7 @@ This chapter will cover the technical aspects on how to integrate Fraud Preventi
 system.
 + Availability of at least one active Saferpay terminal via which payments can be carried out and availability of the associated Saferpay TerminalId.
 + A contract to use the Fraud Prevention module in Saferpay. Please contact your contractual sales-contact on that matter.
++ Saferpay JSON-API SpecVersion 1.20+
 
 
 ### Supported Payment Methods and Flows
