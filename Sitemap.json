@@ -161,6 +161,7 @@
       { "Source": "texts/css_iframe.md", "Title": "Transaction Initialize", "Target": "CssiFrame.html#css-trxini" },
       { "Source": "texts/css_iframe.md", "Title": "Alias Insert", "Target": "CssiFrame.html#css-aliasins" },
       { "Source": "texts/css_iframe.md", "Title": "Size of the Iframe", "Target": "CssiFrame.html#css-iframe_size" },
+     { "Source": "texts/css_iframe.md", "Title": "Iframe Support", "Target": "CssiFrame.html#css-iframe_support" },
       { "Source": "texts/css_iframe.md", "Title": "Using CSS", "Target": "CssiFrame.html#css-usecss" },
       { "Source": "texts/css_iframe.md", "Title": "CSS Elements", "Target": "CssiFrame.html#css-element" },
       { "Source": "texts/css_iframe.md", "Title": "CSS Selectors", "Target": "CssiFrame.html#css-selector" },
