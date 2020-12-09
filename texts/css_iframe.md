@@ -45,8 +45,6 @@ Here, an example of the Saferpay Card Registration Form (**Hosted Register Form*
 
 The size of the Iframe is communicated to the merchants via an HTML5-POST message, which can be captured using JavaScript. The Iframe can thus be dynamically adapted to the content.
 
-### <a name="html-form"></a> Example of HTML Form
-
 ```HTML
 <HTML>
    <head>
@@ -86,6 +84,17 @@ $(window).bind("message", function (e) {
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> Not every page reports its size to the merchant’s system. However, Saferpay has to forward users to third parties during the payment process (Like with the 3D Secure procedure), thus we recommend a minimum size of 450x450 pixels.</p>
 </div>
+
+## <a name="css-iframe_support"></a> Iframe Support
+
+Some 3rd party payment methods **do not support** the iFrame-Integration!
+Please make sure, that you consider this, should you implement one of the following Payment Methods:
+
++ paydirekt
++ PayPal
++ Sofort by Klarna
++ ApplePay
+
 
 ## <a name="css-usecss"></a> Using CSS
 
