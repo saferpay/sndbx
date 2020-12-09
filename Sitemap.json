@@ -206,12 +206,12 @@
    "Source": "texts/fraugster.md",
    "Target": "fraugster.html",
    "Subsites": [
-     { "Source": "texts/fraugster.md", "Title": "Requirements", "Target": "texts/fraugster.html#fire-req" },
-    { "Source": "texts/fraugster.md", "Title": "Activation", "Target": "texts/fraugster.html#fire-activation" },
-    { "Source": "texts/fraugster.md", "Title": "Training", "Target": "texts/fraugster.html#fire-training" },
-    { "Source": "texts/fraugster.md", "Title": "Datapoints", "Target": "texts/fraugster.html#fire-data" },
-    { "Source": "texts/fraugster.md", "Title": "Rules", "Target": "texts/fraugster.html#fire-rules" },
-    { "Source": "texts/fraugster.md", "Title": "Responses", "Target": "texts/fraugster.html#fire-responses" }
+     { "Source": "texts/fraugster.md", "Title": "Requirements", "Target": "fraugster.html#fire-req" },
+    { "Source": "texts/fraugster.md", "Title": "Activation", "Target": "fraugster.html#fire-activation" },
+    { "Source": "texts/fraugster.md", "Title": "Training", "Target": "fraugster.html#fire-training" },
+    { "Source": "texts/fraugster.md", "Title": "Datapoints", "Target": "fraugster.html#fire-data" },
+    { "Source": "texts/fraugster.md", "Title": "Rules", "Target": "fraugster.html#fire-rules" },
+    { "Source": "texts/fraugster.md", "Title": "Responses", "Target": "fraugster.html#fire-responses" }
    ] 
  },
  {
