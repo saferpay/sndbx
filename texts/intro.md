@@ -204,7 +204,7 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
 
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Attention:</strong> If you intend on doing a dummy authorization, using 3-D Secure as a card holder verification measure, we do not recommend an amount < 1,-! Small amounts often get rejected by issuing banks, thus causing issues, with amount 0 not being possible at all.</p>
+  <p><strong>Attention:</strong> If you intend on doing a dummy authorization, using 3-D Secure as a card holder verification measure, we do not recommend an amount < 1,-! Small amounts often get rejected by issuing banks, thus causing issues, with amount 0 not being possible at all. <strong>However</strong>, if you just want to register and validate cards, without charging them, you may want to take a look at the <a href="scd.html#scd-check">Online Strong Card Check</a>, you can poerform with a standalone card registration!</p>
 </div>
 
 ### Optional Parameters
