@@ -952,7 +952,7 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
   </tbody>
 </table></div></div></section><section id="psd2-decline"><h2><a name="psd2-decline"></a> Soft Decline</h2><div class="row"><div class="col-sm-6"><p>A Soft decline is thrown, if a transaction without SCA is attempted, but the card issuer wants SCA to be performed. This usually happens during any kind of MIT, like <a href="recurring.html">Recurring Payments</a>.
 In these cases, you have to contact your customer, so he/she may initiate another recurring chain, with SCA.
-So in case of <a href="recurring.html">Recurring Payments</a>, a new initial transaction has to be made, or a new Alias, has to be created, <strong>with SCA and a forced challange flow (see above)</strong>.</p></div></div></section><section><h3>Example of a Soft Decline Error message</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{ 
+So in case of <a href="recurring.html">Recurring Payments</a>, a new initial transaction has to be made, or a new Alias, has to be created, <strong>with SCA and a forced challanged flow (see above)</strong>.</p></div></div></section><section><h3>Example of a Soft Decline Error message</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{ 
 &quot;ResponseHeader&quot;: {
    &quot;SpecVersion&quot;: &quot;[current SpecVersion]&quot;,
    &quot;RequestId&quot;: &quot;[unique request id]&quot;
