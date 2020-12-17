@@ -103,7 +103,7 @@ The card holder must be able to choose whether to accept one of the proposed pla
 </div>
 
 ## <a name="mcii-plan"></a>Choosing an installment plan
-If the card holder chooses an installment plan, the data must be sent back to Saferpay through the  by submitting the finalization/capture of the transaction information of the chosen plan through  container. With the capture of the transaction, the plan has been the MastercardIssuerInstallments.ChosenPlan chosen and the process is handled automatically by the card holder's issuing bank.
+If the card holder chooses an installment plan, the data of said plan must be sent back to Saferpay through the a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture request</a>, by submitting the information of the chosen plan through the **MastercardIssuerInstallments** container. With the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">capture</a> of the transaction, the plan has been chosen, the merchant will immediately recieve the money, while the card holders bank handles the installment itself.
 
 Example:
 ```json
