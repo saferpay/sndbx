@@ -1,7 +1,7 @@
 # PSD2
 
 With the introduction of PSD2 within the EU, the ruleset for doing card transactions, has been changed in many ways.
-Specifically the need for <strong>S</strong>trong <strong>C</strong>onsumer <strong>A</strong>uthentication needsspecial attention from merchants.
+Specifically the need for <strong>S</strong>trong <strong>C</strong>onsumer <strong>A</strong>uthentication needs special attention from merchants.
 This chapter will contain important information on PSD2 and SCA specifically.
 
 ## <a name="psd2-apply"></a> Does PSD2 apply to me?
