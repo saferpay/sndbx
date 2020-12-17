@@ -206,9 +206,19 @@ It depends on the merchant, how to proceed further, however Saferpay does recomm
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> If you intend on doing a dummy authorization, using 3-D Secure as a card holder verification measure, we do not recommend an amount < 1,-! Small amounts often get rejected by issuing banks, thus causing issues, with amount 0 not being possible at all.</p>
 </div>
-<div class="info" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Tip:</strong> If you want to keep the amount of <strong>Challenged</strong> transactions as low and thus your conversion-rate as high as possible, please make sure to submit a <strong>BillingAddress</strong> and <strong>DeliveryAddress</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> requests. This information will then be used for the scoring, as mentioned earlier, to increase the possibility of a frictionless transaction and thus a smooth experience for your customers!</p>
+
+### Optional Parameters
+
+If you want to keep the amount of <strong>Challenged</strong> transactions as low and thus your conversion-rate as high as possible, please make sure to submit a <strong>BillingAddress</strong> and <strong>DeliveryAddress</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> requests. This information will then be used for the scoring, as mentioned earlier, to increase the possibility of a frictionless transaction and thus a smooth experience for your customers!
+
+Likewise, if you want to force a Challanged flow, for instance if you have a high-risk business and are in need of a high level of protection, you can set the parameter **Authentication.ThreeDsChallenge** to **FORCE**.
+
+
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> All other values, like the <strong>AVOID</strong> and the <strong>Exemption parameter</strong> underly the PSD2 rules! <strong>DO NOT</strong> submit these on your own accord, without haveing read and understood the <a href="psd2.html">PSD2 Chapter</a>. Violating these rules may result in heavy consequences for you and your business! <strong>Authentication.ThreeDsChallenge = FORCE</strong> is the only value you may use, without considering these rules!
+  </p>
 </div>
 
 ## <a name="dcc"></a> Dynamic Currency Conversion
