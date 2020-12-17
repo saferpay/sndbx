@@ -27,6 +27,8 @@ Also make sure, that you use a flow, that can do SCA -in form of <a href="/sndbx
 
 PSD2 is very complex. So to give you an overview of what flows need and what do not need SCA, please refer to the following tables:
 
+### Transactions and flows, that DO need SCA
+
 <table class="table table-striped table-hover">
   <thead>
     <tr>
