@@ -31,6 +31,7 @@ The following requirements have to be met, in order to accept Klarna Payments vi
 * Availability of at least one active Saferpay E Commerce terminal, via which payment can be carried out and availability of the associated Saferpay TerminalId.
 * A valid contract with Klarna. Please contact <a href="mailto:worldline.sps@klarna.com">worldline.sps@klarna.com</a>
 * Klarna Payments is only available via the [PaymentPage flow](Integration_PP.html)!
+* SpecVersion 1.19 and up!
 
 ## <a name="klarna-activation"></a> Activation
 
