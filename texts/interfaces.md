@@ -378,7 +378,7 @@ Before implementing, it is important to clarify, which functions are important f
 ### Why not both?
 
 If you have access to Saferpay Business, you also have access to all API-functions Saferpay has to offer. You don't have to stick to one interface, or the other, you can also mix both interfaces.
-In some cases, you **have** to use the [PaymentPage](Integration_PP.html), for example, if you want to use [PayPal](PayPal.html), or any other 3rd party provider.
+In some cases, you **have** to use the [PaymentPage](Integration_PP.html)! For example, if you want to use [PayPal](PayPal.html), or any other 3rd party provider.
 Another use case could be, that you do all your normal authorizations over the [PaymentPage](Integration_PP.html), but then you use the [Transaction Interface for Refunds](refund.html). 
 This is also helpful, if you decide to upgrade from E Commerce to Business (For example for executing said refunds via API!) and already have a [PaymentPage Integration](Integration_PP.html). You can simply extend your Integration for the functions you need, without changing the whole existing implementation.
 
