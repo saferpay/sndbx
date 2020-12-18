@@ -370,7 +370,7 @@ Before implementing, it is important to clarify, which functions are important f
 
 ### Use the Transaction Interface/Saferpay Business, if...
 
-- **You want a more embedded/integrated solution:** [The Transaction Interface](Integration_trx.html) does offer a more integrated and personalized payment flow for credit cards, via [iFrame integration](CssiFrame.html). Think of it as [the Payment Page](Integration_PP.html) reduced down to the card entry form, which can be embedded into every HTML-based application!
+- **You want a more embedded/integrated solution:** [The Transaction Interface](Integration_trx.html) does offer a more integrated and personalized payment flow for credit cards, via [the Saferpay Fields](SaferpayFields.html), or [iFrame integration](CssiFrame.html). Think of it as [the Payment Page](Integration_PP.html) reduced down to the card entry form, which can be embedded into every HTML-based application!
 - **You want to do recurring payments:** [Recurring Payments](recurring.html) need special API-functions, that are only available over Saferpay Business!
 - **You want to execute refunds via the API:** [Refunds via API](refund.html) (Note, that refunds are also possible via the Saferpay Backoffice!), are only possible with the transaction interface and a Saferpay Business license.
 - **You want to save and use card data in our Secure Card Data store:** Similar to [recurring payments](recurring.html), but Secure Card Data can do more, that just that. You could also spare your customer from entering his card data over and over again, even for 3D Secure payments!
