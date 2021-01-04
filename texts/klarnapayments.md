@@ -168,7 +168,7 @@ Furthermore, for merchants in the European Union, Klarna highly recommends to al
     </tr>
     <tr>
       <td class="text-center"><strong>Order.Items[].TaxAmount</strong></td>
-      <td>Tax amount for a single item.</td>
+      <td>Tax amount for the whole order-item.</td>
     </tr>
   </tbody>
 </table>
