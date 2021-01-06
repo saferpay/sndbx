@@ -140,7 +140,7 @@ Here is a list of all the mandatory parameters, that need to be submitted:
     </tr>
     <tr>
       <td class="text-center"><strong>Order.Items[].UnitPrice</strong></td>
-      <td>Single unit price of this specific item.</td>
+      <td>Single unit price of this specific item. <strong>Is 0, when Order.Items[].Type is "Discount"!</strong></td>
     </tr>
   </tbody>
 </table>
