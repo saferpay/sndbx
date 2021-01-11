@@ -202,7 +202,7 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
 What happens in case of non-compliance?
 With PSD2, every bank, inside the EEA is now obliged to reject transactions, that are not PSD2-compliant.
 
-So for instance, if you register card details for, for example, recurring payments, without enforcing SCA during the registration, the card holders bank is obliged to reject every MIT, as described above.
+So for instance, if you register card details for, for example, recurring payments, without enforcing SCA during the registration, the card holders bank is obliged to reject every MIT, as they are described above.
 
 In these cases, a so called **Soft Decline** is thrown:
 
