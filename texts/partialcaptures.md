@@ -4,7 +4,7 @@ Saferpay does offer the option to do [Partial Captures (Hereafter refered to as 
 
 ## <a name="pc-req"></a> Requirements
 
-1. [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) are available for SIX Mastercard/Maestro, Visa Acquiring contracts and PayPal <strong>only!</strong>
+1. [Multipart Captures](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture) are available for SIX Mastercard/Maestro, Visa Acquiring contracts, <a href="PayPal.html">PayPal</a> and <a href="KlarnaPayments.html">Klarna Payments</a>  <strong>only!</strong>
 2. No MultipartCapture request should be sent before receiving the response of a preceeding request (i.e. no parallel calls are allowed). The timeout for this are 100 seconds.
 3. The sum of multipart captures must not exceed the authorized amount.
 4. A unique OrderPartId must be used for each request.
