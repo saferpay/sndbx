@@ -232,5 +232,5 @@ So you must contact your customer, for him/her to go through the process again.
 
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Important Info:</strong> A bank has the right to request and thus throw a soft decline at any point!</p>
+  <p><strong>Important Info:</strong> A bank has the right to request and thus throw a soft decline at any point, if it deems it necessary!</p>
 </div>
