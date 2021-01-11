@@ -59,7 +59,7 @@
 								<li><a href="#psd2-overview">Overview</a></li>
 								<li><a href="#psd2-force">When and how to force SCA</a></li>
 								<li><a href="#psd2-exemptions">Exemptions</a></li>
-								<li><a href="#psd2-decline">Soft Decline</a></li>
+								<li><a href="#psd2-decline">Non Compliance</a></li>
 							</ul>
 							</li>
 							<li>
@@ -458,7 +458,7 @@
 								<li><a href="#psd2-overview">Overview</a></li>
 								<li><a href="#psd2-force">When and how to force SCA</a></li>
 								<li><a href="#psd2-exemptions">Exemptions</a></li>
-								<li><a href="#psd2-decline">Soft Decline</a></li>
+								<li><a href="#psd2-decline">Non Compliance</a></li>
 							</ul>
 							</li>
 							<li>
@@ -950,9 +950,8 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
      <td><a href="Integration_PP.html">Payment Page Flow</a>, <a href="Integration_trx.html">Transaction Interface Flow</a></td>
     </tr>
   </tbody>
-</table></div></div></section><section id="psd2-decline"><h2><a name="psd2-decline"></a> Soft Decline</h2><div class="row"><div class="col-sm-6"><p>A Soft decline is thrown, if a transaction without SCA is attempted, but the card issuer wants SCA to be performed. This usually happens during any kind of MIT, like <a href="recurring.html">Recurring Payments</a>.
-In these cases, you have to contact your customer, so he/she may initiate another recurring chain, with SCA.
-So in case of <a href="recurring.html">Recurring Payments</a>, a new initial transaction has to be made, or a new Alias, has to be created, <strong>with SCA and a forced challanged flow (see above)</strong>.</p></div></div></section><section><h3>Example of a Soft Decline Error message</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{ 
+</table></div></div></section><section id="psd2-decline"><h2><a name="psd2-decline"></a> Non Compliance</h2><div class="row"><div class="col-sm-6"><p>What happens in case of non-compliance?
+With PSD2, every bank, inside the EEA is now obliged to reject transactions, that are not PSD2-compliant.</p><p>So for instance, if you register card details for, for example, recurring payments, without enforcing SCA during the registration, the card holders bank is obliged to reject every MIT, as described above.</p><p>In these cases, a so called <strong>Soft Decline</strong> is thrown:</p></div></div></section><section><h3>Example of a Soft Decline Error message</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{ 
 &quot;ResponseHeader&quot;: {
    &quot;SpecVersion&quot;: &quot;[current SpecVersion]&quot;,
    &quot;RequestId&quot;: &quot;[unique request id]&quot;
@@ -964,7 +963,13 @@ So in case of <a href="recurring.html">Recurring Payments</a>, a new initial tra
  &quot;ProcessorResult&quot;: &quot;1A&quot;,
  &quot;ProcessorMessage&quot;: &quot;Additional customer authentication required&quot;
 }
-</code></pre></div></div></section>
+</code></pre></div></div></section><section><h3>What to do, in case of a Soft Decline</h3><div class="row"><div class="col-sm-6"><p>If you recieve a Soft Decline, you have to re-initiate your process, with <strong>forced</strong> (see above) SCA in mind.
+In case of the above example, the card details have to be re-registered, with SCA. The old Alias effectively becomes invalid and has to be re-created.
+This also applies to <a href="recurring.html#recurring-referenced">Referenced Recurring Transactions</a>, requiring a new initial transaction, to set off a new recurring-chain.
+So you must contact your customer, for him/her to go through the process again.</p><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>Important Info:</strong> A bank has the right to request and thus throw a soft decline at any point!</p>
+</div></div></div></section>
 
 			</main>
 
