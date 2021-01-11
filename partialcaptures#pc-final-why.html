@@ -803,7 +803,7 @@
 
 				
 <section><h1>Partial Captures</h1><div class="row"><div class="col-sm-6"><p>Saferpay does offer the option to do <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Partial Captures (Hereafter refered to as Multipart Captures)</a> on transactions, made with certain payment methods. <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> split the money authorized during one transactions into multiple batches, enabling the merchant to only capture the amount he wants to obtain e.g. for deliviering a part of a certain order.</p></div></div></section><section id="pc-req"><h2><a name="pc-req"></a> Requirements</h2><div class="row"><div class="col-sm-6"><ol>
-<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> are available for SIX Mastercard/Maestro, Visa Acquiring contracts and PayPal <strong>only!</strong></li>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartCapture">Multipart Captures</a> are available for SIX Mastercard/Maestro, Visa Acquiring contracts, <a href="PayPal.html">PayPal</a> and <a href="KlarnaPayments.html">Klarna Payments</a>  <strong>only!</strong></li>
 <li>No MultipartCapture request should be sent before receiving the response of a preceeding request (i.e. no parallel calls are allowed). The timeout for this are 100 seconds.</li>
 <li>The sum of multipart captures must not exceed the authorized amount.</li>
 <li>A unique OrderPartId must be used for each request.</li>
