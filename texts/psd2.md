@@ -197,11 +197,14 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
   </tbody>
 </table>
 
-## <a name="psd2-decline"></a> Soft Decline
+## <a name="psd2-decline"></a> Non Compliance
 
-A Soft decline is thrown, if a transaction without SCA is attempted, but the card issuer wants SCA to be performed. This usually happens during any kind of MIT, like <a href="recurring.html">Recurring Payments</a>. 
-In these cases, you have to contact your customer, so he/she may initiate another recurring chain, with SCA.
-So in case of <a href="recurring.html">Recurring Payments</a>, a new initial transaction has to be made, or a new Alias, has to be created, **with SCA and a forced challanged flow (see above)**.
+What happens in case of non-compliance?
+With PSD2, every bank, inside the EEA is now obliged to reject transactions, that are not PSD2-compliant.
+
+So for instance, if you register card details for, for example, recurring payments, without enforcing SCA during the registration, the card holders bank is obliged to reject every MIT, as described above.
+
+In these cases, a so called **Soft Decline** is thrown:
 
 ### Example of a Soft Decline Error message
 
@@ -219,3 +222,15 @@ So in case of <a href="recurring.html">Recurring Payments</a>, a new initial tra
   "ProcessorMessage": "Additional customer authentication required"
 }
 ```
+
+### What to do, in case of a Soft Decline
+
+If you recieve a Soft Decline, you have to re-initiate your process, with **forced** (see above) SCA in mind.
+In case of the above example, the card details have to be re-registered, with SCA. The old Alias effectively becomes invalid and has to be re-created.
+This also applies to <a href="recurring.html#recurring-referenced">Referenced Recurring Transactions</a>, requiring a new initial transaction, to set off a new recurring-chain.
+So you must contact your customer, for him/her to go through the process again.
+
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>Important Info:</strong> A bank has the right to request and thus throw a soft decline at any point!</p>
+</div>
