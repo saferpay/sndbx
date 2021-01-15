@@ -165,7 +165,15 @@ The following data points can be set via the JSON-API:
     <tr>
       <td class="text-center">delivery_method</td>
       <td class="text-center"><strong>RiskFactors[].DeliveryType</strong></td>
-      <td>The used delivery method, for the carts items. Has to be one of the following: <strong>EMAIL|SHOP|HOMEDELIVERY|PICKUP|HQ</strong></td>
+      <td>The used delivery method, for the carts items. Has to be one of the following:<br />
+        <ul>
+          <li><strong>EMAIL:</strong> The basket items are delivered electronically to the customer.</li>
+          <li><strong>HOMEDELIVERY:</strong> The items are delivered to the customer's shipping address.</li>
+          <li><strong>PICKUP:</strong> The customer collects the items from a pickup location.</li>
+          <li><strong>SHOP:</strong> The customer collects the items from a branch shop.</li>
+          <li><strong>HQ:</strong> The customer collects the items from the flagship store.</li>
+        </ul>
+      </td>
     </tr>
   </tbody>
 </table>
