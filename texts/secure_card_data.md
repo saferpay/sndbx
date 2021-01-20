@@ -274,7 +274,7 @@ However, you need to consider the following restrictions:
 
 1. The check-function is only available with the standalone registration, since the other options do said authorization!
 2. The check-function **does not** check the solvency of the account. Only an authorization does!
-3. The check-function is only available for VISA and Mastercard, over SIX Payment Services Acquiring contracts!
+3. The check-function is only available for VISA and Mastercard, over SIX Payment Services, B+S Payone and Elavon Acquiring contracts!
 
 ### Request
 
