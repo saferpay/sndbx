@@ -125,7 +125,7 @@ Based on the data obtained, it is to be decided whether or not a transaction is 
 
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Tip:</strong> You can also call the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, if the Fail-or AbortUrl has been called. It will then give you information about the failure! Note, that the http-status will be != 200, indicating a failed transaction!</p>
+  <p><strong>Tip:</strong> You can also call the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, if the Fail-or AbortUrl has been called. It will then return a JSON-Object, containing information about the failed transaction, like the reason (If available!) and error-code from the processor itself! Note, that the http-status will be != 200, indicating a failed transaction!</p>
 </div>
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
