@@ -147,7 +147,7 @@ In case of success the authorization data is returned with the Transaction Autho
 
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Tip:</strong> You can also call Authorize, if the FailUrl has been called. It will then give you information about the error! Note, that the http-status will be != 200, indicating a failed transaction!</p>
+  <p><strong>Tip:</strong> You can also call <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize">Transaction Authorize</a>, if the Fail-or AbortUrl has been called. It will then return a JSON-Object, containing information about the failed transaction, like the reason (If available!) and error-code from the processor itself! Note, that the http-status will be != 200, indicating a failed transaction!</p>
 </div>
 
 ### <a name="trx-captcancel"></a>5 - Capture or Cancel
