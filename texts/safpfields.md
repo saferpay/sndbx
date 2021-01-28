@@ -101,6 +101,12 @@ After you have created your API-Token, you can start integrating the Saferpay Fi
 	</div>
     </div>
 ```
+<div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+	  <strong>Tip:</strong> The <strong>Holder Name</strong> is generally optional. If you don't want to capture it, leave it out! However, once the field has beeen initialized (see further below), it must be filled in!
+  </p>
+</div>
 This example uses Bootstrap for formatting purposes, which isn't mandatory. You also can define these fields wherever and however you want. 
 However you must make sure, that you define the placeholders -can be ```<div>```, ```<span>```, or ```<input readonly>```- with the following id-values:
 <table class="table table-striped table-hover">
