@@ -140,6 +140,10 @@ In this Chapter you will find a list of payment means you can use for testing pu
           <td style="word-break: unset;">9010100000020013</td>
           <td style="border-left: 1px solid #ddd;">Card, to simulate a <a href="creditcards.html#cc-pappoval">partial approval</a>.</td>
         </tr>
+        <tr>
+          <td style="word-break: unset;">9010103204160007</td>
+          <td style="border-left: 1px solid #ddd;">Card, to simulate a <a href="psd2.html#psd2-decline">Soft Decline</a>. <strong>This card will ALWAYS return a Soft-Decline, even if SCA was performed!</strong></td>
+        </tr>
     </tbody>
   </table>
   
@@ -343,6 +347,10 @@ In this Chapter you will find a list of payment means you can use for testing pu
         <td style="word-break: unset;">9030100000021017</td>
         <td style="border-left: 1px solid #ddd;">Card, to simulate a <a href="creditcards.html#cc-pappoval">partial approval</a>.</td>
       </tr>
+      <tr>
+          <td style="word-break: unset;">9030103204160003</td>
+          <td style="border-left: 1px solid #ddd;">Card, to simulate a <a href="psd2.html#psd2-decline">Soft Decline</a>. <strong>This card will ALWAYS return a Soft-Decline, even if SCA was performed!</strong></td>
+        </tr>
     </tbody>
   </table>
   
@@ -422,6 +430,118 @@ In this Chapter you will find a list of payment means you can use for testing pu
 
 <a name="pm-amex"></a><div id="amex-cards" class="dropdown">American Express &dArr;</div> 
 <div id="amex-cards-hider" style="display:none;">
+  <h2>For 3D Secure 2</h2>
+  <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Card Number</th>
+          <th class="text-center">Test-case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="word-break: unset;">9070003150000008</td>
+          <td style="border-left: 1px solid #ddd;">Frictionless Y. Card simulates a fully successful Frictionless Flow!<br /><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9070003750000002</td>
+          <td style="border-left: 1px solid #ddd;">LiabilityShift can't be granted, due to technical reasons. Interesting for testing the <strong>Condition</strong> parameter, to stop authorizations without LiabilityShift!<br /><strong>Liability shift:</strong> false, <strong>Authenticated:</strong> N/A</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9070004950000008</td>
+          <td style="border-left: 1px solid #ddd;">Challenged Y. This card simulates a successful challenged flow.<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9070004250000005
+          <td style="border-left: 1px solid #ddd;">Challenged A. The authentication was not successful, but LiabilityShift is still granted.<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9070004350000004</td>
+          <td style="border-left: 1px solid #ddd;">Challenged N. The 3DS authentication failed. An authorization will not be attempted. The transaction fails in this case!<br /><strong>Liability shift:</strong> N/A, <strong>Authenticated:</strong> N/A</td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9070004150000006</td>
+          <td style="border-left: 1px solid #ddd;">3DS Failure, authorization will be attempted. This card fails the 3DS authentication. Interesting for testing the <strong>Condition</strong> parameter, to stop authorizations without LiabilityShift! Crd goes through a Challanged flow beforehand!<br /><strong>Liability shift:</strong> false, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr style="display: none;">
+          <td style="word-break: unset;">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+          <td style="border-left: 1px solid #ddd;">Card for simulating response codes via the amount. The last two digits inside the amount are important. Down below you'll find some examples for return-codes/amounts. <strong>Important Note:</strong> These are the most common codes! However some Issuers may return codes not on this list!<br />
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th class="text-center">Processor Message</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="word-break: unset;">00</td>
+                <td style="border-left: 1px solid #ddd;">See Frictionless Y.<br /><strong>Liability shift:</strong> true, <strong>Authenticated:</strong> true</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">01</td>
+                <td style="border-left: 1px solid #ddd;">Successful Authorization and 3DS process. However LiabilityShift will be rejected during authorization<br /><strong>Liability shift:</strong> false (<strong>ThreeDs will be true!</strong>) <strong>Authenticated:</strong> true</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">62</td>
+                <td style="border-left: 1px solid #ddd;">Restricted Card</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">51</td>
+                <td style="border-left: 1px solid #ddd;">Insufficient Funds</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">43</td>
+                <td style="border-left: 1px solid #ddd;">Stolen Card</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">34</td>
+                <td style="border-left: 1px solid #ddd;">Suspicion of manipulation</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">33</td>
+                <td style="border-left: 1px solid #ddd;">Card Expired</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">30</td>
+                <td style="border-left: 1px solid #ddd;">Format Error</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">14</td>
+                <td style="border-left: 1px solid #ddd;">Invalid Card</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">12</td>
+                <td style="border-left: 1px solid #ddd;">Invalid Transaction</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">09</td>
+                <td style="border-left: 1px solid #ddd;">Processing temporarily not possible</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">05</td>
+                <td style="border-left: 1px solid #ddd;">Authorization declined</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">04</td>
+                <td style="border-left: 1px solid #ddd;">Card Invalid</td>
+              </tr>
+              <tr>
+                <td style="word-break: unset;">03</td>
+                <td style="border-left: 1px solid #ddd;">Invalid Merchant Number</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+          <td style="word-break: unset;">9070103204160004</td>
+          <td style="border-left: 1px solid #ddd;">Card, to simulate a <a href="psd2.html#psd2-decline">Soft Decline</a>. <strong>This card will ALWAYS return a Soft-Decline, even if SCA was performed!</strong></td>
+        </tr>
+    </tbody>
+  </table>
+  
+  <h2>For 3D Secure 1</h2>
   <table class="table table-striped table-hover">
     <thead>
       <tr>
@@ -579,7 +699,11 @@ In this Chapter you will find a list of payment means you can use for testing pu
         <td style="word-break: unset;">9040101052900007</td>
         <td style="border-left: 1px solid #ddd;">Card for <strong>"simulating response codes" via the amount</strong>. <br /> The last two digits in the currency amount determine the issuance of the authorisation request. A successful payment is only triggered with a value equal to "00" or "01". While requests with the AMOUNT "00" simulate a request with an "enrolled" card, the amount "01" simulates a transaction without a liability shift. For all other values that are different to "00" or "01", a rejection is simulated with the authorisation.
         </td>
-        </tr>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9040103204160001</td>
+        <td style="border-left: 1px solid #ddd;">Card, to simulate a <a href="psd2.html#psd2-decline">Soft Decline</a>. <strong>This card will ALWAYS return a Soft-Decline, even if SCA was performed!</strong></td>
+      </tr>
     </tbody>
   </table>
 </div>
