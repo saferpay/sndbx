@@ -862,8 +862,13 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
 	    &lt;div id=&quot;fields-cvc&quot;&gt;&lt;/div&gt;
 	&lt;/div&gt;
     &lt;/div&gt;
-</code></pre><p>This example uses Bootstrap for formatting purposes, which isn't mandatory. You also can define these fields wherever and however you want.
-However you must make sure, that you define the placeholders -can be <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>, or <code>&lt;input readonly&gt;</code>- with the following id-values:</p><table class="table table-striped table-hover">
+</code></pre><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+	  <strong>Tip:</strong> The <strong>Holder Name</strong> is generally optional. If you don't want to capture it, leave it out! However, once the field has beeen initialized (see further below), it must be filled in!
+  </p>
+</div><div>```, ```<span>```, or ```<input readonly>```- with the following id-values:
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th class="text-center">Input-Field</th>
@@ -888,17 +893,21 @@ However you must make sure, that you define the placeholders -can be <code>&lt;d
       <td>fields-expiration</td>
     </tr>
   </tbody>
-</table><div class="warning" style="min-height: 75px;">
+</table>
+<div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> The placeholder must have a height &gt; 0, or the iframe will inherit this height!
   </p>
-</div><div class="info" style="min-height: 75px;">
+</div>
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Note:</strong> The CVC is always mandatory, except on cards, that do not have a CVC! In these cases, Saferpay will deactivate the field!
   </p>
-</div></div></div></section><section><h3>Saferpay Fields Initialization</h3><div class="row"><div class="col-sm-6"><pre><code class="language-javascript">SaferpayFields.init({
+</div>
+<h3>Saferpay Fields Initialization</h3>
+<pre><code class="language-javascript">SaferpayFields.init({
 	// api key
 	apiKey: '[YOUR API KEY]',
 	// api url
@@ -940,16 +949,25 @@ SaferpayFields.submit({
 	    //Callback on unsuccessful Submit
 	}
 });
-</code></pre></div></div></section><section id="hf-class"><h1><a name="hf-class"></a> SaferpayFields - Class functions</h1><div class="row"><div class="col-sm-6"><p></p></div></div></section><section><h2>.version()</h2><div class="row"><div class="col-sm-6"><p></p><p>Returns a <strong>string</strong> containing the current library-version.</p><p></p></div></div></section><section><h2>.init({options})</h2><div class="row"><div class="col-sm-6"><p></p><p>Initializes the Saferpay Fields and replaces the placeholders, as defined before.</p></div></div></section><section><h3>Available options</h3><div class="row"><div class="col-sm-6"><ul>
+</code></pre>
+<h1><a name="hf-class"></a> SaferpayFields - Class functions</h1>
+<p></p><h2>.version()</h2><p></p>
+<p>Returns a <strong>string</strong> containing the current library-version.</p>
+<p></p><h2>.init({options})</h2><p></p>
+<p>Initializes the Saferpay Fields and replaces the placeholders, as defined before.</p>
+<h3>Available options</h3>
+<ul>
 <li><p><strong>apiKey</strong> <em>string</em> : Contains the API-Key, you have defined inside the Saferpay Backoffice earlier.</p>
 </li>
 <li><p><strong>url</strong> <em>string</em> : Contains the API-Url, to define, where to post the data and initialize the Saferpay Fields.</p>
 </li>
-</ul><pre><code class="language-javascript">// Test Environment
+</ul>
+<pre><code class="language-javascript">// Test Environment
 	url: 'https://test.saferpay.com/Fields/[YOUR CUSTOMERID]',
 // Live Environment
 	url: 'https://www.saferpay.com/Fields/[YOUR CUSTOMERID]',
-</code></pre><ul>
+</code></pre>
+<ul>
 <li><strong>onBlur</strong> <em>eventCallback</em> : Callback function, that is executed, should the customer leave the field. The event returns a <strong>Callback message</strong>.</li>
 <li><strong>onValidated</strong> <em>eventCallback</em> : Callback function, that is executed, should the customer leave the field. The event returns a <strong>Callback message</strong>, also containing field validation-data.</li>
 <li><strong>onFocus</strong> <em>eventCallback</em> : Callback function, that is executed, should the customer enter the field. The event returns a <strong>Callback message</strong>.</li>
@@ -957,28 +975,39 @@ SaferpayFields.submit({
 <li><strong>onError</strong> <em>eventCallback</em> : Callback function, that is executed, every time, the initialization of the Saferpay Fields has not been successful. The event returns an <strong>Error Callback Message</strong>.</li>
 <li><strong>style</strong> <em>Object</em> : Object, that defines CSS rules, to be applied to all elements.
 <strong>Example:</strong></li>
-</ul><pre><code class="language-javascript">style: {
+</ul>
+<pre><code class="language-javascript">style: {
 	'.form-control': 'border: none; border-bottom: solid 1px #ccc; border-radius: unset;'
 }
-</code></pre><ul>
+</code></pre>
+<ul>
 <li><strong>paymentMethods</strong> <em>String[]</em> : A String-Array, containing a list of brands to be accepted! Currently accepted brands/values: mastercard, maestro, visa, jcb, diners, bancontact, amex, bonus, myone</li>
 <li><strong>cssUrl</strong> <em>String</em> : Url to an external CSS, to be applied to all elements.</li>
 <li><strong>placeholders</strong> <em>Object</em> : Object, that contains custom placeholder text, to be applied to the inputs.
 <strong>Example:</strong></li>
-</ul><pre><code class="language-javascript">placeholders: {
+</ul>
+<pre><code class="language-javascript">placeholders: {
     //Custom Text for Input placeholders
     holdername: 'Card holder',
     cardnumber: '0000 0000 0000 0000',
     expiration: 'MM/YY',
     cvc: 'CVC'
 },
-</code></pre><p></p></div></div></section><section><h2>.submit({options})</h2><div class="row"><div class="col-sm-6"><p></p><p>Submits the Saferpay Fields.</p></div></div></section><section><h3>Available options</h3><div class="row"><div class="col-sm-6"><ul>
+</code></pre>
+<p></p><h2>.submit({options})</h2><p></p>
+<p>Submits the Saferpay Fields.</p>
+<h3>Available options</h3>
+<ul>
 <li><p><strong>onSuccess</strong> <em>eventCallback</em> : Callback function, that is executed, if the Saferpay Fields have been submitted successfully. The event returns a <strong>Submit Success Callback Message</strong>.</p>
 </li>
 <li><p><strong>onError</strong> <em>eventCallback</em> : Callback function, that is executed, if the Saferpay Fields have not been successfully submitted. The event returns an <strong>Error Callback Message</strong>.</p>
 </li>
-</ul></div></div></section><section><h2>Callback Messages</h2><div class="row"><div class="col-sm-6"><p>Saferpay returns certain data to the application, in case of certain <strong>eventCallback</strong>s.</p><p><strong>Callback Message</strong> <em>Object</em> :
-Callback message on normal event, containing the following data:</p><table class="table table-striped table-hover">
+</ul>
+<h2>Callback Messages</h2>
+<p>Saferpay returns certain data to the application, in case of certain <strong>eventCallback</strong>s.</p>
+<p><strong>Callback Message</strong> <em>Object</em> :
+Callback message on normal event, containing the following data:</p>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th class="text-center">Parameter</th>
@@ -1022,8 +1051,10 @@ Callback message on normal event, containing the following data:</p><table class
       </td>
     </tr>
   </tbody>
-</table><p><strong>Error Callback Message</strong> <em>Object</em> :
-Callback message on error event, containing the following data:</p><table class="table table-striped table-hover">
+</table>
+<p><strong>Error Callback Message</strong> <em>Object</em> :
+Callback message on error event, containing the following data:</p>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th class="text-center">Parameter</th>
@@ -1038,7 +1069,10 @@ Callback message on error event, containing the following data:</p><table class=
       <td>A human-readable explanation specific to this occurrence of the problem.</td>
     </tr>
   </tbody>
-</table><p><strong>Submit Success Callback Message</strong> <em>Object</em> :</p><p>Callback message on a successful submit, containing the following data:</p><table class="table table-striped table-hover">
+</table>
+<p><strong>Submit Success Callback Message</strong> <em>Object</em> :</p>
+<p>Callback message on a successful submit, containing the following data:</p>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th class="text-center">Parameter</th>
@@ -1053,30 +1087,49 @@ Callback message on error event, containing the following data:</p><table class=
 	    <td>The Saferpay Fields Token, later to be referenced by <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a>, to execute the payment itself.</td>
     </tr>
   </tbody>
-</table></div></div></section><section><h3>Browser Support</h3><div class="row"><div class="col-sm-6"><p>Saferpay Fields are supported by the following Browsers:</p><ul>
+</table>
+<h3>Browser Support</h3>
+<p>Saferpay Fields are supported by the following Browsers:</p>
+<ul>
   <li>Chrome latest</li>
   <li>Firefox latest</li>
   <li>Internet Explorer latest</li>
   <li>Microsoft Edge latest</li>
   <li>Safari latest</li>
-</ul></div></div></section><section id="hf-example"><h1><a name="hf-example"></a> Examples</h1><div class="row"><div class="col-sm-6"><p>Here you can see some examples of how the Saferpay Fields may be integrated. Feel free to use this code, if you have trouble integrating.</p><div class="info" style="min-height: 75px;">
+</ul>
+<h1><a name="hf-example"></a> Examples</h1>
+<p>Here you can see some examples of how the Saferpay Fields may be integrated. Feel free to use this code, if you have trouble integrating.</p>
+<div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Note:</strong> If you want to test Saferpay Fields, you can edit all examples in JSFiddle. Please click on the link on the upper right side of the examples: <i>Edit in JSFiddle</i></p>
-</div><h4>Init Sample</h4><iframe width="1000px" height="400" src="https://jsfiddle.net/saferpay/gnr0k1o9/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe><h4>Sample 1</h4><iframe width="1000px" height="620" src="https://jsfiddle.net/saferpay/o8qb0ghv/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe><h4>Sample 2</h4><iframe width="1000px" height="470" src="https://jsfiddle.net/saferpay/xt83g4r2/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe></div></div></section><section id="hf-steps"><h1><a name="hf-steps"></a> Further steps</h1><div class="row"><div class="col-sm-6"><p>It is important to understand, that the Saferpay Fields are just a way to capture the card details.
-Now, you have to decide, what to do, with this information. You have two options now:</p><ol>
+</div>
+<h4>Init Sample</h4>
+<iframe width="1000px" height="400" src="https://jsfiddle.net/saferpay/gnr0k1o9/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<h4>Sample 1</h4>
+<iframe width="1000px" height="620" src="https://jsfiddle.net/saferpay/o8qb0ghv/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<h4>Sample 2</h4>
+<iframe width="1000px" height="470" src="https://jsfiddle.net/saferpay/xt83g4r2/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<h1><a name="hf-steps"></a> Further steps</h1>
+<p>It is important to understand, that the Saferpay Fields are just a way to capture the card details.
+Now, you have to decide, what to do, with this information. You have two options now:</p>
+<ol>
 <li><p>Execute a transaction. If you want to use the captured card data for a normal transaction, then you have to refer to the <a href="Integration_trx.html">Transaction Interface Process</a>. By simply submitting the Fields Token via this API-Method, you can generate an API Token to trigger an Authorization and a RedirectUrl, for performing other steps, like DCC, or 3D Secure.</p>
 </li>
 <li><p>Save the card. If you want to just save the card for now, you can do that via the <a href="scd.html">Saferpay Secure Alias Store via standalone registration</a>. This allows you to obtain a card alias, to perform other actions, like recurring payments, or just enable your customers to save new payment means inside their shop account, for further use. The choice is yours.</p>
 </li>
-</ol><p>Once the <strong>onSuccess</strong> event is called, you need to forward the Saferpay Fields token to your server-backend, in order to initialize the next step (see above) and also gather the <strong>RedirectUrl</strong>, to perform things like 3D Secure and/or DCC. How you move the token to the backend is completely up to you.
+</ol>
+<p>Once the <strong>onSuccess</strong> event is called, you need to forward the Saferpay Fields token to your server-backend, in order to initialize the next step (see above) and also gather the <strong>RedirectUrl</strong>, to perform things like 3D Secure and/or DCC. How you move the token to the backend is completely up to you.
 You can provide the onSuccess event with an AJAX-method to execute the initialization in the background on a successful submit and forward the <strong>RedirectUrl</strong> to the fronend for a redirect this way, which you then can open in an iframe, Lightbox, or as a full redirect.
 However a redirect via GET, or POST, towards your initialize-script, is also an option, of course.
-Refer to the above mentioned chapters, to learn, how to initialize a transaction, or just save a card, using a Saferpay Fields token.</p><div class="warning" style="min-height: 75px;">
+Refer to the above mentioned chapters, to learn, how to initialize a transaction, or just save a card, using a Saferpay Fields token.</p>
+<div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Important:</strong> This process has to be finished within 20 minutes, after the submission of the card details. Saferpay will discard the card details afterwards and the Saferpay Fields token becomes invalid!
   </p>
-</div><p></p></div></div></section><section><h2> Want to see a fully working example?</h2><div class="row"><div class="col-sm-6"><a class="demobtn" href="https://shop.saferpay.eu/saferpayintegration">Click here for a live demo!</a><p></p></div></div></section>
+</div>
+<p></p><h2> Want to see a fully working example?</h2>
+<a class="demobtn" href="https://shop.saferpay.eu/saferpayintegration">Click here for a live demo!</a><p></p></span></div></div></div></section>
 
 			</main>
 
