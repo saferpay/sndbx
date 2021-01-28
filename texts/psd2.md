@@ -223,6 +223,10 @@ In these cases, a so called **Soft Decline** is thrown:
 }
 ```
 
+### Test Cards
+
+If you want to force a Soft-Decline response, you can do so, by using our test-cards <a href="paymentmeans.html">Over here</a>.
+
 ### What to do, in case of a Soft Decline
 
 If you recieve a Soft Decline, you have to re-initiate your process, with **forced** (see above) SCA in mind.
