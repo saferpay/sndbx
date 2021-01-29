@@ -43,12 +43,9 @@ It is extremely important to clarify before the implementation of Saferpay, whet
     <li><p><strong>Option 1:</strong> Getting a Business license! You can contact your sales contact and ask for a change to Saferpay Business, so you have access to the needed functions!</p></li>
     <li><p><strong>Option 2:</strong> Redo the integration! If you are not happy with option 1, another option would be to redo the whole integration, with the <a href="Integration_PP.html">Payment Page</a> in mind. </p></li>
     <li><p><strong>Option 3:</strong> If you are using an official plug-in/integration from our partners, it may be only necessary to switch over to the Payment Page interface inside the shop-configuration. <strong>A complete re-integration won't be necessary in this particular case.</strong> When in doubt, please consult the user-manual, or contact the plug-in manufacturer directly! </p></li>
+    <li><p><strong>Furthermore:</strong> If you have a Saferpay Business-contract, but still recieve this error, please contact your sales-contact on this issue!</p></li>
   </ul>
 </div><br />
-<div class="info" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Furthermore:</strong> If you have a Saferpay Business-contract, but still recieve this error, please contact your sales-contact on this issue!</p>
-</div>
 
 The following table shows an overview of which functions are included in the two licence models:
 
