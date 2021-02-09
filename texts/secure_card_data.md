@@ -388,7 +388,7 @@ Saferpay also offers the possibility to use a custom HTML-form for merchants wit
 
 <div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Warning:</strong> As mentioned before: <strong>DO NOT PROCEED</strong>, if you do not have the necessary PCI certification (SAQ-A EP) in order to use your own form! <strong>SIX Payment Services will not take any kind of responsibility in case of a noncompliance! We highly urge you, to use the <a href="HostedFields.html"> Saferpay Hosted Fields</a> instead!</strong></p>
+  <p><strong>Warning:</strong> As mentioned before: <strong>DO NOT PROCEED</strong>, if you do not have the necessary PCI certification (SAQ-A EP) in order to use your own form! <strong>SIX Payment Services/Worldline will not take any kind of responsibility in case of a noncompliance! We highly urge you, to use the <a href="HostedFields.html"> Saferpay Hosted Fields</a> instead!</strong></p>
 </div>
 
 Please proceed with the information, mentioned <a href="Integration_trx.html#trx-post">over here</a>!
