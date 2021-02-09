@@ -102,6 +102,7 @@
   	   { "Source": "texts/secure_card_data.md", "Title": "Secure Card Data and the Payment Page", "Target": "scd.html#scd-pp" },
       { "Source": "texts/secure_card_data.md", "Title": "Secure Card Data and the Transaction Interface", "Target": "scd.html#scd-trx" },
       { "Source": "texts/secure_card_data.md", "Title": "Standalone Secure Card Data registration", "Target": "scd.html#scd-sa" },
+     { "Source": "texts/secure_card_data.md", "Title": "Using your own HTML-Form", "Target": "scd.html#scd-post" },
      { "Source": "texts/secure_card_data.md", "Title": "Secure Card Data and the Secure PayGate", "Target": "scd.html#scd-spg" },
       { "Source": "texts/secure_card_data.md", "Title": "The Check function", "Target": "scd.html#scd-check" },
       { "Source": "texts/secure_card_data.md", "Title": "The Id-generator", "Target": "scd.html#scd-generator" },
