@@ -27,10 +27,11 @@ Saferpay Secure Card Data, or SCD for short, is a service for saving sensitive p
 * Bonus Card
 * Discover
 *	JCB 
-*	PostFinance card (Please read the [information over here](https://saferpay.github.io/sndbx/PostFinance.html#pf-alias)!)
+*	PostFinance card (Please read the [information over here](PostFinance.html#pf-alias)!)
 *	SEPA ELV (Not via the Transaction Interface!)
 * Bancontact
 * Credit Cards over Masterpass
+*	Twint (Please read the [information over here](Twint.html#twint-uof)!)
 
 <div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
