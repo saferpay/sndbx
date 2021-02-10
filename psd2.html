@@ -953,7 +953,7 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
     </tr>
   </tbody>
 </table></div></div></section><section id="psd2-decline"><h2><a name="psd2-decline"></a> Non Compliance</h2><div class="row"><div class="col-sm-6"><p>What happens in case of non-compliance?
-With PSD2, every bank, inside the EEA is now obliged to reject transactions, that are not PSD2-compliant.</p><p>So for instance, if you register card details for, for example, recurring payments, without enforcing SCA during the registration, the card holders bank is obliged to reject every MIT, as they are described above.</p><p>In these cases, a so called <strong>Soft Decline</strong> is thrown:</p></div></div></section><section><h3>Example of a Soft Decline Error message</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{ 
+With PSD2, every bank, inside the EEA is now obliged to reject transactions, that are not PSD2-compliant.</p><p>So for instance, if you register card details for, for example, recurring payments, without enforcing SCA during the registration, the card holders bank is obliged to reject every MIT, as they are described above.</p><p>In these cases, a so called <strong>Soft Decline</strong> is thrown:</p></div></div></section><section><h3>Example of a Soft Decline Error message with Mastercard</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{ 
 &quot;ResponseHeader&quot;: {
    &quot;SpecVersion&quot;: &quot;[current SpecVersion]&quot;,
    &quot;RequestId&quot;: &quot;[unique request id]&quot;
@@ -964,6 +964,18 @@ With PSD2, every bank, inside the EEA is now obliged to reject transactions, tha
  &quot;TransactionId&quot;: &quot;llOKnfAEW57QSAErGdIYbAtAQ1fb&quot;,
  &quot;ProcessorResult&quot;: &quot;1A&quot;,
  &quot;ProcessorMessage&quot;: &quot;Additional customer authentication required&quot;
+}
+</code></pre></div></div></section><section><h3>Example of a Soft Decline Error message with Visa/American Express</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{ 
+&quot;ResponseHeader&quot;: {
+   &quot;SpecVersion&quot;: &quot;[current SpecVersion]&quot;,
+   &quot;RequestId&quot;: &quot;[unique request id]&quot;
+ },
+ &quot;Behavior&quot;: &quot;ABORT&quot;,
+ &quot;ErrorName&quot;: &quot;PAYER_AUTHENTICATION_REQUIRED&quot;,
+ &quot;ErrorMessage&quot;: &quot;Transaction declined by acquirer&quot;,
+ &quot;TransactionId&quot;: &quot;dOrvUAAWn16USAU8d08OA10A03SA&quot;,
+ &quot;ProcessorResult&quot;: &quot;65&quot;,
+ &quot;ProcessorMessage&quot;: &quot;Soft decline, SCA required&quot;
 }
 </code></pre></div></div></section><section><h3>Test Cards</h3><div class="row"><div class="col-sm-6"><p>If you want to force a Soft-Decline response, you can do so, by using our test-cards <a href="paymentmeans.html">Over here</a>.</p></div></div></section><section><h3>What to do, in case of a Soft Decline</h3><div class="row"><div class="col-sm-6"><p>If you recieve a Soft Decline, you have to re-initiate your process, with <strong>forced</strong> (see above) SCA in mind.
 In case of the above example, the card details have to be re-registered, with SCA. The old Alias effectively becomes invalid and has to be re-created.
