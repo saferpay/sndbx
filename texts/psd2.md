@@ -206,7 +206,7 @@ So for instance, if you register card details for, for example, recurring paymen
 
 In these cases, a so called **Soft Decline** is thrown:
 
-### Example of a Soft Decline Error message
+### Example of a Soft Decline Error message with Mastercard
 
  ```json 
  { 
@@ -222,6 +222,25 @@ In these cases, a so called **Soft Decline** is thrown:
   "ProcessorMessage": "Additional customer authentication required"
 }
 ```
+
+
+### Example of a Soft Decline Error message with Visa/American Express
+
+ ```json 
+ { 
+ "ResponseHeader": {
+    "SpecVersion": "[current SpecVersion]",
+    "RequestId": "[unique request id]"
+  },
+  "Behavior": "ABORT",
+  "ErrorName": "PAYER_AUTHENTICATION_REQUIRED",
+  "ErrorMessage": "Transaction declined by acquirer",
+  "TransactionId": "dOrvUAAWn16USAU8d08OA10A03SA",
+  "ProcessorResult": "65",
+  "ProcessorMessage": "Soft decline, SCA required"
+}
+```
+
 
 ### Test Cards
 
