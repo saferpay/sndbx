@@ -14,7 +14,7 @@ The handling of PayPal payments with Saferpay requires:
 
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Attention:</strong> For PayPal activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your PayPal merchant account ID and the desired currency.</p>
+  <p><strong>Attention:</strong> For PayPal activation on the Saferpay terminal, please <a href="contact.html"><strong>inform our activation service</strong></a> about your PayPal merchant account ID and the desired currency.</p>
 </div>
 
 ## <a name="ppal-api-access"></a> Grant API Approval for Saferpay
