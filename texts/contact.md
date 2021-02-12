@@ -60,3 +60,14 @@ Langenhorner Chaussee 92-94 <br />
 +49 40 325 967- 250 <br />
 [www.six-payment-services.com/saferpay](https://www.six-payment-services.com/saferpay) <br /> 
 [support.saferpay@six-payment-services.com](mailto:support.saferpay@six-payment-services.com) <br />
+
+## Saferpay Activation Team
+Do you want new payment methods to be activated on your Live Account? Contact our activation-team:
+
+**Note:** For Test-account matters, please contact the Integration Support, see above!
+
+### International
+[cs.ecom@six-payment-services.com](mailto:cs.ecom@six-payment-services.com)
+
+### Austria
+[onlinepayment.austria@six-payment-services.com](mailto:onlinepayment.austria@six-payment-services.com)
