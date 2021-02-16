@@ -110,6 +110,12 @@ Saferpay offers the option to force SCA during a transaction and you -the mercha
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> If you have a high risk business, or generally want a higher level of protection against fraud, you can, of course, force SCA too!</p>
 </div><br />
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Forcing SCA is only possible with Visa/Vpay, Mastercard/Maestro and American Express!</strong>
+  </p>
+</div><br />
 <div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
