@@ -113,7 +113,7 @@ Saferpay offers the option to force SCA during a transaction and you -the mercha
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important:</strong> Forcing SCA is only possible with Visa/Vpay, Mastercard/Maestro and American Express! <strong>Other Brands are currently NOT MIT-compliant under PSD2!</strong></strong>
+    <strong>Important:</strong> Forcing SCA is only possible with Visa/Vpay, Mastercard/Maestro and American Express! <strong>Other card-brands are currently NOT MIT-compliant under PSD2 and thusly cannot be used in this way!</strong></strong>
   </p>
 </div><br />
 <div class="danger" style="min-height: 75px;">
