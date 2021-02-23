@@ -275,12 +275,12 @@ However, you need to consider the following restrictions:
 
 1. The check-function is only available with the standalone registration, since the other options do said authorization!
 2. The check-function **does not** check the solvency of the account. Only an authorization does!
-3. The check-function is only available for VISA and Mastercard, over SIX Payment Services/Worldline, B+S Payone and Elavon Acquiring contracts!
+3. The check-function is only available for VISA, Mastercard and American Express, over SIX Payment Services/Worldline, B+S Payone and Elavon Acquiring contracts/processing!
 
 ### Request
 
 In order, to let a card get checked, you need to set the **Check**-container within the [initial registration-request](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert).
-You need to make sure, to provide a valid terminal Id, with activated acquiring-contracts for VISA and MasterCard.
+You need to make sure, to provide a valid terminal Id, with activated acquiring-contracts for VISA, MasterCard and/or American Express.
 
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
