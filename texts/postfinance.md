@@ -9,6 +9,11 @@ Acceptance of Swiss Postcard requires:
 * A corresponding licence and thus the existence of a valid identification with a username and password for the Saferpay system.
 * A valid contract with PostFinance.
 
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>Attention:</strong> Postfinance transactions are only valid for 30 days and must be <a href ="index.html#capture">captured</a> in this time frame. After 30 days, the reservation will void and the authorized amount can no longer be transferred!</p>
+</div>
+
 ## <a name="pf-alias"></a> Storage in the Secure Card Data Store
 
 If you intend on saving Postcard-data for later use, Saferpay provides the possibility of storing PostFinance’s Postcard inside the Saferpay Secure Card store. For this, the following requirements must be met:
