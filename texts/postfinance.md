@@ -11,7 +11,7 @@ Acceptance of Swiss Postcard requires:
 
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Attention:</strong> Postfinance transactions are only valid for 30 days and must be <a href ="index.html#capture">captured</a> in this time frame. After 30 days, the reservation will void and the authorized amount can no longer be transferred!</p>
+  <p><strong>Attention:</strong> Postfinance transactions are only valid for 30 days and must be <a href ="index.html#capture">captured</a> in this time frame. After 30 days, the reservation will void and the authorized amount can no longer be transferred! However you have a guaranteed payout, within these 30 days!</p>
 </div>
 
 ## <a name="pf-alias"></a> Storage in the Secure Card Data Store
