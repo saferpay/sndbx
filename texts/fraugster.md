@@ -1,15 +1,15 @@
-# Fraud Prevention
+# Fraud Intelligence
 
-Fraud Prevention is a Saferpay module that protects merchants from fraudulent online transactions. It relies on Fraugster's industry-leading AI technology
+Fraud Intelligence is a Saferpay module that protects merchants from fraudulent online transactions. It relies on Fraugster's industry-leading AI technology
 and allows merchants to dynamically react on suspicious behavior and even prevent transactions with malicious intent, during runtime.
-This chapter will cover the technical aspects on how to integrate Fraud Prevention in your application.
+This chapter will cover the technical aspects on how to integrate Fraud Intelligence in your application.
 
 
 ## <a name="fire-req"></a> Requirements
 + The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay
 system.
 + Availability of at least one active Saferpay terminal via which payments can be carried out and availability of the associated Saferpay TerminalId.
-+ A contract to use the Fraud Prevention module in Saferpay. Please contact your contractual sales-contact on that matter.
++ A contract to use the Fraud Intelligence module in Saferpay. Please contact your contractual sales-contact on that matter.
 + Saferpay JSON-API SpecVersion 1.20+
 
 
@@ -35,13 +35,13 @@ Currently, the following flows are supported:
 
 ## <a name="fire-activation"></a> Activation
 
-After the activation of the Fraud Prevention module on your account, you will have access to the options under Risk & Fraud > Fraud Prevention settings
+After the activation of the Fraud Intelligence module on your account, you will have access to the options under Risk & Fraud > Fraud Intelligence settings
 . There you can find a list of all supported payment methods, for which you can either fully activate the fraud prevention, or select the payment methods
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_fraud_activation1.png "Fraud Prevention fully activated")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_fraud_activation1.png "Fraud Intelligence fully activated")
 
 ## <a name="fire-training"></a> Training
 
-The Fraud Prevention module uses artificial intelligence algorithms and a pre-defined set of rules in order to provide protection against fraud. This means,
+The Fraud Intelligence module uses artificial intelligence algorithms and a pre-defined set of rules in order to provide protection against fraud. This means,
 that the detection quality will improve itself over time, as it adapts itself to the merchant's needs.
 
 ## <a name="fire-data"></a> Datapoints
@@ -355,7 +355,7 @@ Here you can see an example <a href="">Payment Page Initialize</a> request. Note
 Aside its AI algorithms, Fraugster also offers the option for merchants, to write their own set of rules, which are then incorporated into the evaluation
 process. For this purpose Fraugster offers its own portal (the <a href="https://dashboard.fraugsterapi.com/">Fraugster Dashboard</a>) where merchants can adapt the rules to fit their needs.
 
-Documentation on how to create and manage custom rules can be found in the <a href="https://dashboard.fraugsterapi.com/docs/index.html">Fraugster User Guide</a> (you need to log in to the Frauster Dashboard with your own credentials that you received after signing the contract for Saferpay Fraud Prevention).
+Documentation on how to create and manage custom rules can be found in the <a href="https://dashboard.fraugsterapi.com/docs/index.html">Fraugster User Guide</a> (you need to log in to the Frauster Dashboard with your own credentials that you received after signing the contract for Saferpay Fraud Intelligence).
 
 ## <a name="fire-responses"></a> Responses
 
