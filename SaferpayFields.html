@@ -826,11 +826,11 @@
 <li>Saferpay caches the card details <strong>for a maximum of 20 minutes</strong> and generates a token, which is then used to reference said means of payment.</li>
 <li>The token is forwarded and the <strong>SaferpayFields.submit(); onSuccess callback</strong> is called, so the token may be captured and processed further.</li>
 <li>The token then has to be forwarded to serverside. How you do that, is up to you. Methods like for example a redirect or AJAX are possible. Once on serverside, the token is then used to initialize the transaction itself, <a href="Integration_trx.html"> following the normal Transaction Interface flow.</a> Please refer to that chapter on further information, about how to submit the token through the JSON-API and execute the transaction itself.</li>
-</ol></div></div></section><section id="hf-prep"><h1><a name="hf-prep"></a> Preparation</h1><div class="row"><div class="col-sm-6"><p>Before you can start integrating the Saferpay Fields, you need to create an API Token.
-To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Settings &gt; Saferpay Fields Access Tokens</strong>. There, please click on <strong>Create Saferpay Fields Access Token</strong>. The following window will pop-up:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-create-api-key.png" alt="alt text" title="New API Key mask"></p><div class="warning" style="min-height: 75px;">
+</ol></div></div></section><section id="hf-prep"><h1><a name="hf-prep"></a> Preparation</h1><div class="row"><div class="col-sm-6"><p>Before you can start integrating the Saferpay Fields, you need to create an Access Token.
+To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Settings &gt; Saferpay Fields Access Tokens</strong>. There, please click on <strong>Create Saferpay Fields Access Token</strong>. The following window will pop-up:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-create-api-key.png" alt="alt text" title="Access Token mask"></p><div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Very Important:</strong> Saferpay will indeed validate the used Source-URL and the used TerminalId! It is enough to just enter the base-url, of your shop here. If you use multiple terminals, you have to generate more API-Keys for each terminal. <strong>HTTPS IS MANDATORY</strong> and will be checked!<br> Should you have misconfigured the access-token, the <strong>.init({options}) - onError</strong> callback will be triggered, returning an <strong>&quot;Access forbidden!&quot;</strong> message. Make sure, you've set the correct URL, for the system you are currently running on, especially during integration and then later deployment!
+    <strong>Very Important:</strong> Saferpay will indeed validate the used Source-URL and the used TerminalId! It is enough to just enter the base-url, of your shop here. If you use multiple terminals, you have to generate more Access Tokens for each terminal. <strong>HTTPS IS MANDATORY</strong> and will be checked!<br> Should you have misconfigured the access-token, the <strong>.init({options}) - onError</strong> callback will be triggered, returning an <strong>&quot;Access forbidden!&quot;</strong> message. Make sure, you've set the correct URL, for the system you are currently running on, especially during integration and then later deployment!
   </p>
 </div><div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
@@ -838,7 +838,7 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
     <strong>Tip:</strong> On the Test-Environment you can use a self-signed SSL-certificate, if you wish. This is helpful, if you are coding and testing on a small, local machine, instead of a server. Furthermore, as a Source-URL, you can enter you Computer-/Host-name. Example <strong>https://hostname</strong>. This works with local PCs, that do not have a public domain attached to them!
   </p>
 </div><p>Once created, you will be presented with a basic integration-example:
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-api-key.png" alt="alt text" title="API Key"></p><div class="warning" style="min-height: 75px;">
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-api-key.png" alt="alt text" title="Access Token"></p><div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Very Important:</strong> Once you move from the Test-Environment to the Live-Environment, you need to create a new Access Token on your live account!
@@ -910,8 +910,8 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
 </div>
 <h3>Saferpay Fields Initialization</h3>
 <pre><code class="language-javascript">SaferpayFields.init({
-	// api key
-	apiKey: '[YOUR API KEY]',
+	// access token
+	accessToken: '[YOUR Access Token]',
 	// api url
 	url: 'https://test.saferpay.com/Fields/[YOUR CUSTOMERID]',
 	style: {
@@ -959,7 +959,7 @@ SaferpayFields.submit({
 <p>Initializes the Saferpay Fields and replaces the placeholders, as defined before.</p>
 <h3>Available options</h3>
 <ul>
-<li><p><strong>apiKey</strong> <em>string</em> : Contains the API-Key, you have defined inside the Saferpay Backoffice earlier.</p>
+<li><p><strong>accessToken</strong> <em>string</em> : Contains the Access Token, you have defined inside the Saferpay Backoffice earlier.</p>
 </li>
 <li><p><strong>url</strong> <em>string</em> : Contains the API-Url, to define, where to post the data and initialize the Saferpay Fields.</p>
 </li>
