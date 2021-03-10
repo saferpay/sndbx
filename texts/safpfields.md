@@ -40,15 +40,15 @@ This is the basic Saferpay Fields flow.
 
 # <a name="hf-prep"></a> Preparation
 
-Before you can start integrating the Saferpay Fields, you need to create an API Token.
+Before you can start integrating the Saferpay Fields, you need to create an Access Token.
 To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Settings > Saferpay Fields Access Tokens</strong>. There, please click on <strong>Create Saferpay Fields Access Token</strong>. The following window will pop-up:
 
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-create-api-key.png "New API Key mask")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-create-api-key.png "Access Token mask")
 
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Very Important:</strong> Saferpay will indeed validate the used Source-URL and the used TerminalId! It is enough to just enter the base-url, of your shop here. If you use multiple terminals, you have to generate more API-Keys for each terminal. <strong>HTTPS IS MANDATORY</strong> and will be checked!<br /> Should you have misconfigured the access-token, the <strong>.init({options}) - onError</strong> callback will be triggered, returning an <strong>"Access forbidden!"</strong> message. Make sure, you've set the correct URL, for the system you are currently running on, especially during integration and then later deployment!
+    <strong>Very Important:</strong> Saferpay will indeed validate the used Source-URL and the used TerminalId! It is enough to just enter the base-url, of your shop here. If you use multiple terminals, you have to generate more Access Tokens for each terminal. <strong>HTTPS IS MANDATORY</strong> and will be checked!<br /> Should you have misconfigured the access-token, the <strong>.init({options}) - onError</strong> callback will be triggered, returning an <strong>"Access forbidden!"</strong> message. Make sure, you've set the correct URL, for the system you are currently running on, especially during integration and then later deployment!
   </p>
 </div>
 
@@ -60,7 +60,7 @@ To do so, you need to log into the Saferpay Backoffice. Navigate to <strong>Sett
 </div>
 
 Once created, you will be presented with a basic integration-example:
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-api-key.png "API Key")
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/fields-api-key.png "Access Token")
 
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
@@ -153,8 +153,8 @@ However you must make sure, that you define the placeholders -can be ```<div>```
 ### Saferpay Fields Initialization
 ```javascript
 SaferpayFields.init({
-	// api key
-	apiKey: '[YOUR API KEY]',
+	// access token
+	accessToken: '[YOUR Access Token]',
 	// api url
 	url: 'https://test.saferpay.com/Fields/[YOUR CUSTOMERID]',
 	style: {
@@ -206,7 +206,7 @@ SaferpayFields.submit({
 
 ### Available options
 
-* <strong>apiKey</strong> *string* : Contains the API-Key, you have defined inside the Saferpay Backoffice earlier.
+* <strong>accessToken</strong> *string* : Contains the Access Token, you have defined inside the Saferpay Backoffice earlier.
 
 * <strong>url</strong> *string* : Contains the API-Url, to define, where to post the data and initialize the Saferpay Fields.
 ```javascript
