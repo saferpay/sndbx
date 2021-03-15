@@ -808,7 +808,15 @@
 <li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a></li>
 <li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a></li>
 <li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert</a></li>
-</ul><p>The Response Message includes a respective <strong>RedirectURL</strong>, if successful executed. This URL needs to be embedded in the Iframe.</p></div></div></section><section id="css-pp"><h3><a name="css-pp"></a> Payment Page Initialize</h3><div class="row"><div class="col-sm-6"><p>The Payment Page (payment form) has a responsive design and automatically adapts to the size of the Iframe. Here is an example. Simply drag the window at the bottom right corner and see the the Payment Page adapt:</p><div style="resize: both; overflow: auto; min-height: 800px; height: 820px; width: 1000px;">
+</ul><p>The Response Message includes a respective <strong>RedirectURL</strong>, if successful executed. This URL needs to be embedded in the Iframe.</p><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+	<p><strong>Attention:</strong> The following payment providers/payment methods <strong>DO NOT SUPPORT</strong> the iFrame integration:</p>
+	<ul>
+		<li>PayPal</li>
+		<li>Sofort by Klarna</li>
+		<li>ApplePay</li>
+	</ul>
+</div></div></div></section><section id="css-pp"><h3><a name="css-pp"></a> Payment Page Initialize</h3><div class="row"><div class="col-sm-6"><p>The Payment Page (payment form) has a responsive design and automatically adapts to the size of the Iframe. Here is an example. Simply drag the window at the bottom right corner and see the the Payment Page adapt:</p><div style="resize: both; overflow: auto; min-height: 800px; height: 820px; width: 1000px;">
 	<iframe style="height: 100%; width: 100%; overflow: hidden;" src="https://shop.saferpay.eu/saferpayintegration/ppauto_initialize_submit.php"></iframe>
 </div></div></div></section><section id="css-trxini"><h3><a name="css-trxini"></a> Transaction Initialize</h3><div class="row"><div class="col-sm-6"><p>Here, an example of the Saferpay Card Entry Form (<strong>Hosted Entry Form</strong>) for capturing card details. Simply drag the window at the bottom right corner and see the the form adapt:</p><div style="resize: both; overflow: auto; min-height: 500px; mon-width: 285px; height: 480px; width: 290px;">
 	<iframe style="height: 100%; width: 100%; overflow: hidden;" src="https://shop.saferpay.eu/saferpayintegration/auto_initialize_submit.php"></iframe>
