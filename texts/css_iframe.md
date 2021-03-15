@@ -12,6 +12,16 @@ Iframe integration is supported for these methods:
 
 The Response Message includes a respective **RedirectURL**, if successful executed. This URL needs to be embedded in the Iframe.
 
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+	<p><strong>Attention:</strong> The following payment providers/payment methods <strong>DO NOT SUPPORT</strong> the iFrame integration:</p>
+	<ul>
+		<li>PayPal</li>
+		<li>Sofort by Klarna</li>
+		<li>ApplePay</li>
+	</ul>
+</div>
+
 ### <a name="css-pp"></a> Payment Page Initialize
 
 The Payment Page (payment form) has a responsive design and automatically adapts to the size of the Iframe. Here is an example. Simply drag the window at the bottom right corner and see the the Payment Page adapt:
