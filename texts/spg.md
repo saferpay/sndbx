@@ -91,7 +91,12 @@ All the offers will be displayed inside the Saferpay Backoffice and marked as **
 As described before, you can gather the payment data from a Secure PayGate transaction via the Saferpay JSON API. For that, you must define the <strong>{{{PAYMENTPAGETOKEN}}}</strong> (see above), otherwise you do not have the necessary data to execute the next step.
 
 Once the redirect and/or the notification call arrives at your webserver, you can extract the <strong>{{{PAYMENTPAGETOKEN}}}</strong> and simply execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>. That will return the payment data of the Secure PayGate transaction to your system.
-This transaction is like a normal <a href="">Payment Page</a> transaction and further steps may be applied to it, for example the <a href="index.html#capture">Capture</a>, <a href="partialcaptures.html">Partial Capture</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">Cancel</a>, if you didn't select the **Normal (final) authorization with automatic capturing**-option, as described above. <a href="refund.html">Refunds via the API</a> may also be executed, if you wish.
+This transaction is like a normal <a href="Integration_PP.html">Payment Page</a> transaction and further steps may be applied to it, for example the <a href="index.html#capture">Capture</a>, <a href="partialcaptures.html">Partial Capture</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">Cancel</a>, <a href="refund.html">Refunds via the API</a> may also be executed, if you wish.
+
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>VERY IMPORTANT:</strong> As of now the automatic capturing-option, as described under <strong>Secure PayGate configuration</strong>, does not apply to transactions, made via the Secure PayGate API! You always either have to capture them manually through the Saferpay Backoffice, or via the JSON API, as described above!</p>
+</div>
 
 # <a name="spg-demo"></a> Try it!
 Want to try out the Secure PayGate API for yourself?
