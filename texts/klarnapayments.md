@@ -187,9 +187,17 @@ Furthermore, for merchants in the European Union, Klarna highly recommends to al
     "Items": [
       {
         "Type": "DIGITAL",
+        "Id": 12345,
+        "VariantId": 54321,
+        "Name": "Test Product",
+        "CategoryName": "Test Category",
+        "Description": "Test 123",
         "Quantity": 1,
-        "Name": "Test product",
-        "UnitPrice": 245
+        "UnitPrice": 245,
+        "IsPreOrder": false,
+        "TaxRate": 1900,
+        "TaxAmount": 123,
+        "DiscountAmount": 0
       }
     ]
   },
