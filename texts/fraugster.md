@@ -1,16 +1,15 @@
 # Fraud Intelligence
 
-Fraud Intelligence is a Saferpay module that protects merchants from fraudulent online transactions. It relies on Fraugster's industry-leading AI technology
-and allows merchants to dynamically react on suspicious behavior and even prevent transactions with malicious intent, during runtime.
+Fraud Intelligence is a Saferpay module that protects merchants from fraudulent online transactions. It relies on Fraugster's industry-leading AI technology and allows merchants to dynamically react on suspicious behavior and even prevent transactions with malicious intent, during authentication.
+
 This chapter will cover the technical aspects on how to integrate Fraud Intelligence in your application.
 
 
 ## <a name="fire-req"></a> Requirements
-+ The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay
-system.
-+ Availability of at least one active Saferpay terminal via which payments can be carried out and availability of the associated Saferpay TerminalId.
-+ A contract to use the Fraud Intelligence module in Saferpay. Please contact your contractual sales-contact on that matter.
-+ Saferpay JSON-API SpecVersion 1.20+
++ The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.
++ Availability of at least one active Saferpay terminal via which payments can be carried out, and availability of the associated Saferpay TerminalId.
++ A contract to use the Fraud Intelligence module in Saferpay. Please contact your contractual sales contact on that matter.
++ Saferpay JSON API SpecVersion 1.20+
 
 
 ### Supported Payment Methods and Flows
@@ -29,39 +28,37 @@ Currently, the following payment methods are supported:
 Currently, the following flows are supported:
 
 + [Payment Page](Integration_PP.html)
-+ [Transaction Interface](Integration_trx.html), including the [Saferpay Fields](SaferpayFields.html)
++ [Transaction Interface](Integration_trx.html), including [Saferpay Fields](SaferpayFields.html)
 + [Direct Mode for Bancontact](bancontact.html#bancontact-directmode)
 + [Recurring Transactions](recurring.html)
 
 ## <a name="fire-activation"></a> Activation
 
-After the activation of the Fraud Intelligence module on your account, you will have access to the options under Risk & Fraud > Fraud Intelligence settings
-. There you can find a list of all supported payment methods, for which you can either fully activate the fraud prevention, or select the payment methods
+After the activation of the Fraud Intelligence module on your account, you will have access to the options under **Risk & Fraud > Fraud Intelligence** settings. There, you can find a list of all supported payment methods, for which you can either fully activate the fraud prevention, or select the payment methods.
 ![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/bo_fraud_activation1.png "Fraud Intelligence fully activated")
 
 ## <a name="fire-training"></a> Training
 
-The Fraud Intelligence module uses artificial intelligence algorithms and a pre-defined set of rules in order to provide protection against fraud. This means,
-that the detection quality will improve itself over time, as it adapts itself to the merchant's needs.
+The Fraud Intelligence module uses artificial intelligence algorithms and a pre-defined set of rules in order to provide protection against fraud. This means that the detection quality will improve itself over time, as it adapts itself to the merchant's needs.
 
-## <a name="fire-data"></a> Datapoints
+## <a name="fire-data"></a> Data points
 
-In order for the training and also the detection to work properly, the system needs to be provided with a set of datapoints with each transaction.
-Some are provided automatically by Saferpay, while others need to be submitted by the merchant-system, with the initial request, when starting the transaction, like the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a>.
+In order for the training and the detection to work properly, the system needs to be provided with a set of data points with each transaction.
+Some are provided automatically by Saferpay, while others need to be submitted by the merchant's system with the initial request, when starting the transaction with either <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a>.
 
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Note:</strong> All of these datapoints are generally optional. However the detection will work better, the more data it has, to do its risk evaluation!
+    All of these datapoints are generally optional. However the detection will work better the more data are provided.
   </p>
 </div>
 
-The following data points can be set via the JSON-API:
+The following data points can be set via the JSON API:
 
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th class="text-center">Fire Datapoint</th>
+      <th class="text-center">Fraugster Datapoint</th>
       <th class="text-center">JSON API</th>
       <th class="text-center">Description</th>
     </tr>
@@ -80,32 +77,32 @@ The following data points can be set via the JSON-API:
     <tr>
       <td class="text-center">cc_num</td>
       <td class="text-center"><strong>(see description)</strong></td>
-      <td>The used PAN. Note that this value usually comes directly from the card holder and not the merchant directly. Also note that, if you should use <a href="scd.html">Secure Card Data</a>, the PAN behind the provided alias will, of course, be used.</td>
+      <td>The used PAN. Note that this value usually comes directly from the card holder, rather than the merchant. Also note that, if you should use <a href="scd.html">Secure Card Data</a>, the PAN behind the provided alias will, of course, be used.</td>
     </tr>
     <tr>
       <td class="text-center">cust_email</td>
       <td class="text-center"><strong>Payer.DeliveryAddress.Email</strong></td>
-      <td>The customers E-Mail address.</td>
+      <td>The customer's E-Mail address.</td>
     </tr>
     <tr>
       <td class="text-center">ip</td>
       <td class="text-center"><strong>Payer.IpAddress</strong></td>
-      <td>The customers IP-address.</td>
+      <td>The customer's IP-address.</td>
     </tr>
     <tr>
       <td class="text-center">cust_dob</td>
       <td class="text-center"><strong>Payer.BillingAddress.DateOfBirth</strong></td>
-      <td>The customers date of birth.</td>
+      <td>The customer's date of birth.</td>
     </tr>
     <tr>
       <td class="text-center">cust_signup_ts</td>
       <td class="text-center"><strong>RiskFactors.AccountCreationDate</strong></td>
-      <td>The customers date of signup to the merchant shop.</td>
+      <td>The customer's date of signup to the merchant shop.</td>
     </tr>
     <tr>
       <td class="text-center">password_update_ts</td>
       <td class="text-center"><strong>RiskFactors.PasswordLastChangeDate</strong></td>
-      <td>The date, when the customer last changed his/her password.</td>
+      <td>The date when the customer last changed his/her password.</td>
     </tr>
     <tr>
       <td class="text-center">items</td>
@@ -115,12 +112,12 @@ The following data points can be set via the JSON-API:
     <tr>
       <td class="text-center">item_id</td>
       <td class="text-center"><strong>Order.Items[].Id</strong></td>
-      <td>Identifier of the product. This ID is created and provided by the merchant!</td>
+      <td>Identifier of the product. This ID is created and provided by the merchant.</td>
     </tr>
     <tr>
       <td class="text-center">unique_item_id</td>
       <td class="text-center"><strong>Order.Items[].VariantId</strong></td>
-      <td>Identifier of the product-variant. This ID is created and provided by the merchant!/td>
+      <td>Identifier of the product-variant. This ID is created and provided by the merchant./td>
     </tr>
     <tr>
       <td class="text-center">item_desc</td>
@@ -153,11 +150,6 @@ The following data points can be set via the JSON-API:
       <td>Product type. Has to be one of the following: <strong>DIGITAL|PHYSICAL|SERVICE|GIFTCARD</strong></td>
     </tr>
     <tr>
-      <td class="text-center">includes_giftcard</td>
-      <td class="text-center"><strong>Order.Items[].IsPreOrder</strong></td>
-      <td>Boolean, whether the item is a giftcard.</td>
-    </tr>
-    <tr>
       <td class="text-center">includes_preorder</td>
       <td class="text-center"><strong>Order.Items[].IsPreOrder</strong></td>
       <td>Boolean, whether the item is a pre-ordered item.</td>
@@ -165,9 +157,9 @@ The following data points can be set via the JSON-API:
     <tr>
       <td class="text-center">delivery_method</td>
       <td class="text-center"><strong>RiskFactors[].DeliveryType</strong></td>
-      <td>The used delivery method, for the carts items. Has to be one of the following:<br />
+      <td>The used delivery method. Has to be one of the following:<br />
         <ul>
-          <li><strong>EMAIL:</strong> The basket items are delivered electronically to the customer.</li>
+          <li><strong>EMAIL:</strong> The items are delivered electronically to the customer.</li>
           <li><strong>HOMEDELIVERY:</strong> The items are delivered to the customer's shipping address.</li>
           <li><strong>PICKUP:</strong> The customer collects the items from a pickup location.</li>
           <li><strong>SHOP:</strong> The customer collects the items from a branch shop.</li>
@@ -180,7 +172,7 @@ The following data points can be set via the JSON-API:
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th class="text-center">Fire Datapoint</th>
+      <th class="text-center">Fraugster Datapoint</th>
       <th class="text-center">JSON API</th>
       <th class="text-center">Description</th>
     </tr>
@@ -275,7 +267,7 @@ The following data points can be set via the JSON-API:
 </table> 
 
 ### Example
-Here you can see an example <a href="">Payment Page Initialize</a> request. Note, that the containers and parameters are, of course, consistent throughout the whole API:
+Here you can see an example <a href="">Payment Page Initialize</a> request. Note that the containers and parameters are, of course, consistent throughout the whole API:
 
 ```json
 {
@@ -352,19 +344,19 @@ Here you can see an example <a href="">Payment Page Initialize</a> request. Note
 
 ## <a name="fire-rules"></a> Rules
 
-Aside its AI algorithms, Fraugster also offers the option for merchants, to write their own set of rules, which are then incorporated into the evaluation
-process. For this purpose Fraugster offers its own portal (the <a href="https://dashboard.fraugsterapi.com/">Fraugster Dashboard</a>) where merchants can adapt the rules to fit their needs.
+Aside its AI algorithms, Fraugster also offers the option for merchants, to write their own set of rules, which are then incorporated into the evaluation process. For this purpose, Fraugster offers its own portal (the <a href="https://dashboard.fraugsterapi.com/">Fraugster Dashboard</a>) where merchants can adapt the rules to fit their needs.
 
-Documentation on how to create and manage custom rules can be found in the <a href="https://dashboard.fraugsterapi.com/docs/index.html">Fraugster User Guide</a> (you need to log in to the Frauster Dashboard with your own credentials that you received after signing the contract for Saferpay Fraud Intelligence).
+Documentation on how to create and manage custom rules can be found in the <a href="https://dashboard.fraugsterapi.com/docs/index.html">Fraugster User Guide</a> (you need to log in to the Fraugster Dashboard with your own credentials you received after signing the contract for Saferpay Fraud Intelligence).
 
 ## <a name="fire-responses"></a> Responses
 
 ### Success
 
-In case of a success, the transaction response will aslo carry additional information inside the **FraudPrevention.Result** parameter. 
-This can have one of two values **APPROVED** and **MANUAL_REVIEW**.
-In both cases, the transaction was indeed successful, however the latter indicates, that there may be issues with this transaction, which need to be reviewed manually, inside the <a href="https://dashboard.fraugsterapi.com/">Fraugster Dashboard</a>.
-It is then up to you -the merchant-, to either accept, or decline this transaction.
+In case of a success, the transaction response will also carry additional information inside the **FraudPrevention.Result** parameter. This can have one of two values: **APPROVED** and **MANUAL_REVIEW**.
+
+In both cases, the transaction was indeed successful. However, the latter indicates that there may be issues with this transaction, which need to be reviewed manually, inside the <a href="https://dashboard.fraugsterapi.com/">Fraugster Dashboard</a>.
+
+It is then up to you, the merchant, to either accept or decline this transaction.
 
 ```json
  "ResponseHeader": {

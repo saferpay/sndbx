@@ -1,35 +1,39 @@
 # Credit Cards
 
-This chapter will cover special cases and some additional features, that are available with credit card processing.
+This chapter will cover special cases and some additional features that are available with credit card processing.
 
 ## <a name="cc-pappoval"></a> Partial approvals
 
 A partial approval is best explained with an example:
 
 A customer comes to your shop and orders goods worth 100 Euros.
-He/She enters the card details and Saferpay authorizes the card. During authorization, the card holders bank checks the solvency of the card holder and sees, that only maximum of 80 Euros can be authorized. Under normal circumstances, the transaction would be declined. However, if the merchant requests a partial approval, the card can be authorized for as much, as possible.
 
-This sort of authorization-type is best suited for goods, that are sold in bulk, like for example screws, certain food-items, or petrol at a gas station.
+He/she enters the card details, and Saferpay authorizes the card. During authorization, the card holder's bank checks the solvency of the card holder and concludes that only a maximum of 80 Euros can be authorized. 
+
+Usually, such a transaction would be declined. However, if the merchant requests a partial approval, the card can be authorized for 80 Euros.
+
+This sort of authorization type is best suited for goods that are sold in bulk, like for example screws, certain food items, or petrol at a gas station.
+
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important:</strong> Not all Issuers may support this feature. If partial approvals are not supported, either the full amount will be authorized, or the transaction will be declined.
+    Not all Issuers may support this feature. If partial approvals are not supported, either the full amount will be authorized, or the transaction will be declined.
   </p>
 </div>
 
 ### Requirements
 
-+ Partial approvals can only be requested with **SpecVersion 1.20**, or higher!
-+ Partial approvals are only available for Visa/Vpay and Mastercard/Maestro!
++ Partial approvals can only be requested with **SpecVersion 1.20**, or higher.
++ Partial approvals are only available for Visa/VPay and Mastercard/Maestro.
 
 ### How to request a partial approval
 
-A partial approval can only be requested, when using the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct Request</a>. With this request, the parameter **Payment.Options.AllowPartialAuthorization** must be set to true.
+A partial approval can only be requested when using the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct Request</a>. In the request, the parameter **Payment.Options.AllowPartialAuthorization** must be set to true.
 
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important:</strong> Please make sure, that you also have read the <a href="psd2.html">PSD2 Chapter</a>, since <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a> is classified as a Merchant Initiated Transaction (MIT)!
+    Please make sure that you have read the <a href="psd2.html">PSD2</a> chapter, since an <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a> request is classified as a Merchant Initiated Transaction (MIT)!
   </p>
 </div>
 
@@ -70,7 +74,7 @@ A partial approval can only be requested, when using the <a href="https://saferp
 }
 ```
 ### Example response
-Saferpay will respond with the maximum amount, that can be authorized:
+Saferpay will respond with the maximum amount that can be authorized:
 
 ```json
 {
@@ -117,7 +121,7 @@ Saferpay will respond with the maximum amount, that can be authorized:
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important:</strong> The merchant must make sure, that his inventory is adjusted accordingly, since less will be payed, than initially requested, which is the point behind partial approvals.
+    <strong>Important:</strong> The merchant must make sure that his inventory is adjusted accordingly, since less will be payed than initially requested.
   </p>
 </div>
 
@@ -134,7 +138,8 @@ This chapter will cover the special characteristics you need to consider, if you
 ### Chase Paymentech
 
 Chase Paymentech is a US credit card processor with office in Dallas, Texas.
-SIX Payment Services offers the pssibility to process credit cards over this processor, directly in the US.
-However please take note to the following restrictions and characteristics.
+SIX Payment Services offers the possibility to process credit cards over this processor, directly in the US. 
 
-+ **OrderId:** Due to technical restrictions, the **OrderId** will not be forwarded to Chase to be shown on your reconciliation-files from chase. Saferpay will instead fill it with a unique, increasing, numeric value, to meet Chase Paymentechs requirements. Therefore a later identification through the **OrderId** will not be possible!
+Please take note to the following restrictions and characteristics.
+
++ **OrderId:** Due to technical restrictions, the **OrderId** will not be forwarded to Chase to be shown on your reconciliation files from chase. Saferpay will instead fill it with a unique, increasing, numeric value, to meet Chase Paymentechs requirements. Therefore, a later identification through the **OrderId** will not be possible.
