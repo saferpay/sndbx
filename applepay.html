@@ -804,36 +804,35 @@
 				</div>
 
 				
-<section><h1>Applepay</h1><div class="row"><div class="col-sm-6"><p>Applepay-transactions can be processed via the Saferpay Payment Page, without much effort. Note, that Applepay is not a classic means of payment, but rather a digital Wallet. Your customers will still pay with Visa, Mastercard, or whatever credit card has been saved inside the Wallet, thus the payment method will correspond to this. However Saferpay will also return information, that this transaction has been performed, through Applepay. Furthermore, due to this nature, all options and limitations of the saved means of payment do apply <a href="index.html#pm-functions">as stated here, if not mentioned otherwise in this chapter!</a>
-The following chapter will guide you through the steps required, in order to activate and use Applepay.</p><div class="danger" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+<section><h1>Apple Pay</h1><div class="row"><div class="col-sm-6"><p>Apple Pay transactions can be processed via the Saferpay Payment Page, without much effort from you side. Note that Apple Pay is not a classic means of payment, but rather a digital wallet. Your customers will still pay with Visa, Mastercard, or whatever credit card has been saved inside the wallet, thus the actual recorded payment method will correspond to this. However, Saferpay will also return information that this transaction has been performed through Apple Pay. Furthermore, all options and limitations of the used means of payment apply <a href="index.html#pm-functions">as stated here</a>, if not mentioned otherwise in this chapter.</p><p>The following chapter will guide you through the steps required in order to activate and use Apple Pay.</p><div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0;"></span>
   <p>
-    <strong>Caution:</strong> As of now, LiabilityShift for Visa cards over Applepay is denied on authorization, due to an ongoing issue between Apple and Visa.
+    <strong>Caution:</strong> As of now, LiabilityShift for Visa cards over Apple Pay is denied on authorization, due to an ongoing issue between Apple and Visa.
   </p>
-</div></div></div></section><section id="ppal-requirement"><h2><a name="ppal-requirement"></a> Requirements</h2><div class="row"><div class="col-sm-6"><p>The handling of Applepay payments with Saferpay requires:</p><ul>
+</div></div></div></section><section id="ppal-requirement"><h2><a name="ppal-requirement"></a> Requirements</h2><div class="row"><div class="col-sm-6"><p>The handling of Apple Pay payments with Saferpay requires:</p><ul>
 <li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
-<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
-<li>Applepay is only available via the <a href="Integration_PP.html">PaymentPage flow</a>!</li>
-<li>Applepay is only available with <strong>SpecVersion 1.15</strong>, or higher.</li>
-<li><strong>NotifyUrl:</strong> The NotifyUrl is <strong>mandatory</strong>, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information!</li>
-<li>Applepay can only be used with Apple devices, like iPhones and iPads. <strong>Exception being the test environment, so you may test it on other devices!</strong></li>
-<li>Furthermore, only Apples own browser, Safari, is supported. <strong>Exception being the test environment, so you may test it in other browsers!</strong></li>
-<li>Applepay does not support <a href="scd.html">Secure Card Data</a>, even though the means of payment may support it! However <a href="recurring.html">Recurring Payments</a> can be executed, if supported by the payment mean!</li>
+<li>Availability of at least one active Saferpay terminal by which payments can be carried out and availability of the associated Saferpay TerminalId.</li>
+<li>Apple Pay is only available via the <a href="Integration_PP.html">PaymentPage flow</a>.</li>
+<li>Apple Pay is only available with <strong>SpecVersion 1.15</strong> or higher.</li>
+<li><strong>NotifyUrl:</strong> The NotifyUrl is <strong>mandatory</strong>, in order to avoid missing payment successes. See the <a href="Integration_PP.html">Payment Page process</a> for further information.</li>
+<li>Apple Pay can only be used with Apple devices, like Macs, iPhones and iPads. <strong>Exception being the test environment, so you are able to test Apple Pay on other devices.</strong></li>
+<li>Furthermore, only Apple's own browser, Safari, is supported. <strong>Exception being the test environment, so you are able to test Apple Pay using other browsers.</strong></li>
+<li>Apple Pay does not support <a href="scd.html">Secure Card Data</a>, even though the means of payment may support it. However <a href="recurring.html">Recurring Payments</a> can be executed, if supported by the payment means.</li>
 </ul><div class="danger" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Warning:</strong> Applepay does not support the iFrame Integration!</p>
-</div></div></div></section><section id="apple-activation"><h2><a name="apple-activation"></a> Activation</h2><div class="row"><div class="col-sm-6"><p>The activation of Applepay for your Saferpay account, be it live, or on the test-environment, requires next to no effort and can be done in a matter of seconds.</p><ol>
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0;"></span>
+  <p><strong>Warning:</strong> Apple Pay does not support iFrame Integration.</p>
+</div></div></div></section><section id="apple-activation"><h2><a name="apple-activation"></a> Activation</h2><div class="row"><div class="col-sm-6"><p>The activation of Apple Pay for your Saferpay account, be it live, or on the test-environment, requires next to no effort and can be done in a matter of seconds:</p><ol>
 <li>First step is to <strong>log into the Saferpay Backoffice</strong>, there you have to navigate to the <strong>Settings</strong> tab and click on <strong>Payment Means / Terminals</strong>.
-<br><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO1.png" alt="alt text" title="Applepay inside the Saferpay Backoffice"></li>
-<li>Next, select the e-commerce, or Secure PayGate terminal, you want to activate Applepay on.</li>
-<li>Navigate to the <strong>Wallets</strong> section, there you will find Applepay.</li>
+<br>![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Apple PayBO1.png &quot;Apple Pay inside the Saferpay Backoffice&quot;)</li>
+<li>Next, select the e-Commerce, or Secure PayGate terminal on which you want to activate Apple Pay.</li>
+<li>Navigate to the <strong>Wallets</strong> section, there you will find Apple Pay.</li>
 <li>Click on the <strong>Activate</strong> Button.
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO2.png" alt="alt text" title="Applepay inside the Saferpay Backoffice"></li>
-<li>You will be prompted with another window, that asks you to accept the Terms and Conditions from Apple, so you may use Applepay. Mark the checkbox and click <strong>Activate</strong>.
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO3.png" alt="alt text" title="Applepay inside the Saferpay Backoffice"></li>
-<li>And you are done! Applepay is now available for you on your Saferpay Terminal.
-<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO4.png" alt="alt text" title="Applepay inside the Saferpay Backoffice"></li>
-</ol></div></div></section><section id="apple-redirect"><h2><a name="apple-redirect"></a> Direct redirect</h2><div class="row"><div class="col-sm-6"><p>If you want to perform a direct redirect to Applepay, you have to use the parameter <strong>Wallets</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>!</p><p><strong>Example Request:</strong></p><pre><code class="language-json">{
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Apple PayBO2.png &quot;Apple Pay inside the Saferpay Backoffice&quot;)</li>
+<li>You will be prompted with another window, which asks you to accept the Terms and Conditions from Apple. Mark the checkbox and click <strong>Activate</strong>.
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Apple PayBO3.png &quot;Apple Pay inside the Saferpay Backoffice&quot;)</li>
+<li>And you are done! Apple Pay is now available for you on your Saferpay Terminal.
+![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Apple PayBO4.png &quot;Apple Pay inside the Saferpay Backoffice&quot;)</li>
+</ol></div></div></section><section id="apple-redirect"><h2><a name="apple-redirect"></a> Direct redirect</h2><div class="row"><div class="col-sm-6"><p>If you want to perform a direct redirect to Apple Pay, you have to use the parameter <strong>Wallets</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>!</p><p><strong>Example Request:</strong></p><pre><code class="language-json">{
     &quot;RequestHeader&quot;: {
         &quot;SpecVersion&quot;: &quot;[CURRENT SPECVERSION]&quot;,
         &quot;CustomerId&quot;: &quot;[YOUR CUSTOMERID]&quot;,
@@ -854,7 +853,7 @@ The following chapter will guide you through the steps required, in order to act
         &quot;Description&quot;: &quot;Test Order #123&quot;
     },
     &quot;Wallets&quot;: [
-        &quot;APPLEPAY&quot;
+        &quot;Apple Pay&quot;
     ],
     &quot;PaymentMethods&quot;: [
         &quot;VISA&quot;,
@@ -868,12 +867,12 @@ The following chapter will guide you through the steps required, in order to act
 }
 
 </code></pre><div class="info" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Tip:</strong> If you are using <strong>&quot;Wallets&quot;</strong> alongside <strong>&quot;PaymentMethods&quot;</strong>, you can limit the Brands, your customer may use! However note, that the Payment Page then also will display the given Brands as dedicated Payment Methods, so the customer may pay this way!</p>
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0;"></span>
+  <p><strong>Tip:</strong> If you are using <strong>&quot;Wallets&quot;</strong> alongside <strong>&quot;PaymentMethods&quot;</strong>, you can limit the brands which your customers can use. However, note that the Payment Page also will display the given brands as dedicated payment methods, so the customer might pay this way instead of using Apple Pay.</p>
 </div><div class="warning" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0;"></span>
   <p>
-    <strong>Important:</strong> If you are using PaymentMethods, you <strong>must</strong> also submit Wallets, if you want Applepay to be displayed! Also, if you are just submitting one Payment Method, the Payment Page will still directly jump to the card entry form, skipping Applepay!
+    <strong>Important:</strong> If you are using &quot;PaymentMethods&quot;, you <strong>must</strong> also submit &quot;Wallets&quot;, if you want Apple Pay to be displayed. Also, if you are just submitting one payment method, the Payment Page will still directly jump to the card entry form, skipping Apple Pay.
   </p>
 </div></div></div></section>
 

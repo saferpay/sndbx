@@ -804,16 +804,15 @@
 				</div>
 
 				
-<section><h1>Transaction Inquire</h1><div class="row"><div class="col-sm-6"><p>The <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a> allows you to acquire transaction-data, after all other means have been expired, or because of some technical issues, using the Saferpay TransactionId, or OrderId.
-However the Inquiry Interface has some restrictions, that have to be considered, when using this feature:</p></div></div></section><section id="inquire-rules"><h2><a name="inquire-rules"></a> Rules and limitations</h2><div class="row"><div class="col-sm-6"><ol>
-<li><strong>Use the standard means first:</strong> the Inquire-Interface is not meant to replace other API-functions, like for example the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>. When implementing the <a href="Integration_PP.html">Payment Page</a>, or <a href="Integration_trx.html">Transaction Interface</a> flows, you should always use the standard means first and the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a>, if those cannot be executed anymore, e.g. due to the token being expired!</li>
-<li><strong>No polling:</strong> In general, but in this case specifically, do not use polling to continuously ask for the transaction-data, especially when considering #1.</li>
-<li><strong>Only successful transactions:</strong> As of now, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a> only works with successful transactions.</li>
+<section><h1>Transaction Inquire</h1><div class="row"><div class="col-sm-6"><p>The <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">inquire interface</a> allows you to acquire transaction data using the Saferpay TransactionId, or OrderId.</p><p>However, the inquiry interface has some restrictions, that have to be considered when using this feature:</p></div></div></section><section id="inquire-rules"><h2><a name="inquire-rules"></a> Rules and limitations</h2><div class="row"><div class="col-sm-6"><ol>
+<li><strong>Use the standard means first:</strong> the inquire interface is not meant to replace other API functions, like for example <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>. When implementing the <a href="Integration_PP.html">Payment Page</a>, or <a href="Integration_trx.html">Transaction Interface</a> flows, you should always use the standard means first, and the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">inquire interface</a> only if those cannot be executed anymore, e.g. due to the token being expired.</li>
+<li><strong>No polling:</strong> In general, but in this case specifically, do not use polling to continuously ask for transaction data.</li>
+<li><strong>Only successful transactions:</strong> As of now, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">inquire interface</a> only works with successful transactions.</li>
 <li><strong>SpecVersion 1.11:</strong> You must use SpecVersion 1.11 and up.</li>
-<li><strong>Update delay:</strong> The result of a <em>Transaction/Inquire</em> request does not display the current status in real time because the requested data are updated with a few minutes delay.</li>
+<li><strong>Update delay:</strong> The result of a <em>Transaction/Inquire</em> request does not display the current status in real time because the requested data is updated with a few minutes delay.</li>
 </ol><div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>VERY IMPORTANT:</strong> Saferpay reserves the right to restrict, or outright deny access to the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire-Interface</a>, due to excessive use of the interface, or violation of these rules!</p>
+  <p>Saferpay reserves the right to restrict or deny access to the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">inquire interface</a>, due to excessive use of the interface, or violation of these rules.</p>
 </div></div></div></section><section id="inquire-examples"><h2><a name="inquire-examples"></a> Examples</h2><div class="row"><div class="col-sm-6"></div></div></section><section><h3>Example of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Transaction Inquire</a> request:</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{
  &quot;RequestHeader&quot;: {
    &quot;SpecVersion&quot;: &quot;1.11&quot;,
@@ -886,7 +885,7 @@ However the Inquiry Interface has some restrictions, that have to be considered,
 }
 </code></pre></div></div></section><section><h3>Example of a <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Transaction Inquire</a> response for a failed transaction:</h3><div class="row"><div class="col-sm-6"><div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Important note:</strong> As mentioned before, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire Interface</a> only works with successful transactions. Therefore you'll get the following response, if a transaction was either not completed by the payer, or was not successful.</p>
+  <p>As mentioned before, the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Inquire">Inquire Interface</a> only works with successful transactions. Therefore you'll get the following response, if a transaction was either not completed by the payer, or was not successful.</p>
 </div><br><pre><code class="language-json">{
  &quot;ResponseHeader&quot;: {
    &quot;SpecVersion&quot;: &quot;1.11&quot;,

@@ -805,85 +805,30 @@
 
 				
 <section><h1>Mobile App integration</h1><div class="row"><div class="col-sm-6"><div class="warning" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure, you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="interfaces.html">Licenses and Interfaces</a> chapters. They contain general and vital information, not only about the JSON-API, but also for you, the merchant! Furthermore, also make make sure, whether, or not <a href="psd2.html">PSD2</a> does apply to you!</p>
-</div><p>Payments done via a smartphone through a mobile app, are becoming more and more important.
-Saferpay offers the tools needed to be integrated via a mobile app.
-The following guide is an extension, to the standard integration methods for the <a href="https://saferpay.github.io/sndbx/Integration_trx.html">Transaction interface</a> and <a href="https://saferpay.github.io/sndbx/scd.html#scd-sa">Secure Alias Store</a>.</p><p>The Integration centers around a client-server model (the app being the client), in which a merchant server hosts all the necessary data, to do the requests itself and store any vital data, the app and therefore the customer/card holder, does not need to know.</p></div></div></section><section id="mobile-cardprocess"><h2><a name="mobile-cardprocess"></a>Credit Card Process</h2><div class="row"><div class="col-sm-6"><p>The general process is as follows:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/App-Integration2.png" alt="alt text" title="App-Integration Process"></p><ol>
-<li>The app calls the server to make a payment.</li>
-<li>The Server calls Saferpay, doing either a <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a>, or <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Alias Insert</a>.</li>
-<li>Saferpay responds with a Token and the RedirectUrl.</li>
-<li>The server saves the Token and forwards the RedirectUrl to the app.</li>
-<li>The app opens up a native card-form.</li>
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0;"></span>
+  <p><strong>VERY IMPORTANT:</strong> Before you start integrating this flow, make sure you have read the <a target="_blank" href="index.html">the Introduction</a> and <a target="_blank" href="Interfaces.html">Licenses and Interfaces</a> chapters. Furthermore, also consider whether <a href="psd2.html">PSD2</a> does apply to you.</p>
+</div><p>Payments done via a smartphone through a mobile app are becoming more and more important. Saferpay offers the tools needed to be integrated by a mobile app. The following guide is an extension to the standard integration methods for the <a href="https://saferpay.github.io/sndbx/Integration_trx.html">transaction interface</a> and <a href="https://saferpay.github.io/sndbx/scd.html#scd-sa">Secure Alias Store</a>.</p></div></div></section><section id="mobile-cardprocess"><h2><a name="mobile-cardprocess"></a>Credit Card Process</h2><div class="row"><div class="col-sm-6"><p>General process:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/App-Integration2.png" alt="alt text" title="App-Integration Process"></p><ol>
+<li>The app sends a message to your backend server to make a payment.</li>
+<li>The server calls Saferpay, doing either a <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a>, or <a href="https://saferpay.github.io/jsonapi/index.html##Payment_v1_Alias_Insert">Alias Insert</a>.</li>
+<li>Saferpay responds with a token and the RedirectUrl.</li>
+<li>The server saves the token and forwards the RedirectUrl to the app.</li>
+<li>The app opens up a native card form.</li>
 <li>The card holder enters his card details and submits the form.</li>
-<li>The card details are posted to saferpay directly, using the RedirectUrl as the endpoint.</li>
+<li>The card details are posted to Saferpay directly, using the RedirectUrl as the endpoint.</li>
 <li>Saferpay responds with a new RedirectUrl for 3D Secure and DCC, if applicable.</li>
-<li>The App either opens the Url inside a Webview, or opens the phone browser.</li>
-<li>The user may authenticate him/herself through 3DS and perform DCC.</li>
-<li>Once the external process is completed, the card holder gets redirected to the ReturnUrls</li>
-<li>The App intercepts the Redirect, through the Webview-handler</li>
-<li>The app instead opens up the In-App return-page, while asking the server for the final outcome.</li>
-<li>The Server executes the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize">Authorization</a> and forwards the result to the app.</li>
-<li>The app confirms the recipience, so the server may finalize and <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">capture</a> the payment, while the app either displays a success, or a failure.</li>
+<li>The app either opens the Url inside a WebView, or by using the phone's browser.</li>
+<li>The user may authenticate him-/herself through 3DS and perform DCC.</li>
+<li>Once the external process is completed, the card holder gets redirected to the ReturnUrl</li>
+<li>The app intercepts the redirect through a WebView-handler</li>
+<li>The app opens up the in-app return page instead, while asking the server for the final outcome.</li>
+<li>The server executes the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Authorize">Authorization</a> and forwards the result to the app.</li>
+<li>The app confirms the receipt of the result, so the server may finalize and <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">capture</a> the payment, while the app either displays a success, or a failure message to the customer.</li>
 </ol><div class="danger" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0;"></span>
   <p>
-    <strong>Caution: Do NOT</strong> implement Saferpay directly into your app! While technically possible, this would mean, that you put the authentication credentials (User, Password, or certificate) into the app itself. Those credentials can be extracted and then used for mailicious actions on your account. <strong>ALWAYS</strong> implement Saferpay via this server-client model. 
+    <strong>CAUTION:</strong> Do not implement calls to Saferpay directly in your app! While technically possible, this would mean that you'd store the authentication credentials (user name and password, or certificate) in the app itself. Those credentials can be extracted and then used for mailicious actions on your account. <strong>ALWAYS</strong> implement the server-client model described above. 
   </p>
-</div></div></div></section><section><h2>Request and response of Card-Post</h2><div class="row"><div class="col-sm-6"></div></div></section><section><h3>Request</h3><div class="row"><div class="col-sm-6"><p>The following parameters need to be posted from the app to the RedirectUrl (See step 7):</p><table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th class="text-center">Type</th>
-      <th class="text-center">Usage</th>
-      <th class="text-center">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="width: 15%;">RedirectUrl</td>
-      <td class="text-center" style="width: 10%;">URL</td>
-      <td class="text-center" style="width: 10%;">M</td>
-      <td>The RedirectUrl will be the endpoint, the card details are posted to!</td>     
-    </tr>
-    <tr>
-      <td style="width: 15%;">HolderName</td>
-      <td class="text-center" style="width: 10%;">String</td>
-      <td class="text-center" style="width: 10%;">M</td>
-      <td>Input for the card-holder name.</td>     
-    </tr>
-    <tr>
-      <td style="width: 15%;">CardNumber</td>
-      <td class="text-center" style="width: 10%;">String</td>
-      <td class="text-center" style="width: 10%;">M</td>
-      <td>Input for the card-number (PAN).</td>     
-    </tr>
-    <tr>
-      <td style="width: 15%;">ExpMonth</td>
-      <td class="text-center" style="width: 10%;">String</td>
-      <td class="text-center" style="width: 10%;">M</td>
-      <td>Input for the expiration-month.</td>     
-    </tr>
-    <tr>
-      <td style="width: 15%;">ExpYear</td>
-      <td class="text-center" style="width: 10%;">String</td>
-      <td class="text-center" style="width: 10%;">M</td>
-      <td>Input for the expiration-year.</td>     
-    </tr>
-    <tr>
-      <td style="width: 15%;">VerificationCode</td>
-      <td class="text-center" style="width: 10%;">String</td>
-      <td class="text-center" style="width: 10%;">M</td>
-      <td>Input for the Card Verification Code (CVC).</td>     
-    </tr>
-    <tr>
-      <td style="width: 15%;">FromAjax</td>
-      <td class="text-center" style="width: 10%;">Boolean</td>
-      <td class="text-center" style="width: 10%;">O</td>
-      <td>Must be set to &quot;true&quot;, in order to recieve a JSON-response!</td>     
-    </tr>
-  </tbody>
-</table></div></div></section><section><h3>Response</h3><div class="row"><div class="col-sm-6"><p>The Response will be a JSON-Object.</p><h4>Success-Response in case of an http-200 response:</h4><table class="table table-striped table-hover">
+</div></div></div></section><section><h2>Request and response of Card-Post</h2><div class="row"><div class="col-sm-6"></div></div></section><section><h3>Request</h3><div class="row"><div class="col-sm-6"><p>The following parameters need to be posted from the app to the RedirectUrl (See step 7 above):</p><table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Parameter</th>
@@ -897,10 +842,63 @@ The following guide is an extension, to the standard integration methods for the
       <td style="width: 15%;">RedirectUrl</td>
       <td class="text-center" style="width: 10%;">URL</td>
       <td class="text-center" style="width: 10%;">mandatory</td>
-      <td>RedirectUrl to open up inside a webview!</td>     
+      <td>Endpoint where the card details are posted to</td>     
+    </tr>
+    <tr>
+      <td style="width: 15%;">HolderName</td>
+      <td class="text-center" style="width: 10%;">String</td>
+      <td class="text-center" style="width: 10%;">mandatory</td>
+      <td>Card holder name</td>     
+    </tr>
+    <tr>
+      <td style="width: 15%;">CardNumber</td>
+      <td class="text-center" style="width: 10%;">String</td>
+      <td class="text-center" style="width: 10%;">mandatory</td>
+      <td>Card number (PAN)</td>     
+    </tr>
+    <tr>
+      <td style="width: 15%;">ExpMonth</td>
+      <td class="text-center" style="width: 10%;">String</td>
+      <td class="text-center" style="width: 10%;">mandatory</td>
+      <td>Expiration month</td>     
+    </tr>
+    <tr>
+      <td style="width: 15%;">ExpYear</td>
+      <td class="text-center" style="width: 10%;">String</td>
+      <td class="text-center" style="width: 10%;">mandatory</td>
+      <td>Expiration year</td>     
+    </tr>
+    <tr>
+      <td style="width: 15%;">VerificationCode</td>
+      <td class="text-center" style="width: 10%;">String</td>
+      <td class="text-center" style="width: 10%;">mandatory</td>
+      <td>Card Verification Code (CVC)</td>     
+    </tr>
+    <tr>
+      <td style="width: 15%;">FromAjax</td>
+      <td class="text-center" style="width: 10%;">Boolean</td>
+      <td class="text-center" style="width: 10%;">optional</td>
+      <td>Must be set to &quot;true&quot; in order to receive a JSON response</td>     
     </tr>
   </tbody>
-</table><h4>Error-Response in case of an http-4xx response:</h4><table class="table table-striped table-hover">
+</table></div></div></section><section><h3>Response</h3><div class="row"><div class="col-sm-6"><p>The response will be a JSON object.</p><h4>Success response in case of an http-200 response:</h4><table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th class="text-center">Type</th>
+      <th class="text-center">Usage</th>
+      <th class="text-center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="width: 15%;">RedirectUrl</td>
+      <td class="text-center" style="width: 10%;">URL</td>
+      <td class="text-center" style="width: 10%;">mandatory</td>
+      <td>Url to open up inside a WebView</td>     
+    </tr>
+  </tbody>
+</table><h4>Error response in case of an http-4xx response:</h4><table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Parameter</th>
@@ -914,39 +912,38 @@ The following guide is an extension, to the standard integration methods for the
       <td style="width: 15%;">ErrorName</td>
       <td class="text-center" style="width: 10%;">String</td>
       <td class="text-center" style="width: 10%;">mandatory</td>
-      <td>Description, or ID of the error</td>     
+      <td>Description or ID of the error</td>     
     </tr>
     <tr>
       <td style="width: 15%;">Behavior</td>
       <td class="text-center" style="width: 10%;">String</td>
       <td class="text-center" style="width: 10%;">mandatory</td>
-      <td>Further details on how to proceed (RETRY_LATER, RETRY, ABORT...).</td>     
+      <td>Further details on how to proceed (RETRY_LATER, RETRY, ABORT...)</td>     
     </tr>
     <tr>
       <td style="width: 15%;">ErrorDetail</td>
       <td class="text-center" style="width: 10%;">String</td>
       <td class="text-center" style="width: 10%;">optional</td>
-      <td>Further details on the error itself, if available. For example, if the ErrorName=VALIDATION_FAILED, the ErrorDetail contains a list of the invalid input-fields (&#8220;CardNumber&#8221;, &#8220;ExpYear&#8221;, &#8220;Ex-pMonth&#8221;, etc.)</td>     
+      <td>Further details on the error, if available. For example, if the ErrorName=VALIDATION_FAILED, the ErrorDetail contains a list of the invalid input-fields (&#8220;CardNumber&#8221;, &#8220;ExpYear&#8221;, &#8220;ExpMonth&#8221;, etc.)</td>     
     </tr>
   </tbody>
-</table></div></div></section><section id="mobile-alterprocess"><h2><a name="mobile-alterprocess"></a> 3rd Party Payment Methods</h2><div class="row"><div class="col-sm-6"><p>All 3rd party payment methods are exclusively provided via the <a hre="Integration_PP.html">Payment Page</a>, since they mostly require web-based redirects, to be processed.
-The general process stays the same, however here you have an overview over how this is generally supposed to be done in an app:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/mobile_3rd_party.png" alt="alt text" title="App-Integration Process"></p><ol>
-<li>The app calls the server to make a payment.</li>
-<li>The Server calls Saferpay, doing a <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> request.</li>
-<li>Saferpay responds with a Token and the RedirectUrl.</li>
-<li>The server saves the Token and forwards the RedirectUrl to the app.</li>
-<li>The app opens up the URL in a web-view.</li>
+</table></div></div></section><section id="mobile-alterprocess"><h2><a name="mobile-alterprocess"></a> 3rd Party Payment Methods</h2><div class="row"><div class="col-sm-6"><p>All 3rd party payment methods are exclusively provided via the <a href="Integration_PP.html">Payment Page</a>, since they mostly require web-based redirects to be processed.</p><p>3rd party payment methods process:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/mobile_3rd_party.png" alt="alt text" title="App-Integration Process"></p><ol>
+<li>The app sends a message to your backend server to make a payment.</li>
+<li>The server calls Saferpay, doing a <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">Payment Page Initialize</a> request.</li>
+<li>Saferpay responds with a token and the RedirectUrl.</li>
+<li>The server saves the token and forwards the RedirectUrl to the app.</li>
+<li>The app opens the URL in a WebView.</li>
 <li>The customer performs the payment.</li>
 <li>Afterwards, Saferpay will redirect the customer back to one of the corresponding Return URLs (see #11), while also notifying the server.</li>
-<li>The server executes the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert">Payment Page Assert</a> request, to gather the payment data.</li>
+<li>The server executes the <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Assert">Payment Page Assert</a> request to gather the payment data.</li>
 <li>Saferpay responds with the payment data, which then gets saved on the server.</li>
-<li>The server forwards the result and any additional data to the app</li>
-<li>It may also feasable to intercept the redirect, so the app may berform a web-to-app switch.</li>
-<li>The app displays a success, or failure, while the server finalizes (Capture etc.) the payment.</li>
+<li>The server forwards the result and any additional data to the app.</li>
+<li>It is also possible to intercept the redirect, so the app may perform a web-to-app switch.</li>
+<li>The app displays a success or failure message to the customer, while the server finalizes (Capture etc.) the payment.</li>
 </ol><div class="info" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0;"></span>
   <p>
-    <strong>Important:</strong> An exception from this is the payment method Bancontact, which offers an <a href="bancontact.html#bancontact-directmode">alternative payment process</a>.
+    An exception from this process is Bancontact, which offers an <a href="bancontact.html#bancontact-directmode">alternative payment process</a>.
   </p>
 </div></div></div></section>
 
