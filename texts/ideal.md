@@ -30,6 +30,13 @@ If you are running a time sensitive process, that requires your session to be lo
 
 Furthermore, we highly recommend [using the NotifyUrl for the Saferpay Payment Page](https://saferpay.github.io/sndbx/Integration_PP.html#pp-initialize), which will be called, once Saferpay gets a successful response from iDeal. This way your shop does get the necessary information in case of a success, even after 12 hours, and can initiate further processing.
 
+</div>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>VERY IMPORTANT:</strong> In the case, that Saferpay does not recieve a response in due time, saferpay will display a failure-message and will redirect the customer to the FailUrl! You can then call the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, to get the result. Should this transaction be pending, due to a prolonged processing, Saferpay will throw a "TRANSACTION_IN_WRONG_STATE" - "Transaction still in progress or abandoned by the payer." error message, indicating, that the processing is still ongoing! The NotifyUrl (see above) will then notify you about a successful payment, if possible and you can then use the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a> as usual, to get the transaction details!</p>
+</div>
+
+
 ## <a name="ideal-pre"></a> Bank Pre-Selection
 
 You may want to implement the Bank selection for iDeal payments into your shop, or just pre-select the bank for your customer, so they do not have to. Saferpay offers an option to skip the selection page and jump right to your customer's online banking site, so he/she may perform the payment.
