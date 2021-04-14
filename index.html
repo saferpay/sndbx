@@ -857,7 +857,10 @@ Like the name suggests, the liability gets shiftet!
 Shifted from the merchant, to the bank. So in case of fraud, the chargeback gets completely carried by the issuer.
 The card holder will get his money back, <strong>BUT</strong>, unlike before, the merchant can keep the charged money. The risk and the cost is carried by the issuer in this case, negating the costs on the merchant side.</li>
 </ol></div></div></section><section><h3>3-D Secure on API-Level</h3><div class="row"><div class="col-sm-6"><p>The Saferpay JSON-API does return all necessary information inside the Liability-Container, when using <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>.
-The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>. Furthermore <strong>LiableEntity</strong> will provide information about who will be liable in case of fraud.</p><div class="warning" style="min-height: 75px;">
+The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>. Furthermore <strong>LiableEntity</strong> will provide information about who will be liable in case of fraud.</p><div class="info" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>Tip:</strong> If you want to always do a Challanged Flow, you can set <strong>Authentication.ThreeDsChallenge</strong> to <strong>FORCE</strong>. Saferpay will then always do a Challenged Flow!</p>
+</div><div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> Only the <a href="Integration_trx.html">Transaction interface</a> and <a href="Integration_PP.html">Payment Page</a> processes do support 3-D Secure! Please keep that in mind, when implementing Saferpay!</p>
 </div><div class="info" style="min-height: 75px;">
