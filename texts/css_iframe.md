@@ -4,11 +4,11 @@ The Saferpay Payment Page, the transaction interface and Secure Card Data offer 
 
 ## <a name="css-iframe"></a> iframe Integration
 
-iframe integration is supported for these methods:
+iframe integration is supported for these methods/flows:
 
-+ [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize)
-+ [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize)
-+ [Alias Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert)
++ [PaymentPage Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize)/[Payment Page](Integration_PP.html)
++ [Transaction Initialize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize)/[Transaction Interface](Integration_trx.html)
++ [Alias Insert](https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert)/[Standalone Secure Card Data Registration](scd.html#scd-sa)
 
 The response message includes a respective **RedirectURL**, if successful executed. This URL needs to be embedded in the iframe.
 
