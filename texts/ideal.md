@@ -110,10 +110,6 @@ In order to pre-select the bank, you have to set the parameter <strong>PaymentMe
       <td class="text-center">KNABNL2H</td>
     </tr>
     <tr>
-      <td>Moneyou <br /> <strong>Will be removed at May 3rd 2021!</strong></td>
-      <td class="text-center">MOYONL21</td>
-    </tr>
-    <tr>
       <td>Rabobank</td>
       <td class="text-center">RABONL2U</td>
     </tr>
