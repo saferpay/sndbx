@@ -823,15 +823,15 @@
   <p><strong>Warning:</strong> Apple Pay does not support iFrame Integration.</p>
 </div></div></div></section><section id="apple-activation"><h2><a name="apple-activation"></a> Activation</h2><div class="row"><div class="col-sm-6"><p>The activation of Apple Pay for your Saferpay account, be it live, or on the test-environment, requires next to no effort and can be done in a matter of seconds:</p><ol>
 <li>First step is to <strong>log into the Saferpay Backoffice</strong>, there you have to navigate to the <strong>Settings</strong> tab and click on <strong>Payment Means / Terminals</strong>.
-<br>![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Apple PayBO1.png &quot;Apple Pay inside the Saferpay Backoffice&quot;)</li>
+<br><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/Apple PayBO1.png" alt="Apple Pay inside the Saferpay Backoffice"></li>
 <li>Next, select the e-Commerce, or Secure PayGate terminal on which you want to activate Apple Pay.</li>
 <li>Navigate to the <strong>Wallets</strong> section, there you will find Apple Pay.</li>
 <li>Click on the <strong>Activate</strong> Button.
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Apple PayBO2.png &quot;Apple Pay inside the Saferpay Backoffice&quot;)</li>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/Apple PayBO2.png" alt="Apple Pay inside the Saferpay Backoffice"></li>
 <li>You will be prompted with another window, which asks you to accept the Terms and Conditions from Apple. Mark the checkbox and click <strong>Activate</strong>.
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Apple PayBO3.png &quot;Apple Pay inside the Saferpay Backoffice&quot;)</li>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/Apple PayBO3.png" alt="Apple Pay inside the Saferpay Backoffice"></li>
 <li>And you are done! Apple Pay is now available for you on your Saferpay Terminal.
-![alt text](https://raw.githubusercontent.com/saferpay/sndbx/master/images/Apple PayBO4.png &quot;Apple Pay inside the Saferpay Backoffice&quot;)</li>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/Apple PayBO4.png" alt="Apple Pay inside the Saferpay Backoffice"></li>
 </ol></div></div></section><section id="apple-redirect"><h2><a name="apple-redirect"></a> Direct redirect</h2><div class="row"><div class="col-sm-6"><p>If you want to perform a direct redirect to Apple Pay, you have to use the parameter <strong>Wallets</strong> within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize request</a>!</p><p><strong>Example Request:</strong></p><pre><code class="language-json">{
     &quot;RequestHeader&quot;: {
         &quot;SpecVersion&quot;: &quot;[CURRENT SPECVERSION]&quot;,
