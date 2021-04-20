@@ -39,7 +39,7 @@ The activation of Apple Pay for your Saferpay account, be it live, or on the tes
 3. Navigate to the **Wallets** section, there you will find Apple Pay.
 4. Click on the <strong>Activate</strong> Button.
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO2.png" alt="Apple Pay inside the Saferpay Backoffice">
-5. You will be prompted with another window, which asks you to accept the Terms and Conditions from Apple. Mark the checkbox and click **Activate**.
+5. You will be prompted with another window, which asks you to accept the Terms and Conditions from Apple. Mark the checkbox and click <strong>Activate</strong>.
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO3.png" alt="Apple Pay inside the Saferpay Backoffice">
 6. And you are done! Apple Pay is now available for you on your Saferpay Terminal.
 <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/applepayBO4.png" alt="Apple Pay inside the Saferpay Backoffice">
