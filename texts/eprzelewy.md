@@ -17,3 +17,8 @@ The handling of ePrzelewy payments with Saferpay requires:
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0;"></span>
   <p>For ePrzelewy activation on the Saferpay terminal, please inform our activation service <a href="mailto:cs.ecom@six-payment-services.com"><strong>cs.ecom@six-payment-services.com</strong></a> about your pRzelewy merchant account ID and the desired currency.</p>
 </div>
+
+
+## <a name="przelewy-restrict"></a> Restrictions
+
++ As of now, ePrzelewy transactions do not allow for a <a href="index.html#capture">Capture</a> with a changing amount! Please make sure, to always capture the exact amount, that has been initially authorized!
