@@ -405,7 +405,8 @@
   "Source": "texts/eprzelewy.md",
   "Target": "eprzelewy.md.html",
   "Subsites": [
-      { "Source": "texts/eprzelewy.md", "Title": "Requirements", "Target": "eprzelewy.html#przelewy-requirement" }
+      { "Source": "texts/eprzelewy.md", "Title": "Requirements", "Target": "eprzelewy.html#przelewy-requirement" },
+      { "Source": "texts/eprzelewy.md", "Title": "Restrictions", "Target": "eprzelewy.html#przelewy-restrict" }
     ] 
    },
    {
