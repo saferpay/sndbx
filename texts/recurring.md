@@ -33,6 +33,7 @@ Recurring payments are supported by the following payment means:
 *	Diners Club
 *	Discover
 *	JCB
+*	Twint (SCD method only)
 *	Maestro International (SCD method only)
 *	MasterCard
 *	Myone
