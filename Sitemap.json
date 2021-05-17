@@ -365,7 +365,8 @@
   "Target": "eps.html",
   "Subsites": [
       { "Source": "texts/eps.md", "Title": "Requirements", "Target": "eps#eps-requirement" },
-      { "Source": "texts/eps.md", "Title": "How toget an EPS acceptance agreement", "Target": "eps#eps-newproject" }
+      { "Source": "texts/eps.md", "Title": "How toget an EPS acceptance agreement", "Target": "eps#eps-newproject" },
+      { "Source": "texts/eps.md", "Title": "Refunds", "Target": "eps#eps-refunds" }
     ] 
    }, 
     {
