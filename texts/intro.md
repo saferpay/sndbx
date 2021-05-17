@@ -114,7 +114,7 @@ The card holder will get his money back, **BUT**, unlike before, the merchant ca
 ### 3-D Secure on API-Level
 
 The Saferpay JSON-API does return all necessary information inside the Liability-Container, when using [Transaction Authorize](https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize) or [PaymentPage Assert](https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert).
-The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>. Furthermore <strong>LiableEntity</strong> will provide information about who will be liable in case of fraud.
+The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>. Furthermore <strong>LiableEntity</strong> will provide information about who will be liable in case of fraud, while <strong>Version</strong> will tell you the used 3D Secure protocoll (Sub-Versions are not conveyed!) and, in case of protocol-version 2, <strong>AuthenticationType</strong> will tell you whether the card holder went through a <strong>Frictionless</strong> or <strong>Challenged</strong> flow.
 
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
@@ -133,14 +133,17 @@ The important parameters are <strong>Authenticated</strong> and especially <stro
 
 ```json
 "Liability": {
+  "LiabilityShift": true,
+  "LiableEntity": "THREEDS",
+  "ThreeDs": {
+    "Authenticated": true,
     "LiabilityShift": true,
-    "LiableEntity": "ThreeDs",
-    "ThreeDs": {
-      "Authenticated": true,
-      "LiabilityShift": true,
-      "Xid": "63b1c8e6-2f51-4bb8-bd7b-32bb107f9d1b"
-    }
-  }
+    "Xid": "4ca1a5e4-f9fc-4081-873f-f02e30547c81",
+    "Version": "2",
+    "AuthenticationType": "FRICTIONLESS"
+  },
+  "InPsd2Scope": "NO"
+}
 ```
 
 It depends on the merchant, how to proceed further, however Saferpay does recommend the following behaviors:
