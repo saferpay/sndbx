@@ -9,6 +9,7 @@ The handling of Crypto currencies with Saferpay requires:
 * Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.
 * Contract?
 * Any payout of transactions made via crypto currencies, will happen in CHF only! Any other currency, or payout to a crypto currency wallet, is not supported!
+* API SpecVersion 1.22
 
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
