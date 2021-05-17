@@ -1110,7 +1110,12 @@ Some are provided automatically by Saferpay, while others need to be submitted b
     &quot;PasswordLastChangeDate&quot;: &quot;2019-12-23T16:36:43Z&quot;
   }
 }
-</code></pre></div></div></section><section id="fire-rules"><h2><a name="fire-rules"></a> Rules</h2><div class="row"><div class="col-sm-6"><p>Aside its AI algorithms, Fraugster also offers the option for merchants, to write their own set of rules, which are then incorporated into the evaluation process. For this purpose, Fraugster offers its own portal (the <a href="https://dashboard.fraugsterapi.com/">Fraugster Dashboard</a>) where merchants can adapt the rules to fit their needs.</p><p>Documentation on how to create and manage custom rules can be found in the <a href="https://dashboard.fraugsterapi.com/docs/index.html">Fraugster User Guide</a> (you need to log in to the Fraugster Dashboard with your own credentials you received after signing the contract for Saferpay Fraud Intelligence).</p></div></div></section><section id="fire-responses"><h2><a name="fire-responses"></a> Responses</h2><div class="row"><div class="col-sm-6"></div></div></section><section><h3>Success</h3><div class="row"><div class="col-sm-6"><p>In case of a success, the transaction response will also carry additional information inside the <strong>FraudPrevention.Result</strong> parameter. This can have one of two values: <strong>APPROVED</strong> and <strong>MANUAL_REVIEW</strong>.</p><p>In both cases, the transaction was indeed successful. However, the latter indicates that there may be issues with this transaction, which need to be reviewed manually, inside the <a href="https://dashboard.fraugsterapi.com/">Fraugster Dashboard</a>.</p><p>It is then up to you, the merchant, to either accept or decline this transaction.</p><pre><code class="language-json"> &quot;ResponseHeader&quot;: {
+</code></pre></div></div></section><section id="fire-rules"><h2><a name="fire-rules"></a> Rules</h2><div class="row"><div class="col-sm-6"><p>Aside its AI algorithms, Fraugster also offers the option for merchants, to write their own set of rules, which are then incorporated into the evaluation process. For this purpose, Fraugster offers its own portal (the <a href="https://dashboard.fraugsterapi.com/">Fraugster Dashboard</a>) where merchants can adapt the rules to fit their needs.</p><p>Documentation on how to create and manage custom rules can be found in the <a href="https://dashboard.fraugsterapi.com/docs/index.html">Fraugster User Guide</a> (you need to log in to the Fraugster Dashboard with your own credentials you received after signing the contract for Saferpay Fraud Intelligence).</p><h4>Transaction Risk Analysis</h4><p>Additionally to applying normal anti-fraud rules, the Fraud Intelligence service is also capable of automatically applying the <strong>TRANSACTION_RISK_ANALYSIS</strong> SCA exemption in compliance with the <a href="psd2.html#psd2-exemptions">PSD2 law</a>. If a transaction is deemed a low fraud risk, this exemption can be applied automatically, in order to avoid the need of <strong>Strong Consumer Authentication</strong>.</p><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Please read the <a href="psd2.html#psd2-exemptions">PSD2 chapter</a> carefully, if you are interested in applying the TRA-exemption!
+  </p>
+</div></div></div></section><section id="fire-responses"><h2><a name="fire-responses"></a> Responses</h2><div class="row"><div class="col-sm-6"></div></div></section><section><h3>Success</h3><div class="row"><div class="col-sm-6"><p>In case of a success, the transaction response will also carry additional information inside the <strong>FraudPrevention.Result</strong> parameter. This can have one of two values: <strong>APPROVED</strong> and <strong>MANUAL_REVIEW</strong>.</p><p>In both cases, the transaction was indeed successful. However, the latter indicates that there may be issues with this transaction, which need to be reviewed manually, inside the <a href="https://dashboard.fraugsterapi.com/">Fraugster Dashboard</a>.</p><p>It is then up to you, the merchant, to either accept or decline this transaction.</p><pre><code class="language-json"> &quot;ResponseHeader&quot;: {
     &quot;SpecVersion&quot;: &quot;[current Spec-Version]&quot;,
     &quot;RequestId&quot;: &quot;[your request id]&quot;
   },
@@ -1160,10 +1165,14 @@ Some are provided automatically by Saferpay, while others need to be submitted b
     &quot;Result&quot;: &quot;MANUAL_REVIEW&quot;
   }
 }
-</code></pre></div></div></section><section><h3>Failure</h3><div class="row"><div class="col-sm-6"><p>In case of a decline, Saferpay will throw a appropriate error.</p><pre><code class="language-json">{
+</code></pre></div></div></section><section><h3>Failure</h3><div class="row"><div class="col-sm-6"><p>In case of a decline, Saferpay will throw a appropriate error, also caontaining the reason.</p><pre><code class="language-json">{
     &quot;ResponseHeader&quot;: {
         &quot;SpecVersion&quot;: &quot;&lt;current spec-version&gt;&quot;,
         &quot;RequestId&quot;: &quot;1&quot;
+    },
+    &quot;Risk&quot;: {
+        &quot;BlockReason&quot;: &quot;BLACKLIST_IP&quot;,
+        &quot;IpLocation&quot;: &quot;CH&quot;
     },
     &quot;Behavior&quot;: &quot;ABORT&quot;,
     &quot;ErrorName&quot;: &quot;BLOCKED_BY_RISK_MANAGEMENT&quot;,
