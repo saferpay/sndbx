@@ -720,7 +720,20 @@ Saferpay supports a variety of payment methods, including 3rd party providers su
       <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
-    </tr> 
+    </tr>
+    <tr>
+      <td>Crypto Currencies</td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+      <td class="text-center"><span class="glyphicon glyphicon-remove" style="color: #ff0000"></span></td>
+    </tr>
   </tbody>
 </table>
 
