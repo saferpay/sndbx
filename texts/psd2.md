@@ -129,12 +129,6 @@ SCA Exemptions are certain cases, where SCA either doesn't havve to be applied, 
 Transactions in these cases must be flagged accordingly, or they may be refused. Also, in any case, the merchant would perform transactions against the PSD2!
 The Exemption value may be submitted via the <strong>Authentication.Exemption</strong> parameter, within the respective initial request (see flows and requests column).
 
-<div class="warning" style="min-height: 75px;">
-  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
-  <p>
-    <strong>Important:</strong> The issuing bank always has the right to reject a transaction and ask for a full transaction, with SCA! This also applies to Recurring Transactions! In these cases, the transaction will run into a <strong>Soft decline (see below).</strong>
-  </p>
-</div>
 <div class="danger" style="min-height: 75px;">
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
@@ -152,6 +146,12 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
   <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
     <strong>Warning:</strong> When an exemption is applied, no Liabilityshift through 3D Secure is given! You, the merchant, will thus take full responsibility, in case of fraud!
+  </p>
+</div>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> The issuing bank always has the right to reject a transaction and ask for a full transaction, with SCA! This also applies to Recurring Transactions! In these cases, the transaction will run into a <strong>Soft decline (see below).</strong>
   </p>
 </div>
 
