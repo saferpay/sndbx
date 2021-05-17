@@ -859,7 +859,7 @@ Like the name suggests, the liability gets shiftet!
 Shifted from the merchant, to the bank. So in case of fraud, the chargeback gets completely carried by the issuer.
 The card holder will get his money back, <strong>BUT</strong>, unlike before, the merchant can keep the charged money. The risk and the cost is carried by the issuer in this case, negating the costs on the merchant side.</li>
 </ol></div></div></section><section><h3>3-D Secure on API-Level</h3><div class="row"><div class="col-sm-6"><p>The Saferpay JSON-API does return all necessary information inside the Liability-Container, when using <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> or <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">PaymentPage Assert</a>.
-The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>. Furthermore <strong>LiableEntity</strong> will provide information about who will be liable in case of fraud.</p><div class="info" style="min-height: 75px;">
+The important parameters are <strong>Authenticated</strong> and especially <strong>LiabilityShift</strong>. Furthermore <strong>LiableEntity</strong> will provide information about who will be liable in case of fraud, while <strong>Version</strong> will tell you the used 3D Secure protocoll (Sub-Versions are not conveyed!) and, in case of protocol-version 2, <strong>AuthenticationType</strong> will tell you whether the card holder went through a <strong>Frictionless</strong> or <strong>Challenged</strong> flow.</p><div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Tip:</strong> If you want to always do a Challanged Flow, you can set <strong>Authentication.ThreeDsChallenge</strong> to <strong>FORCE</strong>. Saferpay will then always do a Challenged Flow!</p>
 </div><div class="warning" style="min-height: 75px;">
@@ -869,14 +869,17 @@ The important parameters are <strong>Authenticated</strong> and especially <stro
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Attention:</strong> With 3DSv2 the XID value format changes (see respective request specification and below), while the VerificationValue is no longer returned!</p>
 </div><pre><code class="language-json">&quot;Liability&quot;: {
+  &quot;LiabilityShift&quot;: true,
+  &quot;LiableEntity&quot;: &quot;THREEDS&quot;,
+  &quot;ThreeDs&quot;: {
+    &quot;Authenticated&quot;: true,
     &quot;LiabilityShift&quot;: true,
-    &quot;LiableEntity&quot;: &quot;ThreeDs&quot;,
-    &quot;ThreeDs&quot;: {
-      &quot;Authenticated&quot;: true,
-      &quot;LiabilityShift&quot;: true,
-      &quot;Xid&quot;: &quot;63b1c8e6-2f51-4bb8-bd7b-32bb107f9d1b&quot;
-    }
-  }
+    &quot;Xid&quot;: &quot;4ca1a5e4-f9fc-4081-873f-f02e30547c81&quot;,
+    &quot;Version&quot;: &quot;2&quot;,
+    &quot;AuthenticationType&quot;: &quot;FRICTIONLESS&quot;
+  },
+  &quot;InPsd2Scope&quot;: &quot;NO&quot;
+}
 </code></pre><p>It depends on the merchant, how to proceed further, however Saferpay does recommend the following behaviors:</p><div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
