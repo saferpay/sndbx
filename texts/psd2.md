@@ -178,11 +178,11 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
     <tr>
      <td class="text-center"><strong>Authentication.Exemption: "TRANSACTION_RISK_ANALYSIS"</strong></td>
      <td>
-       External Fraud Risk Analysis has been done and the transaction has been deemed at low risk.
+       External Fraud Risk Analysis has been done and the transaction has been deemed at low risk.</ br>
        <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Tip:</strong> Interested in using such a tool? Saferpay <a href="fraugster.html">Fraud Intelligence</a> offers the possibility of automatically analyzing transactions and applying the TRA exemption for you, if applicable!</a>
+    <strong>Tip:</strong> Interested in using such a tool? <a href="fraugster.html">Saferpay Fraud Intelligence</a> offers the possibility of automatically analyzing transactions and applying the TRA exemption for you, if applicable!</a>
   </p>
 </div>
      </td>
