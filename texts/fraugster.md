@@ -348,6 +348,17 @@ Aside its AI algorithms, Fraugster also offers the option for merchants, to writ
 
 Documentation on how to create and manage custom rules can be found in the <a href="https://dashboard.fraugsterapi.com/docs/index.html">Fraugster User Guide</a> (you need to log in to the Fraugster Dashboard with your own credentials you received after signing the contract for Saferpay Fraud Intelligence).
 
+#### Transaction Risk Analysis
+
+Additionally to applying normal anti-fraud rules, the Fraud Intelligence service is also capable of automatically applying the **TRANSACTION_RISK_ANALYSIS** SCA exemption in compliance with the <a href="psd2.html#psd2-exemptions">PSD2 law</a>. If a transaction is deemed a low fraud risk, this exemption can be applied automatically, in order to avoid the need of **Strong Consumer Authentication**.
+
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Please read the <a href="psd2.html#psd2-exemptions">PSD2 chapter</a> carefully, if you are interested in applying the TRA-exemption!</strong>
+  </p>
+</div>
+
 ## <a name="fire-responses"></a> Responses
 
 ### Success
@@ -413,13 +424,17 @@ It is then up to you, the merchant, to either accept or decline this transaction
 
 ### Failure
 
-In case of a decline, Saferpay will throw a appropriate error.
+In case of a decline, Saferpay will throw a appropriate error, also caontaining the reason.
 
 ```json
 {
     "ResponseHeader": {
         "SpecVersion": "<current spec-version>",
         "RequestId": "1"
+    },
+    "Risk": {
+        "BlockReason": "BLACKLIST_IP",
+        "IpLocation": "CH"
     },
     "Behavior": "ABORT",
     "ErrorName": "BLOCKED_BY_RISK_MANAGEMENT",
