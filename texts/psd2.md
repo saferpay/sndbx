@@ -78,7 +78,7 @@ This information is then returned to you via the API, through the **Liability.In
       "Version": "2",
       "AuthenticationType": "FRICTIONLESS"
     },
-    "InPsd2Scope": "NO"
+    "InPsd2Scope": "YES"
   }
 }
 ```
