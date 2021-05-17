@@ -11,6 +11,78 @@ Important to know is, that PSD2 is valid for all countries inside the EEA (Europ
 
 However should PSD2 not apply to you, then you do not have to follow the rules for SCA. Even though we highly recommend doing 3D Secure, since it is also an anti-fraud measure, you can request an exemption, to avoid 3DS (see further below).
 
+### API-response
+
+Saferpay also tries to determine, whether or not a transaction has been inside the PSD2 scope.
+This information is then returned to you via the API, through the **Liability.InPsd2Scope** parameter.
+
+#### Example
+
+```json 
+{
+  "ResponseHeader": {
+    "SpecVersion": "[current Spec-Version]",
+    "RequestId": "[unique request id]"
+  },
+  "Transaction": {
+    "Type": "PAYMENT",
+    "Status": "AUTHORIZED",
+    "Id": "f3QnO7bxCnY1vAlOvvr5A4z9IphA",
+    "Date": "2021-05-17T13:05:49.920+02:00",
+    "Amount": {
+      "Value": "245",
+      "CurrencyCode": "EUR"
+    },
+    "OrderId": "0",
+    "AcquirerName": "MasterCard Saferpay Test",
+    "AcquirerReference": "05945355638",
+    "SixTransactionReference": "0:0:3:f3QnO7bxCnY1vAlOvvr5A4z9IphA",
+    "ApprovalCode": "292749",
+    "IssuerReference": {
+      "TransactionStamp": "767980829703",
+      "SettlementDate": "0517"
+    }
+  },
+  "PaymentMeans": {
+    "Brand": {
+      "PaymentMethod": "MASTERCARD",
+      "Name": "MasterCard"
+    },
+    "DisplayText": "xxxx xxxx xxxx 0006",
+    "Card": {
+      "MaskedNumber": "xxxxxxxxxxxx0006",
+      "ExpYear": 2021,
+      "ExpMonth": 5,
+      "HolderName": "John Doe",
+      "CountryCode": "US",
+      "HashValue": "0DBC2E4EB492F7AB4122602B46D60D89DEF51C8C"
+    }
+  },
+  "Payer": {
+    "IpAddress": "87.123.201.46",
+    "IpLocation": "DE",
+    "BillingAddress": {
+      "FirstName": "John",
+      "LastName": "Doe",
+      "CountryCode": "de",
+      "Email": "john.doe@provider.com"
+    }
+  },
+  "Liability": {
+    "LiabilityShift": true,
+    "LiableEntity": "THREEDS",
+    "ThreeDs": {
+      "Authenticated": true,
+      "LiabilityShift": true,
+      "Xid": "4ca1a5e4-f9fc-4081-873f-f02e30547c81",
+      "Version": "2",
+      "AuthenticationType": "FRICTIONLESS"
+    },
+    "InPsd2Scope": "NO"
+  }
+}
+```
+
 ## <a name="psd2-when"></a> When to do SCA?
 
 As a rule of thumb, ask yourself the following question: 
@@ -208,6 +280,142 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
     </tr>
   </tbody>
 </table>
+
+## <a name="psd2-special"></a> Special Cases
+
+
+While Saferpay aims to make handling these cases as trivial, as possible, there are certain special cases, that deviate from the usual flows and integrations.
+
+### Transferring SCA from and to Saferpay
+
+<div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+    <p>
+      <strong>CAUTION:</strong> This flow is only possible, if you are fully PCI certified!
+    </p>
+</div>
+
+In certain cases, it may be necessary to perform SCA through a system, that is not connected to Saferpay, or transfer existing SCA-data to an external system. While Saferpay **does not support the inclusion of external 3D Secure-systems**, it does support the transfer of the transaction stamp, once an authorization has been made with SCA. So please keep that in mind, since these two are not the same. The transaction-stamp is only returned by the bank on a successful authrorization of a card!
+
+
+
+### SCA transfer to Saferpay
+
+The transfer of SCA-data to Saferpay is currently only supported, while doing MIT transactions, using <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a> and a direct post of the card-data (**note the PCI-warning above!**). In order to reference the SCA-data, one must also submit the parameters **Authentication.IssuerReference.TransactionStamp** and **Authentication.IssuerReference.SettlementDate** (if applicable), alsongside the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a> request:
+
+#### Example
+
+```json 
+{
+  "RequestHeader": {
+    "SpecVersion": "[current Spec-Version]",
+    "CustomerId": "[your customer id]",
+    "RequestId": "[unique request id]",
+    "RetryIndicator": 0
+  },
+  "TerminalId": "[your terminal id]",
+  "Payment": {
+    "Amount": {
+      "Value": "100",
+      "CurrencyCode": "CHF"
+    },
+    "Description": "Test123",
+    "PayerNote": "Order123_Testshop"
+  },
+  "PaymentMeans": {
+    "Card": {
+      "Number": "912345678901234",
+      "ExpYear": 2015,
+      "ExpMonth": 9,
+      "HolderName": "Max Mustermann",
+      "VerificationCode": "123"
+    }
+  },
+  "Authentication": {
+    "IssuerReference": {
+      "TransactionStamp": "767980829703",
+      "SettlementDate": "0517"
+    }
+  }
+}
+```
+
+### SCA transfer from Saferpay
+
+Likewise, whenever a transaction is done with SCA, Saferpay will return these values, alongside the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> authorization responses, inside the **Transaction.IssuerReference** container.
+
+#### Example
+
+```json 
+{
+  "ResponseHeader": {
+    "SpecVersion": "[current Spec-Version]",
+    "RequestId": "[unique request id]"
+  },
+  "Transaction": {
+    "Type": "PAYMENT",
+    "Status": "AUTHORIZED",
+    "Id": "f3QnO7bxCnY1vAlOvvr5A4z9IphA",
+    "Date": "2021-05-17T13:05:49.920+02:00",
+    "Amount": {
+      "Value": "245",
+      "CurrencyCode": "EUR"
+    },
+    "OrderId": "0",
+    "AcquirerName": "MasterCard Saferpay Test",
+    "AcquirerReference": "05945355638",
+    "SixTransactionReference": "0:0:3:f3QnO7bxCnY1vAlOvvr5A4z9IphA",
+    "ApprovalCode": "292749",
+    "IssuerReference": {
+      "TransactionStamp": "767980829703",
+      "SettlementDate": "0517"
+    }
+  },
+  "PaymentMeans": {
+    "Brand": {
+      "PaymentMethod": "MASTERCARD",
+      "Name": "MasterCard"
+    },
+    "DisplayText": "xxxx xxxx xxxx 0006",
+    "Card": {
+      "MaskedNumber": "xxxxxxxxxxxx0006",
+      "ExpYear": 2021,
+      "ExpMonth": 5,
+      "HolderName": "John Doe",
+      "CountryCode": "US",
+      "HashValue": "0DBC2E4EB492F7AB4122602B46D60D89DEF51C8C"
+    }
+  },
+  "Payer": {
+    "IpAddress": "87.123.201.46",
+    "IpLocation": "DE",
+    "BillingAddress": {
+      "FirstName": "John",
+      "LastName": "Doe",
+      "CountryCode": "de",
+      "Email": "john.doe@provider.com"
+    }
+  },
+  "Liability": {
+    "LiabilityShift": true,
+    "LiableEntity": "ThreeDs",
+    "ThreeDs": {
+      "Authenticated": true,
+      "LiabilityShift": true,
+      "Xid": "c54a264e-dae2-45ad-b784-3eaa6be6956c"
+    }
+  }
+}
+```
+
+These values then can be transferred to the external system.
+
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Not all external systems may support this feature!</strong>
+  </p>
+</div>
 
 ## <a name="psd2-decline"></a> Non Compliance
 
