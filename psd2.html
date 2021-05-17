@@ -809,7 +809,70 @@
 <section><h1>PSD2</h1><div class="row"><div class="col-sm-6"><p>With the introduction of PSD2 within the EU, the ruleset for doing card transactions, has been changed in many ways.
 Specifically the need for <strong>S</strong>trong <strong>C</strong>onsumer <strong>A</strong>uthentication needs special attention from merchants.
 This chapter will contain important information on PSD2 and SCA specifically.</p></div></div></section><section id="psd2-apply"><h2><a name="psd2-apply"></a> Does PSD2 apply to me?</h2><div class="row"><div class="col-sm-6"><p>The first step, is to figure out, if PSD2 applies to you -the merchant- in the first place.
-Important to know is, that PSD2 is valid for all countries inside the EEA (European Economic Area), which is <strong>NOT the same as the European Union!</strong> However the important part is, where you have signed your acquiring contract! When signing a card acceptance contract with an Acquirer, you have to pay attention to the country in which the contract is signed! Should this country be inside the EEA, then PSD2 does apply to you! <strong>This is also applies, if you -the merchant- have your company headquarters outside the EEA!</strong></p><p>However should PSD2 not apply to you, then you do not have to follow the rules for SCA. Even though we highly recommend doing 3D Secure, since it is also an anti-fraud measure, you can request an exemption, to avoid 3DS (see further below).</p></div></div></section><section id="psd2-when"><h2><a name="psd2-when"></a> When to do SCA?</h2><div class="row"><div class="col-sm-6"><p>As a rule of thumb, ask yourself the following question:</p><p><strong>Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: SCA hast to be performed, in any case!</strong></p><p>This also applies to card registrations, if the card holder is not present during the next, real, transaction!</p><p>Also make sure, that you use a flow, that can do SCA -in form of <a href="/sndbx/#3ds">3D Secure</a>- in the first Place! Be it the <a href="Integration_PP.html">Payment Page</a> or the <a href="Integration_trx.html">Transaction Interface</a>. Saferpay will always attempt 3D Secure and thus SCA!</p><p><strong>Your acquiring contract also has to support 3D Secure!</strong> However most acquirers do not offer contracts without 3D Secure in the first place, without being explicitly asked for one. When in doubt: Ask your acquirer, if your contract is set up for 3D Secure, or not!</p></div></div></section><section id="psd2-overview"><h2><a name="psd2-overview"></a> Overview</h2><div class="row"><div class="col-sm-6"><p>PSD2 is very complex. So to give you an overview of what flows need and what do not need SCA, please refer to the following tables:</p></div></div></section><section><h3>Transactions and flows, that DO need SCA</h3><div class="row"><div class="col-sm-6"><table class="table table-striped table-hover">
+Important to know is, that PSD2 is valid for all countries inside the EEA (European Economic Area), which is <strong>NOT the same as the European Union!</strong> However the important part is, where you have signed your acquiring contract! When signing a card acceptance contract with an Acquirer, you have to pay attention to the country in which the contract is signed! Should this country be inside the EEA, then PSD2 does apply to you! <strong>This is also applies, if you -the merchant- have your company headquarters outside the EEA!</strong></p><p>However should PSD2 not apply to you, then you do not have to follow the rules for SCA. Even though we highly recommend doing 3D Secure, since it is also an anti-fraud measure, you can request an exemption, to avoid 3DS (see further below).</p></div></div></section><section><h3>API-response</h3><div class="row"><div class="col-sm-6"><p>Saferpay also tries to determine, whether or not a transaction has been inside the PSD2 scope.
+This information is then returned to you via the API, through the <strong>Liability.InPsd2Scope</strong> parameter.</p><h4>Example</h4><pre><code class="language-json">{
+  &quot;ResponseHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;[current Spec-Version]&quot;,
+    &quot;RequestId&quot;: &quot;[unique request id]&quot;
+  },
+  &quot;Transaction&quot;: {
+    &quot;Type&quot;: &quot;PAYMENT&quot;,
+    &quot;Status&quot;: &quot;AUTHORIZED&quot;,
+    &quot;Id&quot;: &quot;f3QnO7bxCnY1vAlOvvr5A4z9IphA&quot;,
+    &quot;Date&quot;: &quot;2021-05-17T13:05:49.920+02:00&quot;,
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: &quot;245&quot;,
+      &quot;CurrencyCode&quot;: &quot;EUR&quot;
+    },
+    &quot;OrderId&quot;: &quot;0&quot;,
+    &quot;AcquirerName&quot;: &quot;MasterCard Saferpay Test&quot;,
+    &quot;AcquirerReference&quot;: &quot;05945355638&quot;,
+    &quot;SixTransactionReference&quot;: &quot;0:0:3:f3QnO7bxCnY1vAlOvvr5A4z9IphA&quot;,
+    &quot;ApprovalCode&quot;: &quot;292749&quot;,
+    &quot;IssuerReference&quot;: {
+      &quot;TransactionStamp&quot;: &quot;767980829703&quot;,
+      &quot;SettlementDate&quot;: &quot;0517&quot;
+    }
+  },
+  &quot;PaymentMeans&quot;: {
+    &quot;Brand&quot;: {
+      &quot;PaymentMethod&quot;: &quot;MASTERCARD&quot;,
+      &quot;Name&quot;: &quot;MasterCard&quot;
+    },
+    &quot;DisplayText&quot;: &quot;xxxx xxxx xxxx 0006&quot;,
+    &quot;Card&quot;: {
+      &quot;MaskedNumber&quot;: &quot;xxxxxxxxxxxx0006&quot;,
+      &quot;ExpYear&quot;: 2021,
+      &quot;ExpMonth&quot;: 5,
+      &quot;HolderName&quot;: &quot;John Doe&quot;,
+      &quot;CountryCode&quot;: &quot;US&quot;,
+      &quot;HashValue&quot;: &quot;0DBC2E4EB492F7AB4122602B46D60D89DEF51C8C&quot;
+    }
+  },
+  &quot;Payer&quot;: {
+    &quot;IpAddress&quot;: &quot;87.123.201.46&quot;,
+    &quot;IpLocation&quot;: &quot;DE&quot;,
+    &quot;BillingAddress&quot;: {
+      &quot;FirstName&quot;: &quot;John&quot;,
+      &quot;LastName&quot;: &quot;Doe&quot;,
+      &quot;CountryCode&quot;: &quot;de&quot;,
+      &quot;Email&quot;: &quot;john.doe@provider.com&quot;
+    }
+  },
+  &quot;Liability&quot;: {
+    &quot;LiabilityShift&quot;: true,
+    &quot;LiableEntity&quot;: &quot;THREEDS&quot;,
+    &quot;ThreeDs&quot;: {
+      &quot;Authenticated&quot;: true,
+      &quot;LiabilityShift&quot;: true,
+      &quot;Xid&quot;: &quot;4ca1a5e4-f9fc-4081-873f-f02e30547c81&quot;,
+      &quot;Version&quot;: &quot;2&quot;,
+      &quot;AuthenticationType&quot;: &quot;FRICTIONLESS&quot;
+    },
+    &quot;InPsd2Scope&quot;: &quot;NO&quot;
+  }
+}
+</code></pre></div></div></section><section id="psd2-when"><h2><a name="psd2-when"></a> When to do SCA?</h2><div class="row"><div class="col-sm-6"><p>As a rule of thumb, ask yourself the following question:</p><p><strong>Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: SCA hast to be performed, in any case!</strong></p><p>This also applies to card registrations, if the card holder is not present during the next, real, transaction!</p><p>Also make sure, that you use a flow, that can do SCA -in form of <a href="/sndbx/#3ds">3D Secure</a>- in the first Place! Be it the <a href="Integration_PP.html">Payment Page</a> or the <a href="Integration_trx.html">Transaction Interface</a>. Saferpay will always attempt 3D Secure and thus SCA!</p><p><strong>Your acquiring contract also has to support 3D Secure!</strong> However most acquirers do not offer contracts without 3D Secure in the first place, without being explicitly asked for one. When in doubt: Ask your acquirer, if your contract is set up for 3D Secure, or not!</p></div></div></section><section id="psd2-overview"><h2><a name="psd2-overview"></a> Overview</h2><div class="row"><div class="col-sm-6"><p>PSD2 is very complex. So to give you an overview of what flows need and what do not need SCA, please refer to the following tables:</p></div></div></section><section><h3>Transactions and flows, that DO need SCA</h3><div class="row"><div class="col-sm-6"><table class="table table-striped table-hover">
   <thead>
     <tr>
       <th class="text-center" style="width: 140px;">Case</th>
@@ -965,7 +1028,108 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
      <td><a href="Integration_PP.html">Payment Page Flow</a>, <a href="Integration_trx.html">Transaction Interface Flow</a></td>
     </tr>
   </tbody>
-</table></div></div></section><section id="psd2-decline"><h2><a name="psd2-decline"></a> Non Compliance</h2><div class="row"><div class="col-sm-6"><p>What happens in case of non-compliance?
+</table></div></div></section><section id="psd2-special"><h2><a name="psd2-special"></a> Special Cases</h2><div class="row"><div class="col-sm-6"><p>While Saferpay aims to make handling these cases as trivial, as possible, there are certain special cases, that deviate from the usual flows and integrations.</p></div></div></section><section><h3>Transferring SCA from and to Saferpay</h3><div class="row"><div class="col-sm-6"><div class="danger" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-remove-sign" style="color: rgb(224, 122, 105);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
+    <p>
+      <strong>CAUTION:</strong> This flow is only possible, if you are fully PCI certified!
+    </p>
+</div><p>In certain cases, it may be necessary to perform SCA through a system, that is not connected to Saferpay, or transfer existing SCA-data to an external system. While Saferpay <strong>does not support the inclusion of external 3D Secure-systems</strong>, it does support the transfer of the transaction stamp, once an authorization has been made with SCA. So please keep that in mind, since these two are not the same. The transaction-stamp is only returned by the bank on a successful authrorization of a card!</p></div></div></section><section><h3>SCA transfer to Saferpay</h3><div class="row"><div class="col-sm-6"><p>The transfer of SCA-data to Saferpay is currently only supported, while doing MIT transactions, using <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a> and a direct post of the card-data (<strong>note the PCI-warning above!</strong>). In order to reference the SCA-data, one must also submit the parameters <strong>Authentication.IssuerReference.TransactionStamp</strong> and <strong>Authentication.IssuerReference.SettlementDate</strong> (if applicable), alsongside the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a> request:</p><h4>Example</h4><pre><code class="language-json">{
+  &quot;RequestHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;[current Spec-Version]&quot;,
+    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+    &quot;RequestId&quot;: &quot;[unique request id]&quot;,
+    &quot;RetryIndicator&quot;: 0
+  },
+  &quot;TerminalId&quot;: &quot;[your terminal id]&quot;,
+  &quot;Payment&quot;: {
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: &quot;100&quot;,
+      &quot;CurrencyCode&quot;: &quot;CHF&quot;
+    },
+    &quot;Description&quot;: &quot;Test123&quot;,
+    &quot;PayerNote&quot;: &quot;Order123_Testshop&quot;
+  },
+  &quot;PaymentMeans&quot;: {
+    &quot;Card&quot;: {
+      &quot;Number&quot;: &quot;912345678901234&quot;,
+      &quot;ExpYear&quot;: 2015,
+      &quot;ExpMonth&quot;: 9,
+      &quot;HolderName&quot;: &quot;Max Mustermann&quot;,
+      &quot;VerificationCode&quot;: &quot;123&quot;
+    }
+  },
+  &quot;Authentication&quot;: {
+    &quot;IssuerReference&quot;: {
+      &quot;TransactionStamp&quot;: &quot;767980829703&quot;,
+      &quot;SettlementDate&quot;: &quot;0517&quot;
+    }
+  }
+}
+</code></pre></div></div></section><section><h3>SCA transfer from Saferpay</h3><div class="row"><div class="col-sm-6"><p>Likewise, whenever a transaction is done with SCA, Saferpay will return these values, alongside the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a> and <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> authorization responses, inside the <strong>Transaction.IssuerReference</strong> container.</p><h4>Example</h4><pre><code class="language-json">{
+  &quot;ResponseHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;[current Spec-Version]&quot;,
+    &quot;RequestId&quot;: &quot;[unique request id]&quot;
+  },
+  &quot;Transaction&quot;: {
+    &quot;Type&quot;: &quot;PAYMENT&quot;,
+    &quot;Status&quot;: &quot;AUTHORIZED&quot;,
+    &quot;Id&quot;: &quot;f3QnO7bxCnY1vAlOvvr5A4z9IphA&quot;,
+    &quot;Date&quot;: &quot;2021-05-17T13:05:49.920+02:00&quot;,
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: &quot;245&quot;,
+      &quot;CurrencyCode&quot;: &quot;EUR&quot;
+    },
+    &quot;OrderId&quot;: &quot;0&quot;,
+    &quot;AcquirerName&quot;: &quot;MasterCard Saferpay Test&quot;,
+    &quot;AcquirerReference&quot;: &quot;05945355638&quot;,
+    &quot;SixTransactionReference&quot;: &quot;0:0:3:f3QnO7bxCnY1vAlOvvr5A4z9IphA&quot;,
+    &quot;ApprovalCode&quot;: &quot;292749&quot;,
+    &quot;IssuerReference&quot;: {
+      &quot;TransactionStamp&quot;: &quot;767980829703&quot;,
+      &quot;SettlementDate&quot;: &quot;0517&quot;
+    }
+  },
+  &quot;PaymentMeans&quot;: {
+    &quot;Brand&quot;: {
+      &quot;PaymentMethod&quot;: &quot;MASTERCARD&quot;,
+      &quot;Name&quot;: &quot;MasterCard&quot;
+    },
+    &quot;DisplayText&quot;: &quot;xxxx xxxx xxxx 0006&quot;,
+    &quot;Card&quot;: {
+      &quot;MaskedNumber&quot;: &quot;xxxxxxxxxxxx0006&quot;,
+      &quot;ExpYear&quot;: 2021,
+      &quot;ExpMonth&quot;: 5,
+      &quot;HolderName&quot;: &quot;John Doe&quot;,
+      &quot;CountryCode&quot;: &quot;US&quot;,
+      &quot;HashValue&quot;: &quot;0DBC2E4EB492F7AB4122602B46D60D89DEF51C8C&quot;
+    }
+  },
+  &quot;Payer&quot;: {
+    &quot;IpAddress&quot;: &quot;87.123.201.46&quot;,
+    &quot;IpLocation&quot;: &quot;DE&quot;,
+    &quot;BillingAddress&quot;: {
+      &quot;FirstName&quot;: &quot;John&quot;,
+      &quot;LastName&quot;: &quot;Doe&quot;,
+      &quot;CountryCode&quot;: &quot;de&quot;,
+      &quot;Email&quot;: &quot;john.doe@provider.com&quot;
+    }
+  },
+  &quot;Liability&quot;: {
+    &quot;LiabilityShift&quot;: true,
+    &quot;LiableEntity&quot;: &quot;ThreeDs&quot;,
+    &quot;ThreeDs&quot;: {
+      &quot;Authenticated&quot;: true,
+      &quot;LiabilityShift&quot;: true,
+      &quot;Xid&quot;: &quot;c54a264e-dae2-45ad-b784-3eaa6be6956c&quot;
+    }
+  }
+}
+</code></pre><p>These values then can be transferred to the external system.</p><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Not all external systems may support this feature!
+  </p>
+</div></div></div></section><section id="psd2-decline"><h2><a name="psd2-decline"></a> Non Compliance</h2><div class="row"><div class="col-sm-6"><p>What happens in case of non-compliance?
 With PSD2, every bank, inside the EEA is now obliged to reject transactions, that are not PSD2-compliant.</p><p>So for instance, if you register card details for, for example, recurring payments, without enforcing SCA during the registration, the card holders bank is obliged to reject every MIT, as they are described above.</p><p>In these cases, a so called <strong>Soft Decline</strong> is thrown:</p></div></div></section><section><h3>Example of a Soft Decline Error message with Mastercard</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{ 
 &quot;ResponseHeader&quot;: {
    &quot;SpecVersion&quot;: &quot;[current SpecVersion]&quot;,
