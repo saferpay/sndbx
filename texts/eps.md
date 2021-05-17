@@ -30,3 +30,12 @@ The handling of eps payments with Saferpay requires:
 ## <a name="eps-newproject"></a>How to get an EPS acceptance agreement
 
 Please get in touch with your Austrian banking consultant.
+
+## <a name="eps-refunds"></a> Refunds
+
+While eps refunds via API are generally possible, you must be aware of certain restrictions:
+
+1. Transactions made before 18.05.2021 cannot be refunded, as they're made via an old protocol-version!
+2. Sometimes, Saferpay will not recieve the information necessary from eps, to be able to do a refund. In this case a refund will also not be possible!
+3. Only <a href="refund.html#refund-reference">referenced refunds</a> are possible, as eps does not support the generation of an alias!
+
