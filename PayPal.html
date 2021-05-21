@@ -966,6 +966,7 @@ We generally recommend to execute the <a href="https://saferpay.github.io/jsonap
 In order to circumvent this issue, the Saferpay Payment Page will break out of the iFrame and display the PayPal website full-size, in order to make a payment possible.
 However, please keep in mind, that the ReturnUrls will also be displayed full-size!</p></div></div></section><section id="ppal-special"><h2><a name="ppal-special"></a> Other special cases</h2><div class="row"><div class="col-sm-6"><p>PayPal does also require you to meet the following requirements:</p><ul>
 <li><strong>OrderId:</strong> PayPal requires the <strong>Payment =&gt; OrderId</strong> to be unique. Saferpay however does not limit the use of the <strong>OrderId</strong> in any way. If you use PayPal, you have to make sure, that your system submits unique OrderIds for every PayPal-transaction, otherwise you will get an error-message during the authorization.</li>
+<li><strong>Refunds:</strong> Unlike normal transactions, PayPal refunds always have the status <strong>CAPTURED</strong>, thus executing the money right away.</li>
 </ul></div></div></section>
 
 			</main>
