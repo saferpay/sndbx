@@ -196,5 +196,6 @@ However, please keep in mind, that the ReturnUrls will also be displayed full-si
 PayPal does also require you to meet the following requirements:
 
 + **OrderId:** PayPal requires the **Payment => OrderId** to be unique. Saferpay however does not limit the use of the **OrderId** in any way. If you use PayPal, you have to make sure, that your system submits unique OrderIds for every PayPal-transaction, otherwise you will get an error-message during the authorization.
++ **Refunds:** Unlike normal transactions, PayPal refunds always have the status **CAPTURED**, thus executing the money right away.
 
 
