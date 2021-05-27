@@ -27,7 +27,6 @@ Recurring payments are transactions processed on a regular basis under a pre-aut
 ## <a name="recurring-payment-methods"></a> Supported Payment Methods: 
 Recurring payments are supported by the following payment means: 
 *	American Express
-*	Bancontact (SCD method only)
 *	Postcard (SCD method only)
 *	Bonus Card
 *	Diners Club
