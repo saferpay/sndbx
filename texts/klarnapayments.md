@@ -148,7 +148,9 @@ Here is a list of all the mandatory parameters, that need to be submitted:
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important:</strong> Make sure, that all the order cart items are included and that all the unit-prices add up with the total amount set in <strong>Payment.Amount.Value</strong>. Otherwise Klarna may reject the payment. Additionally, make also sure, that <strong>Payment.Amount.CurrencyCode</strong> also  is in-line with <strong>Payer.BillingAddress.CountryCode</strong>! For instance: Submitting "CH" for Swizerland as your CountryCode, but selecting EUR as your currency, will cause Klarna to not be displayed!
+    <strong>Important:</strong> Make sure, that all the order cart items are included and that all the unit-prices add up with the total amount set in <strong>Payment.Amount.Value</strong>. Otherwise Klarna may reject the payment. Additionally, make also sure, that <strong>Payment.Amount.CurrencyCode</strong> also  is in-line with <strong>Payer.BillingAddress.CountryCode</strong>! 
+    
+    <strong>Missing even one of the mandatory parameters, or sending a missmatching CurrencyCode and CountryCode, will result in Klarna not being displayed!</strong>
   </p>
 </div>
 
