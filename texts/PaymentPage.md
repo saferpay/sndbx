@@ -93,6 +93,12 @@ The process begins with the [PaymentPage Initialize](https://saferpay.github.io/
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>VERY IMPORTANT:</strong> The <strong>RedirectUrl</strong> can only be called one time, due to security restraints. Please make sure, that the <strong>RedirectUrl</strong> cannot be called twice. The second call will automatically trigger the <strong>FailUrl</strong> or <strong>AbortUrl</strong>, if the latter is defined!</p>
 </div>
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Saferpay does not recommend the usage of a Client-Side Session (Cookie), due to restrains emposed by browser manufacturers! Those can cause the Session getting lost, during the payment process, thus causing the shop to not being able to identify the returning user!
+  </p>
+</div>
 
 ## <a name="pp-transaction"></a> 2 - Redirect and Transaction
 
