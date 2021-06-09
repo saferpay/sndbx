@@ -103,7 +103,7 @@ The transaction will be fully processed by the PaymentPage. The Payment Page han
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important:</strong> Saferpay does not recommend the usage of a Client-Side Session (Cookie), for customer identification, due to restrains emposed by browser manufacturers! Those can cause the Session getting lost, during the payment process, thus causing the shop to not being able to identify the returning user!
+    <strong>Important:</strong> Saferpay does not recommend the usage of a Client-Side Session (Cookie), for customer identification, due to restrains emposed by browser manufacturers! Those can cause the Session getting lost, during the payment process, thus causing the shop to not being able to identify the returning user. We recommend using GET-parameters, as described above (See parameter-description for Initialize)!
   </p>
 </div>
 
