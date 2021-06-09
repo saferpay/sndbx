@@ -31,7 +31,7 @@ The following requirements are to be met, if Twint User on File is to be used, a
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important:</strong> Twint User on File is only available via the <a href="scd.html#scd-sa">Standalone Secure Card Data registration</a>!
+    <strong>Important:</strong> Twint User on File is only available via the <a href="scd.html#scd-sa">Standalone Secure Card Data registration</a> and requires <a href="Interfaces.html"> Saferpay Business</a>, so the card data may be used!
   </p>
 </div>
 
