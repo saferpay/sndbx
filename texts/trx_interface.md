@@ -112,6 +112,13 @@ With this option set, Saferpay will open up the Hosted Entry Form, while display
 ### <a name="trx-iframe"></a>2 - Open RedirectUrl inside an HTML-iFrame, or Lightbox
 The RedirectUrl should be opened inside an HTML-iFrame embeded in your webshop or application **-a fullsize redirect is technically possible, if desired-**, to show the hosted card entry form. Please view the chapter [**Iframe Integration and CSS**](https://saferpay.github.io/sndbx/CssiFrame.html#chapter-css-iframe) for more information on the iframe integration and use of CSS to style the hosted entry form.
 
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p>
+    <strong>Important:</strong> Saferpay does not recommend the usage of a Client-Side Session (Cookie), for customer identification, due to restrains emposed by browser manufacturers! Those can cause the Session getting lost, during the payment process, thus causing the shop to not being able to identify the returning user!
+  </p>
+</div>
+
 #### <a name="trx-3ds"></a> 3-D Secure and DCC
 If [3-D Secure](https://saferpay.github.io/sndbx/index.html#3ds) and/or [DCC](https://saferpay.github.io/sndbx/index.html#dcc) are activated on the terminal for the payment method being used, these services are automatically performed for the transaction as soon as the form has been sent. For this, no additional steps are necessary for the merchant. 
 
