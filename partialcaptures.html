@@ -838,7 +838,7 @@
         &quot;CurrencyCode&quot;: &quot;CHF&quot;
     },
     &quot;Type&quot;: &quot;PARTIAL&quot;,
-    &quot;OderPartId&quot;: &quot;123456789&quot;
+    &quot;OrderPartId&quot;: &quot;123456789&quot;
 }
 </code></pre><p>The response may look like this:</p><pre><code class="language-json">{
     &quot;ResponseHeader&quot;: {
@@ -877,7 +877,7 @@ There are two different ways to finalize a <a href="https://saferpay.github.io/j
        &quot;CurrencyCode&quot;: &quot;CHF&quot;
    },
    &quot;Type&quot;: &quot;FINAL&quot;,
-   &quot;OderPartId&quot;: &quot;123456790&quot;
+   &quot;OrderPartId&quot;: &quot;123456790&quot;
 }
 </code></pre></div></div></section><section><h3>Finalizing without capturing/ Capturing with amount 0</h3><div class="row"><div class="col-sm-6"><p>In order to avoid confusion and merchants accidently executing the wrong request, the finalization with amount 0 is done through a completely different request called <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_MultipartFinalize">Multipart Finalize</a>. Executing this request will close the transaction without transfering any money.</p></div></div></section><section id="pc-final-why"><h2><a name="pc-final-why"></a> Why do you need to finalize a transaction?</h2><div class="row"><div class="col-sm-6"><p>There are two reasons, why you, the merchant, should finalize a transactions, once you have finished all your actions:</p><ol>
 <li>It is the cleaner process! Four you, the merchant, this is the cleaner solution and helps keeping track of every transaction and its status, not just inside your own system, but also inside the Saferpay Backoffice, where still open and closed transactions, will be marked as such!</li>
