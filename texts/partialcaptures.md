@@ -43,7 +43,7 @@ A complete request may look like this:
         "CurrencyCode": "CHF"
     },
     "Type": "PARTIAL",
-    "OderPartId": "123456789"
+    "OrderPartId": "123456789"
 }
 ```
 
@@ -110,7 +110,7 @@ In order to capture a final amount, the merchant-system simply needs to execute 
         "CurrencyCode": "CHF"
     },
     "Type": "FINAL",
-    "OderPartId": "123456790"
+    "OrderPartId": "123456790"
 }
 ```
 
