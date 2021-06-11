@@ -31,7 +31,7 @@ The following requirements are to be met, if Twint User on File is to be used, a
 <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
   <p>
-    <strong>Important:</strong> Twint User on File is only available via the <a href="scd.html#scd-sa">Standalone Secure Card Data registration</a> and requires <a href="Interfaces.html"> Saferpay Business</a>, so the card data may be used!
+    <strong>Important:</strong> Twint User on File is only available via the <a href="scd.html#scd-sa">Standalone Secure Card Data registration</a> and requires <a href="Interfaces.html"> Saferpay Business</a>, so the card data may be used! Furthermore, the Twint aliases may only be used with <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a>.
   </p>
 </div>
 
@@ -40,6 +40,7 @@ The following requirements are to be met, if Twint User on File is to be used, a
 The registration is done via the <a href="https://saferpay.github.io/jsonapi/#ChapterAliasStore">Saferpay Alias Store</a>. Within the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert Request</a>, you need to specify the parameter **Type** with the value **TWINT**, which signals, that you want to save Twint payment means.
 
 #### Eample
+
 ```JSON
 {
   "RegisterAlias": {
@@ -69,6 +70,7 @@ The registration is done via the <a href="https://saferpay.github.io/jsonapi/#Ch
 Saferpay will then respond with a normal Alias Insert Response, giving you the Token for further actions and a RedirectUrl.
 
 #### Example
+
 ```JSON
 {
   "ResponseHeader": {
@@ -98,6 +100,7 @@ Once this process is done, the user gets redirected towards one of the previousl
 The merchant system then needs to execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Assert Insert Request</a>, in order to gather the alias and other important payment mean details.
 
 #### Example
+
 ```json
 {
   "Token": "67tdpr8keb3ky3y6728kqv4gk",
@@ -118,6 +121,7 @@ The merchant system then needs to execute the <a href="https://saferpay.github.i
 The <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Assert Insert Response</a> will return the alias itself, for further payments, which can be executed via <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_AuthorizeDirect">Authorize Direct</a>, by simply setting the **PaymentMeans.Alias** container!
 
 #### Example
+
 ```json
 {
   "ResponseHeader": {
