@@ -71,7 +71,7 @@ If you want to perform a direct redirect to Apple Pay, you have to use the param
         "Description": "Test Order #123"
     },
     "Wallets": [
-        "Apple Pay"
+        "APPLEPAY"
     ],
     "PaymentMethods": [
         "VISA",
