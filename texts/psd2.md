@@ -87,11 +87,11 @@ This information is then returned to you via the API, through the **Liability.In
 
 As a rule of thumb, ask yourself the following question: 
 
-**Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: SCA hast to be performed, in any case!**
+**Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: SCA has to be performed, in any case!**
 
 This also applies to card registrations, if the card holder is not present during the next, real, transaction!
 
-Also make sure, that you use a flow, that can do SCA -in form of <a href="/sndbx/#3ds">3D Secure</a>- in the first Place! Be it the <a href="Integration_PP.html">Payment Page</a> or the <a href="Integration_trx.html">Transaction Interface</a>. Saferpay will always attempt 3D Secure and thus SCA!
+Also make sure, that you use a flow, that can do SCA -in form of <a href="/sndbx/#3ds">3D Secure</a>- in the first Place! Be it the <a href="Integration_PP.html">Payment Page</a>, the <a href="Integration_trx.html">Transaction Interface</a> or <a href ="scd.html#scd-sa">a Standalone Secure Card Data Registration</a> with an <a href="scd.html#scd-check">ONLINE_STRONG check</a>. Saferpay will always attempt 3D Secure and thus SCA!
 
 **Your acquiring contract also has to support 3D Secure!** However most acquirers do not offer contracts without 3D Secure in the first place, without being explicitly asked for one. When in doubt: Ask your acquirer, if your contract is set up for 3D Secure, or not!
 
@@ -424,7 +424,7 @@ These values then can be transferred to the external system.
 ## <a name="psd2-decline"></a> Non Compliance
 
 What happens in case of non-compliance?
-With PSD2, every bank, inside the EEA is now obliged to reject transactions, that are not PSD2-compliant.
+With PSD2, every bank inside the EEA is now obliged to reject transactions, that are not PSD2-compliant.
 
 So for instance, if you register card details for, for example, recurring payments, without enforcing SCA during the registration, the card holders bank is obliged to reject every MIT, as they are described above.
 
@@ -474,8 +474,8 @@ If you want to force a Soft-Decline response, you can do so, by using our test-c
 
 If you recieve a Soft Decline, you have to re-initiate your process, with **forced** (see above) SCA in mind.
 In case of the above example, the card details have to be re-registered, with SCA. The old Alias effectively becomes invalid and has to be re-created.
-This also applies to <a href="recurring.html#recurring-referenced">Referenced Recurring Transactions</a>, requiring a new initial transaction, to set off a new recurring-chain.
-So you must contact your customer, for him/her to go through the process again.
+This also applies to <a href="recurring.html#recurring-referenced">Referenced Recurring Transactions</a>, requiring a new initial transaction, to start a new recurring-chain.
+So you must contact your customer, for him/her to go through the process again, e.g. via e-mail, or similar means.
 
 <div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
