@@ -888,6 +888,21 @@ In this Chapter you will find a list of payment means you can use for testing pu
 <a name="pm-ideal"></a><div id="ideal-cards" class="dropdown">iDeal &dArr;</div>
 <div id="ideal-cards-hider" style="display:none;">
   <p>Saferpay does offer an extensive iDeal simulator. All test-cases are controlled through the simulator-ui, when opening up the payment page.</p>
+  <p>However the following cases must be simulated via amount and not GUI. <strong>Simply do a redirect, without selecting a case on the GUI!</p>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Amount</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">490</td>
+        <td style="border-left: 1px solid #ddd;"><strong><a href="ideal.html#ideal-timeout">Session-Timeout:</a></strong> Transaction results in an Open-Case. User gets redirected to the FailUrl, with the Assert reporting a<strong>TRANSACTION_STILL_IN_PROGRESS</strong> error. The NotifyUrl is then called 10 minutes later, with the Assert reporting a success.</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <a name="pm-paydirekt"></a><div id="paydirekt-cards" class="dropdown">paydirekt &dArr;</div>
 <div id="paydirekt-cards-hider" style="display:none;">
