@@ -899,7 +899,7 @@ In this Chapter you will find a list of payment means you can use for testing pu
     <tbody>
       <tr>
         <td style="word-break: unset;">490</td>
-        <td style="border-left: 1px solid #ddd;"><strong><a href="ideal.html#ideal-timeout">Session-Timeout:</a></strong> Transaction results in an Open-Case. User gets redirected to the FailUrl, with the Assert reporting a<strong>TRANSACTION_STILL_IN_PROGRESS</strong> error. The NotifyUrl is then called 10 minutes later, with the Assert reporting a success.</td>
+        <td style="border-left: 1px solid #ddd;"><strong><a href="ideal.html#ideal-timeout">Session-Timeout:</a></strong> Transaction results in an Open-Case. User gets redirected to the FailUrl, with the Assert reporting a <strong>TRANSACTION_STILL_IN_PROGRESS</strong> error. The NotifyUrl is then called 10 minutes later, with the Assert reporting a success.</td>
       </tr>
     </tbody>
   </table>
