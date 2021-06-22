@@ -358,6 +358,11 @@ The main components of the Saferpay JSON API are:
       <td> </td>
       <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
     </tr>
+    <tr>
+      <td>Crypto Currencies</td>
+      <td> </td>
+      <td class="text-center"><span class="glyphicon glyphicon-ok" style="color: #5cb85c"></span></td>
+    </tr>
   </tbody>
 </table>
 
