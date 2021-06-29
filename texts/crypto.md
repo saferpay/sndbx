@@ -18,3 +18,10 @@ The handling of Crypto currencies with Saferpay requires:
 ## <a name="crypto-requirement"></a> Integration
 
 Crypto Payments follow a standard <a href="Integration_PP.html">Payment Page Integration<a/>. Also make sure, that you take a look at the <a href="index.html#pm-functions">supported features</a>.
+
+However one thing is important to note: The payout will not happen in the crypto currency. The processing of Bitcoin and Etherum is done in partnership with Bitcoin Swiss. Bitcoin Swiss will exchange the payed amount into Swiss Franks, which will then be payed out to the merchant bank account. <strong>A direct transfer of Bitcoin, or Etherum is not intended!</strong>
+
+  <div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>Attention:</strong> This means, that Crypto payments are available for Swiss Franks only!</p>
+</div>
