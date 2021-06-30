@@ -23,5 +23,5 @@ However one thing is important to note: The payout will not happen in the crypto
 
   <div class="warning" style="min-height: 75px;">
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
-  <p><strong>Attention:</strong> This means, that Crypto payments are available for Swiss Franks only!</p>
+  <p><strong>Attention:</strong> This means, that Crypto payments are available for Swiss Franks (CHF) only!</p>
 </div>
