@@ -378,6 +378,7 @@
 								<li><a href="#apple-requirement">Requirements</a></li>
 								<li><a href="#apple-activation">Activation</a></li>
 								<li><a href="#apple-redirect">Direct redirect</a></li>
+								<li><a href="#apple-tokens">Applepay scheme tokens</a></li>
 							</ul>
 							</li>
 							<li>
@@ -781,6 +782,7 @@
 								<li><a href="#apple-requirement">Requirements</a></li>
 								<li><a href="#apple-activation">Activation</a></li>
 								<li><a href="#apple-redirect">Direct redirect</a></li>
+								<li><a href="#apple-tokens">Applepay scheme tokens</a></li>
 							</ul>
 							</li>
 							<li>
@@ -880,7 +882,42 @@
   <p>
     <strong>Important:</strong> If you are using &quot;PaymentMethods&quot;, you <strong>must</strong> also submit &quot;Wallets&quot;, if you want Apple Pay to be displayed. Also, if you are just submitting one payment method, the Payment Page will still directly jump to the card entry form, skipping Apple Pay.
   </p>
-</div></div></div></section>
+</div></div></div></section><section id="apple-tokens"><h2><a name="apple-tokens"></a> Applepay scheme tokens</h2><div class="row"><div class="col-sm-6"><p>Saferpay also supports the direct insertion of decrypted Applepay-tokens, provided by the Applepay API.
+This way, it is possible to provide a more seamless and integrated solution. However in this case, the integration is realized via the <a href="Integration_trx.html">Transaction Interface</a>. The overall transaction-flow will stay the same. The only thing you must take care of is, that you provide the necessary data, within the <strong>PaymentMeans.SchemeToken</strong> container, through the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Initialization request</a>.</p></div></div></section><section><h3>Example</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{
+  &quot;RequestHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;[current Spec-Version]&quot;,
+    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+    &quot;RequestId&quot;: &quot;[unique request id]&quot;,
+    &quot;RetryIndicator&quot;: 0
+  },
+  &quot;TerminalId&quot;: &quot;[your terminal id]&quot;,
+  &quot;Payment&quot;: {
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: &quot;100&quot;,
+      &quot;CurrencyCode&quot;: &quot;CHF&quot;
+    }
+  },
+  &quot;PaymentMeans&quot;: {
+    &quot;SchemeToken&quot;: {
+      &quot;Number&quot;: [DECRYPTED TOKEN NUMBER],
+      &quot;ExpMonth&quot;: &quot;03&quot;,
+      &quot;ExpYear: &quot;2021&quot;,
+      &quot;AuthValue&quot;: &quot;AAABBIIFmAAAAAAAAAAAAAAAAAA=&quot;
+    }
+  },
+  &quot;Payer&quot;: {
+    &quot;LanguageCode&quot;: &quot;en&quot;
+  },
+  &quot;ReturnUrls&quot;: {
+    &quot;Success&quot;: &quot;[your shop payment success url]&quot;,
+    &quot;Fail&quot;: &quot;[your shop payment fail url]&quot;
+  },
+  &quot;Styling&quot;: {
+    &quot;CssUrl&quot;: &quot;[your shop css url]&quot;
+  }
+}
+
+</code></pre></div></div></section>
 
 			</main>
 
