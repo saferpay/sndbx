@@ -185,14 +185,7 @@
 							</ul>
 							</li>
 							<li>
-							<a href="spg.html">Secure PayGate REST API</a>
-							<ul class="nav">
-								<li><a href="#spg-req">Requirements</a></li>
-								<li><a href="#spg-config">Secure PayGate configuration</a></li>
-								<li><a href="#spg-api">The REST API</a></li>
-								<li><a href="#spg-json">Connecting the JSON API</a></li>
-								<li><a href="#spg-demo">Try it!</a></li>
-							</ul>
+							<a href="#secure-paygate-offers" target="_blank">Secure PayGate Management Api</a>
 							</li>
 							<li>
 							<a href="fraugster.html">Fraud Intelligence</a>
@@ -385,6 +378,13 @@
 								<li><a href="#apple-requirement">Requirements</a></li>
 								<li><a href="#apple-activation">Activation</a></li>
 								<li><a href="#apple-redirect">Direct redirect</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="crypto.html">Crypto Payments</a>
+							<ul class="nav">
+								<li><a href="#crypto-requirement">Requirements</a></li>
+								<li><a href="#crypto-requirement">Integration</a></li>
 							</ul>
 							</li>
 							<li>
@@ -588,14 +588,7 @@
 							</ul>
 							</li>
 							<li>
-							<a href="spg.html">Secure PayGate REST API</a>
-							<ul class="nav">
-								<li><a href="#spg-req">Requirements</a></li>
-								<li><a href="#spg-config">Secure PayGate configuration</a></li>
-								<li><a href="#spg-api">The REST API</a></li>
-								<li><a href="#spg-json">Connecting the JSON API</a></li>
-								<li><a href="#spg-demo">Try it!</a></li>
-							</ul>
+							<a href="#secure-paygate-offers" target="_blank">Secure PayGate Management Api</a>
 							</li>
 							<li>
 							<a href="fraugster.html">Fraud Intelligence</a>
@@ -791,6 +784,13 @@
 							</ul>
 							</li>
 							<li>
+							<a href="crypto.html">Crypto Payments</a>
+							<ul class="nav">
+								<li><a href="#crypto-requirement">Requirements</a></li>
+								<li><a href="#crypto-requirement">Integration</a></li>
+							</ul>
+							</li>
+							<li>
 								<a><h4>Additional Information</h4></a>
 							</li>
 							<li>
@@ -876,7 +876,7 @@ This information is then returned to you via the API, through the <strong>Liabil
     &quot;InPsd2Scope&quot;: &quot;YES&quot;
   }
 }
-</code></pre></div></div></section><section id="psd2-when"><h2><a name="psd2-when"></a> When to do SCA?</h2><div class="row"><div class="col-sm-6"><p>As a rule of thumb, ask yourself the following question:</p><p><strong>Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: SCA hast to be performed, in any case!</strong></p><p>This also applies to card registrations, if the card holder is not present during the next, real, transaction!</p><p>Also make sure, that you use a flow, that can do SCA -in form of <a href="/sndbx/#3ds">3D Secure</a>- in the first Place! Be it the <a href="Integration_PP.html">Payment Page</a> or the <a href="Integration_trx.html">Transaction Interface</a>. Saferpay will always attempt 3D Secure and thus SCA!</p><p><strong>Your acquiring contract also has to support 3D Secure!</strong> However most acquirers do not offer contracts without 3D Secure in the first place, without being explicitly asked for one. When in doubt: Ask your acquirer, if your contract is set up for 3D Secure, or not!</p></div></div></section><section id="psd2-overview"><h2><a name="psd2-overview"></a> Overview</h2><div class="row"><div class="col-sm-6"><p>PSD2 is very complex. So to give you an overview of what flows need and what do not need SCA, please refer to the following tables:</p></div></div></section><section><h3>Transactions and flows, that DO need SCA</h3><div class="row"><div class="col-sm-6"><table class="table table-striped table-hover">
+</code></pre></div></div></section><section id="psd2-when"><h2><a name="psd2-when"></a> When to do SCA?</h2><div class="row"><div class="col-sm-6"><p>As a rule of thumb, ask yourself the following question:</p><p><strong>Is the card holder present, to enter his/her card details, or otherwise be able to interact with your webshop/system? If so: SCA has to be performed, in any case!</strong></p><p>This also applies to card registrations, if the card holder is not present during the next, real, transaction!</p><p>Also make sure, that you use a flow, that can do SCA -in form of <a href="/sndbx/#3ds">3D Secure</a>- in the first Place! Be it the <a href="Integration_PP.html">Payment Page</a>, the <a href="Integration_trx.html">Transaction Interface</a> or <a href="scd.html#scd-sa">a Standalone Secure Card Data Registration</a> with an <a href="scd.html#scd-check">ONLINE_STRONG check</a>. Saferpay will always attempt 3D Secure and thus SCA!</p><p><strong>Your acquiring contract also has to support 3D Secure!</strong> However most acquirers do not offer contracts without 3D Secure in the first place, without being explicitly asked for one. When in doubt: Ask your acquirer, if your contract is set up for 3D Secure, or not!</p></div></div></section><section id="psd2-overview"><h2><a name="psd2-overview"></a> Overview</h2><div class="row"><div class="col-sm-6"><p>PSD2 is very complex. So to give you an overview of what flows need and what do not need SCA, please refer to the following tables:</p></div></div></section><section><h3>Transactions and flows, that DO need SCA</h3><div class="row"><div class="col-sm-6"><table class="table table-striped table-hover">
   <thead>
     <tr>
       <th class="text-center" style="width: 140px;">Case</th>
@@ -1137,7 +1137,7 @@ The Exemption value may be submitted via the <strong>Authentication.Exemption</s
     <strong>Important:</strong> Not all external systems may support this feature!
   </p>
 </div></div></div></section><section id="psd2-decline"><h2><a name="psd2-decline"></a> Non Compliance</h2><div class="row"><div class="col-sm-6"><p>What happens in case of non-compliance?
-With PSD2, every bank, inside the EEA is now obliged to reject transactions, that are not PSD2-compliant.</p><p>So for instance, if you register card details for, for example, recurring payments, without enforcing SCA during the registration, the card holders bank is obliged to reject every MIT, as they are described above.</p><p>In these cases, a so called <strong>Soft Decline</strong> is thrown:</p></div></div></section><section><h3>Example of a Soft Decline Error message with Mastercard</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{ 
+With PSD2, every bank inside the EEA is now obliged to reject transactions, that are not PSD2-compliant.</p><p>So for instance, if you register card details for, for example, recurring payments, without enforcing SCA during the registration, the card holders bank is obliged to reject every MIT, as they are described above.</p><p>In these cases, a so called <strong>Soft Decline</strong> is thrown:</p></div></div></section><section><h3>Example of a Soft Decline Error message with Mastercard</h3><div class="row"><div class="col-sm-6"><pre><code class="language-json">{ 
 &quot;ResponseHeader&quot;: {
    &quot;SpecVersion&quot;: &quot;[current SpecVersion]&quot;,
    &quot;RequestId&quot;: &quot;[unique request id]&quot;
@@ -1163,8 +1163,8 @@ With PSD2, every bank, inside the EEA is now obliged to reject transactions, tha
 }
 </code></pre></div></div></section><section><h3>Test Cards</h3><div class="row"><div class="col-sm-6"><p>If you want to force a Soft-Decline response, you can do so, by using our test-cards <a href="paymentmeans.html">Over here</a>.</p></div></div></section><section><h3>What to do, in case of a Soft Decline</h3><div class="row"><div class="col-sm-6"><p>If you recieve a Soft Decline, you have to re-initiate your process, with <strong>forced</strong> (see above) SCA in mind.
 In case of the above example, the card details have to be re-registered, with SCA. The old Alias effectively becomes invalid and has to be re-created.
-This also applies to <a href="recurring.html#recurring-referenced">Referenced Recurring Transactions</a>, requiring a new initial transaction, to set off a new recurring-chain.
-So you must contact your customer, for him/her to go through the process again.</p><div class="info" style="min-height: 75px;">
+This also applies to <a href="recurring.html#recurring-referenced">Referenced Recurring Transactions</a>, requiring a new initial transaction, to start a new recurring-chain.
+So you must contact your customer, for him/her to go through the process again, e.g. via e-mail, or similar means.</p><div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
   <p><strong>Important Info:</strong> A bank has the right to request SCA and thus throw a soft decline at any point, if it deems it necessary! This is out of control of Wordline/Saferpay!</p>
 </div></div></div></section>

@@ -185,14 +185,7 @@
 							</ul>
 							</li>
 							<li>
-							<a href="spg.html">Secure PayGate REST API</a>
-							<ul class="nav">
-								<li><a href="#spg-req">Requirements</a></li>
-								<li><a href="#spg-config">Secure PayGate configuration</a></li>
-								<li><a href="#spg-api">The REST API</a></li>
-								<li><a href="#spg-json">Connecting the JSON API</a></li>
-								<li><a href="#spg-demo">Try it!</a></li>
-							</ul>
+							<a href="#secure-paygate-offers" target="_blank">Secure PayGate Management Api</a>
 							</li>
 							<li>
 							<a href="fraugster.html">Fraud Intelligence</a>
@@ -385,6 +378,13 @@
 								<li><a href="#apple-requirement">Requirements</a></li>
 								<li><a href="#apple-activation">Activation</a></li>
 								<li><a href="#apple-redirect">Direct redirect</a></li>
+							</ul>
+							</li>
+							<li>
+							<a href="crypto.html">Crypto Payments</a>
+							<ul class="nav">
+								<li><a href="#crypto-requirement">Requirements</a></li>
+								<li><a href="#crypto-requirement">Integration</a></li>
 							</ul>
 							</li>
 							<li>
@@ -588,14 +588,7 @@
 							</ul>
 							</li>
 							<li>
-							<a href="spg.html">Secure PayGate REST API</a>
-							<ul class="nav">
-								<li><a href="#spg-req">Requirements</a></li>
-								<li><a href="#spg-config">Secure PayGate configuration</a></li>
-								<li><a href="#spg-api">The REST API</a></li>
-								<li><a href="#spg-json">Connecting the JSON API</a></li>
-								<li><a href="#spg-demo">Try it!</a></li>
-							</ul>
+							<a href="#secure-paygate-offers" target="_blank">Secure PayGate Management Api</a>
 							</li>
 							<li>
 							<a href="fraugster.html">Fraud Intelligence</a>
@@ -791,6 +784,13 @@
 							</ul>
 							</li>
 							<li>
+							<a href="crypto.html">Crypto Payments</a>
+							<ul class="nav">
+								<li><a href="#crypto-requirement">Requirements</a></li>
+								<li><a href="#crypto-requirement">Integration</a></li>
+							</ul>
+							</li>
+							<li>
 								<a><h4>Additional Information</h4></a>
 							</li>
 							<li>
@@ -823,22 +823,22 @@
   <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
 	<p><strong>Important Note:</strong> The Transaction Interface offers various options to perform transactions. This flow only describes the general flow.</p>
 </div><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/TRX_FlowChart.png" alt="alt text" title="Transaction Interface Flow Chart"></p><ol>
-<li><a href="index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a>
 <ul>
 <li>Initializes the Payment and generates the RedirectUrl for the <a href="https://saferpay.github.io/sndbx/CssiFrame.html">iFrame Integration</a>.</li>
 </ul>
 </li>
 <li>Open the RedirectUrl inside an HTML-iFrame, to show the hosted card entry form.</li>
 <li>Return to Return Url depending on the outcome of the 3D Secure procedure. The ReturnUrls are defined in step 1.</li>
-<li><a href="index.html#Payment_v1_Transaction_Authorize">Transaction Authorize</a>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a>
 <ul>
 <li>Authorizes the card, which has been gathered in step 2. Up until now, <em>no transaction has been made</em>!</li>
 </ul>
 </li>
 <li>Depending on the outcome of step 4 you may
 <ul>
-<li><a href="index.html#Payment_v1_Transaction_Capture">Capture/Finalize the Transaction</a></li>
-<li><a href="index.html#Payment_v1_Transaction_Cancel">Cancel/Abort the Transaction</a></li>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture/Finalize the Transaction</a></li>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Cancel">Cancel/Abort the Transaction</a></li>
 </ul>
 </li>
 <li>Transaction is finished.</li>
