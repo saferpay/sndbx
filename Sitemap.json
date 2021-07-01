@@ -438,7 +438,7 @@
      "Target": "crypto.html",
      "Subsites": [
        { "Source": "texts/crypto.md", "Title": "Requirements", "Target": "crypto.html#crypto-requirement" },
-       { "Source": "texts/crypto.md", "Title": "Integration", "Target": "crypto.html#crypto-requirement" }
+       { "Source": "texts/crypto.md", "Title": "Integration", "Target": "crypto.html#crypto-integration" }
      ] 
    },
    {
