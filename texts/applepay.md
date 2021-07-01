@@ -97,3 +97,47 @@ If you want to perform a direct redirect to Apple Pay, you have to use the param
     <strong>Important:</strong> If you are using "PaymentMethods", you <strong>must</strong> also submit "Wallets", if you want Apple Pay to be displayed. Also, if you are just submitting one payment method, the Payment Page will still directly jump to the card entry form, skipping Apple Pay.
   </p>
 </div>
+
+## <a name="apple-tokens"></a> Applepay scheme tokens
+
+Saferpay also supports the direct insertion of decrypted Applepay-tokens, provided by the Applepay API.
+This way, it is possible to provide a more seamless and integrated solution. However in this case, the integration is realized via the <a href="Integration_trx.html">Transaction Interface</a>. The overall transaction-flow will stay the same. The only thing you must take care of is, that you provide the necessary data, within the <strong>PaymentMeans.SchemeToken</strong> container, through the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Initialization request</a>.
+
+### Example
+
+```json 
+{
+  "RequestHeader": {
+    "SpecVersion": "[current Spec-Version]",
+    "CustomerId": "[your customer id]",
+    "RequestId": "[unique request id]",
+    "RetryIndicator": 0
+  },
+  "TerminalId": "[your terminal id]",
+  "Payment": {
+    "Amount": {
+      "Value": "100",
+      "CurrencyCode": "CHF"
+    }
+  },
+  "PaymentMeans": {
+    "SchemeToken": {
+      "Number": [DECRYPTED TOKEN NUMBER],
+      "ExpMonth": "03",
+      "ExpYear: "2021",
+      "AuthValue": "AAABBIIFmAAAAAAAAAAAAAAAAAA="
+    }
+  },
+  "Payer": {
+    "LanguageCode": "en"
+  },
+  "ReturnUrls": {
+    "Success": "[your shop payment success url]",
+    "Fail": "[your shop payment fail url]"
+  },
+  "Styling": {
+    "CssUrl": "[your shop css url]"
+  }
+}
+
+```
