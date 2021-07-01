@@ -15,7 +15,7 @@ The handling of Crypto currencies with Saferpay requires:
   <p><strong>Attention:</strong> For Crypto currency activation on the Saferpay terminal and the necessary contract, please contact your Saferpay sales contact.</p>
 </div>
 
-## <a name="crypto-requirement"></a> Integration
+## <a name="crypto-integration"></a> Integration
 
 Crypto Payments follow a standard <a href="Integration_PP.html">Payment Page Integration<a/>. Also make sure, that you take a look at the <a href="index.html#pm-functions">supported features</a>.
 
