@@ -957,7 +957,10 @@ The important parameters are <strong>Authenticated</strong> and especially <stro
   }
 </code></pre></div></div></section><section id="version"><h2><a name="version"></a>  Versioning</h2><div class="row"><div class="col-sm-6"><p>If you are implementing new payment methods and/or features, please make sure to implement the correct <strong>SpecVersion</strong> of our API.
 If you are unsure, you should refer to the newest SpecVersion. <a href="https://saferpay.github.io/jsonapi/Changelog.html">Our Changelog</a> will give you further information about the current and past spec-versions.
-You'll also find the newest Version in the top left of our <a href="https://saferpay.github.io/jsonapi/">API Specification</a>.</p><p>Furthermore, it is possible to go back to previous spec-versions, by adding the version to the url.
+You'll also find the newest Version in the top left of our <a href="https://saferpay.github.io/jsonapi/">API Specification</a>.</p><div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>Attention:</strong> This guide will always assume the latest SpecVersion of the Saferpay JSON API, unless stated otherwise! While some features do work with older versions, please always consult the specification and, if need be, the version, you have currently implemented, as stated below!</p>
+</div><p>Furthermore, it is possible to go back to previous spec-versions, by adding the version to the url.
 For example, if you want to go back to the 1.4 specification, simply add the version to the url like this:</p><pre><code>https://saferpay.github.io/jsonapi/1.4
 </code></pre><div class="info" style="min-height: 75px;">
   <span class="glyphicon glyphicon-info-sign" style="color: rgb(110, 199, 215);font-size: 55px;height: 75px;float: left;margin-right: 15px;margin-top: 0px;"></span>
