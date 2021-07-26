@@ -1,3 +1,8 @@
+<div class="warning" style="min-height: 75px;">
+  <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(240, 169, 43);font-size: 55px;float: left;height: 75px;margin-right: 15px;margin-top: 0px;"></span>
+  <p><strong>SITE MOVED:</strong> This documentation is outdated, as of July 26th 2021. The new and improved documentation can be found under <a href="https://docs.saferpay.com/home/integration-guide/introduction">https://docs.saferpay.com/</a>.</p>
+</div>
+
 # Apple Pay
 
 Apple Pay transactions can be processed via the Saferpay Payment Page, without much effort from you side. Note that Apple Pay is not a classic means of payment, but rather a digital wallet. Your customers will still pay with Visa, Mastercard, or whatever credit card has been saved inside the wallet, thus the actual recorded payment method will correspond to this. However, Saferpay will also return information that this transaction has been performed through Apple Pay. Furthermore, all options and limitations of the used means of payment apply [as stated here](index.html#pm-functions), if not mentioned otherwise in this chapter.
