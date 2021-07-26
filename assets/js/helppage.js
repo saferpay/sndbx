@@ -1,3 +1,4 @@
+window.location.replace("https://docs.saferpay.com/home/integration-guide/introduction");
 'use strict';
 
 $(document).on('scroll', function () {
