@@ -1,5 +1,5 @@
-'use strict';
 window.location.replace("https://docs.saferpay.com/home/integration-guide/introduction");
+'use strict';
 $(document).on('scroll', function () {
     if ($(window).scrollTop() > 100) {
         $('.scroll-top-wrapper').addClass('show');
